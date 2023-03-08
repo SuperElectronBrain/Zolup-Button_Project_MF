@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Project_MF.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{3F7E1F65-8AF9-445A-9662-23F280911858}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Project_MF.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Project_MFEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{D0CBDC08-397A-491A-84B9-4BB9F2433D51}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Project_MF">
+      <UniqueIdentifier>{5E926580-B4D2-491C-B6BA-6A84B764D159}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Project_MF\Project_MF.Build.cs">
+      <Filter>Source\Project_MF</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Project_MF\Project_MF.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\Project_MF.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\Project_MFGameModeBase.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\Project_MFGameModeBase.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
