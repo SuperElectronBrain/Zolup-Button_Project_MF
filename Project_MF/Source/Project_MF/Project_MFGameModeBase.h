@@ -13,5 +13,9 @@ UCLASS()
 class PROJECT_MF_API AProject_MFGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+protected:
+	virtual void BeginPlay() override;
+public:
+	AProject_MFGameModeBase();
 };

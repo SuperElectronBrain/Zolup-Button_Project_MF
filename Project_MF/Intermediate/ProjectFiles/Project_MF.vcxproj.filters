@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{3F7E1F65-8AF9-445A-9662-23F280911858}</UniqueIdentifier>
+      <UniqueIdentifier>{BBE3472A-68DB-45EA-8B75-95EE5049684E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{D0CBDC08-397A-491A-84B9-4BB9F2433D51}</UniqueIdentifier>
+      <UniqueIdentifier>{8076D62D-14F0-4671-AE44-A87AFF9FF577}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,8 +24,44 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{5E926580-B4D2-491C-B6BA-6A84B764D159}</UniqueIdentifier>
+      <UniqueIdentifier>{BA3C81A0-98A6-4C0A-95E4-C8762003AFAF}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\CustomGameInstance.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MainLevelGameMode.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MainLevelGameMode.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MainLevelPawn.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MainLevelPawn.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MainLevelPawnController.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MainLevelPawnController.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MainLevelScriptActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MainLevelScriptActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MainLevelUICanvasWidget.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MainLevelUICanvasWidget.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Project_MF\Project_MF.Build.cs">
       <Filter>Source\Project_MF</Filter>
     </None>
