@@ -16,6 +16,7 @@ class PROJECT_MF_API UMainLevelUICanvasWidget : public UUserWidget
 protected:
 	virtual void NativeConstruct() override;
 	UFUNCTION(BlueprintCallable) void GameStart();
+	UFUNCTION(BlueprintCallable) void GameQuit();
 	UFUNCTION(BlueprintCallable) void EnterEditMode();
 
 	UPROPERTY() class UButton* GameStartButton;

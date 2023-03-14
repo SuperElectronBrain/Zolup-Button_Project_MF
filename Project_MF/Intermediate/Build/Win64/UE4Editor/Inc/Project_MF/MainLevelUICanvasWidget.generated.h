@@ -20,6 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execOnQuitButtonClicked); \
 	DECLARE_FUNCTION(execOnStartButtonClicked); \
 	DECLARE_FUNCTION(execEnterEditMode); \
+	DECLARE_FUNCTION(execGameQuit); \
 	DECLARE_FUNCTION(execGameStart);
 
 
@@ -29,6 +30,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execOnQuitButtonClicked); \
 	DECLARE_FUNCTION(execOnStartButtonClicked); \
 	DECLARE_FUNCTION(execEnterEditMode); \
+	DECLARE_FUNCTION(execGameQuit); \
 	DECLARE_FUNCTION(execGameStart);
 
 

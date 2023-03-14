@@ -37,6 +37,18 @@ void UMainLevelUICanvasWidget::GameStart()
 	UGameplayStatics::OpenLevel(GetWorld(), TEXT("GameLevel"));
 }
 
+void UMainLevelUICanvasWidget::GameQuit()
+{
+	if (GetWorld()->WorldType == EWorldType::Game)
+	{
+		FGenericPlatformMisc::RequestExit(true);
+	}
+	else if (GetWorld()->WorldType == EWorldType::PIE)
+	{
+		GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
+	}
+}
+
 void UMainLevelUICanvasWidget::EnterEditMode()
 {
 	UGameplayStatics::OpenLevel(GetWorld(), TEXT("EditLevel"));
@@ -50,14 +62,7 @@ void UMainLevelUICanvasWidget::OnStartButtonClicked()
 
 void UMainLevelUICanvasWidget::OnQuitButtonClicked()
 {
-	if(GetWorld()->WorldType == EWorldType::Game)
-	{
-		FGenericPlatformMisc::RequestExit(true);
-	}
-	else if(GetWorld()->WorldType == EWorldType::PIE)
-	{
-		GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
-	}
+	GameQuit();
 }
 
 void UMainLevelUICanvasWidget::OnEditButtonClicked()

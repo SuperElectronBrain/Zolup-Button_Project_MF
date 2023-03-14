@@ -47,6 +47,13 @@ void EmptyLinkFunctionForGeneratedCodeMainLevelUICanvasWidget() {}
 		P_THIS->EnterEditMode();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UMainLevelUICanvasWidget::execGameQuit)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->GameQuit();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UMainLevelUICanvasWidget::execGameStart)
 	{
 		P_FINISH;
@@ -59,6 +66,7 @@ void EmptyLinkFunctionForGeneratedCodeMainLevelUICanvasWidget() {}
 		UClass* Class = UMainLevelUICanvasWidget::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "EnterEditMode", &UMainLevelUICanvasWidget::execEnterEditMode },
+			{ "GameQuit", &UMainLevelUICanvasWidget::execGameQuit },
 			{ "GameStart", &UMainLevelUICanvasWidget::execGameStart },
 			{ "OnEditButtonClicked", &UMainLevelUICanvasWidget::execOnEditButtonClicked },
 			{ "OnQuitButtonClicked", &UMainLevelUICanvasWidget::execOnQuitButtonClicked },
@@ -85,6 +93,28 @@ void EmptyLinkFunctionForGeneratedCodeMainLevelUICanvasWidget() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UMainLevelUICanvasWidget_EnterEditMode_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MainLevelUICanvasWidget.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UMainLevelUICanvasWidget, nullptr, "GameQuit", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -209,6 +239,7 @@ void EmptyLinkFunctionForGeneratedCodeMainLevelUICanvasWidget() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UMainLevelUICanvasWidget_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UMainLevelUICanvasWidget_EnterEditMode, "EnterEditMode" }, // 3281878600
+		{ &Z_Construct_UFunction_UMainLevelUICanvasWidget_GameQuit, "GameQuit" }, // 377893506
 		{ &Z_Construct_UFunction_UMainLevelUICanvasWidget_GameStart, "GameStart" }, // 28489809
 		{ &Z_Construct_UFunction_UMainLevelUICanvasWidget_OnEditButtonClicked, "OnEditButtonClicked" }, // 381018037
 		{ &Z_Construct_UFunction_UMainLevelUICanvasWidget_OnQuitButtonClicked, "OnQuitButtonClicked" }, // 2989830623
@@ -274,7 +305,7 @@ void EmptyLinkFunctionForGeneratedCodeMainLevelUICanvasWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UMainLevelUICanvasWidget, 1452429801);
+	IMPLEMENT_CLASS(UMainLevelUICanvasWidget, 1737833750);
 	template<> PROJECT_MF_API UClass* StaticClass<UMainLevelUICanvasWidget>()
 	{
 		return UMainLevelUICanvasWidget::StaticClass();
