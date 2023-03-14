@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Project_MF",
-			"Path": "D:\\Users\\qkrdl\\Documents\\GitHub\\Zolup-Button_Project_MF\\Project_MF\\Source\\Project_MF.Target.cs",
+			"Path": "C:\\Users\\hyeon2-400\\Desktop\\Zolup-Button_Project_MF\\Project_MF\\Source\\Project_MF.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "Project_MFEditor",
-			"Path": "D:\\Users\\qkrdl\\Documents\\GitHub\\Zolup-Button_Project_MF\\Project_MF\\Source\\Project_MFEditor.Target.cs",
+			"Path": "C:\\Users\\hyeon2-400\\Desktop\\Zolup-Button_Project_MF\\Project_MF\\Source\\Project_MFEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
