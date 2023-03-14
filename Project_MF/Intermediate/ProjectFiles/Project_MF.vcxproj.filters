@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{D6D006AD-4EA4-4104-8235-8801B6B021AC}</UniqueIdentifier>
+      <UniqueIdentifier>{3A6658BF-903B-4924-9F0F-A509510B08FC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{54331D14-AB7D-40AB-8DAF-1EE72B9A7D50}</UniqueIdentifier>
+      <UniqueIdentifier>{8C71D104-1712-4519-9EB7-08274881FF9B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,12 +24,42 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{AA336AF5-7048-4FC4-ACD4-B693A2043EB1}</UniqueIdentifier>
+      <UniqueIdentifier>{51579A91-408D-4BDF-91F6-B8D164AAA2C8}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\CustomGameInstance.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\EditLevelGameMode.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\EditLevelGameMode.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\EditLevelMFActorManagementActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\EditLevelMFActorManagementActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\EditLevelPawn.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\EditLevelPawn.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\EditLevelPawnController.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\EditLevelPawnController.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\EditLevelScriptActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\EditLevelScriptActor.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MainLevelGameMode.cpp">
@@ -60,6 +90,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MainLevelUICanvasWidget.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MFActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MFActor.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <None Include="..\..\Source\Project_MF\Project_MF.Build.cs">

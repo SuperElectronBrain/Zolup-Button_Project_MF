@@ -1,15 +1,24 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+  Creating makefile for Project_MFEditor (no existing makefile)
   Parsing headers for Project_MFEditor
     Running UnrealHeaderTool "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject" "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\Project_MFEditor\Development\Project_MFEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\qkrdl\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
   LogInit: Display: Loading text-based GConfig....
-  Reflection code generated for Project_MFEditor in 4.1859768 seconds
+  Reflection code generated for Project_MFEditor in 4.0094877 seconds
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5754.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5754.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8726.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8726.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5754.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8726.lib
   Building Project_MFEditor...
   Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 6 actions with 8 processes...
-    [1/6] ObjectSpawnerActor.cpp
-D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\ObjectSpawnerActor.cpp(17): error C2226: 구문 오류: 예기치 않은 형식 'ConstructorHelpers::FClassFinder<AMFActor>'입니다.
-D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\ObjectSpawnerActor.cpp(18): error C2065: 'AC_MFACTOR': 선언되지 않은 식별자입니다.
-D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\ObjectSpawnerActor.cpp(20): error C2065: 'AC_MFACTOR': 선언되지 않은 식별자입니다.
-    [2/6] Project_MF.init.gen.cpp
-    [3/6] ObjectSpawnerActor.gen.cpp
-D:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: ""D:\Program Files\Epic Games\UE_4.27\Engine\Build\BatchFiles\Build.bat" Project_MFEditor Win64 Development -Project="D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject" -WaitMutex -FromMsBuild" 명령이 종료되었습니다(코드: 6).
+  Building 5 actions with 8 processes...
+    [1/5] MainLevelUICanvasWidget.gen.cpp
+    [2/5] MainLevelUICanvasWidget.cpp
+    [3/5] UE4Editor-Project_MF.lib
+       D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.exp 개체를 생성하고 있습니다.
+    [4/5] UE4Editor-Project_MF.dll
+       D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.suppressed.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.suppressed.exp 개체를 생성하고 있습니다.
+    [5/5] Project_MFEditor.target
+  Total time in Parallel executor: 3.36 seconds
+  Total execution time: 9.29 seconds
