@@ -27,32 +27,19 @@ void UPowerMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	SetRelativeLocation(OriginPosition);
 
 	if (bActingState == true)
 	{	
-		FVector MovementVector = GetForwardVector() * (ActingSpeed * DeltaTime);
-		CurrentMovement = CurrentMovement + (MovementVector - GetForwardVector()).Size();
-		if (CurrentMovement < ActingRange)
-		{
-			AddRelativeLocation(MovementVector - GetForwardVector());
-		}
-		else if (CurrentMovement > ActingRange)
-		{
-			CurrentMovement = ActingRange;
-		}
+		CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
+		FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+		SetRelativeLocation(OriginPosition + MovementVector);
 	}
 	else if (bActingState == false)
 	{
-		FVector MovementVector = GetForwardVector() * (ActingSpeed * DeltaTime);
-		CurrentMovement = CurrentMovement - (GetForwardVector() - MovementVector).Size();
-		if (CurrentMovement > 0)
-		{
-			AddRelativeLocation(GetForwardVector() - MovementVector);
-		}
-		else if (CurrentMovement < 0)
-		{
-			CurrentMovement = 0;
-		}
+		CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
+		FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+		SetRelativeLocation(OriginPosition + MovementVector);
 	}
 	// ...
 }

@@ -86,18 +86,6 @@ void UPowerConnectionComponent::BeginPlay()
 	UpdateMaterialColor();
 }
 
-#if WITH_EDITOR
-void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-{
-	Super::PostEditChangeProperty(PropertyChangedEvent);
-
-	Meshs[0]->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
-
-	//SetObjectLength(ObjectLength);
-	//SetTriggerSize(TriggerSize);
-}
-#endif
-
 // Called every frame
 //void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 //{
@@ -125,13 +113,12 @@ void UPowerConnectionComponent::UpdateMaterialColor()
 	}
 }
 
-
 void UPowerConnectionComponent::SetObjectLength(int32 param)
 {
 	if(param > 0)
 	{
-		//if (ObjectLength != param)
-		//{
+		if (ObjectLength != param)
+		{
 			//새로 변경될 길이가 기존보다 더 길다면
 			if (Meshs.Num() < param)
 			{
@@ -244,7 +231,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 				Triggers[i]->SetBoxExtent(FVector(BoxSize, param > TriggerSize + 1 ? BoxSize : (param + TriggerSize - 1) * 50, BoxSize));
 				Triggers[i]->SetRelativeLocation(FVector(0.0f, 100.0f * ((param > TriggerSize + 1 ? param : 1) - 1) / 2 * (i < 1 ? -1 : 1), 0.0f));
 			}
-		//}
+		}
 
 		ObjectLength = param;
 	}
@@ -252,8 +239,8 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 
 void UPowerConnectionComponent::SetTriggerSize(int32 param)
 {
-	//if (TriggerSize != param)
-	//{
+	if (TriggerSize != param)
+	{
 		
 		if ((ObjectLength > param + 1 ? 2 : 1) > Triggers.Num())
 		{
@@ -296,7 +283,7 @@ void UPowerConnectionComponent::SetTriggerSize(int32 param)
 		}
 
 		TriggerSize = param;
-	//}
+	}
 }
 
 void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
