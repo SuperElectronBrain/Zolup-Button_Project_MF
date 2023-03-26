@@ -994,3 +994,169 @@ Script Stack (0 frames):
 [2023.03.26-15.25.57:717][127]Display: HotReload successful (28 functions remapped  0 scriptstructs remapped)
 [2023.03.26-15.25.57:764][127]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0101 seconds. Added 3841 classes and 930 folders.
 [2023.03.26-15.25.57:765][127]Display: HotReload took 17.4s.
+[2023.03.26-15.27.36:293][323]Candidate modules for hot reload:
+[2023.03.26-15.27.36:293][323]  Project_MF
+[2023.03.26-15.27.36:293][323]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,8651 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.03.26-15.27.36:296][323]Warning: Starting HotReload took  0.0s.
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: New page: 컴파일 - 2023. 3. 27. 오전 9:27:40
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Invalidating makefile for Project_MFEditor (Project_MF.Build.cs modified)
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Building Project_MFEditor...
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Building 3 actions with 8 processes...
+[2023.03.26-15.27.40:900][446]CompilerResultsLog:   [1/3] UE4Editor-Project_MF-8651.lib
+[2023.03.26-15.27.40:900][446]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8651.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8651.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.03.26-15.27.40:900][446]CompilerResultsLog:   [2/3] UE4Editor-Project_MF-8651.dll
+[2023.03.26-15.27.40:900][446]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8651.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8651.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.03.26-15.27.40:900][446]CompilerResultsLog:   [3/3] Project_MFEditor.target
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Total time in Parallel executor: 1.07 seconds
+[2023.03.26-15.27.40:900][446]CompilerResultsLog: Total execution time: 4.33 seconds
+[2023.03.26-15.27.40:900][446]LogMainFrame: MainFrame: Module compiling took 4.628 seconds
+[2023.03.26-15.27.40:943][446]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0003 seconds. Added 19 classes and 2 folders.
+[2023.03.26-15.27.40:948][446]Display: HotReload successful (28 functions remapped  0 scriptstructs remapped)
+[2023.03.26-15.27.40:991][446]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0106 seconds. Added 3841 classes and 930 folders.
+[2023.03.26-15.27.40:994][446]Display: HotReload took  4.7s.
+[2023.03.26-15.27.47:419][ 65]LogEditorViewport: Clicking on Actor (LMB): PowerGenerator_C (PowerGenerator)
+[2023.03.26-15.27.47:424][ 65]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.03.26-15.27.48:424][ 65]LogStats: FPlatformStackWalk::StackWalkAndDump -  1.000 s
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: === Handled ensure: ===
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: 
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: Ensure condition failed: !InActorComponent->IsPendingKill() [File:D:/Build/++UE4/Sync/Engine/Source/Editor/Kismet/Private/SSCSEditor.cpp] [Line: 6652]
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: 
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: Stack: 
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff99c352a9 UE4Editor-Kismet.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff999556c7 UE4Editor-Kismet.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9995caa3 UE4Editor-Kismet.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff99a3f800 UE4Editor-Kismet.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff93ad6a3f UE4Editor-LevelEditor.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff93aafb98 UE4Editor-LevelEditor.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff93a7fd27 UE4Editor-LevelEditor.dll!UnknownFunction []
+[2023.03.26-15.27.48:424][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff93986019 UE4Editor-LevelEditor.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9b754712 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9b754680 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9b73f72b UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9b74ec23 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9bb6a018 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9bb9564f UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9bb9550b UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9b7a6198 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9b79747a UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff9bb8c635 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff93a9f449 UE4Editor-LevelEditor.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fff8e82cfff UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffaf92e114 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffaf67421e UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffaf6ee104 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffaf6d7097 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffaf6c9b62 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffb40fc025 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffb40e92b7 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffb40fe465 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffb40e4410 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff974428281 USER32.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff974427d41 USER32.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007fffb40ffcd4 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff68cc27621 UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff68cc40fcc UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff68cc410ba UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff68cc440dd UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff68cc55984 UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff68cc5853a UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff973b926bd KERNEL32.DLL!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: [Callstack] 0x00007ff974c2a9f8 ntdll.dll!UnknownFunction []
+[2023.03.26-15.27.48:425][ 65]LogOutputDevice: Error: 
+[2023.03.26-15.27.48:436][ 65]LogStats:                SubmitErrorReport -  0.000 s
+[2023.03.26-15.27.49:343][ 65]LogStats:                    SendNewReport -  0.907 s
+[2023.03.26-15.27.49:343][ 65]LogStats:             FDebug::EnsureFailed -  1.920 s
+[2023.03.26-15.28.05:033][942]Cmd: DELETE
+[2023.03.26-15.28.05:033][942]Cmd: ACTOR DELETE
+[2023.03.26-15.28.05:034][942]LogEditorActor: Deleted Actor: PowerGenerator_C
+[2023.03.26-15.28.05:039][942]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.03.26-15.28.05:087][942]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.048 s
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: === Handled ensure: ===
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: 
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: Ensure condition failed: GIsTransacting [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp] [Line: 1147]
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: 
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: Stack: 
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff8f234bf9 UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff8dc93ef0 UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff8db7c960 UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff8dc1964c UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9eb1cbe8 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9eb0778d UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9e9ce5b4 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9e9cd57c UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9b66c9a3 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9bf7822d UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9bf72b16 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9b727f3b UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9b711d71 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff9bf72917 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fff6b99786d UE4Editor-SceneOutliner.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffaf672112 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffaf6d5087 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffaf6c8756 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffb40fbcc8 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffb40e92b7 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffb40fe465 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffb40e4410 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff974428281 USER32.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff974427d41 USER32.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007fffb40ffcd4 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff68cc27621 UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff68cc40fcc UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff68cc410ba UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff68cc440dd UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff68cc55984 UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff68cc5853a UE4Editor.exe!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff973b926bd KERNEL32.DLL!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: [Callstack] 0x00007ff974c2a9f8 ntdll.dll!UnknownFunction []
+[2023.03.26-15.28.05:087][942]LogOutputDevice: Error: 
+[2023.03.26-15.28.05:095][942]LogStats:                SubmitErrorReport -  0.000 s
+[2023.03.26-15.28.05:962][942]LogStats:                    SendNewReport -  0.867 s
+[2023.03.26-15.28.05:962][942]LogStats:             FDebug::EnsureFailed -  0.924 s
+[2023.03.26-15.28.05:962][942]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0' has 'BoxComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.TRASH_PowerGenerateComponent_21'
+[2023.03.26-15.28.05:962][942]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0' has 'BoxComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.TRASH_PowerGenerateComponent_21'
+[2023.03.26-15.28.05:962][942]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0' has 'StaticMeshComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.PowerGenerateComponent_0.Mesh' believes it is attached to 'PowerGenerateComponent /Game/Levels/EditLevel.EditLevel:PersistentLevel.PowerGenerator_2.TRASH_PowerGenerateComponent_21'
+[2023.03.26-15.28.05:964][942]LogUObjectHash: Compacting FUObjectHashTables data took   0.88ms
+[2023.03.26-15.28.05:965][942]LogEditorActor: Deleted 1 Actors (0.932 secs)
+[2023.03.26-15.31.55:459][842]LogSlate: Took 0.000280 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.03.26-15.32.03:825][145]Message dialog closed, result: Ok, title: 메시지, text: 앱 실행 도중 pure virtual 함수가 호출되고 있었습니다 (GIsRunning == 1).
+[2023.03.26-15.32.03:825][145]LogWindows: Windows GetLastError: 작업을 완료했습니다. (0)
+[2023.03.26-15.32.04:733][145]LogThreadingWindows: Error: Runnable thread TaskGraphThreadNP 1 crashed.
+[2023.03.26-15.32.04:733][145]LogWindows: Error: === Critical error: ===
+[2023.03.26-15.32.04:733][145]LogWindows: Error: 
+[2023.03.26-15.32.04:733][145]LogWindows: Error: Fatal error: [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Core/Private/Windows/WindowsPlatformMisc.cpp] [Line: 475] 
+[2023.03.26-15.32.04:733][145]LogWindows: Error: Pure virtual function being called
+[2023.03.26-15.32.04:733][145]LogWindows: Error: 
+[2023.03.26-15.32.04:733][145]LogWindows: Error: 
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007ff9726cfe7c KERNELBASE.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae640216 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae644218 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae36242d UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae65e6e0 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007ff963316ea4 VCRUNTIME140.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fff9e8a6734 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fff9e9fd40f UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fff9e9d2fb5 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fff9e9dbe5d UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae0c1507 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae0c2860 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae0c9aa5 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae65ff0b UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007fffae657050 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007ff973b926bd KERNEL32.DLL!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: [Callstack] 0x00007ff974c2a9f8 ntdll.dll!UnknownFunction []
+[2023.03.26-15.32.04:733][145]LogWindows: Error: 
+[2023.03.26-15.32.04:733][145]LogWindows: Error: Crash in runnable thread TaskGraphThreadNP 1
+[2023.03.26-15.32.09:742][145]LogExit: Executing StaticShutdownAfterError
+[2023.03.26-15.32.09:742][145]LogWindows: FPlatformMisc::RequestExit(1)
+[2023.03.26-15.32.09:742][145]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 3)
+[2023.03.26-15.32.09:742][145]LogCore: Engine exit requested (reason: Win RequestExit)
+[2023.03.26-15.32.09:745][145]Log file closed, 03/27/23 00:32:09
