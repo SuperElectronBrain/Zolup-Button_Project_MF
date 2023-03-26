@@ -16,7 +16,7 @@ class PROJECT_MF_API AEditLevelPawn : public APawn
 private:
 	UPROPERTY() AEditLevelMFActorManagementActor* EditLevelMFActorManagementActor;
 
-protected:
+private:
 	UPROPERTY() USceneComponent* DefaultComponent;
 	UPROPERTY() UFloatingPawnMovement* Movement;
 
@@ -33,6 +33,10 @@ protected:
 
 	UFUNCTION() void VerticalMovement(float param);
 	UFUNCTION() void HorizontalMovement(float param);
+	UFUNCTION() void LookUpDown(float param);
+	UFUNCTION() void TurnAround(float param);
+	UFUNCTION() void MouseLeftClick();
+	UFUNCTION() void ShowOrHideMouseCursor(bool param);
 
 public:	
 	// Called every frame

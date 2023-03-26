@@ -18,6 +18,10 @@ class AEditLevelMFActorManagementActor;
 #define Project_MF_Source_Project_MF_EditLevelPawn_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execSetEditLevelMFActorManagementActor); \
+	DECLARE_FUNCTION(execShowOrHideMouseCursor); \
+	DECLARE_FUNCTION(execMouseLeftClick); \
+	DECLARE_FUNCTION(execTurnAround); \
+	DECLARE_FUNCTION(execLookUpDown); \
 	DECLARE_FUNCTION(execHorizontalMovement); \
 	DECLARE_FUNCTION(execVerticalMovement); \
 	DECLARE_FUNCTION(execSpawnMFActor);
@@ -26,6 +30,10 @@ class AEditLevelMFActorManagementActor;
 #define Project_MF_Source_Project_MF_EditLevelPawn_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execSetEditLevelMFActorManagementActor); \
+	DECLARE_FUNCTION(execShowOrHideMouseCursor); \
+	DECLARE_FUNCTION(execMouseLeftClick); \
+	DECLARE_FUNCTION(execTurnAround); \
+	DECLARE_FUNCTION(execLookUpDown); \
 	DECLARE_FUNCTION(execHorizontalMovement); \
 	DECLARE_FUNCTION(execVerticalMovement); \
 	DECLARE_FUNCTION(execSpawnMFActor);

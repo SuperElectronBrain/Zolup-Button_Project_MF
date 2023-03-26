@@ -34,20 +34,47 @@ void AEditLevelPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAction(TEXT("MouseLeftClick"), EInputEvent::IE_Pressed, this, &AEditLevelPawn::MouseLeftClick);
 	PlayerInputComponent->BindAction(TEXT("Key_G"), EInputEvent::IE_Pressed, this, &AEditLevelPawn::SpawnMFActor);
 
 	PlayerInputComponent->BindAxis(TEXT("VerticalMovement"), this, &AEditLevelPawn::VerticalMovement);
 	PlayerInputComponent->BindAxis(TEXT("HorizontalMovement"), this, &AEditLevelPawn::HorizontalMovement);
+	PlayerInputComponent->BindAxis(TEXT("LookUpDown"), this, &AEditLevelPawn::LookUpDown);
+	PlayerInputComponent->BindAxis(TEXT("TurnAround"), this, &AEditLevelPawn::TurnAround);
 }
 
 void AEditLevelPawn::VerticalMovement(float param)
 {
-	AddMovementInput(GetActorForwardVector(), param);
+	AddMovementInput(FRotationMatrix(GetControlRotation()).GetUnitAxis(EAxis::X), param);
+	ShowOrHideMouseCursor(false);
 }
 
 void AEditLevelPawn::HorizontalMovement(float param)
 {
-	AddMovementInput(GetActorRightVector(), param);
+	AddMovementInput(FRotationMatrix(GetControlRotation()).GetUnitAxis(EAxis::Y), param);
+	ShowOrHideMouseCursor(false);
+}
+
+void AEditLevelPawn::LookUpDown(float param)
+{
+	AddControllerPitchInput(param);
+}
+
+void AEditLevelPawn::TurnAround(float param)
+{
+	AddControllerYawInput(param);
+}
+
+void AEditLevelPawn::MouseLeftClick()
+{
+	ShowOrHideMouseCursor(true);
+}
+
+void AEditLevelPawn::ShowOrHideMouseCursor(bool param)
+{
+	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = param;
+	//UE_LOG(LogTemp, Warning, TEXT("î"));
+	
 }
 
 void AEditLevelPawn::SpawnMFActor()

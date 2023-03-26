@@ -29,6 +29,37 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		P_THIS->SetEditLevelMFActorManagementActor(Z_Param_param);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AEditLevelPawn::execShowOrHideMouseCursor)
+	{
+		P_GET_UBOOL(Z_Param_param);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ShowOrHideMouseCursor(Z_Param_param);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AEditLevelPawn::execMouseLeftClick)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->MouseLeftClick();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AEditLevelPawn::execTurnAround)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_param);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TurnAround(Z_Param_param);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AEditLevelPawn::execLookUpDown)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_param);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->LookUpDown(Z_Param_param);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AEditLevelPawn::execHorizontalMovement)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_param);
@@ -57,8 +88,12 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		UClass* Class = AEditLevelPawn::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "HorizontalMovement", &AEditLevelPawn::execHorizontalMovement },
+			{ "LookUpDown", &AEditLevelPawn::execLookUpDown },
+			{ "MouseLeftClick", &AEditLevelPawn::execMouseLeftClick },
 			{ "SetEditLevelMFActorManagementActor", &AEditLevelPawn::execSetEditLevelMFActorManagementActor },
+			{ "ShowOrHideMouseCursor", &AEditLevelPawn::execShowOrHideMouseCursor },
 			{ "SpawnMFActor", &AEditLevelPawn::execSpawnMFActor },
+			{ "TurnAround", &AEditLevelPawn::execTurnAround },
 			{ "VerticalMovement", &AEditLevelPawn::execVerticalMovement },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -95,6 +130,60 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics
+	{
+		struct EditLevelPawn_eventLookUpDown_Parms
+		{
+			float param;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_param;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::NewProp_param = { "param", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(EditLevelPawn_eventLookUpDown_Parms, param), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::NewProp_param,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EditLevelPawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEditLevelPawn, nullptr, "LookUpDown", nullptr, nullptr, sizeof(EditLevelPawn_eventLookUpDown_Parms), Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEditLevelPawn_LookUpDown()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEditLevelPawn_LookUpDown_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EditLevelPawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEditLevelPawn, nullptr, "MouseLeftClick", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AEditLevelPawn_SetEditLevelMFActorManagementActor_Statics
 	{
 		struct EditLevelPawn_eventSetEditLevelMFActorManagementActor_Parms
@@ -127,6 +216,43 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics
+	{
+		struct EditLevelPawn_eventShowOrHideMouseCursor_Parms
+		{
+			bool param;
+		};
+		static void NewProp_param_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_param;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::NewProp_param_SetBit(void* Obj)
+	{
+		((EditLevelPawn_eventShowOrHideMouseCursor_Parms*)Obj)->param = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::NewProp_param = { "param", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(EditLevelPawn_eventShowOrHideMouseCursor_Parms), &Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::NewProp_param_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::NewProp_param,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EditLevelPawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEditLevelPawn, nullptr, "ShowOrHideMouseCursor", nullptr, nullptr, sizeof(EditLevelPawn_eventShowOrHideMouseCursor_Parms), Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AEditLevelPawn_SpawnMFActor_Statics
 	{
 #if WITH_METADATA
@@ -146,6 +272,38 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEditLevelPawn_SpawnMFActor_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics
+	{
+		struct EditLevelPawn_eventTurnAround_Parms
+		{
+			float param;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_param;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::NewProp_param = { "param", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(EditLevelPawn_eventTurnAround_Parms, param), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::NewProp_param,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EditLevelPawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEditLevelPawn, nullptr, "TurnAround", nullptr, nullptr, sizeof(EditLevelPawn_eventTurnAround_Parms), Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEditLevelPawn_TurnAround()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEditLevelPawn_TurnAround_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -214,8 +372,12 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEditLevelPawn_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEditLevelPawn_HorizontalMovement, "HorizontalMovement" }, // 113393782
+		{ &Z_Construct_UFunction_AEditLevelPawn_LookUpDown, "LookUpDown" }, // 3950988206
+		{ &Z_Construct_UFunction_AEditLevelPawn_MouseLeftClick, "MouseLeftClick" }, // 837290294
 		{ &Z_Construct_UFunction_AEditLevelPawn_SetEditLevelMFActorManagementActor, "SetEditLevelMFActorManagementActor" }, // 1145552032
+		{ &Z_Construct_UFunction_AEditLevelPawn_ShowOrHideMouseCursor, "ShowOrHideMouseCursor" }, // 3324443793
 		{ &Z_Construct_UFunction_AEditLevelPawn_SpawnMFActor, "SpawnMFActor" }, // 1229897770
+		{ &Z_Construct_UFunction_AEditLevelPawn_TurnAround, "TurnAround" }, // 3751231830
 		{ &Z_Construct_UFunction_AEditLevelPawn_VerticalMovement, "VerticalMovement" }, // 482562048
 	};
 #if WITH_METADATA
@@ -237,14 +399,14 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		{ "ModuleRelativePath", "EditLevelPawn.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent = { "DefaultComponent", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEditLevelPawn, DefaultComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent = { "DefaultComponent", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEditLevelPawn, DefaultComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "EditLevelPawn.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement = { "Movement", nullptr, (EPropertyFlags)0x0020080000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEditLevelPawn, Movement), Z_Construct_UClass_UFloatingPawnMovement_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement = { "Movement", nullptr, (EPropertyFlags)0x0040000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AEditLevelPawn, Movement), Z_Construct_UClass_UFloatingPawnMovement_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_Movement_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEditLevelPawn_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_EditLevelMFActorManagementActor,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEditLevelPawn_Statics::NewProp_DefaultComponent,
@@ -277,7 +439,7 @@ void EmptyLinkFunctionForGeneratedCodeEditLevelPawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEditLevelPawn, 2711054294);
+	IMPLEMENT_CLASS(AEditLevelPawn, 3022960735);
 	template<> PROJECT_MF_API UClass* StaticClass<AEditLevelPawn>()
 	{
 		return AEditLevelPawn::StaticClass();

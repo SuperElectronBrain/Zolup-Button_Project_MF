@@ -34,7 +34,7 @@ void AMainLevelScriptActor::BeginPlay()
 				UButton* ButtonWidget = Cast<UButton>(ChildWidget->GetWidgetFromName(TEXT("Vertical Box")));
 				if (ButtonWidget != nullptr)
 				{
-					UE_LOG(LogTemp, Warning, TEXT("챤"));
+					//UE_LOG(LogTemp, Warning, TEXT("챤"));
 
 					ButtonWidget->SetVisibility(ESlateVisibility::Hidden);
 				}

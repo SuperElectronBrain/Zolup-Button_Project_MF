@@ -2,6 +2,7 @@
 
 
 #include "MFActor.h"
+#include "Materials/MaterialInstanceDynamic.h"
 
 // Sets default values
 AMFActor::AMFActor()
@@ -18,7 +19,8 @@ AMFActor::AMFActor()
 	{
 		Mesh->SetStaticMesh(SM_BOX.Object);
 
-		static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
+		//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
+		static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Other/Materials/M_MFMaterial.M_MFMaterial"));
 		if (M_MATERIAL.Succeeded() == true)
 		{
 			Mesh->SetMaterial(0, M_MATERIAL.Object);
@@ -26,11 +28,22 @@ AMFActor::AMFActor()
 	}
 }
 
+void AMFActor::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	Mesh->SetMaterial(0, UMaterialInstanceDynamic::Create(Mesh->GetMaterial(0), this));
+}
+
 // Called when the game starts or when spawned
 void AMFActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+}
+
+UStaticMeshComponent* AMFActor::GetMesh()
+{
+	return Mesh;
 }
 
 // Called every frame

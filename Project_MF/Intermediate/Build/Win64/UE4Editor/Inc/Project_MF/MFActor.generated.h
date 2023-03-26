@@ -8,14 +8,23 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UStaticMeshComponent;
 #ifdef PROJECT_MF_MFActor_generated_h
 #error "MFActor.generated.h already included, missing '#pragma once' in MFActor.h"
 #endif
 #define PROJECT_MF_MFActor_generated_h
 
 #define Project_MF_Source_Project_MF_MFActor_h_12_SPARSE_DATA
-#define Project_MF_Source_Project_MF_MFActor_h_12_RPC_WRAPPERS
-#define Project_MF_Source_Project_MF_MFActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define Project_MF_Source_Project_MF_MFActor_h_12_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetMesh);
+
+
+#define Project_MF_Source_Project_MF_MFActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetMesh);
+
+
 #define Project_MF_Source_Project_MF_MFActor_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMFActor(); \
