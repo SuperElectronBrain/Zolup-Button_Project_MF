@@ -28,13 +28,13 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
 	Collider->SetupAttachment(this);
 	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Pawn"));
+	Collider->SetCollisionProfileName(TEXT("Collider"));
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
 	float BoxSize = TriggerSize * 50.0f;
 	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger->SetCollisionProfileName(TEXT("OverlapAll"));
+	Trigger->SetCollisionProfileName(TEXT("NewTrigger"));
 }
 
 void UPowerGenerateComponent::BeginPlay()
@@ -91,7 +91,7 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			GetOwner()->GetActorLocation(),
 			GetOwner()->GetActorLocation(),
 			FQuat::Identity,
-			ECollisionChannel::ECC_Pawn,
+			ECollisionChannel::ECC_GameTraceChannel3,
 			FCollisionShape::MakeBox(TriggerVolume),
 			Params
 		);

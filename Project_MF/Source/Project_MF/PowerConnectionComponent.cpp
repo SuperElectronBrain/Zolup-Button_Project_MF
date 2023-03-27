@@ -11,9 +11,8 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
 
-	//ObjectLength = 1;
-	//TriggerSize = 3;
-
+	ObjectLength = 1;
+	TriggerSize = 3;
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
@@ -36,14 +35,14 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	Colliders.Add(Collider);
 	Collider->SetupAttachment(this);
 	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Pawn"));
+	Collider->SetCollisionProfileName(TEXT("Collider"));
 
 	UBoxComponent* Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Triggers.Add(Trigger);
 	Trigger->SetupAttachment(this);
 	float BoxSize = TriggerSize * 50.0f;
 	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger->SetCollisionProfileName(TEXT("Connector"));
+	Trigger->SetCollisionProfileName(TEXT("NewTrigger"));
 
 	//for (int i = 0; i < ObjectLength; i = i + 1)
 	//{
@@ -113,6 +112,11 @@ void UPowerConnectionComponent::BeginPlay()
 }
 
 #if WITH_EDITOR
+void UPowerConnectionComponent::PostInitProperties()
+{
+	Super::PostInitProperties();
+	Meshs[0]->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
+}
 void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
@@ -120,7 +124,6 @@ void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& Pr
 	Meshs[0]->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
 }
 #endif
-
 
 // Called every frame
 //void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -154,7 +157,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 	if(param > 0)
 	{
 		//if (ObjectLength != param)
-		{
+		//{
 			//새로 변경될 길이가 기존보다 더 길다면
 			if (Meshs.Num() < param)
 			{
@@ -188,7 +191,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 							Collider->RegisterComponent();
 						}
 						Collider->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-						Collider->SetCollisionProfileName(TEXT("Carrier"));
+						Collider->SetCollisionProfileName(TEXT("Collider"));
 						Colliders.Add(Collider);
 					}
 				}
@@ -204,7 +207,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 							Trigger->RegisterComponent();
 						}
 						Trigger->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-						Trigger->SetCollisionProfileName(TEXT("Connector"));
+						Trigger->SetCollisionProfileName(TEXT("NewTrigger"));
 						Triggers.Add(Trigger);
 					}
 				}
@@ -267,7 +270,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 				Triggers[i]->SetBoxExtent(FVector(BoxSize, param > TriggerSize + 1 ? BoxSize : (param + TriggerSize - 1) * 50, BoxSize));
 				Triggers[i]->SetRelativeLocation(FVector(0.0f, 100.0f * ((param > TriggerSize + 1 ? param : 1) - 1) / 2 * (i < 1 ? -1 : 1), 0.0f));
 			}
-		}
+		//}
 
 		ObjectLength = param;
 	}
@@ -276,7 +279,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 void UPowerConnectionComponent::SetTriggerSize(int32 param)
 {
 	//if (TriggerSize != param)
-	{
+	//{
 		
 		if ((ObjectLength > param + 1 ? 2 : 1) > Triggers.Num())
 		{
@@ -291,7 +294,7 @@ void UPowerConnectionComponent::SetTriggerSize(int32 param)
 						Trigger->RegisterComponent();
 					}
 					Trigger->AttachToComponent(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-					Trigger->SetCollisionProfileName(TEXT("Connector"));
+					Trigger->SetCollisionProfileName(TEXT("NewTrigger"));
 					Triggers.Add(Trigger);
 				}
 			}
@@ -319,7 +322,7 @@ void UPowerConnectionComponent::SetTriggerSize(int32 param)
 		}
 
 		TriggerSize = param;
-	}
+	//}
 }
 
 void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
@@ -355,7 +358,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 				TriggerLocation,
 				TriggerLocation,
 				FQuat::Identity,
-				ECollisionChannel::ECC_Pawn,
+				ECollisionChannel::ECC_GameTraceChannel2,
 				FCollisionShape::MakeBox(TriggerVolume),
 				Params
 			);

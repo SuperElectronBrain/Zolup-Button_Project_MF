@@ -15,12 +15,11 @@ class PROJECT_MF_API UPowerConnectionComponent : public UPowerComponent
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(Transient, VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UStaticMeshComponent*> Meshs;
-	UPROPERTY(Transient, VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UBoxComponent*> Colliders;
-	UPROPERTY(Transient, VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UBoxComponent*> Triggers;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UStaticMeshComponent*> Meshs;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UBoxComponent*> Colliders;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UBoxComponent*> Triggers;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 ObjectLength;
-	
 
 public:	
 	// Sets default values for this component's properties
@@ -30,6 +29,7 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 #if WITH_EDITOR
+	virtual void PostInitProperties() override;
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif
 public:	

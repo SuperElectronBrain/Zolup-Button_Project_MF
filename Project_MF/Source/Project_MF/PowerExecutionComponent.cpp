@@ -25,7 +25,7 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
 	Collider->SetupAttachment(this);
 	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("OverlapAll"));
+	Collider->SetCollisionProfileName(TEXT("Collider"));
 }
 
 void UPowerExecutionComponent::BeginPlay()

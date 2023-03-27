@@ -10,6 +10,9 @@ UPowerComponent::UPowerComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
 
+	//SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	SetCollisionProfileName(TEXT("BlockAllDynamic"));
+
 	// ...
 }
 
