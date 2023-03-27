@@ -17,7 +17,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Other/Materials/M_MFMaterial.M_MFMaterial"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 	UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -36,7 +36,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	Colliders.Add(Collider);
 	Collider->SetupAttachment(this);
 	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Carrier"));
+	Collider->SetCollisionProfileName(TEXT("Pawn"));
 
 	UBoxComponent* Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Triggers.Add(Trigger);
@@ -355,7 +355,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 				TriggerLocation,
 				TriggerLocation,
 				FQuat::Identity,
-				ECollisionChannel::ECC_GameTraceChannel2,
+				ECollisionChannel::ECC_Pawn,
 				FCollisionShape::MakeBox(TriggerVolume),
 				Params
 			);

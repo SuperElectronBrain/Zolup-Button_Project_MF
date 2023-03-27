@@ -20,7 +20,7 @@ AMFActor::AMFActor()
 		Mesh->SetStaticMesh(SM_BOX.Object);
 
 		//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
-		static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Other/Materials/M_MFMaterial.M_MFMaterial"));
+		static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
 		if (M_MATERIAL.Succeeded() == true)
 		{
 			Mesh->SetMaterial(0, M_MATERIAL.Object);

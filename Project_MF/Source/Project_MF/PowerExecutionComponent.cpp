@@ -8,7 +8,7 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Other/Materials/M_MFMaterial.M_MFMaterial"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -25,7 +25,7 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
 	Collider->SetupAttachment(this);
 	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Carrier"));
+	Collider->SetCollisionProfileName(TEXT("OverlapAll"));
 }
 
 void UPowerExecutionComponent::BeginPlay()

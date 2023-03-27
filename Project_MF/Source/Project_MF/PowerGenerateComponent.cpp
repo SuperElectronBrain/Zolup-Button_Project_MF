@@ -11,7 +11,7 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Other/Materials/M_MFMaterial.M_MFMaterial"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -28,13 +28,13 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
 	Collider->SetupAttachment(this);
 	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Carrier"));
+	Collider->SetCollisionProfileName(TEXT("Pawn"));
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
 	float BoxSize = TriggerSize * 50.0f;
 	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger->SetCollisionProfileName(TEXT("Connector"));
+	Trigger->SetCollisionProfileName(TEXT("OverlapAll"));
 }
 
 void UPowerGenerateComponent::BeginPlay()
@@ -91,7 +91,7 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			GetOwner()->GetActorLocation(),
 			GetOwner()->GetActorLocation(),
 			FQuat::Identity,
-			ECollisionChannel::ECC_GameTraceChannel2,
+			ECollisionChannel::ECC_Pawn,
 			FCollisionShape::MakeBox(TriggerVolume),
 			Params
 		);
