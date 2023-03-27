@@ -13,7 +13,7 @@ class UMagneticMovementComponent;
 enum class EMagnetMoveType;
 
 UENUM()
-enum class EMagneticType : uint8
+enum class EMagneticType
 {
 	NONE, S, N
 };

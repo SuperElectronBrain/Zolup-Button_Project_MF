@@ -32,7 +32,7 @@ UMagneticComponent::UMagneticComponent()
 		TEXT("/Engine/BasicShapes/Cylinder.Cylinder")
 	);
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> INTERFACE(
-		TEXT("/Game/Resource/Magnetic/Material/MagneticFieldMaterial.MagneticFieldMaterial")
+		TEXT("/Game/Resource/Magnetic/NewMaterial.NewMaterial")
 	);
 
 	/*FieldSpline*/
@@ -51,10 +51,7 @@ UMagneticComponent::UMagneticComponent()
 	FieldCollision->SetVisibility(true, true);
 
 	/*Meshes*/
-	if (FIELD_MESH.Succeeded())
-	{
-		MagneticFieldMesh = FIELD_MESH.Object;
-	}
+	if (FIELD_MESH.Succeeded()) MagneticFieldMesh = FIELD_MESH.Object;
 	if (INTERFACE.Succeeded())
 	{
 		MagneticFieldMaterial = INTERFACE.Object;
@@ -86,7 +83,6 @@ void UMagneticComponent::RemoveNoActiveMovmeent(UMovementComponent* element)
 
 void UMagneticComponent::SettingMagnetWeightAndFieldRange()
 {
-
 	TArray<USceneComponent*> Children;
 	GetChildrenComponents(false, Children);
 
@@ -125,6 +121,7 @@ void UMagneticComponent::SetChildMaterials(EMagneticType type)
 
 		Mesh->SetMaterial(0, MagneticApplyMaterial);
 		Mesh->SetVectorParameterValueOnMaterials(TEXT("color"), color);
+		//Mesh->SetScalarParameterValueOnMaterials(TEXT("subtract"), 0.f);
 	}
 }
 

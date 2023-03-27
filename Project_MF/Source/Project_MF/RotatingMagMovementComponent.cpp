@@ -8,18 +8,24 @@ AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagn
 	USceneComponent* updated = UpdatedComponent;
 	UMagneticComponent* owner = GetOwnerMagnetic();
 	
-	FVector dir = (SafeMagOperator->GetComponentLocation() - owner->GetComponentLocation()) * (type==EMagnetMoveType::PUSHED_OUT?-1.f:1.f);
-	FRotator rot(0.f, FMath::Atan2(dir.Y, dir.X)*RotSpeedScale, 0.f);
+	float dir = (type==EMagnetMoveType::PUSHED_OUT?-1.f:1.f);
+	FVector goal = (SafeMagOperator->GetComponentLocation() - owner->GetComponentLocation()) - updated->GetComponentRotation().Vector();
 
-	updated->AddWorldRotation(rot.Quaternion());
+	FVector t1 = (SafeMagOperator->GetComponentLocation() - owner->GetComponentLocation()).GetSafeNormal();
+	const FRotator rotation = updated->GetComponentRotation();
+	const FRotator yawRotation(0, rotation.Yaw, 0);
+	const FVector t2 = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::X);
+	float cos = FVector::DotProduct(t1, t2);
 
-	//FHitResult hit;
-	//SafeMoveUpdatedComponent(FVector::ZeroVector, rot, true, hit);
+	FRotator rot(0.f, cos*RotSpeedScale, 0.f);
 
-	//if (hit.IsValidBlockingHit() && hit.GetActor()!=nullptr && ::IsValid(hit.GetActor()))
-	//{
-	//	return hit.GetActor();
-	//}
+	FHitResult hit;
+	updated->AddWorldRotation(rot.Quaternion(), true, &hit);
+
+	if (hit.bBlockingHit)
+	{
+		return hit.GetActor();
+	}
 
 	return nullptr;
 }

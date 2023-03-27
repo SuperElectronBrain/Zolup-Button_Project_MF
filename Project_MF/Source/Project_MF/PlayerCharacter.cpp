@@ -28,13 +28,10 @@ APlayerCharacter::APlayerCharacter()
 
 	//CDO
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	PLAYER_MESH(
-		TEXT("/Game/Resource/ProtoHuman/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms")
-	);
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	GUN_MESH(
-		TEXT("/Game/Resource/ProtoHuman/Mesh/SK_FPGun.SK_FPGun")
+		TEXT("/Game/Resource/PlayerCharacter/Meshs/Character_arm.Character_arm")
 	);
 	static ConstructorHelpers::FClassFinder<UPlayerAnimInstance> ANIM_BLUEPRINT(
-		TEXT("/Game/Resource/ProtoHuman/Animation/ProtoAnimBP")
+		TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerCharacterBlueprint")
 	);
 	static ConstructorHelpers::FClassFinder<UUserWidget> UI_CANVAS(
 		TEXT("/Game/UI/PlayerUI_Canvas")
@@ -48,8 +45,8 @@ APlayerCharacter::APlayerCharacter()
 	MagMovement = CreateDefaultSubobject<UDefaultMagneticMovementComponent>(TEXT("DEFAULT_MAG_MOVEMENT"));
 
 	//Attachment Components
-	PlayerMesh->SetupAttachment(SpringArm);
 	SpringArm->SetupAttachment(GetCapsuleComponent());
+	PlayerMesh->SetupAttachment(SpringArm);
 	Camera->SetupAttachment(SpringArm);
 	Magnetic->SetupAttachment(GetCapsuleComponent());
 
@@ -68,20 +65,11 @@ APlayerCharacter::APlayerCharacter()
 	/*Apply Mesh*/
 	if (PLAYER_MESH.Succeeded())
 	{
-		PlayerMesh->SetRelativeLocationAndRotation(FVector(38.9f, -11.6f, -170.f), FRotator(10.248f, -8.11f, 8.07f));
+		PlayerMesh->SetRelativeLocationAndRotation(FVector(1.f, 6.31f, -120.f), FRotator(0.f, -90.f, 0.f));
 		PlayerMesh->SetSkeletalMesh(PLAYER_MESH.Object);
 		PlayerMesh->bCastDynamicShadow = false;
 		PlayerMesh->SetCastShadow(false);
 		PlayerMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	}
-		PlayerMesh->SetSkeletalMesh(PLAYER_MESH.Object);
-
-	if (GUN_MESH.Succeeded())
-	{
-		GetMesh()->SetSkeletalMesh(GUN_MESH.Object);
-		GetMesh()->bCastDynamicShadow = false;
-		GetMesh()->SetCastShadow(false);
-		GetMesh()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
 
 	/*Apply blueprint*/
@@ -111,6 +99,12 @@ APlayerCharacter::APlayerCharacter()
 	Magnetic->SetMagneticFieldRadius(300.f);
 	Magnetic->SetFixedWeight(1.f);
 	#pragma endregion
+}
+
+void APlayerCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+	UE_LOG(LogTemp, Warning, TEXT("빙의됨!!!"))
 }
 
 bool APlayerCharacter::IsGivenInvalid(int index) const
@@ -408,6 +402,7 @@ void APlayerCharacter::ResetMagnetic()
 {
 	//UI 초기화
 	PlayUIInstance->GetMagneticInfoWidget()->ClearInfo();
+	PlayerAnim->PlayResetMontage();
 	GetMovementComponent()->SetActive(true);
 
 	if (_StickTo!=nullptr)
@@ -428,10 +423,7 @@ void APlayerCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	//총을 플레이어의 손 소켓에 장착.
-	GetMesh()->AttachToComponent(
-		PlayerMesh, FAttachmentTransformRules::SnapToTargetNotIncludingScale,
-		TEXT("GripPoint")
-	);
+	PlayerMesh->SetRelativeLocationAndRotation(FVector(1.f, 6.31f, -120.f), FRotator(0.f, 0.f, -90.f));
 
 	//이벤트 적용
 	Magnetic->OnMagneticEvent.AddUObject(this, &APlayerCharacter::OnMagnetic);
@@ -459,22 +451,12 @@ void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//TODO: 임시방편으로 해둔 위치 회전 재설정
+	//PlayerMesh->SetRelativeLocationAndRotation(FVector(1.f, 6.31f, -120.f), FRotator(0.f, -90.f, 0.f));
+
 	if (_bCanJump)
 	{
 		Jump();
-	}
-
-	//카메라 줌인 효과
-	if (_zoomInLength!=SpringArm->TargetArmLength)
-	{
-		float len = SpringArm->TargetArmLength;
-		float distance = (_zoomInLength - len);
-		SpringArm->TargetArmLength = len * .1f * distance;
-
-		if(FMath::Abs(distance)<=0.01f)
-		{
-			SpringArm->TargetArmLength = _zoomInLength;
-		}
 	}
 	
 }

@@ -17,6 +17,6 @@ private:
 
 	/*fields And Components*/
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true, ClampMin = 0.f))
-	float RotSpeedScale = 1.f;
+	float RotSpeedScale = 5.f;
 	
 };

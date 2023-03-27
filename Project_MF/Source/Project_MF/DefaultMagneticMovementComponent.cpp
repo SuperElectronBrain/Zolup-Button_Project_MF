@@ -65,7 +65,7 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 		hit.Init();
 	}
 
-	SafeMoveUpdatedComponent(Velocity, UpdatedComponent->GetComponentRotation(), true, hit);
+	SafeMoveUpdatedComponent(Velocity, UpdatedComponent->GetComponentRotation(), true, hit, ETeleportType::TeleportPhysics);
 
 	if (hit.IsValidBlockingHit() && FVector::DotProduct(dir, hit.Normal)<0 && type == EMagnetMoveType::DRAWN_IN && hit.GetActor()!=nullptr && ::IsValid(hit.GetActor()))
 	{
