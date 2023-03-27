@@ -57,18 +57,26 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 
 		if (bPowerState == true)
 		{
-			UPowerMovementComponent* PowerMovementComponent = GetOwner()->FindComponentByClass<UPowerMovementComponent>();
-			if (PowerMovementComponent != nullptr)
+			TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
+			for (int i = 0; i < PowerMovementComponents.Num(); i = i + 1)
 			{
-				PowerMovementComponent->StartAction();
+				UPowerMovementComponent* PowerMovementComponent = Cast<UPowerMovementComponent>(PowerMovementComponents[i]);
+				if (PowerMovementComponent != nullptr)
+				{
+					PowerMovementComponent->StartAction();
+				}
 			}
 		}
 		else if (bPowerState == false)
 		{
-			UPowerMovementComponent* PowerMovementComponent = GetOwner()->FindComponentByClass<UPowerMovementComponent>();
-			if (PowerMovementComponent != nullptr)
+			TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
+			for (int i = 0; i < PowerMovementComponents.Num(); i = i + 1)
 			{
-				PowerMovementComponent->EndAction();
+				UPowerMovementComponent* PowerMovementComponent = Cast<UPowerMovementComponent>(PowerMovementComponents[i]);
+				if (PowerMovementComponent != nullptr)
+				{
+					PowerMovementComponent->EndAction();
+				}
 			}
 		}
 

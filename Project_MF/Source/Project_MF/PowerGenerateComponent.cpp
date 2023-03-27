@@ -55,12 +55,6 @@ void UPowerGenerateComponent::BeginPlay()
 	UpdateMaterialColor();
 }
 
-void UPowerGenerateComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-{
-	//float BoxSize = TriggerSize * 50.0f;
-	//Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-}
-
 void UPowerGenerateComponent::UpdateMaterialColor()
 {
 	UMaterialInstanceDynamic* DynamicMaterial = Mesh->CreateDynamicMaterialInstance(0);
@@ -102,12 +96,12 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			Params
 		);
 
-#if ENABLE_DRAW_DEBUG
-			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
-			float DebugLifeTime = 5.0f;
-
-			DrawDebugBox(GetWorld(), GetOwner()->GetActorLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
-#endif
+//#if ENABLE_DRAW_DEBUG
+//			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
+//			float DebugLifeTime = 5.0f;
+//
+//			DrawDebugBox(GetWorld(), GetOwner()->GetActorLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
+//#endif
 
 		if (bResult == true)
 		{

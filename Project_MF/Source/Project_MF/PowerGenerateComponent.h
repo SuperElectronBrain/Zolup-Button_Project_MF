@@ -22,7 +22,6 @@ private:
 
 protected:
 	virtual void BeginPlay() override;
-	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)override;
 
 	virtual void SetPowerState(bool param, bool IsGenerator = false) override;
 
