@@ -7,16 +7,26 @@
 UPlayerAnimInstance::UPlayerAnimInstance()
 :_bIsJumping(false)
 {
-	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(TEXT("/Game/Resource/ProtoHuman/Animation/NewAnimMontage"));
-	if (ATTACK_MONTAGE.Succeeded())
+	/*CDO*/
+	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerShootMontage.PlayerShootMontage"));
+	static ConstructorHelpers::FObjectFinder<UAnimMontage>  RESET_MONTAGE(TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerResetMontage.PlayerResetMontage"));
+	
+	/*Apply montage*/
+	if (ATTACK_MONTAGE.Succeeded()) AttackMontage = ATTACK_MONTAGE.Object;
+	if (RESET_MONTAGE.Succeeded())ResetMontage = RESET_MONTAGE.Object;
+}
+
+void UPlayerAnimInstance::PlayResetMontage()
+{
+	if (!Montage_IsPlaying(ResetMontage))
 	{
-		AttackMontage = ATTACK_MONTAGE.Object;
+		Montage_Play(ResetMontage, 1.3f);
 	}
 }
 
 void UPlayerAnimInstance::PlayAttackMontage()
 {
-	Montage_Play(AttackMontage, 1.f);
+	Montage_Play(AttackMontage, 1.5f);
 }
 
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)

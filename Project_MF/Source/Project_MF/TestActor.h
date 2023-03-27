@@ -38,6 +38,6 @@ private:
 	USphereComponent* Sphere;
 
 	UPROPERTY(VisibleAnywhere, Category = Visual, Meta = (AllowPrivateAccess = true))
-	UStaticMeshComponent* mesh;
+	USkeletalMeshComponent* mesh;
 
 };

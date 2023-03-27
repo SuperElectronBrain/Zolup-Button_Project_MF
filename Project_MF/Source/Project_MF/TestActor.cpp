@@ -13,12 +13,12 @@ ATestActor::ATestActor()
 	Sphere->SetGenerateOverlapEvents(true);
 
 	//Static_Mesh
-	mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("visual"));
+	mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("visual"));
 	mesh->SetupAttachment(RootComponent);
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MESH(TEXT("/Engine/BasicShapes/Cube.Cube"));
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MESH(TEXT("/Game/Resource/PlayerCharacter/Meshs/Character_arm.Character_arm"));
 	if (MESH.Succeeded())
 	{
-		mesh->SetStaticMesh(MESH.Object);
+		mesh->SetSkeletalMesh(MESH.Object);
 		mesh->SetRelativeLocation(FVector::ZeroVector);
 		mesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
@@ -27,6 +27,13 @@ ATestActor::ATestActor()
 	if (GetOwner() && ::IsValid(GetOwner()))
 	{
 		GetOwner()->SetActorEnableCollision(true);
+	}
+
+	//bluePrint
+	static ConstructorHelpers::FClassFinder<UAnimInstance> ANIM(TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerCharacterBlueprint"));
+	if (ANIM.Succeeded())
+	{
+		mesh->SetAnimInstanceClass(ANIM.Class);
 	}
 
 }

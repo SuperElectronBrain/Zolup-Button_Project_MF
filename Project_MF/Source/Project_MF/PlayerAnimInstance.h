@@ -16,8 +16,11 @@ public:
 	/*Constructor*/
 	UPlayerAnimInstance();
 
+	/*Public Methods*/
 	bool GetAttackMontageIsPlaying() const { return Montage_IsPlaying(AttackMontage); }
 	void PlayAttackMontage();
+	bool GetResetMontageIsPlaying() const { return Montage_IsPlaying(ResetMontage); }
+	void PlayResetMontage();
 
 private:
 	/*Override methods*/
@@ -30,8 +33,11 @@ private:
 	UPROPERTY(EditAnywhere, Category=Player, Meta=(AllowPrivateAccess=true), BlueprintReadOnly)
 	float	_CurrentSpeed;
 
-	UPROPERTY(VisibleAnywhere , Category = Attack, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere , Category = Montage, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	UAnimMontage* AttackMontage;
+
+	UPROPERTY(VisibleAnywhere, Category = Montage, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	UAnimMontage* ResetMontage;
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FRotator _angle;

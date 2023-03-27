@@ -4,31 +4,35 @@
 
 #include "EngineMinimal.h"
 #include "GameFramework/Character.h"
-#include "PlayerCharacter.generated.h"
+#include "GamePlayerCharacter.generated.h"
 
 class UPlayerAnimInstance;
 class UPlayerUICanvasWidget;
 class UMagneticComponent;
 class UDefaultMagneticMovementComponent;
-
+enum class EMagneticType;
+enum class EMagnetMoveType;
+/*
+*
+*/
 UCLASS()
-class PROJECT_MF_API APlayerCharacter final : public ACharacter
+class PROJECT_MF_API AGamePlayerCharacter final : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	/*Constructor*/
-	APlayerCharacter();
+	AGamePlayerCharacter();
+
 
 private:
 	/*Override methods*/
 	virtual void BeginPlay() override;
-	virtual void PossessedBy(AController* NewController) override;
 	virtual void Tick(float DeltaTime) override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	#if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
 	#endif
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	/*Input methods*/
 	void MoveUpDown(float value);
@@ -43,7 +47,7 @@ private:
 	void JumpStart();
 	void JumpEnd();
 
-	/*Private method*/
+	/*Private methods*/
 	void Shoot(EMagneticType shootType);
 	void ShootMine(EMagneticType shootType);
 
@@ -69,15 +73,7 @@ private:
 	UFUNCTION()
 	void MagnetMoveHit(AActor* hit);
 
-	/*fields And Components*/
-	bool _bCanJump;
-	bool _bShootMine;
-	float _zoomInLength;
-	AActor* _StickTo;
-	int32 _givenIndex = 0, _oldGivenIndex;
-	
-	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
-
+	/*Components*/
 	UPROPERTY()
 	UPlayerUICanvasWidget* PlayUIInstance;
 
@@ -90,23 +86,25 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = Camera, Meta = (AllowPrivateAccess = true))
 	USpringArmComponent* SpringArm;
 
-	UPROPERTY(VisibleAnywhere, Category = Visual, Meta = (AllowPrivateAccess = true))
-	USkeletalMeshComponent* PlayerMesh;
-
-	UPROPERTY(VisibleAnywhere, Category = Visual, Meta = (AllowPrivateAccess = true))
-	UPlayerAnimInstance* PlayerAnim;
-
-	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	UMagneticComponent* Magnetic;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	UDefaultMagneticMovementComponent* MagMovement;
 
-	UPROPERTY(VisibleAnywhere, Category = Magnet, Meta = (AllowPrivateAccess = true))
-	EMagneticType ReloadType;
+	UPROPERTY()
+	UPlayerAnimInstance* PlayerAnim;
+
+private:
+	/*fields*/
+	bool _bCanJump, _bShootMine;
+	float _GivenIndex, _OldGivenIndex;
+	AActor* _StickTo;
+	int32 _givenIndex = 0, _oldGivenIndex;
+	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
 
 public:
-	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta=(ClampMin=0.f))
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
 	float ShootLength;
 
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
@@ -118,6 +116,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
 	float JumpPower;
 
-	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta=(ClampMin=0.f))
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
 	float MoveSpeed;
+
 };
