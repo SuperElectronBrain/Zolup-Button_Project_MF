@@ -12,38 +12,6 @@ UPowerMovementComponent::UPowerMovementComponent()
 	// ...
 }
 
-
-// Called when the game starts
-void UPowerMovementComponent::BeginPlay()
-{
-	Super::BeginPlay();
-	// ...
-	OriginPosition = GetRelativeLocation();
-}
-
-
-// Called every frame
-void UPowerMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	SetRelativeLocation(OriginPosition);
-
-	if (bActingState == true)
-	{	
-		CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
-		FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-		SetRelativeLocation(OriginPosition + MovementVector);
-	}
-	else if (bActingState == false)
-	{
-		CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-		FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-		SetRelativeLocation(OriginPosition + MovementVector);
-	}
-	// ...
-}
-
 void UPowerMovementComponent::StartAction()
 {
 	bActingState = true;
@@ -53,4 +21,3 @@ void UPowerMovementComponent::EndAction()
 {
 	bActingState = false;
 }
-

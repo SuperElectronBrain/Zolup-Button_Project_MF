@@ -11,59 +11,85 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
 
-	ObjectLength = 1;
-	TriggerSize = 3;
+	//ObjectLength = 1;
+	//TriggerSize = 3;
+
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Other/Materials/M_MFMaterial.M_MFMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
-	for (int i = 0; i < ObjectLength; i = i + 1)
+	UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	Meshs.Add(Mesh);
+	Mesh->SetupAttachment(this);
+	if (SM_BOX.Succeeded() == true)
 	{
-		UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(FName(*(FString(TEXT("Mesh")) + FString::FromInt(i))));
-		Meshs.Add(Mesh);
-		Mesh->SetupAttachment(this);
-	
-		if (SM_BOX.Succeeded() == true)
+		Mesh->SetStaticMesh(SM_BOX.Object);
+		if (M_MATERIAL.Succeeded() == true)
 		{
-			Mesh->SetStaticMesh(SM_BOX.Object);
-			if (M_MATERIAL.Succeeded() == true)
-			{
-				Mesh->SetMaterial(0, M_MATERIAL.Object);
-				Mesh->SetRelativeLocation(FVector(0.0f, 100.0f * ((i % 2 == 0 ? 0 : 1) + i) / 2 * (i % 2 == 0 ? 1 : -1), 0.0f));
-			}
+			Mesh->SetMaterial(0, M_MATERIAL.Object);
 		}
 	}
-	
-	for (int i = 0; i < (ObjectLength > TriggerSize + 1 ? 2 : 1); i = i + 1)
-	{
-		UBoxComponent* Collider = CreateDefaultSubobject<UBoxComponent>(FName(*(FString(TEXT("Collider")) + FString::FromInt(i))));
-		UBoxComponent* Trigger = CreateDefaultSubobject<UBoxComponent>(FName(*(FString(TEXT("Trigger")) + FString::FromInt(i))));
-	
-		Colliders.Add(Collider);
-		Triggers.Add(Trigger);
-	
-		Collider->SetupAttachment(this);
-		Collider->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2 * (i < 1 ? -1 : 1), 0.0f));
-		Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-		Collider->SetCollisionProfileName(TEXT("Carrier"));
-	
-		Trigger->SetupAttachment(this);
-		//Triggers가 1개만 존재해야 할 때
-		if(ObjectLength <= TriggerSize + 1)
-		{
-			Trigger->SetBoxExtent(FVector(TriggerSize * 50.0f, (ObjectLength + TriggerSize - 1) * 50.0f, TriggerSize * 50.0f));
-		}
-		//Triggers가 2개 이상 존재해야 할 때
-		else if (ObjectLength > TriggerSize + 1)
-		{
-			Trigger->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2 * (i < 1 ? -1 : 1), 0.0f));
-			float BoxSize = TriggerSize * 50.0f;
-			Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-		}
-		Trigger->SetCollisionProfileName(TEXT("Connector"));
-	}
+
+	UBoxComponent* Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
+	Colliders.Add(Collider);
+	Collider->SetupAttachment(this);
+	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	Collider->SetCollisionProfileName(TEXT("Carrier"));
+
+	UBoxComponent* Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
+	Triggers.Add(Trigger);
+	Trigger->SetupAttachment(this);
+	float BoxSize = TriggerSize * 50.0f;
+	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	Trigger->SetCollisionProfileName(TEXT("Connector"));
+
+	//for (int i = 0; i < ObjectLength; i = i + 1)
+	//{
+	//	UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(FName(*(FString(TEXT("Mesh")) + FString::FromInt(i))));
+	//	Meshs.Add(Mesh);
+	//	Mesh->SetupAttachment(this);
+	//
+	//	if (SM_BOX.Succeeded() == true)
+	//	{
+	//		Mesh->SetStaticMesh(SM_BOX.Object);
+	//		if (M_MATERIAL.Succeeded() == true)
+	//		{
+	//			Mesh->SetMaterial(0, M_MATERIAL.Object);
+	//			Mesh->SetRelativeLocation(FVector(0.0f, 100.0f * ((i % 2 == 0 ? 0 : 1) + i) / 2 * (i % 2 == 0 ? 1 : -1), 0.0f));
+	//		}
+	//	}
+	//}
+	//
+	//for (int i = 0; i < (ObjectLength > TriggerSize + 1 ? 2 : 1); i = i + 1)
+	//{
+	//	UBoxComponent* Collider = CreateDefaultSubobject<UBoxComponent>(FName(*(FString(TEXT("Collider")) + FString::FromInt(i))));
+	//	UBoxComponent* Trigger = CreateDefaultSubobject<UBoxComponent>(FName(*(FString(TEXT("Trigger")) + FString::FromInt(i))));
+	//
+	//	Colliders.Add(Collider);
+	//	Triggers.Add(Trigger);
+	//
+	//	Collider->SetupAttachment(this);
+	//	Collider->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2 * (i < 1 ? -1 : 1), 0.0f));
+	//	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	//	Collider->SetCollisionProfileName(TEXT("Carrier"));
+	//
+	//	Trigger->SetupAttachment(this);
+	//	//Triggers가 1개만 존재해야 할 때
+	//	if(ObjectLength <= TriggerSize + 1)
+	//	{
+	//		Trigger->SetBoxExtent(FVector(TriggerSize * 50.0f, (ObjectLength + TriggerSize - 1) * 50.0f, TriggerSize * 50.0f));
+	//	}
+	//	//Triggers가 2개 이상 존재해야 할 때
+	//	else if (ObjectLength > TriggerSize + 1)
+	//	{
+	//		Trigger->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2 * (i < 1 ? -1 : 1), 0.0f));
+	//		float BoxSize = TriggerSize * 50.0f;
+	//		Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	//	}
+	//	Trigger->SetCollisionProfileName(TEXT("Connector"));
+	//}
 	//...
 }
 
@@ -85,6 +111,16 @@ void UPowerConnectionComponent::BeginPlay()
 
 	UpdateMaterialColor();
 }
+
+#if WITH_EDITOR
+void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+	Super::PostEditChangeProperty(PropertyChangedEvent);
+
+	Meshs[0]->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
+}
+#endif
+
 
 // Called every frame
 //void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -117,7 +153,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 {
 	if(param > 0)
 	{
-		if (ObjectLength != param)
+		//if (ObjectLength != param)
 		{
 			//새로 변경될 길이가 기존보다 더 길다면
 			if (Meshs.Num() < param)
@@ -239,7 +275,7 @@ void UPowerConnectionComponent::SetObjectLength(int32 param)
 
 void UPowerConnectionComponent::SetTriggerSize(int32 param)
 {
-	if (TriggerSize != param)
+	//if (TriggerSize != param)
 	{
 		
 		if ((ObjectLength > param + 1 ? 2 : 1) > Triggers.Num())
@@ -324,12 +360,12 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 				Params
 			);
 
-#if ENABLE_DRAW_DEBUG
-			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
-			float DebugLifeTime = 5.0f;
-
-			DrawDebugBox(GetWorld(), TriggerLocation, FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
-#endif
+//#if ENABLE_DRAW_DEBUG
+//			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
+//			float DebugLifeTime = 5.0f;
+//
+//			DrawDebugBox(GetWorld(), TriggerLocation, FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
+//#endif
 
 			if (bResult == true)
 			{
