@@ -56,6 +56,10 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 		Velocity = Velocity.GetSafeNormal() * operatorRadius * .5f;
 	}
 
+	//이동제한 방향에 따라서 이동량 제거
+	if (MoveType == EMagnetMoveAxisType::MOVE_ONLY_XY) Velocity.Z = 0.f;
+	else if (MoveType == EMagnetMoveAxisType::MOVE_ONLY_Z) Velocity.X = Velocity.Y = 0.f;
+
 	PrevDir = dir;
 
 	//최종 이동량 적용 및 부드러운 움직임 적용.

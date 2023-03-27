@@ -13,6 +13,14 @@ enum class EMagnetMoveType
 	DRAWN_IN
 };
 
+UENUM()
+enum class EMagnetMoveAxisType
+{
+	MOVE_ONLY_XY,
+	MOVE_ONLY_Z,
+	MOVE_XYZ
+};
+
 UCLASS(abstract)
 class PROJECT_MF_API UMagneticMovementComponent : public UMovementComponent
 {

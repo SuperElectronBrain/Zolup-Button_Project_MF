@@ -28,4 +28,8 @@ private:
 	float _operatorRadiusDiv;
 	float _operatorRadiusHalfDiv;
 	float _prevOperatorRadius;
+
+public:
+	UPROPERTY(EditAnywhere, Category = Movement)
+	EMagnetMoveAxisType MoveType = EMagnetMoveAxisType::MOVE_XYZ;
 };

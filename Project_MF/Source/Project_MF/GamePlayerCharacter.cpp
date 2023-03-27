@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "GamePlayerCharacter.h"
 #include "PlayerAnimInstance.h"
 #include "PlayerUICanvasWidget.h"
-#include "GamePlayerCharacter.h"
 #include "MagneticComponent.h"
 #include "DefaultMagneticMovementComponent.h"
 
@@ -12,7 +12,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	//Intialized Properts and Fields
 	PrimaryActorTick.bCanEverTick = true;
 	ShootLength = 10000.f;
-	ShootExtend.Set(20.f, 20.f, 20.f);
+	ShootExtend.Set(5.f, 5.f, 5.f);
 	JumpPower = 1600.f;
 	CameraRotationSpeed = 420.f;
 	MoveSpeed = 460.f;

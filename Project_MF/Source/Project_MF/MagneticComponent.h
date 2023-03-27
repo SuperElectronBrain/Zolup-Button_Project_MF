@@ -34,6 +34,8 @@ CollisionProfile도 MagneticField로 설정한다.
 CollisionProfile은 MagneticField만 겹침으로, 나머지는 다 무시로 설정.
 */
 
+UPrimitiveComponent;
+
 UCLASS( ClassGroup=(Magnetic), meta=(BlueprintSpawnableComponent) )
 class PROJECT_MF_API UMagneticComponent final : public USceneComponent
 {
