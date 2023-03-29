@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9A329390-33CB-49EC-9A39-8FAA41962548}</UniqueIdentifier>
+      <UniqueIdentifier>{C1C89E9E-4DB3-454E-B5F5-E3183A401AB1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{48DEDB54-28C8-4D01-84CE-D90CD764A2A6}</UniqueIdentifier>
+      <UniqueIdentifier>{A1A2D58E-3424-41AB-9E45-6C3985FFB20E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{45353B00-46B3-4BB3-A7E8-05FD1EA070E0}</UniqueIdentifier>
+      <UniqueIdentifier>{C02FF230-EFC3-4F75-88B6-E4EDF86FC88C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -129,6 +129,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MFActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MovementRegistComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MovementRegistComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PlayerAnimInstance.cpp">

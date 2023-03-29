@@ -2,6 +2,7 @@
 
 
 #include "PowerConveyorMovementComponent.h"
+#include "MovementRegistComponent.h"
 
 UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 {
@@ -72,7 +73,14 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 			{
 				for (int i = 0; i < MovableTargets.Num(); i = i + 1)
 				{
-					MovableTargets[i]->AddActorWorldOffset(GetForwardVector() * (ActingSpeed * DeltaTime));
+					UMovementRegistComponent* MovementRegistComponent = MovableTargets[i]->FindComponentByClass<UMovementRegistComponent>();
+					if (MovementRegistComponent != nullptr)
+					{
+						if (MovementRegistComponent->MovementComponents[0] == this)
+						{
+							MovableTargets[i]->AddActorWorldOffset(GetForwardVector() * (ActingSpeed * DeltaTime));
+						}
+					}
 				}
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
@@ -97,19 +105,39 @@ void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* Overla
 		{
 			if (CollisionTargetRootComponent->IsSimulatingPhysics() == true)
 			{
-				int Count = 0;
+				int Count_0 = 0;
 				for (int i = 0; i < MovableTargets.Num(); i = i + 1)
 				{
 					if (MovableTargets[i] == OtherActor)
 					{
-						Count = Count + 1;
+						Count_0 = Count_0 + 1;
 						break;
 					}
 				}
-
-				if (Count < 1)
+				if (Count_0 < 1)
 				{
 					MovableTargets.Add(OtherActor);
+
+					UMovementRegistComponent* MovementRegistComponent = OtherActor->FindComponentByClass<UMovementRegistComponent>();
+					if (MovementRegistComponent == nullptr)
+					{
+						MovementRegistComponent = NewObject<UMovementRegistComponent>(OtherActor, UMovementRegistComponent::StaticClass());
+						MovementRegistComponent->RegisterComponent();
+					}
+
+					int Count_1 = 0;
+					for (int j = 0; j < MovementRegistComponent->MovementComponents.Num(); j = j + 1)
+					{
+						if (MovementRegistComponent->MovementComponents[j] == this)
+						{
+							Count_1 = Count_1 + 1;
+							break;
+						}
+					}
+					if (Count_1 < 1)
+					{
+						MovementRegistComponent->MovementComponents.Add(this);
+					}
 				}
 			}
 		}
@@ -124,6 +152,25 @@ void UPowerConveyorMovementComponent::OnOverlapEnd(UPrimitiveComponent* Overlapp
 		{
 			if (MovableTargets[i] == OtherActor)
 			{
+				UMovementRegistComponent* MovementRegistComponent = MovableTargets[i]->FindComponentByClass<UMovementRegistComponent>();
+				if (MovementRegistComponent != nullptr)
+				{
+					for (int j = 0; j < MovementRegistComponent->MovementComponents.Num(); j = j + 1)
+					{
+						if (MovementRegistComponent->MovementComponents[j] == this)
+						{
+							MovementRegistComponent->MovementComponents.RemoveAt(j);
+							break;
+						}
+					}
+				}
+
+				if (MovementRegistComponent->MovementComponents.Num() < 1)
+				{
+					MovementRegistComponent->UnregisterComponent();
+					MovementRegistComponent->DestroyComponent();
+				}
+
 				MovableTargets.RemoveAt(i);
 				break;
 			}

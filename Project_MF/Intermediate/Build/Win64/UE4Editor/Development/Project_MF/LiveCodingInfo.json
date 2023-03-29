@@ -35,6 +35,7 @@
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActor.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
+			"MovementRegistComponent.cpp.obj",
 			"PowerConveyorMovementComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
@@ -55,6 +56,7 @@
 			"MainLevelScriptActor.gen.cpp.obj",
 			"MainLevelUICanvasWidget.gen.cpp.obj",
 			"MFActor.gen.cpp.obj",
+			"MovementRegistComponent.gen.cpp.obj",
 			"PlayerAnimInstance.gen.cpp.obj",
 			"PlayerCharacter.gen.cpp.obj",
 			"PlayerUICanvasWidget.gen.cpp.obj",
