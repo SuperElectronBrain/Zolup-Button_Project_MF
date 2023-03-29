@@ -23,6 +23,10 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 		}
 	}
 #endif
+
+	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
+	Trigger->SetupAttachment(this);
+	Trigger->SetBoxExtent(FVector(50.001f, 50.001f, 50.001f));
 }
 
 void UPowerConveyorMovementComponent::BeginPlay()
@@ -30,12 +34,14 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	if (::IsValid(OwnerRootComponent) == true)
 	{
-		//OwnerRootComponent->SetCollisionProfileName("BlockAllDynamic");
-		OwnerRootComponent->SetNotifyRigidBodyCollision(true);
+		Trigger->SetCollisionProfileName("OverlapAllDynamic");
+		Trigger->SetGenerateOverlapEvents(true);
 
-		OwnerRootComponent->OnComponentHit.AddDynamic(this, &UPowerConveyorMovementComponent::OnHit);
-		//OwnerRootComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapBegin);
-		//OwnerRootComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapEnd);
+		Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapBegin);
+		Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapEnd);
+		
+		//OwnerRootComponent->OnComponentHit.AddDynamic(this, &UPowerConveyorMovementComponent::OnHit);
+		//OwnerRootComponent->SetNotifyRigidBodyCollision(true);
 	}
 }
 
@@ -79,7 +85,11 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 
 void UPowerConveyorMovementComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
-	//UE_LOG(LogTemp, Warning, TEXT("î"));
+}
+
+void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	UE_LOG(LogTemp, Warning, TEXT("î"));
 	if (GetOwner() != OtherActor)
 	{
 		UPrimitiveComponent* CollisionTargetRootComponent = Cast<UPrimitiveComponent>(OtherActor->GetRootComponent());
@@ -104,10 +114,6 @@ void UPowerConveyorMovementComponent::OnHit(UPrimitiveComponent* HitComponent, A
 			}
 		}
 	}
-}
-
-void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
 }
 
 void UPowerConveyorMovementComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
