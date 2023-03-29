@@ -1,60 +1,14 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
-  Waiting for 'git status' command to complete
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0086.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0086.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1136.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1136.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1901.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1901.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3485.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3485.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3765.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3765.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3896.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3896.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4377.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4377.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4449.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4449.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4938.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4938.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5831.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5831.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-6182.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-6182.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-7294.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-7294.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-7941.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-7941.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8475.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8475.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-9427.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-9427.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0086.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1136.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1901.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3485.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3765.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3896.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4377.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4449.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4938.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5831.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6182.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-7294.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-7941.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8475.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9427.lib
   Building Project_MFEditor...
   Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive unity build] Excluded from Project_MF unity file: PowerComponent.cpp, PowerConnectionComponent.cpp, PowerExecutionComponent.cpp, PowerGenerateComponent.cpp
+  [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
   [Adaptive unity build] Excluded from Project_MF.gen unity file: Project_MF.init.gen.cpp
   Building 4 actions with 8 processes...
-    [1/4] PowerComponent.cpp
-    [2/4] UE4Editor-Project_MF.lib
-       D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.exp 개체를 생성하고 있습니다.
-    [3/4] UE4Editor-Project_MF.dll
-       D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.suppressed.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.suppressed.exp 개체를 생성하고 있습니다.
+    [1/4] PowerConveyorMovementComponent.cpp
+    [2/4] UE4Editor-Project_MF-0003.lib
+       D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0003.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0003.exp 개체를 생성하고 있습니다.
+    [3/4] UE4Editor-Project_MF-0003.dll
+       D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0003.suppressed.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0003.suppressed.exp 개체를 생성하고 있습니다.
     [4/4] Project_MFEditor.target
-  Total time in Parallel executor: 1.38 seconds
-  Total execution time: 2.89 seconds
+  Total time in Parallel executor: 1.69 seconds
+  Total execution time: 2.61 seconds

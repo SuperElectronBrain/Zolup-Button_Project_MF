@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{CAE882BB-73D2-40F4-89CA-1D07D7FA6925}</UniqueIdentifier>
+      <UniqueIdentifier>{9A329390-33CB-49EC-9A39-8FAA41962548}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{1E5CB177-E1B8-4C08-BB2E-B235B35E7DEE}</UniqueIdentifier>
+      <UniqueIdentifier>{48DEDB54-28C8-4D01-84CE-D90CD764A2A6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{944FCE38-B00D-445A-B496-CBD4274ACA9C}</UniqueIdentifier>
+      <UniqueIdentifier>{45353B00-46B3-4BB3-A7E8-05FD1EA070E0}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -165,6 +165,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\PowerConnectionComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerConveyorMovementComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerConveyorMovementComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PowerDirectionMovementComponent.cpp">
