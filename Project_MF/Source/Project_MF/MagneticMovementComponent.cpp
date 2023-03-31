@@ -28,13 +28,15 @@ void UMagneticMovementComponent::SetUpdatedComponent(USceneComponent* NewUpdated
 
 	if(_MagOwner==nullptr || !::IsValid(_MagOwner)) 
 		_MagOwner = NewUpdatedComponent->GetOwner()->FindComponentByClass<UMagneticComponent>();
+
+	Super::SetUpdatedComponent(NewUpdatedComponent);
 }
 
-AActor* UMagneticMovementComponent::ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* magOperator, float DeltaTime)
+AActor* UMagneticMovementComponent::ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime)
 {
-	if (ShouldSkipUpdate(DeltaTime) || type == EMagnetMoveType::NONE || magOperator == nullptr && !::IsValid(magOperator))
+	if (type == EMagnetMoveType::NONE || magOperator == nullptr && !::IsValid(magOperator) || owner == nullptr && !::IsValid(owner))
 		return false;
 
 	//이동 상태에 따라서 알맞은 로직 처리
-	return ApplyMovement(type,magOperator,  DeltaTime);
+	return ApplyMovement(type,owner, magOperator,  DeltaTime);
 }

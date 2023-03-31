@@ -32,12 +32,15 @@ public:
 
 	/*Public method*/
 	virtual void SetUpdatedComponent(USceneComponent* NewUpdatedComponent) override;
-	AActor* ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* magOperator, float DeltaTime);
+	AActor* ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime);
+	virtual void StartMovement(EMagnetMoveType startType) {}
+	virtual void EndMovement(EMagnetMoveType endType) {}
 
 protected:
 	UFUNCTION()
-	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* safeMagOperator, float DeltaTime) PURE_VIRTUAL(UMagneticMovementComponent::ApplyMovement, return false;);
+	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* safeOwner, UMagneticComponent* safeMagOperator, float DeltaTime) PURE_VIRTUAL(UMagneticMovementComponent::ApplyMovement, return false;);
 	UMagneticComponent* GetOwnerMagnetic() const;
+	bool UpdatedPrimitiveIsValid() const { return UpdatedPrimitive && ::IsValid(UpdatedPrimitive) && UpdatedPrimitive->IsSimulatingPhysics(); }
 
 private:
 	/*Fields And Components*/

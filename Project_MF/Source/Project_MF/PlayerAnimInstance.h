@@ -22,8 +22,12 @@ public:
 	bool GetResetMontageIsPlaying() const { return Montage_IsPlaying(ResetMontage); }
 	void PlayResetMontage();
 
-private:
+public:
 	/*Override methods*/
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform _ArmLAddOffsetTransform;
+
+private:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 	/*fields and Components*/
@@ -41,4 +45,5 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FRotator _angle;
+
 };
