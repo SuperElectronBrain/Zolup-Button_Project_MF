@@ -27,7 +27,7 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
-	Trigger->SetBoxExtent(FVector(50.001f, 50.001f, 50.001f));
+	Trigger->SetBoxExtent(FVector(50.01f, 50.01f, 50.01f));
 }
 
 void UPowerConveyorMovementComponent::BeginPlay()
@@ -49,17 +49,6 @@ void UPowerConveyorMovementComponent::BeginPlay()
 void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Action(DeltaTime);
-
-	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	if (::IsValid(OwnerRootComponent) == true)
-	{
-		TArray<AActor*> actors;
-		OwnerRootComponent->GetOverlappingActors(actors);
-		for (int i = 0; i < actors.Num(); i = i + 1)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s"), *actors[i]->GetName());
-		}
-	}
 }
 
 void UPowerConveyorMovementComponent::Action(float DeltaTime)
@@ -78,14 +67,35 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					{
 						if (MovementRegistComponent->MovementComponents[0] == this)
 						{
-							MovableTargets[i]->AddActorWorldOffset(GetForwardVector() * (ActingSpeed * DeltaTime));
+							FVector MovementVector = GetForwardVector() * (ActingSpeed * DeltaTime);
+							AActor* MovableTarget = MovableTargets[i];
+							MovableTarget->AddActorWorldOffset(MovementVector, true);
+							if (MovableTarget->GetVelocity().Size() < 0.01f)
+							{
+								MovableTarget->AddActorWorldOffset(MovementVector / 2);
+							}
+
+							UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(MovableTarget->GetRootComponent());
+							if (::IsValid(OwnerRootComponent) == true)
+							{
+								//UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f)"), GetForwardVector().X, GetForwardVector().Y, GetForwardVector().Z);
+								//OwnerRootComponent->AddForce(GetForwardVector() * (ActingSpeed * DeltaTime * OwnerRootComponent->GetMass()));
+
+								//FVector Center = FVector((MovableTarget->GetActorLocation() + GetOwner()->GetActorLocation()) / 2);
+								//Center = Center + GetForwardVector();
+								//OwnerRootComponent->AddForceAtLocation(GetForwardVector() * (5000 * ActingSpeed * DeltaTime * OwnerRootComponent->GetMass()), Center);
+								//OwnerRootComponent->SetPhysicsLinearVelocity(GetForwardVector() * (ActingSpeed * DeltaTime), true);
+								//if (MovableTarget->GetVelocity().Size() < 0.01f)
+								//{
+								//	MovableTarget->AddActorWorldOffset(MovementVector / 2);
+								//}
+							}
 						}
 					}
 				}
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
-
 			}
 		}
 	}
@@ -93,11 +103,12 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 
 void UPowerConveyorMovementComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
+	
 }
 
 void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UE_LOG(LogTemp, Warning, TEXT("î"));
+	//UE_LOG(LogTemp, Warning, TEXT("오이오이 마지카요 넷또 오소스기다제"));
 	if (GetOwner() != OtherActor)
 	{
 		UPrimitiveComponent* CollisionTargetRootComponent = Cast<UPrimitiveComponent>(OtherActor->GetRootComponent());
