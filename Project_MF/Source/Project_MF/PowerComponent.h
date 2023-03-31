@@ -17,7 +17,7 @@ public:
 	UPowerComponent();
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* MeshOrigin;
+	UPROPERTY() UStaticMesh* MeshOrigin;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UMaterial* MaterialOrigin;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 TriggerSize;

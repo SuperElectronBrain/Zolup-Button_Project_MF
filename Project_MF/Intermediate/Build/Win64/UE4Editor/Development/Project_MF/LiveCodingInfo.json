@@ -27,7 +27,6 @@
 			"PowerComponent.cpp.obj",
 			"PowerConnectionComponent.cpp.obj",
 			"PowerMovementComponent.cpp.obj",
-			"PowerRotationMovementComponent.cpp.obj",
 			"Project_MF.cpp.obj",
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
@@ -36,7 +35,8 @@
 			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
-			"PowerGenerateComponent.cpp.obj"
+			"PowerGenerateComponent.cpp.obj",
+			"PowerRotationMovementComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CustomGameInstance.gen.cpp.obj",
