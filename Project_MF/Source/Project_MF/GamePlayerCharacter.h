@@ -24,7 +24,6 @@ public:
 	/*Constructor*/
 	AGamePlayerCharacter();
 
-
 private:
 	/*Override methods*/
 	virtual void BeginPlay() override;
@@ -118,5 +117,8 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
 	float MoveSpeed;
+
+	//UPROPERTY(EditAnywhere, Category = BoneTransform, BlueprintReadWrite)
+	//FTransform _ArmLAddTransform;
 
 };

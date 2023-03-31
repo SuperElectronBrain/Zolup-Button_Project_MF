@@ -45,6 +45,7 @@ public:
 	/*Constructor*/
 	UMagneticComponent();
 
+
 	/*Delegates*/
 	FOnMagneticDelegate			OnMagneticEvent;
 	FOffMagneticDelegate		OffMagneticEvent;
@@ -64,7 +65,7 @@ public:
 	float GetWeight() const {return Weight;}
 	void SetFixedWeight(float value) { if (value > 0.f) { Weight = value; _bUsedFixedWeight = true; } }
 
-	float GetMagneticFieldRadius() const { return FinalMagneticFieldRadius; }
+	float GetMagneticFieldRadius() const { return FieldCollision->GetScaledSphereRadius(); }
 	void SetMagneticFieldRadius(float newValue);
 
 	bool GetEternalHaveMagnetic() const { return EternalHaveMagnetic; }
@@ -84,11 +85,12 @@ private:
 	void UpdateMagneticField();
 	void ClearMagneticField();
 	void SetNoActiveMovementsActive(bool value);
-	void SetChildMaterials(EMagneticType type);
+	void SetParentMaterials(EMagneticType type);
 
 	/*Override methods*/
 	virtual void OnRegister() override;
 	virtual void BeginPlay() override;
+	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override;
 	virtual void DestroyComponent(bool bPromoteChilderen) override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	#if WITH_EDITOR
@@ -98,12 +100,15 @@ private:
 	/*Fields and Components*/
 	float _RotCounter, _applyRadius, _goalRadius;
 	EMagnetMoveType _lastMoveType;
-	bool _applyMovement, _bUsedFixedWeight;
+	bool _applyMovement, _bUsedFixedWeight, _blastUsedGravity;
 	FVector _fieldColor;
 	UMagneticMovementComponent* _movement;
 
 	UPROPERTY()
-	TArray<UMeshComponent*> PrevMagnetsMaterials;
+	UPrimitiveComponent* _parent;
+
+	UPROPERTY()
+	UMaterialInterface* _parentOriMaterial;
 
 	UPROPERTY()
 	TArray<UMovementComponent*> _NoActiveMovements;
