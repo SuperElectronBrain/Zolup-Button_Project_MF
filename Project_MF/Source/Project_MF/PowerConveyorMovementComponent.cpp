@@ -24,14 +24,15 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 		}
 	}
 #endif
+	
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
-	Trigger->SetBoxExtent(FVector(50.01f, 50.01f, 50.01f));
 }
 
 void UPowerConveyorMovementComponent::BeginPlay()
 {
+	FVector TriggerVolume = FVector::OneVector;
 	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	if (::IsValid(OwnerRootComponent) == true)
 	{
@@ -43,7 +44,10 @@ void UPowerConveyorMovementComponent::BeginPlay()
 		
 		//OwnerRootComponent->OnComponentHit.AddDynamic(this, &UPowerConveyorMovementComponent::OnHit);
 		//OwnerRootComponent->SetNotifyRigidBodyCollision(true);
+		
+		TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
 	}
+	Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
 }
 
 void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -67,29 +71,30 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					{
 						if (MovementRegistComponent->MovementComponents[0] == this)
 						{
-							FVector MovementVector = GetForwardVector() * (ActingSpeed * DeltaTime);
 							AActor* MovableTarget = MovableTargets[i];
+							FVector MovementVector = GetForwardVector() * (ActingSpeed * DeltaTime);
+
 							MovableTarget->AddActorWorldOffset(MovementVector, true);
 							if (MovableTarget->GetVelocity().Size() < 0.01f)
 							{
 								MovableTarget->AddActorWorldOffset(MovementVector / 2);
 							}
 
-							UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(MovableTarget->GetRootComponent());
-							if (::IsValid(OwnerRootComponent) == true)
-							{
-								//UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f)"), GetForwardVector().X, GetForwardVector().Y, GetForwardVector().Z);
-								//OwnerRootComponent->AddForce(GetForwardVector() * (ActingSpeed * DeltaTime * OwnerRootComponent->GetMass()));
-
-								//FVector Center = FVector((MovableTarget->GetActorLocation() + GetOwner()->GetActorLocation()) / 2);
-								//Center = Center + GetForwardVector();
-								//OwnerRootComponent->AddForceAtLocation(GetForwardVector() * (5000 * ActingSpeed * DeltaTime * OwnerRootComponent->GetMass()), Center);
-								//OwnerRootComponent->SetPhysicsLinearVelocity(GetForwardVector() * (ActingSpeed * DeltaTime), true);
-								//if (MovableTarget->GetVelocity().Size() < 0.01f)
-								//{
-								//	MovableTarget->AddActorWorldOffset(MovementVector / 2);
-								//}
-							}
+							//UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(MovableTarget->GetRootComponent());
+							//if (::IsValid(OwnerRootComponent) == true)
+							//{
+							//	//UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f)"), GetForwardVector().X, GetForwardVector().Y, GetForwardVector().Z);
+							//	//OwnerRootComponent->AddForce(GetForwardVector() * (ActingSpeed * DeltaTime * OwnerRootComponent->GetMass()));
+							//
+							//	//FVector Center = FVector((MovableTarget->GetActorLocation() + GetOwner()->GetActorLocation()) / 2);
+							//	//Center = Center + GetForwardVector();
+							//	//OwnerRootComponent->AddForceAtLocation(GetForwardVector() * (5000 * ActingSpeed * DeltaTime * OwnerRootComponent->GetMass()), Center);
+							//	//OwnerRootComponent->SetPhysicsLinearVelocity(GetForwardVector() * (ActingSpeed * DeltaTime), true);
+							//	//if (MovableTarget->GetVelocity().Size() < 0.01f)
+							//	//{
+							//	//	MovableTarget->AddActorWorldOffset(MovementVector / 2);
+							//	//}
+							//}
 						}
 					}
 				}

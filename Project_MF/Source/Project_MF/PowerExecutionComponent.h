@@ -15,8 +15,9 @@ class PROJECT_MF_API UPowerExecutionComponent : public UPowerComponent
 	GENERATED_BODY()
 	
 private:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMeshComponent* Mesh;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UBoxComponent* Collider;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMeshComponent* Mesh;
+	//UPROPERTY() UBoxComponent* Trigger;
+	UPROPERTY() int32 MaterialIndexNum;
 	void UpdateMaterialColor();
 
 protected:
