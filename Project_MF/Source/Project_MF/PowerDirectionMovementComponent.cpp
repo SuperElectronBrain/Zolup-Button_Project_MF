@@ -35,16 +35,23 @@ void UPowerDirectionMovementComponent::TickComponent(float DeltaTime, ELevelTick
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	if (bActingState == true)
+	if (ObserveTarget != nullptr)
 	{
-		CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
-		FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-		SetRelativeLocation(OriginPosition + MovementVector);
-	}
-	else if (bActingState == false)
-	{
-		CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-		FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-		SetRelativeLocation(OriginPosition + MovementVector);
+		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
+		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		{
+			if (ObserveTargetExecutionComponent->GetPowerState() == true)
+			{
+				CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
+				FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+				SetRelativeLocation(OriginPosition + MovementVector);
+			}
+			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+			{
+				CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
+				FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+				SetRelativeLocation(OriginPosition + MovementVector);
+			}
+		}
 	}
 }

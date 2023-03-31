@@ -1,0 +1,1168 @@
+﻿Log file open, 03/31/23 14:28:02
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogInit: Display: Running engine for game: Project_MF
+LogPlatformFile: Not using cached read wrapper
+LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
+LogStats: Stats thread started at 0.223147
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
+LogInit: Display: Loading text-based GConfig....
+LogPluginManager: Mounting plugin MeshPainting
+LogPluginManager: Mounting plugin XGEController
+LogPluginManager: Mounting plugin Paper2D
+LogPluginManager: Mounting plugin AISupport
+LogPluginManager: Mounting plugin LightPropagationVolume
+LogPluginManager: Mounting plugin EnvironmentQueryEditor
+LogPluginManager: Mounting plugin LiveLink
+LogPluginManager: Mounting plugin CameraShakePreviewer
+LogPluginManager: Mounting plugin GameplayCameras
+LogPluginManager: Mounting plugin AnimationSharing
+LogPluginManager: Mounting plugin OodleData
+LogPluginManager: Mounting plugin OodleNetwork
+LogPluginManager: Mounting plugin CLionSourceCodeAccess
+LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting plugin NullSourceCodeAccess
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin PerforceSourceControl
+LogPluginManager: Mounting plugin PixWinPlugin
+LogPluginManager: Mounting plugin PlasticSourceControl
+LogPluginManager: Mounting plugin PluginUtils
+LogPluginManager: Mounting plugin PropertyAccessNode
+LogPluginManager: Mounting plugin RiderSourceCodeAccess
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin TextureFormatOodle
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin CurveEditorTools
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin FacialAnimation
+LogPluginManager: Mounting plugin GameplayTagsEditor
+LogPluginManager: Mounting plugin GeometryMode
+LogPluginManager: Mounting plugin MaterialAnalyzer
+LogPluginManager: Mounting plugin MacGraphicsSwitching
+LogPluginManager: Mounting plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting plugin PluginBrowser
+LogPluginManager: Mounting plugin SpeedTreeImporter
+LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin AlembicImporter
+LogPluginManager: Mounting plugin VariantManagerContent
+LogPluginManager: Mounting plugin AutomationUtils
+LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin ChaosCloth
+LogPluginManager: Mounting plugin ChaosClothEditor
+LogPluginManager: Mounting plugin ChaosEditor
+LogPluginManager: Mounting plugin ChaosNiagara
+LogPluginManager: Mounting plugin ChaosSolverPlugin
+LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin GeometryCache
+LogPluginManager: Mounting plugin GeometryCollectionPlugin
+LogPluginManager: Mounting plugin GeometryProcessing
+LogPluginManager: Mounting plugin Niagara
+LogPluginManager: Mounting plugin OpenImageDenoise
+LogPluginManager: Mounting plugin MotoSynth
+LogPluginManager: Mounting plugin PlanarCut
+LogPluginManager: Mounting plugin PlatformCrypto
+LogPluginManager: Mounting plugin ProxyLODPlugin
+LogPluginManager: Mounting plugin PythonScriptPlugin
+LogPluginManager: Mounting plugin SkeletalReduction
+LogPluginManager: Mounting plugin LuminPlatformFeatures
+LogPluginManager: Mounting plugin MagicLeap
+LogPluginManager: Mounting plugin MagicLeapLightEstimation
+LogPluginManager: Mounting plugin MagicLeapMedia
+LogPluginManager: Mounting plugin MagicLeapPassableWorld
+LogPluginManager: Mounting plugin MLSDK
+LogPluginManager: Mounting plugin AndroidMedia
+LogPluginManager: Mounting plugin AvfMedia
+LogPluginManager: Mounting plugin ImgMedia
+LogPluginManager: Mounting plugin MediaCompositing
+LogPluginManager: Mounting plugin MediaPlayerEditor
+LogPluginManager: Mounting plugin WebMMedia
+LogPluginManager: Mounting plugin WmfMedia
+LogPluginManager: Mounting plugin ActorSequence
+LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
+LogPluginManager: Mounting plugin MatineeToLevelSequence
+LogPluginManager: Mounting plugin LevelSequenceEditor
+LogPluginManager: Mounting plugin TemplateSequence
+LogPluginManager: Mounting plugin OnlineSubsystem
+LogPluginManager: Mounting plugin OnlineSubsystemNull
+LogPluginManager: Mounting plugin LauncherChunkInstaller
+LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin ActorLayerUtilities
+LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting plugin AndroidMoviePlayer
+LogPluginManager: Mounting plugin AndroidPermission
+LogPluginManager: Mounting plugin AppleImageUtils
+LogPluginManager: Mounting plugin AppleMoviePlayer
+LogPluginManager: Mounting plugin ArchVisCharacter
+LogPluginManager: Mounting plugin AssetTags
+LogPluginManager: Mounting plugin AudioSynesthesia
+LogPluginManager: Mounting plugin ChunkDownloader
+LogPluginManager: Mounting plugin AudioCapture
+LogPluginManager: Mounting plugin EditableMesh
+LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin GoogleCloudMessaging
+LogPluginManager: Mounting plugin GooglePAD
+LogPluginManager: Mounting plugin CableComponent
+LogPluginManager: Mounting plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting plugin LocationServicesBPLibrary
+LogPluginManager: Mounting plugin MobilePatchingUtils
+LogPluginManager: Mounting plugin OpenXR
+LogPluginManager: Mounting plugin OpenXREyeTracker
+LogPluginManager: Mounting plugin OpenXRHandTracking
+LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin PostSplashScreen
+LogPluginManager: Mounting plugin ProceduralMeshComponent
+LogPluginManager: Mounting plugin PropertyAccessEditor
+LogPluginManager: Mounting plugin RuntimePhysXCooking
+LogPluginManager: Mounting plugin SignificanceManager
+LogPluginManager: Mounting plugin SoundFields
+LogPluginManager: Mounting plugin Synthesis
+LogPluginManager: Mounting plugin WebMMoviePlayer
+LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogPluginManager: Mounting plugin ScreenshotTools
+LogPluginManager: Mounting plugin Takes
+LogPluginManager: Mounting plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting plugin ContentBrowserFileDataSource
+LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting plugin OnlineSubsystemIOS
+LogPluginManager: Mounting plugin OculusVR
+LogPluginManager: Mounting plugin SteamVR
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogOnline: OSS: Creating online subsystem instance for: NULL
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogOculusPluginWrapper: OculusPlugin initialized successfully
+LogHMD: Failed initializing OVRPlugin 1.59.0
+LogInit: Build: ++UE4+Release-4.27-CL-18319896
+LogInit: Engine Version: 4.27.2-18319896+++UE4+Release-4.27
+LogInit: Compatible Engine Version: 4.27.0-17155196+++UE4+Release-4.27
+LogInit: Net CL: 17155196
+LogInit: OS: Windows 10 (Release 2009) (), CPU: AMD Ryzen 3 3300X 4-Core Processor             , GPU: NVIDIA GeForce RTX 2060 SUPER
+LogInit: Compiled (64-bit): Nov 30 2021 07:12:08
+LogInit: Compiled with Visual C++: 19.24.28315.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.27
+LogInit: Command Line: 
+LogInit: Base Directory: D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/Win64/
+LogInit: Allocator: TBB
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 29
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 14
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 47
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 1
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogInit: Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+LogInit: Object subsystem initialized
+LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+LogConfig: Setting CVar [[r.setres:1280x720]]
+[2023.03.31-05.28.03:309][  0]LogConfig: Setting CVar [[r.VSync:0]]
+[2023.03.31-05.28.03:309][  0]LogConfig: Setting CVar [[r.RHICmdBypass:0]]
+[2023.03.31-05.28.03:309][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:309][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
+[2023.03.31-05.28.03:309][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:309][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:25165824]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Setting CVar [[gc.MultithreadedDestructionEnabled:1]]
+[2023.03.31-05.28.03:310][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:310][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:319][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2023.03.31-05.28.03:319][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2023.03.31-05.28.03:320][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2023.03.31-05.28.03:321][  0]LogInit: Selected Device Profile: [Windows]
+[2023.03.31-05.28.03:321][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2023.03.31-05.28.03:321][  0]LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.03.31-05.28.03:321][  0]LogInit: Going up to parent DeviceProfile []
+[2023.03.31-05.28.03:321][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2023.03.31-05.28.03:321][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Setting CVar [[fx.SkipVectorVMBackendOptimizations:1]]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.03.31-05.28.03:322][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Editor.ini]
+[2023.03.31-05.28.03:323][  0]LogInit: Computer: DESKTOP-7O2N4A7
+[2023.03.31-05.28.03:323][  0]LogInit: User: qkrdl
+[2023.03.31-05.28.03:323][  0]LogInit: CPU Page size=4096, Cores=4
+[2023.03.31-05.28.03:323][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2023.03.31-05.28.03:323][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2023.03.31-05.28.03:323][  0]LogMemory: Platform Memory Stats for Windows
+[2023.03.31-05.28.03:323][  0]LogMemory: Process Physical Memory: 143.06 MB used, 143.06 MB peak
+[2023.03.31-05.28.03:323][  0]LogMemory: Process Virtual Memory: 124.61 MB used, 124.61 MB peak
+[2023.03.31-05.28.03:323][  0]LogMemory: Physical Memory: 14365.96 MB used,  18313.13 MB free, 32679.09 MB total
+[2023.03.31-05.28.03:323][  0]LogMemory: Virtual Memory: 134194296.00 MB used,  23431.02 MB free, 134217728.00 MB total
+[2023.03.31-05.28.03:328][  0]LogWindows: WindowsPlatformFeatures enabled
+[2023.03.31-05.28.03:367][  0]LogInit: Physics initialised using underlying interface: PhysX
+[2023.03.31-05.28.03:368][  0]LogInit: Using OS detected language (ko-KR).
+[2023.03.31-05.28.03:368][  0]LogInit: Using OS detected locale (ko-KR).
+[2023.03.31-05.28.03:371][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so the 'ko' localization will be used.
+[2023.03.31-05.28.03:484][  0]LogInit: Setting process to per monitor DPI aware
+[2023.03.31-05.28.03:496][  0]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2023.03.31-05.28.03:510][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2023.03.31-05.28.03:510][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2023.03.31-05.28.03:728][  0]LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
+[2023.03.31-05.28.03:731][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2023.03.31-05.28.03:731][  0]LogD3D11RHI: D3D11 min allowed feature level: 11_0
+[2023.03.31-05.28.03:731][  0]LogD3D11RHI: D3D11 max allowed feature level: 11_0
+[2023.03.31-05.28.03:731][  0]LogD3D11RHI: D3D11 adapters:
+[2023.03.31-05.28.03:818][  0]LogD3D11RHI:    0. 'NVIDIA GeForce RTX 2060 SUPER' (Feature Level 11_0)
+[2023.03.31-05.28.03:818][  0]LogD3D11RHI:       8019/0/16339 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:       0/0/16339 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI: Chosen D3D11 Adapter:
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 2060 SUPER
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     VendorId    : 10de
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     DeviceId    : 1f06
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     SubSysId    : 3ff11458
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     Revision    : 00a1
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     DedicatedVideoMemory : 8408530944 bytes
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     SharedSystemMemory : 17133252608 bytes
+[2023.03.31-05.28.03:820][  0]LogD3D11RHI:     AdapterLuid : 0 42837
+[2023.03.31-05.28.03:827][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2023.03.31-05.28.03:827][  0]LogD3D11RHI:     GPU DeviceId: 0x1f06 (for the marketing name, search the web for "GPU Device Id")
+[2023.03.31-05.28.03:827][  0]LogWindows: EnumDisplayDevices:
+[2023.03.31-05.28.03:827][  0]LogWindows:    0. 'NVIDIA GeForce RTX 2060 SUPER' (P:1 D:1)
+[2023.03.31-05.28.03:827][  0]LogWindows:    1. 'NVIDIA GeForce RTX 2060 SUPER' (P:0 D:0)
+[2023.03.31-05.28.03:827][  0]LogWindows:    2. 'NVIDIA GeForce RTX 2060 SUPER' (P:0 D:0)
+[2023.03.31-05.28.03:828][  0]LogWindows:    3. 'NVIDIA GeForce RTX 2060 SUPER' (P:0 D:0)
+[2023.03.31-05.28.03:828][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce RTX 2060 SUPER
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:   Driver Version: 527.56 (internal:31.0.15.2756, unified:527.56)
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:      Driver Date: 12-5-2022
+[2023.03.31-05.28.03:828][  0]LogRHI: Texture pool is 5613 MB (70% of 8019 MB)
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI: Creating D3DDevice using adapter:
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 2060 SUPER
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     VendorId    : 10de
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     DeviceId    : 1f06
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     SubSysId    : 3ff11458
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     Revision    : 00a1
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     DedicatedVideoMemory : 8408530944 bytes
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     SharedSystemMemory : 17133252608 bytes
+[2023.03.31-05.28.03:828][  0]LogD3D11RHI:     AdapterLuid : 0 42837
+[2023.03.31-05.28.03:878][  0]LogD3D11RHI: RHI has support for 64 bit atomics
+[2023.03.31-05.28.03:878][  0]LogD3D11RHI: Async texture creation enabled
+[2023.03.31-05.28.03:878][  0]LogD3D11RHI: Array index from any shader is supported
+[2023.03.31-05.28.03:879][  0]LogD3D11RHI: HDR output is supported on display 0 (NvId: 0x80061081).
+[2023.03.31-05.28.03:892][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2023.03.31-05.28.03:919][  0]LogRHI: GeForceNow SDK initialized: 1
+[2023.03.31-05.28.04:215][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.03.31-05.28.04:239][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.03.31-05.28.04:260][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.03.31-05.28.04:260][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.03.31-05.28.04:269][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.03.31-05.28.04:274][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
+[2023.03.31-05.28.04:280][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.03.31-05.28.04:285][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.03.31-05.28.04:295][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
+[2023.03.31-05.28.04:300][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
+[2023.03.31-05.28.04:306][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
+[2023.03.31-05.28.04:331][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
+[2023.03.31-05.28.04:331][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
+[2023.03.31-05.28.04:339][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacNoEditor'
+[2023.03.31-05.28.04:346][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
+[2023.03.31-05.28.04:351][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
+[2023.03.31-05.28.04:356][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
+[2023.03.31-05.28.04:367][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.03.31-05.28.04:367][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.03.31-05.28.04:376][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
+[2023.03.31-05.28.04:381][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.03.31-05.28.04:386][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.03.31-05.28.04:391][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.03.31-05.28.04:391][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2023.03.31-05.28.04:399][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.03.31-05.28.04:431][  0]LogTextureFormatOodle: Display: Oodle Texture 2.9.0 init RDO Off
+[2023.03.31-05.28.04:466][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2023.03.31-05.28.04:466][  0]LogShaderCompilers: Guid format shader working directory is -36 characters bigger than the processId version (../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/Shaders/WorkingDirectory/23412/).
+[2023.03.31-05.28.04:466][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/qkrdl/AppData/Local/Temp/UnrealShaderWorkingDir/07B4B3C1456D9BCB6BD33D833C0E15E1/'.
+[2023.03.31-05.28.04:466][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2023.03.31-05.28.04:466][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2023.03.31-05.28.04:466][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2023.03.31-05.28.05:201][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2023.03.31-05.28.05:268][  0]LogDerivedDataCache: Loaded boot cache 0.07s 95MB C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc.
+[2023.03.31-05.28.05:268][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
+[2023.03.31-05.28.05:268][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2023.03.31-05.28.05:268][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2023.03.31-05.28.05:268][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.03.31-05.28.05:268][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2023.03.31-05.28.05:289][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.03.31-05.28.05:289][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.03.31-05.28.05:289][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchical cache Hierarchy.
+[2023.03.31-05.28.05:298][  0]LogDerivedDataCache: Speed tests for C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.01 seconds
+[2023.03.31-05.28.05:298][  0]LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.03ms. RandomReadSpeed=934.92MBs, RandomWriteSpeed=148.06MBs. Assigned SpeedClass 'Local'
+[2023.03.31-05.28.05:301][  0]LogDerivedDataCache: Using Local data cache path C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2023.03.31-05.28.05:301][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2023.03.31-05.28.05:301][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2023.03.31-05.28.05:359][  0]LogSlate: Using FreeType 2.10.0
+[2023.03.31-05.28.05:359][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2023.03.31-05.28.05:392][  0]LogAssetRegistry: FAssetRegistry took 0.0027 seconds to start up
+[2023.03.31-05.28.05:662][  0]LogInit: Selected Device Profile: [Windows]
+[2023.03.31-05.28.05:662][  0]LogInit: Active device profile: [0000023E09E4D100][0000023E08EED500 49] Windows
+[2023.03.31-05.28.05:662][  0]LogInit: Profiles: [0000023E09E4D100][0000023E08EED500 49] Windows, [0000023E09E36700][0000023E066D5680 49] WindowsNoEditor, [0000023E09E4E200][0000023E01D21800 49] WindowsServer, [0000023E09E35900][0000023E08BA7980 49] WindowsClient, [0000023E09E4D700][0000023E01669B00 49] IOS, [0000023E09E36900][0000023E09332100 49] iPadAir, [0000023E09E4FC00][0000023E09336280 49] iPadAir2, [0000023E09DD5400][0000023E09188540 49] IPadPro, [0000023E09DD5500][0000023E0933A580 49] iPadAir3, [0000023E09E37A00][0000023E07AB8700 49] iPadAir4, [0000023E09DD6300][0000023E07ABC880 49] iPadMini2, [0000023E09E37100][0000023E092F4A00 49] iPadMini3, [0000023E09DD6F00][0000023E092F8B80 49] iPadMini4, [0000023E09E35E00][0000023E092FCD00 49] iPadMini5, [0000023E09E29000][0000023E09300F40 49] iPhone6, [0000023E09E29100][0000023E08EE8F80 49] iPodTouch6, [0000023E09E4F900][0000023E093091C0 49] iPhone7, [0000023E09E4E900][0000023E09305200 49] iPodTouch7, [0000023E09DD5000][0000023E08D8F380 49] iPhone5S, [0000023E09E4EF00][0000023E08D93500 49] iPhone6Plus, [0000023E09DD7600][0000023E08D97680 49] iPhone6S, [0000023E09E4CC00][0000023E08D9B800 49] iPhone6SPlus, [0000023E09E4DD00][0000023E08D9F980 49] iPhone7Plus, [0000023E09E28800][0000023E08DA3B00 49] iPhoneSE, [0000023E09E4C400][0000023E08DA6100 49] iPhone8, [0000023E09E28900][0000023E08DAA280 49] iPhone8Plus, [0000023E09E2AE00][0000023E08DAE400 49] iPhoneX, [0000023E09DD5D00][0000023E01CD8580 49] iPhoneXS, [0000023E09E2A700][0000023E01CDC700 49] iPhoneXSMax, [0000023E09DD5C00][0000023E01CE0880 49] iPhoneXR, [0000023E09E2A800][0000023E01CE4A00 49] iPhone11, [0000023E09DD4F00][0000023E01CE8B80 49] iPhone11Pro, [0000023E09E28B00][0000023E01CECD00 49] iPhone11ProMax, [0000023E09DD4D00][0000023E01CF0E80 49] iPhoneSE2, [0000023E09E28E00][0000023E08D8AFC0 49] iPhone12Mini, [0000023E09E4F800][0000023E01CF5100 49] iPhone12, [0000023E09E2B000][0000023E01CF9240 49] iPhone12Pro, [0000023E09E4F700][0000023E01CFD380 49] iPhone12ProMax, [0000023E09E29E00][0000023E01D05500 49] iPadPro105, [0000023E09E4D300][0000023E08B6B680 49] iPadPro129, [0000023E09E2BE00][0000023E08B6F800 49] iPadPro97, [0000023E09E4DC00][0000023E08B73980 49] iPadPro2_129, [0000023E09E2A000][0000023E08B77B00 49] iPad5, [0000023E09E4E300][0000023E08B7A100 49] iPad6, [0000023E09E2BB00][0000023E08B7E280 49] iPad7, [0000023E09E4DE00][0000023E08B82400 49] iPad8, [0000023E09E28A00][0000023E08B86580 49] iPadPro11, [0000023E09E4E600][0000023E08B8A700 49] iPadPro2_11, [0000023E09E28F00][0000023E08B8E880 49] iPadPro3_129, [0000023E09E4E800][0000023E08B92A00 49] iPadPro4_129, [0000023E09E2BC00][0000023E08B96B80 49] AppleTV, [0000023E09E4DA00][0000023E08B9AD00 49] AppleTV4K, [0000023E09E2A600][0000023E08B9EE80 49] TVOS, [0000023E09E4E100][0000023E08BA3000 49] Mac, [0000023E09E2AF00][0000023E01D01140 49] MacClient, [0000023E09E4EA00][0000023E011A3280 49] MacNoEditor, [0000023E09E2AC00][0000023E011A73C0 49] MacServer, [0000023E09E4F000][0000023E011AB500 49] Linux, [0000023E09E28400][0000023E011B3680 49] LinuxAArch64, [0000023E09E4C700][0000023E011B7800 49] LinuxNoEditor, [0000023E09E2B700][0000023E011BB980 49] LinuxAArch64NoEditor, [0000023E09E4FB00][0000023E011BFB00 49] LinuxClient, [0000023E09E2B400][0000023E011C2100 49] LinuxAArch64Client, [0000023E09E4FE00][0000023E011C6280 49] LinuxServer, [0000023E09E28700][0000023E011CA400 49] LinuxAArch64Server, [0000023E09E4DF00][0000023E011CE580 49] Android, [0000023E09E2AA00][0000023E011D2700 49] Android_Low, [0000023E09E4ED00][0000023E011D6880 49] Android_Mid, [0000023E09E29F00][0000023E011DAA00 49] Android_High, [0000023E09E4EB00][0000023E011DEB80 49] Android_Default, [0000023E09E28100][0000023E011E2D00 49] Android_Adreno4xx, [0000023E09E4C500][0000023E011E6E80 49] Android_Adreno5xx_Low, [0000023E09E29400][0000023E011EB000 49] Android_Adreno5xx, [0000023E09E4F400][0000023E011EF180 49] Android_Adreno6xx, [0000023E09E2A300][0000023E08E7B300 49] Android_Adreno6xx_Vulkan, [0000023E09E4FD00][0000023E011AF440 49] Android_Mali_T6xx, [0000023E09E28200][0000023E08E7F580 49] Android_Mali_T7xx, [0000023E09E4F600][0000023E08E836C0 49] Android_Mali_T8xx, [0000023E09E2B200][0000023E08E8B840 49] Android_Mali_G71, [0000023E09DD7100][0000023E08E8F9C0 49] Android_Mali_G72, [0000023E09E36F00][0000023E08E93B40 49] Android_Mali_G72_Vulkan, [0000023E09DD6B00][0000023E08E96140 49] Android_Mali_G76, [0000023E09E34500][0000023E08E9A2C0 49] Android_Mali_G76_Vulkan, [0000023E09DD4C00][0000023E08E9E440 49] Android_Mali_G77, [0000023E09E34600][0000023E08EA25C0 49] Android_Mali_G77_Vulkan, [0000023E09DD6400][0000023E08EA6740 49] Android_Mali_G78, [0000023E09E34D00][0000023E08EAA8C0 49] Android_Mali_G78_Vulkan, [0000023E09DD7D00][0000023E08EAEA40 49] Android_Mali_G710, [0000023E09E36B00][0000023E08EB2BC0 49] Android_Mali_G710_Vulkan, [0000023E09DD6A00][0000023E08EB6D40 49] Android_Vulkan_SM5, [0000023E09E35A00][0000023E08EBAEC0 49] Android_PowerVR_G6xxx, [0000023E09DD4500][0000023E08EBF040 49] Android_PowerVR_GT7xxx, [0000023E09E34200][0000023E08EC31C0 49] Android_PowerVR_GE8xxx, [0000023E09DD7B00][0000023E08EC7340 49] Android_PowerVR_GM9xxx, [0000023E09E36100][0000023E08ECB4C0 49] Android_PowerVR_GM9xxx_Vulkan, [0000023E09DD5F00][0000023E08E87600 49] Android_TegraK1, [0000023E09E34A00][0000023E08ECF740 49] Android_Unknown_Vulkan, [0000023E09DD7900][0000023E08ED3880 49] Lumin, [0000023E09E35100][0000023E08ED79C0 49] Lumin_Desktop, [0000023E09DD6000][0000023E08F41B40 49] HoloLens, 
+[2023.03.31-05.28.05:789][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2023.03.31-05.28.05:789][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2023.03.31-05.28.05:789][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2023.03.31-05.28.05:789][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2023.03.31-05.28.05:789][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2023.03.31-05.28.05:807][  0]LogNetVersion: Project_MF 1.0.0, NetCL: 17155196, EngineNetVer: 17, GameNetVer: 0 (Checksum: 3145920875)
+[2023.03.31-05.28.06:286][  0]LogTexture: Default maximum texture size for cubemaps generated from long-lat sources has been changed from 512 to unlimited. In order to preserve old behaiour for '/Engine/MapTemplates/Sky/DaylightAmbientCubemap.DaylightAmbientCubemap', its maximum texture size has been explicitly set to 512.
+[2023.03.31-05.28.06:353][  0]LogHMD: PokeAHoleMaterial loaded successfully
+[2023.03.31-05.28.06:360][  0]LogUObjectArray: 17178 objects as part of root set at end of initial load.
+[2023.03.31-05.28.06:360][  0]LogUObjectAllocator: 4302048 out of 0 bytes used by permanent object pool.
+[2023.03.31-05.28.06:360][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2023.03.31-05.28.06:657][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: C253F8CC4F9FAAD0EB2A4B99FA8086EF | Instance: 701AD07F456141FB4C5C79A6EDBBF67F (DESKTOP-7O2N4A7-23412).
+[2023.03.31-05.28.06:699][  0]LogPython: Using Python 3.7.7
+[2023.03.31-05.28.07:376][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2023.03.31-05.28.07:381][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2023.03.31-05.28.07:614][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.03.31-05.28.07:615][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.03.31-05.28.07:619][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.03.31-05.28.07:622][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.03.31-05.28.07:633][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.03.31-05.28.07:640][  0]LogUProjectInfo: Found projects:
+[2023.03.31-05.28.07:865][  0]LogOpenImageDenoise: OIDN starting up
+[2023.03.31-05.28.07:924][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2023.03.31-05.28.07:949][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.03.31-05.28.07:949][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.03.31-05.28.08:098][  0]LogCollectionManager: Loaded 0 collections in 0.000788 seconds
+[2023.03.31-05.28.08:123][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Collections/' took 0.00s
+[2023.03.31-05.28.08:123][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Developers/qkrdl/Collections/' took 0.00s
+[2023.03.31-05.28.08:123][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Collections/' took 0.00s
+[2023.03.31-05.28.08:123][  0]LogOcInput: OculusInput pre-init called
+[2023.03.31-05.28.08:442][  0]LogEngine: Initializing Engine...
+[2023.03.31-05.28.08:443][  0]LogHMD: Failed to enumerate extensions. Please check that you have a valid OpenXR runtime installed.
+[2023.03.31-05.28.08:444][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2023.03.31-05.28.08:444][  0]LogMagicLeap: Warning: VR disabled because ZI is not enabled.  To enable, in the editor, Edit -> Project Settings -> Plugins -> Magic Leap Plugin -> Enable Zero Iteration
+[2023.03.31-05.28.08:445][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2023.03.31-05.28.08:588][  0]LogInit: Initializing FReadOnlyCVARCache
+[2023.03.31-05.28.08:597][  0]LogAIModule: Creating AISystem for world Untitled
+[2023.03.31-05.28.08:599][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2023.03.31-05.28.08:602][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2023.03.31-05.28.08:603][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2023.03.31-05.28.08:603][  0]LogAudio: Display: Audio Device Manager Initialized
+[2023.03.31-05.28.08:603][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.03.31-05.28.08:603][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.03.31-05.28.08:603][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.03.31-05.28.08:604][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.03.31-05.28.08:604][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.03.31-05.28.08:604][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.03.31-05.28.08:604][  0]LogAudioMixer: Display: Initializing audio mixer.
+[2023.03.31-05.28.08:613][  0]LogAudioMixer: Display: 0: FrontLeft
+[2023.03.31-05.28.08:613][  0]LogAudioMixer: Display: 1: FrontRight
+[2023.03.31-05.28.08:627][  0]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.03.31-05.28.08:627][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.03.31-05.28.08:630][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.03.31-05.28.08:630][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.03.31-05.28.08:631][  0]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.03.31-05.28.08:631][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.03.31-05.28.08:631][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.03.31-05.28.08:632][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.03.31-05.28.08:632][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.03.31-05.28.08:633][  0]LogInit: FAudioDevice initialized.
+[2023.03.31-05.28.08:633][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2023.03.31-05.28.08:633][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2023.03.31-05.28.08:691][  0]LogDerivedDataCache: Saved boot cache 0.06s 95MB C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc.
+[2023.03.31-05.28.08:692][  0]LogInit: Texture streaming: Enabled
+[2023.03.31-05.28.08:707][  0]LogAnalytics: Display: [UEEditor.Rocket.Release] APIServer = https://datarouter.ol.epicgames.com/. AppVersion = 4.27.2-18319896+++UE4+Release-4.27
+[2023.03.31-05.28.08:710][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2023.03.31-05.28.08:710][  0]LogEditorSessionSummary: Verbose: Initializing EditorSessionSummaryWriter for editor session tracking
+[2023.03.31-05.28.08:711][  0]LogEditorSessionSummary: EditorSessionSummaryWriter initialized
+[2023.03.31-05.28.08:741][  0]LogInit: Transaction tracking system initialized
+[2023.03.31-05.28.08:768][  0]BlueprintLog: New page: 에디터 로드
+[2023.03.31-05.28.08:834][  0]LocalizationService: 현지화 서비스가 비활성화되었습니다.
+[2023.03.31-05.28.08:860][  0]TimingProfiler: Initialize
+[2023.03.31-05.28.08:860][  0]TimingProfiler: OnSessionChanged
+[2023.03.31-05.28.08:861][  0]LoadingProfiler: Initialize
+[2023.03.31-05.28.08:861][  0]LoadingProfiler: OnSessionChanged
+[2023.03.31-05.28.08:861][  0]NetworkingProfiler: Initialize
+[2023.03.31-05.28.08:861][  0]NetworkingProfiler: OnSessionChanged
+[2023.03.31-05.28.08:861][  0]MemoryProfiler: Initialize
+[2023.03.31-05.28.08:861][  0]MemoryProfiler: OnSessionChanged
+[2023.03.31-05.28.09:023][  0]LogCook: Display: CookSettings for Memory: MemoryMaxUsedVirtual 0MiB, MemoryMaxUsedPhysical 16384MiB, MemoryMinFreeVirtual 0MiB, MemoryMinFreePhysical 1024MiB
+[2023.03.31-05.28.09:023][  0]LogCook: Display: Mobile HDR setting 1
+[2023.03.31-05.28.09:246][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/' took 0.00s
+[2023.03.31-05.28.09:527][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2023.03.31-05.28.09:530][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.03.31-05.28.09:530][  0]LogUnrealEdMisc: Loading editor; pre map load, took 7.475
+[2023.03.31-05.28.09:530][  0]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/Level_0.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.03.31-05.28.09:536][  0]LightingResults: New page: 라이팅 빌드
+[2023.03.31-05.28.09:538][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2023.03.31-05.28.09:538][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.03.31-05.28.09:538][  0]MapCheck: New page: 맵 체크
+[2023.03.31-05.28.09:538][  0]LightingResults: New page: 라이팅 빌드
+[2023.03.31-05.28.09:542][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.03.31-05.28.09:545][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2023.03.31-05.28.09:651][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Level_0'.
+[2023.03.31-05.28.09:653][  0]LogAIModule: Creating AISystem for world Level_0
+[2023.03.31-05.28.09:661][  0]LogPhysics: Warning: Scale for /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnection.Mesh has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=0.000 Z=1.000
+[2023.03.31-05.28.09:661][  0]LogPhysics: Warning: Scale for /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnection.Mesh has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=0.000 Z=1.000
+[2023.03.31-05.28.09:661][  0]LogPhysics: Warning: Scale for /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnection.Mesh has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=0.000 Z=1.000
+[2023.03.31-05.28.09:662][  0]LogPhysics: Warning: Scale for /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnection.Mesh has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=0.000 Z=1.000
+[2023.03.31-05.28.09:662][  0]LogPhysics: Warning: Scale for /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnection.Mesh has a component set to zero, which will result in a bad body instance. Scale:X=1.000 Y=0.000 Z=1.000
+[2023.03.31-05.28.09:671][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.03.31-05.28.09:712][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
+[2023.03.31-05.28.09:712][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.03.31-05.28.09:713][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.119ms.
+[2023.03.31-05.28.09:713][  0]LogFileHelpers: Loading map 'Level_0' took 0.182
+[2023.03.31-05.28.09:715][  0]LogUnrealEdMisc: Total Editor Startup Time, took 7.660
+[2023.03.31-05.28.09:857][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.03.31-05.28.09:863][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.03.31-05.28.09:870][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.03.31-05.28.09:876][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.03.31-05.28.09:894][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0127 seconds. Added 3856 classes and 930 folders.
+[2023.03.31-05.28.09:896][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'WidgetCarousel' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2023.03.31-05.28.09:898][  0]LogPakFile: PakFile PrimaryIndexSize=187
+[2023.03.31-05.28.09:898][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:898][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.03.31-05.28.09:898][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPerson.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:898][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPerson.upack)
+[2023.03.31-05.28.09:898][  0]LogPakFile: OnPakFileMounted2Time == 0.000048
+[2023.03.31-05.28.09:899][  0]LogPakFile: PakFile PrimaryIndexSize=189
+[2023.03.31-05.28.09:899][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:899][  0]LogPakFile: PakFile FullDirectoryIndexSize=152
+[2023.03.31-05.28.09:899][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPersonBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:899][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPersonBP.upack)
+[2023.03.31-05.28.09:899][  0]LogPakFile: OnPakFileMounted2Time == 0.000033
+[2023.03.31-05.28.09:899][  0]LogPakFile: PakFile PrimaryIndexSize=191
+[2023.03.31-05.28.09:899][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:899][  0]LogPakFile: PakFile FullDirectoryIndexSize=160
+[2023.03.31-05.28.09:900][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/MobileStarterContent.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:900][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/MobileStarterContent.upack)
+[2023.03.31-05.28.09:900][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:900][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.03.31-05.28.09:900][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:900][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.03.31-05.28.09:900][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/StarterContent.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:900][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/StarterContent.upack)
+[2023.03.31-05.28.09:900][  0]LogPakFile: OnPakFileMounted2Time == 0.000037
+[2023.03.31-05.28.09:900][  0]LogPakFile: PakFile PrimaryIndexSize=190
+[2023.03.31-05.28.09:900][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:900][  0]LogPakFile: PakFile FullDirectoryIndexSize=154
+[2023.03.31-05.28.09:900][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScroller.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:900][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScroller.upack)
+[2023.03.31-05.28.09:900][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:902][  0]LogPakFile: PakFile PrimaryIndexSize=192
+[2023.03.31-05.28.09:902][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:902][  0]LogPakFile: PakFile FullDirectoryIndexSize=158
+[2023.03.31-05.28.09:902][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScrollerBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:902][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScrollerBP.upack)
+[2023.03.31-05.28.09:902][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:903][  0]LogPakFile: PakFile PrimaryIndexSize=182
+[2023.03.31-05.28.09:903][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:903][  0]LogPakFile: PakFile FullDirectoryIndexSize=138
+[2023.03.31-05.28.09:903][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Flying.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:903][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Flying.upack)
+[2023.03.31-05.28.09:903][  0]LogPakFile: OnPakFileMounted2Time == 0.000029
+[2023.03.31-05.28.09:903][  0]LogPakFile: PakFile PrimaryIndexSize=184
+[2023.03.31-05.28.09:903][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:903][  0]LogPakFile: PakFile FullDirectoryIndexSize=142
+[2023.03.31-05.28.09:903][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_FlyingBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:903][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_FlyingBP.upack)
+[2023.03.31-05.28.09:903][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:904][  0]LogPakFile: PakFile PrimaryIndexSize=188
+[2023.03.31-05.28.09:904][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:904][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
+[2023.03.31-05.28.09:904][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_HandheldARBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:904][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_HandheldARBP.upack)
+[2023.03.31-05.28.09:904][  0]LogPakFile: OnPakFileMounted2Time == 0.000033
+[2023.03.31-05.28.09:905][  0]LogPakFile: PakFile PrimaryIndexSize=182
+[2023.03.31-05.28.09:905][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:905][  0]LogPakFile: PakFile FullDirectoryIndexSize=138
+[2023.03.31-05.28.09:905][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Puzzle.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:905][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Puzzle.upack)
+[2023.03.31-05.28.09:905][  0]LogPakFile: OnPakFileMounted2Time == 0.000034
+[2023.03.31-05.28.09:906][  0]LogPakFile: PakFile PrimaryIndexSize=184
+[2023.03.31-05.28.09:906][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:906][  0]LogPakFile: PakFile FullDirectoryIndexSize=142
+[2023.03.31-05.28.09:906][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_PuzzleBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:906][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_PuzzleBP.upack)
+[2023.03.31-05.28.09:906][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:906][  0]LogPakFile: PakFile PrimaryIndexSize=183
+[2023.03.31-05.28.09:906][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:906][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
+[2023.03.31-05.28.09:906][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Rolling.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:906][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Rolling.upack)
+[2023.03.31-05.28.09:906][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:907][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.03.31-05.28.09:907][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:907][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.03.31-05.28.09:907][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_RollingBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:907][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_RollingBP.upack)
+[2023.03.31-05.28.09:907][  0]LogPakFile: OnPakFileMounted2Time == 0.000027
+[2023.03.31-05.28.09:907][  0]LogPakFile: PakFile PrimaryIndexSize=188
+[2023.03.31-05.28.09:908][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:908][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
+[2023.03.31-05.28.09:908][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScroller.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:908][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScroller.upack)
+[2023.03.31-05.28.09:908][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:908][  0]LogPakFile: PakFile PrimaryIndexSize=190
+[2023.03.31-05.28.09:908][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:908][  0]LogPakFile: PakFile FullDirectoryIndexSize=154
+[2023.03.31-05.28.09:908][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScrollerBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:908][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScrollerBP.upack)
+[2023.03.31-05.28.09:908][  0]LogPakFile: OnPakFileMounted2Time == 0.000039
+[2023.03.31-05.28.09:909][  0]LogPakFile: PakFile PrimaryIndexSize=187
+[2023.03.31-05.28.09:909][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:909][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.03.31-05.28.09:909][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPerson.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:909][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPerson.upack)
+[2023.03.31-05.28.09:909][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:909][  0]LogPakFile: PakFile PrimaryIndexSize=189
+[2023.03.31-05.28.09:909][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:909][  0]LogPakFile: PakFile FullDirectoryIndexSize=152
+[2023.03.31-05.28.09:909][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPersonBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:909][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPersonBP.upack)
+[2023.03.31-05.28.09:909][  0]LogPakFile: OnPakFileMounted2Time == 0.000030
+[2023.03.31-05.28.09:910][  0]LogPakFile: PakFile PrimaryIndexSize=183
+[2023.03.31-05.28.09:910][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:910][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
+[2023.03.31-05.28.09:910][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDown.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:910][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDown.upack)
+[2023.03.31-05.28.09:910][  0]LogPakFile: OnPakFileMounted2Time == 0.000036
+[2023.03.31-05.28.09:911][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.03.31-05.28.09:911][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:911][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.03.31-05.28.09:911][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDownBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:911][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDownBP.upack)
+[2023.03.31-05.28.09:911][  0]LogPakFile: OnPakFileMounted2Time == 0.000041
+[2023.03.31-05.28.09:912][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.03.31-05.28.09:912][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:912][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.03.31-05.28.09:912][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStick.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:912][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStick.upack)
+[2023.03.31-05.28.09:912][  0]LogPakFile: OnPakFileMounted2Time == 0.000035
+[2023.03.31-05.28.09:912][  0]LogPakFile: PakFile PrimaryIndexSize=187
+[2023.03.31-05.28.09:912][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:912][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.03.31-05.28.09:912][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStickBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:912][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStickBP.upack)
+[2023.03.31-05.28.09:912][  0]LogPakFile: OnPakFileMounted2Time == 0.000035
+[2023.03.31-05.28.09:913][  0]LogPakFile: PakFile PrimaryIndexSize=183
+[2023.03.31-05.28.09:913][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:913][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
+[2023.03.31-05.28.09:913][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Vehicle.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:913][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Vehicle.upack)
+[2023.03.31-05.28.09:913][  0]LogPakFile: OnPakFileMounted2Time == 0.000040
+[2023.03.31-05.28.09:914][  0]LogPakFile: PakFile PrimaryIndexSize=186
+[2023.03.31-05.28.09:914][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:914][  0]LogPakFile: PakFile FullDirectoryIndexSize=146
+[2023.03.31-05.28.09:914][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdv.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:914][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdv.upack)
+[2023.03.31-05.28.09:914][  0]LogPakFile: OnPakFileMounted2Time == 0.000033
+[2023.03.31-05.28.09:914][  0]LogPakFile: PakFile PrimaryIndexSize=188
+[2023.03.31-05.28.09:914][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:914][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
+[2023.03.31-05.28.09:914][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdvBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:914][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdvBP.upack)
+[2023.03.31-05.28.09:914][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:915][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.03.31-05.28.09:915][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:915][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.03.31-05.28.09:915][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:915][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleBP.upack)
+[2023.03.31-05.28.09:915][  0]LogPakFile: OnPakFileMounted2Time == 0.000028
+[2023.03.31-05.28.09:916][  0]LogPakFile: PakFile PrimaryIndexSize=192
+[2023.03.31-05.28.09:916][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.03.31-05.28.09:916][  0]LogPakFile: PakFile FullDirectoryIndexSize=158
+[2023.03.31-05.28.09:916][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VirtualRealityBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.03.31-05.28.09:916][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VirtualRealityBP.upack)
+[2023.03.31-05.28.09:916][  0]LogPakFile: OnPakFileMounted2Time == 0.000033
+[2023.03.31-05.28.09:978][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'AddContentDialog' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2023.03.31-05.28.10:020][  0]LogSlate: Took 0.000325 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2023.03.31-05.28.10:021][  0]LogSlate: Took 0.000258 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2023.03.31-05.28.10:023][  0]LogSlate: Took 0.001526 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
+[2023.03.31-05.28.10:027][  0]LogSlate: Took 0.001499 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
+[2023.03.31-05.28.10:028][  0]LogSlate: Took 0.000242 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2023.03.31-05.28.10:030][  0]LogSlate: Took 0.000231 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2023.03.31-05.28.10:076][  0]LogSlate: Took 0.001746 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicExtraBold.ttf' (4074K)
+[2023.03.31-05.28.10:175][  0]LogRenderer: Reallocating scene render targets to support 1496x540 Format 10 NumSamples 1 (Frame:1).
+[2023.03.31-05.28.10:250][  0]LogSlate: Took 0.000308 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.03.31-05.28.10:317][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2023.03.31-05.28.10:317][  0]LogLoad: (Engine Initialization) Total time: 8.26 seconds
+[2023.03.31-05.28.10:317][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2023.03.31-05.28.10:405][  0]LogAssetRegistry: Asset discovery search completed in 5.0138 seconds
+[2023.03.31-05.28.10:413][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000003 seconds (updated 0 objects)
+[2023.03.31-05.28.10:415][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2023.03.31-05.28.59:936][148]LogHotReload: New module detected: UE4Editor-Project_MF-8277.dll
+[2023.03.31-05.29.00:970][152]LogHotReload: Starting Hot-Reload from IDE
+[2023.03.31-05.29.00:975][152]LogSlate: Took 0.000286 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.03.31-05.29.01:010][152]LogClass: EMagneticType HotReload.
+[2023.03.31-05.29.01:010][152]LogClass: EMagnetMoveAxisType HotReload.
+[2023.03.31-05.29.01:010][152]LogClass: EMagnetMoveType HotReload.
+[2023.03.31-05.29.01:018][152]LogHotReload: Re-instancing GamePlayerCharacter after hot-reload.
+[2023.03.31-05.29.01:026][152]LogHotReload: Re-instancing MagneticComponent after hot-reload.
+[2023.03.31-05.29.01:030][152]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.03.31-05.29.01:091][152]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.061 s
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: === Handled ensure: ===
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: 
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: Ensure condition failed: bArchetypeReinstanced [File:D:/Build/++UE4/Sync/Engine/Source/Editor/UnrealEd/Private/Kismet2/KismetReinstanceUtilities.cpp] [Line: 1903]
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: Reinstancing non-actor (/Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MAGNETIC); failed to resolve archetype object - property values may be lost.
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: Stack: 
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa428b453e UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa420e5a6f UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa420e3473 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa420e2616 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa420df435 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa420df98e UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa2e6a6457 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa2e6a6a99 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa2e69ed16 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa9e0f71c6 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa9e0d5422 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa9df9ddc5 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa46691bea UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa466b15a3 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa466b0618 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa2e69b047 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa2e69ad48 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa2e6acae2 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffa463c1d93 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ff693f3bca8 UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ff693f50fcc UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ff693f510ba UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ff693f540dd UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ff693f65984 UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ff693f6853a UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffacbdb26bd KERNEL32.DLL!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: [Callstack] 0x00007ffacd76a9f8 ntdll.dll!UnknownFunction []
+[2023.03.31-05.29.01:091][152]LogOutputDevice: Error: 
+[2023.03.31-05.29.01:098][152]LogStats:                SubmitErrorReport -  0.000 s
+[2023.03.31-05.29.02:169][152]LogStats:                    SendNewReport -  1.072 s
+[2023.03.31-05.29.02:169][152]LogStats:             FDebug::EnsureFailed -  1.139 s
+[2023.03.31-05.29.02:199][152]LogHotReload: Re-instancing PowerConnectionComponent after hot-reload.
+[2023.03.31-05.29.02:217][152]LogHotReload: Re-instancing PowerExecutionComponent after hot-reload.
+[2023.03.31-05.29.02:228][152]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.03.31-05.29.02:242][152]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0006 seconds. Added 34 classes and 2 folders.
+[2023.03.31-05.29.02:254][152]Display: HotReload successful (44 functions remapped  0 scriptstructs remapped)
+[2023.03.31-05.29.02:324][152]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0146 seconds. Added 3856 classes and 930 folders.
+[2023.03.31-05.29.02:376][152]Display: HotReload took  1.4s.
+[2023.03.31-05.31.14:710][547]LogHotReload: New module detected: UE4Editor-Project_MF-0460.dll
+[2023.03.31-05.31.15:740][551]LogHotReload: Starting Hot-Reload from IDE
+[2023.03.31-05.31.15:773][551]LogClass: EMagneticType HotReload.
+[2023.03.31-05.31.15:774][551]LogClass: EMagnetMoveAxisType HotReload.
+[2023.03.31-05.31.15:774][551]LogClass: EMagnetMoveType HotReload.
+[2023.03.31-05.31.15:793][551]LogHotReload: Re-instancing PowerConnectionComponent after hot-reload.
+[2023.03.31-05.31.15:806][551]LogHotReload: Re-instancing PowerExecutionComponent after hot-reload.
+[2023.03.31-05.31.15:816][551]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.03.31-05.31.15:828][551]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 34 classes and 2 folders.
+[2023.03.31-05.31.15:838][551]Display: HotReload successful (44 functions remapped  0 scriptstructs remapped)
+[2023.03.31-05.31.15:892][551]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0116 seconds. Added 3856 classes and 930 folders.
+[2023.03.31-05.31.15:897][551]Display: HotReload took  0.2s.
+[2023.03.31-05.32.11:394][862]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.03.31-05.32.12:305][862]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.911 s
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: === Handled ensure: ===
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: 
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: Ensure condition failed: GIsTransacting [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp] [Line: 1147]
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: 
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: Stack: 
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa44e54bf9 UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa438b3ef0 UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa4379c960 UE4Editor-Engine.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9df8cbe8 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9df7778d UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9de3e5b4 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9de3d57c UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa41fde369 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa41ffbddf UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa2ddc7cc7 UE4Editor-MainFrame.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa2ddc859e UE4Editor-MainFrame.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9b41b89c UE4Editor-SlateCore.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c05b356 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c067677 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c1ca6fe UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c1e280e UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c03421e UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c0ae104 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c097097 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffa9c089b62 UE4Editor-Slate.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaa657c025 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaa65692b7 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaa657e465 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaa6564410 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaccba8281 USER32.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaccba7d41 USER32.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffaa657fcd4 UE4Editor-ApplicationCore.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ff693f37621 UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ff693f50fcc UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ff693f510ba UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ff693f540dd UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ff693f65984 UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ff693f6853a UE4Editor.exe!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffacbdb26bd KERNEL32.DLL!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: [Callstack] 0x00007ffacd76a9f8 ntdll.dll!UnknownFunction []
+[2023.03.31-05.32.12:305][862]LogOutputDevice: Error: 
+[2023.03.31-05.32.12:310][862]LogStats:                SubmitErrorReport -  0.000 s
+[2023.03.31-05.32.13:185][862]LogStats:                    SendNewReport -  0.876 s
+[2023.03.31-05.32.13:185][862]LogStats:             FDebug::EnsureFailed -  1.792 s
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube10.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube11.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.Magnetic1'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.Magnetic1'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.Cube1' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.Cube1' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube2.Magnetic1'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube3.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.Magnetic1'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.Magnetic1'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube4.Magnetic1'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.Magnet1' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.Magnet1' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube5_5.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube7_2.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.Magnetic'
+[2023.03.31-05.32.13:186][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube8_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Cube_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn2.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn3.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn4.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.MagneticComponent_0' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.Cube' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.Cube' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Pawn_5.Magnetic'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.TRASH_MagneticComponent_4'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller_2.TRASH_MagneticComponent_4'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.TRASH_MagneticComponent_4'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller2_5.TRASH_MagneticComponent_4'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.TRASH_MagneticComponent_12'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller3_8.TRASH_MagneticComponent_12'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.MagneticComponent_0' has 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.TRASH_MagneticComponent_12'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.MagneticComponent_0' has 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.TestProppeller4_11.TRASH_MagneticComponent_12'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MagneticComponent_0' has 'SphereComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MAGNETIC'
+[2023.03.31-05.32.13:187][862]LogSceneComponent: Error: Component 'MagneticComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MagneticComponent_0' has 'SplineComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Engine/Transient.World_2:PersistentLevel.PlayerCharacter_0.MAGNETIC'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'MagneticComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0' has 'SphereComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MAGNETIC'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'MagneticComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0' has 'SplineComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Engine/Transient.World_0:PersistentLevel.GamePlayerCharacter_0.MAGNETIC'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor15.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor16.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor2_4.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor3.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor4.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor7.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1.Trigger' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1.Collider' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnectionComponent_1.Mesh' believes it is attached to 'PowerConnectionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor9.PowerConnection'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.Magnetic' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1.Collider' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1.Mesh' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.Magnetic' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecutionComponent_1' has 'PowerDirectionMovementComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerDirectionMovement' in its AttachChildren array, however, 'PowerDirectionMovementComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerDirectionMovement' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor10_8.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1.Collider' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1.Mesh' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecution'
+[2023.03.31-05.32.13:188][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecutionComponent_1' has 'PowerDirectionMovementComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerDirectionMovement' in its AttachChildren array, however, 'PowerDirectionMovementComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerDirectionMovement' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor13.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1.Collider' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1.Mesh' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecutionComponent_1' has 'PowerDirectionMovementComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerDirectionMovement' in its AttachChildren array, however, 'PowerDirectionMovementComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerDirectionMovement' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor14.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecutionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecutionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecutionComponent_1.Collider' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecutionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecutionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecutionComponent_1.Mesh' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor8.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecutionComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecutionComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecutionComponent_1.Collider' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecutionComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecutionComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecutionComponent_1.Mesh' believes it is attached to 'PowerExecutionComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor_1.PowerExecution'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1.Mesh' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor11.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1.Mesh' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor12.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerateComponent_1.Mesh' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor17.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1.Mesh' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor5_9.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1' has 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1.Mesh' in its AttachChildren array, however, 'StaticMeshComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1.Mesh' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerate'
+[2023.03.31-05.32.13:189][862]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerateComponent_1' has 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.Magnetic' in its AttachChildren array, however, 'MagneticComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.Magnetic' believes it is attached to 'PowerGenerateComponent /Game/Levels/Level_0.Level_0:PersistentLevel.Actor6_2.PowerGenerate'
+[2023.03.31-05.32.13:191][862]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2023.03.31-05.32.13:229][862]LogSlate: Window 'Project_MF - 언리얼 에디터' being destroyed
+[2023.03.31-05.32.13:324][863]Cmd: QUIT_EDITOR
+[2023.03.31-05.32.13:324][863]LogCore: Engine exit requested (reason: UUnrealEdEngine::CloseEditor())
+[2023.03.31-05.32.13:328][863]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2023.03.31-05.32.13:328][863]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2023.03.31-05.32.13:328][863]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2023.03.31-05.32.13:328][863]LogAudio: Display: Audio Device unregistered from world 'Level_0'.
+[2023.03.31-05.32.13:329][863]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.03.31-05.32.13:330][863]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.03.31-05.32.13:332][863]LogAudio: Display: Audio Device Manager Shutdown
+[2023.03.31-05.32.13:337][863]LogExit: Preparing to exit.
+[2023.03.31-05.32.13:513][863]LogWindows: Windows GetLastError: 작업을 완료했습니다. (0)
+[2023.03.31-05.32.17:118][863]LogThreadingWindows: Error: Runnable thread TaskGraphThreadNP 3 crashed.
+[2023.03.31-05.32.17:118][863]LogWindows: Error: === Critical error: ===
+[2023.03.31-05.32.17:118][863]LogWindows: Error: 
+[2023.03.31-05.32.17:118][863]LogWindows: Error: Fatal error: [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Core/Private/Windows/WindowsPlatformMisc.cpp] [Line: 475] 
+[2023.03.31-05.32.17:118][863]LogWindows: Error: Pure virtual function being called
+[2023.03.31-05.32.17:118][863]LogWindows: Error: 
+[2023.03.31-05.32.17:118][863]LogWindows: Error: 
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffacad0fe7c KERNELBASE.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa46930216 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa46934218 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa4665242d UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa4694e6e0 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffab2e76ea4 VCRUNTIME140.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa9dd16734 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa9de6d40f UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa9de42fb5 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa9de4be5d UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa463b1507 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa463b2860 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa463b9aa5 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa4694ff0b UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffa46947050 UE4Editor-Core.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffacbdb26bd KERNEL32.DLL!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: [Callstack] 0x00007ffacd76a9f8 ntdll.dll!UnknownFunction []
+[2023.03.31-05.32.17:118][863]LogWindows: Error: 
+[2023.03.31-05.32.17:118][863]LogWindows: Error: Crash in runnable thread TaskGraphThreadNP 3
+[2023.03.31-05.32.17:131][863]LogExit: Executing StaticShutdownAfterError
+[2023.03.31-05.32.17:131][863]LogWindows: FPlatformMisc::RequestExit(1)
+[2023.03.31-05.32.17:131][863]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 3)
+[2023.03.31-05.32.17:131][863]LogCore: Engine exit requested (reason: Win RequestExit; note: exit was already requested)
+[2023.03.31-05.32.17:140][863]Log file closed, 03/31/23 14:32:17
