@@ -88,10 +88,14 @@ bool UMagneticComponent::CanAttachAsChild(USceneComponent* ChildComponent, FName
 
 void UMagneticComponent::SettingMagnetWeightAndFieldRange()
 {
+
 	if (!_bUsedFixedWeight)
 	{
-		const FBox& Box = GetAttachParent()->Bounds.GetBox();
-		Weight = (Box.Max - Box.Min).Size();
+		if (GetAttachParent() != nullptr)
+		{
+			const FBox& Box = GetAttachParent()->Bounds.GetBox();
+			Weight = (Box.Max - Box.Min).Size();
+		}
 	}
 
 	FinalMagneticFieldRadius = Weight * MagneticFieldRadius;
@@ -357,6 +361,10 @@ void UMagneticComponent::UpdateMagneticField()
 	FieldSpline->ClearSplinePoints(true);
 
 	//원이 되도록 회전.
+	if(GetAttachParent() == nullptr)
+	{
+		return;
+	}
 	FVector size = GetAttachParent()->GetComponentScale();
 	float rot = .0f;
 	FVector mov;

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FGenericCrashContext>
+<RuntimeProperties>
+<CrashVersion>3</CrashVersion>
+<ExecutionGuid>8C87AC8343A0C499ACA89D9D060CDA8B</ExecutionGuid>
+<CrashGUID>UE4CC-Windows-99E0E4D04910254AD8ACE3B5D8BF7F38_0000</CrashGUID>
+<IsEnsure>true</IsEnsure>
+<IsAssert>false</IsAssert>
+<CrashType>Ensure</CrashType>
+<ErrorMessage>Ensure condition failed: Component-&gt;HasBegunPlay() [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Actor.cpp] [Line: 3557]
+Failed to route BeginPlay (PowerConveyorMovementComponent /Game/Levels/test_1.test_1:PersistentLevel.Cube118_7.PowerConveyorMovement)
+Stack: 
+0x00007ff75cf5e00d Project_MF.exe!UnknownFunction []
+0x00007ff75aa12704 Project_MF.exe!UnknownFunction []
+0x00007ff75aa18477 Project_MF.exe!UnknownFunction []
+0x00007ff75b9a2a5d Project_MF.exe!UnknownFunction []
+0x00007ff75af77921 Project_MF.exe!UnknownFunction []
+0x00007ff75b95505e Project_MF.exe!UnknownFunction []
+0x00007ff75b88cbf0 Project_MF.exe!UnknownFunction []
+0x00007ff75b83d342 Project_MF.exe!UnknownFunction []
+0x00007ff75b8ab598 Project_MF.exe!UnknownFunction []
+0x00007ff75af4454c Project_MF.exe!UnknownFunction []
+0x00007ff756200884 Project_MF.exe!UnknownFunction []
+0x00007ff7562170ff Project_MF.exe!UnknownFunction []
+0x00007ff7562171ca Project_MF.exe!UnknownFunction []
+0x00007ff7562195cc Project_MF.exe!UnknownFunction []
+0x00007ff75622ae14 Project_MF.exe!UnknownFunction []
+0x00007ff75ca7049e Project_MF.exe!UnknownFunction []
+0x00007ffacbdb26bd KERNEL32.DLL!UnknownFunction []
+0x00007ffacd76a9f8 ntdll.dll!UnknownFunction []
+</ErrorMessage>
+<CrashReporterMessage></CrashReporterMessage>
+<ProcessId>2336</ProcessId>
+<SecondsSinceStart>2</SecondsSinceStart>
+<IsInternalBuild>false</IsInternalBuild>
+<IsPerforceBuild>false</IsPerforceBuild>
+<IsSourceDistribution>false</IsSourceDistribution>
+<GameName>UE4-Project_MF</GameName>
+<ExecutableName>Project_MF</ExecutableName>
+<BuildConfiguration>Development</BuildConfiguration>
+<GameSessionID></GameSessionID>
+<Symbols>**UE4*Release-4.27-CL-18319896-Win64-Development</Symbols>
+<PlatformName>WindowsNoEditor</PlatformName>
+<PlatformNameIni>Windows</PlatformNameIni>
+<EngineMode>Game</EngineMode>
+<EngineModeEx>Unset</EngineModeEx>
+<DeploymentName></DeploymentName>
+<EngineVersion>4.27.2-18319896+++UE4+Release-4.27</EngineVersion>
+<CommandLine> Project_MF</CommandLine>
+<LanguageLCID>0</LanguageLCID>
+<AppDefaultLocale>ko-KR</AppDefaultLocale>
+<BuildVersion>++UE4+Release-4.27-CL-18319896</BuildVersion>
+<IsUE4Release>false</IsUE4Release>
+<IsRequestingExit>false</IsRequestingExit>
+<UserName></UserName>
+<BaseDir>D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Build/WindowsNoEditor/Project_MF/Binaries/Win64/</BaseDir>
+<RootDir>D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Build/WindowsNoEditor/</RootDir>
+<MachineId>8704BDFD44F768383C3E46A2D75F42F1</MachineId>
+<LoginId>8704bdfd44f768383c3e46a2d75f42f1</LoginId>
+<EpicAccountId>00968bd6be13427aa3a079bae2497ed8</EpicAccountId>
+<SourceContext></SourceContext>
+<UserDescription></UserDescription>
+<UserActivityHint></UserActivityHint>
+<CrashDumpMode>0</CrashDumpMode>
+<GameStateName></GameStateName>
+<Misc.NumberOfCores>4</Misc.NumberOfCores>
+<Misc.NumberOfCoresIncludingHyperthreads>8</Misc.NumberOfCoresIncludingHyperthreads>
+<Misc.Is64bitOperatingSystem>1</Misc.Is64bitOperatingSystem>
+<Misc.CPUVendor>AuthenticAMD</Misc.CPUVendor>
+<Misc.CPUBrand>AMD Ryzen 3 3300X 4-Core Processor             </Misc.CPUBrand>
+<Misc.PrimaryGPUBrand>NVIDIA GeForce RTX 2060 SUPER</Misc.PrimaryGPUBrand>
+<Misc.OSVersionMajor>Windows 10 (Release 2009)</Misc.OSVersionMajor>
+<Misc.OSVersionMinor></Misc.OSVersionMinor>
+<MemoryStats.TotalPhysical>34266505216</MemoryStats.TotalPhysical>
+<MemoryStats.TotalVirtual>140737488224256</MemoryStats.TotalVirtual>
+<MemoryStats.PageSize>4096</MemoryStats.PageSize>
+<MemoryStats.TotalPhysicalGB>32</MemoryStats.TotalPhysicalGB>
+<MemoryStats.AvailablePhysical>20198785024</MemoryStats.AvailablePhysical>
+<MemoryStats.AvailableVirtual>21165412352</MemoryStats.AvailableVirtual>
+<MemoryStats.UsedPhysical>353492992</MemoryStats.UsedPhysical>
+<MemoryStats.PeakUsedPhysical>353492992</MemoryStats.PeakUsedPhysical>
+<MemoryStats.UsedVirtual>790224896</MemoryStats.UsedVirtual>
+<MemoryStats.PeakUsedVirtual>790224896</MemoryStats.PeakUsedVirtual>
+<MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+<MemoryStats.OOMAllocationSize>0</MemoryStats.OOMAllocationSize>
+<MemoryStats.OOMAllocationAlignment>0</MemoryStats.OOMAllocationAlignment>
+<NumMinidumpFramesToIgnore>0</NumMinidumpFramesToIgnore>
+<CallStack></CallStack>
+<PCallStack>
+Project_MF  0x00007ff755860000 + 76fe00d         
+Project_MF  0x00007ff755860000 + 51b2704         
+Project_MF  0x00007ff755860000 + 51b8477         
+Project_MF  0x00007ff755860000 + 6142a5d         
+Project_MF  0x00007ff755860000 + 5717921         
+Project_MF  0x00007ff755860000 + 60f505e         
+Project_MF  0x00007ff755860000 + 602cbf0         
+Project_MF  0x00007ff755860000 + 5fdd342         
+Project_MF  0x00007ff755860000 + 604b598         
+Project_MF  0x00007ff755860000 + 56e454c         
+Project_MF  0x00007ff755860000 + 9a0884          
+Project_MF  0x00007ff755860000 + 9b70ff          
+Project_MF  0x00007ff755860000 + 9b71ca          
+Project_MF  0x00007ff755860000 + 9b95cc          
+Project_MF  0x00007ff755860000 + 9cae14          
+Project_MF  0x00007ff755860000 + 721049e         
+KERNEL32    0x00007ffacbda0000 + 126bd           
+ntdll       0x00007ffacd710000 + 5a9f8           
+</PCallStack>
+<PCallStackHash>8BFC6B63883D02C24FCBF15A0317240DC6AC4BA0</PCallStackHash>
+</RuntimeProperties>
+<PlatformProperties>
+<PlatformIsRunningWindows>1</PlatformIsRunningWindows>
+<IsRunningOnBattery>false</IsRunningOnBattery>
+<PlatformCallbackResult>0</PlatformCallbackResult>
+</PlatformProperties>
+<EngineData>
+<RHI.IsGPUOverclocked>false</RHI.IsGPUOverclocked>
+<RHI.RHIName>D3D11</RHI.RHIName>
+<RHI.AdapterName>NVIDIA GeForce RTX 2060 SUPER</RHI.AdapterName>
+<RHI.UserDriverVersion>527.56</RHI.UserDriverVersion>
+<RHI.InternalDriverVersion>31.0.15.2756</RHI.InternalDriverVersion>
+<RHI.DriverDate>12-5-2022</RHI.DriverDate>
+<RHI.FeatureLevel>SM5</RHI.FeatureLevel>
+<DeviceProfile.Name>WindowsNoEditor</DeviceProfile.Name>
+<Platform.AppHasFocus>true</Platform.AppHasFocus>
+</EngineData>
+<GameData>
+</GameData>
+</FGenericCrashContext>

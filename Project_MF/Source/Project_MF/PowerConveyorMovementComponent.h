@@ -21,6 +21,7 @@ private:
 #endif
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))
 	UPROPERTY() UBoxComponent* Trigger;
+	//UPROPERTY() UBoxComponent* Collider;
 	UPROPERTY() TArray<AActor*> MovableTargets;
 
 	UFUNCTION() void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
