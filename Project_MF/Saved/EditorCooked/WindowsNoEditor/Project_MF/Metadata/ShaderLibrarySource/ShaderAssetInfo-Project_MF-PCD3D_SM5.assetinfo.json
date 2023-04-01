@@ -8,6 +8,26 @@
 			]
 		},
 		{
+			"ShaderMapHash": "A4BC21BDB19D9A2A7ACA48D6578362C6FF2248BE",
+			"Assets": [
+				"/Game/power",
+				"/Game/mag",
+				"/Game/link_2",
+				"/Game/link_1",
+				"/Game/light"
+			]
+		},
+		{
+			"ShaderMapHash": "6CB5CAC2EF8223107EA2B21906291F541215A3CF",
+			"Assets": [
+				"/Game/Piston",
+				"/Game/delivery",
+				"/Game/Resource/Materials/M_MFMaterial",
+				"/Engine/EngineDebugMaterials/M_SimpleOpaque",
+				"/Engine/VREditor/TransformGizmo/Xray"
+			]
+		},
+		{
 			"ShaderMapHash": "8D5C9971654E22D92212E61C55D92EEA6D6F673A",
 			"Assets": [
 				"/Engine/BasicShapes/BasicShapeMaterial"
@@ -304,18 +324,6 @@
 			]
 		},
 		{
-			"ShaderMapHash": "E6C881C4367A017C30CB5E1C97A435C113595511",
-			"Assets": [
-				"/SpeedTreeImporter/SpeedTree9/SpeedTreeBillboardMaster"
-			]
-		},
-		{
-			"ShaderMapHash": "A954F8FBE7BFB625D53290FA0E043AE0D60F25A7",
-			"Assets": [
-				"/SpeedTreeImporter/SpeedTree9/SpeedTreeMaster"
-			]
-		},
-		{
 			"ShaderMapHash": "634BE28D834184364042562DF8D2C9F628C4777D",
 			"Assets": [
 				"/OpenXR/Devices/OculusTouch_v3/MI_OculusTouch_v3",
@@ -345,17 +353,27 @@
 			]
 		},
 		{
-			"ShaderMapHash": "6CB5CAC2EF8223107EA2B21906291F541215A3CF",
+			"ShaderMapHash": "E6C881C4367A017C30CB5E1C97A435C113595511",
 			"Assets": [
-				"/Game/Resource/Materials/M_MFMaterial",
-				"/Engine/EngineDebugMaterials/M_SimpleOpaque",
-				"/Engine/VREditor/TransformGizmo/Xray"
+				"/SpeedTreeImporter/SpeedTree9/SpeedTreeBillboardMaster"
+			]
+		},
+		{
+			"ShaderMapHash": "A954F8FBE7BFB625D53290FA0E043AE0D60F25A7",
+			"Assets": [
+				"/SpeedTreeImporter/SpeedTree9/SpeedTreeMaster"
 			]
 		},
 		{
 			"ShaderMapHash": "474B9F382A2D5CCBB61D8266FCDEA3715B474DA5",
 			"Assets": [
 				"/Game/Resource/Magnetic/NewMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "2B85E36FC910036313FD1BEA3BA790BC32816072",
+			"Assets": [
+				"/Game/Resource/Effects/Glow"
 			]
 		},
 		{

@@ -110,20 +110,20 @@
 			"Assets": [
 				"/Game/Resource/Materials/M_MFMaterial",
 				"/Engine/VREditor/TransformGizmo/Xray",
-				"/Game/delivery",
-				"/Game/Piston"
+				"/Game/Piston",
+				"/Game/delivery"
 			]
 		},
 		{
-			"ShaderMapHash": "EA0F6AC7299BB7FEB5AA62C8CF6E1B66AF8EC6B6",
+			"ShaderMapHash": "474B9F382A2D5CCBB61D8266FCDEA3715B474DA5",
 			"Assets": [
-				"/Paper2D/OpaqueUnlitSpriteMaterial"
+				"/Game/Resource/Magnetic/NewMaterial"
 			]
 		},
 		{
-			"ShaderMapHash": "A714AEA3AB59E5E1063F5B045D9645674EC299E9",
+			"ShaderMapHash": "2B85E36FC910036313FD1BEA3BA790BC32816072",
 			"Assets": [
-				"/Paper2D/DefaultSpriteMaterial"
+				"/Game/Resource/Effects/Glow"
 			]
 		},
 		{
@@ -142,6 +142,18 @@
 			"ShaderMapHash": "EFA0ABFC95AAB7148BE65BAC8E4D403FA1C0640F",
 			"Assets": [
 				"/Engine/EngineMaterials/DefaultMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "EA0F6AC7299BB7FEB5AA62C8CF6E1B66AF8EC6B6",
+			"Assets": [
+				"/Paper2D/OpaqueUnlitSpriteMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "A714AEA3AB59E5E1063F5B045D9645674EC299E9",
+			"Assets": [
+				"/Paper2D/DefaultSpriteMaterial"
 			]
 		},
 		{
@@ -296,6 +308,16 @@
 			]
 		},
 		{
+			"ShaderMapHash": "A4BC21BDB19D9A2A7ACA48D6578362C6FF2248BE",
+			"Assets": [
+				"/Game/power",
+				"/Game/mag",
+				"/Game/link_2",
+				"/Game/link_1",
+				"/Game/light"
+			]
+		},
+		{
 			"ShaderMapHash": "69B0A9A90585AE168FC820CD0FD31145DDF0D616",
 			"Assets": [
 				"/Game/Resource/Effects/Gun_plasma_ball_material"
@@ -317,28 +339,6 @@
 			"ShaderMapHash": "0339086529AC5941D45CAB957496F284BFB9BF9A",
 			"Assets": [
 				"/Game/Resource/Effects/Glow02"
-			]
-		},
-		{
-			"ShaderMapHash": "474B9F382A2D5CCBB61D8266FCDEA3715B474DA5",
-			"Assets": [
-				"/Game/Resource/Magnetic/NewMaterial"
-			]
-		},
-		{
-			"ShaderMapHash": "A4BC21BDB19D9A2A7ACA48D6578362C6FF2248BE",
-			"Assets": [
-				"/Game/light",
-				"/Game/link_1",
-				"/Game/link_2",
-				"/Game/mag",
-				"/Game/power"
-			]
-		},
-		{
-			"ShaderMapHash": "2B85E36FC910036313FD1BEA3BA790BC32816072",
-			"Assets": [
-				"/Game/Resource/Effects/Glow"
 			]
 		}
 	]
