@@ -57,8 +57,8 @@ void UPowerGenerateComponent::BeginPlay()
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapEnd);
 
-	SetPowerState(!bPowerState, true);
-	SetPowerState(!bPowerState, true);
+	//SetPowerState(!bPowerState, true);
+	//SetPowerState(!bPowerState, true);
 	UpdateMaterialColor();
 }
 
@@ -102,7 +102,7 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			GetOwner()->GetActorLocation(),
 			GetOwner()->GetActorLocation(),
 			FQuat::Identity,
-			ECollisionChannel::ECC_GameTraceChannel3,
+			ECollisionChannel::ECC_GameTraceChannel4,
 			FCollisionShape::MakeBox(TriggerVolume),
 			Params
 		);

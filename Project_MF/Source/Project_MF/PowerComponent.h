@@ -8,7 +8,7 @@
 #include "PowerComponent.generated.h"
 
 UCLASS()// ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class PROJECT_MF_API UPowerComponent : public UBoxComponent
+class PROJECT_MF_API UPowerComponent : public USceneComponent
 {
 	GENERATED_BODY()
 

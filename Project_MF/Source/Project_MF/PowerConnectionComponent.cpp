@@ -108,6 +108,9 @@ void UPowerConnectionComponent::BeginPlay()
 		Triggers[i]->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
 	}
 
+	SetPowerState(!bPowerState);
+	SetPowerState(!bPowerState);
+
 	UpdateMaterialColor();
 }
 
@@ -333,7 +336,6 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 
 		for (int i = 0; i < Triggers.Num(); i = i + 1)
 		{
-
 			FVector TriggerLocation;
 			FVector TriggerVolume;
 			//Triggers가 1개만 존재 할 때
@@ -358,7 +360,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 				TriggerLocation,
 				TriggerLocation,
 				FQuat::Identity,
-				ECollisionChannel::ECC_GameTraceChannel2,
+				ECollisionChannel::ECC_GameTraceChannel4,
 				FCollisionShape::MakeBox(TriggerVolume),
 				Params
 			);
