@@ -3,6 +3,7 @@
 
 #include "PowerConveyorMovementComponent.h"
 #include "MovementRegistComponent.h"
+#include "DrawDebugHelpers.h"
 
 UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 {
@@ -25,17 +26,16 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 	}
 #endif
 	
-
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
-	Trigger->SetupAttachment(this);
 }
 
 void UPowerConveyorMovementComponent::BeginPlay()
 {
-	FVector TriggerVolume = FVector::OneVector;
+	FVector TriggerSize = FVector::OneVector;
 	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	if (::IsValid(OwnerRootComponent) == true)
 	{
+		Trigger->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 		Trigger->SetCollisionProfileName("OverlapAllDynamic");
 		Trigger->SetGenerateOverlapEvents(true);
 
@@ -45,9 +45,76 @@ void UPowerConveyorMovementComponent::BeginPlay()
 		//OwnerRootComponent->OnComponentHit.AddDynamic(this, &UPowerConveyorMovementComponent::OnHit);
 		//OwnerRootComponent->SetNotifyRigidBodyCollision(true);
 		
-		TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
+		TriggerSize = OwnerRootComponent->GetRelativeScale3D();
 	}
-	Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
+	Trigger->SetBoxExtent(FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z));
+	
+	FVector TriggerVolume = FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z);
+	TArray<FHitResult> HitResult;
+	FCollisionQueryParams Params(NAME_None, false, GetOwner());
+	bool bResult = GetWorld()->SweepMultiByChannel
+	(
+		HitResult,
+		GetOwner()->GetActorLocation(),
+		GetOwner()->GetActorLocation(),
+		FQuat::Identity,
+		ECollisionChannel::ECC_WorldDynamic,
+		FCollisionShape::MakeBox(TriggerVolume),
+		Params
+	);
+	if (bResult == true)
+	{
+		for (int i = 0; i < HitResult.Num(); i = i + 1)
+		{
+			if (HitResult[i].Actor.IsValid() == true)
+			{
+				if (GetOwner() != HitResult[i].Actor)
+				{
+					UPrimitiveComponent* CollisionTargetRootComponent = Cast<UPrimitiveComponent>(HitResult[i].Actor->GetRootComponent());
+					if (::IsValid(CollisionTargetRootComponent) == true)
+					{
+						if (CollisionTargetRootComponent->IsSimulatingPhysics() == true)
+						{
+							int Count_0 = 0;
+							for (int j = 0; j < MovableTargets.Num(); j = j + 1)
+							{
+								if (MovableTargets[j] == HitResult[j].Actor)
+								{
+									Count_0 = Count_0 + 1;
+									break;
+								}
+							}
+							if (Count_0 < 1)
+							{
+								MovableTargets.Add(HitResult[i].Actor->GetRootComponent()->GetOwner());
+
+								UMovementRegistComponent* MovementRegistComponent = HitResult[i].Actor->FindComponentByClass<UMovementRegistComponent>();
+								if (MovementRegistComponent == nullptr)
+								{
+									MovementRegistComponent = NewObject<UMovementRegistComponent>(HitResult[i].Actor->GetRootComponent()->GetOwner(), UMovementRegistComponent::StaticClass());
+									MovementRegistComponent->RegisterComponent();
+								}
+
+								int Count_1 = 0;
+								for (int j = 0; j < MovementRegistComponent->MovementComponents.Num(); j = j + 1)
+								{
+									if (MovementRegistComponent->MovementComponents[j] == this)
+									{
+										Count_1 = Count_1 + 1;
+										break;
+									}
+								}
+								if (Count_1 < 1)
+								{
+									MovementRegistComponent->MovementComponents.Add(this);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -72,7 +139,7 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 						if (MovementRegistComponent->MovementComponents[0] == this)
 						{
 							AActor* MovableTarget = MovableTargets[i];
-							FVector MovementVector = GetForwardVector() * (ActingSpeed * DeltaTime);
+							FVector MovementVector = GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime);
 
 							MovableTarget->AddActorWorldOffset(MovementVector, true);
 							if (MovableTarget->GetVelocity().Size() < 0.01f)

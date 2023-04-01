@@ -14,10 +14,9 @@ UPowerDirectionMovementComponent::UPowerDirectionMovementComponent()
 		if (ArrowComponent)
 		{
 			ArrowComponent->ArrowColor = FColor(150, 200, 255);
-
+			ArrowComponent->SetupAttachment(this);
 			ArrowComponent->ArrowSize = 1.0f;
 			ArrowComponent->bTreatAsASprite = true;
-			ArrowComponent->SetupAttachment(this);
 			ArrowComponent->bIsScreenSizeScaled = true;
 		}
 	}
@@ -28,7 +27,7 @@ void UPowerDirectionMovementComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	// ...
-	OriginPosition = GetRelativeLocation();
+	OriginPosition = GetOwner()->GetActorLocation();
 }
 
 void UPowerDirectionMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -43,14 +42,14 @@ void UPowerDirectionMovementComponent::TickComponent(float DeltaTime, ELevelTick
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
-				FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-				SetRelativeLocation(OriginPosition + MovementVector);
+				FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+				GetOwner()->SetActorLocation(OriginPosition + MovementVector);
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-				FVector MovementVector = GetRelativeTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-				SetRelativeLocation(OriginPosition + MovementVector);
+				FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+				GetOwner()->SetActorLocation(OriginPosition + MovementVector);
 			}
 		}
 	}

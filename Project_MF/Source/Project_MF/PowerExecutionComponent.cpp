@@ -23,7 +23,7 @@ void UPowerExecutionComponent::BeginPlay()
 		if (MaterialOrigin != nullptr)
 		{
 			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
-			OwnerRootComponent->SetMaterial(MaterialIndexNum, MaterialOrigin);
+			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
 		}
 		OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
 		OwnerRootComponent->SetGenerateOverlapEvents(true);
@@ -47,7 +47,7 @@ void UPowerExecutionComponent::UpdateMaterialColor()
 	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	if (::IsValid(OwnerRootComponent) == true)
 	{
-		UMaterialInstanceDynamic* DynamicMaterial = OwnerRootComponent->CreateDynamicMaterialInstance(MaterialIndexNum);
+		UMaterialInstanceDynamic* DynamicMaterial = OwnerRootComponent->CreateDynamicMaterialInstance(0);
 		if (DynamicMaterial != nullptr)
 		{
 			if (bPowerState == true)
