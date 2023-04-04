@@ -16,8 +16,10 @@ class PROJECT_MF_API UPowerConnectionComponent : public UPowerComponent
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UStaticMeshComponent*> Meshs;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UBoxComponent*> Colliders;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UBoxComponent*> Triggers;
+	UPROPERTY() UBoxComponent* Collider0;
+	UPROPERTY() UBoxComponent* Collider1;
+	UPROPERTY() UBoxComponent* Trigger0;
+	UPROPERTY() UBoxComponent* Trigger1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 ObjectLength;
 
@@ -28,18 +30,18 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-#if WITH_EDITOR
-	virtual void PostInitProperties() override;
-	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
-#endif
-public:	
+//#if WITH_EDITOR
+//	virtual void PostInitProperties() override;
+//	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+//#endif
+//public:	
 	// Called every frame
 	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
 	UFUNCTION() void UpdateMaterialColor();
 
-	UFUNCTION(BlueprintCallable) void SetObjectLength(int32 param);
-	UFUNCTION(BlueprintCallable) virtual void SetTriggerSize(int32 param) override;
+	//UFUNCTION(BlueprintCallable) void SetObjectLength(int32 param);
+	//UFUNCTION(BlueprintCallable) virtual void SetTriggerSize(int32 param) override;
 
 	UFUNCTION() virtual void SetPowerState(bool param, bool IsGenerator = false) override;
 

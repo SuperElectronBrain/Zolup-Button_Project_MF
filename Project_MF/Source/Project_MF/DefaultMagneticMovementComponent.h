@@ -19,7 +19,7 @@ public:
 
 private:
 	/*Override methods*/
-	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
+	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
 
 	/*fields and Components*/
 	FHitResult hit;
@@ -28,8 +28,9 @@ private:
 	float _operatorRadiusDiv;
 	float _operatorRadiusHalfDiv;
 	float _prevOperatorRadius;
+	bool _originUsedGravity;
 
 public:
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(EditAnywhere, Category = Magnetic)
 	EMagnetMoveAxisType MoveType = EMagnetMoveAxisType::MOVE_XYZ;
 };

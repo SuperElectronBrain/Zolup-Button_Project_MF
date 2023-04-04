@@ -11,7 +11,7 @@ UPowerComponent::UPowerComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 
 	//SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	SetCollisionProfileName(TEXT("BlockAllDynamic"));
+	//SetCollisionProfileName(TEXT("BlockAllDynamic"));
 
 	// ...
 }

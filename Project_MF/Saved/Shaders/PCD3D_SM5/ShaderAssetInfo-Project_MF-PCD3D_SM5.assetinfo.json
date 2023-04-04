@@ -40,7 +40,9 @@
 		{
 			"ShaderMapHash": "7B48EFA7785D362B0DE4CE89C337822BE851F69E",
 			"Assets": [
-				"/OculusVR/Materials/TouchForQuestRiftSControllerMaterial"
+				"/OculusVR/Materials/TouchForQuestRiftSControllerMaterial",
+				"/Game/Resource/Effects/Effect_circle_01_texture_Mat",
+				"/Game/Resource/Effects/Beam_02_texture_Mat"
 			]
 		},
 		{
@@ -107,13 +109,21 @@
 			"ShaderMapHash": "6CB5CAC2EF8223107EA2B21906291F541215A3CF",
 			"Assets": [
 				"/Game/Resource/Materials/M_MFMaterial",
-				"/Engine/VREditor/TransformGizmo/Xray"
+				"/Engine/VREditor/TransformGizmo/Xray",
+				"/Game/Piston",
+				"/Game/delivery"
 			]
 		},
 		{
 			"ShaderMapHash": "474B9F382A2D5CCBB61D8266FCDEA3715B474DA5",
 			"Assets": [
 				"/Game/Resource/Magnetic/NewMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "2B85E36FC910036313FD1BEA3BA790BC32816072",
+			"Assets": [
+				"/Game/Resource/Effects/Glow"
 			]
 		},
 		{
@@ -280,12 +290,6 @@
 			]
 		},
 		{
-			"ShaderMapHash": "8D5C9971654E22D92212E61C55D92EEA6D6F673A",
-			"Assets": [
-				"/Engine/BasicShapes/BasicShapeMaterial"
-			]
-		},
-		{
 			"ShaderMapHash": "6D966E5C41CF95F7429D1D0F70508D19DCFA4D60",
 			"Assets": [
 				"/Engine/EditorMaterials/PreviewShadowIndicatorMaterial"
@@ -295,6 +299,22 @@
 			"ShaderMapHash": "5532C31F2D3986334CDEFCBF4E1201FB6D4D6B00",
 			"Assets": [
 				"/Engine/EngineDebugMaterials/DebugEditorMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "8D5C9971654E22D92212E61C55D92EEA6D6F673A",
+			"Assets": [
+				"/Engine/BasicShapes/BasicShapeMaterial"
+			]
+		},
+		{
+			"ShaderMapHash": "A4BC21BDB19D9A2A7ACA48D6578362C6FF2248BE",
+			"Assets": [
+				"/Game/power",
+				"/Game/mag",
+				"/Game/link_2",
+				"/Game/link_1",
+				"/Game/light"
 			]
 		},
 		{
@@ -319,12 +339,6 @@
 			"ShaderMapHash": "0339086529AC5941D45CAB957496F284BFB9BF9A",
 			"Assets": [
 				"/Game/Resource/Effects/Glow02"
-			]
-		},
-		{
-			"ShaderMapHash": "6A0E748754CB1CBC4B45589541B05BDBB28309CE",
-			"Assets": [
-				"/Game/Resource/Effects/Glow"
 			]
 		}
 	]

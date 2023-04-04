@@ -8,7 +8,7 @@
 #include "PowerComponent.generated.h"
 
 UCLASS()// ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class PROJECT_MF_API UPowerComponent : public UBoxComponent
+class PROJECT_MF_API UPowerComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
@@ -17,7 +17,7 @@ public:
 	UPowerComponent();
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* MeshOrigin;
+	UPROPERTY() UStaticMesh* MeshOrigin;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UMaterial* MaterialOrigin;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 TriggerSize;
@@ -30,6 +30,7 @@ public:
 	// Called every frame
 	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	virtual bool GetPowerState() { return bPowerState; }
 	virtual void SetTriggerSize(int32 param);
 	virtual void SetPowerState(bool param, bool IsGenerator = false);
 };

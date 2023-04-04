@@ -29,7 +29,7 @@ void UPowerRotationMovementComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	// ...
-	OriginRotation = GetRelativeRotation().Yaw;
+	OriginRotation = GetOwner()->GetActorQuat().Rotator().Yaw;
 }
 
 void UPowerRotationMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -40,7 +40,7 @@ void UPowerRotationMovementComponent::TickComponent(float DeltaTime, ELevelTick 
 	{
 		CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
 		//UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f)"), GetUpVector().X, GetUpVector().Y, GetUpVector().Z);
-		SetRelativeRotation(FQuat(FRotator(GetRelativeRotation().Pitch, OriginRotation + CurrentMovement, GetRelativeRotation().Roll)));
+		GetOwner()->SetActorRelativeRotation(FQuat(FRotator(GetOwner()->GetActorQuat().Rotator().Pitch, OriginRotation + CurrentMovement, GetOwner()->GetActorQuat().Rotator().Roll)));
 		//SetRelativeRotation(FQuat(FVector(0.0f, 0.0f, 1.0f), FMath::DegreesToRadians(OriginRotation + CurrentMovement)));
 		//SetRelativeRotation(FQuat(GetUpVector(), FMath::DegreesToRadians(OriginRotation + CurrentMovement)));
 		//SetRelativeRotation(FQuat(GetRelativeTransform().GetUnitAxis(EAxis::Z), FMath::DegreesToRadians(OriginRotation + CurrentMovement)));
@@ -48,7 +48,7 @@ void UPowerRotationMovementComponent::TickComponent(float DeltaTime, ELevelTick 
 	else if (bActingState == false)
 	{
 		CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-		SetRelativeRotation(FQuat(FRotator(GetRelativeRotation().Pitch, OriginRotation + CurrentMovement, GetRelativeRotation().Roll)));
+		GetOwner()->SetActorRelativeRotation(FQuat(FRotator(GetOwner()->GetActorQuat().Rotator().Pitch, OriginRotation + CurrentMovement, GetOwner()->GetActorQuat().Rotator().Roll)));
 		//SetRelativeRotation(FQuat(FVector(0.0f, 0.0f, 1.0f), FMath::DegreesToRadians(OriginRotation + CurrentMovement)));
 		//SetRelativeRotation(FQuat(GetUpVector(), FMath::DegreesToRadians(OriginRotation + CurrentMovement)));
 		//SetRelativeRotation(FQuat(GetRelativeTransform().GetUnitAxis(EAxis::Z), FMath::DegreesToRadians(OriginRotation + CurrentMovement)));
