@@ -33,8 +33,8 @@ public:
 	/*Public method*/
 	virtual void SetUpdatedComponent(USceneComponent* NewUpdatedComponent) override;
 	AActor* ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime);
-	virtual void StartMovement(EMagnetMoveType startType) {}
-	virtual void EndMovement(EMagnetMoveType endType) {}
+	virtual void StartMovement(EMagnetMoveType startType, UMagneticComponent* owner, UMagneticComponent* magOperator) {}
+	virtual void EndMovement(EMagnetMoveType endType, UMagneticComponent* owner) {}
 
 protected:
 	UFUNCTION()

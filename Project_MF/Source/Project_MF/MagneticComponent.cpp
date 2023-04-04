@@ -13,20 +13,20 @@
 UMagneticComponent::UMagneticComponent()
 {
 	#pragma region Summary
-	PrimaryComponentTick.bCanEverTick = true;
-	CurrMagnetic = EMagneticType::NONE;
-	EternalHaveMagnetic = false;
-	_RotCounter = FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION);
-	_applyRadius = _goalRadius = 0.f;
-	bShowMagneticField = true;
-	bCanChangeMagnetic = true;
-	MaxHaveMagneticSeconds = 20.f;
-	CurrHaveMagneticSeconds = 0.f;
-	MagneticFieldRadius = 5.f;
-	FinalMagneticFieldRadius = 0.f;
-	_applyMovement = false;
-	_bUsedFixedWeight = false;
-	_blastUsedGravity = false;
+	PrimaryComponentTick.bCanEverTick	= true;
+	CurrMagnetic						= EMagneticType::NONE;
+	EternalHaveMagnetic					= false;
+	_RotCounter							= FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION);
+	_applyRadius						= _goalRadius = 0.f;
+	bShowMagneticField					= true;
+	MagneticFieldRadius					= 5.f;
+	bCanChangeMagnetic					= true;
+	MaxHaveMagneticSeconds				= 20.f;
+	CurrHaveMagneticSeconds				= 0.f;
+	FinalMagneticFieldRadius			= 0.f;
+	_applyMovement						= false;
+	_bUsedFixedWeight					= false;
+	_blastUsedGravity					= false;
 
 	/*CDO*/
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> FIELD_MESH(
@@ -278,6 +278,7 @@ void UMagneticComponent::BeginPlay()
 	{
 		if(_bUsedFixedWeight == false) _parent->SetMassOverrideInKg(NAME_None, 10000.f);
 		_blastUsedGravity = _parent->IsGravityEnabled();
+		_parent->SetMobility(EComponentMobility::Movable);
 	}
 
 	SettingMagnetWeightAndFieldRange();
@@ -357,14 +358,15 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 void UMagneticComponent::UpdateMagneticField()
 {
 	#pragma region Summary
+	if (_parent==nullptr && !::IsValid(_parent) )
+	{
+		return;
+	}
+
 
 	FieldSpline->ClearSplinePoints(true);
 
 	//원이 되도록 회전.
-	if(GetAttachParent() == nullptr)
-	{
-		return;
-	}
 	FVector size = GetAttachParent()->GetComponentScale();
 	float rot = .0f;
 	FVector mov;
@@ -531,7 +533,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		if (_applyMovement == false || _lastMoveType!=moveType)
 		{
 			MagnetMoveStartEvent.Broadcast(moveType);
-			_movement->StartMovement(moveType);
+			_movement->StartMovement(moveType, this, magnet);
 			SetNoActiveMovementsActive(moveType==EMagnetMoveType::PUSHED_OUT?true:false);
 		}
 		_applyMovement = true;
@@ -555,7 +557,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	if (applyLogic==false && _applyMovement)
 	{
 		_applyMovement = false;
-		_movement->EndMovement(_lastMoveType);
+		_movement->EndMovement(_lastMoveType, this);
 		_lastMoveType = EMagnetMoveType::NONE;
 		MagnetMoveEndEvent.Broadcast(_lastMoveType);
 		SetNoActiveMovementsActive(true);
