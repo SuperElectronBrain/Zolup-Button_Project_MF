@@ -23,8 +23,6 @@ private:
 	virtual void StartMovement(EMagnetMoveType moveType, UMagneticComponent* owner, UMagneticComponent* magOperator) override;
 
 	/*Private methods*/
-	UFUNCTION()
-	void ShakeProcess();
 
 	/*fields and Components*/
 	FHitResult hit;

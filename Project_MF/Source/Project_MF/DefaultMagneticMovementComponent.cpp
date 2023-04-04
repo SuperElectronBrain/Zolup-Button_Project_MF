@@ -72,6 +72,9 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 
 		if (distanceRatio >= .4f) power = _distance * 10.f * DeltaTime;
 		else power = (_distance * .5f + _distance * (distanceRatio+.3f*2.f) ) * DeltaTime;
+
+		//만약 
+
 		Velocity = dir * power;
 	}
 
@@ -94,20 +97,11 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 
 	if (hit.bBlockingHit)
 	{
-		FTimerHandle handle;
-		GetWorld()->GetTimerManager().SetTimer(handle, this, &UDefaultMagneticMovementComponent::ShakeProcess, .01f, true, 0.f);
+		//FTimerHandle handle;
+		//GetWorld()->GetTimerManager().SetTimer(handle, this, &UDefaultMagneticMovementComponent::ShakeProcess, .01f, true, 0.f);
+		UpdatedComponent->SetWorldRotation(FQuat::Identity);
 		SlideAlongSurface(Velocity, 1.f - hit.Time, hit.Normal, hit);
-		hit.Init();
 	}
-
-	//흔들림 적용
-	//if (_shakePow>0.f)
-	//{
-	//	SafeMoveUpdatedComponent(-dir*10.f*(_shakePow+.2f * 2.f), UpdatedComponent->GetComponentRotation(), true, hit, ETeleportType::TeleportPhysics);
-	//	SlideAlongSurface(Velocity, 1.f - hit.Time, hit.Normal, hit);
-	//	_shakeDir = FVector::CrossProduct(_shakeDir, hit.Normal);
-	//	_shakePow -= DeltaTime;
-	//}
 
 	if (hit.IsValidBlockingHit() && FVector::DotProduct(dir, hit.Normal)<0 && type == EMagnetMoveType::DRAWN_IN && hit.GetActor()!=nullptr && ::IsValid(hit.GetActor()))
 	{

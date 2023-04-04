@@ -15,7 +15,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	ShootExtend.Set(2.f, 2.f, 2.f);
 	JumpPower = 1600.f;
 	CameraRotationSpeed = 420.f;
-	MoveSpeed = 460.f;
+	MoveSpeed = 1450.f;
 	_bCanJump = false;
 	_bShootMine = false;
 	_GivenIndex = _OldGivenIndex = 0;
@@ -40,14 +40,15 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	SpringArm->bInheritYaw = true;
 	SpringArm->bInheritRoll = true;
 	SpringArm->TargetArmLength = 10.f;
-	SpringArm->SetRelativeLocationAndRotation(FVector(.0f, .0f, 40.f), FRotator::ZeroRotator);
+	SpringArm->SetRelativeLocationAndRotation(FVector(.0f, .0f, 170.f), FRotator::ZeroRotator);
 
 	/*Camera*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
 	Camera->SetupAttachment(SpringArm);
+	Camera->SetRelativeLocationAndRotation(FVector(0.f, 0.f, 8.5f), FRotator::ZeroRotator);
 
 	/*CapsuleComponents*/
-	GetCapsuleComponent()->SetCapsuleRadius(30.f);
+	GetCapsuleComponent()->SetCapsuleRadius(15.f);
 
 	/*Player Mesh*/
 	USkeletalMeshComponent* PlayerMesh = GetMesh();
@@ -129,8 +130,8 @@ void AGamePlayerCharacter::BeginPlay()
 	}
 
 	//왼쪽팔 본의 위치를 수정한다.
-	PlayerAnim->_ArmLAddOffsetTransform.SetLocation(FVector(-7.f, 7.f, -12.f));
-	PlayerAnim->_ArmLAddOffsetTransform.SetRotation(FQuat(FRotator::MakeFromEuler(FVector(0.f, 0.f, -39.f))));
+	//PlayerAnim->_ArmLAddOffsetTransform.SetLocation(FVector(-7.f, 7.f, -12.f));
+	//PlayerAnim->_ArmLAddOffsetTransform.SetRotation(FQuat(FRotator::MakeFromEuler(FVector(0.f, 0.f, -39.f))));
 }
 
 void AGamePlayerCharacter::Tick(float DeltaTime)
