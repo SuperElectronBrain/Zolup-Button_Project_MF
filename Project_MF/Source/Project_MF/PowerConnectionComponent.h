@@ -15,11 +15,19 @@ class PROJECT_MF_API UPowerConnectionComponent : public UPowerComponent
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<UStaticMeshComponent*> Meshs;
-	UPROPERTY() UBoxComponent* Collider0;
-	UPROPERTY() UBoxComponent* Collider1;
-	UPROPERTY() UBoxComponent* Trigger0;
-	UPROPERTY() UBoxComponent* Trigger1;
+#if WITH_EDITORONLY_DATA
+	UPROPERTY() UStaticMeshComponent* DebugMeshComponent;
+#endif
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* LeftPartMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* CenterPartMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* RightPartMesh;
+
+	UPROPERTY() UStaticMeshComponent* LeftPart;
+	UPROPERTY() UStaticMeshComponent* RightPart;
+	UPROPERTY() UBoxComponent* LeftCollider;
+	UPROPERTY() UBoxComponent* RightCollider;
+	UPROPERTY() UBoxComponent* LeftTrigger;
+	UPROPERTY() UBoxComponent* RightTrigger;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 ObjectLength;
 
@@ -30,10 +38,10 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-//#if WITH_EDITOR
-//	virtual void PostInitProperties() override;
-//	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
-//#endif
+#if WITH_EDITOR
+	virtual void PostInitProperties() override;
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
 //public:	
 	// Called every frame
 	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

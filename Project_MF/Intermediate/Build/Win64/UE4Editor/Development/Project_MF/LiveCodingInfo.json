@@ -26,7 +26,6 @@
 			"PlayerUICanvasWidget.cpp.obj",
 			"PlayerUIMagneticInfoWidget.cpp.obj",
 			"PowerComponent.cpp.obj",
-			"PowerConnectionComponent.cpp.obj",
 			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
@@ -37,7 +36,8 @@
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActor.cpp.obj",
-			"TestPlayerGameMode.cpp.obj"
+			"TestPlayerGameMode.cpp.obj",
+			"PowerConnectionComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CustomGameInstance.gen.cpp.obj",
@@ -71,11 +71,11 @@
 			"PowerGenerateComponent.gen.cpp.obj",
 			"PowerMovementComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
-			"Project_MF.init.gen.cpp.obj",
 			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",
 			"TestActor.gen.cpp.obj",
-			"TestPlayerGameMode.gen.cpp.obj"
+			"TestPlayerGameMode.gen.cpp.obj",
+			"Project_MF.init.gen.cpp.obj"
 		]
 	}
 }

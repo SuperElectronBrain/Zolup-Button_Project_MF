@@ -1,4 +1,4 @@
-﻿Log file open, 04/01/23 13:29:15
+﻿Log file open, 04/04/23 09:57:26
 LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
 LogWindows: File 'aqProf.dll' does not exist
 LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
@@ -10,7 +10,7 @@ LogConsoleResponse: Display: Failed to find resolution value strings in scalabil
 LogInit: Display: Running engine for game: Project_MF
 LogPlatformFile: Not using cached read wrapper
 LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
-LogStats: Stats thread started at 0.248283
+LogStats: Stats thread started at 0.686439
 LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
 LogInit: Display: Loading text-based GConfig....
 LogPluginManager: Mounting plugin MeshPainting
@@ -19,63 +19,62 @@ LogPluginManager: Mounting plugin Paper2D
 LogPluginManager: Mounting plugin AISupport
 LogPluginManager: Mounting plugin EnvironmentQueryEditor
 LogPluginManager: Mounting plugin LiveLink
-LogPluginManager: Mounting plugin LightPropagationVolume
-LogPluginManager: Mounting plugin GameplayCameras
 LogPluginManager: Mounting plugin CameraShakePreviewer
+LogPluginManager: Mounting plugin GameplayCameras
 LogPluginManager: Mounting plugin OodleData
 LogPluginManager: Mounting plugin OodleNetwork
 LogPluginManager: Mounting plugin AnimationSharing
 LogPluginManager: Mounting plugin CLionSourceCodeAccess
-LogPluginManager: Mounting plugin AssetManagerEditor
 LogPluginManager: Mounting plugin CodeLiteSourceCodeAccess
-LogPluginManager: Mounting plugin GitSourceControl
-LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
 LogPluginManager: Mounting plugin NullSourceCodeAccess
-LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin KDevelopSourceCodeAccess
 LogPluginManager: Mounting plugin PerforceSourceControl
-LogPluginManager: Mounting plugin PixWinPlugin
-LogPluginManager: Mounting plugin CurveEditorTools
 LogPluginManager: Mounting plugin PlasticSourceControl
-LogPluginManager: Mounting plugin DataValidation
-LogPluginManager: Mounting plugin PluginUtils
+LogPluginManager: Mounting plugin PixWinPlugin
 LogPluginManager: Mounting plugin PropertyAccessNode
+LogPluginManager: Mounting plugin GitSourceControl
+LogPluginManager: Mounting plugin SubversionSourceControl
+LogPluginManager: Mounting plugin RiderSourceCodeAccess
+LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting plugin UObjectPlugin
+LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin AssetManagerEditor
+LogPluginManager: Mounting plugin CryptoKeys
+LogPluginManager: Mounting plugin DataValidation
+LogPluginManager: Mounting plugin CurveEditorTools
 LogPluginManager: Mounting plugin FacialAnimation
 LogPluginManager: Mounting plugin GameplayTagsEditor
 LogPluginManager: Mounting plugin GeometryMode
-LogPluginManager: Mounting plugin RiderSourceCodeAccess
-LogPluginManager: Mounting plugin SubversionSourceControl
 LogPluginManager: Mounting plugin MacGraphicsSwitching
-LogPluginManager: Mounting plugin TextureFormatOodle
 LogPluginManager: Mounting plugin MaterialAnalyzer
-LogPluginManager: Mounting plugin UObjectPlugin
 LogPluginManager: Mounting plugin MobileLauncherProfileWizard
 LogPluginManager: Mounting plugin PluginBrowser
-LogPluginManager: Mounting plugin VisualStudioCodeSourceCodeAccess
-LogPluginManager: Mounting plugin VisualStudioSourceCodeAccess
-LogPluginManager: Mounting plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting plugin PluginUtils
 LogPluginManager: Mounting plugin SpeedTreeImporter
 LogPluginManager: Mounting plugin DatasmithContent
+LogPluginManager: Mounting plugin LightPropagationVolume
 LogPluginManager: Mounting plugin VariantManagerContent
-LogPluginManager: Mounting plugin AlembicImporter
-LogPluginManager: Mounting plugin AutomationUtils
 LogPluginManager: Mounting plugin BackChannel
+LogPluginManager: Mounting plugin AlembicImporter
 LogPluginManager: Mounting plugin ChaosCloth
 LogPluginManager: Mounting plugin ChaosClothEditor
-LogPluginManager: Mounting plugin ChaosEditor
 LogPluginManager: Mounting plugin ChaosNiagara
 LogPluginManager: Mounting plugin ChaosSolverPlugin
 LogPluginManager: Mounting plugin CharacterAI
+LogPluginManager: Mounting plugin ChaosEditor
+LogPluginManager: Mounting plugin AutomationUtils
+LogPluginManager: Mounting plugin TextureFormatOodle
 LogPluginManager: Mounting plugin GeometryCache
 LogPluginManager: Mounting plugin GeometryCollectionPlugin
 LogPluginManager: Mounting plugin GeometryProcessing
 LogPluginManager: Mounting plugin MotoSynth
-LogPluginManager: Mounting plugin OpenImageDenoise
-LogPluginManager: Mounting plugin PlatformCrypto
 LogPluginManager: Mounting plugin PlanarCut
+LogPluginManager: Mounting plugin OpenImageDenoise
 LogPluginManager: Mounting plugin ProxyLODPlugin
+LogPluginManager: Mounting plugin PlatformCrypto
 LogPluginManager: Mounting plugin PythonScriptPlugin
 LogPluginManager: Mounting plugin SkeletalReduction
-LogPluginManager: Mounting plugin Niagara
 LogPluginManager: Mounting plugin LuminPlatformFeatures
 LogPluginManager: Mounting plugin MagicLeap
 LogPluginManager: Mounting plugin MagicLeapLightEstimation
@@ -89,16 +88,16 @@ LogPluginManager: Mounting plugin MediaCompositing
 LogPluginManager: Mounting plugin MediaPlayerEditor
 LogPluginManager: Mounting plugin WebMMedia
 LogPluginManager: Mounting plugin WmfMedia
-LogPluginManager: Mounting plugin UdpMessaging
 LogPluginManager: Mounting plugin TcpMessaging
+LogPluginManager: Mounting plugin UdpMessaging
 LogPluginManager: Mounting plugin ActorSequence
 LogPluginManager: Mounting plugin LevelSequenceEditor
 LogPluginManager: Mounting plugin MatineeToLevelSequence
 LogPluginManager: Mounting plugin TemplateSequence
 LogPluginManager: Mounting plugin OnlineSubsystem
 LogPluginManager: Mounting plugin OnlineSubsystemNull
-LogPluginManager: Mounting plugin LauncherChunkInstaller
 LogPluginManager: Mounting plugin OnlineSubsystemUtils
+LogPluginManager: Mounting plugin LauncherChunkInstaller
 LogPluginManager: Mounting plugin ActorLayerUtilities
 LogPluginManager: Mounting plugin AndroidDeviceProfileSelector
 LogPluginManager: Mounting plugin AndroidMoviePlayer
@@ -109,9 +108,9 @@ LogPluginManager: Mounting plugin ArchVisCharacter
 LogPluginManager: Mounting plugin AssetTags
 LogPluginManager: Mounting plugin AudioCapture
 LogPluginManager: Mounting plugin AudioSynesthesia
-LogPluginManager: Mounting plugin CableComponent
 LogPluginManager: Mounting plugin ChunkDownloader
 LogPluginManager: Mounting plugin CustomMeshComponent
+LogPluginManager: Mounting plugin CableComponent
 LogPluginManager: Mounting plugin EditableMesh
 LogPluginManager: Mounting plugin ExampleDeviceProfileSelector
 LogPluginManager: Mounting plugin GoogleCloudMessaging
@@ -122,21 +121,22 @@ LogPluginManager: Mounting plugin LocationServicesBPLibrary
 LogPluginManager: Mounting plugin MobilePatchingUtils
 LogPluginManager: Mounting plugin OpenXR
 LogPluginManager: Mounting plugin OpenXREyeTracker
-LogPluginManager: Mounting plugin OpenXRHandTracking
 LogPluginManager: Mounting plugin PhysXVehicles
+LogPluginManager: Mounting plugin OpenXRHandTracking
 LogPluginManager: Mounting plugin PostSplashScreen
 LogPluginManager: Mounting plugin ProceduralMeshComponent
 LogPluginManager: Mounting plugin PropertyAccessEditor
+LogPluginManager: Mounting plugin Takes
 LogPluginManager: Mounting plugin RuntimePhysXCooking
 LogPluginManager: Mounting plugin SignificanceManager
 LogPluginManager: Mounting plugin SoundFields
 LogPluginManager: Mounting plugin Synthesis
-LogPluginManager: Mounting plugin WebMMoviePlayer
 LogPluginManager: Mounting plugin WindowsMoviePlayer
+LogPluginManager: Mounting plugin Niagara
 LogPluginManager: Mounting plugin ScreenshotTools
-LogPluginManager: Mounting plugin Takes
-LogPluginManager: Mounting plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting plugin WebMMoviePlayer
 LogPluginManager: Mounting plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting plugin ContentBrowserAssetDataSource
 LogPluginManager: Mounting plugin ContentBrowserFileDataSource
 LogPluginManager: Mounting plugin OnlineSubsystemGooglePlay
 LogPluginManager: Mounting plugin OnlineSubsystemIOS
@@ -164,8 +164,6 @@ LogInit:  - BufferSize = 65536
 LogOnline: OSS: Creating online subsystem instance for: NULL
 LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
 LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
-LogOculusPluginWrapper: OculusPlugin initialized successfully
-LogHMD: Failed initializing OVRPlugin 1.59.0
 LogInit: Build: ++UE4+Release-4.27-CL-18319896
 LogInit: Engine Version: 4.27.2-18319896+++UE4+Release-4.27
 LogInit: Compatible Engine Version: 4.27.0-17155196+++UE4+Release-4.27
@@ -175,7 +173,7 @@ LogInit: Compiled (64-bit): Nov 30 2021 07:12:08
 LogInit: Compiled with Visual C++: 19.24.28315.00
 LogInit: Build Configuration: Development
 LogInit: Branch Name: ++UE4+Release-4.27
-LogInit: Command Line: 
+LogInit: Command Line:  D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -run=VisualStudioTools -unattended -noshadercompile -noaudio -nullrhi -nocpuprofilertrace -nocrashreports -nosplash -output C:\Users\qkrdl\AppData\Local\Temp\tmpEE36.tmp
 LogInit: Base Directory: D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/Win64/
 LogInit: Allocator: TBB
 LogInit: Installed Engine Build: 1
@@ -228,861 +226,657 @@ LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
 LogInit: Object subsystem initialized
 LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
 LogConfig: Setting CVar [[r.setres:1280x720]]
-[2023.04.01-04.29.16:055][  0]LogConfig: Setting CVar [[r.VSync:0]]
-[2023.04.01-04.29.16:055][  0]LogConfig: Setting CVar [[r.RHICmdBypass:0]]
-[2023.04.01-04.29.16:055][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:056][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:25165824]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Setting CVar [[gc.MultithreadedDestructionEnabled:1]]
-[2023.04.01-04.29.16:056][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:056][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:068][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
-[2023.04.01-04.29.16:068][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
-[2023.04.01-04.29.16:069][  0]LogInit: Selected Device Profile: [Windows]
-[2023.04.01-04.29.16:069][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
-[2023.04.01-04.29.16:069][  0]LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
-[2023.04.01-04.29.16:069][  0]LogInit: Going up to parent DeviceProfile []
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
-[2023.04.01-04.29.16:069][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Setting CVar [[fx.SkipVectorVMBackendOptimizations:1]]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
-[2023.04.01-04.29.16:070][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Editor.ini]
-[2023.04.01-04.29.16:070][  0]LogInit: Computer: DESKTOP-7O2N4A7
-[2023.04.01-04.29.16:070][  0]LogInit: User: qkrdl
-[2023.04.01-04.29.16:070][  0]LogInit: CPU Page size=4096, Cores=4
-[2023.04.01-04.29.16:070][  0]LogInit: High frequency timer resolution =10.000000 MHz
-[2023.04.01-04.29.16:070][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
-[2023.04.01-04.29.16:070][  0]LogMemory: Platform Memory Stats for Windows
-[2023.04.01-04.29.16:070][  0]LogMemory: Process Physical Memory: 144.16 MB used, 144.16 MB peak
-[2023.04.01-04.29.16:070][  0]LogMemory: Process Virtual Memory: 114.55 MB used, 114.55 MB peak
-[2023.04.01-04.29.16:070][  0]LogMemory: Physical Memory: 15521.65 MB used,  17157.43 MB free, 32679.09 MB total
-[2023.04.01-04.29.16:070][  0]LogMemory: Virtual Memory: 134200840.00 MB used,  16886.95 MB free, 134217728.00 MB total
-[2023.04.01-04.29.16:077][  0]LogWindows: WindowsPlatformFeatures enabled
-[2023.04.01-04.29.16:114][  0]LogInit: Physics initialised using underlying interface: PhysX
-[2023.04.01-04.29.16:116][  0]LogInit: Using OS detected language (ko-KR).
-[2023.04.01-04.29.16:116][  0]LogInit: Using OS detected locale (ko-KR).
-[2023.04.01-04.29.16:118][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so the 'ko' localization will be used.
-[2023.04.01-04.29.16:227][  0]LogInit: Setting process to per monitor DPI aware
-[2023.04.01-04.29.16:243][  0]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
-[2023.04.01-04.29.16:258][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
-[2023.04.01-04.29.16:258][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
-[2023.04.01-04.29.16:487][  0]LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
-[2023.04.01-04.29.16:490][  0]LogHMD: Failed to initialize OpenVR with code 110
-[2023.04.01-04.29.16:490][  0]LogD3D11RHI: D3D11 min allowed feature level: 11_0
-[2023.04.01-04.29.16:490][  0]LogD3D11RHI: D3D11 max allowed feature level: 11_0
-[2023.04.01-04.29.16:490][  0]LogD3D11RHI: D3D11 adapters:
-[2023.04.01-04.29.16:604][  0]LogD3D11RHI:    0. 'NVIDIA GeForce RTX 2060 SUPER' (Feature Level 11_0)
-[2023.04.01-04.29.16:604][  0]LogD3D11RHI:       8019/0/16339 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:       0/0/16339 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI: Chosen D3D11 Adapter:
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 2060 SUPER
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     VendorId    : 10de
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     DeviceId    : 1f06
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     SubSysId    : 3ff11458
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     Revision    : 00a1
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     DedicatedVideoMemory : 8408530944 bytes
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     SharedSystemMemory : 17133252608 bytes
-[2023.04.01-04.29.16:606][  0]LogD3D11RHI:     AdapterLuid : 0 42837
-[2023.04.01-04.29.16:614][  0]LogD3D11RHI: Creating new Direct3DDevice
-[2023.04.01-04.29.16:614][  0]LogD3D11RHI:     GPU DeviceId: 0x1f06 (for the marketing name, search the web for "GPU Device Id")
-[2023.04.01-04.29.16:614][  0]LogWindows: EnumDisplayDevices:
-[2023.04.01-04.29.16:614][  0]LogWindows:    0. 'NVIDIA GeForce RTX 2060 SUPER' (P:1 D:1)
-[2023.04.01-04.29.16:614][  0]LogWindows:    1. 'NVIDIA GeForce RTX 2060 SUPER' (P:0 D:0)
-[2023.04.01-04.29.16:615][  0]LogWindows:    2. 'NVIDIA GeForce RTX 2060 SUPER' (P:0 D:0)
-[2023.04.01-04.29.16:615][  0]LogWindows:    3. 'NVIDIA GeForce RTX 2060 SUPER' (P:0 D:0)
-[2023.04.01-04.29.16:615][  0]LogWindows: DebugString: FoundDriverCount:4 
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce RTX 2060 SUPER
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:   Driver Version: 527.56 (internal:31.0.15.2756, unified:527.56)
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:      Driver Date: 12-5-2022
-[2023.04.01-04.29.16:615][  0]LogRHI: Texture pool is 5613 MB (70% of 8019 MB)
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI: Creating D3DDevice using adapter:
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 2060 SUPER
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     VendorId    : 10de
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     DeviceId    : 1f06
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     SubSysId    : 3ff11458
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     Revision    : 00a1
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     DedicatedVideoMemory : 8408530944 bytes
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     SharedSystemMemory : 17133252608 bytes
-[2023.04.01-04.29.16:615][  0]LogD3D11RHI:     AdapterLuid : 0 42837
-[2023.04.01-04.29.16:667][  0]LogD3D11RHI: RHI has support for 64 bit atomics
-[2023.04.01-04.29.16:667][  0]LogD3D11RHI: Async texture creation enabled
-[2023.04.01-04.29.16:667][  0]LogD3D11RHI: Array index from any shader is supported
-[2023.04.01-04.29.16:668][  0]LogD3D11RHI: HDR output is supported on display 0 (NvId: 0x80061081).
-[2023.04.01-04.29.16:688][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
-[2023.04.01-04.29.16:711][  0]LogRHI: GeForceNow SDK initialized: 1
-[2023.04.01-04.29.16:973][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
-[2023.04.01-04.29.16:996][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
-[2023.04.01-04.29.17:018][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
-[2023.04.01-04.29.17:018][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
-[2023.04.01-04.29.17:028][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
-[2023.04.01-04.29.17:034][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
-[2023.04.01-04.29.17:040][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
-[2023.04.01-04.29.17:046][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
-[2023.04.01-04.29.17:056][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
-[2023.04.01-04.29.17:060][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
-[2023.04.01-04.29.17:067][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
-[2023.04.01-04.29.17:092][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
-[2023.04.01-04.29.17:092][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
-[2023.04.01-04.29.17:100][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacNoEditor'
-[2023.04.01-04.29.17:107][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
-[2023.04.01-04.29.17:112][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
-[2023.04.01-04.29.17:116][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
-[2023.04.01-04.29.17:127][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
-[2023.04.01-04.29.17:127][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
-[2023.04.01-04.29.17:137][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
-[2023.04.01-04.29.17:141][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
-[2023.04.01-04.29.17:146][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
-[2023.04.01-04.29.17:151][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
-[2023.04.01-04.29.17:151][  0]LogTargetPlatformManager: Display: Building Assets For Windows
-[2023.04.01-04.29.17:160][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
-[2023.04.01-04.29.17:190][  0]LogTextureFormatOodle: Display: Oodle Texture 2.9.0 init RDO Off
-[2023.04.01-04.29.17:222][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
-[2023.04.01-04.29.17:222][  0]LogShaderCompilers: Guid format shader working directory is -35 characters bigger than the processId version (../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/Shaders/WorkingDirectory/8708/).
-[2023.04.01-04.29.17:223][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/qkrdl/AppData/Local/Temp/UnrealShaderWorkingDir/BE240CF545DB6D9A0060D3BA67E5D125/'.
-[2023.04.01-04.29.17:223][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
-[2023.04.01-04.29.17:223][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
-[2023.04.01-04.29.17:223][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
-[2023.04.01-04.29.17:995][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
-[2023.04.01-04.29.18:045][  0]LogDerivedDataCache: Loaded boot cache 0.05s 95MB C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc.
-[2023.04.01-04.29.18:045][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
-[2023.04.01-04.29.18:045][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
-[2023.04.01-04.29.18:045][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
-[2023.04.01-04.29.18:045][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
-[2023.04.01-04.29.18:045][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
-[2023.04.01-04.29.18:064][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
-[2023.04.01-04.29.18:064][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
-[2023.04.01-04.29.18:064][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchical cache Hierarchy.
-[2023.04.01-04.29.18:072][  0]LogDerivedDataCache: Speed tests for C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.01 seconds
-[2023.04.01-04.29.18:072][  0]LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.03ms. RandomReadSpeed=841.96MBs, RandomWriteSpeed=158.15MBs. Assigned SpeedClass 'Local'
-[2023.04.01-04.29.18:073][  0]LogDerivedDataCache: Using Local data cache path C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
-[2023.04.01-04.29.18:073][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
-[2023.04.01-04.29.18:073][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
-[2023.04.01-04.29.18:128][  0]LogSlate: Using FreeType 2.10.0
-[2023.04.01-04.29.18:128][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
-[2023.04.01-04.29.18:158][  0]LogAssetRegistry: FAssetRegistry took 0.0026 seconds to start up
-[2023.04.01-04.29.18:434][  0]LogInit: Selected Device Profile: [Windows]
-[2023.04.01-04.29.18:434][  0]LogInit: Active device profile: [0000023152E16C00][0000023147C043C0 49] Windows
-[2023.04.01-04.29.18:434][  0]LogInit: Profiles: [0000023152E16C00][0000023147C043C0 49] Windows, [0000023152DB8E00][000002314B062540 49] WindowsNoEditor, [0000023152E15100][000002314B0666C0 49] WindowsServer, [0000023152E15800][000002314B06A840 49] WindowsClient, [0000023152DBA600][000002314B06E9C0 49] IOS, [0000023152DBB900][000002314B072B40 49] iPadAir, [0000023152DAEF00][0000023147C08C80 49] iPadAir2, [0000023152D60C00][000002314B07AEC0 49] IPadPro, [0000023152D60D00][000002314B076F00 49] iPadAir3, [0000023152DBAC00][000002314F56B080 49] iPadAir4, [0000023152D61B00][000002314F56F200 49] iPadMini2, [0000023152DBA700][000002314F573380 49] iPadMini3, [0000023152D62700][000002314F577500 49] iPadMini4, [0000023152DB9E00][000002314F57B680 49] iPadMini5, [0000023152E15300][000002314F583940 49] iPhone6, [0000023152E15200][000002314F57F980 49] iPodTouch6, [0000023152DAE200][000002314F58A0C0 49] iPhone7, [0000023152DAE100][000002314F586100 49] iPodTouch7, [0000023152D62100][000002314F58E280 49] iPhone5S, [0000023152DAC400][000002314F592400 49] iPhone6Plus, [0000023152D61000][000002314F596580 49] iPhone6S, [0000023152DAD100][000002314F59A700 49] iPhone6SPlus, [0000023152D60B00][0000023151DAC880 49] iPhone7Plus, [0000023152DAF600][0000023151DB0A00 49] iPhoneSE, [0000023152D60300][0000023151DB4B80 49] iPhone8, [0000023152DAE700][0000023151DB8D00 49] iPhone8Plus, [0000023152D61400][000002314F566E40 49] iPhoneX, [0000023152DAC100][0000023151DBCF80 49] iPhoneXS, [0000023152D60F00][0000023151DC10C0 49] iPhoneXSMax, [0000023152E15600][0000023151DC9240 49] iPhoneXR, [0000023152D60900][0000023151DCD3C0 49] iPhone11, [0000023152E16100][0000023151DD1540 49] iPhone11Pro, [0000023152D62300][0000023151DD56C0 49] iPhone11ProMax, [0000023152E14A00][0000023151DD9840 49] iPhoneSE2, [0000023152D63B00][0000023151DDD9C0 49] iPhone12Mini, [0000023152E14800][0000023151DE1B40 49] iPhone12, [0000023152D60400][0000023151DE4140 49] iPhone12Pro, [0000023152E16000][0000023151DE82C0 49] iPhone12ProMax, [0000023152D63500][0000023151DEC440 49] iPadPro105, [0000023152E14200][0000023151DF05C0 49] iPadPro129, [0000023152D63100][0000023151DF4740 49] iPadPro97, [0000023152E15B00][0000023151DF88C0 49] iPadPro2_129, [0000023152D60600][0000023151DFCA40 49] iPad5, [0000023152E15700][0000023151E00BC0 49] iPad6, [0000023152D62A00][0000023151E04D40 49] iPad7, [0000023152E17000][0000023151E08EC0 49] iPad8, [0000023152D61D00][0000023151DC5000 49] iPadPro11, [0000023152E15D00][0000023151E0D140 49] iPadPro2_11, [0000023152D60800][0000023151E11280 49] iPadPro3_129, [0000023152E16F00][0000023151E153C0 49] iPadPro4_129, [0000023152D62C00][0000023151E1D540 49] AppleTV, [0000023152E14F00][00000231499056C0 49] AppleTV4K, [0000023152D61300][0000023149909840 49] TVOS, [0000023152E16700][000002314990D9C0 49] Mac, [0000023152D63200][0000023149911B40 49] MacClient, [0000023152E17300][0000023149914140 49] MacNoEditor, [0000023152D61900][00000231499182C0 49] MacServer, [0000023152E16A00][000002314991C440 49] Linux, [0000023152D62E00][00000231499205C0 49] LinuxAArch64, [0000023152E15E00][0000023149924740 49] LinuxNoEditor, [0000023152D60700][00000231499288C0 49] LinuxAArch64NoEditor, [0000023152E16900][000002314992CA40 49] LinuxClient, [0000023152D62D00][0000023149930BC0 49] LinuxAArch64Client, [0000023152E15500][0000023149934D40 49] LinuxServer, [0000023152D63A00][0000023149938EC0 49] LinuxAArch64Server, [0000023152E14300][000002314993D040 49] Android, [0000023152D61100][0000023151E19180 49] Android_Low, [0000023152DAD600][00000231499452C0 49] Android_Mid, [0000023152DBA100][000002314996F400 49] Android_High, [0000023152DAD900][000002314997B540 49] Android_Default, [0000023152DB9100][000002314F9236C0 49] Android_Adreno4xx, [0000023152DAF200][0000023149973840 49] Android_Adreno5xx_Low, [0000023152DB8600][000002314F9799C0 49] Android_Adreno5xx, [0000023152DAD700][000002314F97DB40 49] Android_Adreno6xx, [0000023152DBA300][000002314F980140 49] Android_Adreno6xx_Vulkan, [0000023152DAFD00][000002314F9842C0 49] Android_Mali_T6xx, [0000023152DB9C00][000002314FA04440 49] Android_Mali_T7xx, [0000023152DAE800][000002314FA085C0 49] Android_Mali_T8xx, [0000023152DB9B00][000002314FA0C740 49] Android_Mali_G71, [0000023152DAC500][0000023149A3A8C0 49] Android_Mali_G72, [0000023152DB8D00][0000023149A3EA40 49] Android_Mali_G72_Vulkan, [0000023152DAC800][0000023149A42BC0 49] Android_Mali_G76, [0000023152DBAE00][0000023149A46D40 49] Android_Mali_G76_Vulkan, [0000023152DAC900][0000023149A4AEC0 49] Android_Mali_G77, [0000023152DB9800][0000023151B8B040 49] Android_Mali_G77_Vulkan, [0000023152DAC200][0000023151B931C0 49] Android_Mali_G78, [0000023152DBB200][0000023151B97340 49] Android_Mali_G78_Vulkan, [0000023152DAF400][000002314998F480 49] Android_Mali_G710, [0000023152DBB800][00000231527775C0 49] Android_Mali_G710_Vulkan, [0000023152DAEC00][0000023152785700 49] Android_Vulkan_SM5, [0000023152DB9F00][00000231528A7880 49] Android_PowerVR_G6xxx, [0000023152DAE400][00000231528AFA00 49] Android_PowerVR_GT7xxx, [0000023152DBB700][00000231528BDB80 49] Android_PowerVR_GE8xxx, [0000023152DAED00][00000231524BC180 49] Android_PowerVR_GM9xxx, [0000023152DB9700][00000231524C0300 49] Android_PowerVR_GM9xxx_Vulkan, [0000023152DAFA00][00000231524C4480 49] Android_TegraK1, [0000023152DBBB00][00000231524C8600 49] Android_Unknown_Vulkan, [0000023152DAFC00][000002314F994780 49] Lumin, [0000023152DB9500][000002314F9AC900 49] Lumin_Desktop, [0000023152DAD400][00000231499D4A80 49] HoloLens, 
-[2023.04.01-04.29.18:570][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
-[2023.04.01-04.29.18:570][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
-[2023.04.01-04.29.18:570][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
-[2023.04.01-04.29.18:570][  0]LogMeshReduction: No distributed automatic mesh merging module available
-[2023.04.01-04.29.18:570][  0]LogMeshMerging: No distributed automatic mesh merging module available
-[2023.04.01-04.29.18:586][  0]LogNetVersion: Project_MF 1.0.0, NetCL: 17155196, EngineNetVer: 17, GameNetVer: 0 (Checksum: 3145920875)
-[2023.04.01-04.29.19:058][  0]LogTexture: Default maximum texture size for cubemaps generated from long-lat sources has been changed from 512 to unlimited. In order to preserve old behaiour for '/Engine/MapTemplates/Sky/DaylightAmbientCubemap.DaylightAmbientCubemap', its maximum texture size has been explicitly set to 512.
-[2023.04.01-04.29.19:114][  0]LogHMD: PokeAHoleMaterial loaded successfully
-[2023.04.01-04.29.19:120][  0]LogUObjectArray: 17178 objects as part of root set at end of initial load.
-[2023.04.01-04.29.19:120][  0]LogUObjectAllocator: 4302048 out of 0 bytes used by permanent object pool.
-[2023.04.01-04.29.19:120][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
-[2023.04.01-04.29.19:408][  0]LogPython: Using Python 3.7.7
-[2023.04.01-04.29.20:002][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: A77F339C4C877586E5CE87B13C0107C4 | Instance: 31AC76704B50CB14441B77A6226C0EAA (DESKTOP-7O2N4A7-8708).
-[2023.04.01-04.29.20:189][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
-[2023.04.01-04.29.20:196][  0]LogTcpMessaging: Initializing TcpMessaging bridge
-[2023.04.01-04.29.20:431][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
-[2023.04.01-04.29.20:431][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
-[2023.04.01-04.29.20:442][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
-[2023.04.01-04.29.20:451][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
-[2023.04.01-04.29.20:462][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
-[2023.04.01-04.29.20:481][  0]LogUProjectInfo: Found projects:
-[2023.04.01-04.29.20:692][  0]LogOpenImageDenoise: OIDN starting up
-[2023.04.01-04.29.20:747][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
-[2023.04.01-04.29.20:773][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
-[2023.04.01-04.29.20:773][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
-[2023.04.01-04.29.20:911][  0]LogCollectionManager: Loaded 0 collections in 0.000794 seconds
-[2023.04.01-04.29.20:939][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Collections/' took 0.00s
-[2023.04.01-04.29.20:939][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Developers/qkrdl/Collections/' took 0.00s
-[2023.04.01-04.29.20:939][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Collections/' took 0.00s
-[2023.04.01-04.29.20:939][  0]LogOcInput: OculusInput pre-init called
-[2023.04.01-04.29.21:289][  0]LogEngine: Initializing Engine...
-[2023.04.01-04.29.21:291][  0]LogHMD: Failed to enumerate extensions. Please check that you have a valid OpenXR runtime installed.
-[2023.04.01-04.29.21:291][  0]LogHMD: Failed to initialize OpenVR with code 110
-[2023.04.01-04.29.21:291][  0]LogMagicLeap: Warning: VR disabled because ZI is not enabled.  To enable, in the editor, Edit -> Project Settings -> Plugins -> Magic Leap Plugin -> Enable Zero Iteration
-[2023.04.01-04.29.21:292][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
-[2023.04.01-04.29.21:408][  0]LogInit: Initializing FReadOnlyCVARCache
-[2023.04.01-04.29.21:417][  0]LogAIModule: Creating AISystem for world Untitled
-[2023.04.01-04.29.21:428][  0]LogAudio: Display: Initializing Audio Device Manager...
-[2023.04.01-04.29.21:433][  0]LogAudio: Display: Loading Default Audio Settings Objects...
-[2023.04.01-04.29.21:433][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
-[2023.04.01-04.29.21:434][  0]LogAudio: Display: Audio Device Manager Initialized
-[2023.04.01-04.29.21:434][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: 	Max Channels (voices):				  32
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
-[2023.04.01-04.29.21:435][  0]LogAudio: Display: AudioDevice MaxSources: 32
-[2023.04.01-04.29.21:435][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
-[2023.04.01-04.29.21:435][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
-[2023.04.01-04.29.21:435][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
-[2023.04.01-04.29.21:435][  0]LogAudioMixer: Display: Initializing audio mixer.
-[2023.04.01-04.29.21:446][  0]LogAudioMixer: Display: 0: FrontLeft
-[2023.04.01-04.29.21:446][  0]LogAudioMixer: Display: 1: FrontRight
-[2023.04.01-04.29.21:460][  0]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
-[2023.04.01-04.29.21:461][  0]LogAudioMixer: Display: Initializing Sound Submixes...
-[2023.04.01-04.29.21:465][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
-[2023.04.01-04.29.21:465][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
-[2023.04.01-04.29.21:466][  0]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
-[2023.04.01-04.29.21:466][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
-[2023.04.01-04.29.21:466][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
-[2023.04.01-04.29.21:467][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
-[2023.04.01-04.29.21:467][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
-[2023.04.01-04.29.21:467][  0]LogInit: FAudioDevice initialized.
-[2023.04.01-04.29.21:467][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
-[2023.04.01-04.29.21:467][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
-[2023.04.01-04.29.21:527][  0]LogDerivedDataCache: Saved boot cache 0.06s 95MB C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc.
-[2023.04.01-04.29.21:527][  0]LogInit: Texture streaming: Enabled
-[2023.04.01-04.29.21:543][  0]LogAnalytics: Display: [UEEditor.Rocket.Release] APIServer = https://datarouter.ol.epicgames.com/. AppVersion = 4.27.2-18319896+++UE4+Release-4.27
-[2023.04.01-04.29.21:547][  0]LogEngineSessionManager: EngineSessionManager initialized
-[2023.04.01-04.29.21:547][  0]LogEngineSessionManager: EngineSessionManager sent abnormal shutdown report. Type=Crashed, SessionId={00B5DB10-41E1-3861-48C4-8A94451A8781}
-[2023.04.01-04.29.21:547][  0]LogEditorSessionSummary: Verbose: Initializing EditorSessionSummaryWriter for editor session tracking
-[2023.04.01-04.29.21:548][  0]LogEditorSessionSummary: EditorSessionSummaryWriter initialized
-[2023.04.01-04.29.21:582][  0]LogInit: Transaction tracking system initialized
-[2023.04.01-04.29.21:606][  0]BlueprintLog: New page: 에디터 로드
-[2023.04.01-04.29.21:671][  0]LocalizationService: 현지화 서비스가 비활성화되었습니다.
-[2023.04.01-04.29.21:698][  0]TimingProfiler: Initialize
-[2023.04.01-04.29.21:698][  0]TimingProfiler: OnSessionChanged
-[2023.04.01-04.29.21:698][  0]LoadingProfiler: Initialize
-[2023.04.01-04.29.21:698][  0]LoadingProfiler: OnSessionChanged
-[2023.04.01-04.29.21:698][  0]NetworkingProfiler: Initialize
-[2023.04.01-04.29.21:698][  0]NetworkingProfiler: OnSessionChanged
-[2023.04.01-04.29.21:698][  0]MemoryProfiler: Initialize
-[2023.04.01-04.29.21:698][  0]MemoryProfiler: OnSessionChanged
-[2023.04.01-04.29.21:864][  0]LogCook: Display: CookSettings for Memory: MemoryMaxUsedVirtual 0MiB, MemoryMaxUsedPhysical 16384MiB, MemoryMinFreeVirtual 0MiB, MemoryMinFreePhysical 1024MiB
-[2023.04.01-04.29.21:864][  0]LogCook: Display: Mobile HDR setting 1
-[2023.04.01-04.29.22:086][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/' took 0.00s
-[2023.04.01-04.29.22:378][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
-[2023.04.01-04.29.22:381][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
-[2023.04.01-04.29.22:381][  0]LogUnrealEdMisc: Loading editor; pre map load, took 7.733
-[2023.04.01-04.29.22:382][  0]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
-[2023.04.01-04.29.22:382][  0]LightingResults: New page: 라이팅 빌드
-[2023.04.01-04.29.22:383][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
-[2023.04.01-04.29.22:383][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2023.04.01-04.29.22:383][  0]MapCheck: New page: 맵 체크
-[2023.04.01-04.29.22:383][  0]LightingResults: New page: 라이팅 빌드
-[2023.04.01-04.29.22:387][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
-[2023.04.01-04.29.22:390][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
-[2023.04.01-04.29.22:496][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'test_1'.
-[2023.04.01-04.29.22:497][  0]LogAIModule: Creating AISystem for world test_1
-[2023.04.01-04.29.22:521][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
-[2023.04.01-04.29.22:531][  0]LogUObjectHash: Compacting FUObjectHashTables data took   1.00ms
-[2023.04.01-04.29.22:532][  0]Cmd: MAP CHECKDEP NOCLEARLOG
-[2023.04.01-04.29.22:532][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.158ms.
-[2023.04.01-04.29.22:532][  0]LogFileHelpers: Loading map 'test_1' took 0.151
-[2023.04.01-04.29.22:534][  0]LogUnrealEdMisc: Total Editor Startup Time, took 7.887
-[2023.04.01-04.29.22:629][  0]LogWindowsTextInputMethodSystem: Display: IME system activated using TSF (Microsoft 입력기).
-[2023.04.01-04.29.22:695][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2023.04.01-04.29.22:701][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2023.04.01-04.29.22:709][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2023.04.01-04.29.22:716][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2023.04.01-04.29.22:731][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0112 seconds. Added 3857 classes and 930 folders.
-[2023.04.01-04.29.22:733][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'WidgetCarousel' in 0.0003 seconds. Added 0 classes and 0 folders.
-[2023.04.01-04.29.22:735][  0]LogPakFile: PakFile PrimaryIndexSize=187
-[2023.04.01-04.29.22:735][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:735][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
-[2023.04.01-04.29.22:735][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPerson.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:735][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPerson.upack)
-[2023.04.01-04.29.22:735][  0]LogPakFile: OnPakFileMounted2Time == 0.000055
-[2023.04.01-04.29.22:735][  0]LogPakFile: PakFile PrimaryIndexSize=189
-[2023.04.01-04.29.22:735][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:735][  0]LogPakFile: PakFile FullDirectoryIndexSize=152
-[2023.04.01-04.29.22:736][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPersonBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:736][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPersonBP.upack)
-[2023.04.01-04.29.22:736][  0]LogPakFile: OnPakFileMounted2Time == 0.000053
-[2023.04.01-04.29.22:736][  0]LogPakFile: PakFile PrimaryIndexSize=191
-[2023.04.01-04.29.22:736][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:736][  0]LogPakFile: PakFile FullDirectoryIndexSize=160
-[2023.04.01-04.29.22:736][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/MobileStarterContent.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:736][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/MobileStarterContent.upack)
-[2023.04.01-04.29.22:736][  0]LogPakFile: OnPakFileMounted2Time == 0.000032
-[2023.04.01-04.29.22:737][  0]LogPakFile: PakFile PrimaryIndexSize=185
-[2023.04.01-04.29.22:737][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:737][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
-[2023.04.01-04.29.22:737][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/StarterContent.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:737][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/StarterContent.upack)
-[2023.04.01-04.29.22:737][  0]LogPakFile: OnPakFileMounted2Time == 0.000034
-[2023.04.01-04.29.22:738][  0]LogPakFile: PakFile PrimaryIndexSize=190
-[2023.04.01-04.29.22:738][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:738][  0]LogPakFile: PakFile FullDirectoryIndexSize=154
-[2023.04.01-04.29.22:738][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScroller.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:738][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScroller.upack)
-[2023.04.01-04.29.22:738][  0]LogPakFile: OnPakFileMounted2Time == 0.000034
-[2023.04.01-04.29.22:739][  0]LogPakFile: PakFile PrimaryIndexSize=192
-[2023.04.01-04.29.22:739][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:739][  0]LogPakFile: PakFile FullDirectoryIndexSize=158
-[2023.04.01-04.29.22:739][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScrollerBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:739][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScrollerBP.upack)
-[2023.04.01-04.29.22:739][  0]LogPakFile: OnPakFileMounted2Time == 0.000040
-[2023.04.01-04.29.22:740][  0]LogPakFile: PakFile PrimaryIndexSize=182
-[2023.04.01-04.29.22:740][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:740][  0]LogPakFile: PakFile FullDirectoryIndexSize=138
-[2023.04.01-04.29.22:740][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Flying.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:740][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Flying.upack)
-[2023.04.01-04.29.22:740][  0]LogPakFile: OnPakFileMounted2Time == 0.000045
-[2023.04.01-04.29.22:741][  0]LogPakFile: PakFile PrimaryIndexSize=184
-[2023.04.01-04.29.22:741][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:741][  0]LogPakFile: PakFile FullDirectoryIndexSize=142
-[2023.04.01-04.29.22:741][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_FlyingBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:741][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_FlyingBP.upack)
-[2023.04.01-04.29.22:741][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:741][  0]LogPakFile: PakFile PrimaryIndexSize=188
-[2023.04.01-04.29.22:741][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:741][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
-[2023.04.01-04.29.22:741][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_HandheldARBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:741][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_HandheldARBP.upack)
-[2023.04.01-04.29.22:741][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:743][  0]LogPakFile: PakFile PrimaryIndexSize=182
-[2023.04.01-04.29.22:743][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:743][  0]LogPakFile: PakFile FullDirectoryIndexSize=138
-[2023.04.01-04.29.22:743][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Puzzle.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:743][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Puzzle.upack)
-[2023.04.01-04.29.22:743][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:743][  0]LogPakFile: PakFile PrimaryIndexSize=184
-[2023.04.01-04.29.22:743][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:743][  0]LogPakFile: PakFile FullDirectoryIndexSize=142
-[2023.04.01-04.29.22:744][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_PuzzleBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:744][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_PuzzleBP.upack)
-[2023.04.01-04.29.22:744][  0]LogPakFile: OnPakFileMounted2Time == 0.000051
-[2023.04.01-04.29.22:744][  0]LogPakFile: PakFile PrimaryIndexSize=183
-[2023.04.01-04.29.22:744][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:744][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
-[2023.04.01-04.29.22:744][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Rolling.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:744][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Rolling.upack)
-[2023.04.01-04.29.22:744][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:745][  0]LogPakFile: PakFile PrimaryIndexSize=185
-[2023.04.01-04.29.22:745][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:745][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
-[2023.04.01-04.29.22:745][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_RollingBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:745][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_RollingBP.upack)
-[2023.04.01-04.29.22:745][  0]LogPakFile: OnPakFileMounted2Time == 0.000033
-[2023.04.01-04.29.22:746][  0]LogPakFile: PakFile PrimaryIndexSize=188
-[2023.04.01-04.29.22:746][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:746][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
-[2023.04.01-04.29.22:746][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScroller.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:746][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScroller.upack)
-[2023.04.01-04.29.22:746][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:746][  0]LogPakFile: PakFile PrimaryIndexSize=190
-[2023.04.01-04.29.22:746][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:746][  0]LogPakFile: PakFile FullDirectoryIndexSize=154
-[2023.04.01-04.29.22:746][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScrollerBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:746][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScrollerBP.upack)
-[2023.04.01-04.29.22:746][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:747][  0]LogPakFile: PakFile PrimaryIndexSize=187
-[2023.04.01-04.29.22:747][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:747][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
-[2023.04.01-04.29.22:747][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPerson.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:747][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPerson.upack)
-[2023.04.01-04.29.22:747][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:748][  0]LogPakFile: PakFile PrimaryIndexSize=189
-[2023.04.01-04.29.22:748][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:748][  0]LogPakFile: PakFile FullDirectoryIndexSize=152
-[2023.04.01-04.29.22:748][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPersonBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:748][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPersonBP.upack)
-[2023.04.01-04.29.22:748][  0]LogPakFile: OnPakFileMounted2Time == 0.000046
-[2023.04.01-04.29.22:749][  0]LogPakFile: PakFile PrimaryIndexSize=183
-[2023.04.01-04.29.22:749][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:749][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
-[2023.04.01-04.29.22:749][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDown.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:749][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDown.upack)
-[2023.04.01-04.29.22:749][  0]LogPakFile: OnPakFileMounted2Time == 0.000040
-[2023.04.01-04.29.22:750][  0]LogPakFile: PakFile PrimaryIndexSize=185
-[2023.04.01-04.29.22:750][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:750][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
-[2023.04.01-04.29.22:750][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDownBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:750][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDownBP.upack)
-[2023.04.01-04.29.22:750][  0]LogPakFile: OnPakFileMounted2Time == 0.000033
-[2023.04.01-04.29.22:750][  0]LogPakFile: PakFile PrimaryIndexSize=185
-[2023.04.01-04.29.22:750][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:750][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
-[2023.04.01-04.29.22:750][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStick.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:750][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStick.upack)
-[2023.04.01-04.29.22:750][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:751][  0]LogPakFile: PakFile PrimaryIndexSize=187
-[2023.04.01-04.29.22:751][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:751][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
-[2023.04.01-04.29.22:751][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStickBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:751][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStickBP.upack)
-[2023.04.01-04.29.22:751][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
-[2023.04.01-04.29.22:752][  0]LogPakFile: PakFile PrimaryIndexSize=183
-[2023.04.01-04.29.22:752][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:752][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
-[2023.04.01-04.29.22:752][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Vehicle.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:752][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Vehicle.upack)
-[2023.04.01-04.29.22:752][  0]LogPakFile: OnPakFileMounted2Time == 0.000030
-[2023.04.01-04.29.22:753][  0]LogPakFile: PakFile PrimaryIndexSize=186
-[2023.04.01-04.29.22:753][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:753][  0]LogPakFile: PakFile FullDirectoryIndexSize=146
-[2023.04.01-04.29.22:753][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdv.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:753][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdv.upack)
-[2023.04.01-04.29.22:753][  0]LogPakFile: OnPakFileMounted2Time == 0.000035
-[2023.04.01-04.29.22:753][  0]LogPakFile: PakFile PrimaryIndexSize=188
-[2023.04.01-04.29.22:754][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:754][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
-[2023.04.01-04.29.22:754][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdvBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:754][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdvBP.upack)
-[2023.04.01-04.29.22:754][  0]LogPakFile: OnPakFileMounted2Time == 0.000049
-[2023.04.01-04.29.22:754][  0]LogPakFile: PakFile PrimaryIndexSize=185
-[2023.04.01-04.29.22:754][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:754][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
-[2023.04.01-04.29.22:754][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:754][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleBP.upack)
-[2023.04.01-04.29.22:755][  0]LogPakFile: OnPakFileMounted2Time == 0.000169
-[2023.04.01-04.29.22:755][  0]LogPakFile: PakFile PrimaryIndexSize=192
-[2023.04.01-04.29.22:755][  0]LogPakFile: PakFile PathHashIndexSize=101
-[2023.04.01-04.29.22:755][  0]LogPakFile: PakFile FullDirectoryIndexSize=158
-[2023.04.01-04.29.22:755][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VirtualRealityBP.upack' (chunk index -1, root 'root:/') mounted
-[2023.04.01-04.29.22:755][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VirtualRealityBP.upack)
-[2023.04.01-04.29.22:755][  0]LogPakFile: OnPakFileMounted2Time == 0.000092
-[2023.04.01-04.29.22:826][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'AddContentDialog' in 0.0003 seconds. Added 0 classes and 0 folders.
-[2023.04.01-04.29.22:856][  0]LogSlate: Took 0.000291 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
-[2023.04.01-04.29.22:857][  0]LogSlate: Took 0.000228 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
-[2023.04.01-04.29.22:859][  0]LogSlate: Took 0.001511 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
-[2023.04.01-04.29.22:864][  0]LogSlate: Took 0.001821 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
-[2023.04.01-04.29.22:864][  0]LogSlate: Took 0.000218 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
-[2023.04.01-04.29.22:867][  0]LogSlate: Took 0.000188 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
-[2023.04.01-04.29.22:915][  0]LogSlate: Took 0.001286 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicExtraBold.ttf' (4074K)
-[2023.04.01-04.29.23:019][  0]LogRenderer: Reallocating scene render targets to support 1520x540 Format 10 NumSamples 1 (Frame:1).
-[2023.04.01-04.29.23:073][  0]LogSlate: Took 0.000262 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
-[2023.04.01-04.29.23:125][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0004 seconds. Added 0 classes and 0 folders.
-[2023.04.01-04.29.23:125][  0]LogLoad: (Engine Initialization) Total time: 8.48 seconds
-[2023.04.01-04.29.23:125][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
-[2023.04.01-04.29.23:304][  0]LogAssetRegistry: Asset discovery search completed in 5.1482 seconds
-[2023.04.01-04.29.23:310][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000001 seconds (updated 0 objects)
-[2023.04.01-04.29.23:311][  0]LogContentStreaming: Texture pool size now 1000 MB
-[2023.04.01-04.29.29:848][708]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube138)
-[2023.04.01-04.29.31:240][841]LogSlate: Took 0.000376 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
-[2023.04.01-04.29.38:859][520]LogSlate: Took 0.000283 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
-[2023.04.01-04.29.38:890][520]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
-[2023.04.01-04.29.38:991][520]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/test_14FF2D612469CE6B7D58588B36F8C4108.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap'
-[2023.04.01-04.29.38:991][520]LogFileManager: Warning: DeleteFile was unable to delete '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap', retrying in .5s...
-[2023.04.01-04.29.39:492][520]LogFileManager: Error: Error deleting file '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap'.
-[2023.04.01-04.29.39:492][520]LogSavePackage: Error: Error saving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap'
-[2023.04.01-04.29.39:494][520]EditorErrors: New page: 출력 저장
-[2023.04.01-04.29.39:494][520]EditorErrors: Warning: '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap' 저장 오류입니다.
-[2023.04.01-04.29.44:064][ 30]LogSlate: Window '메시지 로그' being destroyed
-[2023.04.01-04.29.44:072][ 30]LogSlate: Window '메시지 로그' being destroyed
-[2023.04.01-04.30.41:983][691]LogUObjectHash: Compacting FUObjectHashTables data took   0.38ms
-[2023.04.01-04.30.42:069][691]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/test_1A2D7EDD54BAAB32C9FF21E8DAEDA80CE.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/test_1.umap'
-[2023.04.01-04.30.42:089][691]AssetCheck: New page: 에셋 저장:  test_1
-[2023.04.01-04.30.42:089][691]LogContentValidation: Display: World /Game/Levels/test_1.test_1 유효성 검사 중
-[2023.04.01-04.30.45:155][983]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube128)
-[2023.04.01-04.30.47:093][142]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube172)
-[2023.04.01-04.30.49:500][352]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube138)
-[2023.04.01-04.31.06:860][852]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube172)
-[2023.04.01-04.31.14:383][683]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube138)
-[2023.04.01-04.31.29:581][406]LogTemp: Repeating last play command: 시뮬레이트
-[2023.04.01-04.31.29:587][406]LogPlayLevel: PlayLevel: No blueprints needed recompiling
-[2023.04.01-04.31.29:587][406]PIE: New page: SIE 세션: test_1 (2023. 4. 1. 오후 10:31:29)
-[2023.04.01-04.31.29:589][406]LogOnline: OSS: Creating online subsystem instance for: NULL
-[2023.04.01-04.31.29:591][406]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
-[2023.04.01-04.31.29:591][406]LogPlayLevel: Creating play world package: /Game/Levels/UEDPIE_0_test_1
-[2023.04.01-04.31.29:616][406]LogPlayLevel: PIE: StaticDuplicateObject took: (0.025016s)
-[2023.04.01-04.31.29:617][406]LogAIModule: Creating AISystem for world test_1
-[2023.04.01-04.31.29:618][406]LogPlayLevel: PIE: World Init took: (0.001963s)
-[2023.04.01-04.31.29:618][406]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/test_1.test_1 to /Game/Levels/UEDPIE_0_test_1.test_1 (0.027176s)
-[2023.04.01-04.31.29:624][406]LogUObjectHash: Compacting FUObjectHashTables data took   0.78ms
-[2023.04.01-04.31.29:624][406]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: Audio Mixer Platform Settings:
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: 	Sample Rate:						  48000
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: 	Number of buffers to queue:			  2
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: 	Max Channels (voices):				  32
-[2023.04.01-04.31.29:624][406]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
-[2023.04.01-04.31.29:624][406]LogAudio: Display: AudioDevice MaxSources: 32
-[2023.04.01-04.31.29:625][406]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
-[2023.04.01-04.31.29:625][406]LogAudio: Display: Audio Reverb Plugin: None (built-in).
-[2023.04.01-04.31.29:625][406]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
-[2023.04.01-04.31.29:625][406]LogAudioMixer: Display: Initializing audio mixer.
-[2023.04.01-04.31.29:628][406]LogAudioMixer: Display: 0: FrontLeft
-[2023.04.01-04.31.29:628][406]LogAudioMixer: Display: 1: FrontRight
-[2023.04.01-04.31.29:637][406]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
-[2023.04.01-04.31.29:637][406]LogAudioMixer: Display: Initializing Sound Submixes...
-[2023.04.01-04.31.29:637][406]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
-[2023.04.01-04.31.29:637][406]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
-[2023.04.01-04.31.29:638][406]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
-[2023.04.01-04.31.29:638][406]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
-[2023.04.01-04.31.29:638][406]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
-[2023.04.01-04.31.29:639][406]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
-[2023.04.01-04.31.29:639][406]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
-[2023.04.01-04.31.29:639][406]LogInit: FAudioDevice initialized.
-[2023.04.01-04.31.29:639][406]LogAudio: Display: Audio Device (ID: 2) registered with world 'test_1'.
-[2023.04.01-04.31.29:650][406]LogLoad: Game class is 'TestPlayerGameMode'
-[2023.04.01-04.31.29:661][406]LogWorld: Bringing World /Game/Levels/UEDPIE_0_test_1.test_1 up for play (max tick rate 0) at 2023.04.01-13.31.29
-[2023.04.01-04.31.29:661][406]LogWorld: Bringing up level for play took: 0.010383
-[2023.04.01-04.31.29:661][406]LogOnline: OSS: Creating online subsystem instance for: :Context_7
-[2023.04.01-04.31.29:664][406]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'MovieSceneCapture' in 0.0003 seconds. Added 20 classes and 0 folders.
-[2023.04.01-04.31.29:665][406]LogOutputDevice: Warning: 
-
-Script Stack (0 frames):
-
-[2023.04.01-04.31.29:713][406]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.048 s
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: === Handled ensure: ===
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: 
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: Ensure condition failed: Component->HasBegunPlay() [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Actor.cpp] [Line: 3557]
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: Failed to route BeginPlay (PowerExecutionComponent /Game/Levels/UEDPIE_0_test_1.test_1:PersistentLevel.Cube50_5.PowerExecution)
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: Stack: 
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa45c7ff01 UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa442373c4 UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa44240c1f UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa4564ba95 UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa4498ca31 UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa455efb3e UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa449aeb09 UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa43052c45 UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa4307622f UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa4305397d UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa43093772 UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa43096d31 UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa430965f8 UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa42af0c8c UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:713][406]LogOutputDevice: Error: [Callstack] 0x00007ffa433f2ba6 UE4Editor-UnrealEd.dll!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ff693f387a0 UE4Editor.exe!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ff693f50fcc UE4Editor.exe!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ff693f510ba UE4Editor.exe!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ff693f540dd UE4Editor.exe!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ff693f65984 UE4Editor.exe!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ff693f6853a UE4Editor.exe!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ffacbdb26bd KERNEL32.DLL!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: [Callstack] 0x00007ffacd76a9f8 ntdll.dll!UnknownFunction []
-[2023.04.01-04.31.29:714][406]LogOutputDevice: Error: 
-[2023.04.01-04.31.29:722][406]LogStats:                SubmitErrorReport -  0.000 s
-[2023.04.01-04.31.30:763][406]LogStats:                    SendNewReport -  1.041 s
-[2023.04.01-04.31.30:763][406]LogStats:             FDebug::EnsureFailed -  1.098 s
-[2023.04.01-04.31.35:763][406]LogWindows: Error: === Critical error: ===
-[2023.04.01-04.31.35:763][406]LogWindows: Error: 
-[2023.04.01-04.31.35:763][406]LogWindows: Error: Unhandled Exception: EXCEPTION_STACK_OVERFLOW
-[2023.04.01-04.31.35:763][406]LogWindows: Error: 
-[2023.04.01-04.31.35:763][406]LogWindows: Error: [Callstack] 0x00007ffa39a2c1d3 PhysX3CommonPROFILE_x64.dll!physx::Gu::gjkPenetration<physx::Gu::RelativeConvex<physx::Gu::ShrunkBoxV>,physx::Gu::LocalConvex<physx::Gu::ShrunkBoxV> >() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\geomutils\src\gjk\gugjkpenetration.h:242]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa39a25b7f PhysX3CommonPROFILE_x64.dll!sweepBox_BoxGeom() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\geomutils\src\gusweeptests.cpp:293]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa396e4faa PhysX3PROFILE_x64.dll!MultiQueryCallback<physx::PxSweepHit>::invoke() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\physx\src\npscenequeries.cpp:441]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa397c8113 PhysX3PROFILE_x64.dll!physx::Sq::AABBTreeRaycast<1,physx::Sq::AABBTree,physx::Sq::AABBTreeRuntimeNode>::operator()() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\scenequery\src\sqaabbtreequery.h:225]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa397c521f PhysX3PROFILE_x64.dll!physx::Sq::AABBPruner::sweep() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\scenequery\src\sqaabbpruner.cpp:334]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa396e20ce PhysX3PROFILE_x64.dll!physx::NpSceneQueries::multiQuery<physx::PxSweepHit>() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\physx\src\npscenequeries.cpp:815]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa396e0f88 PhysX3PROFILE_x64.dll!physx::NpSceneQueries::sweep() [d:\build\++fortnite\sync\engine\source\thirdparty\physx3\physx_3.4\source\physx\src\npscenequeries.cpp:145]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa445f50fe UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa445ed5f5 UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ffa44647afe UE4Editor-Engine.dll!UnknownFunction []
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8cdd UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:117]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:764][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Project_MF-1634.dll!UPowerGenerateComponent::SetPowerState() [D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerGenerateComponent.cpp:119]
-[2023.04.01-04.31.35:765][406]LogWindows: Error: [Callstack] 0x00007ff925bc8deb UE4Editor-Proje
-[2023.04.01-04.31.35:778][406]LogExit: Executing StaticShutdownAfterError
-[2023.04.01-04.31.35:780][406]LogPhysicsCore: Error: PHYSX: ( 0) eINVALID_OPERATION : PxScene::lockWrite() detected after a PxScene::lockRead(), lock upgrading is not supported, behaviour will be undefined.
-[2023.04.01-04.31.35:780][406]LogPhysicsCore: Error: PHYSX: (D:\Build\++Fortnite\Sync\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Source\PhysX\src\NpScene.cpp 3049) eINVALID_OPERATION : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
-[2023.04.01-04.31.35:781][406]LogPhysicsCore: Error: PHYSX: (D:\Build\++Fortnite\Sync\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Source\PhysX\src\NpScene.cpp 230) eINVALID_OPERATION : PxScene::lockWrite() detected after a PxScene::lockRead(), lock upgrading is not supported, behaviour will be undefined.
-[2023.04.01-04.31.35:781][406]LogPhysicsCore: Error: PHYSX: (D:\Build\++Fortnite\Sync\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Source\PhysX\src\NpScene.cpp 3049) eINVALID_OPERATION : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
-[2023.04.01-04.31.35:782][406]LogWindows: FPlatformMisc::RequestExit(1)
-[2023.04.01-04.31.35:782][406]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 3)
-[2023.04.01-04.31.35:782][406]LogCore: Engine exit requested (reason: Win RequestExit)
-[2023.04.01-04.31.35:789][406]Log file closed, 04/01/23 13:31:35
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[con.DebugEarlyDefault:1]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[r.setres:1280x720]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[r.GPUCrashDebugging:0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:268][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.AsyncLoadingThreadEnabled:0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.EventDrivenLoaderEnabled:1]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.UseBackgroundLevelStreaming:1]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2023.04.04-00.57.27:268][  0]LogConfig: Setting CVar [[s.FlushStreamingOnExit:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.FlushStreamingOnGC:0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.AllowParallelGC:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.MaxObjectsInEditor:25165824]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.CreateGCClusters:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.MinGCClusterSize:5]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.ActorClusteringEnabled:0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.BlueprintClusteringEnabled:0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[gc.MultithreadedDestructionEnabled:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2023.04.04-00.57.27:269][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2023.04.04-00.57.27:270][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2023.04.04-00.57.27:275][  0]LogInit: Selected Device Profile: [Windows]
+[2023.04.04-00.57.27:275][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2023.04.04-00.57.27:275][  0]LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.04.04-00.57.27:276][  0]LogInit: Going up to parent DeviceProfile []
+[2023.04.04-00.57.27:276][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.SkeletalMeshLODBias:0]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.ViewDistanceScale:1.0]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.PostProcessAAQuality:4]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.LightFunctionQuality:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.ShadowQuality:5]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.MaxResolution:2048]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.DistanceScale:1.0]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.DistanceFieldShadowing:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.DistanceFieldAO:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.AOQuality:2]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.VolumetricFog:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.LightMaxDrawDistanceScale:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.CapsuleShadows:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.MotionBlurQuality:4]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.AmbientOcclusionLevels:-1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.DepthOfFieldQuality:2]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.RenderTargetPoolMin:400]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.LensFlareQuality:2]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.SceneColorFringeQuality:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.EyeAdaptationQuality:2]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.BloomQuality:5]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.FastBlurThreshold:100]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Upscale.Quality:3]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Tonemapper.GrainQuantization:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.LightShaftQuality:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Filter.SizeScale:1]]
+[2023.04.04-00.57.27:276][  0]LogConfig: Setting CVar [[r.Tonemapper.Quality:5]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.MipBias:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.Boost:1]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.MaxAnisotropy:8]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.VT.MaxAnisotropy:8]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.PoolSize:1000]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.RefractionQuality:2]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSR.Quality:3]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSR.HalfResSceneColor:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SceneColorFormat:4]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.DetailMode:2]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.TranslucencyVolumeBlur:1]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.AnisotropicMaterials:1]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSS.Scale:1]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSS.SampleSet:2]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSS.Quality:1]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSS.HalfRes:0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.SSGI.Quality:3]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.EmitterSpawnRateScale:1.0]]
+[2023.04.04-00.57.27:277][  0]LogConfig: Setting CVar [[r.ParticleLightQuality:2]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[foliage.DensityScale:1.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[grass.DensityScale:1.0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Scalability.ini]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[net.UseAdaptiveNetUpdateFrequency:0]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Setting CVar [[fx.SkipVectorVMBackendOptimizations:1]]
+[2023.04.04-00.57.27:278][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Engine.ini]
+[2023.04.04-00.57.27:278][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/Windows/Editor.ini]
+[2023.04.04-00.57.27:278][  0]LogInit: Computer: DESKTOP-7O2N4A7
+[2023.04.04-00.57.27:278][  0]LogInit: User: qkrdl
+[2023.04.04-00.57.27:278][  0]LogInit: CPU Page size=4096, Cores=4
+[2023.04.04-00.57.27:278][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2023.04.04-00.57.27:279][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2023.04.04-00.57.27:279][  0]LogMemory: Platform Memory Stats for Windows
+[2023.04.04-00.57.27:279][  0]LogMemory: Process Physical Memory: 138.71 MB used, 138.71 MB peak
+[2023.04.04-00.57.27:279][  0]LogMemory: Process Virtual Memory: 114.16 MB used, 114.16 MB peak
+[2023.04.04-00.57.27:279][  0]LogMemory: Physical Memory: 19365.72 MB used,  13313.36 MB free, 32679.09 MB total
+[2023.04.04-00.57.27:279][  0]LogMemory: Virtual Memory: 134201408.00 MB used,  16317.81 MB free, 134217728.00 MB total
+[2023.04.04-00.57.27:287][  0]LogWindows: WindowsPlatformFeatures enabled
+[2023.04.04-00.57.27:361][  0]LogInit: Physics initialised using underlying interface: PhysX
+[2023.04.04-00.57.27:361][  0]LogInit: Using OS detected language (ko-KR).
+[2023.04.04-00.57.27:361][  0]LogInit: Using OS detected locale (ko-KR).
+[2023.04.04-00.57.27:366][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so the 'ko' localization will be used.
+[2023.04.04-00.57.28:938][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
+[2023.04.04-00.57.28:974][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.04.04-00.57.28:975][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.04.04-00.57.29:011][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.04.04-00.57.29:011][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.04.04-00.57.29:028][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.04.04-00.57.29:036][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
+[2023.04.04-00.57.29:044][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.04.04-00.57.29:051][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.04.04-00.57.29:067][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
+[2023.04.04-00.57.29:075][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
+[2023.04.04-00.57.29:082][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
+[2023.04.04-00.57.29:120][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
+[2023.04.04-00.57.29:120][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
+[2023.04.04-00.57.29:134][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacNoEditor'
+[2023.04.04-00.57.29:142][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
+[2023.04.04-00.57.29:148][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
+[2023.04.04-00.57.29:155][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
+[2023.04.04-00.57.29:169][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.04.04-00.57.29:169][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.04.04-00.57.29:183][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
+[2023.04.04-00.57.29:191][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.04.04-00.57.29:199][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.04.04-00.57.29:207][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.04.04-00.57.29:207][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2023.04.04-00.57.29:221][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.04.04-00.57.29:267][  0]LogTextureFormatOodle: Display: Oodle Texture 2.9.0 init RDO Off
+[2023.04.04-00.57.29:315][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2023.04.04-00.57.29:316][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2023.04.04-00.57.29:408][  0]LogDerivedDataCache: Loaded boot cache 0.09s 95MB C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc.
+[2023.04.04-00.57.29:408][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
+[2023.04.04-00.57.29:408][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2023.04.04-00.57.29:408][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2023.04.04-00.57.29:408][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.04.04-00.57.29:408][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2023.04.04-00.57.29:434][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.04-00.57.29:435][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.04.04-00.57.29:435][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchical cache Hierarchy.
+[2023.04.04-00.57.29:443][  0]LogDerivedDataCache: Speed tests for C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.01 seconds
+[2023.04.04-00.57.29:443][  0]LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.03ms. RandomReadSpeed=651.18MBs, RandomWriteSpeed=144.33MBs. Assigned SpeedClass 'Local'
+[2023.04.04-00.57.29:445][  0]LogDerivedDataCache: Using Local data cache path C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2023.04.04-00.57.29:445][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2023.04.04-00.57.29:445][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2023.04.04-00.57.29:455][  0]LogAssetRegistry: FAssetRegistry took 0.0028 seconds to start up
+[2023.04.04-00.57.29:839][  0]LogInit: Selected Device Profile: [Windows]
+[2023.04.04-00.57.29:839][  0]LogInit: Active device profile: [000001D8C67E1100][000001D8C132AE40 49] Windows
+[2023.04.04-00.57.29:839][  0]LogInit: Profiles: [000001D8C67E1100][000001D8C132AE40 49] Windows, [000001D8C67AA400][000001D8BF3ECFC0 49] WindowsNoEditor, [000001D8C67E2200][000001D8BF3E3100 49] WindowsServer, [000001D8C67A9600][000001D8BF3F1240 49] WindowsClient, [000001D8C67E1700][000001D8BF3F5380 49] IOS, [000001D8C67AA600][000001D8BF3FD500 49] iPadAir, [000001D8C67E3C00][000001D8BF401680 49] iPadAir2, [000001D8C6749400][000001D8BF40F940 49] IPadPro, [000001D8C6749500][000001D8BF405980 49] iPadAir3, [000001D8C67AB700][000001D8BF419B00 49] iPadAir4, [000001D8C674A300][000001D8BF41C100 49] iPadMini2, [000001D8C67AAE00][000001D8BF420280 49] iPadMini3, [000001D8C674AF00][000001D8BF424400 49] iPadMini4, [000001D8C67A9B00][000001D8BF428580 49] iPadMini5, [000001D8C6771000][000001D8BF430840 49] iPhone6, [000001D8C6771100][000001D8BF42C880 49] iPodTouch6, [000001D8C67E3900][000001D8BF438B40 49] iPhone7, [000001D8C67E2900][000001D8BF434B80 49] iPodTouch7, [000001D8C6749000][000001D8BF43CD00 49] iPhone5S, [000001D8C67E2F00][000001D8BF440E80 49] iPhone6Plus, [000001D8C674B600][000001D8BF445000 49] iPhone6S, [000001D8C67E0C00][000001D8BF449180 49] iPhone6SPlus, [000001D8C67E1D00][000001D8BF3F92C0 49] iPhone7Plus, [000001D8C6770800][000001D8BF44D400 49] iPhoneSE, [000001D8C67E0400][000001D8C229F540 49] iPhone8, [000001D8C6770900][000001D8C22A76C0 49] iPhone8Plus, [000001D8C6772E00][000001D8C22AB840 49] iPhoneX, [000001D8C6749D00][000001D8C22AF9C0 49] iPhoneXS, [000001D8C6772700][000001D8C22B3B40 49] iPhoneXSMax, [000001D8C6749C00][000001D8C22B6140 49] iPhoneXR, [000001D8C6772800][000001D8C22BA2C0 49] iPhone11, [000001D8C6748F00][000001D8C22BE440 49] iPhone11Pro, [000001D8C6770B00][000001D8C22C25C0 49] iPhone11ProMax, [000001D8C6748D00][000001D8C22C6740 49] iPhoneSE2, [000001D8C6770E00][000001D8C22CA8C0 49] iPhone12Mini, [000001D8C67E3800][000001D8C22CEA40 49] iPhone12, [000001D8C6773000][000001D8C22D2BC0 49] iPhone12Pro, [000001D8C67E3700][000001D8C22D6D40 49] iPhone12ProMax, [000001D8C6771E00][000001D8C22DAEC0 49] iPadPro105, [000001D8C67E1300][000001D8C22DF040 49] iPadPro129, [000001D8C6773E00][000001D8C22E31C0 49] iPadPro97, [000001D8C67E1C00][000001D8C22E7340 49] iPadPro2_129, [000001D8C6772000][000001D8C22A3480 49] iPad5, [000001D8C67E2300][000001D8C22EB5C0 49] iPad6, [000001D8C6773B00][000001D8C22EF700 49] iPad7, [000001D8C67E1E00][000001D8C22F3840 49] iPad8, [000001D8C6770A00][000001D8C22FB9C0 49] iPadPro11, [000001D8C67E2600][000001D8C22FFB40 49] iPadPro2_11, [000001D8C6770F00][000001D8C2302140 49] iPadPro3_129, [000001D8C67E2800][000001D8C23062C0 49] iPadPro4_129, [000001D8C6773C00][000001D8C230A440 49] AppleTV, [000001D8C67E1A00][000001D8C230E5C0 49] AppleTV4K, [000001D8C6772600][000001D8C2312740 49] TVOS, [000001D8C67E2100][000001D8C23168C0 49] Mac, [000001D8C6772F00][000001D8C231AA40 49] MacClient, [000001D8C67E2A00][000001D8C231EBC0 49] MacNoEditor, [000001D8C6772C00][000001D8C2322D40 49] MacServer, [000001D8C67E3000][000001D8C2326EC0 49] Linux, [000001D8C6770400][000001D8C232B040 49] LinuxAArch64, [000001D8C67E0700][000001D8C232F1C0 49] LinuxNoEditor, [000001D8C6773700][000001D8C2333340 49] LinuxAArch64NoEditor, [000001D8C67E3B00][000001D8C23374C0 49] LinuxClient, [000001D8C6773400][000001D8C22F7600 49] LinuxAArch64Client, [000001D8C67E3E00][000001D8C233B740 49] LinuxServer, [000001D8C6770700][000001D8C233F880 49] LinuxAArch64Server, [000001D8C67E1F00][000001D8C23439C0 49] Android, [000001D8C6772A00][000001D8C234BB40 49] Android_Low, [000001D8C67E2D00][000001D8C234E140 49] Android_Mid, [000001D8C6771F00][000001D8C23522C0 49] Android_High, [000001D8C67E2B00][000001D8C2356440 49] Android_Default, [000001D8C6770100][000001D8C235A5C0 49] Android_Adreno4xx, [000001D8C67E0500][000001D8C235E740 49] Android_Adreno5xx_Low, [000001D8C6771400][000001D8C23628C0 49] Android_Adreno5xx, [000001D8C67E3400][000001D8C2366A40 49] Android_Adreno6xx, [000001D8C6772300][000001D8C236ABC0 49] Android_Adreno6xx_Vulkan, [000001D8C67E3D00][000001D8C236ED40 49] Android_Mali_T6xx, [000001D8C6770200][000001D8C2372EC0 49] Android_Mali_T7xx, [000001D8C67E3600][000001D8C2377040 49] Android_Mali_T8xx, [000001D8C6773200][000001D8C237B1C0 49] Android_Mali_G71, [000001D8C674B100][000001D8C237F340 49] Android_Mali_G72, [000001D8C67AAC00][000001D8C23834C0 49] Android_Mali_G72_Vulkan, [000001D8C674AB00][000001D8C2387640 49] Android_Mali_G76, [000001D8C67A8500][000001D8C238B7C0 49] Android_Mali_G76_Vulkan, [000001D8C6748C00][000001D8C2347900 49] Android_Mali_G77, [000001D8C67A8600][000001D8C238FA40 49] Android_Mali_G77_Vulkan, [000001D8C674A400][000001D8C2393B80 49] Android_Mali_G78, [000001D8C67A8D00][000001D8C239A180 49] Android_Mali_G78_Vulkan, [000001D8C674BD00][000001D8C239E300 49] Android_Mali_G710, [000001D8C67AA800][000001D8C23A2480 49] Android_Mali_G710_Vulkan, [000001D8C674AA00][000001D8C23A6600 49] Android_Vulkan_SM5, [000001D8C67A9700][000001D8C23AA780 49] Android_PowerVR_G6xxx, [000001D8C6748500][000001D8C23AE900 49] Android_PowerVR_GT7xxx, [000001D8C67A8200][000001D8C23B2A80 49] Android_PowerVR_GE8xxx, [000001D8C674BB00][000001D8C23B6C00 49] Android_PowerVR_GM9xxx, [000001D8C67A9E00][000001D8C23BAD80 49] Android_PowerVR_GM9xxx_Vulkan, [000001D8C6749F00][000001D8C23BEF00 49] Android_TegraK1, [000001D8C67A8A00][000001D8C23C3080 49] Android_Unknown_Vulkan, [000001D8C674B900][000001D8C23C7200 49] Lumin, [000001D8C67A9100][000001D8C23CB380 49] Lumin_Desktop, [000001D8C674A000][000001D8C23CF500 49] HoloLens, 
+[2023.04.04-00.57.29:889][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2023.04.04-00.57.29:889][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2023.04.04-00.57.29:889][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2023.04.04-00.57.29:889][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2023.04.04-00.57.29:889][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2023.04.04-00.57.29:899][  0]LogNetVersion: Project_MF 1.0.0, NetCL: 17155196, EngineNetVer: 17, GameNetVer: 0 (Checksum: 3145920875)
+[2023.04.04-00.57.30:106][  0]LogHMD: PokeAHoleMaterial loaded successfully
+[2023.04.04-00.57.30:237][  0]LogCollectionManager: Loaded 0 collections in 0.000847 seconds
+[2023.04.04-00.57.30:240][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Collections/' took 0.00s
+[2023.04.04-00.57.30:240][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Developers/qkrdl/Collections/' took 0.00s
+[2023.04.04-00.57.30:240][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Collections/' took 0.00s
+[2023.04.04-00.57.30:240][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000002 seconds (updated 0 objects)
+[2023.04.04-00.57.30:383][  0]LogPython: Using Python 3.7.7
+[2023.04.04-00.57.31:382][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: 4A724EC94ECB3302471057ACA9824FE7 | Instance: 6D6AD4214E29F25DC4AD9788960ACF88 (DESKTOP-7O2N4A7-17536).
+[2023.04.04-00.57.31:658][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.04.04-00.57.31:658][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.04.04-00.57.31:663][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.04.04-00.57.31:668][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.04.04-00.57.31:673][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.04.04-00.57.31:678][  0]LogUProjectInfo: Found projects:
+[2023.04.04-00.57.31:946][  0]LogOpenImageDenoise: OIDN starting up
+[2023.04.04-00.57.31:994][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2023.04.04-00.57.32:029][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.04-00.57.32:029][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.04-00.57.32:241][  0]LogOcInput: OculusInput pre-init called
+[2023.04.04-00.57.32:290][  0]LogUObjectArray: 23750 objects as part of root set at end of initial load.
+[2023.04.04-00.57.32:290][  0]LogUObjectAllocator: 6770752 out of 0 bytes used by permanent object pool.
+[2023.04.04-00.57.32:290][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2023.04.04-00.57.32:292][  0]LogInit: Error: VisualStudioToolsCommandlet looked like a commandlet, but we could not find the class.
+[2023.04.04-00.57.32:292][  0]LogCore: Engine exit requested (reason: Failed to find commandlet class VisualStudioToolsCommandlet)
+[2023.04.04-00.57.32:292][  0]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2023.04.04-00.57.32:292][  0]LogExit: Preparing to exit.
+[2023.04.04-00.57.32:301][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2023.04.04-00.57.32:363][  0]LogDemo: Cleaned up 0 splitscreen connections with owner deletion
+[2023.04.04-00.57.32:416][  0]LogExit: Object subsystem successfully closed.
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaEditor (596)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module OculusEditor (594)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module OculusInput (592)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module ContentBrowserFileDataSource (590)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module ContentBrowserAssetDataSource (588)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module ContentBrowserClassDataSource (586)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module ToolMenus (585)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module ScreenshotTools (582)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module NiagaraEditorWidgets (580)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module SynthesisEditor (578)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module Synthesis (576)
+[2023.04.04-00.57.32:440][  0]LogModuleManager: Shutting down and abandoning module TakeSequencer (574)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module TakeMovieScene (572)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (570)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (568)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module OpenXREditor (566)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (564)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GooglePAD (562)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module EditableMesh (560)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module CableComponent (558)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (556)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AudioCapture (554)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AudioCaptureRtAudio (553)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AssetTags (550)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (548)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AppleImageUtilsBlueprintSupport (546)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AppleImageUtils (544)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AndroidPermission (542)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module ActorLayerUtilitiesEditor (540)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module ActorLayerUtilities (538)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module TemplateSequence (536)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MediaCompositing (534)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MagicLeapSharedWorld (532)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MagicLeapLightEstimation (530)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MagicLeapHelperVulkan (528)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MagicLeapHelperOpenGL (526)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MagicLeapAudio (524)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module OpenImageDenoise (522)
+[2023.04.04-00.57.32:441][  0]LogOpenImageDenoise: OIDN shutting down
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MotoSynthEditor (520)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MotoSynth (518)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module MeshConversion (516)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module DynamicMesh (514)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryAlgorithms (512)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometricObjects (510)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryCollectionTracks (508)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryCollectionSequencer (507)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryCollectionEditor (504)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryCacheTracks (502)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryCacheStreamer (500)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module GeometryCacheSequencer (498)
+[2023.04.04-00.57.32:441][  0]LogModuleManager: Shutting down and abandoning module AutomationUtilsEditor (496)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module AutomationUtils (494)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module FractureEditor (492)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module ChaosSolverEditor (490)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module ChaosNiagara (488)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module FieldSystemEngine (487)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module ChaosClothEditor (484)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module AlembicImporter (482)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module AlembicLibrary (481)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module GeometryCache (480)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (479)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module VariantManagerContentEditor (474)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (472)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module DatasmithContentEditor (470)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (468)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module PluginUtils (466)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module PluginBrowser (464)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (462)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module MaterialAnalyzer (460)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module CurveEditorTools (458)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (456)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module CryptoKeys (454)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (452)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module UObjectPlugin (450)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (448)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (446)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module GitSourceControl (444)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module PlasticSourceControl (442)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (440)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module SourceControl (439)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (436)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module AnimationSharingEd (434)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module OodleNetworkHandlerComponent (432)
+[2023.04.04-00.57.32:442][  0]LogModuleManager: Shutting down and abandoning module LiveLinkSequencer (430)
+[2023.04.04-00.57.32:443][  0]LogModuleManager: Shutting down and abandoning module LiveLinkMovieScene (428)
+[2023.04.04-00.57.32:443][  0]LogModuleManager: Shutting down and abandoning module LiveLinkGraphNode (426)
+[2023.04.04-00.57.32:443][  0]LogModuleManager: Shutting down and abandoning module LiveLinkEditor (424)
+[2023.04.04-00.57.32:443][  0]LogModuleManager: Shutting down and abandoning module LiveLinkComponents (422)
+[2023.04.04-00.57.32:443][  0]LogModuleManager: Shutting down and abandoning module LiveLink (420)
+[2023.04.04-00.57.32:566][  0]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (418)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (416)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module Paper2DEditor (414)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module MeshPaintingToolset (412)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module MeshPaintEditorMode (410)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module Project_MF (408)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module AnimGraph (407)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module NiagaraAnimNotifies (404)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module Niagara (402)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module SignalProcessing (401)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module NiagaraEditor (399)
+[2023.04.04-00.57.32:567][  0]LogModuleManager: Shutting down and abandoning module NiagaraCore (396)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module SoundFields (394)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module SignificanceManager (392)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (390)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module PropertyAccessEditor (388)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (386)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (382)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module AudioSynesthesia (380)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaCore (378)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module ActorSequence (376)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module UdpMessaging (374)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module TcpMessaging (372)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapARPin (370)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapHandMeshing (368)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapSecureStorage (366)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapPrivileges (364)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapPlanes (362)
+[2023.04.04-00.57.32:568][  0]LogMagicLeapPlanes: Planes tracker already destroyed.
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapImageTracker (360)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapIdentity (358)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapHandTracking (356)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapEyeTracker (354)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapController (352)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapARPinImpl (350)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MagicLeapAR (348)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module PythonScriptPlugin (346)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (344)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (342)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (340)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module FacialAnimation (338)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module DataValidation (336)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (334)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module TreeMap (333)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module PropertyAccessNode (330)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module AnimationSharing (328)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module GameplayCameras (326)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module EnvironmentQueryEditor (324)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module Paper2D (322)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module NetworkReplayStreaming (320)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module PacketHandler (318)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (316)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntimeNv (314)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module MediaAssets (312)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module Overlay (310)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module OverlayEditor (309)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module Blutility (306)
+[2023.04.04-00.57.32:568][  0]LogModuleManager: Shutting down and abandoning module LevelEditor (305)
+[2023.04.04-00.57.32:569][  0]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (304)
+[2023.04.04-00.57.32:569][  0]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (302)
+[2023.04.04-00.57.32:569][  0]LogModuleManager: Shutting down and abandoning module MainFrame (300)
+[2023.04.04-00.57.32:569][  0]LogModuleManager: Shutting down and abandoning module HotReload (299)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module ContentBrowser (295)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module CollectionManager (294)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module ContentBrowserData (292)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module IntroTutorials (288)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module VREditor (286)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module StringTableEditor (284)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (282)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (280)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module FunctionalTesting (278)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (276)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (275)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module UMG (272)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module UMGEditor (271)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module MessageLog (269)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module SlateReflector (264)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module Slate (262)
+[2023.04.04-00.57.32:570][  0]LogModuleManager: Shutting down and abandoning module SlateCore (260)
+[2023.04.04-00.57.32:571][  0]LogModuleManager: Shutting down and abandoning module LandscapeEditorUtilities (258)
+[2023.04.04-00.57.32:571][  0]LogModuleManager: Shutting down and abandoning module UnrealEd (256)
+[2023.04.04-00.57.32:571][  0]LogModuleManager: Shutting down and abandoning module MRMesh (254)
+[2023.04.04-00.57.32:571][  0]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (252)
+[2023.04.04-00.57.32:571][  0]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (250)
+[2023.04.04-00.57.32:571][  0]LogModuleManager: Shutting down and abandoning module XAudio2 (248)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module Networking (246)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module Core (244)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module MaterialEditor (242)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module Settings (241)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module MovieSceneTools (238)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module CurveEditor (237)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module Sequencer (235)
+[2023.04.04-00.57.32:572][  0]LogModuleManager: Shutting down and abandoning module EditorStyle (234)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module KismetCompiler (230)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MeshBuilder (228)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MeshUtilities (226)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (225)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (224)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MeshBoneReduction (223)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module SkeletalMeshReduction (221)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module ProxyLODMeshReduction (219)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (217)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MaterialBaking (213)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (209)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module NullInstallBundleManager (206)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module DerivedDataCache (204)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TargetPlatform (202)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (201)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (199)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (197)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (195)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (193)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatOodle (191)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (189)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (187)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatETC2 (185)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (183)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (181)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (179)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module ImageWrapper (178)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (175)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (173)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (171)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (169)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (167)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (165)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (163)
+[2023.04.04-00.57.32:573][  0]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (161)
+[2023.04.04-00.57.32:574][  0]LogModuleManager: Shutting down and abandoning module MacServerTargetPlatform (159)
+[2023.04.04-00.57.32:574][  0]LogModuleManager: Shutting down and abandoning module MacClientTargetPlatform (157)
+[2023.04.04-00.57.32:574][  0]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (155)
+[2023.04.04-00.57.32:574][  0]LogModuleManager: Shutting down and abandoning module MacNoEditorTargetPlatform (153)
+[2023.04.04-00.57.32:574][  0]LogModuleManager: Shutting down and abandoning module LuminTargetPlatform (151)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxAArch64ServerTargetPlatform (149)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxAArch64ClientTargetPlatform (147)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxAArch64NoEditorTargetPlatform (145)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (143)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (141)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (139)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (137)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module Messaging (135)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (133)
+[2023.04.04-00.57.32:575][  0]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (131)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (129)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module NullDrv (126)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module PhysXCooking (124)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module Chaos (122)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module WindowsPlatformFeatures (120)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module GameplayMediaEncoder (119)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module AVEncoder (118)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (114)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module SteamVRInputDevice (112)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module SteamVRInput (110)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module SteamVR (108)
+[2023.04.04-00.57.32:579][  0]LogHMD: Freeing OpenVRDLLHandle.
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OculusHMD (106)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module NiagaraVertexFactories (104)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module NiagaraShader (102)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OpenXRHandTracking (100)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OpenXREyeTracker (98)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OpenXRAR (96)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module AugmentedReality (95)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OpenXRHMD (92)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module ChunkDownloader (90)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module LauncherChunkInstaller (88)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (86)
+[2023.04.04-00.57.32:579][  0]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (82)
+[2023.04.04-00.57.32:580][  0]LogModuleManager: Shutting down and abandoning module XMPP (77)
+[2023.04.04-00.57.32:580][  0]LogModuleManager: Shutting down and abandoning module WebSockets (76)
+[2023.04.04-00.57.32:607][  0]LogModuleManager: Shutting down and abandoning module HTTP (73)
+[2023.04.04-00.57.32:607][  0]LogHttp: Display: cleaning up 0 outstanding Http requests.
+[2023.04.04-00.57.32:639][  0]LogModuleManager: Shutting down and abandoning module SSL (72)
+[2023.04.04-00.57.32:640][  0]LogModuleManager: Shutting down and abandoning module WmfMedia (68)
+[2023.04.04-00.57.32:641][  0]LogModuleManager: Shutting down and abandoning module Media (67)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module MediaInfo (66)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module ExrReaderGpu (62)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module MLSDK (60)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module MagicLeap (58)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module ChaosCloth (56)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module VariantManagerContent (54)
+[2023.04.04-00.57.32:643][  0]LogModuleManager: Shutting down and abandoning module DatasmithContent (52)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module PixWinPlugin (50)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module AISupportModule (48)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module PythonScriptPluginPreload (46)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module PlatformCryptoOpenSSL (44)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module PlatformCryptoTypes (42)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module PlatformCrypto (40)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module OodleDataCompressionFormat (38)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module XGEController (36)
+[2023.04.04-00.57.32:644][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module AnimationModifiers (34)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module AudioEditor (32)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module PropertyEditor (31)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module TextureCompressor (28)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module RenderCore (26)
+[2023.04.04-00.57.32:644][  0]LogModuleManager: Shutting down and abandoning module Landscape (24)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (22)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (20)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module Renderer (18)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module Engine (16)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module CoreUObject (14)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module NetworkFile (12)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (10)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module StreamingFile (8)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module SandboxFile (6)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module PakFile (4)
+[2023.04.04-00.57.32:645][  0]LogModuleManager: Shutting down and abandoning module RSA (3)
+[2023.04.04-00.57.32:904][  0]LogContentStreaming: Display: There are 1 unreleased StreamingManagers
+[2023.04.04-00.57.32:912][  0]LogExit: Exiting.
+[2023.04.04-00.57.32:942][  0]Log file closed, 04/04/23 09:57:32
