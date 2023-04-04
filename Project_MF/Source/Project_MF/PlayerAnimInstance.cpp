@@ -2,11 +2,14 @@
 
 
 #include "PlayerAnimInstance.h"
-#include "PlayerCharacter.h"
+#include "GamePlayerCharacter.h"
 
 UPlayerAnimInstance::UPlayerAnimInstance()
 :_bIsJumping(false)
 {
+	/*intialize Property*/
+	_ArmLAddOffsetTransform = FTransform::Identity;
+
 	/*CDO*/
 	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerShootMontage.PlayerShootMontage"));
 	static ConstructorHelpers::FObjectFinder<UAnimMontage>  RESET_MONTAGE(TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerResetMontage.PlayerResetMontage"));
@@ -36,12 +39,13 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	APawn* player = TryGetPawnOwner();
 	if (::IsValid(player))
 	{
-		ACharacter* character = Cast<ACharacter>(player);
+		AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(player);
 		
 		if (character!=nullptr)
 		{
 			_CurrentSpeed = character->GetVelocity().Size();
-			_bIsJumping = character->GetMovementComponent()->IsFalling();
+			_bIsJumping = character->GetMovementComponent()->Velocity.Z > 0.f;
+			//_ArmLAddOffsetTransform = character->_ArmLAddTransform;
 		}
 	}
 }

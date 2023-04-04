@@ -1,24 +1,24 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "DrawDebugHelpers.h"
 #include "DefaultMagneticMovementComponent.h"
 
 UDefaultMagneticMovementComponent::UDefaultMagneticMovementComponent()
 {
 	_prevOperatorRadius = _operatorRadiusDiv = _operatorRadiusHalfDiv = _power = 0.f;
+	_originUsedGravity = false;
 }
 
-AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* SafeMagOperator, float DeltaTime)
+AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime)
 {
 	USceneComponent* updated = UpdatedComponent;
-	UMagneticComponent* magOwner = GetOwnerMagnetic();
 
 	//계산에 필요한 요소들을 모두 구한다...
-	FVector ownerPos = magOwner->GetMagneticFieldLocation();
+	FVector ownerPos = owner->GetMagneticFieldLocation();
 	FVector operatorPos = SafeMagOperator->GetMagneticFieldLocation();
 	FVector dir = (operatorPos - ownerPos);
 	float distance = dir.Size();
-	float ownerRadius = magOwner->GetMagneticFieldRadius();
+	float ownerRadius = owner->GetMagneticFieldRadius();
 	float operatorRadius = SafeMagOperator->GetMagneticFieldRadius();
 	float totalRadius = ownerRadius + operatorRadius;
 
@@ -61,6 +61,14 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 	else if (MoveType == EMagnetMoveAxisType::MOVE_ONLY_Z) Velocity.X = Velocity.Y = 0.f;
 
 	PrevDir = dir;
+
+	//UE Simulate Physics가 true일 경우.
+	if (UpdatedPrimitiveIsValid())
+	{
+		UPrimitiveComponent* physics = UpdatedPrimitive;
+		physics->SetEnableGravity(false);
+		physics->SetPhysicsLinearVelocity(FVector::ZeroVector);
+	}
 
 	//최종 이동량 적용 및 부드러운 움직임 적용.
 	if (hit.IsValidBlockingHit())

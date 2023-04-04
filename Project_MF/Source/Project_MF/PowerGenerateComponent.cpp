@@ -6,67 +6,78 @@
 
 UPowerGenerateComponent::UPowerGenerateComponent()
 {
-	TriggerSize = 3;
+	TriggerSize = 1;
 	bPowerState = true;
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
-	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
+	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
+	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-	Mesh->SetupAttachment(this);
-	if (SM_BOX.Succeeded() == true) 
-	{ 
-		Mesh->SetStaticMesh(SM_BOX.Object);
-		if (M_MATERIAL.Succeeded() == true)
-		{
-			Mesh->SetMaterial(0, M_MATERIAL.Object);
-		}
-	}
+	//Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	//Mesh->SetupAttachment(this);
+	//if (SM_BOX.Succeeded() == true) 
+	//{ 
+	//	Mesh->SetStaticMesh(SM_BOX.Object);
+	//	if (M_MATERIAL.Succeeded() == true)
+	//	{
+	//		Mesh->SetMaterial(0, M_MATERIAL.Object);
+	//	}
+	//}
 
-	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
-	Collider->SetupAttachment(this);
-	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Collider"));
+	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
+	//Collider->SetupAttachment(this);
+	//Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	//Collider->SetCollisionProfileName(TEXT("Collider"));
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
-	float BoxSize = TriggerSize * 50.0f;
-	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger->SetCollisionProfileName(TEXT("NewTrigger"));
 }
 
 void UPowerGenerateComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	//Mesh->SetStaticMesh(MeshOrigin);
 
-	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootComponent) == true)
+	{
+		if (MaterialOrigin != nullptr)
+		{
+			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
+			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
+		}
+		OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
+		OwnerRootComponent->SetGenerateOverlapEvents(true);
+	}
+	
 	float BoxSize = TriggerSize * 50.0f;
 	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-
+	Trigger->SetCollisionProfileName("NewTrigger");
+	Trigger->SetGenerateOverlapEvents(true);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapEnd);
-	
-	SetPowerState(!bPowerState, true);
-	SetPowerState(!bPowerState, true);
+
+	//SetPowerState(!bPowerState, true);
+	//SetPowerState(!bPowerState, true);
 	UpdateMaterialColor();
 }
 
 void UPowerGenerateComponent::UpdateMaterialColor()
 {
-	UMaterialInstanceDynamic* DynamicMaterial = Mesh->CreateDynamicMaterialInstance(0);
-	if (DynamicMaterial != nullptr)
+	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootComponent) == true)
 	{
-		if (bPowerState == true)
+		UMaterialInstanceDynamic* DynamicMaterial = OwnerRootComponent->CreateDynamicMaterialInstance(0);
+		if (DynamicMaterial != nullptr)
 		{
-			DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(1.0f, 0.5f, 0.0f));
-		}
-		else if (bPowerState == false)
-		{
-			DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+			if (bPowerState == true)
+			{
+				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(1.0f, 0.5f, 0.0f));
+			}
+			else if (bPowerState == false)
+			{
+				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+			}
 		}
 	}
 }
@@ -91,7 +102,7 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			GetOwner()->GetActorLocation(),
 			GetOwner()->GetActorLocation(),
 			FQuat::Identity,
-			ECollisionChannel::ECC_GameTraceChannel3,
+			ECollisionChannel::ECC_GameTraceChannel4,
 			FCollisionShape::MakeBox(TriggerVolume),
 			Params
 		);

@@ -12,7 +12,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	//Intialized Properts and Fields
 	PrimaryActorTick.bCanEverTick = true;
 	ShootLength = 10000.f;
-	ShootExtend.Set(5.f, 5.f, 5.f);
+	ShootExtend.Set(2.f, 2.f, 2.f);
 	JumpPower = 1600.f;
 	CameraRotationSpeed = 420.f;
 	MoveSpeed = 460.f;
@@ -54,11 +54,11 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	PlayerMesh->SetupAttachment(SpringArm);
 	if (PLAYER_MESH.Succeeded())
 	{
-		PlayerMesh->SetRelativeLocationAndRotation(FVector(1.f, 6.31f, -120.f), FRotator(0.f, -90.f, 0.f));
+		PlayerMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		PlayerMesh->SetRelativeLocationAndRotation(FVector(4.f, -2.f, -112.f), FRotator::MakeFromEuler(FVector(0.f, 0.f, 295.f)));
 		PlayerMesh->SetSkeletalMesh(PLAYER_MESH.Object);
 		PlayerMesh->bCastDynamicShadow = false;
 		PlayerMesh->SetCastShadow(false);
-		PlayerMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
 	//Applyblueprint
 	if (ANIM_BLUEPRINT.Succeeded())
@@ -118,6 +118,19 @@ void AGamePlayerCharacter::BeginPlay()
 		PlayUIInstance->AddToViewport();
 		PlayUIInstance->SetAnimColor(FColor(255, 255, 255, 150));
 	}
+
+	//캡슐 콜라이더 수정
+	UCapsuleComponent* capsule = GetCapsuleComponent();
+	if (capsule)
+	{
+		capsule->BodyInstance.bLockXRotation = true;
+		capsule->BodyInstance.bLockYRotation = true;
+		capsule->BodyInstance.bLockZRotation = true;
+	}
+
+	//왼쪽팔 본의 위치를 수정한다.
+	PlayerAnim->_ArmLAddOffsetTransform.SetLocation(FVector(-7.f, 7.f, -12.f));
+	PlayerAnim->_ArmLAddOffsetTransform.SetRotation(FQuat(FRotator::MakeFromEuler(FVector(0.f, 0.f, -39.f))));
 }
 
 void AGamePlayerCharacter::Tick(float DeltaTime)
@@ -127,7 +140,6 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 	//점프키를 꾹 누르면 점프
 	if (_bCanJump)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("awdawd"))
 		Jump();
 		UDefaultMagneticMovementComponent;
 	}
@@ -327,27 +339,23 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 		hit, start, end, FQuat::Identity, ECollisionChannel::ECC_Visibility,
 		FCollisionShape::MakeBox(ShootExtend), params))
 	{
-		AActor* hitActor = hit.GetActor();
-		UPrimitiveComponent* hitComponent = hit.GetComponent();
+		UMeshComponent* hitComponent = Cast<UMeshComponent>(hit.GetComponent());
 
 		if (hitComponent != nullptr && ::IsValid(hitComponent))
 		{
-			UMagneticComponent* mag = Cast<UMagneticComponent>(hitComponent->GetAttachParent());
-			if (mag != nullptr)
+			TArray<USceneComponent*> childrens;
+			hitComponent->GetChildrenComponents(false, childrens);
+			
+			for (int i=childrens.Num()-1; i>=0 ; i--)
 			{
-				//이미 가지고 있는 자석인지 확인한다.
-				GivenTestMagnet(mag, shootType);
+				UMagneticComponent* mag = Cast<UMagneticComponent>(childrens[i]);
+				if (mag && ::IsValid(mag))
+				{
+					GivenTestMagnet(mag, shootType);
+					return;
+				}
 			}
 		}
-		//else if (hitActor!=nullptr && ::IsValid(hitActor))
-		//{
-		//	UMagneticComponent* mag = hitActor->FindComponentByClass<UMagneticComponent>();
-		//	if (mag != nullptr)
-		//	{
-		//		//이미 가지고 있는 자석인지 확인한다.
-		//		GivenTestMagnet(mag, shootType);
-		//	}
-		//}
 	}
 	#pragma endregion
 }
@@ -359,6 +367,7 @@ void AGamePlayerCharacter::ShootMine(EMagneticType shootType)
 
 void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagneticType givenType)
 {
+	#pragma region Summary
 	newMagnet->SetCurrentMagnetic(givenType);
 
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
@@ -402,6 +411,7 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 
 		PlayUIInstance->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 	}
+	#pragma endregion
 }
 
 bool AGamePlayerCharacter::IsGivenInvalid(int index) const
@@ -442,17 +452,17 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 
 void AGamePlayerCharacter::OnMagnetic(EMagneticType type)
 {
-	UE_LOG(LogTemp, Warning, TEXT("자성이 부여됨!!!"))
+	//UE_LOG(LogTemp, Warning, TEXT("자성이 부여됨!!!"))
 }
 
 void AGamePlayerCharacter::OffMagnetic(EMagneticType prevType)
 {
-	UE_LOG(LogTemp, Warning, TEXT("자성이 사라짐!!!"))
+	//UE_LOG(LogTemp, Warning, TEXT("자성이 사라짐!!!"))
 }
 
 void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType)
 {
-	UE_LOG(LogTemp, Warning, TEXT("자성 움직임 시작!!!"))
+	//UE_LOG(LogTemp, Warning, TEXT("자성 움직임 시작!!!"))
 
 	if (_StickTo != nullptr)
 	{
@@ -474,14 +484,14 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType)
 
 void AGamePlayerCharacter::MagnetMoveEnd(EMagnetMoveType moveType)
 {
-	UE_LOG(LogTemp, Warning, TEXT("자성 움직임 끝!!!"))
+	//UE_LOG(LogTemp, Warning, TEXT("자성 움직임 끝!!!"))
 }
 
 void AGamePlayerCharacter::MagnetMoveHit(AActor* hit)
 {
 	if (hit == nullptr) return;
 
-	UE_LOG(LogTemp, Warning, TEXT("자석에 붙음!!"))
+	//UE_LOG(LogTemp, Warning, TEXT("자석에 붙음!!"))
 		if (Magnetic->GetCurrentMagnetic() != EMagneticType::NONE)
 		{
 			_StickTo = hit;

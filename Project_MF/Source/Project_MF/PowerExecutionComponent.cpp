@@ -6,45 +6,58 @@
 
 UPowerExecutionComponent::UPowerExecutionComponent()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
-	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
+	//Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
+	//Trigger->SetupAttachment(this);
+
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-	Mesh->SetupAttachment(this);
-	if (SM_BOX.Succeeded() == true)
-	{
-		Mesh->SetStaticMesh(SM_BOX.Object);
-		if (M_MATERIAL.Succeeded() == true)
-		{
-			Mesh->SetMaterial(0, M_MATERIAL.Object);
-		}
-	}
-
-	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
-	Collider->SetupAttachment(this);
-	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider->SetCollisionProfileName(TEXT("Collider"));
 }
 
 void UPowerExecutionComponent::BeginPlay()
 {
+	//FVector TriggerVolume = FVector::OneVector;
+	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootComponent) == true)
+	{
+		if (MaterialOrigin != nullptr)
+		{
+			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
+			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
+		}
+		OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
+		OwnerRootComponent->SetGenerateOverlapEvents(true);
+		OwnerRootComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
+		OwnerRootComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
+
+		//Trigger->SetCollisionProfileName("OverlapAllDynamic");
+		//Trigger->SetGenerateOverlapEvents(true);
+		//Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
+		//Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
+
+		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
+	}
+	//Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
+
 	UpdateMaterialColor();
 }
 
 void UPowerExecutionComponent::UpdateMaterialColor()
 {
-	UMaterialInstanceDynamic* DynamicMaterial = Mesh->CreateDynamicMaterialInstance(0);
-	if (DynamicMaterial != nullptr)
+	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootComponent) == true)
 	{
-		if (bPowerState == true)
+		UMaterialInstanceDynamic* DynamicMaterial = OwnerRootComponent->CreateDynamicMaterialInstance(0);
+		if (DynamicMaterial != nullptr)
 		{
-			DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.0f, 0.5f, 1.0f));
-		}
-		else if (bPowerState == false)
-		{
-			DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+			if (bPowerState == true)
+			{
+				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.0f, 0.5f, 1.0f));
+			}
+			else if (bPowerState == false)
+			{
+				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+			}
 		}
 	}
 }
@@ -55,30 +68,30 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 	{
 		bPowerState = param;
 
-		if (bPowerState == true)
-		{
-			TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
-			for (int i = 0; i < PowerMovementComponents.Num(); i = i + 1)
-			{
-				UPowerMovementComponent* PowerMovementComponent = Cast<UPowerMovementComponent>(PowerMovementComponents[i]);
-				if (PowerMovementComponent != nullptr)
-				{
-					PowerMovementComponent->StartAction();
-				}
-			}
-		}
-		else if (bPowerState == false)
-		{
-			TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
-			for (int i = 0; i < PowerMovementComponents.Num(); i = i + 1)
-			{
-				UPowerMovementComponent* PowerMovementComponent = Cast<UPowerMovementComponent>(PowerMovementComponents[i]);
-				if (PowerMovementComponent != nullptr)
-				{
-					PowerMovementComponent->EndAction();
-				}
-			}
-		}
+		//if (bPowerState == true)
+		//{
+		//	TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
+		//	for (int i = 0; i < PowerMovementComponents.Num(); i = i + 1)
+		//	{
+		//		UPowerMovementComponent* PowerMovementComponent = Cast<UPowerMovementComponent>(PowerMovementComponents[i]);
+		//		if (PowerMovementComponent != nullptr)
+		//		{
+		//			PowerMovementComponent->StartAction();
+		//		}
+		//	}
+		//}
+		//else if (bPowerState == false)
+		//{
+		//	TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
+		//	for (int i = 0; i < PowerMovementComponents.Num(); i = i + 1)
+		//	{
+		//		UPowerMovementComponent* PowerMovementComponent = Cast<UPowerMovementComponent>(PowerMovementComponents[i]);
+		//		if (PowerMovementComponent != nullptr)
+		//		{
+		//			PowerMovementComponent->EndAction();
+		//		}
+		//	}
+		//}
 
 		UpdateMaterialColor();
 	}

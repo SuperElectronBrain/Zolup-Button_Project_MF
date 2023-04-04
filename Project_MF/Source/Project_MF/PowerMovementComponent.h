@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "PowerExecutionComponent.h"
 #include "PowerMovementComponent.generated.h"
 
 
@@ -12,9 +13,11 @@ class PROJECT_MF_API UPowerMovementComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
+public:
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) float ActingRange;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) float ActingSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) AActor* ObserveTarget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) float ActingRange;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) float ActingSpeed;
 	UPROPERTY() float CurrentMovement;
 	UPROPERTY() bool bActingState;
 public:	

@@ -34,7 +34,7 @@ void UMainLevelUICanvasWidget::NativeConstruct()
 void UMainLevelUICanvasWidget::GameStart()
 {
 	//UE_LOG(LogTemp, Warning, TEXT("î"));
-	UGameplayStatics::OpenLevel(GetWorld(), TEXT("GameLevel"));
+	UGameplayStatics::OpenLevel(GetWorld(), TEXT("test_1"));
 }
 
 void UMainLevelUICanvasWidget::GameQuit()
