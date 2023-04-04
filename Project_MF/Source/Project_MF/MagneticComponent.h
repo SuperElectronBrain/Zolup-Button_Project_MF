@@ -6,7 +6,6 @@
 #include "MagneticComponent.generated.h"
 
 class USceneComponent;
-class UFloatingPawnMovement;
 class USplineComponent;
 class USplineMeshComponent;
 class UMagneticMovementComponent;
