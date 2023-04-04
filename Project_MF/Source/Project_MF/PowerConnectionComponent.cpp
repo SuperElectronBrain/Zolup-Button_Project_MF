@@ -14,44 +14,67 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	ObjectLength = 1;
 	TriggerSize = 3;
 
+#if WITH_EDITORONLY_DATA
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
-	if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
-	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
-	UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-	Meshs.Add(Mesh);
-	Mesh->SetupAttachment(this);
-	if (SM_BOX.Succeeded() == true)
+	DebugMeshComponent = CreateEditorOnlyDefaultSubobject<UStaticMeshComponent>(TEXT("DebugMes"));
+	if (IsRunningCommandlet() == false)
 	{
-		Mesh->SetStaticMesh(SM_BOX.Object);
-		if (M_MATERIAL.Succeeded() == true)
+		if (DebugMeshComponent != nullptr)
 		{
-			Mesh->SetMaterial(0, M_MATERIAL.Object);
+			DebugMeshComponent->SetupAttachment(this);
+			if (SM_BOX.Succeeded() == true)
+			{
+				DebugMeshComponent->SetStaticMesh(SM_BOX.Object);
+				if (M_MATERIAL.Succeeded() == true) { DebugMeshComponent->SetMaterial(0, M_MATERIAL.Object); }
+			}
+			//DebugMeshComponent->bTreatAsASprite = true;
+			//DebugMeshComponent->bIsScreenSizeScaled = true;
 		}
 	}
+#endif
 
-	
-	Collider0 = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider0"));
-	Collider0->SetupAttachment(this);
-	Collider0->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider0->SetCollisionProfileName(TEXT("Collider"));
 
-	Collider1 = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider1"));
-	Collider1->SetupAttachment(this);
-	Collider1->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	Collider1->SetCollisionProfileName(TEXT("Collider"));
+	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
+	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
+	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
+	//if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
+
+	//UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	//Mesh->SetupAttachment(this);
+	//if (SM_BOX.Succeeded() == true)
+	//{
+	//	Mesh->SetStaticMesh(SM_BOX.Object);
+	//	if (M_MATERIAL.Succeeded() == true)
+	//	{
+	//		Mesh->SetMaterial(0, M_MATERIAL.Object);
+	//	}
+	//}
+
+	LeftPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftPart"));
+	LeftPart->SetupAttachment(this);
+	RightPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightPart"));
+	RightPart->SetupAttachment(this);
+
+	LeftCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider0"));
+	LeftCollider->SetupAttachment(this);
+	LeftCollider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	LeftCollider->SetCollisionProfileName(TEXT("Collider"));
+	RightCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider1"));
+	RightCollider->SetupAttachment(this);
+	RightCollider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	RightCollider->SetCollisionProfileName(TEXT("Collider"));
 
 	float BoxSize = TriggerSize * 50.0f;
-	Trigger0 = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger0"));
-	Trigger0->SetupAttachment(this);
-	Trigger0->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger0->SetCollisionProfileName(TEXT("NewTrigger"));
-
-	Trigger1 = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger1"));
-	Trigger1->SetupAttachment(this);
-	Trigger1->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger1->SetCollisionProfileName(TEXT("NewTrigger"));
+	LeftTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger0"));
+	LeftTrigger->SetupAttachment(this);
+	LeftTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	LeftTrigger->SetCollisionProfileName(TEXT("NewTrigger"));
+	RightTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger1"));
+	RightTrigger->SetupAttachment(this);
+	RightTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	RightTrigger->SetCollisionProfileName(TEXT("NewTrigger"));
 
 	//for (int i = 0; i < ObjectLength; i = i + 1)
 	//{
@@ -107,46 +130,87 @@ void UPowerConnectionComponent::BeginPlay()
 	Super::BeginPlay();
 	//Meshs[0]->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
 
+	if (LeftPartMesh != nullptr)
+	{
+		LeftPart->SetStaticMesh(LeftPartMesh);
+	}
+	if (CenterPartMesh != nullptr)
+	{
+		UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+		if (::IsValid(OwnerRootComponent) == true)
+		{
+			OwnerRootComponent->SetStaticMesh(CenterPartMesh);
+		}
+	}
+	if (RightPartMesh != nullptr)
+	{
+		RightPart->SetStaticMesh(RightPartMesh);
+	}
 
-	Collider0->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2 * -1, 0.0f));
-	Collider1->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2, 0.0f));
+	FVector ComponentLocation = FVector(0.0f, 100.0f * (ObjectLength - 1) / 2, 0.0f);
+	LeftPart->SetRelativeLocation(-ComponentLocation);
+	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootComponent) == true)
+	{
+		OwnerRootComponent->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
+	}
+	RightPart->SetRelativeLocation(ComponentLocation);
+
+	LeftCollider->SetRelativeLocation(-ComponentLocation);
+	RightCollider->SetRelativeLocation(ComponentLocation);
 	
 	float BoxSize = TriggerSize * 50.0f;
-	Trigger0->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger0->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2 * -1, 0.0f));
-	Trigger1->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
-	Trigger1->SetRelativeLocation(FVector(0.0f, 100.0f * (ObjectLength - 1) / 2, 0.0f));
+	LeftTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	LeftTrigger->SetRelativeLocation(-ComponentLocation);
+	RightTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	RightTrigger->SetRelativeLocation(ComponentLocation);
 
 	//SetObjectLength(ObjectLength);
 	//SetTriggerSize(TriggerSize);
 
 	// ...
 
-	Trigger0->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
-	Trigger0->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
-	Trigger1->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
-	Trigger1->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
+	LeftTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
+	LeftTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
+	RightTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
+	RightTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
 	
-
 	SetPowerState(!bPowerState);
 	SetPowerState(!bPowerState);
 
 	UpdateMaterialColor();
 }
 
-//#if WITH_EDITOR
-//void UPowerConnectionComponent::PostInitProperties()
-//{
-//	Super::PostInitProperties();
-//	Meshs[0]->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
-//}
-//void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-//{
-//	Super::PostEditChangeProperty(PropertyChangedEvent);
-//
-//	Meshs[0]->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
-//}
-//#endif
+#if WITH_EDITOR
+void UPowerConnectionComponent::PostInitProperties()
+{
+	Super::PostInitProperties();
+
+#if WITH_EDITORONLY_DATA
+	if (IsRunningCommandlet() == false)
+	{
+		if (DebugMeshComponent != nullptr)
+		{
+			DebugMeshComponent->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
+		}
+	}
+#endif
+}
+void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+	Super::PostEditChangeProperty(PropertyChangedEvent);
+
+#if WITH_EDITORONLY_DATA
+	if (IsRunningCommandlet() == false)
+	{
+		if (DebugMeshComponent != nullptr)
+		{
+			DebugMeshComponent->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
+		}
+	}
+#endif
+}
+#endif
 
 // Called every frame
 //void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -158,18 +222,27 @@ void UPowerConnectionComponent::BeginPlay()
 
 void UPowerConnectionComponent::UpdateMaterialColor()
 {
-	for (int i = 0; i < Meshs.Num(); i = i + 1)
+	UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+
+	for (int i = 0; i < 3; i = i + 1)
 	{
-		UMaterialInstanceDynamic* DynamicMaterial = Meshs[i]->CreateDynamicMaterialInstance(0);
-		if (DynamicMaterial != nullptr)
+		UStaticMeshComponent * StaticMeshComponent = i < 1 ? LeftPart : (i < 2 ? (OwnerRootComponent) : RightPart);
+		if (StaticMeshComponent != nullptr)
 		{
-			if (bPowerState == true)
+			if (StaticMeshComponent->GetStaticMesh() != nullptr)
 			{
-				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.0f, 1.0f, 0.0f));
-			}
-			else if (bPowerState == false)
-			{
-				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+				UMaterialInstanceDynamic* DynamicMaterial = StaticMeshComponent->CreateDynamicMaterialInstance(0);
+				if (DynamicMaterial != nullptr)
+				{
+					if (bPowerState == true)
+					{
+						DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.0f, 1.0f, 0.0f));
+					}
+					else if (bPowerState == false)
+					{
+						DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+					}
+				}
 			}
 		}
 	}
@@ -359,7 +432,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 			FVector TriggerLocation;
 			FVector TriggerVolume;
 			
-			TriggerLocation = (i == 0 ? Collider0 : Collider1)->GetComponentLocation();
+			TriggerLocation = (i == 0 ? LeftCollider : RightCollider)->GetComponentLocation();
 			float BoxSize = TriggerSize * 50.0f;
 			TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
 
