@@ -11,7 +11,7 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 	//Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -25,10 +25,11 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 	//	}
 	//}
 
-	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
-	//Collider->SetupAttachment(this);
-	//Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
-	//Collider->SetCollisionProfileName(TEXT("Collider"));
+	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
+	Collider->SetupAttachment(this);
+	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	Collider->SetCollisionProfileName(TEXT("Collider"));
+	Collider->SetGenerateOverlapEvents(true);
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
@@ -46,8 +47,8 @@ void UPowerGenerateComponent::BeginPlay()
 			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
 			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
 		}
-		OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
-		OwnerRootComponent->SetGenerateOverlapEvents(true);
+		//OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
+		//OwnerRootComponent->SetGenerateOverlapEvents(true);
 	}
 	
 	float BoxSize = TriggerSize * 50.0f;
@@ -57,9 +58,31 @@ void UPowerGenerateComponent::BeginPlay()
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapEnd);
 
-	//SetPowerState(!bPowerState, true);
-	//SetPowerState(!bPowerState, true);
+	SetPowerState(!bPowerState, true);
+	SetPowerState(!bPowerState, true);
 	UpdateMaterialColor();
+}
+
+void UPowerGenerateComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+#if ENABLE_DRAW_DEBUG
+	DrawDebugBox
+	(
+		GetWorld(), 
+		GetOwner()->GetRootComponent()->GetComponentLocation(),
+		FVector
+		(
+			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize,
+			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize,
+			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize
+		), 
+		FQuat(GetOwner()->GetActorRotation()),
+		FColor::Red,
+		false,
+		0.1f
+	);
+#endif
 }
 
 void UPowerGenerateComponent::UpdateMaterialColor()
@@ -74,6 +97,7 @@ void UPowerGenerateComponent::UpdateMaterialColor()
 			{
 				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(1.0f, 0.5f, 0.0f));
 			}
+
 			else if (bPowerState == false)
 			{
 				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
@@ -114,18 +138,23 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 //			DrawDebugBox(GetWorld(), GetOwner()->GetActorLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
 //#endif
 
+
 		if (bResult == true)
 		{
 			for (int i = 0; i < HitResult.Num(); i = i + 1)
 			{
 				if (HitResult[i].Actor.IsValid() == true)
 				{
-					UPowerComponent* PowerConnectionComponent = Cast<UPowerComponent>(HitResult[i].Actor->FindComponentByClass<UPowerComponent>());
-					if (PowerConnectionComponent != nullptr)
+					UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(HitResult[i].Actor->FindComponentByClass<UPowerGenerateComponent>());
+					if (PowerGenerateComponent == nullptr)
 					{
-						if (PowerConnectionComponent != this)
+						UPowerComponent* PowerComponent = Cast<UPowerComponent>(HitResult[i].Actor->FindComponentByClass<UPowerComponent>());
+						if (PowerComponent != nullptr)
 						{
-							PowerConnectionComponent->SetPowerState(bPowerState);
+							if (PowerComponent != this)
+							{
+								PowerComponent->SetPowerState(bPowerState);
+							}
 						}
 					}
 				}

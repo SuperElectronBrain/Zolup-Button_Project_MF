@@ -14,11 +14,11 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	ObjectLength = 1;
 	TriggerSize = 3;
 
-#if WITH_EDITORONLY_DATA
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
 
-	DebugMeshComponent = CreateEditorOnlyDefaultSubobject<UStaticMeshComponent>(TEXT("DebugMes"));
+#if WITH_EDITORONLY_DATA
+	DebugMeshComponent = CreateEditorOnlyDefaultSubobject<UStaticMeshComponent>(TEXT("DebugMesh"));
 	if (IsRunningCommandlet() == false)
 	{
 		if (DebugMeshComponent != nullptr)
@@ -29,12 +29,10 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 				DebugMeshComponent->SetStaticMesh(SM_BOX.Object);
 				if (M_MATERIAL.Succeeded() == true) { DebugMeshComponent->SetMaterial(0, M_MATERIAL.Object); }
 			}
-			//DebugMeshComponent->bTreatAsASprite = true;
-			//DebugMeshComponent->bIsScreenSizeScaled = true;
+			DebugMeshComponent->SetHiddenInGame(true);
 		}
 	}
 #endif
-
 
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
@@ -54,24 +52,39 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 
 	LeftPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftPart"));
 	LeftPart->SetupAttachment(this);
+	CenterPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CenterPart"));
+	CenterPart->SetupAttachment(this);
 	RightPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RightPart"));
 	RightPart->SetupAttachment(this);
+	if (SM_BOX.Succeeded() == true)
+	{
+		LeftPart->SetStaticMesh(SM_BOX.Object);
+		CenterPart->SetStaticMesh(SM_BOX.Object);
+		RightPart->SetStaticMesh(SM_BOX.Object);
 
-	LeftCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider0"));
+		if (M_MATERIAL.Succeeded() == true) 
+		{
+			LeftPart->SetMaterial(0, M_MATERIAL.Object);
+			CenterPart->SetMaterial(0, M_MATERIAL.Object);
+			RightPart->SetMaterial(0, M_MATERIAL.Object);
+		}
+	}
+
+	LeftCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftCollider"));
 	LeftCollider->SetupAttachment(this);
 	LeftCollider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 	LeftCollider->SetCollisionProfileName(TEXT("Collider"));
-	RightCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider1"));
+	RightCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("RightCollider"));
 	RightCollider->SetupAttachment(this);
 	RightCollider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 	RightCollider->SetCollisionProfileName(TEXT("Collider"));
 
 	float BoxSize = TriggerSize * 50.0f;
-	LeftTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger0"));
+	LeftTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftTrigger"));
 	LeftTrigger->SetupAttachment(this);
 	LeftTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
 	LeftTrigger->SetCollisionProfileName(TEXT("NewTrigger"));
-	RightTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger1"));
+	RightTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("RightTrigger"));
 	RightTrigger->SetupAttachment(this);
 	RightTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
 	RightTrigger->SetCollisionProfileName(TEXT("NewTrigger"));
@@ -129,6 +142,11 @@ void UPowerConnectionComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	//Meshs[0]->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
+	UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootComponent) == true)
+	{
+		OwnerRootComponent->SetHiddenInGame(true);
+	}
 
 	if (LeftPartMesh != nullptr)
 	{
@@ -136,11 +154,7 @@ void UPowerConnectionComponent::BeginPlay()
 	}
 	if (CenterPartMesh != nullptr)
 	{
-		UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
-		if (::IsValid(OwnerRootComponent) == true)
-		{
-			OwnerRootComponent->SetStaticMesh(CenterPartMesh);
-		}
+		CenterPart->SetStaticMesh(CenterPartMesh);
 	}
 	if (RightPartMesh != nullptr)
 	{
@@ -149,11 +163,7 @@ void UPowerConnectionComponent::BeginPlay()
 
 	FVector ComponentLocation = FVector(0.0f, 100.0f * (ObjectLength - 1) / 2, 0.0f);
 	LeftPart->SetRelativeLocation(-ComponentLocation);
-	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	if (::IsValid(OwnerRootComponent) == true)
-	{
-		OwnerRootComponent->SetRelativeScale3D(FVector(1.0f, ObjectLength, 1.0f));
-	}
+	CenterPart->SetRelativeScale3D(FVector(1.0f, ObjectLength < 4 ? 1 : ObjectLength - 2, 1.0f));
 	RightPart->SetRelativeLocation(ComponentLocation);
 
 	LeftCollider->SetRelativeLocation(-ComponentLocation);
@@ -213,20 +223,25 @@ void UPowerConnectionComponent::PostEditChangeProperty(FPropertyChangedEvent& Pr
 #endif
 
 // Called every frame
-//void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-//{
-//	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-//
-//	// ...
-//}
+void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+//#if ENABLE_DRAW_DEBUG
+//	DrawDebugBox(GetWorld(), LeftTrigger->GetComponentLocation(), FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), FColor::Red, false, 0.1f);
+//	DrawDebugBox(GetWorld(), RightTrigger->GetComponentLocation(), FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), FColor::Red, false, 0.1f);
+//#endif
+
+	//...
+}
 
 void UPowerConnectionComponent::UpdateMaterialColor()
 {
-	UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+	//UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
 
 	for (int i = 0; i < 3; i = i + 1)
 	{
-		UStaticMeshComponent * StaticMeshComponent = i < 1 ? LeftPart : (i < 2 ? (OwnerRootComponent) : RightPart);
+		UStaticMeshComponent * StaticMeshComponent = i < 1 ? LeftPart : (i < 2 ? CenterPart : RightPart);
 		if (StaticMeshComponent != nullptr)
 		{
 			if (StaticMeshComponent->GetStaticMesh() != nullptr)
