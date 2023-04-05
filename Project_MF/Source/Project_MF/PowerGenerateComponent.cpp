@@ -6,6 +6,8 @@
 
 UPowerGenerateComponent::UPowerGenerateComponent()
 {
+	PrimaryComponentTick.bCanEverTick = true;
+
 	TriggerSize = 1;
 	bPowerState = true;
 
@@ -51,8 +53,13 @@ void UPowerGenerateComponent::BeginPlay()
 		//OwnerRootComponent->SetGenerateOverlapEvents(true);
 	}
 	
-	float BoxSize = TriggerSize * 50.0f;
-	Trigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	//float BoxSize = TriggerSize * 50.0f;
+	Trigger->SetBoxExtent(FVector
+	(
+		(GetOwner()->GetRootComponent()->GetRelativeScale3D().X * 50.0f) + TriggerSize,
+		(GetOwner()->GetRootComponent()->GetRelativeScale3D().Y * 50.0f) + TriggerSize,
+		(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize
+	));
 	Trigger->SetCollisionProfileName("NewTrigger");
 	Trigger->SetGenerateOverlapEvents(true);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
@@ -73,8 +80,8 @@ void UPowerGenerateComponent::TickComponent(float DeltaTime, ELevelTick TickType
 		GetOwner()->GetRootComponent()->GetComponentLocation(),
 		FVector
 		(
-			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize,
-			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize,
+			(GetOwner()->GetRootComponent()->GetRelativeScale3D().X * 50.0f) + TriggerSize,
+			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Y * 50.0f) + TriggerSize,
 			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize
 		), 
 		FQuat(GetOwner()->GetActorRotation()),

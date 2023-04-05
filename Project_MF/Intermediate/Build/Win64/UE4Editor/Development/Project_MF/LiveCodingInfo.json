@@ -30,14 +30,14 @@
 			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
-			"PowerGenerateComponent.cpp.obj",
 			"PowerMovementComponent.cpp.obj",
 			"PowerRotationMovementComponent.cpp.obj",
 			"Project_MF.cpp.obj",
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActor.cpp.obj",
-			"TestPlayerGameMode.cpp.obj"
+			"TestPlayerGameMode.cpp.obj",
+			"PowerGenerateComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CustomGameInstance.gen.cpp.obj",
