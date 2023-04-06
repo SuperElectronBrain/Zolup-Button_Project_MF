@@ -15,14 +15,13 @@ class PROJECT_MF_API UPowerConnectionComponent : public UPowerComponent
 	GENERATED_BODY()
 
 private:
-#if WITH_EDITORONLY_DATA
 	UPROPERTY() UStaticMeshComponent* DebugMeshComponent;
-#endif
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* LeftPartMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* CenterPartMesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* RightPartMesh;
 
 	UPROPERTY() UStaticMeshComponent* LeftPart;
+	UPROPERTY() UStaticMeshComponent* CenterPart;
 	UPROPERTY() UStaticMeshComponent* RightPart;
 	UPROPERTY() UBoxComponent* LeftCollider;
 	UPROPERTY() UBoxComponent* RightCollider;
@@ -44,7 +43,7 @@ protected:
 #endif
 //public:	
 	// Called every frame
-	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
 	UFUNCTION() void UpdateMaterialColor();
 

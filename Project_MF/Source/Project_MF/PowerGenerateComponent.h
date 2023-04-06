@@ -17,12 +17,15 @@ class PROJECT_MF_API UPowerGenerateComponent : public UPowerComponent
 private:
 	//UPROPERTY() /*UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))*/ UStaticMeshComponent* Mesh;
 	//UPROPERTY() /*UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))*/ UBoxComponent* Collider;
+	UPROPERTY() UBoxComponent* Collider;
 	UPROPERTY() UBoxComponent* Trigger;
 	UPROPERTY() int32 MaterialIndexNum;
 	void UpdateMaterialColor();
 
 protected:
 	virtual void BeginPlay() override;
+
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	virtual void SetPowerState(bool param, bool IsGenerator = false) override;
 

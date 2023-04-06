@@ -9,9 +9,14 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 	//Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	//Trigger->SetupAttachment(this);
 
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
+	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
+	Collider->SetupAttachment(this);
+	Collider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	Collider->SetCollisionProfileName(TEXT("Collider"));
+	Collider->SetGenerateOverlapEvents(true);
 }
 
 void UPowerExecutionComponent::BeginPlay()
@@ -25,10 +30,11 @@ void UPowerExecutionComponent::BeginPlay()
 			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
 			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
 		}
-		OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
-		OwnerRootComponent->SetGenerateOverlapEvents(true);
-		OwnerRootComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
-		OwnerRootComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
+#pragma region UnUsed
+		//OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
+		//OwnerRootComponent->SetGenerateOverlapEvents(true);
+		//OwnerRootComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
+		//OwnerRootComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
 
 		//Trigger->SetCollisionProfileName("OverlapAllDynamic");
 		//Trigger->SetGenerateOverlapEvents(true);
@@ -36,8 +42,12 @@ void UPowerExecutionComponent::BeginPlay()
 		//Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
 
 		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
+#pragma endregion
 	}
 	//Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
+
+	Collider->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
+	Collider->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
 
 	UpdateMaterialColor();
 }
@@ -67,7 +77,7 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 	if (bPowerState != param)
 	{
 		bPowerState = param;
-
+#pragma region UnUsed
 		//if (bPowerState == true)
 		//{
 		//	TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
@@ -92,7 +102,7 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 		//		}
 		//	}
 		//}
-
+#pragma endregion
 		UpdateMaterialColor();
 	}
 }
