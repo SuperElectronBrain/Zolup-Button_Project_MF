@@ -6,16 +6,19 @@
 
 UPowerGenerateComponent::UPowerGenerateComponent()
 {
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 
 	TriggerSize = 1;
 	bPowerState = true;
 
+#pragma region UnUsed
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
+#pragma endregion
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
 	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
+#pragma region UnUsed
 	//Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	//Mesh->SetupAttachment(this);
 	//if (SM_BOX.Succeeded() == true) 
@@ -26,6 +29,7 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 	//		Mesh->SetMaterial(0, M_MATERIAL.Object);
 	//	}
 	//}
+#pragma endregion
 
 	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
 	Collider->SetupAttachment(this);
@@ -53,13 +57,9 @@ void UPowerGenerateComponent::BeginPlay()
 		//OwnerRootComponent->SetGenerateOverlapEvents(true);
 	}
 	
-	//float BoxSize = TriggerSize * 50.0f;
-	Trigger->SetBoxExtent(FVector
-	(
-		(GetOwner()->GetRootComponent()->GetRelativeScale3D().X * 50.0f) + TriggerSize,
-		(GetOwner()->GetRootComponent()->GetRelativeScale3D().Y * 50.0f) + TriggerSize,
-		(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize
-	));
+	float BoxSize = TriggerSize * 100.0f;
+	FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+	Trigger->SetBoxExtent(FVector(50.0f + (BoxSize / OwnerScale.X), 50.0f + (BoxSize / OwnerScale.Y), 50.0f + (BoxSize / OwnerScale.Z)));
 	Trigger->SetCollisionProfileName("NewTrigger");
 	Trigger->SetGenerateOverlapEvents(true);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
@@ -73,23 +73,13 @@ void UPowerGenerateComponent::BeginPlay()
 void UPowerGenerateComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-#if ENABLE_DRAW_DEBUG
-	DrawDebugBox
-	(
-		GetWorld(), 
-		GetOwner()->GetRootComponent()->GetComponentLocation(),
-		FVector
-		(
-			(GetOwner()->GetRootComponent()->GetRelativeScale3D().X * 50.0f) + TriggerSize,
-			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Y * 50.0f) + TriggerSize,
-			(GetOwner()->GetRootComponent()->GetRelativeScale3D().Z * 50.0f) + TriggerSize
-		), 
-		FQuat(GetOwner()->GetActorRotation()),
-		FColor::Red,
-		false,
-		0.1f
-	);
-#endif
+#pragma region UnUsed
+//#if ENABLE_DRAW_DEBUG
+//	float BoxSize = TriggerSize * 100.0f;
+//	FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+//	DrawDebugBox(GetWorld(), GetOwner()->GetRootComponent()->GetComponentLocation(), FVector((OwnerScale.X * 50.0f) + BoxSize, (OwnerScale.Y * 50.0f) + BoxSize, (OwnerScale.Z * 50.0f) + BoxSize), FQuat(GetOwner()->GetActorRotation()), FColor::Red, false, 0.1f);
+//#endif
+#pragma endregion
 }
 
 void UPowerGenerateComponent::UpdateMaterialColor()
@@ -122,8 +112,9 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			bPowerState = param;
 		}
 
-		float BoxSize = TriggerSize * 50.0f;
-		FVector TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
+		float BoxSize = TriggerSize * 100.0f;
+		FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+		FVector TriggerVolume = FVector((OwnerScale.X * 50.0f) + BoxSize, (OwnerScale.Y * 50.0f) + BoxSize, (OwnerScale.Z * 50.0f) + BoxSize);
 		
 		TArray<FHitResult> HitResult;
 		FCollisionQueryParams Params(NAME_None, false, GetOwner());
@@ -137,14 +128,15 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			FCollisionShape::MakeBox(TriggerVolume),
 			Params
 		);
-
+#pragma region UnUsed
 //#if ENABLE_DRAW_DEBUG
 //			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
 //			float DebugLifeTime = 5.0f;
-//
-//			DrawDebugBox(GetWorld(), GetOwner()->GetActorLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
+//			float BoxSize = TriggerSize * 100.0f;
+//			FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+//			DrawDebugBox(GetWorld(), GetOwner()->GetRootComponent()->GetComponentLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
 //#endif
-
+#pragma endregion
 
 		if (bResult == true)
 		{

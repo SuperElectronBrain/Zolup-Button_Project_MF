@@ -34,6 +34,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	}
 #endif
 
+#pragma region UnUsed
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
@@ -49,6 +50,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	//		Mesh->SetMaterial(0, M_MATERIAL.Object);
 	//	}
 	//}
+#pragma endregion
 
 	LeftPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftPart"));
 	LeftPart->SetupAttachment(this);
@@ -79,7 +81,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	RightCollider->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 	RightCollider->SetCollisionProfileName(TEXT("Collider"));
 
-	float BoxSize = TriggerSize * 50.0f;
+	float BoxSize = (TriggerSize * 100.0f) + 50.0f;
 	LeftTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftTrigger"));
 	LeftTrigger->SetupAttachment(this);
 	LeftTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
@@ -89,6 +91,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	RightTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
 	RightTrigger->SetCollisionProfileName(TEXT("NewTrigger"));
 
+#pragma region UnUsed
 	//for (int i = 0; i < ObjectLength; i = i + 1)
 	//{
 	//	UStaticMeshComponent* Mesh = CreateDefaultSubobject<UStaticMeshComponent>(FName(*(FString(TEXT("Mesh")) + FString::FromInt(i))));
@@ -135,6 +138,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	//	Trigger->SetCollisionProfileName(TEXT("Connector"));
 	//}
 	//...
+#pragma endregion
 }
 
 // Called when the game starts
@@ -169,10 +173,12 @@ void UPowerConnectionComponent::BeginPlay()
 	LeftCollider->SetRelativeLocation(-ComponentLocation);
 	RightCollider->SetRelativeLocation(ComponentLocation);
 	
-	float BoxSize = TriggerSize * 50.0f;
-	LeftTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	
+	float BoxSize = TriggerSize * 100.0f;
+	FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+	LeftTrigger->SetBoxExtent(FVector(50.0f + (BoxSize / OwnerScale.X), 50.0f + (BoxSize / OwnerScale.Y), 50.0f + (BoxSize / OwnerScale.Z)));
 	LeftTrigger->SetRelativeLocation(-ComponentLocation);
-	RightTrigger->SetBoxExtent(FVector(BoxSize, BoxSize, BoxSize));
+	RightTrigger->SetBoxExtent(FVector(50.0f + (BoxSize / OwnerScale.X), 50.0f + (BoxSize / OwnerScale.Y), 50.0f + (BoxSize / OwnerScale.Z)));
 	RightTrigger->SetRelativeLocation(ComponentLocation);
 
 	//SetObjectLength(ObjectLength);
@@ -227,10 +233,12 @@ void UPowerConnectionComponent::TickComponent(float DeltaTime, ELevelTick TickTy
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+#pragma region UnUsed
 //#if ENABLE_DRAW_DEBUG
 //	DrawDebugBox(GetWorld(), LeftTrigger->GetComponentLocation(), FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), FColor::Red, false, 0.1f);
 //	DrawDebugBox(GetWorld(), RightTrigger->GetComponentLocation(), FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), FColor::Red, false, 0.1f);
 //#endif
+#pragma endregion
 
 	//...
 }
@@ -262,7 +270,7 @@ void UPowerConnectionComponent::UpdateMaterialColor()
 		}
 	}
 }
-
+#pragma region UnUsed
 //void UPowerConnectionComponent::SetObjectLength(int32 param)
 //{
 //	if(param > 0)
@@ -435,6 +443,7 @@ void UPowerConnectionComponent::UpdateMaterialColor()
 //		TriggerSize = param;
 //	//}
 //}
+#pragma endregion
 
 void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 {
@@ -448,8 +457,11 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 			FVector TriggerVolume;
 			
 			TriggerLocation = (i == 0 ? LeftCollider : RightCollider)->GetComponentLocation();
-			float BoxSize = TriggerSize * 50.0f;
-			TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
+			//float BoxSize = TriggerSize * 50.0f;
+			float BoxSize = TriggerSize * 100.0f;
+			FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+			TriggerVolume = FVector((OwnerScale.X * 50.0f) + BoxSize, (OwnerScale.Y * 50.0f) + BoxSize, (OwnerScale.Z * 50.0f) + BoxSize);
+			//TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
 
 			TArray<FHitResult> HitResult;
 			FCollisionQueryParams Params(NAME_None, false, GetOwner());
@@ -463,13 +475,14 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 				FCollisionShape::MakeBox(TriggerVolume),
 				Params
 			);
-
+#pragma region UnUsed
 //#if ENABLE_DRAW_DEBUG
 //			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
 //			float DebugLifeTime = 5.0f;
 //
 //			DrawDebugBox(GetWorld(), TriggerLocation, FVector(150.0f, 150.0f, 150.0f), FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
 //#endif
+#pragma endregion
 
 			if (bResult == true)
 			{

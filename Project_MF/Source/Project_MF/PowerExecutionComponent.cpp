@@ -30,6 +30,7 @@ void UPowerExecutionComponent::BeginPlay()
 			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
 			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
 		}
+#pragma region UnUsed
 		//OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
 		//OwnerRootComponent->SetGenerateOverlapEvents(true);
 		//OwnerRootComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
@@ -41,6 +42,7 @@ void UPowerExecutionComponent::BeginPlay()
 		//Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
 
 		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
+#pragma endregion
 	}
 	//Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
 
@@ -75,7 +77,7 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 	if (bPowerState != param)
 	{
 		bPowerState = param;
-
+#pragma region UnUsed
 		//if (bPowerState == true)
 		//{
 		//	TArray<UActorComponent*> PowerMovementComponents = GetOwner()->GetComponentsByClass(UPowerMovementComponent::StaticClass());
@@ -100,7 +102,7 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 		//		}
 		//	}
 		//}
-
+#pragma endregion
 		UpdateMaterialColor();
 	}
 }

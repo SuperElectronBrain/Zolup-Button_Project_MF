@@ -1,64 +1,55 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
-  Invalidating makefile for Project_MFEditor (SharedPCH.Engine.ShadowErrors.h modified)
-  Parsing headers for Project_MFEditor
-    Running UnrealHeaderTool "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject" "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\Project_MFEditor\Development\Project_MFEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\qkrdl\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  LogInit: Display: Loading text-based GConfig....
-  Reflection code generated for Project_MFEditor in 4.1384605 seconds
-D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\DefaultMagneticMovementComponent.cpp(1): error : Expected DefaultMagneticMovementComponent.h to be first header included.
-D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\MFCharacterMovementComponent.cpp(1): error : Expected MFCharacterMovementComponent.h to be first header included.
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0042.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0042.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1196.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1196.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3759.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3759.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3803.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3803.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3887.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3887.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3961.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3961.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4069.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4069.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4275.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4275.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4309.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4309.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4975.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-4975.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5287.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5287.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5446.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5446.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-7039.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-7039.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8889.dll
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8889.pdb
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0042.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1196.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3759.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3803.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3887.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3961.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4069.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4275.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4309.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-4975.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5287.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5446.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-7039.lib
-  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8889.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0065.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0065.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0178.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-0178.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1000.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1000.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1085.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1085.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1097.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-1097.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3369.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3369.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3434.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-3434.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5214.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5214.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5938.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-5938.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-6583.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-6583.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8506.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8506.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8682.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-8682.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-9236.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-9236.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-9616.dll
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\UE4Editor-Project_MF-9616.pdb
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0065.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-0178.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1000.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1085.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1097.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3369.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-3434.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5214.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5938.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6583.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8506.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-8682.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9236.lib
+  Deleted hot-reload file: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9616.lib
   Building Project_MFEditor...
   Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 6 actions with 8 processes...
-    [1/6] SharedPCH.Engine.ShadowErrors.cpp
-    [2/6] Module.Project_MF.gen.cpp
-    [3/6] Module.Project_MF.cpp
-    [4/6] UE4Editor-Project_MF.lib
+  [Adaptive unity build] Excluded from Project_MF unity file: PowerConnectionComponent.cpp, PowerExecutionComponent.cpp, PowerGenerateComponent.cpp
+  Building 4 actions with 8 processes...
+    [1/4] PowerConnectionComponent.cpp
+    [2/4] UE4Editor-Project_MF.lib
        D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.exp 개체를 생성하고 있습니다.
-    [5/6] UE4Editor-Project_MF.dll
+    [3/4] UE4Editor-Project_MF.dll
        D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.suppressed.lib 라이브러리 및 D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF.suppressed.exp 개체를 생성하고 있습니다.
-    [6/6] Project_MFEditor.target
-  Total time in Parallel executor: 28.83 seconds
-  Total execution time: 35.09 seconds
-D:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: ""D:\Program Files\Epic Games\UE_4.27\Engine\Build\BatchFiles\Build.bat" Project_MFEditor Win64 Development -Project="D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject" -WaitMutex -FromMsBuild" 명령이 종료되었습니다(코드: -1).
+    [4/4] Project_MFEditor.target
+  Total time in Parallel executor: 1.98 seconds
+  Total execution time: 2.77 seconds
