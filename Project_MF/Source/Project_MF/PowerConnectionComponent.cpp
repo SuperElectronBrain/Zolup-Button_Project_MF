@@ -12,7 +12,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 
 	ObjectLength = 1;
-	TriggerSize = 3;
+	TriggerSize = 1;
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
