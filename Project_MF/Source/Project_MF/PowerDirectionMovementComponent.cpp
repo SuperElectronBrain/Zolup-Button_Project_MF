@@ -27,6 +27,7 @@ void UPowerDirectionMovementComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	// ...
+	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
 	OriginPosition = GetOwner()->GetActorLocation();
 }
 
@@ -47,14 +48,22 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
-				FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-				GetOwner()->SetActorLocation(OriginPosition + MovementVector);
+				if (CurrentMovement < ActingRange)
+				{
+					GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (ActingSpeed * DeltaTime));
+				}
+				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+				//GetOwner()->SetActorLocation(OriginPosition + MovementVector);
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-				FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
-				GetOwner()->SetActorLocation(OriginPosition + MovementVector);
+				if (CurrentMovement > 0)
+				{
+					GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (-ActingSpeed * DeltaTime));
+				}
+				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
+				//GetOwner()->SetActorLocation(OriginPosition + MovementVector);
 			}
 		}
 	}
