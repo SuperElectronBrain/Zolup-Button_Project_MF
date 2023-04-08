@@ -19,7 +19,7 @@ private:
 #if WITH_EDITORONLY_DATA
 	UPROPERTY() UArrowComponent* ArrowComponent;
 #endif
-	UPROPERTY() float OriginRotation;
+	UPROPERTY() FVector OriginNormalVector;
 protected:
 	virtual void BeginPlay() override;
 
@@ -27,4 +27,5 @@ public:
 	UPowerRotationMovementComponent();
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UFUNCTION() virtual void Action(float DeltaTime);
 };

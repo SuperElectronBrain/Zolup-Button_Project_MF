@@ -30,7 +30,7 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
-	Trigger->SetBoxExtent(FVector(50.1f, 50.1f, 50.1f));
+	Trigger->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 }
 
 void UPowerConveyorMovementComponent::BeginPlay()

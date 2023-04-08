@@ -34,6 +34,11 @@ void UPowerDirectionMovementComponent::TickComponent(float DeltaTime, ELevelTick
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	Action(DeltaTime);
+}
+
+void UPowerDirectionMovementComponent::Action(float DeltaTime)
+{
 	if (ObserveTarget != nullptr)
 	{
 		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
