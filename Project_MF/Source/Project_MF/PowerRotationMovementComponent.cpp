@@ -31,7 +31,7 @@ void UPowerRotationMovementComponent::BeginPlay()
 	// ...
 	//OriginRotation = GetOwner()->GetActorQuat().Rotator().Yaw;
 	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
-	OriginNormalVector = GetOwner()->GetActorForwardVector();
+	//OriginNormalVector = GetOwner()->GetActorForwardVector();
 }
 
 void UPowerRotationMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

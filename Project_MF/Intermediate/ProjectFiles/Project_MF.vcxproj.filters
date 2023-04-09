@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{1C5DB2D2-985C-4232-AD2B-D5E4FC8AF6ED}</UniqueIdentifier>
+      <UniqueIdentifier>{27179D8D-F7C2-4B07-907F-43245B9A7C6E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{7EEEA433-7DE9-43A1-8B1A-8617EF2FB452}</UniqueIdentifier>
+      <UniqueIdentifier>{F39FE248-71E9-413C-A92F-3C59144DCF3C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{35E5EEC7-4347-4B94-8055-920D02DAA6EA}</UniqueIdentifier>
+      <UniqueIdentifier>{C768CE68-9414-4D0A-8E9E-DAFE20753916}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -201,6 +201,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\PowerGenerateComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerLightControlComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerLightControlComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PowerMovementComponent.cpp">

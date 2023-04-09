@@ -74,7 +74,8 @@ void UPowerConveyorMovementComponent::BeginPlay()
 
 		TriggerSize = OwnerRootComponent->GetRelativeScale3D();
 	}
-	Trigger->SetBoxExtent(FVector(50.1f * TriggerSize.X, 50.1f * TriggerSize.Y, 50.1f * TriggerSize.Z));
+	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
+	Trigger->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 	
 #pragma region UnUsed
 	//FVector TriggerVolume = FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z);
