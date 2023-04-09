@@ -23,6 +23,9 @@ UPowerRotationMovementComponent::UPowerRotationMovementComponent()
 		}
 	}
 #endif
+
+	UnlimitedMovement = false;
+	NonReversibleMovement = false;
 }
 
 void UPowerRotationMovementComponent::BeginPlay()
@@ -30,8 +33,8 @@ void UPowerRotationMovementComponent::BeginPlay()
 	Super::BeginPlay();
 	// ...
 	//OriginRotation = GetOwner()->GetActorQuat().Rotator().Yaw;
-	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
 	//OriginNormalVector = GetOwner()->GetActorForwardVector();
+	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
 }
 
 void UPowerRotationMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -51,7 +54,7 @@ void UPowerRotationMovementComponent::Action(float DeltaTime)
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
-				if (CurrentMovement < ActingRange)
+				if ((CurrentMovement < ActingRange) || UnlimitedMovement == true)
 				{
 					//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
 					GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
@@ -67,12 +70,14 @@ void UPowerRotationMovementComponent::Action(float DeltaTime)
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
-				CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-				if (CurrentMovement > 0)
+				if (NonReversibleMovement == false)
 				{
-					//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
-					GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
-
+					CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
+					if (CurrentMovement > 0)
+					{
+						//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
+						GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
+					}
 				}
 #pragma region UnUsed
 				//GetOwner()->SetActorRelativeRotation(FQuat(FRotator(GetOwner()->GetActorQuat().Rotator().Pitch, OriginRotation + CurrentMovement, GetOwner()->GetActorQuat().Rotator().Roll)));

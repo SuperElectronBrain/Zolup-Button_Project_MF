@@ -170,7 +170,6 @@ void UPowerConnectionComponent::BeginPlay()
 	CenterPart->SetRelativeScale3D(FVector(1.0f, ObjectLength < 4 ? 1 : ObjectLength - 2, 1.0f));
 	RightPart->SetRelativeLocation(ComponentLocation);
 
-
 	FVector LeftPartBounds = LeftPart->GetStaticMesh() != nullptr ? LeftPart->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
 	LeftCollider->SetBoxExtent(FVector(LeftPartBounds.X, LeftPartBounds.Y, LeftPartBounds.Z));
 	LeftCollider->SetRelativeLocation(-ComponentLocation);

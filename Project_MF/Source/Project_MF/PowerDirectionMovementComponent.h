@@ -21,6 +21,9 @@ private:
 #endif
 	UPROPERTY() FVector OriginPosition;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool UnlimitedMovement;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleMovement;
+
 public:
 	UPowerDirectionMovementComponent();
 

@@ -18,6 +18,9 @@ class PROJECT_MF_API UPowerRotationMovementComponent : public UPowerMovementComp
 private:
 #if WITH_EDITORONLY_DATA
 	UPROPERTY() UArrowComponent* ArrowComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool UnlimitedMovement;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleMovement;
 #endif
 	//UPROPERTY() FVector OriginNormalVector;
 protected:

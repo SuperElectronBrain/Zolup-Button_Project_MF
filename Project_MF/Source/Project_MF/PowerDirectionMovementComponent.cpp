@@ -21,6 +21,8 @@ UPowerDirectionMovementComponent::UPowerDirectionMovementComponent()
 		}
 	}
 #endif
+	UnlimitedMovement = false;
+	NonReversibleMovement = false;
 }
 
 void UPowerDirectionMovementComponent::BeginPlay()
@@ -48,7 +50,7 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
-				if (CurrentMovement < ActingRange)
+				if ((CurrentMovement < ActingRange) || UnlimitedMovement == true)
 				{
 					GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (ActingSpeed * DeltaTime));
 				}
@@ -57,10 +59,13 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
-				CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
-				if (CurrentMovement > 0)
+				if (NonReversibleMovement == false)
 				{
-					GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (-ActingSpeed * DeltaTime));
+					CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
+					if (CurrentMovement > 0)
+					{
+						GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (-ActingSpeed * DeltaTime));
+					}
 				}
 				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
 				//GetOwner()->SetActorLocation(OriginPosition + MovementVector);
