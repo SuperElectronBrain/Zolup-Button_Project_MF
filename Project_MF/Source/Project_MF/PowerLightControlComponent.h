@@ -15,6 +15,10 @@ class PROJECT_MF_API UPowerLightControlComponent : public UPowerMovementComponen
 	GENERATED_BODY()
 
 private:
+	/** It works in reverse. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool ReversAction;
+	/** When disabled, it does nothing. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleAction;
 protected:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

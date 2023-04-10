@@ -7,6 +7,8 @@
 UPowerLightControlComponent::UPowerLightControlComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
+	ReversAction = false;
+	NonReversibleAction = false;
 }
 
 void UPowerLightControlComponent::BeginPlay()
@@ -30,15 +32,24 @@ void UPowerLightControlComponent::Action(float DeltaTime)
 				ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
 				if (::IsValid(ObserveTargetLightComponent) == true)
 				{
-					ObserveTargetLightComponent->SetVisibility(true);
+					if (ObserveTargetLightComponent->IsVisible() == ReversAction)
+					{
+						ObserveTargetLightComponent->SetVisibility(!ReversAction);
+					}
 				}
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
-				ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
-				if (::IsValid(ObserveTargetLightComponent) == true)
+				if (NonReversibleAction == false)
 				{
-					ObserveTargetLightComponent->SetVisibility(false);
+					ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
+					if (::IsValid(ObserveTargetLightComponent) == true)
+					{
+						if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
+						{
+							ObserveTargetLightComponent->SetVisibility(ReversAction);
+						}
+					}
 				}
 			}
 		}

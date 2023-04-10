@@ -18,8 +18,12 @@ class PROJECT_MF_API UPowerRotationMovementComponent : public UPowerMovementComp
 private:
 #if WITH_EDITORONLY_DATA
 	UPROPERTY() UArrowComponent* ArrowComponent;
-
+	/**
+	* When activated, it moves infinitely.
+	* WARNING - When disabled, it may not be able to return to original state.
+	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool UnlimitedMovement;
+	/** When disabled, it does nothing. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleMovement;
 #endif
 	//UPROPERTY() FVector OriginNormalVector;

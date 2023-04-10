@@ -24,13 +24,12 @@ private:
 
 protected:
 	virtual void BeginPlay() override;
-
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-	virtual void SetPowerState(bool param, bool IsGenerator = false) override;
 
 public:
 	UPowerGenerateComponent();
+
+	virtual void SetPowerState(bool param, bool IsGenerator = false) override;
 
 	UFUNCTION() void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 	UFUNCTION() void OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
