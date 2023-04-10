@@ -97,7 +97,7 @@ APlayerCharacter::APlayerCharacter()
 
 	//Magnetic
 	Magnetic->SetMagneticFieldRadius(300.f);
-	Magnetic->SetFixedWeight(1.f);
+	Magnetic->SetWeight(1.f, true);
 	#pragma endregion
 }
 

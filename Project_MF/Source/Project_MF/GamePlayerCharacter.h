@@ -21,11 +21,21 @@ class PROJECT_MF_API AGamePlayerCharacter final : public ACharacter
 	GENERATED_BODY()
 
 public:
-	/*Constructor*/
+	/////////////////
+	//*Constructor*//
+	////////////////
+
 	AGamePlayerCharacter();
 
+	/*Public methods*/
+	FRotator GetPlayerCameraQuat() const;
+	FVector GetPlayerForwardVector() const;
+
 private:
-	/*Override methods*/
+	//////////////////////
+	//*Override methods*//
+	//////////////////////
+
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -33,7 +43,10 @@ private:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
 	#endif
 
-	/*Input methods*/
+	///////////////////
+	//*Input methods*//
+	///////////////////
+
 	void MoveUpDown(float value);
 	void MoveRightLeft(float value);
 	void LookUp(float value);
@@ -46,7 +59,10 @@ private:
 	void JumpStart();
 	void JumpEnd();
 
-	/*Private methods*/
+	///////////////////////
+	///*Private methods*//
+	//////////////////////
+
 	void Shoot(EMagneticType shootType);
 	void ShootMine(EMagneticType shootType);
 
@@ -72,7 +88,10 @@ private:
 	UFUNCTION()
 	void MagnetMoveHit(AActor* hit);
 
-	/*Components*/
+	/////////////////
+	///*Components*//
+	/////////////////
+
 	UPROPERTY()
 	UPlayerUICanvasWidget* PlayUIInstance;
 
@@ -95,9 +114,12 @@ private:
 	UPlayerAnimInstance* PlayerAnim;
 
 private:
-	/*fields*/
+	//////////////
+	///*fields*///
+	//////////////
+
 	bool _bCanJump, _bShootMine;
-	float _GivenIndex, _OldGivenIndex;
+	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv;
 	AActor* _StickTo;
 	int32 _givenIndex = 0, _oldGivenIndex;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
@@ -118,7 +140,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
 	float MoveSpeed;
 
-	//UPROPERTY(EditAnywhere, Category = BoneTransform, BlueprintReadWrite)
-	//FTransform _ArmLAddTransform;
+	UPROPERTY(EditAnywhere, Category = BoneTransform, BlueprintReadWrite)
+	FTransform _ArmLAddTransform;
 
 };

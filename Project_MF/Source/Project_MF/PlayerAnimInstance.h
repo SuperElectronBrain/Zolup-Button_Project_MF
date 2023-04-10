@@ -7,43 +7,109 @@
 #include <Animation/AnimMontage.h>
 #include "PlayerAnimInstance.generated.h"
 
+#define PLAYER_LPOARM_BONE TEXT("Bip001-L-Forearm")
+#define PLAYER_LHAND_BONE TEXT("Bip001-L-Hand")
+#define PLAYER_RHAND_BONE TEXT("Bip001-R-Hand")
+#define PLAYER_RPOARM_BONE TEXT("Bip001-R-Forearm")
+
+UENUM()
+enum class EPutArmType
+{
+	LEFT, RIGHT
+};
+
 UCLASS()
 class PROJECT_MF_API UPlayerAnimInstance final: public UAnimInstance
 {
 	GENERATED_BODY()
 
 public:
-	/*Constructor*/
+	/////////////////
+	//*Constructor*//
+	/////////////////
 	UPlayerAnimInstance();
 
-	/*Public Methods*/
+	/////////////////////
+	///*Public Methods*//
+	/////////////////////
 	bool GetAttackMontageIsPlaying() const { return Montage_IsPlaying(AttackMontage); }
-	void PlayAttackMontage();
 	bool GetResetMontageIsPlaying() const { return Montage_IsPlaying(ResetMontage); }
+	bool GetSelfResetMontageIsPlaying() const { return Montage_IsPlaying(SelfResetMontage); }
+	bool GetSelfShootMontageIsPlaying() const { return Montage_IsPlaying(SelfShootMontage); }
+	void PlayAttackMontage();
 	void PlayResetMontage();
-
-public:
-	/*Override methods*/
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FTransform _ArmLAddOffsetTransform;
+	void PlaySelfResetMontage();
+	void PlaySelfShootMontage();
+	void PlayGlovePulledUpMotage();
+	void PlayGloveStickMotage();
 
 private:
+	//////////////////////
+	//*Override methods*//
+	/////////////////////
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
-	/*fields and Components*/
+	///////////////////////
+	///*Private mothods*///
+	///////////////////////
+	void ApplyStandingHand(EPutArmType armType, AGamePlayerCharacter* player, FTransform& outResult, bool& hitResult);
+
+
+	////////////////////////////
+	///*fields and Components*//
+	////////////////////////////
+	float  _currArmRatio, _currArmRatio2, _ArmPenetrateDiv;
+
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool	_bIsJumping;
 
 	UPROPERTY(EditAnywhere, Category=Player, Meta=(AllowPrivateAccess=true), BlueprintReadOnly)
 	float	_CurrentSpeed;
 
-	UPROPERTY(VisibleAnywhere , Category = Montage, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* AttackMontage;
 
-	UPROPERTY(VisibleAnywhere, Category = Montage, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* ResetMontage;
+
+	UPROPERTY()
+	UAnimMontage* SelfResetMontage;
+
+	UPROPERTY()
+	UAnimMontage* SelfShootMontage;
+
+	UPROPERTY()
+	UAnimMontage* PulledUpMontage;
+
+	UPROPERTY()
+	UAnimMontage* StickMotange;
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FRotator _angle;
+
+	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true, ClampMin=0.f, ClampMax=1.f))
+	float _LArmPenetrateRatio;
+
+	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true, ClampMin = 0.f, ClampMax = 1.f))
+	float _RArmPenetrateRatio;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform _LArmLastTransform;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform _RArmLastTransform;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bLHandHitWall;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bRHandHitWall;
+
+public:
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform _ArmLAddOffsetTransform;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform _HandLAddOffsetTransform;
 
 };

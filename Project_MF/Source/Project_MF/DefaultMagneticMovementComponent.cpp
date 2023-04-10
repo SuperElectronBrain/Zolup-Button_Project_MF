@@ -1,7 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-#include "DrawDebugHelpers.h"
 #include "DefaultMagneticMovementComponent.h"
+#include "DrawDebugHelpers.h"
 
 UDefaultMagneticMovementComponent::UDefaultMagneticMovementComponent()
 {
@@ -97,10 +95,9 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 
 	if (hit.bBlockingHit)
 	{
-		//FTimerHandle handle;
-		//GetWorld()->GetTimerManager().SetTimer(handle, this, &UDefaultMagneticMovementComponent::ShakeProcess, .01f, true, 0.f);
+		FHitResult hit2 = hit;
 		UpdatedComponent->SetWorldRotation(FQuat::Identity);
-		SlideAlongSurface(Velocity, 1.f - hit.Time, hit.Normal, hit);
+		SlideAlongSurface(Velocity, 1.f - hit2.Time, hit2.Normal, hit2);
 	}
 
 	if (hit.IsValidBlockingHit() && FVector::DotProduct(dir, hit.Normal)<0 && type == EMagnetMoveType::DRAWN_IN && hit.GetActor()!=nullptr && ::IsValid(hit.GetActor()))
