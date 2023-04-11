@@ -178,7 +178,7 @@ void UPowerConnectionComponent::BeginPlay()
 	RightCollider->SetRelativeLocation(ComponentLocation);
 	
 	float BoxSize = TriggerSize * 100.0f;
-	FVector OwnerScale = OwnerRootStaticMesh->GetRelativeScale3D();
+	FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
 	LeftTrigger->SetBoxExtent(FVector(LeftPartBounds.X + (BoxSize / OwnerScale.X), LeftPartBounds.Y + (BoxSize / OwnerScale.Y), LeftPartBounds.Z + (BoxSize / OwnerScale.Z)));
 	LeftTrigger->SetRelativeLocation(-ComponentLocation);
 	RightTrigger->SetBoxExtent(FVector(RightPartBounds.X + (BoxSize / OwnerScale.X), RightPartBounds.Y + (BoxSize / OwnerScale.Y), RightPartBounds.Z + (BoxSize / OwnerScale.Z)));

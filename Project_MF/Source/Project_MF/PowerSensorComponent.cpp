@@ -7,20 +7,23 @@
 UPowerSensorComponent::UPowerSensorComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-	SetCollisionProfileName(TEXT("OverlapAllDynamic"));
-	SetGenerateOverlapEvents(true);
 
 	PlayerOnly = false;
 	ReversSignal = false;
 	NonReversibleSignal = false;
 }
 
-//void UPowerSensorComponent::BeginPlay()
-//{
-//}
+void UPowerSensorComponent::BeginPlay()
+{
+	Super::BeginPlay();
+	SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+	SetGenerateOverlapEvents(true);
+}
 
 void UPowerSensorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
 	if (::IsValid(ReceivingTarget) == true)
 	{
 		UPowerGenerateComponent* ReceivingTargetGenerateComponent = ReceivingTarget->FindComponentByClass<UPowerGenerateComponent>();
@@ -31,20 +34,23 @@ void UPowerSensorComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 			GetOverlappingActors(OverlappingActors);
 			for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
 			{
-				if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
+				if (OverlappingActors[i] != GetOwner())
 				{
-					if (PlayerOnly == true)
+					if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
 					{
-						if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
+						if (PlayerOnly == true)
+						{
+							if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
+							{
+								Count = Count + 1;
+								break;
+							}
+						}
+						else if (PlayerOnly == false)
 						{
 							Count = Count + 1;
 							break;
 						}
-					}
-					else if (PlayerOnly == false)
-					{
-						Count = Count + 1;
-						break;
 					}
 				}
 			}

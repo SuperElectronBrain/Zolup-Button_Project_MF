@@ -21,6 +21,7 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 
 void UPowerExecutionComponent::BeginPlay()
 {
+	Super::BeginPlay();
 	//FVector TriggerVolume = FVector::OneVector;
 	USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
 	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
