@@ -12,7 +12,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 
 	ObjectLength = 1;
-	TriggerSize = 3;
+	TriggerSize = 1;
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
@@ -146,10 +146,10 @@ void UPowerConnectionComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	//Meshs[0]->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
-	UStaticMeshComponent* OwnerRootComponent = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
-	if (::IsValid(OwnerRootComponent) == true)
+	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(OwnerRootStaticMesh) == true)
 	{
-		OwnerRootComponent->SetHiddenInGame(true);
+		OwnerRootStaticMesh->SetHiddenInGame(true);
 	}
 
 	if (LeftPartMesh != nullptr)
@@ -170,15 +170,18 @@ void UPowerConnectionComponent::BeginPlay()
 	CenterPart->SetRelativeScale3D(FVector(1.0f, ObjectLength < 4 ? 1 : ObjectLength - 2, 1.0f));
 	RightPart->SetRelativeLocation(ComponentLocation);
 
+	FVector LeftPartBounds = LeftPart->GetStaticMesh() != nullptr ? LeftPart->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+	LeftCollider->SetBoxExtent(FVector(LeftPartBounds.X, LeftPartBounds.Y, LeftPartBounds.Z));
 	LeftCollider->SetRelativeLocation(-ComponentLocation);
+	FVector RightPartBounds = RightPart->GetStaticMesh() != nullptr ? RightPart->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+	RightCollider->SetBoxExtent(FVector(RightPartBounds.X, RightPartBounds.Y, RightPartBounds.Z));
 	RightCollider->SetRelativeLocation(ComponentLocation);
-	
 	
 	float BoxSize = TriggerSize * 100.0f;
 	FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
-	LeftTrigger->SetBoxExtent(FVector(50.0f + (BoxSize / OwnerScale.X), 50.0f + (BoxSize / OwnerScale.Y), 50.0f + (BoxSize / OwnerScale.Z)));
+	LeftTrigger->SetBoxExtent(FVector(LeftPartBounds.X + (BoxSize / OwnerScale.X), LeftPartBounds.Y + (BoxSize / OwnerScale.Y), LeftPartBounds.Z + (BoxSize / OwnerScale.Z)));
 	LeftTrigger->SetRelativeLocation(-ComponentLocation);
-	RightTrigger->SetBoxExtent(FVector(50.0f + (BoxSize / OwnerScale.X), 50.0f + (BoxSize / OwnerScale.Y), 50.0f + (BoxSize / OwnerScale.Z)));
+	RightTrigger->SetBoxExtent(FVector(RightPartBounds.X + (BoxSize / OwnerScale.X), RightPartBounds.Y + (BoxSize / OwnerScale.Y), RightPartBounds.Z + (BoxSize / OwnerScale.Z)));
 	RightTrigger->SetRelativeLocation(ComponentLocation);
 
 	//SetObjectLength(ObjectLength);
@@ -460,7 +463,8 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 			//float BoxSize = TriggerSize * 50.0f;
 			float BoxSize = TriggerSize * 100.0f;
 			FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
-			TriggerVolume = FVector((OwnerScale.X * 50.0f) + BoxSize, (OwnerScale.Y * 50.0f) + BoxSize, (OwnerScale.Z * 50.0f) + BoxSize);
+			FVector PartBounds = (i == 0 ? LeftPart : RightPart)->GetStaticMesh() != nullptr ? (i == 0 ? LeftPart : RightPart)->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+			TriggerVolume = FVector((OwnerScale.X * PartBounds.X) + BoxSize, (OwnerScale.Y * PartBounds.Y) + BoxSize, (OwnerScale.Z * PartBounds.Z) + BoxSize);
 			//TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
 
 			TArray<FHitResult> HitResult;

@@ -18,13 +18,21 @@ class PROJECT_MF_API UPowerRotationMovementComponent : public UPowerMovementComp
 private:
 #if WITH_EDITORONLY_DATA
 	UPROPERTY() UArrowComponent* ArrowComponent;
+	/**
+	* When activated, it moves infinitely.
+	* WARNING - When disabled, it may not be able to return to original state.
+	*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool UnlimitedMovement;
+	/** When disabled, it does nothing. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleMovement;
 #endif
-	UPROPERTY() float OriginRotation;
+	//UPROPERTY() FVector OriginNormalVector;
 protected:
 	virtual void BeginPlay() override;
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
 	UPowerRotationMovementComponent();
 
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UFUNCTION() virtual void Action(float DeltaTime);
 };

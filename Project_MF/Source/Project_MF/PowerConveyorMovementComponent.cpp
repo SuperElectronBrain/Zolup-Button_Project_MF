@@ -29,11 +29,13 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
-	Trigger->SetBoxExtent(FVector(50.1f, 50.1f, 50.1f));
+	Trigger->SetupAttachment(this);
+	Trigger->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 }
 
 void UPowerConveyorMovementComponent::BeginPlay()
 {
+#pragma region UnUsed
 	//FVector ColliderSize = FVector::OneVector;
 	//UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	//if (::IsValid(OwnerRootComponent) == true)
@@ -51,6 +53,7 @@ void UPowerConveyorMovementComponent::BeginPlay()
 //			float DebugLifeTime = 5.0f;
 //			DrawDebugBox(GetWorld(), Collider->GetComponentLocation(), FVector(55.0f * (ColliderSize.X / 2), 55.0f * ColliderSize.Y, 55.0f * ColliderSize.Z), FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
 //#endif
+#pragma endregion
 
 	FVector TriggerSize = FVector::OneVector;
 	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
@@ -58,6 +61,8 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	{
 		Trigger->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 		Trigger->SetCollisionProfileName("OverlapAllDynamic");
+
+#pragma region UnUsed
 		//Trigger->SetGenerateOverlapEvents(true);
 	
 		//Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapBegin);
@@ -65,11 +70,14 @@ void UPowerConveyorMovementComponent::BeginPlay()
 		
 		//OwnerRootComponent->OnComponentHit.AddDynamic(this, &UPowerConveyorMovementComponent::OnHit);
 		//OwnerRootComponent->SetNotifyRigidBodyCollision(true);
-		
+#pragma endregion
+
 		TriggerSize = OwnerRootComponent->GetRelativeScale3D();
 	}
-	Trigger->SetBoxExtent(FVector(50.1f * TriggerSize.X, 50.1f * TriggerSize.Y, 50.1f * TriggerSize.Z));
+	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
+	Trigger->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
 	
+#pragma region UnUsed
 	//FVector TriggerVolume = FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z);
 	//TArray<FHitResult> HitResult;
 	//FCollisionQueryParams Params(NAME_None, false, GetOwner());
@@ -137,6 +145,7 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	//		}
 	//	}
 	//}
+#pragma endregion
 }
 
 void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -162,7 +171,7 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 						OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
 					}
 				}
-
+#pragma region UnUsed
 				//Collider->AddWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
 				////UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f) %f"), Collider->GetRelativeLocation().X, Collider->GetRelativeLocation().Y, Collider->GetRelativeLocation().Z, Collider->GetRelativeLocation().Size());
 				//if (Collider->GetRelativeLocation().Size() > 25.0f)
@@ -209,6 +218,7 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 				//		}
 				//	}
 				//}
+#pragma endregion
 			}
 			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 			{
@@ -224,6 +234,7 @@ void UPowerConveyorMovementComponent::OnHit(UPrimitiveComponent* HitComponent, A
 
 void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+#pragma region UnUsed
 	//UE_LOG(LogTemp, Warning, TEXT("오이오이 마지카요 넷또 오소스기다제"));
 	//if (GetOwner() != OtherActor)
 	//{
@@ -269,10 +280,12 @@ void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* Overla
 	//		}
 	//	}
 	//}
+#pragma endregion
 }
 
 void UPowerConveyorMovementComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+#pragma region UnUsed
 	//if (GetOwner() != OtherActor)
 	//{
 	//	for (int i = 0; i < MovableTargets.Num(); i = i + 1)
@@ -303,4 +316,5 @@ void UPowerConveyorMovementComponent::OnOverlapEnd(UPrimitiveComponent* Overlapp
 	//		}
 	//	}
 	//}
+#pragma endregion
 }

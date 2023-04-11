@@ -21,14 +21,16 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 
 void UPowerExecutionComponent::BeginPlay()
 {
+	Super::BeginPlay();
 	//FVector TriggerVolume = FVector::OneVector;
-	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	if (::IsValid(OwnerRootComponent) == true)
+	USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
+	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
+	if (::IsValid(OwnerRootPrimitive) == true)
 	{
 		if (MaterialOrigin != nullptr)
 		{
-			MaterialIndexNum = OwnerRootComponent->GetNumMaterials();
-			OwnerRootComponent->SetMaterial(0, MaterialOrigin);
+			MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
+			OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
 		}
 #pragma region UnUsed
 		//OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
@@ -44,6 +46,9 @@ void UPowerExecutionComponent::BeginPlay()
 		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
 #pragma endregion
 	}
+	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
+	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
 	//Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
 
 	Collider->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
