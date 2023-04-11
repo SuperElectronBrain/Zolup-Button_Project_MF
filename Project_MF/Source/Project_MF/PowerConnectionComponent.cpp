@@ -152,15 +152,15 @@ void UPowerConnectionComponent::BeginPlay()
 		OwnerRootStaticMesh->SetHiddenInGame(true);
 	}
 
-	if (LeftPartMesh != nullptr)
+	if (::IsValid(LeftPartMesh) == true)
 	{
 		LeftPart->SetStaticMesh(LeftPartMesh);
 	}
-	if (CenterPartMesh != nullptr)
+	if (::IsValid(CenterPartMesh) == true)
 	{
 		CenterPart->SetStaticMesh(CenterPartMesh);
 	}
-	if (RightPartMesh != nullptr)
+	if (::IsValid(RightPartMesh) == true)
 	{
 		RightPart->SetStaticMesh(RightPartMesh);
 	}
@@ -171,29 +171,39 @@ void UPowerConnectionComponent::BeginPlay()
 	RightPart->SetRelativeLocation(ComponentLocation);
 
 	FVector LeftPartBounds = LeftPart->GetStaticMesh() != nullptr ? LeftPart->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
-	LeftCollider->SetBoxExtent(FVector(LeftPartBounds.X, LeftPartBounds.Y, LeftPartBounds.Z));
-	LeftCollider->SetRelativeLocation(-ComponentLocation);
+	if (::IsValid(LeftCollider) == true)
+	{
+		LeftCollider->SetBoxExtent(FVector(LeftPartBounds.X, LeftPartBounds.Y, LeftPartBounds.Z));
+		LeftCollider->SetRelativeLocation(-ComponentLocation);
+	}
 	FVector RightPartBounds = RightPart->GetStaticMesh() != nullptr ? RightPart->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
-	RightCollider->SetBoxExtent(FVector(RightPartBounds.X, RightPartBounds.Y, RightPartBounds.Z));
-	RightCollider->SetRelativeLocation(ComponentLocation);
-	
+	if (::IsValid(RightCollider) == true)
+	{
+		RightCollider->SetBoxExtent(FVector(RightPartBounds.X, RightPartBounds.Y, RightPartBounds.Z));
+		RightCollider->SetRelativeLocation(ComponentLocation);
+	}
+
 	float BoxSize = TriggerSize * 100.0f;
 	FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
-	LeftTrigger->SetBoxExtent(FVector(LeftPartBounds.X + (BoxSize / OwnerScale.X), LeftPartBounds.Y + (BoxSize / OwnerScale.Y), LeftPartBounds.Z + (BoxSize / OwnerScale.Z)));
-	LeftTrigger->SetRelativeLocation(-ComponentLocation);
-	RightTrigger->SetBoxExtent(FVector(RightPartBounds.X + (BoxSize / OwnerScale.X), RightPartBounds.Y + (BoxSize / OwnerScale.Y), RightPartBounds.Z + (BoxSize / OwnerScale.Z)));
-	RightTrigger->SetRelativeLocation(ComponentLocation);
+	if (::IsValid(LeftTrigger) == true)
+	{
+		LeftTrigger->SetBoxExtent(FVector(LeftPartBounds.X + (BoxSize / OwnerScale.X), LeftPartBounds.Y + (BoxSize / OwnerScale.Y), LeftPartBounds.Z + (BoxSize / OwnerScale.Z)));
+		LeftTrigger->SetRelativeLocation(-ComponentLocation);
+		LeftTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
+		LeftTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
+	}
+	if(::IsValid(RightTrigger) == true)
+	{
+		RightTrigger->SetBoxExtent(FVector(RightPartBounds.X + (BoxSize / OwnerScale.X), RightPartBounds.Y + (BoxSize / OwnerScale.Y), RightPartBounds.Z + (BoxSize / OwnerScale.Z)));
+		RightTrigger->SetRelativeLocation(ComponentLocation);
+		RightTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
+		RightTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
+	}
 
 	//SetObjectLength(ObjectLength);
 	//SetTriggerSize(TriggerSize);
-
 	// ...
 
-	LeftTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
-	LeftTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
-	RightTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
-	RightTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
-	
 	SetPowerState(!bPowerState);
 	SetPowerState(!bPowerState);
 
@@ -253,12 +263,12 @@ void UPowerConnectionComponent::UpdateMaterialColor()
 	for (int i = 0; i < 3; i = i + 1)
 	{
 		UStaticMeshComponent * StaticMeshComponent = i < 1 ? LeftPart : (i < 2 ? CenterPart : RightPart);
-		if (StaticMeshComponent != nullptr)
+		if (::IsValid(StaticMeshComponent) == true)
 		{
-			if (StaticMeshComponent->GetStaticMesh() != nullptr)
+			if (::IsValid(StaticMeshComponent->GetStaticMesh()) == true)
 			{
 				UMaterialInstanceDynamic* DynamicMaterial = StaticMeshComponent->CreateDynamicMaterialInstance(0);
-				if (DynamicMaterial != nullptr)
+				if (::IsValid(DynamicMaterial) == true)
 				{
 					if (bPowerState == true)
 					{
@@ -459,11 +469,33 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 			FVector TriggerLocation;
 			FVector TriggerVolume;
 			
-			TriggerLocation = (i == 0 ? LeftCollider : RightCollider)->GetComponentLocation();
+			TriggerLocation = 
+				(i == 0 ? 
+					(::IsValid(LeftCollider) == true ?
+						(::IsValid(Cast<USceneComponent>(LeftCollider)) == true ?
+							Cast<USceneComponent>(LeftCollider) :
+							GetOwner()->GetRootComponent()
+						) :
+						(::IsValid(Cast<USceneComponent>(this)) == true ?
+							Cast<USceneComponent>(this) :
+							GetOwner()->GetRootComponent()
+						)
+					) :
+					(::IsValid(RightCollider) == true ? 
+						(::IsValid(Cast<USceneComponent>(RightCollider)) == true ?
+							Cast<USceneComponent>(RightCollider) :
+							GetOwner()->GetRootComponent()
+						) :
+						(::IsValid(Cast<USceneComponent>(this)) == true ?
+							Cast<USceneComponent>(this) :
+							GetOwner()->GetRootComponent()
+						)
+					)
+				)->GetComponentLocation();
 			//float BoxSize = TriggerSize * 50.0f;
 			float BoxSize = TriggerSize * 100.0f;
 			FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
-			FVector PartBounds = (i == 0 ? LeftPart : RightPart)->GetStaticMesh() != nullptr ? (i == 0 ? LeftPart : RightPart)->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+			FVector PartBounds = ::IsValid((i == 0 ? LeftPart : RightPart)->GetStaticMesh()) == true ? (i == 0 ? LeftPart : RightPart)->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
 			TriggerVolume = FVector((OwnerScale.X * PartBounds.X) + BoxSize, (OwnerScale.Y * PartBounds.Y) + BoxSize, (OwnerScale.Z * PartBounds.Z) + BoxSize);
 			//TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
 
@@ -495,7 +527,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 					if (HitResult[j].Actor.IsValid() == true)
 					{
 						UPowerComponent* PowerConnectionComponent = Cast<UPowerComponent>(HitResult[j].Actor->FindComponentByClass<UPowerComponent>());
-						if (PowerConnectionComponent != nullptr)
+						if (::IsValid(PowerConnectionComponent) == true)
 						{
 							if (PowerConnectionComponent != this)
 							{
@@ -514,7 +546,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 void UPowerConnectionComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	UPowerComponent* PowerConnectionComponent = OtherActor->FindComponentByClass<UPowerComponent>();
-	if (PowerConnectionComponent != nullptr)
+	if (::IsValid(PowerConnectionComponent) == true)
 	{
 		if (PowerConnectionComponent != this)
 		{
@@ -529,7 +561,7 @@ void UPowerConnectionComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedCo
 void UPowerConnectionComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	UPowerComponent* PowerConnectionComponent = OtherActor->FindComponentByClass<UPowerComponent>();
-	if (PowerConnectionComponent != nullptr)
+	if (::IsValid(PowerConnectionComponent) == true)
 	{
 		if (PowerConnectionComponent != this)
 		{
