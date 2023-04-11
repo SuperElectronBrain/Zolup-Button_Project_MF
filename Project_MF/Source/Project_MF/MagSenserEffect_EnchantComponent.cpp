@@ -4,7 +4,6 @@
 UMagSenserEffect_EnchantComponent::UMagSenserEffect_EnchantComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
-	bEnchanterRangeVisibleInGame = false;
 	EnchantableCount = 3;
 	EnchantWeight = EnchantRange = 30.f;
 }

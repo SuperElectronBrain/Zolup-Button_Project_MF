@@ -15,8 +15,20 @@ enum class ESectionSettingType
 	SECTION_COMPLETE
 };
 
-UCLASS( ClassGroup=(GameMapManager), meta=(BlueprintSpawnableComponent) )
-class PROJECT_MF_API UGameMapSectionComponent : public USceneComponent
+USTRUCT()
+struct FActorBeginInfo
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY()
+	AActor* Actor;
+
+	FTransform Transform;
+};
+
+UCLASS( ClassGroup=(GameMapSection), meta=(BlueprintSpawnableComponent) )
+class PROJECT_MF_API UGameMapSectionComponent final : public USceneComponent
 {
 	GENERATED_BODY()
 
@@ -36,17 +48,23 @@ private:
 	////*Override methods*//
 	////////////////////////
 	virtual void BeginPlay() override;
+	void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	/////////////////////////////
 	///*Fields And Components*///
 	////////////////////////////
-
 	UPROPERTY(VisibleAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
 	bool bIsCompleteSection;
+
+	UPROPERTY()
+	TArray<FActorBeginInfo> _infoList;
 
 	UPROPERTY()
 	UBoxComponent* Range;
 
 	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
 	uint32 id;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
+	bool bShowSectionRangeInGame;
 };

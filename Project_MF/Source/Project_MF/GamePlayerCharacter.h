@@ -30,6 +30,7 @@ public:
 	/*Public methods*/
 	FRotator GetPlayerCameraQuat() const;
 	FVector GetPlayerForwardVector() const;
+	FVector GetPlayerRightVector() const;
 
 private:
 	//////////////////////
@@ -91,7 +92,6 @@ private:
 	/////////////////
 	///*Components*//
 	/////////////////
-
 	UPROPERTY()
 	UPlayerUICanvasWidget* PlayUIInstance;
 
@@ -109,6 +109,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	UDefaultMagneticMovementComponent* MagMovement;
+
+	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
+	UParticleSystemComponent* Particle;
 
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;

@@ -7,10 +7,12 @@
 #include <Animation/AnimMontage.h>
 #include "PlayerAnimInstance.generated.h"
 
+#define PLAYER_SPINE1_BONE TEXT("Bip001-Spine1")
 #define PLAYER_LPOARM_BONE TEXT("Bip001-L-Forearm")
 #define PLAYER_LHAND_BONE TEXT("Bip001-L-Hand")
 #define PLAYER_RHAND_BONE TEXT("Bip001-R-Hand")
 #define PLAYER_RPOARM_BONE TEXT("Bip001-R-Forearm")
+#define PLAYER_NECK_BONE TEXT("Bip001-Neck")
 
 UENUM()
 enum class EPutArmType
@@ -39,9 +41,11 @@ public:
 	void PlayAttackMontage();
 	void PlayResetMontage();
 	void PlaySelfResetMontage();
-	void PlaySelfShootMontage();
+	void PlaySelfShootMontage(float startTime = 0.f, float speed = 1.f);
 	void PlayGlovePulledUpMotage();
 	void PlayGloveStickMotage();
+
+	void SetHandLookDir(EPutArmType armType, bool apply, FVector dir = FVector::ZeroVector);
 
 private:
 	//////////////////////
@@ -59,6 +63,8 @@ private:
 	///*fields and Components*//
 	////////////////////////////
 	float  _currArmRatio, _currArmRatio2, _ArmPenetrateDiv;
+	FVector _LArmReachDir, _RArmReachDir;
+	bool _bUseLArmReachDir, _bUseRArmReachDir;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool	_bIsJumping;
@@ -104,6 +110,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool _bRHandHitWall;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	float _LfadeInRatio;
 
 public:
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)

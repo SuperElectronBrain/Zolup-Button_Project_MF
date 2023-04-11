@@ -18,13 +18,19 @@ public:
 	UDefaultMagneticMovementComponent();
 
 private:
-	/*Override methods*/
+	///////////////////////
+	///*Override methods*//
+	//////////////////////
 	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
 	virtual void StartMovement(EMagnetMoveType moveType, UMagneticComponent* owner, UMagneticComponent* magOperator) override;
 
-	/*Private methods*/
+	///////////////////////
+	///*Private methods*///
+	//////////////////////
 
-	/*fields and Components*/
+	/////////////////////////////
+	///*fields and Components*///
+	////////////////////////////
 	FHitResult hit;
 	float _power;
 	FVector PrevDir;

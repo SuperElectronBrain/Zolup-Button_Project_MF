@@ -28,8 +28,5 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Enchanter, Meta = (AllowPrivateAccess = true))
 	float EnchantRange;
-
-	UPROPERTY(EditAnywhere, Category = Enchanter, Meta = (AllowPrivateAccess = true))
-	bool bEnchanterRangeVisibleInGame;
 	
 };
