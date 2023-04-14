@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{78517BE9-C788-437C-B245-329DDCDD6889}</UniqueIdentifier>
+      <UniqueIdentifier>{83CEC63C-01D2-4AEF-8566-5F33449F0AD6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{C71536EF-6666-4AB3-9A4D-015396F73C68}</UniqueIdentifier>
+      <UniqueIdentifier>{F1D7D7C4-56BB-4EA8-A519-CE2973C54DCB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{FAA5A931-FEE1-4E9F-A8BA-1558EB87FB9F}</UniqueIdentifier>
+      <UniqueIdentifier>{D0EBED73-51D4-4D65-8A78-4CD084485467}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -77,6 +77,12 @@
     <ClInclude Include="..\..\Source\Project_MF\GameLevelCharacter.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameMapSectionComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameMapSectionComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\GamePlayerCharacter.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -93,6 +99,24 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MagneticMovementComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MagneticSenserComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MagneticSenserComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MagneticSenserEffectComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MagneticSenserEffectComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MagSenserEffect_EnchantComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MagSenserEffect_EnchantComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MainLevelGameMode.cpp">
@@ -131,16 +155,16 @@
     <ClInclude Include="..\..\Source\Project_MF\MFActor.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Project_MF\MFCharacterMovementComponent.cpp">
-      <Filter>Source\Project_MF</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Project_MF\MFCharacterMovementComponent.h">
-      <Filter>Source\Project_MF</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MovementRegistComponent.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MovementRegistComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MyClass.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MyClass.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PlayerAnimInstance.cpp">
@@ -248,10 +272,10 @@
     <ClInclude Include="..\..\Source\Project_MF\RotatingMagMovementComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Project_MF\TestActor.cpp">
+    <ClCompile Include="..\..\Source\Project_MF\TestActorObject.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Project_MF\TestActor.h">
+    <ClInclude Include="..\..\Source\Project_MF\TestActorObject.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\TestPlayerGameMode.cpp">
