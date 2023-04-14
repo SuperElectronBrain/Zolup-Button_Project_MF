@@ -416,13 +416,13 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 		//만약 이동중에 자성이 변경되었다면, 이동이 끝임을 수신하고 무시했던 MovementComponent들을 활성화.
 		if (_movement && _applyMovement)
 		{
-			MagnetMoveEndEvent.Broadcast(_lastMoveType, this);
+			MagnetMoveEndEvent.Broadcast(_lastMoveType);
 			SetNoActiveMovementsActive(true);
 			_lastMoveType = EMagnetMoveType::NONE;
 			_applyMovement = false;
 		}
 
-		OffMagneticEvent.Broadcast(newType, this);
+		OffMagneticEvent.Broadcast(newType);
 	}
 	else
 	{
@@ -433,7 +433,7 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 
 		_fieldColor = GetMagneticColorVector(newType);
 		UpdateFieldMeshsColor(newType);
-		OnMagneticEvent.Broadcast(newType, this);
+		OnMagneticEvent.Broadcast(newType);
 	}
 
 	SetParentMaterial(CurrMagnetic);
@@ -632,7 +632,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		EMagnetMoveType moveType = (magnet->CurrMagnetic == CurrMagnetic ? EMagnetMoveType::PUSHED_OUT : EMagnetMoveType::DRAWN_IN);
 		if (_applyMovement == false || _lastMoveType != moveType)
 		{
-			MagnetMoveStartEvent.Broadcast(moveType, magnet);
+			MagnetMoveStartEvent.Broadcast(moveType);
 			_movement->StartMovement(moveType, this, magnet);
 			SetNoActiveMovementsActive(moveType == EMagnetMoveType::PUSHED_OUT ? true : false);
 		}
@@ -660,7 +660,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		_applyMovement = false;
 		_movement->EndMovement(_lastMoveType, this);
 		_lastMoveType = EMagnetMoveType::NONE;
-		MagnetMoveEndEvent.Broadcast(_lastMoveType, this);
+		MagnetMoveEndEvent.Broadcast(_lastMoveType);
 		SetNoActiveMovementsActive(true);
 
 		if (_parent && _parent->IsSimulatingPhysics()) _parent->SetEnableGravity(_blastUsedGravity);
@@ -668,7 +668,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	}
 	else if (applyLogic && finalHit != nullptr && ::IsValid(finalHit))
 	{
-		MagnetMoveHitEvent.Broadcast(finalHit, this);
+		MagnetMoveHitEvent.Broadcast(finalHit);
 	}
 #pragma endregion
 }

@@ -14,10 +14,8 @@
 #define PLAYER_RPOARM_BONE TEXT("Bip001-R-Forearm")
 #define PLAYER_NECK_BONE TEXT("Bip001-Neck")
 
-class UMagneticComponent;
-
 UENUM()
-enum class EHandType
+enum class EPutArmType
 {
 	LEFT, RIGHT
 };
@@ -47,7 +45,7 @@ public:
 	void PlayGlovePulledUpMotage();
 	void PlayGloveStickMotage();
 
-	void SetHandLookMagnetic(EHandType armType, bool apply, UMagneticComponent* magnetic=nullptr);
+	void SetHandLookDir(EPutArmType armType, bool apply, FVector dir = FVector::ZeroVector);
 
 private:
 	//////////////////////
@@ -58,8 +56,7 @@ private:
 	///////////////////////
 	///*Private mothods*///
 	///////////////////////
-	void ApplyStandingLeftHand(AGamePlayerCharacter* player);
-	void ApplyStandingRightHand(AGamePlayerCharacter* player);
+	void ApplyStandingHand(EPutArmType armType, AGamePlayerCharacter* player, FTransform& outResult, bool& hitResult);
 
 
 	////////////////////////////
@@ -67,8 +64,7 @@ private:
 	////////////////////////////
 	float  _currArmRatio, _currArmRatio2, _ArmPenetrateDiv;
 	FVector _LArmReachDir, _RArmReachDir;
-
-	UMagneticComponent* _targetMagnetic;
+	bool _bUseLArmReachDir, _bUseRArmReachDir;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool	_bIsJumping;

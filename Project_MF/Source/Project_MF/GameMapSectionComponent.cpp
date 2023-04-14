@@ -5,58 +5,10 @@
 UGameMapSectionComponent::UGameMapSectionComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-}
 
-bool UGameMapSectionComponent::CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const
-{
-	return false;
-}
-
-void UGameMapSectionComponent::RemoveResetPoint(AActor* actor)
-{
-	//존재여부를 확인하고, 존재하면 지운다.
-	int32 count = _infoList.Num();
-	for (int32 i=0; i<count ; i++)
-	{
-		FActorBeginInfo info = _infoList[i];
-
-		if (info.Actor==nullptr || info.Actor==actor || info.Actor && !::IsValid(info.Actor) )
-		{
-			_infoList.RemoveAt(i);
-			return;
-		}
-	}
-}
-
-void UGameMapSectionComponent::AddResetPoint(AActor* actor)
-{
-	//중복체크를 한다.
-	int32 count = _infoList.Num();
-	for (int32 i=0; i<count ; i++)
-	{
-		FActorBeginInfo& info = _infoList[i];
-
-		if (info.Actor && ::IsValid(info.Actor)){
-			if (info.Actor == actor)
-			{
-				info.Transform = actor->GetTransform();
-				return;
-			}
-		}
-		else
-		{
-			_infoList.RemoveAt(i);
-			i--;
-			count = _infoList.Num();
-			continue;
-		}
-
-	}
-
-	FActorBeginInfo newInfo;
-	newInfo.Actor = actor;
-	newInfo.Transform = actor->GetTransform();
-	_infoList.Add(newInfo);
+	Range = CreateDefaultSubobject<UBoxComponent>(TEXT("RANGE"));
+	Range->SetBoxExtent(FVector(100.f, 100.f, 100.f));
+	Range->SetupAttachment(this);
 }
 
 void UGameMapSectionComponent::SetSection(ESectionSettingType type)
@@ -97,16 +49,15 @@ void UGameMapSectionComponent::SetSection(ESectionSettingType type)
 	}
 }
 
-void UGameMapSectionComponent::DestroyComponent(bool bPromoteChildren)
-{
-	Super::DestroyComponent(bPromoteChildren);
-}
-
 void UGameMapSectionComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
-	for (auto a : _infoList)
+	static float time = 0.f;
+
+	if ((time+=DeltaTime)>=5.f)
 	{
-		a.Actor->SetActorLocation(a.Actor->GetActorLocation() + FVector::RightVector);
+		time = 0.f;
+		SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+
 	}
 }
 
@@ -120,6 +71,7 @@ void UGameMapSectionComponent::BeginPlay()
 	TArray<AActor*> childs;
 	GetOwner()->GetAttachedActors(childs, true);
 
+	UE_LOG(LogTemp, Warning, TEXT("시작 크기: %d"), childs.Num())
 	_infoList.Reset();
 	_infoList.Reserve(childs.Num());
 	for (AActor* a : childs)

@@ -59,7 +59,6 @@ private:
 	void ResetMagnetic();
 	void JumpStart();
 	void JumpEnd();
-	void StageRestart();
 
 	///////////////////////
 	///*Private methods*//
@@ -76,19 +75,19 @@ private:
 	void ClearGivens() { _GivenMagnets[0] = _GivenMagnets[1] = nullptr; _givenIndex = _oldGivenIndex = 0; }
 
 	UFUNCTION()
-	void OnMagnetic(EMagneticType type, UMagneticComponent* magnet);
+	void OnMagnetic(EMagneticType type);
 
 	UFUNCTION()
-	void OffMagnetic(EMagneticType prevType, UMagneticComponent* magnet);
+	void OffMagnetic(EMagneticType prevType);
 
 	UFUNCTION()
-	void MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* magnet);
+	void MagnetMoveStart(EMagnetMoveType moveType);
 
 	UFUNCTION()
-	void MagnetMoveEnd(EMagnetMoveType moveType, UMagneticComponent* magnet);
+	void MagnetMoveEnd(EMagnetMoveType moveType);
 
 	UFUNCTION()
-	void MagnetMoveHit(AActor* hit, UMagneticComponent* magnet);
+	void MagnetMoveHit(AActor* hit);
 
 	/////////////////
 	///*Components*//
@@ -123,7 +122,7 @@ private:
 	//////////////
 
 	bool _bCanJump, _bShootMine;
-	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv, _stiffen;
+	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv;
 	AActor* _StickTo;
 	int32 _givenIndex = 0, _oldGivenIndex;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;

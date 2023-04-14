@@ -3,7 +3,6 @@
 
 #include "PlayerAnimInstance.h"
 #include "GamePlayerCharacter.h"
-#include "MagneticComponent.h"
 #include "DrawDebugHelpers.h"
 
 UPlayerAnimInstance::UPlayerAnimInstance()
@@ -12,9 +11,9 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	/*intialize Property*/
 	_ArmLAddOffsetTransform = FTransform::Identity;
 	_LArmPenetrateRatio = _RArmPenetrateRatio = _currArmRatio = _currArmRatio2  = 0.f;
-	_ArmPenetrateDiv = 1.0f / 170.f;
+	_ArmPenetrateDiv = 1.0f / 80.f;
 	_LArmReachDir = _RArmReachDir = FVector::ZeroVector;
-	_targetMagnetic = nullptr;
+	_bUseLArmReachDir = _bUseRArmReachDir = false;
 
 	/*CDO*/
 	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(TEXT("/Game/Resource/PlayerCharacter/Animations/PlayerShootMontage.PlayerShootMontage"));
@@ -87,24 +86,24 @@ void UPlayerAnimInstance::PlayAttackMontage()
 	Montage_Play(AttackMontage, 1.5f);
 }
 
-void UPlayerAnimInstance::SetHandLookMagnetic(EHandType armType, bool apply, UMagneticComponent* magnetic)
+void UPlayerAnimInstance::SetHandLookDir(EPutArmType armType, bool apply, FVector dir)
 {
-	bool magnetValid = (magnetic && ::IsValid(magnetic));
-
 	switch(armType) {
 
-	case(EHandType::LEFT):
-		_targetMagnetic = magnetValid && apply?magnetic:nullptr;
-		_LfadeInRatio = 0.f;
+	case(EPutArmType::LEFT):
+		_bUseLArmReachDir = apply;
+		_LArmReachDir = dir;
 		break;
 
-	case(EHandType::RIGHT):
-		_targetMagnetic = magnetValid && apply ? magnetic : nullptr;
+	case(EPutArmType::RIGHT):
+		_bUseRArmReachDir = apply;
+		_RArmReachDir = dir;
 		break;
+
 	}
 }
 
-void UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
+void UPlayerAnimInstance::ApplyStandingHand(EPutArmType armType, AGamePlayerCharacter* player, FTransform& outResult, bool& hitResult)
 {
 	#pragma region Omission
 	if (player == nullptr || !::IsValid(player)) return;
@@ -112,23 +111,28 @@ void UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
 	//계산에 필요한 요소들을 모두 구한다.
 	FHitResult hit;
 	FCollisionQueryParams params;
+	FName handName = (armType == EPutArmType::LEFT ? PLAYER_LHAND_BONE : PLAYER_RHAND_BONE);
+	FName armName = (armType == EPutArmType::LEFT ? PLAYER_LPOARM_BONE : PLAYER_RPOARM_BONE);
+	FVector handPos = player->GetMesh()->GetSocketLocation(handName);
 	FVector spinePos = player->GetMesh()->GetSocketLocation(PLAYER_SPINE1_BONE);
-	FVector armPos = player->GetMesh()->GetSocketLocation(PLAYER_LPOARM_BONE);
-	FVector handPos = player->GetMesh()->GetSocketLocation(PLAYER_LHAND_BONE);
+	FVector armPos = player->GetMesh()->GetSocketLocation(armName);
 	FVector reachDir;
 
-	if (_targetMagnetic && ::IsValid(_targetMagnetic))
+	if (_bUseLArmReachDir && armType == EPutArmType::LEFT)
 	{
-		reachDir = (_targetMagnetic->GetComponentLocation() - spinePos).GetSafeNormal();
+		reachDir = _LArmReachDir;
+	}
+	else if (_bUseRArmReachDir && armType == EPutArmType::RIGHT)
+	{
+		reachDir = _RArmReachDir;
 	}
 	else reachDir = player->GetPlayerForwardVector();
 
-	FVector start = spinePos;
-	FVector end = start + reachDir*140.f;
-	FVector endL = start - player->GetPlayerRightVector() * 140.f;
-	FVector endDirL = (end - endL).GetSafeNormal();
+	//FVector start = spinePos;
+	//FVector end = start + reachDir * 140.f;
+	FVector start = armPos;
+	FVector end = start + reachDir* 140.f;
 
-	endL += endDirL * 100.f;
 	params.AddIgnoredActor(player);
 
 	//손을 짚을 곳을 구한다.
@@ -141,22 +145,16 @@ void UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
 		params
 	);
 
-	if (ret==false)
+	DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
+	//DrawDebugLine(GetWorld(), start, end2, FColor::Yellow, false, -1.f, 0U, 8.f);
+/*	if (ret && hit.Distance>=90.f)
 	{
-		ret = GetWorld()->LineTraceSingleByChannel(
-			hit,
-			start,
-			endL,
-			ECollisionChannel::ECC_Visibility,
-			params
-		);
+		hitResult = false;
+		return;
 	}
-
-	//DrawDebugLine(GetWorld(), start, endL, FColor::Yellow, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
-	if (ret == false || ret && FVector::DotProduct(reachDir, hit.Normal)>=0 || ret && hit.Distance == 0)
+	else */if (ret == false || ret && FVector::DotProduct(reachDir, hit.Normal)>=0 || ret && hit.Distance == 0)
 	{
-		_bLHandHitWall = false;
+		hitResult = false;
 		return;
 	}
 
@@ -166,95 +164,17 @@ void UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
 	FVector result = right+up;
 
 	//디버그용
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
-	//UE_LOG(LogTemp, Warning, TEXT("Distance: %f/ Point: %s/ Dot: %f"), hit.Distance, *hit.Location.ToString(), FVector::DotProduct(hit.Normal.GetSafeNormal(), -reachDir.GetSafeNormal()))
+	DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
+	DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
+	UE_LOG(LogTemp, Warning, TEXT("Distance: %f/ Point: %s"), hit.Distance, *hit.Location.ToString())
 
 	//짚을 곳을 찾았을 경우
-	FVector lastLocation = hit.Location - reachDir * 8.f;
 	FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
-	float upper = FMath::Clamp((1.f - (140.f-hit.Distance) * (1.f / 90.f)), 0.f, 1.f);
+	float upper = FMath::Clamp((1.f - (140.f-hit.Distance) * (1.f / 60.f)), 0.f, 1.f);
 
-	if (_targetMagnetic && ::IsValid(_targetMagnetic) && _bLHandHitWall)
-	{
-		_LArmLastTransform.SetLocation(lastLocation/* + up*upper*60.f -right*upper*60.f*/);
-	}
-	else _LArmLastTransform.SetLocation(handPos+.1f*(lastLocation-handPos)/* + up*upper*60.f -right*upper*60.f*/);
-	_LArmLastTransform.SetRotation((lastRotation).Quaternion());
-	_bLHandHitWall = true;
-	#pragma endregion
-}
-
-void UPlayerAnimInstance::ApplyStandingRightHand(AGamePlayerCharacter* player)
-{
-	#pragma region Omission
-	if (player == nullptr || !::IsValid(player)) return;
-	FHitResult hit;
-	FCollisionQueryParams params;
-	FVector spinePos = player->GetMesh()->GetSocketLocation(PLAYER_SPINE1_BONE);
-	FVector armPos = player->GetMesh()->GetSocketLocation(PLAYER_RPOARM_BONE);
-	FVector handPos = player->GetMesh()->GetSocketLocation(PLAYER_RHAND_BONE);
-	FVector reachDir;
-
-	reachDir = player->GetPlayerForwardVector();
-
-	FVector rDir = player->GetPlayerRightVector();
-	FVector start = spinePos + rDir * 60.f;
-	FVector end = start + reachDir * 140.f;
-	FVector endR = start + rDir * 140.f;
-	FVector endDirR = (end - endR).GetSafeNormal();
-
-	endR += endDirR * 100.f;
-	params.AddIgnoredActor(player);
-
-	//손을 짚을 곳을 구한다.
-	bool isSub = false;
-	bool ret = GetWorld()->LineTraceSingleByChannel(
-		hit,
-		start,
-		end,
-		ECollisionChannel::ECC_Visibility,
-		params
-	);
-
-	if (ret == false)
-	{
-		ret = GetWorld()->LineTraceSingleByChannel(
-			hit,
-			start,
-			endR,
-			ECollisionChannel::ECC_Visibility,
-			params
-		);
-
-		if (ret) isSub = true;
-	}
-
-	//DrawDebugLine(GetWorld(), start, endR, FColor::Yellow, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
-	if (ret == false || ret && FVector::DotProduct(reachDir, hit.Normal) >= 0 || ret && hit.Distance == 0)
-	{
-		_bRHandHitWall = false;
-		return;
-	}
-
-	_bRHandHitWall = true;
-
-	//손을 짚었을 때의 회전값을 구한다.
-	FVector right = -FVector::CrossProduct(hit.Normal, FVector::DownVector);
-	FVector up = -FVector::CrossProduct(hit.Normal, right);
-
-	if (isSub)
-	{
-		FRotator rotator = FRotationMatrix::MakeFromX(right*.1f).Rotator();
-		_RArmLastTransform.SetRotation(rotator.Quaternion());
-		return;
-	}
-
-	FRotator rotator = FRotationMatrix::MakeFromX((right+up)*.7f).Rotator();
-	_RArmLastTransform.SetRotation(rotator.Quaternion());
-
-
+	outResult.SetLocation(hit.Location-reachDir*8.f/* + up*upper*60.f -right*upper*60.f*/);
+	outResult.SetRotation((lastRotation).Quaternion());
+	hitResult = true;
 	#pragma endregion
 }
 
@@ -276,10 +196,8 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			int ret =	Montage_IsPlaying(SelfResetMontage) || Montage_IsPlaying(ResetMontage) || 
 						Montage_IsPlaying(PulledUpMontage) || Montage_IsPlaying(SelfShootMontage);
 
-			if (ret) ApplyStandingLeftHand(character);
+			if (ret) ApplyStandingHand(EPutArmType::LEFT, character, _LArmLastTransform, _bLHandHitWall);
 			else _bLHandHitWall = false;
-
-			ApplyStandingRightHand(character);
 		}
 	}
 }
