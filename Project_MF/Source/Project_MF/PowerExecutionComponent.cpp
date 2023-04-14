@@ -22,6 +22,7 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 void UPowerExecutionComponent::BeginPlay()
 {
 	Super::BeginPlay();
+	SetRelativeScale3D(FVector::OneVector);
 	//FVector TriggerVolume = FVector::OneVector;
 	USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
 	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
@@ -46,8 +47,10 @@ void UPowerExecutionComponent::BeginPlay()
 		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
 #pragma endregion
 	}
+	FVector OwnerScale = OwnerRootComponent->GetRelativeScale3D();
 	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
 	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	//Collider->SetBoxExtent(FVector(OwnerRootBounds.X * OwnerScale.X, OwnerRootBounds.Y * OwnerScale.Y, OwnerRootBounds.Z * OwnerScale.Z));
 	Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
 	//Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
 

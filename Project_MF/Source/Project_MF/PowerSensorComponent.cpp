@@ -8,6 +8,7 @@ UPowerSensorComponent::UPowerSensorComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
 
+	MinimumWeight = 0.0f;
 	PlayerOnly = false;
 	ReversSignal = false;
 	NonReversibleSignal = false;
@@ -38,18 +39,25 @@ void UPowerSensorComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 				{
 					if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
 					{
-						if (PlayerOnly == true)
+						UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
+						if (::IsValid(OverlapActorsPrimitive) == true)
 						{
-							if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
+							if (OverlapActorsPrimitive->GetMass() > MinimumWeight)
 							{
-								Count = Count + 1;
-								break;
+								if (PlayerOnly == true)
+								{
+									if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
+									{
+										Count = Count + 1;
+										break;
+									}
+								}
+								else if (PlayerOnly == false)
+								{
+									Count = Count + 1;
+									break;
+								}
 							}
-						}
-						else if (PlayerOnly == false)
-						{
-							Count = Count + 1;
-							break;
 						}
 					}
 				}

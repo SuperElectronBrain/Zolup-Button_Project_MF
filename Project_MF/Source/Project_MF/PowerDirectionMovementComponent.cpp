@@ -6,8 +6,9 @@
 UPowerDirectionMovementComponent::UPowerDirectionMovementComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-#if WITH_EDITORONLY_DATA
-	ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+//#if WITH_EDITORONLY_DATA
+	//ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
 
 	if (IsRunningCommandlet() == false)
 	{
@@ -17,10 +18,10 @@ UPowerDirectionMovementComponent::UPowerDirectionMovementComponent()
 			ArrowComponent->SetupAttachment(this);
 			ArrowComponent->ArrowSize = 1.0f;
 			ArrowComponent->bTreatAsASprite = true;
-			ArrowComponent->bIsScreenSizeScaled = true;
+			ArrowComponent->bIsScreenSizeScaled = false;
 		}
 	}
-#endif
+//#endif
 	UnlimitedMovement = false;
 	NonReversibleMovement = false;
 }
@@ -30,7 +31,8 @@ void UPowerDirectionMovementComponent::BeginPlay()
 	Super::BeginPlay();
 	// ...
 	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
-	OriginPosition = GetOwner()->GetActorLocation();
+	ArrowComponent->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+	//OriginPosition = GetOwner()->GetActorLocation();
 }
 
 void UPowerDirectionMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -52,7 +54,11 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 				CurrentMovement = FMath::Clamp<float>(CurrentMovement + (ActingSpeed * DeltaTime), 0, ActingRange);
 				if ((CurrentMovement < ActingRange) || UnlimitedMovement == true)
 				{
-					GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (ActingSpeed * DeltaTime));
+					//FVector temp = (ArrowComponent->GetForwardVector() - GetOwner()->GetActorForwardVector());
+					//UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f)"), temp.X, temp.Y, temp.Z);
+
+					//GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (ActingSpeed * DeltaTime));
+					GetOwner()->AddActorLocalOffset(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X) * (ActingSpeed * DeltaTime));
 				}
 				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
 				//GetOwner()->SetActorLocation(OriginPosition + MovementVector);
@@ -64,7 +70,8 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 					CurrentMovement = FMath::Clamp<float>(CurrentMovement - (ActingSpeed * DeltaTime), 0, ActingRange);
 					if (CurrentMovement > 0)
 					{
-						GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (-ActingSpeed * DeltaTime));
+						//GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (-ActingSpeed * DeltaTime));
+						GetOwner()->AddActorLocalOffset(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X) * (-ActingSpeed * DeltaTime));
 					}
 				}
 				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;

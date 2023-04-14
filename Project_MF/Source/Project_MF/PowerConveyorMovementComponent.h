@@ -16,9 +16,9 @@ class PROJECT_MF_API UPowerConveyorMovementComponent : public UPowerMovementComp
 	GENERATED_BODY()
 	
 private:
-#if WITH_EDITORONLY_DATA
-	UPROPERTY() UArrowComponent* ArrowComponent;
-#endif
+//#if WITH_EDITORONLY_DATA
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UArrowComponent* ArrowComponent;
+//#endif
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))
 	UPROPERTY() UBoxComponent* Trigger;
 	//UPROPERTY() UBoxComponent* Collider;

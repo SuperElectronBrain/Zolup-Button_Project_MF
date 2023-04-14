@@ -6,23 +6,23 @@
 UPowerRotationMovementComponent::UPowerRotationMovementComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-#if WITH_EDITORONLY_DATA
-	ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+//#if WITH_EDITORONLY_DATA
+//ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
 
 	if (IsRunningCommandlet() == false)
 	{
 		if (ArrowComponent)
 		{
 			ArrowComponent->ArrowColor = FColor(150, 200, 255);
-
+			ArrowComponent->SetupAttachment(this);
 			ArrowComponent->ArrowSize = 1.0f;
 			ArrowComponent->bTreatAsASprite = true;
-			ArrowComponent->SetupAttachment(this);
-			ArrowComponent->bIsScreenSizeScaled = true;
+			ArrowComponent->bIsScreenSizeScaled = false;
 			//ArrowComponent->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
 		}
 	}
-#endif
+//#endif
 
 	UnlimitedMovement = false;
 	NonReversibleMovement = false;
@@ -35,6 +35,7 @@ void UPowerRotationMovementComponent::BeginPlay()
 	//OriginRotation = GetOwner()->GetActorQuat().Rotator().Yaw;
 	//OriginNormalVector = GetOwner()->GetActorForwardVector();
 	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
+	ArrowComponent->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 }
 
 void UPowerRotationMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -57,7 +58,8 @@ void UPowerRotationMovementComponent::Action(float DeltaTime)
 				if ((CurrentMovement < ActingRange) || UnlimitedMovement == true)
 				{
 					//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
-					GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
+					//GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
+					GetOwner()->AddActorLocalRotation(FQuat(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X), FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
 				}
 #pragma region UnUsed
 				//UE_LOG(LogTemp, Warning, TEXT("(%f)"), CurrentMovement);
@@ -76,7 +78,8 @@ void UPowerRotationMovementComponent::Action(float DeltaTime)
 					if (CurrentMovement > 0)
 					{
 						//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
-						GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
+						//GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
+						GetOwner()->AddActorLocalRotation(FQuat(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
 					}
 				}
 #pragma region UnUsed

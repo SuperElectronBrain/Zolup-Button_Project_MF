@@ -27,10 +27,14 @@ class PROJECT_MF_API UMagneticMovementComponent : public UMovementComponent
 	GENERATED_BODY()
 
 public:
-	/*Construtor*/
+	//////////////////////
+	/////*Construtor*/////
+	/////////////////////
 	UMagneticMovementComponent();
 
-	/*Public method*/
+	////////////////////////
+	/////*Public method*////
+	///////////////////////
 	virtual void SetUpdatedComponent(USceneComponent* NewUpdatedComponent) override;
 	AActor* ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime);
 	virtual void StartMovement(EMagnetMoveType startType, UMagneticComponent* owner, UMagneticComponent* magOperator) {}
@@ -43,6 +47,8 @@ protected:
 	bool UpdatedPrimitiveIsValid() const { return UpdatedPrimitive && ::IsValid(UpdatedPrimitive) && UpdatedPrimitive->IsSimulatingPhysics(); }
 
 private:
-	/*Fields And Components*/
+	//////////////////////////////
+	/////*Fields And Components*//
+	/////////////////////////////
 	UMagneticComponent* _MagOwner;
 };
