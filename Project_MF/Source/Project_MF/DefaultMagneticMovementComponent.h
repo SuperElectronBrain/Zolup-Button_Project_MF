@@ -6,10 +6,10 @@
 #include "MagneticMovementComponent.h"
 #include "DefaultMagneticMovementComponent.generated.h"
 
-/**
- * 
+/*이 컴포넌트가 붙여있는 엑터에 부착되어있는 UMagneticComponent가 사용할 자석의 움직임이 정의된 컴포넌트 입니다.
+ *기본적인 자석의 밀림/당겨짐의 움직임이 정의되어있습니다.
  */
-UCLASS(ClassGroup = (Megnetic), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup = (MegneticMovement), meta = (BlueprintSpawnableComponent))
 class PROJECT_MF_API UDefaultMagneticMovementComponent final : public UMagneticMovementComponent
 {
 	GENERATED_BODY()
@@ -18,13 +18,19 @@ public:
 	UDefaultMagneticMovementComponent();
 
 private:
-	/*Override methods*/
+	///////////////////////
+	///*Override methods*//
+	//////////////////////
 	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
 	virtual void StartMovement(EMagnetMoveType moveType, UMagneticComponent* owner, UMagneticComponent* magOperator) override;
 
-	/*Private methods*/
+	///////////////////////
+	///*Private methods*///
+	//////////////////////
 
-	/*fields and Components*/
+	/////////////////////////////
+	///*fields and Components*///
+	////////////////////////////
 	FHitResult hit;
 	float _power;
 	FVector PrevDir;

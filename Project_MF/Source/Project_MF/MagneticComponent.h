@@ -33,17 +33,20 @@ CollisionProfile도 MagneticField로 설정한다.
 CollisionProfile은 MagneticField만 겹침으로, 나머지는 다 무시로 설정.
 */
 
-UPrimitiveComponent;
-
-UCLASS( ClassGroup=(Magnetic), meta=(BlueprintSpawnableComponent) )
+/*자성 및 주변의 자석을 탐지하는 기능을 가지게 됩니다.
+* 이 컴포넌트가 UMeshComponent계열 컴포넌트에 붙여지면 자성에 따라 해당 메시의 머터리얼이
+* 바뀌게 되며, 해당 메시의 바운딩 박스의 크기에 따라 무게 및 자기장 범위가 결정됩니다.
+* 이 컴포넌트가 부착된 같은 엑터에 UMagneticMovementComponent계열의 컴포넌트가 부착되어 있을 경우,
+* 주변의 자석에 영향을 받게 될 때 해당 UMagneticMovmentComponent에 정의된 움직임으로 밀려나거나 끌어당겨지게 됩니다.
+*/
+UCLASS(ClassGroup = (Magnetic), meta = (BlueprintSpawnableComponent))
 class PROJECT_MF_API UMagneticComponent final : public USceneComponent
 {
 	GENERATED_BODY()
 
-public:	
+public:
 	/*Constructor*/
 	UMagneticComponent();
-
 
 	/*Delegates*/
 	FOnMagneticDelegate			OnMagneticEvent;
@@ -55,20 +58,24 @@ public:
 	/*Public methods*/
 	void SettingMagnetWeightAndFieldRange();
 
+	int32 GetMaxEnchantableCount() const { return MaxEnchantableCount; }
+	int32 GetCurrEnchantableCount() const { return CurrEnchantCount; }
+	void SetEnchantInfo(int32 maxEnchantCount, float enchantWeight, float enchantRange );
+
 	void SetCurrentMagnetic(EMagneticType newType);
 	EMagneticType GetCurrentMagnetic() const { return CurrMagnetic; }
 
 	float GetMaxHaveMangeticSeconds() const { return MaxHaveMagneticSeconds; }
 	void SetMaxHaveMagneticSeconds(float newValue) { if (newValue >= 0.f) MaxHaveMagneticSeconds = newValue; }
-	
-	float GetWeight() const {return Weight;}
-	void SetFixedWeight(float value) { if (value > 0.f) { Weight = value; _bUsedFixedWeight = true; } }
+
+	float GetWeight() const { return Weight; }
+	void SetWeight(float value, bool usedFixedWeight) { if (value > 0.f) { Weight = value; _bUsedFixedWeight = usedFixedWeight; } }
 
 	float GetMagneticFieldRadius() const { return FieldCollision->GetScaledSphereRadius(); }
 	void SetMagneticFieldRadius(float newValue);
 
 	bool GetEternalHaveMagnetic() const { return EternalHaveMagnetic; }
-	void SetEternalHaveMagnetic(bool value);
+	void SetEternalHaveMagnetic(bool value) { EternalHaveMagnetic = value; }
 
 	FVector GetMagneticFieldLocation() const { return FieldCollision->GetComponentLocation(); }
 
@@ -82,9 +89,13 @@ public:
 private:
 	/*Private method*/
 	void UpdateMagneticField();
+	void UpdateFieldMeshsColor(EMagneticType type);
 	void ClearMagneticField();
+
+	void InitParentAndMaterial();
+	void SetParentMaterial(EMagneticType type);
+
 	void SetNoActiveMovementsActive(bool value);
-	void SetParentMaterials(EMagneticType type);
 
 	/*Override methods*/
 	virtual void OnRegister() override;
@@ -107,7 +118,7 @@ private:
 	UPrimitiveComponent* _parent;
 
 	UPROPERTY()
-	UMaterialInterface* _parentOriMaterial;
+	UMeshComponent* _parentMesh;
 
 	UPROPERTY()
 	TArray<UMovementComponent*> _NoActiveMovements;
@@ -115,7 +126,7 @@ private:
 	UPROPERTY()
 	TArray<USplineMeshComponent*> FieldMeshs;
 
-	UPROPERTY(EditAnywhere, Category=Magnetic, Meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	EMagneticType CurrMagnetic;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
@@ -130,18 +141,24 @@ private:
 	UPROPERTY(EditAnywhere, Category = Magnetic)
 	bool EternalHaveMagnetic;
 
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UStaticMesh* MagneticFieldMesh;
 
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UMaterialInterface* MagneticFieldMaterial;
 
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UMaterialInterface* MagneticApplyMaterial;
 
 	UPROPERTY()
-	TArray<UMeshComponent*> ApplyMagMaterialMeshs;
-	
+	UMaterialInstanceDynamic* _material;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UTexture2D* Texture;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	FLinearColor RGB;
+
 	UPROPERTY()
 	USphereComponent* FieldCollision;
 
@@ -152,13 +169,34 @@ private:
 	float FinalMagneticFieldRadius;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
-	float MagneticFieldRadius;
+	float MagneticFieldRadiusScale;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
 	float Weight;
+
+	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	int32 CurrEnchantCount;
+
+	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 1, AllowPrivateAccess = true))
+	int32 MaxEnchantableCount;
+
+	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	float EnchantWeight;
+
+	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	float EnchantRange;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	bool bShowMagneticFieldSphereInGame;
 
 public:
 
 	UPROPERTY(EditAnywhere, Category = Magnetic)
 	bool bShowMagneticField;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic)
+	bool bAllowMagneticMovement;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic)
+	bool bMagneticMaterialApplyAttachMesh;
 };
