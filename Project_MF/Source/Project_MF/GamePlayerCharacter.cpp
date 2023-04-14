@@ -4,11 +4,12 @@
 #include "PlayerAnimInstance.h"
 #include "PlayerUICanvasWidget.h"
 #include "MagneticComponent.h"
+#include "GameMapSectionComponent.h"
 #include "DefaultMagneticMovementComponent.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
-	#pragma region Summary
+	#pragma region Omission
 	//Intialized Properts and Fields
 	PrimaryActorTick.bCanEverTick	= true;
 	ShootLength						= 10000.f;
@@ -21,6 +22,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	_StickTo						= nullptr;
 	_ArmPenetrateDiv				= 1.0f / 90.f;
 	ShootExtend.Set(2.f, 2.f, 2.f);
+	_stiffen = 0.f;
 
 	//CDO
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	PLAYER_MESH(
@@ -102,12 +104,12 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	Magnetic->SetWeight(1.f, true);
 
 	/*Particle*/
-	if (PARTICLE.Succeeded())
-	{
-		Particle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("PARTICLE"));
-		Particle->SetTemplate(PARTICLE.Object);
-		Particle->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("effect"));
-	}
+	//if (PARTICLE.Succeeded())
+	//{
+	//	Particle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("PARTICLE"));
+	//	Particle->SetTemplate(PARTICLE.Object);
+	//	Particle->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("effect"));
+	//}
 
 	#pragma endregion
 }
@@ -177,8 +179,15 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//경직 적용
+	if (_stiffen>0.f)
+	{
+		_stiffen -= DeltaTime;
+		if (_stiffen <= 0.f) _stiffen = 0.f;
+	}
+
 	//점프키를 꾹 누르면 점프
-	if (_bCanJump)
+	if (_bCanJump && _stiffen==0.f)
 	{
 		Jump();
 		UDefaultMagneticMovementComponent;
@@ -187,7 +196,7 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 
 void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	#pragma region Summary
+	#pragma region Omission
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAxis(
 		TEXT("UpDown"), this, &AGamePlayerCharacter::MoveUpDown
@@ -207,6 +216,10 @@ void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 
 	PlayerInputComponent->BindAction(
 		TEXT("Jump"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::JumpStart
+	);
+
+	PlayerInputComponent->BindAction(
+		TEXT("StageRestart"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::StageRestart
 	);
 
 	PlayerInputComponent->BindAction(
@@ -254,6 +267,8 @@ void AGamePlayerCharacter::PostEditChangeProperty(FPropertyChangedEvent& Propert
 
 void AGamePlayerCharacter::LookUp(float value)
 {
+	if (_stiffen != 0.f) return;
+
 	FRotator currRot = GetControlRotation();
 
 	currRot.Pitch -= CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
@@ -262,6 +277,7 @@ void AGamePlayerCharacter::LookUp(float value)
 
 void AGamePlayerCharacter::Turn(float value)
 {
+	if (_stiffen != 0.f) return;
 	FRotator currRot = GetControlRotation();
 
 	currRot.Yaw += CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
@@ -270,6 +286,7 @@ void AGamePlayerCharacter::Turn(float value)
 
 void AGamePlayerCharacter::MoveUpDown(float value)
 {
+	if (_stiffen != 0.f) return;
 	const FRotator rotation = Controller->GetControlRotation();
 	const FRotator yawRotation(0, rotation.Yaw, 0);
 	const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::X);
@@ -278,6 +295,7 @@ void AGamePlayerCharacter::MoveUpDown(float value)
 }
 void AGamePlayerCharacter::MoveRightLeft(float value)
 {
+	if (_stiffen != 0.f) return;
 	const FRotator rotation = Controller->GetControlRotation();
 	const FRotator yawRotation(0, rotation.Yaw, 0);
 	const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::Y);
@@ -287,25 +305,48 @@ void AGamePlayerCharacter::MoveRightLeft(float value)
 
 void AGamePlayerCharacter::OnShootMine()
 {
+	if (_stiffen != 0.f) return;
 	_bShootMine = true;
 }
 
 void AGamePlayerCharacter::OffShootMine()
 {
+	if (_stiffen != 0.f) return;
 	_bShootMine = false;
 }
 
 void AGamePlayerCharacter::JumpStart()
 {
+	if (_stiffen != 0.f) return;
 	_bCanJump = true;
 }
 void AGamePlayerCharacter::JumpEnd()
 {
+	if (_stiffen != 0.f) return;
 	_bCanJump = false;
+}
+
+void AGamePlayerCharacter::StageRestart()
+{
+	if (_stiffen != 0.f) return;
+	TArray<UPrimitiveComponent*> overlaps;
+	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
+
+	int32 count = overlaps.Num();
+	for (auto p : overlaps)
+	{
+		UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(p);
+		if (section && ::IsValid(section))
+		{
+			section->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+			return;
+		}
+	}
 }
 
 void AGamePlayerCharacter::ResetMagnetic()
 {
+	if (_stiffen != 0.f) return;
 	//UI 초기화
 	PlayUIInstance->GetMagneticInfoWidget()->ClearInfo();
 	PlayerAnim->PlayResetMontage();
@@ -325,6 +366,7 @@ void AGamePlayerCharacter::ResetMagnetic()
 
 void AGamePlayerCharacter::ShootMagnetic_N()
 {
+	if (_stiffen != 0.f) return;
 	if (PlayerAnim->GetAttackMontageIsPlaying()) return;
 
 	if (_bShootMine)
@@ -338,6 +380,7 @@ void AGamePlayerCharacter::ShootMagnetic_N()
 
 void AGamePlayerCharacter::ShootMagnetic_S()
 {
+	if (_stiffen != 0.f) return;
 	if (PlayerAnim->GetAttackMontageIsPlaying()) return;
 
 	if (_bShootMine)
@@ -351,7 +394,8 @@ void AGamePlayerCharacter::ShootMagnetic_S()
 
 void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 {
-	#pragma region Summary
+	if (_stiffen != 0.f) return;
+	#pragma region Omission
 
 	//몽타주 실행
 	PlayerAnim->PlayAttackMontage();
@@ -402,12 +446,13 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 
 void AGamePlayerCharacter::ShootMine(EMagneticType shootType)
 {
+	if (_stiffen != 0.f) return;
 	GivenTestMagnet(Magnetic, shootType);
 }
 
 void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagneticType givenType)
 {
-	#pragma region Summary
+	#pragma region Omission
 	newMagnet->SetCurrentMagnetic(givenType);
 
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
@@ -488,19 +533,19 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 	PlayUIInstance->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 }
 
-void AGamePlayerCharacter::OnMagnetic(EMagneticType type)
+void AGamePlayerCharacter::OnMagnetic(EMagneticType type, UMagneticComponent* magnet)
 {
 	if(type!=EMagneticType::NONE) PlayerAnim->PlaySelfShootMontage();
 }
 
-void AGamePlayerCharacter::OffMagnetic(EMagneticType prevType)
+void AGamePlayerCharacter::OffMagnetic(EMagneticType prevType, UMagneticComponent* magnet)
 {
 	if(PlayerAnim->GetResetMontageIsPlaying()==false)
 	PlayerAnim->PlaySelfResetMontage();
-	PlayerAnim->SetHandLookDir(EPutArmType::LEFT, false);
+	PlayerAnim->SetHandLookMagnetic(EHandType::LEFT, false);
 }
 
-void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType)
+void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* magnet)
 {
 	if (_StickTo != nullptr)
 	{
@@ -512,23 +557,23 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType)
 
 	case(EMagnetMoveType::DRAWN_IN):
 		PlayerAnim->PlayGlovePulledUpMotage();
-		PlayerAnim->SetHandLookDir(EPutArmType::LEFT, true, GetPlayerForwardVector());
+		PlayerAnim->SetHandLookMagnetic(EHandType::LEFT, true, magnet);
 		GetMovementComponent()->SetActive(false);
 		break;
 
 	case(EMagnetMoveType::PUSHED_OUT):
-		PlayerAnim->SetHandLookDir(EPutArmType::LEFT, false);
+		PlayerAnim->SetHandLookMagnetic(EHandType::LEFT, false);
 		GetMovementComponent()->SetActive(true);
 		break;
 	}
 }
 
-void AGamePlayerCharacter::MagnetMoveEnd(EMagnetMoveType moveType)
+void AGamePlayerCharacter::MagnetMoveEnd(EMagnetMoveType moveType, UMagneticComponent* magnet)
 {
-	PlayerAnim->SetHandLookDir(EPutArmType::LEFT, false);
+	PlayerAnim->SetHandLookMagnetic(EHandType::LEFT, false);
 }
 
-void AGamePlayerCharacter::MagnetMoveHit(AActor* hit)
+void AGamePlayerCharacter::MagnetMoveHit(AActor* hit, UMagneticComponent* magnet)
 {
 	if (hit == nullptr) return;
 
@@ -538,7 +583,7 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* hit)
 		AttachToActor(hit, FAttachmentTransformRules::KeepWorldTransform);
 
 		//플레이어 자성 초기화
-		RemoveGiven(Magnetic);
+		//RemoveGiven(Magnetic);
 
 		PlayerAnim->PlaySelfShootMontage(10.f, 2.f);
 	}

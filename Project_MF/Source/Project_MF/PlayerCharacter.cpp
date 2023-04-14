@@ -152,17 +152,17 @@ void APlayerCharacter::Turn(float value)
 	GetController()->SetControlRotation(currRot);
 }
 
-void APlayerCharacter::OnMagnetic(EMagneticType type)
+void APlayerCharacter::OnMagnetic(EMagneticType type, UMagneticComponent* magnet)
 {
 	UE_LOG(LogTemp, Warning, TEXT("자성이 부여됨!!!"))
 }
 
-void APlayerCharacter::OffMagnetic(EMagneticType prevType)
+void APlayerCharacter::OffMagnetic(EMagneticType prevType, UMagneticComponent* magnet)
 {
 	UE_LOG(LogTemp, Warning, TEXT("자성이 사라짐!!!"))
 }
 
-void APlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType)
+void APlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* magnet)
 {
 	UE_LOG(LogTemp, Warning, TEXT("자성 움직임 시작!!!"))
 	_zoomInLength = 15.f;
@@ -185,13 +185,13 @@ void APlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType)
 	}
 }
 
-void APlayerCharacter::MagnetMoveEnd(EMagnetMoveType moveType)
+void APlayerCharacter::MagnetMoveEnd(EMagnetMoveType moveType, UMagneticComponent* magnet)
 {
 	UE_LOG(LogTemp, Warning, TEXT("자성 움직임 끝!!!"))
 	_zoomInLength = 10.f;
 }
 
-void APlayerCharacter::MagnetMoveHit(AActor* hit)
+void APlayerCharacter::MagnetMoveHit(AActor* hit, UMagneticComponent* magnet)
 {
 	if (hit == nullptr) return;
 

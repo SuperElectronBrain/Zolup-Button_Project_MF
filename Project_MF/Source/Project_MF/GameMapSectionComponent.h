@@ -28,43 +28,38 @@ public:
 };
 
 UCLASS( ClassGroup=(GameMapSection), meta=(BlueprintSpawnableComponent) )
-class PROJECT_MF_API UGameMapSectionComponent final : public USceneComponent
+class PROJECT_MF_API UGameMapSectionComponent final : public UBoxComponent
 {
 	GENERATED_BODY()
 
 public:	
 	/////////////////////
-	////*Constructor*////
+	//// Constructor ////
 	/////////////////////
 	UGameMapSectionComponent();
 
 	///////////////////////
-	////*Public methods*///
+	//// Public methods ///
 	///////////////////////
 	void SetSection(ESectionSettingType type);
+	void AddResetPoint(AActor* actor);
+	void RemoveResetPoint(AActor* actor);
 
 private:
 	////////////////////////
-	////*Override methods*//
+	//// Override methods //
 	////////////////////////
 	virtual void BeginPlay() override;
+	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const;
+	virtual void DestroyComponent(bool bPromoteChildren) override;
 	void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	/////////////////////////////
-	///*Fields And Components*///
+	/// Fields And Components ///
 	////////////////////////////
 	UPROPERTY(VisibleAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
 	bool bIsCompleteSection;
 
 	UPROPERTY()
 	TArray<FActorBeginInfo> _infoList;
-
-	UPROPERTY()
-	UBoxComponent* Range;
-
-	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
-	uint32 id;
-
-	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
-	bool bShowSectionRangeInGame;
 };

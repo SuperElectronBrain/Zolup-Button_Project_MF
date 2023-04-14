@@ -55,19 +55,19 @@ private:
 	void ClearGivens() { _GivenMagnets[0] = _GivenMagnets[1] = nullptr; _givenIndex = _oldGivenIndex = 0; }
 
 	UFUNCTION()
-	void OnMagnetic(EMagneticType type);
+	void OnMagnetic(EMagneticType type, UMagneticComponent* magnet);
 
 	UFUNCTION()
-	void OffMagnetic(EMagneticType prevType);
+	void OffMagnetic(EMagneticType prevType, UMagneticComponent* magnet);
 
 	UFUNCTION()
-	void MagnetMoveStart(EMagnetMoveType moveType);
+	void MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* magnet);
 
 	UFUNCTION()
-	void MagnetMoveEnd(EMagnetMoveType moveType);
+	void MagnetMoveEnd(EMagnetMoveType moveType, UMagneticComponent* magnet);
 
 	UFUNCTION()
-	void MagnetMoveHit(AActor* hit);
+	void MagnetMoveHit(AActor* hit, UMagneticComponent* magnet);
 
 	/*fields And Components*/
 	bool _bCanJump;

@@ -17,11 +17,11 @@ enum class EMagneticType
 	NONE, S, N
 };
 
-DECLARE_MULTICAST_DELEGATE_OneParam(FOnMagneticDelegate, EMagneticType)
-DECLARE_MULTICAST_DELEGATE_OneParam(FOffMagneticDelegate, EMagneticType)
-DECLARE_MULTICAST_DELEGATE_OneParam(FMoveStartDelegate, EMagnetMoveType)
-DECLARE_MULTICAST_DELEGATE_OneParam(FMoveHitDelegate, AActor*)
-DECLARE_MULTICAST_DELEGATE_OneParam(FMoveEndDelegate, EMagnetMoveType)
+DECLARE_MULTICAST_DELEGATE_TwoParams(FOnMagneticDelegate, EMagneticType, UMagneticComponent*)
+DECLARE_MULTICAST_DELEGATE_TwoParams(FOffMagneticDelegate, EMagneticType, UMagneticComponent*)
+DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveStartDelegate, EMagnetMoveType, UMagneticComponent*)
+DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveHitDelegate, AActor*, UMagneticComponent*)
+DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveEndDelegate, EMagnetMoveType, UMagneticComponent*)
 
 #define MAGNETIC_FIELD_PRECISION 60
 #define MAGNETIC_COLLISION_OBJECTTYPE ECollisionChannel::ECC_GameTraceChannel11
@@ -49,11 +49,12 @@ public:
 	UMagneticComponent();
 
 	/*Delegates*/
-	FOnMagneticDelegate			OnMagneticEvent;
-	FOffMagneticDelegate		OffMagneticEvent;
-	FMoveStartDelegate			MagnetMoveStartEvent;
-	FMoveEndDelegate			MagnetMoveEndEvent;
-	FMoveHitDelegate			MagnetMoveHitEvent;
+	FOnMagneticDelegate		OnMagneticEvent;
+	FOffMagneticDelegate	OffMagneticEvent;
+	FMoveStartDelegate		MagnetMoveStartEvent;
+	FMoveEndDelegate		MagnetMoveEndEvent;
+	//UPROPERTY(BlueprintAssignable, Category = "Magnetic")
+	FMoveHitDelegate		MagnetMoveHitEvent;
 
 	/*Public methods*/
 	void SettingMagnetWeightAndFieldRange();
