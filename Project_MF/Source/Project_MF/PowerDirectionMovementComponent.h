@@ -16,10 +16,10 @@ class PROJECT_MF_API UPowerDirectionMovementComponent : public UPowerMovementCom
 	GENERATED_BODY()
 	
 private:
-#if WITH_EDITORONLY_DATA
-	UPROPERTY() UArrowComponent* ArrowComponent;
-#endif
-	UPROPERTY() FVector OriginPosition;
+//#if WITH_EDITORONLY_DATA
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UArrowComponent* ArrowComponent;
+//#endif
+	//UPROPERTY() FVector OriginPosition;
 	/**
 	* When activated, it moves infinitely.
 	* WARNING - When disabled, it may not be able to return to original state.
