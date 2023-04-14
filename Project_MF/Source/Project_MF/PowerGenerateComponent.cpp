@@ -44,6 +44,7 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 void UPowerGenerateComponent::BeginPlay()
 {
 	Super::BeginPlay();
+	SetRelativeScale3D(FVector::OneVector);
 	USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
 	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
 	if (::IsValid(OwnerRootPrimitive) == true)
@@ -61,6 +62,9 @@ void UPowerGenerateComponent::BeginPlay()
 	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
 	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
 	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	//Collider->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X), (OwnerRootScale.Y * OwnerRootBounds.Y), (OwnerRootScale.Z * OwnerRootBounds.Z)));
+	Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
+	//Trigger->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X) + (BoxSize / OwnerRootScale.X), (OwnerRootScale.Y * OwnerRootBounds.Y) + (BoxSize / OwnerRootScale.Y), (OwnerRootScale.Z * OwnerRootBounds.Z) + (BoxSize / OwnerRootScale.Z)));
 	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / OwnerRootScale.X), OwnerRootBounds.Y + (BoxSize / OwnerRootScale.Y), OwnerRootBounds.Z + (BoxSize / OwnerRootScale.Z)));
 	Trigger->SetCollisionProfileName("NewTrigger");
 	Trigger->SetGenerateOverlapEvents(true);

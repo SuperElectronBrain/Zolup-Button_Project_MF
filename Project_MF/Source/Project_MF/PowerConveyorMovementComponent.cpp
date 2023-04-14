@@ -9,22 +9,22 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
 
-#if WITH_EDITORONLY_DATA
-	ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+//#if WITH_EDITORONLY_DATA
+	//ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
 
 	if (IsRunningCommandlet() == false)
 	{
 		if (ArrowComponent)
 		{
 			ArrowComponent->ArrowColor = FColor(150, 200, 255);
-
+			ArrowComponent->SetupAttachment(this);
 			ArrowComponent->ArrowSize = 1.0f;
 			ArrowComponent->bTreatAsASprite = true;
-			ArrowComponent->SetupAttachment(this);
-			ArrowComponent->bIsScreenSizeScaled = true;
+			ArrowComponent->bIsScreenSizeScaled = false;
 		}
 	}
-#endif
+//#endif
 	
 	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 
@@ -35,6 +35,8 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 
 void UPowerConveyorMovementComponent::BeginPlay()
 {
+	Super::BeginPlay();
+	SetRelativeScale3D(FVector::OneVector);
 #pragma region UnUsed
 	//FVector ColliderSize = FVector::OneVector;
 	//UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
@@ -59,7 +61,7 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	if (::IsValid(OwnerRootComponent) == true)
 	{
-		Trigger->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 		Trigger->SetCollisionProfileName("OverlapAllDynamic");
 
 #pragma region UnUsed
@@ -74,8 +76,14 @@ void UPowerConveyorMovementComponent::BeginPlay()
 
 		TriggerSize = OwnerRootComponent->GetRelativeScale3D();
 	}
+
+	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
+	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
 	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
-	Trigger->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
+	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
+
+	ArrowComponent->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::KeepRelativeTransform);
 	
 #pragma region UnUsed
 	//FVector TriggerVolume = FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z);
@@ -150,6 +158,7 @@ void UPowerConveyorMovementComponent::BeginPlay()
 
 void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	Action(DeltaTime);
 }
 
@@ -168,7 +177,20 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 				{
 					if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
 					{
-						OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
+						//UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
+						//if (OverlapActorsPrimitive->IsSimulatingPhysics() == true)
+						//{
+							//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = true;
+							//OverlapActorsPrimitive->SetPhysicsLinearVelocity(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime), true);
+							//OverlapActorsPrimitive->SetPhysicsLinearVelocity(ArrowComponent->GetForwardVector( * (ActingSpeed * DeltaTime), true);
+							//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = false;
+						//}
+						//else
+						//{
+							//OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
+							OverlappingActors[i]->AddActorWorldOffset(ArrowComponent->GetForwardVector() * (ActingSpeed * DeltaTime));
+
+						//}
 					}
 				}
 #pragma region UnUsed
