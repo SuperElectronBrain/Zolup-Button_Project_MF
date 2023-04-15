@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{83CEC63C-01D2-4AEF-8566-5F33449F0AD6}</UniqueIdentifier>
+      <UniqueIdentifier>{0C4AA9EF-2FCF-4818-BE34-2D1BA8851264}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{F1D7D7C4-56BB-4EA8-A519-CE2973C54DCB}</UniqueIdentifier>
+      <UniqueIdentifier>{4BE4389E-4F39-42B3-9B8B-070080007BFA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{D0EBED73-51D4-4D65-8A78-4CD084485467}</UniqueIdentifier>
+      <UniqueIdentifier>{9A336B42-DC4C-4E9B-BE89-C01854F8CB33}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -153,6 +153,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MFActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MFSaveGame.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MFSaveGame.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MovementRegistComponent.cpp">
