@@ -11,19 +11,19 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 
 //#if WITH_EDITORONLY_DATA
 	//ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
-	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
-
-	if (IsRunningCommandlet() == false)
-	{
-		if (ArrowComponent)
-		{
-			ArrowComponent->ArrowColor = FColor(150, 200, 255);
-			ArrowComponent->SetupAttachment(this);
-			ArrowComponent->ArrowSize = 1.0f;
-			ArrowComponent->bTreatAsASprite = true;
-			ArrowComponent->bIsScreenSizeScaled = false;
-		}
-	}
+	//ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
+	//
+	//if (IsRunningCommandlet() == false)
+	//{
+	//	if (ArrowComponent)
+	//	{
+	//		ArrowComponent->ArrowColor = FColor(150, 200, 255);
+	//		ArrowComponent->SetupAttachment(this);
+	//		ArrowComponent->ArrowSize = 1.0f;
+	//		ArrowComponent->bTreatAsASprite = true;
+	//		ArrowComponent->bIsScreenSizeScaled = false;
+	//	}
+	//}
 //#endif
 	
 	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
@@ -63,13 +63,11 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	{
 		Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 		Trigger->SetCollisionProfileName("OverlapAllDynamic");
+		Trigger->SetGenerateOverlapEvents(true);
+		Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapBegin);
+		Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapEnd);
 
-#pragma region UnUsed
-		//Trigger->SetGenerateOverlapEvents(true);
-	
-		//Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapBegin);
-		//Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapEnd);
-		
+#pragma region UnUsed	
 		//OwnerRootComponent->OnComponentHit.AddDynamic(this, &UPowerConveyorMovementComponent::OnHit);
 		//OwnerRootComponent->SetNotifyRigidBodyCollision(true);
 #pragma endregion
@@ -80,11 +78,12 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
 	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
 	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X * 1.0f, OwnerRootBounds.Y * 1.0f, OwnerRootBounds.Z * 1.2f));
 	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
-	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
 
-	ArrowComponent->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	
+	//ArrowComponent->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::KeepRelativeTransform);
+	ArrowComponent = GetOwner()->FindComponentByClass<UArrowComponent>();
+
 #pragma region UnUsed
 	//FVector TriggerVolume = FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z);
 	//TArray<FHitResult> HitResult;
@@ -164,35 +163,42 @@ void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick 
 
 void UPowerConveyorMovementComponent::Action(float DeltaTime)
 {
-	if (ObserveTarget != nullptr)
+	if (::IsValid(ObserveTarget.Get()) == true)
 	{
 		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
 		if (::IsValid(ObserveTargetExecutionComponent) == true)
 		{
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
-				TArray<AActor*> OverlappingActors;
-				Trigger->GetOverlappingActors(OverlappingActors);
-				for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
+				for (int i = 0; i < MovableTargets.Num(); i = i + 1)
 				{
-					if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
-					{
-						//UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
-						//if (OverlapActorsPrimitive->IsSimulatingPhysics() == true)
-						//{
-							//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = true;
-							//OverlapActorsPrimitive->SetPhysicsLinearVelocity(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime), true);
-							//OverlapActorsPrimitive->SetPhysicsLinearVelocity(ArrowComponent->GetForwardVector( * (ActingSpeed * DeltaTime), true);
-							//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = false;
-						//}
-						//else
-						//{
-							//OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
-							OverlappingActors[i]->AddActorWorldOffset(ArrowComponent->GetForwardVector() * (ActingSpeed * DeltaTime));
-
-						//}
-					}
+					MovableTargets[i]->AddActorWorldOffset((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector() * (ActingSpeed * DeltaTime));
 				}
+
+				//TArray<AActor*> OverlappingActors;
+				//Trigger->GetOverlappingActors(OverlappingActors);
+				//for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
+				//{
+				//	if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
+				//	{
+				//		//UE_LOG(LogTemp, Warning, TEXT("오이오이"));
+				//
+				//		//UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
+				//		//if (OverlapActorsPrimitive->IsSimulatingPhysics() == true)
+				//		//{
+				//			//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = true;
+				//			//OverlapActorsPrimitive->SetPhysicsLinearVelocity(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime), true);
+				//			//OverlapActorsPrimitive->SetPhysicsLinearVelocity(ArrowComponent->GetForwardVector( * (ActingSpeed * DeltaTime), true);
+				//			//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = false;
+				//		//}
+				//		//else
+				//		//{
+				//			//OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
+				//			OverlappingActors[i]->AddActorWorldOffset(ArrowComponent->GetForwardVector() * (ActingSpeed * DeltaTime));
+				//
+				//		//}
+				//	}
+				//}
 #pragma region UnUsed
 				//Collider->AddWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
 				////UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f) %f"), Collider->GetRelativeLocation().X, Collider->GetRelativeLocation().Y, Collider->GetRelativeLocation().Z, Collider->GetRelativeLocation().Size());
@@ -249,13 +255,21 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 	}
 }
 
-void UPowerConveyorMovementComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
-{
-	
-}
+//void UPowerConveyorMovementComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
+//{
+//	
+//}
 
 void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	if (GetOwner() != OtherActor)
+	{
+		if (OtherActor->GetRootComponent()->Mobility == EComponentMobility::Movable)
+		{
+			MovableTargets.AddUnique(OtherActor);
+		}
+	}
+
 #pragma region UnUsed
 	//UE_LOG(LogTemp, Warning, TEXT("오이오이 마지카요 넷또 오소스기다제"));
 	//if (GetOwner() != OtherActor)
@@ -307,6 +321,17 @@ void UPowerConveyorMovementComponent::OnOverlapBegin(UPrimitiveComponent* Overla
 
 void UPowerConveyorMovementComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	if (GetOwner() != OtherActor)
+	{
+		for (int i = 0; i < MovableTargets.Num(); i = i + 1)
+		{
+			if (MovableTargets[i] == OtherActor)
+			{
+				MovableTargets.RemoveAt(i);
+				break;
+			}
+		}
+	}
 #pragma region UnUsed
 	//if (GetOwner() != OtherActor)
 	//{

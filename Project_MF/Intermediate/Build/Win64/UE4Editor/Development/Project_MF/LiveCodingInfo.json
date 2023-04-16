@@ -31,7 +31,6 @@
 			"PlayerUIMagneticInfoWidget.cpp.obj",
 			"PowerComponent.cpp.obj",
 			"PowerConnectionComponent.cpp.obj",
-			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
 			"PowerGenerateComponent.cpp.obj",
@@ -43,12 +42,9 @@
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActorObject.cpp.obj",
-<<<<<<< HEAD
 			"TestPlayerGameMode.cpp.obj",
-			"MFSaveGame.cpp.obj"
-=======
-			"TestPlayerGameMode.cpp.obj"
->>>>>>> 0.0.3-Designers
+			"MFSaveGame.cpp.obj",
+			"PowerConveyorMovementComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CustomGameInstance.gen.cpp.obj",
@@ -72,10 +68,7 @@
 			"MainLevelScriptActor.gen.cpp.obj",
 			"MainLevelUICanvasWidget.gen.cpp.obj",
 			"MFActor.gen.cpp.obj",
-<<<<<<< HEAD
 			"MFSaveGame.gen.cpp.obj",
-=======
->>>>>>> 0.0.3-Designers
 			"MovementRegistComponent.gen.cpp.obj",
 			"MyClass.gen.cpp.obj",
 			"PlayerAnimInstance.gen.cpp.obj",

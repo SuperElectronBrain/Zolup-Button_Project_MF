@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{0C4AA9EF-2FCF-4818-BE34-2D1BA8851264}</UniqueIdentifier>
+      <UniqueIdentifier>{65EF2B47-53D0-42C4-999F-9D4B12D65382}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{4BE4389E-4F39-42B3-9B8B-070080007BFA}</UniqueIdentifier>
+      <UniqueIdentifier>{639BD2BA-2E76-4585-BC0C-F3DA57850441}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{9A336B42-DC4C-4E9B-BE89-C01854F8CB33}</UniqueIdentifier>
+      <UniqueIdentifier>{C02314A6-CC91-445C-AAB3-5B03E009CB93}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>

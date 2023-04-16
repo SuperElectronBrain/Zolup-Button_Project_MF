@@ -10,8 +10,10 @@
  * 
  */
 USTRUCT(BlueprintType)
-struct MFObjectData
+struct FMFObjectData
 {
+	GENERATED_BODY()
+
 	UPROPERTY() FString ObjectName;
 
 	UPROPERTY() FString ObjectType;
@@ -25,11 +27,13 @@ struct MFObjectData
 };
 
 USTRUCT(BlueprintType)
-struct MFStageData
+struct FMFStageData
 {
+	GENERATED_BODY()
+
 	UPROPERTY() FString StageName;
 	UPROPERTY() int32 CurrentCheckPoint;
-	UPROPERTY() TArray<MFObjectData> StageObjects;
+	UPROPERTY() TArray<FMFObjectData> StageObjects;
 };
 
 UCLASS()
@@ -38,10 +42,12 @@ class PROJECT_MF_API UMFSaveGame : public USaveGame
 	GENERATED_BODY()
 
 public:
+	UMFSaveGame();
+
 	UPROPERTY() FVector PlayerLocation;
 	UPROPERTY() FRotator PlayerRotation;
 	UPROPERTY() FVector PlayerVelocity;
 
 	UPROPERTY() FString CurrentStage;
-	UPROPERTY() TArray<MFStageData> StagesData;
+	UPROPERTY() TArray<FMFStageData> StagesData;
 };
