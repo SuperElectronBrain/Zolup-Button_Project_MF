@@ -2190,3 +2190,1737 @@ Script Stack (0 frames):
 [2023.04.16-16.14.03:220][654]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.276ms.
 [2023.04.16-16.14.03:220][654]LogFileHelpers: Loading map 'Stage_1' took 0.302
 [2023.04.16-16.14.06:228][876]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt23)
+[2023.04.16-16.14.53:399][117]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_48)
+[2023.04.16-16.15.03:793][ 58]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.15.03:802][ 58]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.15.03:802][ 58]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:15:03)
+[2023.04.16-16.15.03:802][ 58]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.15.04:000][ 58]LogPlayLevel: PIE: StaticDuplicateObject took: (0.198652s)
+[2023.04.16-16.15.04:001][ 58]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.15.04:001][ 58]LogPlayLevel: PIE: World Init took: (0.001207s)
+[2023.04.16-16.15.04:001][ 58]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.200091s)
+[2023.04.16-16.15.04:027][ 58]LogUObjectHash: Compacting FUObjectHashTables data took   2.84ms
+[2023.04.16-16.15.04:032][ 58]LogAudio: Display: Creating Audio Device:                 Id: 6, Scope: Unique, Realtime: True
+[2023.04.16-16.15.04:032][ 58]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.15.04:032][ 58]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.15.04:033][ 58]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.15.04:033][ 58]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.15.04:033][ 58]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.15.04:033][ 58]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.15.04:033][ 58]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.15.04:033][ 58]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.15.04:033][ 58]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.15.04:033][ 58]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.15.04:033][ 58]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.15.04:033][ 58]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.15.04:037][ 58]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.15.04:037][ 58]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.15.04:046][ 58]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.15.04:047][ 58]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.15.04:047][ 58]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.15.04:047][ 58]LogInit: FAudioDevice initialized.
+[2023.04.16-16.15.04:047][ 58]LogAudio: Display: Audio Device (ID: 6) registered with world 'Stage_1'.
+[2023.04.16-16.15.04:055][ 58]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.15.04:082][ 58]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.15.04
+[2023.04.16-16.15.04:082][ 58]LogWorld: Bringing up level for play took: 0.026380
+[2023.04.16-16.15.04:082][ 58]LogOnline: OSS: Creating online subsystem instance for: :Context_10
+[2023.04.16-16.15.04:086][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:086][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:086][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:091][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:091][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:092][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:093][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:094][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:094][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:097][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:097][ 58]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.15.04:099][ 58]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.15.04:100][ 58]PIE: 에디터에서 플레이 총 시작 시간 0.3초입니다.
+[2023.04.16-16.15.49:977][422]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_46)
+[2023.04.16-16.15.56:098][ 78]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_46)
+[2023.04.16-16.16.14:515][ 50]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_42)
+[2023.04.16-16.16.18:248][422]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Generator_3)
+[2023.04.16-16.16.18:785][457]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_47)
+[2023.04.16-16.17.00:019][872]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.17.00:019][872]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.17.00:020][872]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.17.00:025][872]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.17.00:037][872]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.17.00:042][872]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.17.00:069][872]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.17.00:069][872]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.17.00:070][872]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.17.00:085][872]LogUObjectHash: Compacting FUObjectHashTables data took   3.05ms
+[2023.04.16-16.17.00:204][873]LogPlayLevel: Display: Destroying online subsystem :Context_10
+[2023.04.16-16.17.01:210][959]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.17.01:216][959]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.17.16:424][359]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt16)
+[2023.04.16-16.17.20:537][784]Cmd: TRANSACTION UNDO
+[2023.04.16-16.17.20:537][784]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-16.17.21:395][837]Cmd: TRANSACTION UNDO
+[2023.04.16-16.17.21:395][837]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-16.17.41:795][431]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.17.46:327][915]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.17.51:498][478]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.17.52:407][581]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.17.53:657][721]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.17.56:254][997]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.18.08:033][227]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.18.09:936][435]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.18.11:367][568]Cmd: DELETE
+[2023.04.16-16.18.11:367][568]Cmd: ACTOR DELETE
+[2023.04.16-16.18.11:442][568]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.18.11:469][568]LogUObjectHash: Compacting FUObjectHashTables data took   2.77ms
+[2023.04.16-16.18.11:474][568]LogEditorActor: Deleted 1 Actors (0.106 secs)
+[2023.04.16-16.18.12:717][716]Cmd: TRANSACTION UNDO
+[2023.04.16-16.18.12:717][716]LogEditorTransaction: Undo 액터 삭제
+[2023.04.16-16.18.13:311][735]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.18.14:469][862]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube413)
+[2023.04.16-16.18.15:636][997]Cmd: DELETE
+[2023.04.16-16.18.15:636][997]Cmd: ACTOR DELETE
+[2023.04.16-16.18.15:709][997]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.18.15:732][997]LogUObjectHash: Compacting FUObjectHashTables data took   0.72ms
+[2023.04.16-16.18.15:733][997]LogEditorActor: Deleted 1 Actors (0.097 secs)
+[2023.04.16-16.18.16:321][ 66]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.18.17:053][148]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.18.25:088][929]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.18.26:155][ 32]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.18.33:146][765]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.18.36:625][154]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.18.39:516][486]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.18.51:417][665]Cmd: TRANSACTION UNDO
+[2023.04.16-16.18.51:417][665]LogEditorTransaction: Undo 위치 설정
+[2023.04.16-16.18.51:583][666]LogUObjectHash: Compacting FUObjectHashTables data took   1.58ms
+[2023.04.16-16.18.52:353][666]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1738879C84FF7F599B2970A96702C6C94.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-16.18.54:115][666]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltDataE99AC3414B887C4AF257E5BAC2F15289.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-16.18.54:140][666]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-16.18.54:140][666]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-16.18.54:140][666]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-16.19.03:667][639]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.19.04:666][750]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.19.05:686][863]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.19.12:171][570]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.19.16:248][938]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.19.18:676][153]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.19.19:357][227]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.19.24:293][652]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.19.35:118][734]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.19.36:814][927]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.19.37:578][ 10]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.19.41:882][376]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.19.42:602][459]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.19.47:557][  6]Cmd: TRANSACTION UNDO
+[2023.04.16-16.19.47:557][  6]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-16.19.48:577][ 80]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.19.49:117][139]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.19.52:719][526]Cmd: TRANSACTION UNDO
+[2023.04.16-16.19.52:719][526]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-16.19.55:507][696]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.20.08:418][811]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box70)
+[2023.04.16-16.20.09:973][974]Cmd: DELETE
+[2023.04.16-16.20.09:973][974]Cmd: ACTOR DELETE
+[2023.04.16-16.20.10:046][974]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.20.10:071][974]LogUObjectHash: Compacting FUObjectHashTables data took   2.59ms
+[2023.04.16-16.20.10:078][974]LogEditorActor: Deleted 1 Actors (0.105 secs)
+[2023.04.16-16.20.10:526][ 23]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.20.11:003][ 73]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.20.11:544][132]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.20.12:440][227]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box69)
+[2023.04.16-16.20.13:073][294]Cmd: DELETE
+[2023.04.16-16.20.13:073][294]Cmd: ACTOR DELETE
+[2023.04.16-16.20.13:146][294]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.20.13:169][294]LogUObjectHash: Compacting FUObjectHashTables data took   0.73ms
+[2023.04.16-16.20.13:169][294]LogEditorActor: Deleted 1 Actors (0.096 secs)
+[2023.04.16-16.20.16:833][659]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.20.47:363][735]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.20.47:959][799]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.20.51:824][162]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.20.53:947][356]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.20.54:579][430]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.21.19:812][529]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt6)
+[2023.04.16-16.21.25:763][992]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt3)
+[2023.04.16-16.22.36:447][239]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_35)
+[2023.04.16-16.23.02:574][626]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box9)
+[2023.04.16-16.23.43:453][100]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube457)
+[2023.04.16-16.23.44:049][137]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube540)
+[2023.04.16-16.23.49:231][524]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube762)
+[2023.04.16-16.23.51:904][740]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt7)
+[2023.04.16-16.23.52:407][775]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt6)
+[2023.04.16-16.23.56:910][128]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt3)
+[2023.04.16-16.24.33:158][ 80]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere2)
+[2023.04.16-16.24.50:187][839]LogEditorViewport: Clicking Background
+[2023.04.16-16.24.50:932][927]LogEditorViewport: Clicking Background
+[2023.04.16-16.25.01:400][993]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.25.55:499][337]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.26.07:780][408]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box67)
+[2023.04.16-16.26.08:353][465]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box68)
+[2023.04.16-16.26.11:971][836]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.26.16:257][225]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box68)
+[2023.04.16-16.26.20:157][607]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.26.28:046][314]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.26.33:255][895]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box68)
+[2023.04.16-16.26.35:953][187]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.26.41:049][698]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.26.50:642][704]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube459)
+[2023.04.16-16.26.51:832][825]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box68)
+[2023.04.16-16.26.52:920][947]Cmd: DELETE
+[2023.04.16-16.26.52:920][947]Cmd: ACTOR DELETE
+[2023.04.16-16.26.52:993][947]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.26.53:019][947]LogUObjectHash: Compacting FUObjectHashTables data took   2.53ms
+[2023.04.16-16.26.53:027][947]LogEditorActor: Deleted 1 Actors (0.107 secs)
+[2023.04.16-16.26.53:575][  7]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box67)
+[2023.04.16-16.26.54:015][ 51]Cmd: DELETE
+[2023.04.16-16.26.54:015][ 51]Cmd: ACTOR DELETE
+[2023.04.16-16.26.54:089][ 51]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.26.54:111][ 51]LogUObjectHash: Compacting FUObjectHashTables data took   0.73ms
+[2023.04.16-16.26.54:112][ 51]LogEditorActor: Deleted 1 Actors (0.096 secs)
+[2023.04.16-16.26.56:274][221]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube412)
+[2023.04.16-16.26.57:272][330]Cmd: DELETE
+[2023.04.16-16.26.57:272][330]Cmd: ACTOR DELETE
+[2023.04.16-16.26.57:344][330]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.26.57:367][330]LogUObjectHash: Compacting FUObjectHashTables data took   0.74ms
+[2023.04.16-16.26.57:368][330]LogEditorActor: Deleted 1 Actors (0.097 secs)
+[2023.04.16-16.26.58:712][477]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.26.59:448][557]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.27.02:874][913]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.16-16.27.10:212][603]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_40)
+[2023.04.16-16.27.17:320][194]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_40)
+[2023.04.16-16.27.25:808][973]LogUObjectHash: Compacting FUObjectHashTables data took   1.64ms
+[2023.04.16-16.27.26:515][973]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_148FF44754D174611CA7CD8A4BD870CB7.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-16.27.27:844][973]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltDataFD011C654F3682B2F2A6578306FA2A26.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-16.27.27:873][973]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-16.27.27:873][973]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-16.27.27:873][973]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-16.27.30:181][226]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_44)
+[2023.04.16-16.27.45:196][670]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box3)
+[2023.04.16-16.27.57:868][940]Cmd: TRANSACTION UNDO
+[2023.04.16-16.27.57:868][940]LogEditorTransaction: Undo 컴포넌트 제거
+[2023.04.16-16.28.03:808][484]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box002)
+[2023.04.16-16.28.11:297][267]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_16)
+[2023.04.16-16.28.11:958][342]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_15)
+[2023.04.16-16.28.12:482][400]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_15)
+[2023.04.16-16.28.13:208][485]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_14)
+[2023.04.16-16.28.13:854][557]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box002)
+[2023.04.16-16.28.19:272][ 79]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box4)
+[2023.04.16-16.28.24:818][669]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-16.28.25:553][753]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head)
+[2023.04.16-16.28.26:400][848]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-16.28.33:755][625]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box002)
+[2023.04.16-16.28.35:165][750]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box4)
+[2023.04.16-16.28.37:117][942]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box002)
+[2023.04.16-16.28.50:596][345]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube478)
+[2023.04.16-16.28.51:829][428]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube479)
+[2023.04.16-16.28.59:381][202]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube479)
+[2023.04.16-16.29.26:088][ 24]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube479)
+[2023.04.16-16.29.29:622][314]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube466)
+[2023.04.16-16.29.37:048][831]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube479)
+[2023.04.16-16.29.53:322][322]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_42)
+[2023.04.16-16.29.59:927][943]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_47)
+[2023.04.16-16.30.03:911][328]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_46)
+[2023.04.16-16.30.29:376][635]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.30.29:383][635]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.30.29:383][635]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:30:29)
+[2023.04.16-16.30.29:383][635]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.30.29:582][635]LogPlayLevel: PIE: StaticDuplicateObject took: (0.199292s)
+[2023.04.16-16.30.29:583][635]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.30.29:583][635]LogPlayLevel: PIE: World Init took: (0.001266s)
+[2023.04.16-16.30.29:583][635]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.200806s)
+[2023.04.16-16.30.29:610][635]LogUObjectHash: Compacting FUObjectHashTables data took   3.49ms
+[2023.04.16-16.30.29:615][635]LogAudio: Display: Creating Audio Device:                 Id: 7, Scope: Unique, Realtime: True
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.30.29:615][635]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.30.29:615][635]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.30.29:615][635]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.30.29:615][635]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.30.29:615][635]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.30.29:619][635]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.30.29:619][635]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.30.29:627][635]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.30.29:627][635]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.30.29:627][635]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.30.29:627][635]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.30.29:628][635]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.30.29:628][635]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.30.29:628][635]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.30.29:628][635]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.30.29:628][635]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.30.29:628][635]LogInit: FAudioDevice initialized.
+[2023.04.16-16.30.29:628][635]LogAudio: Display: Audio Device (ID: 7) registered with world 'Stage_1'.
+[2023.04.16-16.30.29:634][635]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.30.29:661][635]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.30.29
+[2023.04.16-16.30.29:661][635]LogWorld: Bringing up level for play took: 0.026999
+[2023.04.16-16.30.29:661][635]LogOnline: OSS: Creating online subsystem instance for: :Context_11
+[2023.04.16-16.30.29:665][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:665][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:666][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:671][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:671][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:671][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:673][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:673][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:674][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:676][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:676][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.30.29:678][635]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.30.29:680][635]PIE: 에디터에서 플레이 총 시작 시간 0.298초입니다.
+[2023.04.16-16.31.51:497][336]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.32.02:528][495]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.BP_Conveyorbelt26 의 모빌리티: 이동 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.32.03:556][577]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.32.10:314][182]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.32.16:010][787]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.32.16:936][874]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.32.24:087][521]LogEditorViewport: Clicking on Actor (context menu): BP_Sky_Sphere_C (Sky Sphere)
+[2023.04.16-16.32.24:953][604]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2023.04.16-16.32.25:803][674]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.32.40:091][151]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.32.40:502][188]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.32.44:458][561]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.32.47:691][846]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.32.58:577][879]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.33.10:831][ 69]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.33.30:735][182]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.BP_Conveyorbelt26 의 모빌리티: 이동 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.33.33:453][462]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.BP_Conveyorbelt26 의 모빌리티: 이동 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.33.40:461][ 86]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.33.43:017][318]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.33.43:017][318]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.33.43:018][318]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.33.43:022][318]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.33.43:034][318]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.33.43:054][318]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.33.43:079][318]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.33.43:079][318]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.33.43:080][318]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.33.43:092][318]LogUObjectHash: Compacting FUObjectHashTables data took   3.23ms
+[2023.04.16-16.33.43:207][319]LogPlayLevel: Display: Destroying online subsystem :Context_11
+[2023.04.16-16.33.44:447][431]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.33.44:453][431]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.33.45:593][550]LogUObjectHash: Compacting FUObjectHashTables data took   2.98ms
+[2023.04.16-16.33.46:307][550]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_19CF1CA554062F89C54B1CDA5A263377A.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-16.33.47:647][550]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltData9F01522746605F921ACA5ABD985CF07F.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-16.33.47:680][550]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-16.33.47:680][550]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-16.33.47:680][550]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-16.33.58:091][359]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt20)
+[2023.04.16-16.34.11:068][534]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.16-16.35.04:640][152]BlueprintLog: New page: BP_Conveyorbelt 컴파일
+[2023.04.16-16.35.04:736][152]LogUObjectHash: Compacting FUObjectHashTables data took   2.99ms
+[2023.04.16-16.35.05:695][237]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/BP_Conveyorbelt603E7DA248E9198C5BEFA09F3A0B9C92.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Blueprints/BP_Conveyorbelt.uasset'
+[2023.04.16-16.35.05:710][237]AssetCheck: New page: 에셋 저장:  BP_Conveyorbelt
+[2023.04.16-16.35.05:710][237]LogContentValidation: Display: Blueprint /Game/Blueprints/BP_Conveyorbelt.BP_Conveyorbelt 유효성 검사 중
+[2023.04.16-16.35.07:507][423]LogWorld: UWorld::CleanupWorld for World_3, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.35.07:507][423]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.35.08:451][516]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (StaticMeshComponent0)
+[2023.04.16-16.35.21:268][793]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.35.29:419][695]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.35.29:426][695]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.35.29:426][695]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:35:29)
+[2023.04.16-16.35.29:426][695]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.35.29:630][695]LogPlayLevel: PIE: StaticDuplicateObject took: (0.204644s)
+[2023.04.16-16.35.29:631][695]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.35.29:631][695]LogPlayLevel: PIE: World Init took: (0.001278s)
+[2023.04.16-16.35.29:631][695]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.206175s)
+[2023.04.16-16.35.29:678][695]LogUObjectHash: Compacting FUObjectHashTables data took   3.53ms
+[2023.04.16-16.35.29:681][695]LogAudio: Display: Creating Audio Device:                 Id: 8, Scope: Unique, Realtime: True
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.35.29:681][695]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.35.29:681][695]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.35.29:682][695]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.35.29:682][695]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.35.29:682][695]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.35.29:682][695]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.35.29:685][695]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.35.29:685][695]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.35.29:692][695]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.35.29:692][695]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.35.29:692][695]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.35.29:693][695]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.35.29:693][695]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.35.29:693][695]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.35.29:693][695]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.35.29:694][695]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.35.29:694][695]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.35.29:694][695]LogInit: FAudioDevice initialized.
+[2023.04.16-16.35.29:694][695]LogAudio: Display: Audio Device (ID: 8) registered with world 'Stage_1'.
+[2023.04.16-16.35.29:701][695]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.35.29:730][695]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.35.29
+[2023.04.16-16.35.29:731][695]LogWorld: Bringing up level for play took: 0.029938
+[2023.04.16-16.35.29:731][695]LogOnline: OSS: Creating online subsystem instance for: :Context_12
+[2023.04.16-16.35.29:735][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:735][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:735][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:741][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:741][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:742][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:744][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:744][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:744][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:746][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:746][695]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.35.29:749][695]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.35.29:750][695]PIE: 에디터에서 플레이 총 시작 시간 0.325초입니다.
+[2023.04.16-16.36.42:036][201]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube502)
+[2023.04.16-16.36.42:529][242]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.36.53:544][313]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.36.59:490][899]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.37.08:122][784]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube709)
+[2023.04.16-16.37.10:766][ 45]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_41)
+[2023.04.16-16.37.22:972][307]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.37.22:972][307]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.37.22:974][307]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.37.22:978][307]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.37.22:984][307]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.37.23:002][307]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.37.23:021][307]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-16.37.23:021][307]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.37.23:021][307]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.37.23:023][307]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.37.23:038][307]LogUObjectHash: Compacting FUObjectHashTables data took   3.86ms
+[2023.04.16-16.37.23:173][308]LogPlayLevel: Display: Destroying online subsystem :Context_12
+[2023.04.16-16.37.24:399][422]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.37.24:405][422]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.37.29:599][868]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.37.29:606][868]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.37.29:606][868]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:37:29)
+[2023.04.16-16.37.29:606][868]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.37.29:809][868]LogPlayLevel: PIE: StaticDuplicateObject took: (0.203414s)
+[2023.04.16-16.37.29:809][868]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.37.29:811][868]LogPlayLevel: PIE: World Init took: (0.001280s)
+[2023.04.16-16.37.29:811][868]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.204939s)
+[2023.04.16-16.37.29:827][868]LogUObjectHash: Compacting FUObjectHashTables data took   1.98ms
+[2023.04.16-16.37.29:828][868]LogAudio: Display: Creating Audio Device:                 Id: 9, Scope: Unique, Realtime: True
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.37.29:829][868]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.37.29:829][868]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.37.29:829][868]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.37.29:829][868]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.37.29:829][868]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.37.29:832][868]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.37.29:833][868]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.37.29:840][868]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.37.29:842][868]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.37.29:842][868]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.37.29:842][868]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.37.29:842][868]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.37.29:842][868]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.37.29:842][868]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.37.29:843][868]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.37.29:843][868]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.37.29:843][868]LogInit: FAudioDevice initialized.
+[2023.04.16-16.37.29:843][868]LogAudio: Display: Audio Device (ID: 9) registered with world 'Stage_1'.
+[2023.04.16-16.37.29:852][868]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.37.29:883][868]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.37.29
+[2023.04.16-16.37.29:883][868]LogWorld: Bringing up level for play took: 0.030250
+[2023.04.16-16.37.29:883][868]LogOnline: OSS: Creating online subsystem instance for: :Context_13
+[2023.04.16-16.37.29:887][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:887][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:888][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:892][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:893][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:893][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:895][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:895][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:895][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:898][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:898][868]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.37.29:899][868]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.37.29:901][868]PIE: 에디터에서 플레이 총 시작 시간 0.296초입니다.
+[2023.04.16-16.38.26:110][569]LogTemp: Warning: Distance: 113.521355/ Point: X=-12554.503 Y=-13361.698 Z=1345.000
+[2023.04.16-16.38.26:119][570]LogTemp: Warning: Distance: 57.854645/ Point: X=-12527.379 Y=-13460.737 Z=1345.000
+[2023.04.16-16.38.26:127][571]LogTemp: Warning: Distance: 2.529654/ Point: X=-12551.653 Y=-13442.616 Z=1345.000
+[2023.04.16-16.38.26:135][572]LogTemp: Warning: Distance: 12.910844/ Point: X=-12548.409 Y=-13449.448 Z=1345.000
+[2023.04.16-16.38.26:144][573]LogTemp: Warning: Distance: 19.762754/ Point: X=-12546.732 Y=-13453.897 Z=1345.000
+[2023.04.16-16.38.26:152][574]LogTemp: Warning: Distance: 26.299406/ Point: X=-12545.146 Y=-13457.950 Z=1345.000
+[2023.04.16-16.38.26:160][575]LogTemp: Warning: Distance: 32.239140/ Point: X=-12543.760 Y=-13461.482 Z=1345.000
+[2023.04.16-16.38.26:168][576]LogTemp: Warning: Distance: 37.692410/ Point: X=-12542.518 Y=-13464.585 Z=1345.000
+[2023.04.16-16.38.26:177][577]LogTemp: Warning: Distance: 42.713707/ Point: X=-12541.389 Y=-13467.312 Z=1345.000
+[2023.04.16-16.38.26:185][578]LogTemp: Warning: Distance: 47.300179/ Point: X=-12540.359 Y=-13469.685 Z=1345.000
+[2023.04.16-16.38.26:193][579]LogTemp: Warning: Distance: 51.516811/ Point: X=-12539.399 Y=-13471.755 Z=1345.000
+[2023.04.16-16.38.26:201][580]LogTemp: Warning: Distance: 55.390739/ Point: X=-12538.491 Y=-13473.555 Z=1345.000
+[2023.04.16-16.38.26:210][581]LogTemp: Warning: Distance: 58.950912/ Point: X=-12537.619 Y=-13475.111 Z=1345.000
+[2023.04.16-16.38.26:219][582]LogTemp: Warning: Distance: 62.222851/ Point: X=-12536.771 Y=-13476.450 Z=1345.000
+[2023.04.16-16.38.26:226][583]LogTemp: Warning: Distance: 65.228149/ Point: X=-12535.935 Y=-13477.591 Z=1345.000
+[2023.04.16-16.38.26:236][584]LogTemp: Warning: Distance: 67.987534/ Point: X=-12535.098 Y=-13478.555 Z=1345.000
+[2023.04.16-16.38.26:244][585]LogTemp: Warning: Distance: 70.514816/ Point: X=-12534.255 Y=-13479.355 Z=1345.000
+[2023.04.16-16.38.26:252][586]LogTemp: Warning: Distance: 72.826401/ Point: X=-12533.398 Y=-13480.006 Z=1345.000
+[2023.04.16-16.38.26:260][587]LogTemp: Warning: Distance: 74.947746/ Point: X=-12532.517 Y=-13480.521 Z=1345.000
+[2023.04.16-16.38.26:269][588]LogTemp: Warning: Distance: 76.858475/ Point: X=-12531.616 Y=-13480.904 Z=1345.000
+[2023.04.16-16.38.26:277][589]LogTemp: Warning: Distance: 77.720558/ Point: X=-12531.626 Y=-13480.298 Z=1345.000
+[2023.04.16-16.38.26:285][590]LogTemp: Warning: Distance: 81.006790/ Point: X=-12530.094 Y=-13481.462 Z=1345.000
+[2023.04.16-16.38.26:293][591]LogTemp: Warning: Distance: 83.199608/ Point: X=-12529.087 Y=-13482.800 Z=1345.000
+[2023.04.16-16.38.26:301][592]LogTemp: Warning: Distance: 83.727058/ Point: X=-12527.985 Y=-13483.187 Z=1345.000
+[2023.04.16-16.38.26:310][593]LogTemp: Warning: Distance: 87.131081/ Point: X=-12526.350 Y=-13485.452 Z=1345.000
+[2023.04.16-16.38.26:318][594]LogTemp: Warning: Distance: 86.731186/ Point: X=-12526.250 Y=-13485.981 Z=1345.000
+[2023.04.16-16.38.26:327][595]LogTemp: Warning: Distance: 90.197945/ Point: X=-12524.226 Y=-13489.001 Z=1345.000
+[2023.04.16-16.38.26:335][596]LogTemp: Warning: Distance: 89.860405/ Point: X=-12523.499 Y=-13490.771 Z=1345.000
+[2023.04.16-16.38.26:344][597]LogTemp: Warning: Distance: 89.301270/ Point: X=-12523.008 Y=-13491.705 Z=1345.000
+[2023.04.16-16.38.26:352][598]LogTemp: Warning: Distance: 90.894966/ Point: X=-12522.397 Y=-13493.989 Z=1345.000
+[2023.04.16-16.38.26:361][599]LogTemp: Warning: Distance: 90.533234/ Point: X=-12522.612 Y=-13495.943 Z=1345.000
+[2023.04.16-16.38.26:369][600]LogTemp: Warning: Distance: 87.992523/ Point: X=-12524.162 Y=-13496.064 Z=1345.000
+[2023.04.16-16.38.26:377][601]LogTemp: Warning: Distance: 93.848213/ Point: X=-12524.450 Y=-13501.880 Z=1345.000
+[2023.04.16-16.38.26:386][602]LogTemp: Warning: Distance: 85.996101/ Point: X=-12528.802 Y=-13499.853 Z=1345.000
+[2023.04.16-16.38.26:393][603]LogTemp: Warning: Distance: 101.933777/ Point: X=-12529.068 Y=-13513.360 Z=1345.000
+[2023.04.16-16.38.26:402][604]LogTemp: Warning: Distance: 67.178825/ Point: X=-12542.250 Y=-13492.512 Z=1345.000
+[2023.04.16-16.38.57:485][163]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.38.57:485][163]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.38.57:486][163]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.38.57:491][163]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.38.57:502][163]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.38.57:520][163]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.38.57:537][163]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.38.57:537][163]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.38.57:538][163]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.38.57:549][163]LogUObjectHash: Compacting FUObjectHashTables data took   2.03ms
+[2023.04.16-16.38.57:668][164]LogPlayLevel: Display: Destroying online subsystem :Context_13
+[2023.04.16-16.38.58:790][261]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.38.58:797][261]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.39.09:332][202]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_40)
+[2023.04.16-16.39.10:688][345]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube459)
+[2023.04.16-16.39.27:182][618]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_49)
+[2023.04.16-16.39.33:555][117]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_39)
+[2023.04.16-16.39.37:585][497]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.39.53:893][792]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_40)
+[2023.04.16-16.39.59:931][339]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.39.59:936][339]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.39.59:936][339]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:39:59)
+[2023.04.16-16.39.59:936][339]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.40.00:147][339]LogPlayLevel: PIE: StaticDuplicateObject took: (0.210322s)
+[2023.04.16-16.40.00:148][339]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.40.00:148][339]LogPlayLevel: PIE: World Init took: (0.001299s)
+[2023.04.16-16.40.00:148][339]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.211877s)
+[2023.04.16-16.40.00:165][339]LogUObjectHash: Compacting FUObjectHashTables data took   2.00ms
+[2023.04.16-16.40.00:170][339]LogAudio: Display: Creating Audio Device:                 Id: 10, Scope: Unique, Realtime: True
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.40.00:170][339]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.40.00:170][339]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.40.00:171][339]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.40.00:171][339]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.40.00:171][339]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.40.00:171][339]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.40.00:174][339]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.40.00:174][339]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.40.00:182][339]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.40.00:182][339]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.40.00:182][339]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.40.00:182][339]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.40.00:182][339]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.40.00:182][339]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.40.00:182][339]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.40.00:183][339]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.40.00:184][339]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.40.00:184][339]LogInit: FAudioDevice initialized.
+[2023.04.16-16.40.00:184][339]LogAudio: Display: Audio Device (ID: 10) registered with world 'Stage_1'.
+[2023.04.16-16.40.00:190][339]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.40.00:216][339]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.40.00
+[2023.04.16-16.40.00:217][339]LogWorld: Bringing up level for play took: 0.027233
+[2023.04.16-16.40.00:217][339]LogOnline: OSS: Creating online subsystem instance for: :Context_14
+[2023.04.16-16.40.00:221][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:221][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:221][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:227][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:228][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:228][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:230][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:230][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:230][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:233][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:233][339]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.40.00:235][339]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.40.00:236][339]PIE: 에디터에서 플레이 총 시작 시간 0.3초입니다.
+[2023.04.16-16.41.20:544][821]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box8)
+[2023.04.16-16.41.23:628][ 20]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_35)
+[2023.04.16-16.41.27:270][242]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Magnet_Block_Dummy_Box8)
+[2023.04.16-16.41.30:055][404]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box42)
+[2023.04.16-16.41.34:273][790]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt11)
+[2023.04.16-16.41.44:544][671]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.BP_Conveyorbelt11_6 의 모빌리티: 이동 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.41.47:801][963]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.41.53:410][533]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.41.53:891][567]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt13)
+[2023.04.16-16.41.59:220][ 17]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.42.05:991][654]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.42.05:991][654]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.42.05:992][654]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.42.05:996][654]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.42.06:002][654]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.42.06:020][654]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.42.06:037][654]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-16.42.06:037][654]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.42.06:039][654]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.42.06:041][654]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.42.06:049][654]LogUObjectHash: Compacting FUObjectHashTables data took   2.13ms
+[2023.04.16-16.42.06:179][655]LogPlayLevel: Display: Destroying online subsystem :Context_14
+[2023.04.16-16.42.07:156][737]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.42.07:163][737]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.42.21:424][998]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_39)
+[2023.04.16-16.42.29:381][635]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.42.29:387][635]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.42.29:387][635]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:42:29)
+[2023.04.16-16.42.29:387][635]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.42.29:595][635]LogPlayLevel: PIE: StaticDuplicateObject took: (0.207198s)
+[2023.04.16-16.42.29:596][635]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.42.29:596][635]LogPlayLevel: PIE: World Init took: (0.001355s)
+[2023.04.16-16.42.29:596][635]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.208807s)
+[2023.04.16-16.42.29:613][635]LogUObjectHash: Compacting FUObjectHashTables data took   2.44ms
+[2023.04.16-16.42.29:617][635]LogAudio: Display: Creating Audio Device:                 Id: 11, Scope: Unique, Realtime: True
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.42.29:617][635]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.42.29:617][635]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.42.29:617][635]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.42.29:617][635]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.42.29:617][635]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.42.29:621][635]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.42.29:621][635]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.42.29:628][635]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.42.29:628][635]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.42.29:628][635]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.42.29:628][635]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.42.29:630][635]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.42.29:630][635]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.42.29:630][635]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.42.29:630][635]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.42.29:631][635]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.42.29:631][635]LogInit: FAudioDevice initialized.
+[2023.04.16-16.42.29:631][635]LogAudio: Display: Audio Device (ID: 11) registered with world 'Stage_1'.
+[2023.04.16-16.42.29:641][635]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.42.29:668][635]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.42.29
+[2023.04.16-16.42.29:670][635]LogWorld: Bringing up level for play took: 0.028276
+[2023.04.16-16.42.29:670][635]LogOnline: OSS: Creating online subsystem instance for: :Context_15
+[2023.04.16-16.42.29:674][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:674][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:675][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:680][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:680][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:680][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:682][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:682][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:682][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:685][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:685][635]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.42.29:687][635]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.42.29:688][635]PIE: 에디터에서 플레이 총 시작 시간 0.302초입니다.
+[2023.04.16-16.42.42:351][113]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.42.42:351][113]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.42.42:351][113]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.42.42:356][113]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.42.42:364][113]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.42.42:382][113]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.42.42:399][113]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-16.42.42:399][113]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.42.42:400][113]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.42.42:402][113]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.42.42:414][113]LogUObjectHash: Compacting FUObjectHashTables data took   1.99ms
+[2023.04.16-16.42.42:548][114]LogPlayLevel: Display: Destroying online subsystem :Context_15
+[2023.04.16-16.42.43:984][249]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.42.43:989][249]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.42.48:073][575]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt11)
+[2023.04.16-16.42.48:575][627]LogEditorViewport: Clicking on Actor (LMB): Brush (Sphere 브러시2)
+[2023.04.16-16.42.49:877][774]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube377)
+[2023.04.16-16.42.51:239][930]Cmd: DELETE
+[2023.04.16-16.42.51:239][930]Cmd: ACTOR DELETE
+[2023.04.16-16.42.51:311][930]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.42.51:328][930]LogUObjectHash: Compacting FUObjectHashTables data took   1.94ms
+[2023.04.16-16.42.51:330][930]LogEditorActor: Deleted 1 Actors (0.091 secs)
+[2023.04.16-16.42.54:236][131]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box42)
+[2023.04.16-16.42.55:434][255]Cmd: DELETE
+[2023.04.16-16.42.55:434][255]Cmd: ACTOR DELETE
+[2023.04.16-16.42.55:508][255]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.42.55:523][255]LogUObjectHash: Compacting FUObjectHashTables data took   0.56ms
+[2023.04.16-16.42.55:524][255]LogEditorActor: Deleted 1 Actors (0.090 secs)
+[2023.04.16-16.42.58:528][511]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt11)
+[2023.04.16-16.43.15:694][237]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt12)
+[2023.04.16-16.43.24:304][170]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt13)
+[2023.04.16-16.43.27:633][454]LogEditorViewport: Clicking on Actor (context menu): BP_Conveyorbelt_C (BP_Conveyorbelt12)
+[2023.04.16-16.43.28:496][534]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt12)
+[2023.04.16-16.43.30:949][793]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt13)
+[2023.04.16-16.43.34:453][189]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt14)
+[2023.04.16-16.43.39:709][720]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt11)
+[2023.04.16-16.43.48:695][651]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt12)
+[2023.04.16-16.43.55:668][429]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt13)
+[2023.04.16-16.44.04:776][399]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box11)
+[2023.04.16-16.44.06:034][539]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt14)
+[2023.04.16-16.44.16:290][699]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt13)
+[2023.04.16-16.44.18:297][910]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt12)
+[2023.04.16-16.44.19:625][ 43]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt11)
+[2023.04.16-16.44.33:746][100]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box43)
+[2023.04.16-16.44.36:610][405]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt28)
+[2023.04.16-16.44.38:717][644]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box43)
+[2023.04.16-16.44.41:750][983]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt28)
+[2023.04.16-16.44.45:287][381]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Conveyorbelt_Box43)
+[2023.04.16-16.44.46:508][521]Cmd: DELETE
+[2023.04.16-16.44.46:508][521]Cmd: ACTOR DELETE
+[2023.04.16-16.44.46:581][521]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.16-16.44.46:599][521]LogUObjectHash: Compacting FUObjectHashTables data took   1.68ms
+[2023.04.16-16.44.46:605][521]LogEditorActor: Deleted 1 Actors (0.097 secs)
+[2023.04.16-16.44.47:547][632]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt28)
+[2023.04.16-16.45.00:330][749]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.16-16.45.20:660][ 61]LogUObjectHash: Compacting FUObjectHashTables data took   1.22ms
+[2023.04.16-16.45.21:418][ 61]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1CFB85A8C42910A0A57DD15B55703362E.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-16.45.22:758][ 61]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltDataDA5C794B458CF644C3D1869DDEB933CE.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-16.45.22:781][ 61]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-16.45.22:781][ 61]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-16.45.22:781][ 61]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-16.45.24:118][171]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt2)
+[2023.04.16-16.45.27:452][531]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt3)
+[2023.04.16-16.45.30:803][902]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt4)
+[2023.04.16-16.45.36:017][384]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt5)
+[2023.04.16-16.45.39:172][723]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt6)
+[2023.04.16-16.45.44:168][189]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box10)
+[2023.04.16-16.45.59:478][935]Cmd: TRANSACTION UNDO
+[2023.04.16-16.45.59:478][935]LogEditorTransaction: Undo 위치 설정
+[2023.04.16-16.46.00:874][ 43]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.16-16.46.04:612][463]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt2)
+[2023.04.16-16.46.05:892][610]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box10)
+[2023.04.16-16.46.06:937][729]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.16-16.46.09:540][ 24]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt2)
+[2023.04.16-16.46.13:561][483]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt3)
+[2023.04.16-16.46.17:129][863]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt4)
+[2023.04.16-16.46.19:904][171]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt3)
+[2023.04.16-16.46.23:333][441]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt5)
+[2023.04.16-16.46.26:018][699]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt6)
+[2023.04.16-16.46.31:250][191]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt2)
+[2023.04.16-16.46.32:860][377]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.16-16.46.33:934][495]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt2)
+[2023.04.16-16.46.38:356][991]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt3)
+[2023.04.16-16.46.45:323][786]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt4)
+[2023.04.16-16.46.54:040][701]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt5)
+[2023.04.16-16.47.00:638][470]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt6)
+[2023.04.16-16.47.07:679][265]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt7)
+[2023.04.16-16.47.20:151][544]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt8)
+[2023.04.16-16.47.23:665][932]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt7)
+[2023.04.16-16.47.24:638][ 43]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt8)
+[2023.04.16-16.47.25:130][ 95]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt7)
+[2023.04.16-16.47.33:010][  5]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt8)
+[2023.04.16-16.47.36:902][449]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt7)
+[2023.04.16-16.47.41:611][978]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt8)
+[2023.04.16-16.47.50:528][999]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt7)
+[2023.04.16-16.47.51:275][ 83]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube706)
+[2023.04.16-16.47.54:898][260]LogUObjectHash: Compacting FUObjectHashTables data took   2.46ms
+[2023.04.16-16.47.55:629][260]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1194F012D4F5922C311F356B508397384.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-16.47.56:995][260]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltDataF0F655404A131782F431F7896487A434.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-16.47.57:033][260]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-16.47.57:033][260]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-16.47.57:034][260]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-16.47.58:293][400]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.16-16.47.58:299][400]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.47.58:299][400]PIE: New page: PIE 세션: Stage_1 (2023. 4. 17. 오전 10:47:58)
+[2023.04.16-16.47.58:299][400]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.47.58:502][400]LogPlayLevel: PIE: StaticDuplicateObject took: (0.202978s)
+[2023.04.16-16.47.58:503][400]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.47.58:503][400]LogPlayLevel: PIE: World Init took: (0.001373s)
+[2023.04.16-16.47.58:503][400]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.204628s)
+[2023.04.16-16.47.58:521][400]LogUObjectHash: Compacting FUObjectHashTables data took   2.02ms
+[2023.04.16-16.47.58:521][400]LogAudio: Display: Creating Audio Device:                 Id: 12, Scope: Unique, Realtime: True
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.47.58:521][400]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.47.58:521][400]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.47.58:522][400]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.47.58:522][400]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.47.58:522][400]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.47.58:522][400]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.47.58:526][400]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.47.58:526][400]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.47.58:533][400]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.47.58:533][400]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.47.58:533][400]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.47.58:534][400]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.47.58:534][400]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.47.58:534][400]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.47.58:534][400]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.47.58:535][400]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.47.58:535][400]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.47.58:535][400]LogInit: FAudioDevice initialized.
+[2023.04.16-16.47.58:535][400]LogAudio: Display: Audio Device (ID: 12) registered with world 'Stage_1'.
+[2023.04.16-16.47.58:547][400]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.47.58:574][400]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.47.58
+[2023.04.16-16.47.58:575][400]LogWorld: Bringing up level for play took: 0.027739
+[2023.04.16-16.47.58:575][400]LogOnline: OSS: Creating online subsystem instance for: :Context_16
+[2023.04.16-16.47.58:580][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:580][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:580][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:585][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:586][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:586][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:587][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:587][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:587][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:591][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:591][400]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.47.58:593][400]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.47.58:594][400]PIE: 에디터에서 플레이 총 시작 시간 0.296초입니다.
+[2023.04.16-16.48.06:749][221]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.48.06:749][221]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.48.06:750][221]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.48.06:755][221]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.48.06:767][221]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.48.06:785][221]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.48.06:802][221]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.48.06:802][221]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.48.06:803][221]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.48.06:816][221]LogUObjectHash: Compacting FUObjectHashTables data took   1.94ms
+[2023.04.16-16.48.06:928][222]LogPlayLevel: Display: Destroying online subsystem :Context_16
+[2023.04.16-16.48.08:166][334]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.48.08:172][334]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.48.12:639][620]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube740)
+[2023.04.16-16.48.13:053][658]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.48.18:320][ 67]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.48.18:320][ 67]PIE: New page: SIE 세션: Stage_1 (2023. 4. 17. 오전 10:48:18)
+[2023.04.16-16.48.18:320][ 67]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.48.18:527][ 67]LogPlayLevel: PIE: StaticDuplicateObject took: (0.207681s)
+[2023.04.16-16.48.18:528][ 67]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.48.18:529][ 67]LogPlayLevel: PIE: World Init took: (0.001410s)
+[2023.04.16-16.48.18:529][ 67]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.209374s)
+[2023.04.16-16.48.18:545][ 67]LogUObjectHash: Compacting FUObjectHashTables data took   2.00ms
+[2023.04.16-16.48.18:547][ 67]LogAudio: Display: Creating Audio Device:                 Id: 13, Scope: Unique, Realtime: True
+[2023.04.16-16.48.18:547][ 67]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.48.18:547][ 67]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.48.18:547][ 67]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.48.18:547][ 67]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.48.18:547][ 67]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.48.18:548][ 67]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.48.18:548][ 67]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.48.18:548][ 67]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.48.18:548][ 67]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.48.18:548][ 67]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.48.18:548][ 67]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.48.18:549][ 67]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.48.18:552][ 67]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.48.18:552][ 67]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.48.18:559][ 67]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.48.18:561][ 67]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.48.18:561][ 67]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.48.18:561][ 67]LogInit: FAudioDevice initialized.
+[2023.04.16-16.48.18:561][ 67]LogAudio: Display: Audio Device (ID: 13) registered with world 'Stage_1'.
+[2023.04.16-16.48.18:570][ 67]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.48.18:599][ 67]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.48.18
+[2023.04.16-16.48.18:599][ 67]LogWorld: Bringing up level for play took: 0.027654
+[2023.04.16-16.48.18:599][ 67]LogOnline: OSS: Creating online subsystem instance for: :Context_17
+[2023.04.16-16.48.18:601][ 67]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2023.04.16-16.48.18:602][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:603][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:603][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:609][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:610][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:610][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:612][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:612][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:612][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:614][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:614][ 67]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.18:616][ 67]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.48.18:618][ 67]PIE: 에디터에서 플레이 총 시작 시간 0.299초입니다.
+[2023.04.16-16.48.20:121][139]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.48.20:121][139]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.48.20:122][139]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.48.20:127][139]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.48.20:143][139]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.48.20:161][139]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.48.20:179][139]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-16.48.20:179][139]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.48.20:179][139]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.48.20:181][139]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.48.20:190][139]LogUObjectHash: Compacting FUObjectHashTables data took   1.99ms
+[2023.04.16-16.48.20:299][140]LogPlayLevel: Display: Destroying online subsystem :Context_17
+[2023.04.16-16.48.21:447][239]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.48.21:454][239]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.48.24:234][475]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.48.29:659][919]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box11)
+[2023.04.16-16.48.30:567][  1]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.48.39:049][778]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box11)
+[2023.04.16-16.48.39:735][850]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_37)
+[2023.04.16-16.48.44:157][246]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Generator_Dummy_Box11)
+[2023.04.16-16.48.50:622][747]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.16-16.48.50:628][747]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-16.48.50:628][747]PIE: New page: SIE 세션: Stage_1 (2023. 4. 17. 오전 10:48:50)
+[2023.04.16-16.48.50:628][747]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.48.50:830][747]LogPlayLevel: PIE: StaticDuplicateObject took: (0.202165s)
+[2023.04.16-16.48.50:831][747]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-16.48.50:832][747]LogPlayLevel: PIE: World Init took: (0.001338s)
+[2023.04.16-16.48.50:832][747]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.203770s)
+[2023.04.16-16.48.50:848][747]LogUObjectHash: Compacting FUObjectHashTables data took   2.00ms
+[2023.04.16-16.48.50:851][747]LogAudio: Display: Creating Audio Device:                 Id: 14, Scope: Unique, Realtime: True
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-16.48.50:851][747]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-16.48.50:851][747]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-16.48.50:852][747]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-16.48.50:852][747]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-16.48.50:852][747]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-16.48.50:852][747]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-16.48.50:855][747]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-16.48.50:855][747]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-16.48.50:863][747]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-16.48.50:863][747]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-16.48.50:863][747]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-16.48.50:863][747]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-16.48.50:864][747]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-16.48.50:864][747]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-16.48.50:864][747]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-16.48.50:865][747]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-16.48.50:865][747]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-16.48.50:865][747]LogInit: FAudioDevice initialized.
+[2023.04.16-16.48.50:865][747]LogAudio: Display: Audio Device (ID: 14) registered with world 'Stage_1'.
+[2023.04.16-16.48.50:874][747]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-16.48.50:901][747]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-01.48.50
+[2023.04.16-16.48.50:901][747]LogWorld: Bringing up level for play took: 0.026778
+[2023.04.16-16.48.50:901][747]LogOnline: OSS: Creating online subsystem instance for: :Context_18
+[2023.04.16-16.48.50:903][747]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2023.04.16-16.48.50:905][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:905][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:905][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:911][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:911][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:912][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:914][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:914][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:914][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:916][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:917][747]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-16.48.50:919][747]PIE: 서버가 로그인했습니다.
+[2023.04.16-16.48.50:920][747]PIE: 에디터에서 플레이 총 시작 시간 0.292초입니다.
+[2023.04.16-16.52.17:019][825]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_40)
+[2023.04.16-16.52.47:013][845]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_40)
+[2023.04.16-16.54.17:149][437]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.54.17:150][437]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-16.54.17:150][437]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-16.54.17:155][437]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.54.17:164][437]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-16.54.17:169][437]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-16.54.17:186][437]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-16.54.17:186][437]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.54.17:187][437]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-16.54.17:189][437]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-16.54.17:198][437]LogUObjectHash: Compacting FUObjectHashTables data took   2.21ms
+[2023.04.16-16.54.17:300][438]LogPlayLevel: Display: Destroying online subsystem :Context_18
+[2023.04.16-16.54.29:379][768]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.54.29:385][768]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-16.54.32:394][102]LogUObjectHash: Compacting FUObjectHashTables data took   1.93ms
+[2023.04.16-16.54.33:123][102]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_17A9719BB4E1CC5AA8EA6BEA3E4F4B1FF.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-16.54.34:568][102]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltData942D85D54E181B42BDE29089507A8BA1.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-16.54.34:603][102]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-16.54.34:603][102]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-16.54.34:603][102]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-16.54.57:150][449]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-16.55.01:736][921]Cmd: EDIT COPY
+[2023.04.16-16.55.02:608][ 24]Cmd: EDIT PASTE
+[2023.04.16-16.55.46:329][842]Cmd: TRANSACTION UNDO
+[2023.04.16-16.55.46:329][842]LogEditorTransaction: Undo Intensity 편집
+[2023.04.16-16.56.22:255][270]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.56.24:350][440]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.56.34:087][366]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.56.36:781][666]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.56.38:117][811]Cmd: TRANSACTION UNDO
+[2023.04.16-16.56.38:117][811]LogEditorTransaction: Undo 액터 클릭
+[2023.04.16-16.56.39:660][910]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.56.49:971][ 66]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.56.54:386][494]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head4)
+[2023.04.16-16.56.57:899][899]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head5)
+[2023.04.16-16.57.02:501][378]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-16.57.03:073][436]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.57.11:941][383]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head4)
+[2023.04.16-16.57.20:603][327]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head5)
+[2023.04.16-16.57.30:033][352]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.57.40:220][522]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-16.57.41:180][630]Cmd: TRANSACTION UNDO
+[2023.04.16-16.57.41:180][630]LogEditorTransaction: Undo 액터 클릭
+[2023.04.16-16.57.42:807][764]Cmd: TRANSACTION UNDO
+[2023.04.16-16.57.42:807][764]LogEditorTransaction: Undo 위치 설정
+[2023.04.16-16.57.44:089][901]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-16.57.44:774][975]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.57.46:897][198]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.57.53:560][835]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight8)
+[2023.04.16-16.58.01:859][654]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight8)
+[2023.04.16-16.58.13:423][562]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight8)
+[2023.04.16-16.58.14:239][652]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-16.58.15:176][757]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight8)
+[2023.04.16-16.58.20:623][173]Cmd: TRANSACTION UNDO
+[2023.04.16-16.58.20:623][173]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-16.58.32:210][322]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.58.39:644][974]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight8)
+[2023.04.16-16.58.42:309][270]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.59.40:881][583]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head3)
+[2023.04.16-16.59.41:431][643]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-16.59.58:366][511]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head4)
+[2023.04.16-17.00.00:735][779]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.00.04:797][190]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head5)
+[2023.04.16-17.00.06:971][414]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_4)
+[2023.04.16-17.00.12:204][922]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-17.00.16:899][323]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.00.19:976][670]Cmd: TRANSACTION UNDO
+[2023.04.16-17.00.19:976][670]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-17.00.53:146][993]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head4)
+[2023.04.16-17.00.53:671][ 49]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.00.58:390][470]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.00.59:573][607]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head4)
+[2023.04.16-17.01.00:526][715]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head4)
+[2023.04.16-17.01.01:037][773]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.01.03:953][994]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_4)
+[2023.04.16-17.01.26:803][381]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.01.32:829][ 41]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.01.39:377][781]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.01.40:713][928]LogEditorViewport: Clicking on Actor (CTRL LMB): PointLight (Door_light_4)
+[2023.04.16-17.01.42:196][ 97]LogEditorViewport: Clicking on Actor (CTRL LMB): PointLight (Door_light_2)
+[2023.04.16-17.02.00:711][903]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-17.02.02:029][ 55]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube723)
+[2023.04.16-17.02.12:993][940]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Generator_2)
+[2023.04.16-17.02.18:133][378]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.02.55:419][683]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.02.59:788][ 60]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_4)
+[2023.04.16-17.03.03:545][389]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.03.26:068][283]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.03.38:938][321]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_4)
+[2023.04.16-17.03.47:352][ 36]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_3)
+[2023.04.16-17.03.53:010][599]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube398)
+[2023.04.16-17.03.56:091][888]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube712)
+[2023.04.16-17.03.56:830][964]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.04.01:927][514]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube414)
+[2023.04.16-17.04.09:729][225]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.16-17.04.09:736][225]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-17.04.09:736][225]PIE: New page: SIE 세션: Stage_1 (2023. 4. 17. 오전 11:04:09)
+[2023.04.16-17.04.09:736][225]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.04.09:940][225]LogPlayLevel: PIE: StaticDuplicateObject took: (0.204171s)
+[2023.04.16-17.04.09:941][225]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-17.04.09:942][225]LogPlayLevel: PIE: World Init took: (0.001472s)
+[2023.04.16-17.04.09:942][225]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.205897s)
+[2023.04.16-17.04.09:958][225]LogUObjectHash: Compacting FUObjectHashTables data took   2.14ms
+[2023.04.16-17.04.09:966][225]LogAudio: Display: Creating Audio Device:                 Id: 15, Scope: Unique, Realtime: True
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-17.04.09:966][225]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-17.04.09:966][225]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-17.04.09:967][225]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-17.04.09:967][225]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-17.04.09:967][225]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-17.04.09:967][225]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-17.04.09:970][225]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-17.04.09:970][225]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-17.04.09:979][225]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-17.04.09:979][225]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-17.04.09:979][225]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-17.04.09:979][225]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-17.04.09:980][225]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-17.04.09:980][225]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-17.04.09:980][225]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-17.04.09:980][225]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-17.04.09:981][225]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-17.04.09:981][225]LogInit: FAudioDevice initialized.
+[2023.04.16-17.04.09:981][225]LogAudio: Display: Audio Device (ID: 15) registered with world 'Stage_1'.
+[2023.04.16-17.04.09:990][225]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-17.04.10:017][225]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-02.04.10
+[2023.04.16-17.04.10:017][225]LogWorld: Bringing up level for play took: 0.026147
+[2023.04.16-17.04.10:017][225]LogOnline: OSS: Creating online subsystem instance for: :Context_22
+[2023.04.16-17.04.10:019][225]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2023.04.16-17.04.10:020][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:021][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:021][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:026][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:027][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:027][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:029][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:029][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:029][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:031][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:032][225]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.04.10:035][225]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.04.16-17.04.10:072][225]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.036 s
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: === Handled ensure: ===
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: 
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: Ensure condition failed: Component->HasBegunPlay() [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Actor.cpp] [Line: 3557]
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: Failed to route BeginPlay (PowerLightControlComponent /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Door_light_2.PowerLightControl)
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: Stack: 
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff41c0ff01 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff401c73c4 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff401d0c1f UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff415dba95 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff4091ca31 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff4157fb3e UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff4093eb09 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3efe2c45 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3f00622f UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3efe397d UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3f023772 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3f026d31 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3f0265f8 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3ea80c8c UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fff3f382ba6 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007ff7c09287a0 UE4Editor.exe!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007ff7c0940fcc UE4Editor.exe!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007ff7c09410ba UE4Editor.exe!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007ff7c09440dd UE4Editor.exe!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007ff7c0955984 UE4Editor.exe!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007ff7c095853a UE4Editor.exe!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fffbb1e269d KERNEL32.DLL!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: [Callstack] 0x00007fffbbe8a9f8 ntdll.dll!UnknownFunction []
+[2023.04.16-17.04.10:072][225]LogOutputDevice: Error: 
+[2023.04.16-17.04.10:079][225]LogStats:                SubmitErrorReport -  0.000 s
+[2023.04.16-17.04.11:003][225]LogStats:                    SendNewReport -  0.925 s
+[2023.04.16-17.04.11:003][225]LogStats:             FDebug::EnsureFailed -  0.968 s
+[2023.04.16-17.04.11:004][225]PIE: 서버가 로그인했습니다.
+[2023.04.16-17.04.11:006][225]PIE: 에디터에서 플레이 총 시작 시간 1.271초입니다.
+[2023.04.16-17.06.10:449][299]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.06.10:450][299]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.06.10:450][299]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-17.06.10:456][299]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.06.10:464][299]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-17.06.10:482][299]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.06.10:499][299]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-17.06.10:499][299]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.06.10:500][299]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.06.10:502][299]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.06.10:510][299]LogUObjectHash: Compacting FUObjectHashTables data took   2.18ms
+[2023.04.16-17.06.10:624][300]LogPlayLevel: Display: Destroying online subsystem :Context_22
+[2023.04.16-17.06.12:207][450]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.06.12:213][450]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.06.17:696][884]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head)
+[2023.04.16-17.06.18:245][938]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube452)
+[2023.04.16-17.06.18:880][  9]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-17.06.29:878][ 97]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_02)
+[2023.04.16-17.06.32:966][445]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-17.06.49:387][823]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_02)
+[2023.04.16-17.06.54:347][302]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube452)
+[2023.04.16-17.06.54:796][351]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-17.07.27:402][166]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.16-17.07.27:408][166]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-17.07.27:409][166]PIE: New page: SIE 세션: Stage_1 (2023. 4. 17. 오전 11:07:27)
+[2023.04.16-17.07.27:409][166]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.07.27:616][166]LogPlayLevel: PIE: StaticDuplicateObject took: (0.206514s)
+[2023.04.16-17.07.27:617][166]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-17.07.27:617][166]LogPlayLevel: PIE: World Init took: (0.001327s)
+[2023.04.16-17.07.27:617][166]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.208096s)
+[2023.04.16-17.07.27:634][166]LogUObjectHash: Compacting FUObjectHashTables data took   2.02ms
+[2023.04.16-17.07.27:639][166]LogAudio: Display: Creating Audio Device:                 Id: 16, Scope: Unique, Realtime: True
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-17.07.27:639][166]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-17.07.27:639][166]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-17.07.27:639][166]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-17.07.27:639][166]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-17.07.27:639][166]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-17.07.27:642][166]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-17.07.27:642][166]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-17.07.27:650][166]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-17.07.27:650][166]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-17.07.27:650][166]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-17.07.27:650][166]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-17.07.27:651][166]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-17.07.27:651][166]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-17.07.27:651][166]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-17.07.27:652][166]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-17.07.27:652][166]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-17.07.27:652][166]LogInit: FAudioDevice initialized.
+[2023.04.16-17.07.27:652][166]LogAudio: Display: Audio Device (ID: 16) registered with world 'Stage_1'.
+[2023.04.16-17.07.27:657][166]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-17.07.27:685][166]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-02.07.27
+[2023.04.16-17.07.27:686][166]LogWorld: Bringing up level for play took: 0.027679
+[2023.04.16-17.07.27:686][166]LogOnline: OSS: Creating online subsystem instance for: :Context_23
+[2023.04.16-17.07.27:688][166]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2023.04.16-17.07.27:689][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:690][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:691][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:696][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:696][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:696][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:698][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:699][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:699][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:701][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:701][166]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.07.27:704][166]PIE: 서버가 로그인했습니다.
+[2023.04.16-17.07.27:705][166]PIE: 에디터에서 플레이 총 시작 시간 0.298초입니다.
+[2023.04.16-17.07.29:302][313]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.07.29:302][313]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.07.29:303][313]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-17.07.29:308][313]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.07.29:315][313]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-17.07.29:327][313]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.07.29:343][313]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.16-17.07.29:343][313]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.07.29:344][313]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.07.29:346][313]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.07.29:355][313]LogUObjectHash: Compacting FUObjectHashTables data took   1.97ms
+[2023.04.16-17.07.29:476][314]LogPlayLevel: Display: Destroying online subsystem :Context_23
+[2023.04.16-17.07.30:755][432]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.07.30:761][432]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.07.35:017][827]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head2)
+[2023.04.16-17.07.35:975][934]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head2)
+[2023.04.16-17.07.37:963][105]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_02)
+[2023.04.16-17.08.14:664][ 14]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head6)
+[2023.04.16-17.08.19:605][321]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube505)
+[2023.04.16-17.08.29:910][ 60]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head)
+[2023.04.16-17.08.32:501][299]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_01)
+[2023.04.16-17.08.37:002][657]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_2)
+[2023.04.16-17.09.06:074][707]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head6)
+[2023.04.16-17.09.11:332][218]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.09.15:420][686]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head6)
+[2023.04.16-17.09.18:791][ 58]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.09.31:172][214]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube706)
+[2023.04.16-17.09.36:465][555]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight5)
+[2023.04.16-17.09.49:137][417]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight4)
+[2023.04.16-17.09.52:733][721]LogEditorViewport: Clicking on Actor (LMB): PointLight (PointLight6)
+[2023.04.16-17.09.56:281][989]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.09.59:570][191]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube774)
+[2023.04.16-17.10.00:191][258]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube774)
+[2023.04.16-17.10.00:780][324]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube774)
+[2023.04.16-17.10.24:668][494]LogEditorViewport: Clicking on Actor (LMB): SpotLight (SpotLight6)
+[2023.04.16-17.11.37:440][ 78]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.11.40:341][397]LogUObjectHash: Compacting FUObjectHashTables data took   2.19ms
+[2023.04.16-17.11.41:057][397]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1BBCEE41F43074AC9178AC58A2CDB927A.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-17.11.42:382][397]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltData5E45FEB34257465D62DFB6B907319987.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-17.11.42:416][397]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-17.11.42:416][397]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-17.11.42:416][397]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-17.12.15:893][769]Cmd: TRANSACTION UNDO
+[2023.04.16-17.12.15:893][769]LogEditorTransaction: Undo 액터 이동
+[2023.04.16-17.12.19:650][991]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.12.34:615][241]Cmd: TRANSACTION UNDO
+[2023.04.16-17.12.34:615][241]LogEditorTransaction: Undo 컴포넌트 이동
+[2023.04.16-17.12.36:139][358]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head6)
+[2023.04.16-17.12.37:007][453]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.12.49:218][536]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head7)
+[2023.04.16-17.12.53:546][949]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_6)
+[2023.04.16-17.12.56:481][260]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head7)
+[2023.04.16-17.12.59:173][558]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_6)
+[2023.04.16-17.13.04:900][100]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_6)
+[2023.04.16-17.13.21:132][403]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.13.21:656][458]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_5)
+[2023.04.16-17.13.34:622][600]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (SM_MERGED_Cube706)
+[2023.04.16-17.13.35:183][660]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_7)
+[2023.04.16-17.13.48:160][753]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head8)
+[2023.04.16-17.13.50:986][ 52]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_7)
+[2023.04.16-17.13.56:439][673]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head8)
+[2023.04.16-17.13.58:996][953]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_7)
+[2023.04.16-17.14.06:681][717]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Alramlamp_head8)
+[2023.04.16-17.14.07:486][807]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_7)
+[2023.04.16-17.14.13:950][345]LogEditorViewport: Clicking on Actor (LMB): PointLight (Door_light_7)
+[2023.04.16-17.14.36:408][ 83]LogUObjectHash: Compacting FUObjectHashTables data took   1.79ms
+[2023.04.16-17.14.37:131][ 83]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1D999621A484812867E67C2B60EAB1B6D.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-17.14.38:469][ 83]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltData0350C3324576F804C3E7C4B5BA9290D5.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-17.14.38:498][ 83]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-17.14.38:498][ 83]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-17.14.38:498][ 83]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-17.14.42:934][449]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.16-17.14.42:941][449]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-17.14.42:941][449]PIE: New page: SIE 세션: Stage_1 (2023. 4. 17. 오전 11:14:42)
+[2023.04.16-17.14.42:941][449]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.14.43:148][449]LogPlayLevel: PIE: StaticDuplicateObject took: (0.206757s)
+[2023.04.16-17.14.43:149][449]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-17.14.43:149][449]LogPlayLevel: PIE: World Init took: (0.001408s)
+[2023.04.16-17.14.43:149][449]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.208418s)
+[2023.04.16-17.14.43:166][449]LogUObjectHash: Compacting FUObjectHashTables data took   2.18ms
+[2023.04.16-17.14.43:168][449]LogAudio: Display: Creating Audio Device:                 Id: 17, Scope: Unique, Realtime: True
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-17.14.43:168][449]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-17.14.43:168][449]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-17.14.43:168][449]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-17.14.43:168][449]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-17.14.43:168][449]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-17.14.43:172][449]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-17.14.43:172][449]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-17.14.43:179][449]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-17.14.43:179][449]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-17.14.43:179][449]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-17.14.43:180][449]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-17.14.43:180][449]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-17.14.43:180][449]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-17.14.43:180][449]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-17.14.43:180][449]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-17.14.43:180][449]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-17.14.43:180][449]LogInit: FAudioDevice initialized.
+[2023.04.16-17.14.43:180][449]LogAudio: Display: Audio Device (ID: 17) registered with world 'Stage_1'.
+[2023.04.16-17.14.43:190][449]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-17.14.43:218][449]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-02.14.43
+[2023.04.16-17.14.43:218][449]LogWorld: Bringing up level for play took: 0.027831
+[2023.04.16-17.14.43:218][449]LogOnline: OSS: Creating online subsystem instance for: :Context_24
+[2023.04.16-17.14.43:220][449]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2023.04.16-17.14.43:221][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:222][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:222][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:226][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:227][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:227][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:229][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:230][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:230][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:233][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:233][449]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.14.43:236][449]PIE: 서버가 로그인했습니다.
+[2023.04.16-17.14.43:238][449]PIE: 에디터에서 플레이 총 시작 시간 0.297초입니다.
+[2023.04.16-17.17.49:019][502]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.17.49:019][502]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.17.49:020][502]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-17.17.49:025][502]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.17.49:035][502]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-17.17.49:047][502]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.17.49:065][502]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.17.49:065][502]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.17.49:066][502]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.17.49:082][502]LogUObjectHash: Compacting FUObjectHashTables data took   2.11ms
+[2023.04.16-17.17.49:210][503]LogPlayLevel: Display: Destroying online subsystem :Context_24
+[2023.04.16-17.17.50:709][650]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.17.50:716][650]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.17.52:235][807]LogUObjectHash: Compacting FUObjectHashTables data took   2.26ms
+[2023.04.16-17.17.52:957][807]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_13ABBE2084C936B41BA2E419D6CF1CAFE.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-17.17.54:286][807]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltDataF0C012AB431D9D5F09182EA8DD0710C2.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-17.17.54:315][807]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-17.17.54:315][807]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-17.17.54:315][807]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-17.18.05:913][405]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (L_Stage_01_Door_L_Stage_01_Door_Border3)
+[2023.04.16-17.18.08:007][598]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (L_Stage_01_Door_L_Stage_01_Door_Border3)
+[2023.04.16-17.18.09:683][772]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (L_Stage_01_Door_L_Stage_01_Door_Border3)
+[2023.04.16-17.18.10:139][825]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (L_Stage_01_Door_L_Stage_01_Door_Border3)
+[2023.04.16-17.18.10:635][882]LogEditorViewport: Clicking on Actor (LMB): SpotLight (Door_spotlight)
+[2023.04.16-17.18.21:218][973]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.16-17.18.21:224][973]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.16-17.18.21:225][973]PIE: New page: SIE 세션: Stage_1 (2023. 4. 17. 오전 11:18:21)
+[2023.04.16-17.18.21:225][973]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.18.21:453][973]LogPlayLevel: PIE: StaticDuplicateObject took: (0.228351s)
+[2023.04.16-17.18.21:454][973]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.16-17.18.21:455][973]LogPlayLevel: PIE: World Init took: (0.001464s)
+[2023.04.16-17.18.21:455][973]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/Stage_1.Stage_1 to /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 (0.230105s)
+[2023.04.16-17.18.21:471][973]LogUObjectHash: Compacting FUObjectHashTables data took   1.97ms
+[2023.04.16-17.18.21:474][973]LogAudio: Display: Creating Audio Device:                 Id: 18, Scope: Unique, Realtime: True
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.16-17.18.21:474][973]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.16-17.18.21:474][973]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.16-17.18.21:475][973]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.16-17.18.21:475][973]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.16-17.18.21:475][973]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.16-17.18.21:475][973]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.16-17.18.21:477][973]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.16-17.18.21:477][973]LogAudioMixer: Display: 1: FrontRight
+[2023.04.16-17.18.21:486][973]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.16-17.18.21:486][973]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.16-17.18.21:486][973]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.16-17.18.21:486][973]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.16-17.18.21:486][973]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.16-17.18.21:486][973]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.16-17.18.21:486][973]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.16-17.18.21:487][973]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.16-17.18.21:487][973]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.16-17.18.21:487][973]LogInit: FAudioDevice initialized.
+[2023.04.16-17.18.21:487][973]LogAudio: Display: Audio Device (ID: 18) registered with world 'Stage_1'.
+[2023.04.16-17.18.21:497][973]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.16-17.18.21:525][973]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1 up for play (max tick rate 0) at 2023.04.17-02.18.21
+[2023.04.16-17.18.21:525][973]LogWorld: Bringing up level for play took: 0.028232
+[2023.04.16-17.18.21:526][973]LogOnline: OSS: Creating online subsystem instance for: :Context_25
+[2023.04.16-17.18.21:527][973]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2023.04.16-17.18.21:529][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box002_34 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:530][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box3 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:530][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box5_70 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:535][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube397_65 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:535][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube398 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:536][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Cube414 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:538][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_01_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:539][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_2 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:539][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.D_Generator_5 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:541][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box4 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:541][973]PIE: Warning: /Game/Levels/UsedLevel/UEDPIE_0_Stage_1.Stage_1:PersistentLevel.Magnet_Block_Dummy_Box6 의 모빌리티: 질량 중심 설정 작업을 위해서는 StaticMeshComponent0 가 '무버블'이어야 합니다. 
+[2023.04.16-17.18.21:543][973]PIE: 서버가 로그인했습니다.
+[2023.04.16-17.18.21:544][973]PIE: 에디터에서 플레이 총 시작 시간 0.32초입니다.
+[2023.04.16-17.18.23:549][136]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.18.23:549][136]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Stage_1
+[2023.04.16-17.18.23:550][136]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.16-17.18.23:555][136]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.18.23:562][136]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.16-17.18.23:575][136]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.16-17.18.23:592][136]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.16-17.18.23:592][136]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.18.23:593][136]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.16-17.18.23:604][136]LogUObjectHash: Compacting FUObjectHashTables data took   2.05ms
+[2023.04.16-17.18.23:734][137]LogPlayLevel: Display: Destroying online subsystem :Context_25
+[2023.04.16-17.18.25:113][262]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.18.25:120][262]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.18.34:052][146]MapCheck: New page: 맵 체크
+[2023.04.16-17.18.34:167][146]Cmd: MAP REBUILD ALLVISIBLE
+[2023.04.16-17.18.34:167][146]LogEditorServer: Rebuildmap Clear paths rebuilt
+[2023.04.16-17.18.38:216][146]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=false
+[2023.04.16-17.18.38:405][146]LogNavigationDataBuild: Display: UNavigationSystemV1::Build started...
+[2023.04.16-17.18.38:405][146]LogNavigationDataBuild: Display:    Building navigation data using PHYSICS_INTERFACE_PHYSX.
+[2023.04.16-17.18.38:405][146]LogNavigationDataBuild: Display:    Building navigation data using WITH_PHYSX.
+[2023.04.16-17.18.38:431][146]LogUObjectHash: Compacting FUObjectHashTables data took   2.09ms
+[2023.04.16-17.18.38:447][146]LogLevel: Display: Export Material TexCoord Scales took 0.011 seconds.
+[2023.04.16-17.18.38:461][146]TextureStreamingBuild: Display: Build Texture Streaming took 0.014 seconds.
+[2023.04.16-17.18.38:478][146]LogUObjectHash: Compacting FUObjectHashTables data took   0.56ms
+[2023.04.16-17.18.38:482][146]LightingResults: New page: 라이팅 빌드 - 2023. 4. 17. 오전 11:18:38
+[2023.04.16-17.18.38:518][146]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2023.04.16-17.18.38:522][146]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2023.04.16-17.18.38:523][146]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2023.04.16-17.18.38:524][146]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2023.04.16-17.18.38:524][146]LogSwarmInterface: [TryOpenConnection] Local Process ID is 4728
+[2023.04.16-17.18.43:928][146]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2023.04.16-17.18.43:928][146]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2023.04.16-17.18.43:928][146]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2023.04.16-17.18.43:928][146]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2023.04.16-17.18.43:928][146]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2023.04.16-17.18.44:166][146]Cmd: MAP CHECK DONTDISPLAYDIALOG
+[2023.04.16-17.18.44:167][146]MapCheck: New page: Stage_1 - 2023. 4. 17. 오전 11:18:44
+[2023.04.16-17.18.44:167][146]MapCheck: Error: WorldSettings 맵 라이팅을 리빌드해야 합니다. 
+[2023.04.16-17.18.44:173][146]MapCheck: 맵 체크 완료: 오류 1 회, 경고 0 회, 소요 시간 5.928ms.
+[2023.04.16-17.18.44:174][146]LogEditorBuildUtils: Build time 0:10
+[2023.04.16-17.18.44:517][146]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.16-17.18.44:518][146]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2023.04.16-17.18.44:518][146]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2023.04.16-17.18.44:518][146]LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.04.16-17.18.44:518][146]LogShaderCompilers: Display: ================================================
+[2023.04.16-17.18.45:079][160]LogUObjectHash: Compacting FUObjectHashTables data took   4.26ms
+[2023.04.16-17.19.00:791][201]LightingResults: Warning: MainCharacter_Dummy 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.00:791][201]LightingResults: MainCharacter_Dummy Lightmap UV are overlapping by 30.1%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.01:356][229]LightingResults: Warning: SM_MERGED_Cube452 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.01:356][229]LightingResults: SM_MERGED_Cube452 Lightmap UV are overlapping by 2.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.04:145][375]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.04:145][375]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.06:058][508]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.19.06:068][508]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.19.11:803][998]LogUObjectHash: Compacting FUObjectHashTables data took   4.22ms
+[2023.04.16-17.19.13:034][998]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_169745D2E45CFFD284CBA41887526DD55.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-17.19.14:988][998]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltData3005DA9D461D42E80B5F30A3A0786AE7.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-17.19.15:024][998]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-17.19.15:024][998]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-17.19.15:025][998]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.16-17.19.21:448][447]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_SerratedWheel_02)
+[2023.04.16-17.19.22:817][556]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.22:817][556]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.23:268][589]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.23:268][589]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.24:897][677]LightingResults: Warning: MainCharacter_Dummy 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.24:897][677]LightingResults: MainCharacter_Dummy Lightmap UV are overlapping by 30.1%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.31:064][245]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.31:064][245]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.35:500][667]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.35:500][667]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.35:857][701]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.35:857][701]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.37:164][823]LightingResults: Warning: MainCharacter_Dummy 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.37:164][823]LightingResults: MainCharacter_Dummy Lightmap UV are overlapping by 30.1%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.38:461][946]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.38:461][946]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.39:550][ 49]LightingResults: Warning: MainCharacter_Dummy 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.39:550][ 49]LightingResults: MainCharacter_Dummy Lightmap UV are overlapping by 30.1%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:311][405]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:311][405]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:311][405]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:311][405]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:332][406]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:332][406]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:386][411]LightingResults: Warning: D_SerratedWheel_02 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:407][412]LightingResults: D_SerratedWheel_02 Lightmap UV are overlapping by 45.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:544][425]LightingResults: Warning: D_SerratedWheel_02 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:556][426]LightingResults: D_SerratedWheel_02 Lightmap UV are overlapping by 45.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:663][436]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:663][436]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.43:717][439]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.43:717][439]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.44:021][467]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.44:021][467]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.44:461][509]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.44:461][509]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.44:525][515]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.44:525][515]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.45:161][575]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.45:161][575]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.45:194][578]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.45:194][578]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.45:332][590]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.45:332][590]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.45:908][645]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.45:919][646]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.45:995][653]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.45:995][653]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.46:184][671]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.46:184][671]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.46:217][674]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.46:217][674]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.46:418][693]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.46:418][693]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.46:555][706]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.46:555][706]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.46:681][717]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.46:681][717]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.46:796][728]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.46:796][728]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:036][751]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:048][752]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:173][764]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:173][764]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:217][768]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:217][768]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:396][784]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:396][784]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:482][792]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:482][792]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:701][812]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:701][812]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:712][813]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:712][813]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:849][825]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:849][825]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.47:932][833]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.47:944][834]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:007][839]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:007][839]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:291][866]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:291][866]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:407][877]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:407][877]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:452][881]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:452][881]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:474][883]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:474][883]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:963][930]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:963][930]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.48:963][930]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.48:963][930]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.49:163][948]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.49:174][949]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.49:281][959]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.49:292][960]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.49:378][968]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.49:378][968]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.49:765][  4]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.49:765][  4]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.49:944][ 21]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.49:944][ 21]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.49:998][ 26]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.49:998][ 26]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.50:020][ 28]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.50:020][ 28]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.50:240][ 49]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.50:240][ 49]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.50:366][ 61]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.50:366][ 61]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.50:483][ 72]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.50:483][ 72]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.50:547][ 78]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.50:547][ 78]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:018][121]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:018][121]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:061][125]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:061][125]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:157][134]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:157][134]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:325][150]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:325][150]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:442][161]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:442][161]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:611][177]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:611][177]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:643][180]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:643][180]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:748][190]LightingResults: Warning: D_SerratedWheel_02 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:748][190]LightingResults: D_SerratedWheel_02 Lightmap UV are overlapping by 45.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:770][192]LightingResults: Warning: D_SerratedWheel_03 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:770][192]LightingResults: D_SerratedWheel_03 Lightmap UV are overlapping by 42.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:887][203]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:887][203]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.51:909][205]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.51:909][205]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:078][221]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:078][221]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:267][239]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:267][239]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:279][240]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:279][240]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:396][251]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:396][251]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:418][253]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:429][254]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:744][283]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:744][283]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:744][283]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:744][283]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:943][302]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:943][302]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.52:955][303]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.52:955][303]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.53:711][375]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.53:711][375]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.54:202][421]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.54:202][421]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.54:308][431]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.54:308][431]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.56:010][591]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.56:010][591]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.56:157][604]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.56:157][604]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.56:367][624]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.56:367][624]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.56:608][647]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.56:608][647]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.56:694][655]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.56:694][655]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.56:705][656]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.56:705][656]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.57:115][695]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.16-17.19.57:115][695]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.16-17.19.57:196][703]Job is a success!
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.138s
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:      Indirection Texture 32x32x16 = 0.1Mb
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:      BrickData (all levels) 5.6Mb (trimmed 2.6Mb due to 0.010000 MinBrickError)
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:      Bricks at depth
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:          0: 0.3% covering 100.0% of volume
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:          1: 9.7% covering 44.1% of volume
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:          2: 90.0% covering 6.4% of volume
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:      Bricks in each level
+[2023.04.16-17.19.57:533][704]LogVolumetricLightmapImport:          Stage_1 			 1167 bricks 	 100.0% (Persistent Level)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_1 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_1 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_2 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_2 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_3 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_3 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_4 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_4 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_5 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_5 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:127][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_6 (OODLE_AutoDXT, 256X256)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_6 (OODLE_DXT1, 256X256)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_7 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_7 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_8 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_8 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_9 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_9 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_10 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_10 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_11 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_11 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_12 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_12 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_13 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_13 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_14 (OODLE_AutoDXT, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_14 (OODLE_DXT1, 1024X1024)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_15 (OODLE_AutoDXT, 64X64)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.16-17.20.00:128][704]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_15 (OODLE_DXT1, 64X64)
+[2023.04.16-17.20.00:128][704]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_14 (BGRA8, 128X64)
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_15 (BGRA8, 32X32)
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_12 (BGRA8, 128X128)
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_13 (BGRA8, 1024X64)
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_9 (BGRA8, 256X512)
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_11 (BGRA8, 1024X512)
+[2023.04.16-17.20.00:334][704]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_10 (BGRA8, 1024X1024)
+[2023.04.16-17.20.00:416][704]Lightmass on DESKTOP-7O2N4A7: 1:14 min total, 292 ms importing, 233 ms setup, 10.9 sec photons, 1:03 min processing, 0 ms extra exporting [2905/2905 mappings]. Threads: 7:22 min total, 4:21 min processing.
+[2023.04.16-17.20.00:429][704]LogStaticLightingSystem: Stage_1_BuiltData storing lightmap data for 1025 meshes in 36 LightmapResourceClusters (28.5 Meshes per cluster).
+[2023.04.16-17.20.00:475][704]LogUObjectHash: Compacting FUObjectHashTables data took   2.27ms
+[2023.04.16-17.20.00:543][704]LogStaticLightingSystem: Illumination: 1:22 min (1.85 sec encoding lightmaps, 206 ms encoding shadowmaps)
+[2023.04.16-17.20.00:543][704]LogStaticLightingSystem: Lightmap texture memory:  26.1 MB (24.1 MB streaming, 2.0 MB non-streaming), 30 textures
+[2023.04.16-17.20.00:543][704]LogStaticLightingSystem: Shadowmap texture memory: 9.1 MB (8.5 MB streaming, 0.7 MB non-streaming), 7 textures
+[2023.04.16-17.20.00:978][704]DumpUnbuiltLightIteractions
+[2023.04.16-17.20.00:978][704]Lights with unbuilt interactions: 0
+[2023.04.16-17.20.00:978][704]
+[2023.04.16-17.20.00:978][704]Primitives with unbuilt interactions: 0
+[2023.04.16-17.20.01:079][704]LogTexture: Display: 텍스처 빌드: NewReflectionComponentTexture7CD92D95411519B0BEB7159484BAFEA4 (BGRA8, 128X128)
+[2023.04.16-17.20.01:151][705]Cmd: MAP CHECK NOTIFYRESULTS
+[2023.04.16-17.20.01:151][705]MapCheck: New page: Stage_1 - 2023. 4. 17. 오전 11:20:01
+[2023.04.16-17.20.01:157][705]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 5.69ms.
+[2023.04.16-17.29.15:496][ 68]LogUObjectHash: Compacting FUObjectHashTables data took   2.47ms
+[2023.04.16-17.29.16:187][ 68]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_Auto3ACD3D9734A0F61205E63C891A7D2ED16.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Levels/UsedLevel/Stage_1_Auto3.umap'
+[2023.04.16-17.29.16:191][ 68]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UsedLevel/Stage_1' took 0.711
+[2023.04.16-17.29.16:191][ 68]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.711
+[2023.04.16-17.39.16:106][989]LogUObjectHash: Compacting FUObjectHashTables data took   0.54ms
+[2023.04.16-17.39.16:110][989]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UsedLevel/Stage_1' took 0.016
+[2023.04.16-17.47.41:523][556]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.47.41:530][556]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.16-17.47.56:099][934]LogUObjectHash: Compacting FUObjectHashTables data took   0.60ms
+[2023.04.16-17.47.56:793][934]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1646B19914CE883DF8F3652967FA9C3B6.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.16-17.47.57:967][934]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltDataD783FC594B372A1248F0C697DB587041.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.16-17.47.57:993][934]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.16-17.47.57:993][934]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.16-17.47.57:993][934]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
