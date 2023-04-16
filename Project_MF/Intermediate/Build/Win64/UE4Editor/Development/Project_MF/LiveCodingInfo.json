@@ -23,6 +23,7 @@
 			"MainLevelScriptActor.cpp.obj",
 			"MainLevelUICanvasWidget.cpp.obj",
 			"MFActor.cpp.obj",
+			"MFSaveGame.cpp.obj",
 			"MovementRegistComponent.cpp.obj",
 			"MyClass.cpp.obj",
 			"PlayerAnimInstance.cpp.obj",
@@ -43,7 +44,6 @@
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActorObject.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
-			"MFSaveGame.cpp.obj",
 			"PowerConveyorMovementComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
@@ -85,11 +85,11 @@
 			"PowerMovementComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
+			"Project_MF.init.gen.cpp.obj",
 			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",
 			"TestActorObject.gen.cpp.obj",
-			"TestPlayerGameMode.gen.cpp.obj",
-			"Project_MF.init.gen.cpp.obj"
+			"TestPlayerGameMode.gen.cpp.obj"
 		]
 	}
 }
