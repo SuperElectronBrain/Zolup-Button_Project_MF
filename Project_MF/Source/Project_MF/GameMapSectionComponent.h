@@ -7,8 +7,6 @@
 #include "GameMapSectionComponent.generated.h"
 
 class UBoxComponent;
-class UMagneticComponent;
-enum class EMagneticType;
 
 UENUM()
 enum class ESectionSettingType
@@ -29,79 +27,44 @@ public:
 	FTransform Transform;
 };
 
-USTRUCT()
-struct FActorCheckInfo
-{
-	GENERATED_BODY()
-
-public:
-	UPROPERTY()
-	AActor* Actor;
-
-	UPROPERTY()
-	AActor* CheckPoint;
-};
-
-USTRUCT()
-struct FMagneticBeginInfo
-{
-	GENERATED_BODY()
-
-public:
-	UPROPERTY()
-	UMagneticComponent* Magnetic;
-
-	EMagneticType Type;
-	float MaxHaveMagneticSeconds;
-	float MagneticFieldRadiusScale;
-};
-
 UCLASS( ClassGroup=(GameMapSection), meta=(BlueprintSpawnableComponent) )
-class PROJECT_MF_API UGameMapSectionComponent final : public UBoxComponent
+class PROJECT_MF_API UGameMapSectionComponent final : public USceneComponent
 {
 	GENERATED_BODY()
 
 public:	
 	/////////////////////
-	//// Constructor ////
+	////*Constructor*////
 	/////////////////////
 	UGameMapSectionComponent();
 
 	///////////////////////
-	//// Public methods ///
+	////*Public methods*///
 	///////////////////////
 	void SetSection(ESectionSettingType type);
 
 private:
 	////////////////////////
-	//// Override methods //
+	////*Override methods*//
 	////////////////////////
 	virtual void BeginPlay() override;
-	virtual void OnAttachmentChanged() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override { return false; }
-
-	///////////////////////
-	// Private methods ///
-	//////////////////////
-	bool AddActorInfo(AActor* actor);
-	bool AddMagnetInfo(USceneComponent* components);
-
+	void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	/////////////////////////////
-	/// Fields And Components ///
+	///*Fields And Components*///
 	////////////////////////////
 	UPROPERTY(VisibleAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
 	bool bIsCompleteSection;
-
-	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
-	bool bShowSectionRangeInGame;
-
-	UPROPERTY()
-	TArray<FActorCheckInfo> _checkList;
 
 	UPROPERTY()
 	TArray<FActorBeginInfo> _infoList;
 
 	UPROPERTY()
-	TArray<FMagneticBeginInfo> _magInfoList;
+	UBoxComponent* Range;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
+	uint32 id;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
+	bool bShowSectionRangeInGame;
 };

@@ -71,6 +71,8 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 		if (distanceRatio >= .4f) power = _distance * 10.f * DeltaTime;
 		else power = (_distance * .5f + _distance * (distanceRatio+.3f*2.f) ) * DeltaTime;
 
+		//만약 
+
 		Velocity = dir * power;
 	}
 

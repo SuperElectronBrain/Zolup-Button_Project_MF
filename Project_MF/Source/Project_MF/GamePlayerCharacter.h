@@ -6,22 +6,12 @@
 #include "GameFramework/Character.h"
 #include "GamePlayerCharacter.generated.h"
 
-class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
 class UPlayerUICanvasWidget;
 class UMagneticComponent;
-class UNiagaraComponent;
-class UNiagaraSystem;
 class UDefaultMagneticMovementComponent;
 enum class EMagneticType;
 enum class EMagnetMoveType;
-
-UENUM()
-enum class EPlayerMode
-{
-	STANDING, CREEPY
-};
-
 /*
 *
 */
@@ -34,16 +24,13 @@ public:
 	/////////////////
 	//*Constructor*//
 	////////////////
+
 	AGamePlayerCharacter();
 
 	/*Public methods*/
 	FRotator GetPlayerCameraQuat() const;
 	FVector GetPlayerForwardVector() const;
 	FVector GetPlayerRightVector() const;
-	FVector GetPlayerDownVector() const;
-	FQuat GetPlayerQuat() const { if (GetController() == nullptr) return FQuat::Identity;  return GetController()->GetControlRotation().Quaternion(); }
-	void SetPlayerMode(EPlayerMode mode);
-	void SetPlayerRotator(FRotator& newValue);
 
 private:
 	//////////////////////
@@ -72,7 +59,6 @@ private:
 	void ResetMagnetic();
 	void JumpStart();
 	void JumpEnd();
-	void StageRestart();
 
 	///////////////////////
 	///*Private methods*//
@@ -89,19 +75,19 @@ private:
 	void ClearGivens() { _GivenMagnets[0] = _GivenMagnets[1] = nullptr; _givenIndex = _oldGivenIndex = 0; }
 
 	UFUNCTION()
-	void OnMagnetic(EMagneticType type, UMagneticComponent* magnet);
+	void OnMagnetic(EMagneticType type);
 
 	UFUNCTION()
-	void OffMagnetic(EMagneticType prevType, UMagneticComponent* magnet);
+	void OffMagnetic(EMagneticType prevType);
 
 	UFUNCTION()
-	void MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* magnet);
+	void MagnetMoveStart(EMagnetMoveType moveType);
 
 	UFUNCTION()
-	void MagnetMoveEnd(EMagnetMoveType moveType, UMagneticComponent* magnet);
+	void MagnetMoveEnd(EMagnetMoveType moveType);
 
 	UFUNCTION()
-	void MagnetMoveHit(AActor* hit, UMagneticComponent* magnet);
+	void MagnetMoveHit(AActor* hit);
 
 	/////////////////
 	///*Components*//
@@ -124,23 +110,11 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	UDefaultMagneticMovementComponent* MagMovement;
 
-	UPROPERTY()
-	UNiagaraSystem* ShootEffect;
-
-	UPROPERTY()
-	UNiagaraSystem* MagneticEffect;
-
 	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
-	UNiagaraComponent* MagneticEffectComp;
-
-	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
-	UNiagaraComponent* ShootEffectComp;
+	UParticleSystemComponent* Particle;
 
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;
-
-	UPROPERTY(EditAnywhere, Category = CheckPoint, Meta = (AllowPrivateAccess = true))
-	UGameCheckPointContainerComponent* CheckPointContainer;
 
 private:
 	//////////////
@@ -148,11 +122,10 @@ private:
 	//////////////
 
 	bool _bCanJump, _bShootMine;
-	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv, _stiffen;
+	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv;
 	AActor* _StickTo;
 	int32 _givenIndex = 0, _oldGivenIndex;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
-	FVector _goalLook, _currLook;
 
 public:
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
@@ -172,8 +145,5 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = BoneTransform, BlueprintReadWrite)
 	FTransform _ArmLAddTransform;
-
-	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	EPlayerMode PlayerMode;
 
 };

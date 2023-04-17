@@ -1,3 +1,5 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
 #pragma once
 
 #include "EngineMinimal.h"
@@ -15,11 +17,11 @@ enum class EMagneticType
 	NONE, S, N
 };
 
-DECLARE_MULTICAST_DELEGATE_TwoParams(FOnMagneticDelegate, EMagneticType, UMagneticComponent*)
-DECLARE_MULTICAST_DELEGATE_TwoParams(FOffMagneticDelegate, EMagneticType, UMagneticComponent*)
-DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveStartDelegate, EMagnetMoveType, UMagneticComponent*)
-DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveHitDelegate, AActor*, UMagneticComponent*)
-DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveEndDelegate, EMagnetMoveType, UMagneticComponent*)
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnMagneticDelegate, EMagneticType)
+DECLARE_MULTICAST_DELEGATE_OneParam(FOffMagneticDelegate, EMagneticType)
+DECLARE_MULTICAST_DELEGATE_OneParam(FMoveStartDelegate, EMagnetMoveType)
+DECLARE_MULTICAST_DELEGATE_OneParam(FMoveHitDelegate, AActor*)
+DECLARE_MULTICAST_DELEGATE_OneParam(FMoveEndDelegate, EMagnetMoveType)
 
 #define MAGNETIC_FIELD_PRECISION 60
 #define MAGNETIC_COLLISION_OBJECTTYPE ECollisionChannel::ECC_GameTraceChannel11
@@ -43,29 +45,22 @@ class PROJECT_MF_API UMagneticComponent final : public USceneComponent
 	GENERATED_BODY()
 
 public:
-	//////////////////////
-	//// Constructor /////
-	/////////////////////
+	/*Constructor*/
 	UMagneticComponent();
-	
-	///////////////////////////
-	///// Public delegates ////
-	///////////////////////////
-	FOnMagneticDelegate		OnMagneticEvent;
-	FOffMagneticDelegate	OffMagneticEvent;
-	FMoveStartDelegate		MagnetMoveStartEvent;
-	FMoveEndDelegate		MagnetMoveEndEvent;
-	//UPROPERTY(BlueprintAssignable, Category = "Magnetic")
-	FMoveHitDelegate		MagnetMoveHitEvent;
 
-	////////////////////////////////
-	/////// Public methods /////////
-	////////////////////////////////
+	/*Delegates*/
+	FOnMagneticDelegate			OnMagneticEvent;
+	FOffMagneticDelegate		OffMagneticEvent;
+	FMoveStartDelegate			MagnetMoveStartEvent;
+	FMoveEndDelegate			MagnetMoveEndEvent;
+	FMoveHitDelegate			MagnetMoveHitEvent;
+
+	/*Public methods*/
 	void SettingMagnetWeightAndFieldRange();
 
 	int32 GetMaxEnchantableCount() const { return MaxEnchantableCount; }
 	int32 GetCurrEnchantableCount() const { return CurrEnchantCount; }
-	void SetEnchantInfo(int32 maxEnchantCount, float enchantWeight, float enchantRange);
+	void SetEnchantInfo(int32 maxEnchantCount, float enchantWeight, float enchantRange );
 
 	void SetCurrentMagnetic(EMagneticType newType);
 	EMagneticType GetCurrentMagnetic() const { return CurrMagnetic; }
@@ -78,9 +73,6 @@ public:
 
 	float GetMagneticFieldRadius() const { return FieldCollision->GetScaledSphereRadius(); }
 	void SetMagneticFieldRadius(float newValue);
-
-	float GetMagneticFieldRadiusScale() const { return MagneticFieldRadiusScale; }
-	void SetMagneticFieldRadiusScale(float newValue) { if (newValue > 0.f) MagneticFieldRadiusScale = newValue; }
 
 	bool GetEternalHaveMagnetic() const { return EternalHaveMagnetic; }
 	void SetEternalHaveMagnetic(bool value) { EternalHaveMagnetic = value; }
@@ -95,9 +87,7 @@ public:
 	void RemoveNoActiveMovmeent(UMovementComponent* element);
 
 private:
-	////////////////////////////
-	///// Private methods /////
-	///////////////////////////
+	/*Private method*/
 	void UpdateMagneticField();
 	void UpdateFieldMeshsColor(EMagneticType type);
 	void ClearMagneticField();
@@ -107,10 +97,8 @@ private:
 
 	void SetNoActiveMovementsActive(bool value);
 
-	///////////////////////////
-	//// Override methods /////
-	///////////////////////////
-	virtual void OnAttachmentChanged() override;
+	/*Override methods*/
+	virtual void OnRegister() override;
 	virtual void BeginPlay() override;
 	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override;
 	virtual void DestroyComponent(bool bPromoteChilderen) override;
@@ -119,10 +107,8 @@ private:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 	#endif
 
-	///////////////////////////////
-	//// Fields and Components ////
-	///////////////////////////////
-	float _RotCounter, _applyRadius, _goalRadius, _currMagMaterialApplyRatio, _goalMagMaterialApplyRatio;
+	/*Fields and Components*/
+	float _RotCounter, _applyRadius, _goalRadius;
 	EMagnetMoveType _lastMoveType;
 	bool _applyMovement, _bUsedFixedWeight, _blastUsedGravity;
 	FVector _fieldColor;

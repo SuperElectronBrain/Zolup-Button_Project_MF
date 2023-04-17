@@ -1,3 +1,5 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
 #pragma once
 
 #include "EngineMinimal.h"
@@ -5,19 +7,15 @@
 #include <Animation/AnimMontage.h>
 #include "PlayerAnimInstance.generated.h"
 
-#define PLAYER_LCLAVICLE_BONE TEXT("Bip001-L-Clavicle")
 #define PLAYER_SPINE1_BONE TEXT("Bip001-Spine1")
 #define PLAYER_LPOARM_BONE TEXT("Bip001-L-Forearm")
 #define PLAYER_LHAND_BONE TEXT("Bip001-L-Hand")
 #define PLAYER_RHAND_BONE TEXT("Bip001-R-Hand")
 #define PLAYER_RPOARM_BONE TEXT("Bip001-R-Forearm")
 #define PLAYER_NECK_BONE TEXT("Bip001-Neck")
-#define PLAYER_GUN_BONE TEXT("Bone001")
-
-class UMagneticComponent;
 
 UENUM()
-enum class EHandType
+enum class EPutArmType
 {
 	LEFT, RIGHT
 };
@@ -45,9 +43,9 @@ public:
 	void PlaySelfResetMontage();
 	void PlaySelfShootMontage(float startTime = 0.f, float speed = 1.f);
 	void PlayGlovePulledUpMotage();
-	void PlayGloveStickMotage(float startTime=0.f, float speed=1.f);
+	void PlayGloveStickMotage();
 
-	void SetHandLookMagnetic(EHandType armType, bool apply, UMagneticComponent* magnetic = nullptr);
+	void SetHandLookDir(EPutArmType armType, bool apply, FVector dir = FVector::ZeroVector);
 
 private:
 	//////////////////////
@@ -58,64 +56,69 @@ private:
 	///////////////////////
 	///*Private mothods*///
 	///////////////////////
-	void ApplyStandingLeftHand(AGamePlayerCharacter* player);
-	void ApplyCreepyStandingHands(AGamePlayerCharacter* player);
+	void ApplyStandingHand(EPutArmType armType, AGamePlayerCharacter* player, FTransform& outResult, bool& hitResult);
+
 
 	////////////////////////////
 	///*fields and Components*//
 	////////////////////////////
-	UMagneticComponent* _targetMagnetic;
+	float  _currArmRatio, _currArmRatio2, _ArmPenetrateDiv;
+	FVector _LArmReachDir, _RArmReachDir;
+	bool _bUseLArmReachDir, _bUseRArmReachDir;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool	_bIsJumping;
 
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, Category=Player, Meta=(AllowPrivateAccess=true), BlueprintReadOnly)
 	float	_CurrentSpeed;
 
-	UPROPERTY(VisibleAnywhere, Meta=(AllowPrivateAccess=true))
+	UPROPERTY()
 	UAnimMontage* AttackMontage;
 
-	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* ResetMontage;
 
-	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* SelfResetMontage;
 
-	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* SelfShootMontage;
 
-	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* PulledUpMontage;
 
-	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* StickMotange;
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FRotator _angle;
 
+	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true, ClampMin=0.f, ClampMax=1.f))
+	float _LArmPenetrateRatio;
+
+	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true, ClampMin = 0.f, ClampMax = 1.f))
+	float _RArmPenetrateRatio;
+
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	FTransform _LArmLastTransform;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bIsPulled;
+	FTransform _RArmLastTransform;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool _bLHandHitWall;
 
-	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
-	FTransform _ArmLReplaceTransform;
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bRHandHitWall;
 
-	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
-	FTransform _ArmRReplaceTransform;
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	float _LfadeInRatio;
 
 public:
-	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
-	bool _bPlayerCreep;
-
-	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	FTransform _ArmLAddOffsetTransform;
 
-	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	FTransform _HandLAddOffsetTransform;
 
 };

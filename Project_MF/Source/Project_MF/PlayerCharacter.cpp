@@ -426,11 +426,11 @@ void APlayerCharacter::BeginPlay()
 	PlayerMesh->SetRelativeLocationAndRotation(FVector(1.f, 6.31f, -120.f), FRotator(0.f, 0.f, -90.f));
 
 	//이벤트 적용
-	//Magnetic->OnMagneticEvent.AddUObject(this, &APlayerCharacter::OnMagnetic);
-	//Magnetic->OffMagneticEvent.AddUObject(this, &APlayerCharacter::OffMagnetic);
-	//Magnetic->MagnetMoveStartEvent.AddUObject(this, &APlayerCharacter::MagnetMoveStart);
-	//Magnetic->MagnetMoveEndEvent.AddUObject(this, &APlayerCharacter::MagnetMoveEnd);
-	//Magnetic->MagnetMoveHitEvent.AddUObject(this, &APlayerCharacter::MagnetMoveHit);
+	Magnetic->OnMagneticEvent.AddUObject(this, &APlayerCharacter::OnMagnetic);
+	Magnetic->OffMagneticEvent.AddUObject(this, &APlayerCharacter::OffMagnetic);
+	Magnetic->MagnetMoveStartEvent.AddUObject(this, &APlayerCharacter::MagnetMoveStart);
+	Magnetic->MagnetMoveEndEvent.AddUObject(this, &APlayerCharacter::MagnetMoveEnd);
+	Magnetic->MagnetMoveHitEvent.AddUObject(this, &APlayerCharacter::MagnetMoveHit);
 	//Magnetic->AddNoActiveMovement(GetCharacterMovement());
 
 	//애님 인스턴스 참조
