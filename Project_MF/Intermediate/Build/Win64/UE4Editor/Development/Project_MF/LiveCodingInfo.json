@@ -47,9 +47,13 @@
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActorObject.cpp.obj",
+<<<<<<< HEAD
 			"TestPlayerGameMode.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
 			"PowerGenerateComponent.cpp.obj"
+=======
+			"TestPlayerGameMode.cpp.obj"
+>>>>>>> 0.0.3-Designers
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CustomGameInstance.gen.cpp.obj",
