@@ -116,6 +116,6 @@ public:
 	FTransform _ArmLAddOffsetTransform;
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
-	FTransform _HandLAddOffsetTransform;
+	FTransform _ArmRAddOffsetTransform;
 
 };
