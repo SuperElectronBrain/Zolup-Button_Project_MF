@@ -15,24 +15,14 @@ void UPowerLightControlComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (ObserveTarget != nullptr)
+	if (NonReversibleAction == true)
 	{
-		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
-		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
+		if (::IsValid(ObserveTargetLightComponent) == true)
 		{
-			if (ObserveTargetExecutionComponent->GetPowerState() == false)
+			if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
 			{
-				if (NonReversibleAction == false)
-				{
-					ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
-					if (::IsValid(ObserveTargetLightComponent) == true)
-					{
-						if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
-						{
-							ObserveTargetLightComponent->SetVisibility(ReversAction);
-						}
-					}
-				}
+				ObserveTargetLightComponent->SetVisibility(ReversAction);
 			}
 		}
 	}
