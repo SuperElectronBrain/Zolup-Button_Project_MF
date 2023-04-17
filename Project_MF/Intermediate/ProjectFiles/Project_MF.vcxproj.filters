@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{4138C393-8E84-4533-B0D8-0D8486AFAF44}</UniqueIdentifier>
+      <UniqueIdentifier>{9D59E397-0055-40CB-8E1C-15C5B71AC242}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{45C1BC48-892E-4AE6-8458-5C6F3BCC9BFF}</UniqueIdentifier>
+      <UniqueIdentifier>{FCE58061-E6AD-4834-AA26-BA72A1D77DD1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{23D1D0B2-B1FE-40B8-B89B-B6F93533D6C3}</UniqueIdentifier>
+      <UniqueIdentifier>{5B51F076-D544-487C-A68F-61A73AB07B20}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -308,6 +308,12 @@
     <ClInclude Include="..\..\Source\Project_MF\RotatingMagMovementComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\StageOneLevelScriptActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\StageOneLevelScriptActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\TestActorObject.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -318,6 +324,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\TestPlayerGameMode.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\UIPopupTriggerComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\UIPopupTriggerComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
   </ItemGroup>
