@@ -8,7 +8,7 @@
 AGameMapCheckPoint::AGameMapCheckPoint()
 {
 	PrimaryActorTick.bCanEverTick = false;
-
+	
 #if WITH_EDITOR
 	RootComponent = Point = CreateDefaultSubobject<UGameMapCheckPointComponent>(TEXT("Point"));
 #endif

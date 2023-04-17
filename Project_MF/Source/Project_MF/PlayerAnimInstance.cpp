@@ -128,10 +128,12 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 	FVector down = player->GetPlayerDownVector();
 	FVector startL = neckPos + down * 30.f - right * 40.f + forward*130.f;
 	FVector endL = startL + down * 100.f;
+	FVector startR = neckPos + down * 30.f + right * 40.f + forward * 130.f;
+	FVector endR = startR + down * 100.f;
 
 	params.AddIgnoredActor(player);
 
-	//손을 짚을 곳을 구한다.
+	//왼손부터 짚을 곳을 구하고, 그에 따른 이동을 적용한다.
 	bool ret = GetWorld()->LineTraceSingleByChannel(
 		hit,
 		startL,
@@ -140,27 +142,49 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 		params
 	);
 
-	//DrawDebugLine(GetWorld(), startL, endL, FColor::Yellow, false, -1.f, 0U, 8.f);
-
-	if (ret == false || ret && hit.Distance == 0)
+	if (ret &&  hit.Distance > 0)
 	{
-		return;
-	}
-	//손을 짚었을 때의 회전값을 구한다.
-	FVector rightCross = -FVector::CrossProduct(hit.Normal, FVector::DownVector);
-	FVector upCross = -FVector::CrossProduct(hit.Normal, rightCross);
-	FVector result = upCross + rightCross;
+		//손을 짚었을 때의 회전값을 구한다.
+		FVector rightCross = -FVector::CrossProduct(hit.Normal, FVector::DownVector);
+		FVector upCross = -FVector::CrossProduct(hit.Normal, rightCross);
+		FVector result = upCross + rightCross;
 
+		FVector lastLocation = hit.Location;
+		FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
+
+		//적용.
+		_ArmLAddOffsetTransform.SetLocation((hit.Location - startL) - down * 30.f);
+	}
+
+	//오른손도 짚을 곳을 구하고, 그에 따른 이동을 적용한다.
+	ret = GetWorld()->LineTraceSingleByChannel(
+		hit,
+		startR,
+		endR,
+		ECollisionChannel::ECC_Visibility,
+		params
+	);
+
+	if (ret && hit.Distance > 0)
+	{
+		//손을 짚었을 때의 회전값을 구한다.
+		FVector rightCross = -FVector::CrossProduct(hit.Normal, FVector::DownVector);
+		FVector upCross = -FVector::CrossProduct(hit.Normal, rightCross);
+		FVector result = upCross + rightCross;
+
+		FVector lastLocation = hit.Location;
+		FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
+
+		//적용.
+		_ArmRAddOffsetTransform.SetLocation((hit.Location - startR) - down*45.f);
+	}
+
+	//디버그
+	//DrawDebugLine(GetWorld(), startL, endL, FColor::Yellow, false, -1.f, 0U, 8.f);
 	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
 	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
 	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 8.f);
 	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + upCross * 110.f, FColor::Black, false, -1.f, 0U, 8.f);
-
-	//적용
-	FVector lastLocation = hit.Location;
-	FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
-
-	_ArmLAddOffsetTransform.SetLocation((hit.Location-startL) -down*30.f);
 	#pragma endregion
 }
 

@@ -123,6 +123,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 void AGamePlayerCharacter::SetPlayerMode(EPlayerMode mode)
 {
 	PlayerMode = mode;
+	UNiagaraFunctionLibrary;
 
 	switch (mode)
 	{
@@ -209,7 +210,7 @@ void AGamePlayerCharacter::BeginPlay()
 	if (c)
 	{
 		APlayerCameraManager* cm = c->PlayerCameraManager;
-		cm->StartCameraFade(1.f, 0.f, 3.f, FLinearColor::Black);
+		cm->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black);
 	}
 
 
@@ -235,20 +236,20 @@ void AGamePlayerCharacter::BeginPlay()
 	}
 
 	//자성 이펙트 추가.
-	if (MagneticEffect)
-	{
-		MagneticEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
-			MagneticEffect, 
-			GetMesh(), 
-			TEXT("MagneticSocket"), 
-			FVector(-10.f, 0.f, 0.f),
-			FRotator::ZeroRotator,
-			EAttachLocation::SnapToTargetIncludingScale,
-			false
-		);
+	//if (MagneticEffect)
+	//{
+	//	MagneticEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
+	//		MagneticEffect, 
+	//		GetMesh(), 
+	//		TEXT("MagneticSocket"), 
+	//		FVector(-10.f, 0.f, 0.f),
+	//		FRotator::ZeroRotator,
+	//		EAttachLocation::SnapToTargetIncludingScale,
+	//		false
+	//	);
 
-		MagneticEffectComp->SetRelativeScale3D(FVector(4.f, 4.f, 4.f));
-	}
+	//	MagneticEffectComp->SetRelativeScale3D(FVector(4.f, 4.f, 4.f));
+	//}
 
 	////발사 이펙트 추가.
 	//if (ShootEffect)
@@ -364,7 +365,7 @@ void AGamePlayerCharacter::PostEditChangeProperty(FPropertyChangedEvent& Propert
 
 void AGamePlayerCharacter::LookUp(float value)
 {
-	if (_stiffen != 0.f || PlayerMode==EPlayerMode::CREEPY) return;
+	if (_stiffen != 0.f) return;
 
 	FRotator currRot = GetControlRotation();
 
@@ -374,7 +375,7 @@ void AGamePlayerCharacter::LookUp(float value)
 
 void AGamePlayerCharacter::Turn(float value)
 {
-	if (_stiffen != 0.f || PlayerMode == EPlayerMode::CREEPY) return;
+	if (_stiffen != 0.f) return;
 	FRotator currRot = GetControlRotation();
 
 	currRot.Yaw += CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
@@ -423,10 +424,15 @@ void AGamePlayerCharacter::JumpEnd()
 	_bCanJump = false;
 }
 
+void AGamePlayerCharacter::FadeWait(UGameMapSectionComponent* section)
+{
+	section->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+	APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
+	if (c) c->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black, false, true);
+}
+
 void AGamePlayerCharacter::StageRestart()
 {
-	SetPlayerMode(PlayerMode == EPlayerMode::STANDING ? EPlayerMode::CREEPY : EPlayerMode::STANDING);
-
 	if (_stiffen != 0.f) return;
 	TArray<UPrimitiveComponent*> overlaps;
 	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
@@ -437,7 +443,22 @@ void AGamePlayerCharacter::StageRestart()
 		UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(p);
 		if (section && ::IsValid(section))
 		{
-			section->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+			APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
+			if (c) c->StartCameraFade(0.f, 1.f, 1.f, FLinearColor::Black, false, true);
+
+			FTimerHandle handle;
+			FTimerDelegate callback = FTimerDelegate::CreateUObject(
+				this,
+				&AGamePlayerCharacter::FadeWait,
+				section
+			);
+
+			GetWorld()->GetTimerManager().SetTimer(
+				handle,
+				callback,
+				2.f,
+				false
+			);
 			return;
 		}
 	}
