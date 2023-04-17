@@ -2952,3 +2952,940 @@ Script Stack (0 frames):
 [2023.04.17-22.31.44:727][555]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
 [2023.04.17-22.31.44:746][555]LogUObjectHash: Compacting FUObjectHashTables data took   2.65ms
 [2023.04.17-22.31.44:775][556]LogPlayLevel: Display: Destroying online subsystem :Context_21
+[2023.04.17-22.32.49:297][532]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.33.08:162][588]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.33.25:694][640]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.34.02:389][749]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.34.22:356][808]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.34.43:820][872]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.35.01:948][926]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.35.24:820][994]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.35.43:244][ 49]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.36.15:104][144]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.36.32:552][196]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.37.06:836][298]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.37.19:015][334]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.37.55:056][441]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.38.27:032][536]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.38.38:229][569]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.39.03:403][644]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.39.48:767][779]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.40.07:639][835]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.40.44:254][944]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.41.08:087][ 15]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.41.26:506][ 70]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.41.42:249][117]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.42.04:053][182]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.42.21:492][234]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.42.39:986][289]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.43.05:854][366]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.43.13:173][811]LogUObjectHash: Compacting FUObjectHashTables data took   2.22ms
+[2023.04.17-22.43.13:401][811]LogAssetEditorSubsystem: Opening Asset editor for World /Game/Levels/UsedLevel/Stage_1.Stage_1
+[2023.04.17-22.43.13:401][811]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.04.17-22.43.13:401][811]LightingResults: New page: 라이팅 빌드
+[2023.04.17-22.43.13:401][811]LoadErrors: New page: 맵 로드 중: Stage_1.umap
+[2023.04.17-22.43.13:403][811]LogWorld: UWorld::CleanupWorld for Tutorial, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-22.43.13:403][811]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.43.13:403][811]MapCheck: New page: 맵 체크
+[2023.04.17-22.43.13:403][811]LightingResults: New page: 라이팅 빌드
+[2023.04.17-22.43.13:428][811]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.17-22.43.13:437][811]LogUObjectHash: Compacting FUObjectHashTables data took   2.51ms
+[2023.04.17-22.43.13:438][811]LogAudio: Display: Audio Device (ID: 1) registered with world 'Stage_1'.
+[2023.04.17-22.43.13:503][811]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.04.17-22.43.13:503][811]LogAIModule: Creating AISystem for world Stage_1
+[2023.04.17-22.43.13:539][811]LogUObjectHash: Compacting FUObjectHashTables data took   2.29ms
+[2023.04.17-22.43.13:552][811]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.04.17-22.43.13:552][811]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.265ms.
+[2023.04.17-22.43.13:552][811]LogFileHelpers: Loading map 'Stage_1' took 0.151
+[2023.04.17-22.43.25:628][116]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Generator_5)
+[2023.04.17-22.43.26:220][173]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_44)
+[2023.04.17-22.43.27:855][354]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_43)
+[2023.04.17-22.43.28:762][456]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_45)
+[2023.04.17-22.43.33:043][875]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_10)
+[2023.04.17-22.43.34:002][984]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_17)
+[2023.04.17-22.43.34:688][ 60]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Connect_Block_Dummy_18)
+[2023.04.17-22.44.31:641][897]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.45.10:188][ 12]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.45.42:107][107]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.45.56:114][149]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.46.15:221][206]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.46.34:319][263]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.47.02:211][346]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.47.30:348][430]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.48.05:362][293]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.17-22.48.07:235][489]LogEditorViewport: Clicking on Actor (CTRL LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.17-22.48.15:974][379]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt26)
+[2023.04.17-22.48.22:157][ 37]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt27)
+[2023.04.17-22.48.31:059][902]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Bridge_01)
+[2023.04.17-22.48.51:033][917]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Cube345)
+[2023.04.17-22.49.20:866][415]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Pipe_Straight9)
+[2023.04.17-22.49.25:311][894]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (D_Pipe_Straight7)
+[2023.04.17-22.49.26:363][ 14]LogEditorViewport: Clicking on Actor (CTRL LMB): StaticMeshActor (D_Pipe_Straight8)
+[2023.04.17-22.49.30:746][471]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube692)
+[2023.04.17-22.49.44:766][209]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.50.14:921][299]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.50.37:117][365]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.50.52:174][410]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.50.56:671][760]MapCheck: New page: 맵 체크
+[2023.04.17-22.50.56:705][760]Cmd: MAP REBUILD ALLVISIBLE
+[2023.04.17-22.50.56:705][760]LogEditorServer: Rebuildmap Clear paths rebuilt
+[2023.04.17-22.51.02:407][760]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=false
+[2023.04.17-22.51.02:584][760]LogNavigationDataBuild: Display: UNavigationSystemV1::Build started...
+[2023.04.17-22.51.02:584][760]LogNavigationDataBuild: Display:    Building navigation data using PHYSICS_INTERFACE_PHYSX.
+[2023.04.17-22.51.02:584][760]LogNavigationDataBuild: Display:    Building navigation data using WITH_PHYSX.
+[2023.04.17-22.51.02:613][760]LogUObjectHash: Compacting FUObjectHashTables data took   2.79ms
+[2023.04.17-22.51.02:656][760]LogLevel: Display: Export Material TexCoord Scales took 0.035 seconds.
+[2023.04.17-22.51.02:674][760]TextureStreamingBuild: Display: Build Texture Streaming took 0.018 seconds.
+[2023.04.17-22.51.02:697][760]LogUObjectHash: Compacting FUObjectHashTables data took   0.58ms
+[2023.04.17-22.51.02:699][760]LightingResults: New page: 라이팅 빌드 - 2023. 4. 18. 오후 4:51:02
+[2023.04.17-22.51.02:726][760]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2023.04.17-22.51.02:732][760]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2023.04.17-22.51.02:732][760]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2023.04.17-22.51.02:733][760]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2023.04.17-22.51.02:733][760]LogSwarmInterface: [TryOpenConnection] Local Process ID is 32764
+[2023.04.17-22.51.08:124][760]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2023.04.17-22.51.08:124][760]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2023.04.17-22.51.08:124][760]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2023.04.17-22.51.08:124][760]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2023.04.17-22.51.08:124][760]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2023.04.17-22.51.08:399][760]Cmd: MAP CHECK DONTDISPLAYDIALOG
+[2023.04.17-22.51.08:399][760]MapCheck: New page: Stage_1 - 2023. 4. 18. 오후 4:51:08
+[2023.04.17-22.51.08:399][760]MapCheck: Error: WorldSettings 맵 라이팅을 리빌드해야 합니다. 
+[2023.04.17-22.51.08:406][760]MapCheck: 맵 체크 완료: 오류 1 회, 경고 0 회, 소요 시간 6.865ms.
+[2023.04.17-22.51.08:409][760]LogEditorBuildUtils: Build time 0:11
+[2023.04.17-22.51.08:487][760]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.17-22.51.08:487][760]LogShaderCompilers: Display: Total job queries 4, among them cache hits 0 (0.00%)
+[2023.04.17-22.51.08:487][760]LogShaderCompilers: Display: Tracking 4 distinct input hashes that result in 3 distinct outputs (75.00%)
+[2023.04.17-22.51.08:487][760]LogShaderCompilers: Display: RAM used: 0.01 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.04.17-22.51.08:487][760]LogShaderCompilers: Display: ================================================
+[2023.04.17-22.51.08:930][762]LogUObjectHash: Compacting FUObjectHashTables data took   0.60ms
+[2023.04.17-22.51.12:184][771]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.51.25:579][811]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.25:580][811]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.29:606][823]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.51.31:303][828]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.31:303][828]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.32:979][833]LightingResults: Warning: D_SerratedWheel_02 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.32:981][833]LightingResults: D_SerratedWheel_02 Lightmap UV are overlapping by 45.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.32:981][833]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.32:981][833]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.33:316][834]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.33:316][834]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.33:650][835]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.33:650][835]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.34:988][839]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.34:988][839]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.35:326][840]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.35:326][840]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.35:664][841]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.35:664][841]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.51:156][887]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.51.51:156][887]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.51.53:202][893]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.52.00:394][100]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.52.00:406][100]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.52.00:965][145]LightingResults: Warning: SM_MERGED_Cube452 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.00:965][145]LightingResults: SM_MERGED_Cube452 Lightmap UV are overlapping by 2.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.21:613][989]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.21:613][989]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.22:854][103]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.22:854][103]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.24:030][210]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.24:030][210]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.24:885][288]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.24:885][288]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.25:834][375]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.25:834][375]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.26:130][402]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.26:130][402]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.27:380][516]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.27:380][516]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.27:475][524]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.27:475][524]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.28:210][592]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.28:210][592]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.28:643][633]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.28:643][633]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.28:814][649]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.28:814][649]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.29:036][670]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.29:036][670]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.29:457][709]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.29:457][709]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.29:972][758]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.29:972][758]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.30:436][802]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.30:436][802]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.30:844][840]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.30:844][840]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.31:160][869]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.31:160][869]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.32:079][954]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.32:079][954]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.32:573][998]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.32:573][998]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.32:628][  2]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.32:628][  2]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.33:493][ 81]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.33:493][ 81]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.41:868][848]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.41:868][848]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.42:153][875]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.42:153][875]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.42:186][877]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.42:186][877]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.42:344][889]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.42:344][889]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.42:662][908]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.42:662][908]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:010][933]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:010][933]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:345][947]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:345][947]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:345][947]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:345][947]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:505][954]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:505][954]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:673][961]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:673][961]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:789][966]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:789][966]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.43:875][970]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.43:896][971]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.44:158][982]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.44:158][982]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.44:242][986]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.44:242][986]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.44:328][990]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.44:328][990]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.44:371][992]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.44:371][992]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.44:847][ 12]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.44:847][ 12]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.45:099][ 24]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.45:099][ 24]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.45:184][ 28]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.45:184][ 28]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.45:826][ 58]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.45:847][ 59]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.45:901][ 61]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.45:901][ 61]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.46:114][ 71]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.46:114][ 71]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.46:241][ 77]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.46:241][ 77]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.46:957][111]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.46:957][111]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:230][124]LightingResults: Warning: D_SerratedWheel_02 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:230][124]LightingResults: D_SerratedWheel_02 Lightmap UV are overlapping by 45.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:294][127]LightingResults: Warning: D_SerratedWheel_03 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:294][127]LightingResults: D_SerratedWheel_03 Lightmap UV are overlapping by 42.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:488][136]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:488][136]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:488][136]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:488][136]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:572][140]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:572][140]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:721][147]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:721][147]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:850][153]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:850][153]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.47:935][157]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.47:935][157]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.48:147][167]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.48:147][167]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.48:275][173]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.48:296][174]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.48:802][198]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.48:802][198]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.48:887][202]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.48:887][202]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.49:432][228]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.49:453][229]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.50:556][278]LightingResults: Warning: D_SerratedWheel_02 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.50:556][278]LightingResults: D_SerratedWheel_02 Lightmap UV are overlapping by 45.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.56:191][538]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.56:191][538]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.57:292][590]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.57:292][590]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.58:953][669]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.58:953][669]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.52.59:510][694]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.52.59:510][694]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.01:019][765]LightingResults: Warning: 1-1_Aisle_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.01:019][765]LightingResults: 1-1_Aisle_01 Lightmap UV are overlapping by 15.8%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.02:874][859]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.02:874][859]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.04:055][914]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (D_Bridge_01)
+[2023.04.17-22.53.04:259][916]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.04:259][916]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.04:333][918]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.04:333][918]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.04:859][943]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.04:859][943]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.05:875][  7]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.05:875][  7]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.07:659][167]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.07:659][167]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.08:072][204]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.08:072][204]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.08:084][205]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.08:084][205]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.08:212][217]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.08:212][217]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.09:406][323]LightingResults: Warning: P_D_Pipe_U 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.09:406][323]LightingResults: P_D_Pipe_U Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.10:099][385]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.10:099][385]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.10:667][437]LightingResults: Warning: D_Conveyorbelt_Box001 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.10:667][437]LightingResults: D_Conveyorbelt_Box001 Lightmap UV are overlapping by 25.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.11:037][472]LightingResults: Warning: D_Conveyorbelt_Box003 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.53.11:037][472]LightingResults: D_Conveyorbelt_Box003 Lightmap UV are overlapping by 12.2%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.53.11:130][477]Job is a success!
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.161s
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:      Indirection Texture 32x32x16 = 0.1Mb
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:      BrickData (all levels) 5.6Mb (trimmed 2.4Mb due to 0.010000 MinBrickError)
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:      Bricks at depth
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:          0: 0.3% covering 100.0% of volume
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:          1: 9.4% covering 44.5% of volume
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:          2: 90.3% covering 6.7% of volume
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:      Bricks in each level
+[2023.04.17-22.53.11:496][479]LogVolumetricLightmapImport:          Stage_1 			 1219 bricks 	 100.0% (Persistent Level)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_1 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_1 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_2 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_3 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_2 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_3 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_4 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_4 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_5 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_5 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_6 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_6 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_7 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_7 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_8 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_8 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_9 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:364][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_9 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_10 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_10 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_11 (OODLE_AutoDXT, 256X256)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_11 (OODLE_DXT1, 256X256)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_12 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_12 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_13 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_13 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_14 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_14 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap0_15 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_0_15 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_16 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_16 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_17 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_17 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_18 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_18 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_19 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_19 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_20 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_20 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:365][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.53.15:366][479]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_21 (OODLE_AutoDXT, 64X64)
+[2023.04.17-22.53.15:366][479]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.53.15:366][479]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_21 (OODLE_DXT1, 64X64)
+[2023.04.17-22.53.15:564][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_5 (BGRA8, 128X128)
+[2023.04.17-22.53.15:564][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_4 (BGRA8, 1024X256)
+[2023.04.17-22.53.15:564][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_7 (BGRA8, 128X64)
+[2023.04.17-22.53.15:564][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_17 (BGRA8, 32X32)
+[2023.04.17-22.53.15:564][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_0 (BGRA8, 512X512)
+[2023.04.17-22.53.15:564][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_6 (BGRA8, 1024X512)
+[2023.04.17-22.53.15:761][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_2 (BGRA8, 1024X1024)
+[2023.04.17-22.53.15:761][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_3 (BGRA8, 1024X1024)
+[2023.04.17-22.53.15:761][479]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_1 (BGRA8, 1024X1024)
+[2023.04.17-22.53.15:761][479]Lightmass on DESKTOP-7O2N4A7: 2:06 min total, 332 ms importing, 323 ms setup, 15.1 sec photons, 1:50 min processing, 0 ms extra exporting [3209/3209 mappings]. Threads: 12:52 min total, 7:29 min processing.
+[2023.04.17-22.53.15:776][479]LogStaticLightingSystem: Stage_1_BuiltData storing lightmap data for 1201 meshes in 73 LightmapResourceClusters (16.5 Meshes per cluster).
+[2023.04.17-22.53.15:843][479]LogUObjectHash: Compacting FUObjectHashTables data took   3.13ms
+[2023.04.17-22.53.15:909][479]LogStaticLightingSystem: Illumination: 2:13 min (2.82 sec encoding lightmaps, 322 ms encoding shadowmaps)
+[2023.04.17-22.53.15:909][479]LogStaticLightingSystem: Lightmap texture memory:  38.1 MB (36.1 MB streaming, 2.0 MB non-streaming), 42 textures
+[2023.04.17-22.53.15:909][479]LogStaticLightingSystem: Shadowmap texture memory: 21.5 MB (20.1 MB streaming, 1.3 MB non-streaming), 9 textures
+[2023.04.17-22.53.16:255][479]DumpUnbuiltLightIteractions
+[2023.04.17-22.53.16:255][479]Lights with unbuilt interactions: 0
+[2023.04.17-22.53.16:255][479]
+[2023.04.17-22.53.16:255][479]Primitives with unbuilt interactions: 0
+[2023.04.17-22.53.16:382][479]LogTexture: Display: 텍스처 빌드: NewReflectionComponentTexture7CD92D95411519B0BEB7159484BAFEA4 (BGRA8, 128X128)
+[2023.04.17-22.53.16:471][480]Cmd: MAP CHECK NOTIFYRESULTS
+[2023.04.17-22.53.16:471][480]MapCheck: New page: Stage_1 - 2023. 4. 18. 오후 4:53:16
+[2023.04.17-22.53.16:482][480]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 10.413ms.
+[2023.04.17-22.53.17:922][608]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.53.17:929][608]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.53.19:574][762]LogUObjectHash: Compacting FUObjectHashTables data took   2.58ms
+[2023.04.17-22.53.20:390][762]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_18876FA33446FA7C81DF46D9B31BD1630.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1.umap'
+[2023.04.17-22.53.22:180][762]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_BuiltData58854D52463BE40A5804ACB66F104827.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Stage_1_BuiltData.uasset'
+[2023.04.17-22.53.22:217][762]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.17-22.53.22:217][762]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Stage_1_BuiltData.Stage_1_BuiltData 유효성 검사 중
+[2023.04.17-22.53.22:217][762]LogContentValidation: Display: World /Game/Levels/UsedLevel/Stage_1.Stage_1 유효성 검사 중
+[2023.04.17-22.53.25:587][ 84]LogUObjectHash: Compacting FUObjectHashTables data took   0.72ms
+[2023.04.17-22.53.25:652][ 84]LogAssetEditorSubsystem: Opening Asset editor for World /Game/Levels/UsedLevel/Tutorial.Tutorial
+[2023.04.17-22.53.25:652][ 84]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Tutorial.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.04.17-22.53.25:652][ 84]LightingResults: New page: 라이팅 빌드
+[2023.04.17-22.53.25:653][ 84]LoadErrors: New page: 맵 로드 중: Tutorial.umap
+[2023.04.17-22.53.25:664][ 84]LogWorld: UWorld::CleanupWorld for Stage_1, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-22.53.25:665][ 84]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.53.25:666][ 84]MapCheck: New page: 맵 체크
+[2023.04.17-22.53.25:666][ 84]LightingResults: New page: 라이팅 빌드
+[2023.04.17-22.53.25:688][ 84]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.17-22.53.25:700][ 84]LogUObjectHash: Compacting FUObjectHashTables data took   2.30ms
+[2023.04.17-22.53.25:719][ 84]LogAudio: Display: Audio Device (ID: 1) registered with world 'Tutorial'.
+[2023.04.17-22.53.25:730][ 84]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.04.17-22.53.25:730][ 84]LogAIModule: Creating AISystem for world Tutorial
+[2023.04.17-22.53.25:755][ 84]LogUObjectHash: Compacting FUObjectHashTables data took   2.34ms
+[2023.04.17-22.53.25:768][ 84]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.04.17-22.53.25:768][ 84]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.128ms.
+[2023.04.17-22.53.25:768][ 84]LogFileHelpers: Loading map 'Tutorial' took 0.116
+[2023.04.17-22.53.43:424][118]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (notVisibleWall)
+[2023.04.17-22.54.01:176][933]MapCheck: New page: 맵 체크
+[2023.04.17-22.54.01:191][933]Cmd: MAP REBUILD ALLVISIBLE
+[2023.04.17-22.54.01:191][933]LogEditorServer: Rebuildmap Clear paths rebuilt
+[2023.04.17-22.54.01:194][933]LogWorld: UWorld::CleanupWorld for Tutorial, bSessionEnded=true, bCleanupResources=false
+[2023.04.17-22.54.01:259][933]LogNavigationDataBuild: Display: UNavigationSystemV1::Build started...
+[2023.04.17-22.54.01:259][933]LogNavigationDataBuild: Display:    Building navigation data using PHYSICS_INTERFACE_PHYSX.
+[2023.04.17-22.54.01:259][933]LogNavigationDataBuild: Display:    Building navigation data using WITH_PHYSX.
+[2023.04.17-22.54.01:344][933]LogUObjectHash: Compacting FUObjectHashTables data took   2.20ms
+[2023.04.17-22.54.01:361][933]LogLevel: Display: Export Material TexCoord Scales took 0.012 seconds.
+[2023.04.17-22.54.01:366][933]TextureStreamingBuild: Display: Build Texture Streaming took 0.005 seconds.
+[2023.04.17-22.54.01:381][933]LogUObjectHash: Compacting FUObjectHashTables data took   0.57ms
+[2023.04.17-22.54.01:383][933]LightingResults: New page: 라이팅 빌드 - 2023. 4. 18. 오후 4:54:01
+[2023.04.17-22.54.01:388][933]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2023.04.17-22.54.01:393][933]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2023.04.17-22.54.01:393][933]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2023.04.17-22.54.01:394][933]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2023.04.17-22.54.01:394][933]LogSwarmInterface: [TryOpenConnection] Local Process ID is 32764
+[2023.04.17-22.54.06:772][933]LightingResults: Warning: 임포턴스 볼륨을 찾지 못했습니다. 씬이 너무 커서 자동 합성 볼륨이 제대로 된 결과를 내놓지 않을 것입니다.  타이트하게 바운딩하는 라이팅매스 임포턴스 볼륨을 추가하여 씬의 퀄리티와 라이팅 빌드 시간을 최적화하세요.
+[2023.04.17-22.54.06:772][933]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2023.04.17-22.54.06:772][933]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2023.04.17-22.54.06:772][933]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2023.04.17-22.54.06:772][933]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2023.04.17-22.54.06:772][933]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2023.04.17-22.54.06:948][933]Cmd: MAP CHECK DONTDISPLAYDIALOG
+[2023.04.17-22.54.06:948][933]MapCheck: New page: Tutorial - 2023. 4. 18. 오후 4:54:06
+[2023.04.17-22.54.06:948][933]MapCheck: Error: WorldSettings_1 맵 라이팅을 리빌드해야 합니다. 
+[2023.04.17-22.54.06:949][933]MapCheck: Warning: L_Cabinet_114 스태틱 메시 액터에 NULL StaticMesh 프로퍼티가 있습니다. 
+[2023.04.17-22.54.06:949][933]MapCheck: Warning: L_Cabinet2_2 스태틱 메시 액터에 NULL StaticMesh 프로퍼티가 있습니다. 
+[2023.04.17-22.54.06:949][933]MapCheck: 맵 체크 완료: 오류 1 회, 경고 2 회, 소요 시간 1.567ms.
+[2023.04.17-22.54.06:951][933]LogEditorBuildUtils: Build time 0:05
+[2023.04.17-22.54.07:247][935]LogUObjectHash: Compacting FUObjectHashTables data took   0.67ms
+[2023.04.17-22.54.09:150][ 55]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.54.09:162][ 55]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.54.14:376][487]LightingResults: Warning: MainCharacter_Dummy 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.54.14:376][487]LightingResults: MainCharacter_Dummy Lightmap UV are overlapping by 30.1%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.54.17:061][727]LightingResults: Warning: D_SerratedWheel_05 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.54.17:061][727]LightingResults: D_SerratedWheel_05 Lightmap UV are overlapping by 79.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.54.20:224][ 11]LightingResults: Warning: D_SerratedWheel_03 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.54.20:224][ 11]LightingResults: D_SerratedWheel_03 Lightmap UV are overlapping by 42.5%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.54.21:769][140]LightingResults: Warning: D_SerratedWheel_01 오브젝트에 겹치는 UV 가 있습니다.
+[2023.04.17-22.54.21:769][140]LightingResults: D_SerratedWheel_01 Lightmap UV are overlapping by 50.0%. Please adjust content - Enable Error Coloring to visualize.
+[2023.04.17-22.54.22:998][251]Job is a success!
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.128s
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:      Indirection Texture 32x32x32 = 0.1Mb
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:      BrickData (all levels) 3.4Mb (trimmed 0.0Mb due to 0.010000 MinBrickError)
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:      Bricks at depth
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:          0: 1.5% covering 100.0% of volume
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:          1: 8.8% covering 9.4% of volume
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:          2: 89.8% covering 1.5% of volume
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:      Bricks in each level
+[2023.04.17-22.54.23:285][252]LogVolumetricLightmapImport:          Tutorial 			 547 bricks 	 100.0% (Persistent Level)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_1 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_1 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_3 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_2 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_2 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_3 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_4 (OODLE_AutoDXT, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_4 (OODLE_DXT1, 1024X1024)
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_AutoDXT (Oodle OodleTex_BC3) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTextureFormatOodle: Display: non-RDO encode 1024 x 1024 x 1 to format OODLE_DXT1 (Oodle OodleTex_BC1_WithTransparency) lambda=0 effort=20 
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_5 (OODLE_AutoDXT, 64X64)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_5 (OODLE_DXT1, 64X64)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: HQ_Lightmap1_6 (OODLE_AutoDXT, 64X64)
+[2023.04.17-22.54.23:908][252]LogTexture: Display: 텍스처 빌드: LQ_Lightmap_1_6 (OODLE_DXT1, 64X64)
+[2023.04.17-22.54.24:107][252]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_8 (BGRA8, 32X32)
+[2023.04.17-22.54.24:107][252]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_9 (BGRA8, 32X32)
+[2023.04.17-22.54.24:107][252]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_7 (BGRA8, 1024X128)
+[2023.04.17-22.54.24:107][252]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_5 (BGRA8, 256X512)
+[2023.04.17-22.54.24:210][252]LogTexture: Display: 텍스처 빌드: ShadowMapTexture2D_6 (BGRA8, 1024X1024)
+[2023.04.17-22.54.24:210][252]Lightmass on DESKTOP-7O2N4A7: 16.4 sec total, 271 ms importing, 64 ms setup, 1.94 sec photons, 14.1 sec processing, 0 ms extra exporting [224/224 mappings]. Threads: 1:39 min total, 57.7 sec processing.
+[2023.04.17-22.54.24:216][252]LogStaticLightingSystem: Tutorial_BuiltData storing lightmap data for 211 meshes in 10 LightmapResourceClusters (21.1 Meshes per cluster).
+[2023.04.17-22.54.24:251][252]LogUObjectHash: Compacting FUObjectHashTables data took   2.63ms
+[2023.04.17-22.54.24:275][252]LogStaticLightingSystem: Illumination: 22.8 sec (501 ms encoding lightmaps, 211 ms encoding shadowmaps)
+[2023.04.17-22.54.24:275][252]LogStaticLightingSystem: Lightmap texture memory:  8.0 MB (6.0 MB streaming, 2.0 MB non-streaming), 12 textures
+[2023.04.17-22.54.24:275][252]LogStaticLightingSystem: Shadowmap texture memory: 6.7 MB (6.0 MB streaming, 0.7 MB non-streaming), 5 textures
+[2023.04.17-22.54.24:807][252]DumpUnbuiltLightIteractions
+[2023.04.17-22.54.24:807][252]Lights with unbuilt interactions: 0
+[2023.04.17-22.54.24:807][252]
+[2023.04.17-22.54.24:807][252]Primitives with unbuilt interactions: 0
+[2023.04.17-22.54.24:845][252]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.17-22.54.24:845][252]LogShaderCompilers: Display: Total job queries 4, among them cache hits 0 (0.00%)
+[2023.04.17-22.54.24:845][252]LogShaderCompilers: Display: Tracking 4 distinct input hashes that result in 3 distinct outputs (75.00%)
+[2023.04.17-22.54.24:845][252]LogShaderCompilers: Display: RAM used: 0.01 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.04.17-22.54.24:845][252]LogShaderCompilers: Display: ================================================
+[2023.04.17-22.54.24:904][252]LogTexture: Display: 텍스처 빌드: NewReflectionComponentTextureEB9CBE3C423008B5E8E130901E171C89 (BGRA8, 128X128)
+[2023.04.17-22.54.24:964][253]Cmd: MAP CHECK NOTIFYRESULTS
+[2023.04.17-22.54.24:964][253]MapCheck: New page: Tutorial - 2023. 4. 18. 오후 4:54:24
+[2023.04.17-22.54.24:965][253]MapCheck: Warning: L_Cabinet_114 스태틱 메시 액터에 NULL StaticMesh 프로퍼티가 있습니다. 
+[2023.04.17-22.54.24:965][253]MapCheck: Warning: L_Cabinet2_2 스태틱 메시 액터에 NULL StaticMesh 프로퍼티가 있습니다. 
+[2023.04.17-22.54.24:965][253]MapCheck: 맵 체크 완료: 오류 0 회, 경고 2 회, 소요 시간 1.415ms.
+[2023.04.17-22.54.25:912][299]LogUObjectHash: Compacting FUObjectHashTables data took   2.81ms
+[2023.04.17-22.54.25:986][299]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/TutorialBFBCFB5540DF1C50892F95B53D1D2EF3.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Tutorial.umap'
+[2023.04.17-22.54.26:319][299]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Tutorial_BuiltDataA99B57404A6CCCE25D6876AEB50BB751.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/Tutorial_BuiltData.uasset'
+[2023.04.17-22.54.26:339][299]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.17-22.54.26:339][299]LogContentValidation: Display: World /Game/Levels/UsedLevel/Tutorial.Tutorial 유효성 검사 중
+[2023.04.17-22.54.26:339][299]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/Tutorial_BuiltData.Tutorial_BuiltData 유효성 검사 중
+[2023.04.17-22.54.27:469][403]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.54.27:478][403]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.17-22.54.43:745][760]LogUObjectHash: Compacting FUObjectHashTables data took   0.77ms
+[2023.04.17-22.54.48:646][760]LogMainFrame: Selected target: Project_MF
+[2023.04.17-22.54.48:648][760]LogLauncherProfile: Unable to use promoted target - receipt ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Binaries/Win64/Project_MF.target is not for a promoted target
+[2023.04.17-22.54.49:099][760]UATHelper: 패키징 (Windows (64-bit)): Running AutomationTool...
+[2023.04.17-22.54.49:099][760]UATHelper: 패키징 (Windows (64-bit)): Parsing command line: -ScriptsForProject=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject BuildCookRun -nocompileeditor -installed -nop4 -project=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject -cook -stage -archive -archivedirectory="D:/Users/qkrdl/Documents/Unreal Projects/Build" -package -ue4exe="D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe" -compressed -ddc=InstalledDerivedDataBackendGraph -pak -prereqs -nodebuginfo -targetplatform=Win64 -build -target=Project_MF -clientconfig=Development -utf8output
+[2023.04.17-22.54.52:133][105]UATHelper: 패키징 (Windows (64-bit)): Setting up ProjectParams for D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-22.54.52:490][147]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND STARTED **********
+[2023.04.17-22.54.52:511][149]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\DotNET\UnrealBuildTool.exe Project_MF Win64 Development -Project=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject  D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -NoUBTMakefiles  -remoteini="D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF" -skipdeploy -Manifest=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml -NoHotReload -log="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UBT-Project_MF-Win64-Development.txt"
+[2023.04.17-22.54.53:161][220]UATHelper: 패키징 (Windows (64-bit)):   Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.17-22.54.54:442][366]UATHelper: 패키징 (Windows (64-bit)):   Parsing headers for Project_MF
+[2023.04.17-22.54.54:476][370]UATHelper: 패키징 (Windows (64-bit)):     Running UnrealHeaderTool "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject" "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\Project_MF\Development\Project_MF.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UHT-Project_MF-Win64-Development.txt" -installed
+[2023.04.17-22.54.55:476][481]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-22.55.03:175][ 61]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2023.04.17-22.55.04:549][109]UATHelper: 패키징 (Windows (64-bit)):   Reflection code generated for Project_MF in 10.0546412 seconds
+[2023.04.17-22.55.06:464][243]UATHelper: 패키징 (Windows (64-bit)):   Writing manifest to D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml
+[2023.04.17-22.55.06:604][251]UATHelper: 패키징 (Windows (64-bit)):   Building Project_MF...
+[2023.04.17-22.55.06:605][251]UATHelper: 패키징 (Windows (64-bit)):   Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.17-22.55.06:621][252]UATHelper: 패키징 (Windows (64-bit)):   Building 4 actions with 8 processes...
+[2023.04.17-22.55.17:976][121]LogSlate: Window '프로젝트 세팅' being destroyed
+[2023.04.17-22.55.17:983][121]LogSlate: Window '프로젝트 세팅' being destroyed
+[2023.04.17-22.55.25:100][694]LogUObjectHash: Compacting FUObjectHashTables data took   4.37ms
+[2023.04.17-22.55.26:616][694]LogMainFrame: Selected target: Project_MF
+[2023.04.17-22.55.26:619][694]LogLauncherProfile: Unable to use promoted target - receipt ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Binaries/Win64/Project_MF.target is not for a promoted target
+[2023.04.17-22.55.26:676][695]UATHelper: 패키징 (Windows (64-bit)): Running AutomationTool...
+[2023.04.17-22.55.26:755][700]UATHelper: 패키징 (Windows (64-bit)): Parsing command line: -ScriptsForProject=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject BuildCookRun -nocompileeditor -installed -nop4 -project=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject -cook -stage -archive -archivedirectory="D:/Users/qkrdl/Documents/Unreal Projects/Build" -package -ue4exe="D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe" -compressed -ddc=InstalledDerivedDataBackendGraph -pak -prereqs -nodebuginfo -targetplatform=Win64 -build -target=Project_MF -clientconfig=Development -utf8output
+[2023.04.17-22.55.27:537][783]UATHelper: 패키징 (Windows (64-bit)): Setting up ProjectParams for D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-22.55.27:850][820]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND STARTED **********
+[2023.04.17-22.55.27:866][822]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\DotNET\UnrealBuildTool.exe Project_MF Win64 Development -Project=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject  D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -NoUBTMakefiles  -remoteini="D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF" -skipdeploy -Manifest=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml -NoHotReload -log="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UBT-Project_MF-Win64-Development.txt"
+[2023.04.17-22.55.28:447][887]UATHelper: 패키징 (Windows (64-bit)):   Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.17-22.55.30:073][ 75]UATHelper: 패키징 (Windows (64-bit)):   Writing manifest to D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml
+[2023.04.17-22.55.30:150][ 84]UATHelper: 패키징 (Windows (64-bit)):   Building Project_MF...
+[2023.04.17-22.55.30:150][ 84]UATHelper: 패키징 (Windows (64-bit)):   Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.17-22.55.30:175][ 87]UATHelper: 패키징 (Windows (64-bit)):   Building 4 actions with 8 processes...
+[2023.04.17-22.55.40:396][253]UATHelper: 패키징 (Windows (64-bit)):     [1/4] Module.Project_MF.gen.cpp
+[2023.04.17-22.55.46:065][879]UATHelper: 패키징 (Windows (64-bit)):     [2/4] Module.Project_MF.cpp
+[2023.04.17-22.55.53:885][793]UATHelper: 패키징 (Windows (64-bit)):     [3/4] Project_MF.exe
+[2023.04.17-22.55.53:885][793]UATHelper: 패키징 (Windows (64-bit)):        D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\Project_MF.lib ���̺귯�� �� D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\Project_MF.exp ��ü�� �����ϰ� �ֽ��ϴ�.
+[2023.04.17-22.55.54:059][813]UATHelper: 패키징 (Windows (64-bit)):     [4/4] Project_MF.target
+[2023.04.17-22.55.54:059][813]UATHelper: 패키징 (Windows (64-bit)):   Total time in Parallel executor: 23.89 seconds
+[2023.04.17-22.55.54:059][813]UATHelper: 패키징 (Windows (64-bit)):   Total execution time: 26.15 seconds
+[2023.04.17-22.55.54:101][818]UATHelper: 패키징 (Windows (64-bit)): Took 26.229043s to run UnrealBuildTool.exe, ExitCode=0
+[2023.04.17-22.55.54:126][821]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND COMPLETED **********
+[2023.04.17-22.55.54:127][821]UATHelper: 패키징 (Windows (64-bit)): ********** COOK COMMAND STARTED **********
+[2023.04.17-22.55.54:136][822]UATHelper: 패키징 (Windows (64-bit)): Running UE4Editor Cook for project D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-22.55.54:136][822]UATHelper: 패키징 (Windows (64-bit)): Commandlet log file is D:\Program Files\Epic Games\UE_4.27\Engine\Programs\AutomationTool\Saved\Cook-2023.04.18-07.55.54.txt
+[2023.04.17-22.55.54:136][822]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -run=Cook  -TargetPlatform=WindowsNoEditor -fileopenlog -ddc=InstalledDerivedDataBackendGraph -unversioned -abslog="D:\Program Files\Epic Games\UE_4.27\Engine\Programs\AutomationTool\Saved\Cook-2023.04.18-07.55.54.txt" -stdout -CrashForUAT -unattended -NoLogTimes  -UTF8Output
+[2023.04.17-22.55.54:679][883]UATHelper: 패키징 (Windows (64-bit)):   LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+[2023.04.17-22.55.54:679][883]UATHelper: 패키징 (Windows (64-bit)):   LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+[2023.04.17-22.55.54:679][883]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Running engine for game: Project_MF
+[2023.04.17-22.55.55:630][990]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-22.55.56:169][ 54]UATHelper: 패키징 (Windows (64-bit)):   LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.04.17-22.55.56:482][ 91]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.04.17-22.55.56:516][ 95]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.04.17-22.55.56:534][ 97]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.04.17-22.55.56:534][ 97]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.04.17-22.55.56:551][ 99]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.04.17-22.55.56:551][ 99]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
+[2023.04.17-22.55.56:558][100]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.04.17-22.55.56:569][101]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.04.17-22.55.56:577][102]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
+[2023.04.17-22.55.56:586][103]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
+[2023.04.17-22.55.56:594][104]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
+[2023.04.17-22.55.56:629][108]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
+[2023.04.17-22.55.56:629][108]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
+[2023.04.17-22.55.56:637][109]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacNoEditor'
+[2023.04.17-22.55.56:647][110]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
+[2023.04.17-22.55.56:655][111]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
+[2023.04.17-22.55.56:655][111]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
+[2023.04.17-22.55.56:670][113]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.04.17-22.55.56:670][113]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.04.17-22.55.56:682][114]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
+[2023.04.17-22.55.56:690][115]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.04.17-22.55.56:690][115]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.04.17-22.55.56:699][116]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.04.17-22.55.56:699][116]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Building Assets For WindowsNoEditor
+[2023.04.17-22.55.56:716][118]UATHelper: 패키징 (Windows (64-bit)):   LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.04.17-22.55.56:758][123]UATHelper: 패키징 (Windows (64-bit)):   LogTextureFormatOodle: Display: Oodle Texture 2.9.0 init RDO Off
+[2023.04.17-22.55.57:301][185]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Using Local Shader Compiler.
+[2023.04.17-22.55.57:992][266]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2023.04.17-22.55.58:055][273]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
+[2023.04.17-22.55.58:080][276]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.17-22.55.58:091][277]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.05ms. RandomReadSpeed=676.19MBs, RandomWriteSpeed=105.81MBs. Assigned SpeedClass 'Local'
+[2023.04.17-22.56.00:717][588]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-22.56.00:717][588]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-22.56.00:717][588]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-22.56.00:727][589]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-22.56.00:727][589]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-22.56.00:727][589]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-22.56.00:727][589]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-22.56.00:727][589]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-22.56.01:237][648]UATHelper: 패키징 (Windows (64-bit)):   LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.17-22.56.01:237][648]UATHelper: 패키징 (Windows (64-bit)):   LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.17-22.56.02:315][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFStageData::CurrentCheckPoint is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFObjectData::ObjectState is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFObjectData::ObjectMovement is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectLocation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectRotation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectScale is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectVelocity is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: 11 Uninitialized script struct members found including 4 object properties
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: CookSettings for Memory: MemoryMaxUsedVirtual 0MiB, MemoryMaxUsedPhysical 16384MiB, MemoryMinFreeVirtual 0MiB, MemoryMinFreePhysical 1024MiB
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Mobile HDR setting 1
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Creating asset registry
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.02:316][746]PackagingResults: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.06:397][166]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Discovering localized assets for cultures: en
+[2023.04.17-22.56.06:422][169]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Inisetting is different for  Engine /Script/EngineSettings.GameMapsSettings EditorStartupMap 0, value /Game/Levels/MagneticTestLevel.MagneticTestLevel != /Game/Levels/test_1.test_1 invalidating cook
+[2023.04.17-22.56.06:422][169]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: To avoid this add blacklist setting to DefaultEditor.ini [CookSettings] Engine:/Script/EngineSettings.GameMapsSettings
+[2023.04.17-22.56.06:422][169]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Clearing all cooked content for platform WindowsNoEditor
+[2023.04.17-22.56.06:434][170]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Sandbox cleanup took 0.033 seconds for platforms WindowsNoEditor
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM5) Stats:
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 191 (19100.00%)
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shaders: 1962, Unique Shaders: 1951 (99.44%)
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shader Size: 5.10mb, Unique Shaders Size: 5.09mb (99.93%)
+[2023.04.17-22.56.07:634][307]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: === Extended info:
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Maximum number of shaders in shadermap: 264
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:     3, 3, 2, 2, 2, 2, 2, 2, 2, 1
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Shaders/PCD3D_SM5/ShaderDebug-Global-PCD3D_SM5/Dump.txt'
+[2023.04.17-22.56.07:645][308]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-22.56.07:999][350]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 0 Packages Remain 52 Total 52
+[2023.04.17-22.56.07:999][350]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook Diagnostics: OpenFileHandles=351, VirtualMemory=569MiB
+[2023.04.17-22.56.08:454][399]UATHelper: 패키징 (Windows (64-bit)):   LogMaterial: Display: Missing cached shadermap for Magnet_glow_ver3 in PCD3D_SM5, Default, SM5 (DDC key hash: 46BE47637AF783BF5C77D9B0BF0E8B2D1B0764B2), compiling.
+[2023.04.17-22.56.08:664][421]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Submitted 40 shader compile jobs with 'Low' priority
+[2023.04.17-22.56.08:767][432]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Started 40 'Local' shader compile jobs with 'Low' priority
+[2023.04.17-22.56.09:341][494]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 200 Packages Remain 179 Total 379
+[2023.04.17-22.56.10:940][664]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 394 Packages Remain 12 Total 406
+[2023.04.17-22.56.12:926][864]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 405 Packages Remain 1 Total 406
+[2023.04.17-22.56.18:927][455]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 405 Packages Remain 1 Total 406
+[2023.04.17-22.56.20:403][610]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 406 Packages Remain 0 Total 406
+[2023.04.17-22.56.20:403][610]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook Diagnostics: OpenFileHandles=409, VirtualMemory=816MiB
+[2023.04.17-22.56.20:403][610]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Finishing up...
+[2023.04.17-22.56.20:403][610]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Saving BulkData manifest(s)...
+[2023.04.17-22.56.20:403][610]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Done saving BulkData manifest(s)
+[2023.04.17-22.56.20:413][611]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Nativization Summary - AnimBP:
+[2023.04.17-22.56.20:413][611]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Name, Children, Non-empty Functions (Empty Functions), Variables, FunctionUsage, VariableUsage
+[2023.04.17-22.56.20:413][611]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Nativization Summary - Shared Variables From Graph: 0
+[2023.04.17-22.56.20:446][615]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Saving asset registry v8.
+[2023.04.17-22.56.20:463][617]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Generated asset registry num assets 415, size is 141.70kb
+[2023.04.17-22.56.20:463][617]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Done saving asset registry.
+[2023.04.17-22.56.20:541][626]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:
+[2023.04.17-22.56.20:541][626]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Shader Library 'Project_MF' (PCD3D_SM5) Stats:
+[2023.04.17-22.56.20:541][626]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-22.56.20:551][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Assets: 63, Unique Shadermaps: 55 (87.30%)
+[2023.04.17-22.56.20:551][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shaders: 2096, Unique Shaders: 1715 (81.82%)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shader Size: 4.32mb, Unique Shaders Size: 3.64mb (84.09%)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: === Extended info:
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Minimum number of shaders in shadermap: 2
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Median number of shaders in shadermap: 17
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Maximum number of shaders in shadermap: 493
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:     16, 15, 11, 10, 10, 10, 8, 8, 8, 7
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Shaders/PCD3D_SM5/ShaderDebug-Project_MF-PCD3D_SM5/Dump.txt'
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook by the book total time in tick 3.583899s total time 18.232540
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Peak Used virtual 852 MiB Peak Used physical 911 MiB
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Hierarchy Timer Information:
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:   Root: 0.000s (0)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     CleanSandbox: 0.033s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       ProcessingAccessedStrings: 0.002s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     CollectFilesToCook: 0.350s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       CookModificationDelegate: 0.000s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     GenerateLongPackageName: 0.000s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     TickCookOnTheSide: 3.552s (274008)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       PostLoadPackageFixup: 0.025s (560215)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       LoadPackageForCooking: 0.188s (406)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SavingPackages: 3.158s (274017)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         BeginPackageCacheForCookedPlatformData: 0.024s (42)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         PrecachePlatformDataForNextPackage: 0.806s (405)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:           BeginPackageCacheForCookedPlatformData: 0.806s (364)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         SaveCookedPackage: 1.223s (406)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:           GEditorSavePackage: 1.203s (406)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:             ConvertingBlueprints: 0.004s (406)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:             VerifyCanCookPackage: 0.003s (403)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         ClearAllCachedCookedPlatformData: 0.007s (406)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     FinalizePackageStore: 0.001s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     GeneratingBlueprintAssets: 0.002s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     SavingCurrentIniSettings: 0.011s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       ProcessingAccessedStrings: 0.002s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     SavingAssetRegistry: 0.133s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       BuildChunkManifest: 0.018s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SaveManifests: 0.004s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SaveRealAssetRegistry: 0.020s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       WriteCookerOpenOrder: 0.042s (1)
+[2023.04.17-22.56.20:552][627]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Done!
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogSavePackage: Display: Took 0.000625s to verify the EDL loading graph.
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Misc Cook Stats
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ===============
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NiagaraShader.Misc
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ShaderCompiler
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     BlockingTimeSec=0.000030
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     AsyncCompileTimeSec=44.795021
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     GlobalBeginCompileShaderTimeSec=0.177875
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     GlobalBeginCompileShaderCalls=40
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ProcessAsyncResultsTimeSec=0.224498
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GlobalShader.Misc
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MeshMaterial.Misc
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=40
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MaterialShader.Misc
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.Load
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPreloadedDependencies=29
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumInlineLoads=3
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPackagesLoaded=213
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     LoadPackageTimeSec=1.535555
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: CookOnTheFlyServer
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakRequestQueueSize=31
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakLoadQueueSize=348
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakSaveQueueSize=340
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.Save
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPackagesSaved=406
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavePackageTimeSec=1.183708
+[2023.04.17-22.56.20:569][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsPresaveTimeSec=0.553121
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsTimeSec=0.038751
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     FullyLoadLoadersTimeSec=0.000574
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ResetLoadersTimeSec=0.002320
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsGetObjectsWithOuter=0.004952
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsGetObjectsWithMarks=0.000329
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeImportsTimeSec=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SortExportsSeekfreeInnerTimeSec=0.158016
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeExportsTimeSec=0.224621
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeBulkDataTimeSec=0.017355
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     AsyncWriteTimeSec=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     MBWritten=185.259904
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.DifferentPackagesSizeMBPerAsset
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.NumberOfDifferencesInPackagesPerAsset
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.PackageDifferencesSizeMBPerAsset
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.DiffTotal
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumberOfDifferentPackages=0
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     DifferentPackagesSizeMB=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumberOfDifferencesInPackages=0
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PackageDifferencesSizeMB=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: UnversionedProperties
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavedStructs=0
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavedMB=0
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     EquivalentTaggedMB=0
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     CompressionRatio=-nan(ind)
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     BitfieldWasteKB=0
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Cook Profile
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ============
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0.CookWallTimeSec=26.124301
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 0.StartupWallTimeSec=7.882848
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1.CookByTheBookTimeSec=18.238688
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 0.StartCookByTheBookTimeSec=5.675173
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 0. 0.GameCookModificationDelegateTimeSec=0.000015
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1.TickCookOnTheSideTimeSec=3.774436
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 0.TickCookOnTheSideLoadPackagesTimeSec=0.187928
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 1.TickCookOnTheSideSaveCookedPackageTimeSec=1.223599
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 1. 0.TickCookOnTheSideResolveRedirectorsTimeSec=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 2.TickCookOnTheSideBeginPackageCacheForCookedPlatformDataTimeSec=0.829749
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 3.TickCookOnTheSideFinishPackageCacheForCookedPlatformDataTimeSec=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 2.TickLoopGCTimeSec=0.000000
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 3.TickLoopRecompileShaderRequestsTimeSec=4.713804
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 4.TickLoopShaderProcessAsyncResultsTimeSec=0.064594
+[2023.04.17-22.56.20:570][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 5.TickLoopProcessDeferredCommandsTimeSec=0.155209
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 6.TickLoopTickCommandletStatsTimeSec=0.020050
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DDC Summary Stats
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: =================
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGetHits    =       776
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGets       =       779
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGetHitPct  =  0.996149
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: LocalGetHitPct  =  0.116816
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: SharedGetHitPct =  0.000000
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: OtherGetHitPct  =  0.879332
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GetMissPct      =  0.003851
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPutHits    =         1
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPuts       =         1
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPutHitPct  =  1.000000
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: PutMissPct      =  0.000000
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DDC Resource Stats
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: =======================================================================================================
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Asset Type                          Total Time (Sec)  GameThread Time (Sec)  Assets Built  MB Processed
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ----------------------------------  ----------------  ---------------------  ------------  ------------
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Texture (Streaming)                             0.61                   0.00             0         50.30
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MaterialShader                                  0.44                   0.44             1          6.78
+[2023.04.17-22.56.20:571][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: AnimSequence                                    0.25                   0.25             0          0.22
+[2023.04.17-22.56.20:572][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NiagaraScript                                   0.07                   0.07             0          0.35
+[2023.04.17-22.56.20:572][628]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: PhysX (BodySetup)                               0.06                   0.06             0          5.76
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: StaticMesh                                      0.02                   0.02             0         12.25
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GlobalShader                                    0.02                   0.02             0          6.31
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: SkeletalMesh                                    0.02                   0.02             0          2.65
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Texture (Inline)                                0.00                   0.00             0        114.26
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NavCollision                                    0.00                   0.00             0          0.05
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DistanceField                                   0.00                   0.00             0          0.00
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Warning/Error Summary (Unique only)
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: -----------------------------------
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Success - 0 error(s), 11 warning(s)
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   
+[2023.04.17-22.56.20:595][629]UATHelper: 패키징 (Windows (64-bit)):   Execution of commandlet took:  18.26 seconds
+[2023.04.17-22.56.20:742][646]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.17-22.56.20:742][646]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Total job queries 40, among them cache hits 0 (0.00%)
+[2023.04.17-22.56.20:742][646]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Tracking 40 distinct input hashes that result in 26 distinct outputs (65.00%)
+[2023.04.17-22.56.20:742][646]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: RAM used: 0.22 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.01%
+[2023.04.17-22.56.20:742][646]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: ================================================
+[2023.04.17-22.56.20:920][667]UATHelper: 패키징 (Windows (64-bit)):   LogHttp: Display: cleaning up 0 outstanding Http requests.
+[2023.04.17-22.56.21:114][690]UATHelper: 패키징 (Windows (64-bit)):   LogContentStreaming: Display: There are 1 unreleased StreamingManagers
+[2023.04.17-22.56.22:633][857]UATHelper: 패키징 (Windows (64-bit)): Took 28.4990481s to run UE4Editor-Cmd.exe, ExitCode=0
+[2023.04.17-22.56.22:642][858]UATHelper: 패키징 (Windows (64-bit)): ********** COOK COMMAND COMPLETED **********
+[2023.04.17-22.56.22:642][858]UATHelper: 패키징 (Windows (64-bit)): ********** STAGE COMMAND STARTED **********
+[2023.04.17-22.56.22:736][868]UATHelper: 패키징 (Windows (64-bit)): Creating Staging Manifest...
+[2023.04.17-22.56.22:849][881]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditor.ini
+[2023.04.17-22.56.22:849][881]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorKeyBindings.ini
+[2023.04.17-22.56.22:849][881]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorPerProjectUserSettings.ini
+[2023.04.17-22.56.22:849][881]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorSettings.ini
+[2023.04.17-22.56.22:849][881]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseLightmass.ini
+[2023.04.17-22.56.22:849][881]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BasePakFileRules.ini
+[2023.04.17-22.56.22:857][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Category.ini
+[2023.04.17-22.56.22:857][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Editor.ini
+[2023.04.17-22.56.22:857][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\EditorTutorials.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Engine.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Keywords.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PortableObjectExport.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PortableObjectImport.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PropertyNames.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\RepairData.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\ToolTips.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\WordCount.ini
+[2023.04.17-22.56.22:858][882]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Config\DefaultEditor.ini
+[2023.04.17-22.56.23:021][901]UATHelper: 패키징 (Windows (64-bit)): Cleaning Stage Directory: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor
+[2023.04.17-22.56.23:400][945]UATHelper: 패키징 (Windows (64-bit)): Creating pak using staging manifest.
+[2023.04.17-22.56.23:631][970]UATHelper: 패키징 (Windows (64-bit)): Executing 1 UnrealPak command...
+[2023.04.17-22.56.29:378][586]UATHelper: 패키징 (Windows (64-bit)): Waiting for child processes to complete (1/1)
+[2023.04.17-22.56.29:378][586]UATHelper: 패키징 (Windows (64-bit)): Output from: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor\Project_MF\Content\Paks\Project_MF-WindowsNoEditor.pak -create="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\PakList_Project_MF-WindowsNoEditor.txt" -cryptokeys=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\Cooked\WindowsNoEditor\Project_MF\Metadata\Crypto.json -secondaryOrder=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log -patchpaddingalign=2048 -platform=Windows -compressionformats=Oodle -compressmethod=Kraken -compresslevel=3  -multiprocess -abslog="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UnrealPak-Project_MF-WindowsNoEditor-2023.04.18-07.56.23.txt" -compressionblocksize=256KB
+[2023.04.17-22.56.29:378][586]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   OodleDataCompression: Display: Oodle v2.9.0 initializing with method=Kraken, level=3=Fast
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Parsing crypto keys from a crypto key cache file
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Loading response file C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\PakList_Project_MF-WindowsNoEditor.txt
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Added 1957 entries to add to pak file.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Loading pak order file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log...
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Finished loading pak order file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Collecting files to add to pak file...
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Collected 1957 files in 0.01s.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Creating pak D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor\Project_MF\Content\Paks\Project_MF-WindowsNoEditor.pak.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormats in priority order: Oodle, Zlib
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.00ms. RandomReadSpeed=999.00MBs, RandomWriteSpeed=999.00MBs. Assigned SpeedClass 'Local'
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 0 [Oodle] : 579 files, 204001116 -> 32367476 bytes
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 1 [Zlib] : 62 files, 3385449 -> 1138729 bytes
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 2 [None] : 1316 files, 10278030 -> 10278030 bytes
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Added 1957 files, 44732737 bytes total, time 4.08s.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: PrimaryIndex size: 31830 bytes
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: PathHashIndex size: 51312 bytes
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: FullDirectoryIndex size: 70117 bytes
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Compression summary: 16.16% of original size. Compressed Size 33506205 bytes, Original Size 207386565 bytes.
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Encryption - DISABLED
+[2023.04.17-22.56.29:379][586]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Unreal pak executed in 4.151689 seconds
+[2023.04.17-22.56.29:381][586]UATHelper: 패키징 (Windows (64-bit)): UnrealPak terminated with exit code 0
+[2023.04.17-22.56.29:381][586]UATHelper: 패키징 (Windows (64-bit)): Copying NonUFSFiles to staging directory: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): ********** STAGE COMMAND COMPLETED **********
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): ********** PACKAGE COMMAND STARTED **********
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): ********** PACKAGE COMMAND COMPLETED **********
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): ********** ARCHIVE COMMAND STARTED **********
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): Archiving to D:/Users/qkrdl/Documents/Unreal Projects/Build
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): ********** ARCHIVE COMMAND COMPLETED **********
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): BUILD SUCCESSFUL
+[2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): AutomationTool exiting with ExitCode=0 (Success)
+[2023.04.17-22.56.39:084][615]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
