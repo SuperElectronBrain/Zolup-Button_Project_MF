@@ -14,6 +14,28 @@ UPowerLightControlComponent::UPowerLightControlComponent()
 void UPowerLightControlComponent::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (ObserveTarget != nullptr)
+	{
+		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
+		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		{
+			if (ObserveTargetExecutionComponent->GetPowerState() == false)
+			{
+				if (NonReversibleAction == false)
+				{
+					ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
+					if (::IsValid(ObserveTargetLightComponent) == true)
+					{
+						if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
+						{
+							ObserveTargetLightComponent->SetVisibility(ReversAction);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 void UPowerLightControlComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)

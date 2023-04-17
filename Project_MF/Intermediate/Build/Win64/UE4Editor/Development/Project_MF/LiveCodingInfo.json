@@ -39,7 +39,8 @@
 			"PowerConnectionComponent.cpp.obj",
 			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
-			"PowerLightControlComponent.cpp.obj",
+			"PowerExecutionComponent.cpp.obj",
+			"PowerGenerateComponent.cpp.obj",
 			"PowerMovementComponent.cpp.obj",
 			"PowerRotationMovementComponent.cpp.obj",
 			"PowerSensorComponent.cpp.obj",
@@ -47,13 +48,8 @@
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
 			"TestActorObject.cpp.obj",
-<<<<<<< HEAD
 			"TestPlayerGameMode.cpp.obj",
-			"PowerExecutionComponent.cpp.obj",
-			"PowerGenerateComponent.cpp.obj"
-=======
-			"TestPlayerGameMode.cpp.obj"
->>>>>>> 0.0.3-Designers
+			"PowerLightControlComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CustomGameInstance.gen.cpp.obj",
