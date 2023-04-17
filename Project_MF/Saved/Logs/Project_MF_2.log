@@ -3889,3 +3889,1379 @@ Script Stack (0 frames):
 [2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): BUILD SUCCESSFUL
 [2023.04.17-22.56.29:714][587]UATHelper: 패키징 (Windows (64-bit)): AutomationTool exiting with ExitCode=0 (Success)
 [2023.04.17-22.56.39:084][615]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.57.06:872][ 32]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.57.24:442][783]LogUObjectHash: Compacting FUObjectHashTables data took   3.60ms
+[2023.04.17-22.58.30:113][ 57]LogContentBrowser: Attempting asset rename: Tutorial -> Tutorial
+[2023.04.17-22.58.37:725][145]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-22.59.09:352][196]LogUObjectHash: Compacting FUObjectHashTables data took   2.44ms
+[2023.04.17-22.59.11:913][483]Cmd: EDIT CUT
+[2023.04.17-22.59.11:920][483]LogEditorActor: Deleted Actor: StaticMeshActor
+[2023.04.17-22.59.11:937][483]LogUObjectHash: Compacting FUObjectHashTables data took   2.25ms
+[2023.04.17-22.59.11:938][483]LogEditorActor: Deleted 1 Actors (0.024 secs)
+[2023.04.17-22.59.12:958][605]Cmd: TRANSACTION UNDO
+[2023.04.17-22.59.12:958][605]LogEditorTransaction: Undo 잘라내기
+[2023.04.17-22.59.13:372][615]Cmd: TRANSACTION UNDO
+[2023.04.17-22.59.13:372][615]LogEditorTransaction: Undo 게임 기본 맵 편집
+[2023.04.17-22.59.24:184][683]LogObjectTools: Deleting 1 worlds: /Game/Levels/UsedLevel/MainLevel.MainLevel
+[2023.04.17-22.59.24:184][683]LogObjectTools: Currently 9 active worlds: /Game/Levels/UsedLevel/Tutorial.Tutorial, /Engine/Transient.World_0, /Engine/Transient.World_1, /Engine/Transient.World_2, /Engine/Transient.World_3, /Engine/Transient.World_4, /Engine/Transient.World_5, /Engine/Transient.World_6, /Engine/Transient.World_8
+[2023.04.17-22.59.24:200][683]LogUObjectHash: Compacting FUObjectHashTables data took   2.09ms
+[2023.04.17-22.59.25:277][683]LogSlate: Window 'Delete Assets' being destroyed
+[2023.04.17-22.59.25:292][683]LogUObjectGlobals: Force Deleting 1 Package(s):
+	Asset Name: /Game/Levels/UsedLevel/MainLevel.MainLevel
+[2023.04.17-22.59.26:155][683]LogWorld: UWorld::CleanupWorld for MainLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-22.59.26:155][683]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.59.26:287][683]LogObjectTools: Warning: Detected inconsistencies between reference gathering algorithms. Switching 'Editor.UseLegacyGetReferencersForDeletion' on for the remainder of this editor session.
+[2023.04.17-22.59.26:423][683]LogUObjectHash: Compacting FUObjectHashTables data took   2.10ms
+[2023.04.17-22.59.34:593][375]LogMetaData: Removing '/Game/Levels/UsedLevel/MainLevel.MainLevel_C' ref from Metadata '/Game/Levels/MainLevel.PackageMetaData'
+[2023.04.17-22.59.34:593][375]LogMetaData: Removing '/Game/Levels/UsedLevel/MainLevel.MainLevel:PersistentLevel.MainLevel.EventGraph.K2Node_Event_0' ref from Metadata '/Game/Levels/MainLevel.PackageMetaData'
+[2023.04.17-22.59.34:593][375]LogMetaData: Removing '/Game/Levels/UsedLevel/MainLevel.MainLevel:PersistentLevel.MainLevel.EventGraph.K2Node_Event_1' ref from Metadata '/Game/Levels/MainLevel.PackageMetaData'
+[2023.04.17-22.59.34:593][375]LogMetaData: Removing '/Game/Levels/UsedLevel/MainLevel.SKEL_MainLevel_C:ReceiveBeginPlay' ref from Metadata '/Game/Levels/MainLevel.PackageMetaData'
+[2023.04.17-22.59.34:593][375]LogMetaData: Removing '/Game/Levels/UsedLevel/MainLevel.SKEL_MainLevel_C:ReceiveTick' ref from Metadata '/Game/Levels/MainLevel.PackageMetaData'
+[2023.04.17-22.59.34:593][375]LogMetaData: Removing '/Game/Levels/UsedLevel/MainLevel.SKEL_MainLevel_C' ref from Metadata '/Game/Levels/MainLevel.PackageMetaData'
+[2023.04.17-22.59.34:628][375]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/MainLevel_BuiltDataC72F36A84EE285655532B3911682C207.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/MainLevel_BuiltData.uasset'
+[2023.04.17-22.59.34:648][375]LogUObjectHash: Compacting FUObjectHashTables data took   2.43ms
+[2023.04.17-22.59.34:659][375]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/MainLevelCBAB4CF14A24A10FC3E66CACDBC42B85.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/MainLevel.umap'
+[2023.04.17-22.59.34:661][375]LogFileHelpers: Saving map 'MainLevel' took 0.032
+[2023.04.17-22.59.34:980][375]LogUObjectHash: Compacting FUObjectHashTables data took   1.33ms
+[2023.04.17-22.59.35:000][375]LogUObjectHash: Compacting FUObjectHashTables data took   0.59ms
+[2023.04.17-22.59.35:025][375]LogUObjectHash: Compacting FUObjectHashTables data took   1.85ms
+[2023.04.17-22.59.35:040][375]LogUObjectHash: Compacting FUObjectHashTables data took   0.57ms
+[2023.04.17-22.59.35:110][375]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.04.17-22.59.35:110][375]LogContentValidation: Display: MapBuildDataRegistry /Game/Levels/UsedLevel/MainLevel_BuiltData.MainLevel_BuiltData 유효성 검사 중
+[2023.04.17-22.59.35:110][375]LogContentValidation: Display: World /Game/Levels/UsedLevel/MainLevel.MainLevel 유효성 검사 중
+[2023.04.17-22.59.37:510][613]LogUObjectHash: Compacting FUObjectHashTables data took   2.29ms
+[2023.04.17-22.59.37:549][613]LogAssetEditorSubsystem: Opening Asset editor for World /Game/Levels/UsedLevel/MainLevel.MainLevel
+[2023.04.17-22.59.37:549][613]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UsedLevel/MainLevel.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.04.17-22.59.37:549][613]LightingResults: New page: 라이팅 빌드
+[2023.04.17-22.59.37:549][613]LoadErrors: New page: 맵 로드 중: MainLevel.umap
+[2023.04.17-22.59.37:552][613]LogWorld: UWorld::CleanupWorld for Tutorial, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-22.59.37:552][613]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.59.37:552][613]MapCheck: New page: 맵 체크
+[2023.04.17-22.59.37:552][613]LightingResults: New page: 라이팅 빌드
+[2023.04.17-22.59.37:568][613]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.17-22.59.37:573][613]LogUObjectHash: Compacting FUObjectHashTables data took   2.39ms
+[2023.04.17-22.59.37:575][613]LogAudio: Display: Audio Device (ID: 1) registered with world 'MainLevel'.
+[2023.04.17-22.59.37:578][613]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.04.17-22.59.37:578][613]LogAIModule: Creating AISystem for world MainLevel
+[2023.04.17-22.59.37:597][613]LogUObjectHash: Compacting FUObjectHashTables data took   2.14ms
+[2023.04.17-22.59.37:608][613]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.04.17-22.59.37:608][613]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.083ms.
+[2023.04.17-22.59.37:608][613]LogFileHelpers: Loading map 'MainLevel' took 0.059
+[2023.04.17-22.59.41:315][ 24]LogTemp: Repeating last play command: 선택된 뷰포트
+[2023.04.17-22.59.41:323][ 24]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.17-22.59.41:323][ 24]PIE: New page: PIE 세션: MainLevel (2023. 4. 18. 오후 4:59:41)
+[2023.04.17-22.59.41:345][ 24]LogPlayLevel: Creating play world package: /Game/Levels/UsedLevel/UEDPIE_0_MainLevel
+[2023.04.17-22.59.41:348][ 24]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003284s)
+[2023.04.17-22.59.41:350][ 24]LogAIModule: Creating AISystem for world MainLevel
+[2023.04.17-22.59.41:350][ 24]LogPlayLevel: PIE: World Init took: (0.001442s)
+[2023.04.17-22.59.41:350][ 24]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UsedLevel/MainLevel.MainLevel to /Game/Levels/UsedLevel/UEDPIE_0_MainLevel.MainLevel (0.004989s)
+[2023.04.17-22.59.41:367][ 24]LogUObjectHash: Compacting FUObjectHashTables data took   2.25ms
+[2023.04.17-22.59.41:368][ 24]LogAudio: Display: Creating Audio Device:                 Id: 11, Scope: Unique, Realtime: True
+[2023.04.17-22.59.41:368][ 24]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.17-22.59.41:368][ 24]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.17-22.59.41:368][ 24]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.17-22.59.41:368][ 24]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.17-22.59.41:369][ 24]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.17-22.59.41:369][ 24]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.17-22.59.41:369][ 24]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.17-22.59.41:369][ 24]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.17-22.59.41:369][ 24]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.17-22.59.41:369][ 24]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.17-22.59.41:369][ 24]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.17-22.59.41:369][ 24]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.17-22.59.41:372][ 24]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.17-22.59.41:372][ 24]LogAudioMixer: Display: 1: FrontRight
+[2023.04.17-22.59.41:382][ 24]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.17-22.59.41:382][ 24]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.17-22.59.41:382][ 24]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.17-22.59.41:382][ 24]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.17-22.59.41:383][ 24]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.17-22.59.41:383][ 24]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.17-22.59.41:383][ 24]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.17-22.59.41:384][ 24]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.17-22.59.41:384][ 24]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.17-22.59.41:384][ 24]LogInit: FAudioDevice initialized.
+[2023.04.17-22.59.41:384][ 24]LogAudio: Display: Audio Device (ID: 11) registered with world 'MainLevel'.
+[2023.04.17-22.59.41:390][ 24]LogLoad: Game class is 'MainLevelGameMode'
+[2023.04.17-22.59.41:390][ 24]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_MainLevel.MainLevel up for play (max tick rate 0) at 2023.04.18-07.59.41
+[2023.04.17-22.59.41:391][ 24]LogWorld: Bringing up level for play took: 0.000478
+[2023.04.17-22.59.41:391][ 24]LogOnline: OSS: Creating online subsystem instance for: :Context_22
+[2023.04.17-22.59.41:392][ 24]PIE: 서버가 로그인했습니다.
+[2023.04.17-22.59.41:394][ 24]PIE: 에디터에서 플레이 총 시작 시간 0.072초입니다.
+[2023.04.17-22.59.42:337][129]LogNet: Browse: /Game/Levels/UsedLevel/Tutorial
+[2023.04.17-22.59.42:337][129]LogLoad: LoadMap: /Game/Levels/UsedLevel/Tutorial
+[2023.04.17-22.59.42:337][129]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_MainLevel
+[2023.04.17-22.59.42:337][129]LogWorld: UWorld::CleanupWorld for MainLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-22.59.42:337][129]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.59.42:398][129]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.17-22.59.42:401][129]LogUObjectHash: Compacting FUObjectHashTables data took   2.20ms
+[2023.04.17-22.59.42:455][129]LogAudio: Display: Audio Device (ID: 11) registered with world 'Tutorial'.
+[2023.04.17-22.59.42:456][129]LogAIModule: Creating AISystem for world Tutorial
+[2023.04.17-22.59.42:456][129]LogLoad: Game class is 'TestPlayerGameMode'
+[2023.04.17-22.59.42:462][129]LogWorld: Bringing World /Game/Levels/UsedLevel/UEDPIE_0_Tutorial.Tutorial up for play (max tick rate 0) at 2023.04.18-07.59.42
+[2023.04.17-22.59.42:463][129]LogWorld: Bringing up level for play took: 0.005864
+[2023.04.17-22.59.42:466][129]LogLoad: Took 0.129517 seconds to LoadMap(/Game/Levels/UsedLevel/Tutorial)
+[2023.04.17-22.59.44:627][382]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.17-22.59.44:627][382]LogWorld: BeginTearingDown for /Game/Levels/UsedLevel/UEDPIE_0_Tutorial
+[2023.04.17-22.59.44:627][382]LogWorld: UWorld::CleanupWorld for Tutorial, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-22.59.44:629][382]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.59.44:636][382]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.17-22.59.44:640][382]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.17-22.59.44:655][382]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.17-22.59.44:655][382]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.17-22.59.44:656][382]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.17-22.59.44:659][382]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.17-22.59.44:663][382]LogUObjectHash: Compacting FUObjectHashTables data took   2.04ms
+[2023.04.17-22.59.44:707][384]LogPlayLevel: Display: Destroying online subsystem :Context_22
+[2023.04.17-22.59.48:572][723]LogUObjectHash: Compacting FUObjectHashTables data took   2.09ms
+[2023.04.17-22.59.58:261][723]LogMainFrame: Selected target: Project_MF
+[2023.04.17-22.59.58:263][723]LogLauncherProfile: Unable to use promoted target - receipt ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Binaries/Win64/Project_MF.target is not for a promoted target
+[2023.04.17-22.59.58:346][727]UATHelper: 패키징 (Windows (64-bit)): Running AutomationTool...
+[2023.04.17-22.59.58:423][729]UATHelper: 패키징 (Windows (64-bit)): Parsing command line: -ScriptsForProject=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject BuildCookRun -nocompileeditor -installed -nop4 -project=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject -cook -stage -archive -archivedirectory="D:/Users/qkrdl/Documents/Unreal Projects/Build" -package -ue4exe="D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe" -compressed -ddc=InstalledDerivedDataBackendGraph -pak -prereqs -nodebuginfo -targetplatform=Win64 -build -target=Project_MF -clientconfig=Development -utf8output
+[2023.04.17-22.59.59:168][811]UATHelper: 패키징 (Windows (64-bit)): Setting up ProjectParams for D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-22.59.59:500][851]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND STARTED **********
+[2023.04.17-22.59.59:518][853]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\DotNET\UnrealBuildTool.exe Project_MF Win64 Development -Project=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject  D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -NoUBTMakefiles  -remoteini="D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF" -skipdeploy -Manifest=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml -NoHotReload -log="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UBT-Project_MF-Win64-Development.txt"
+[2023.04.17-23.00.00:146][928]UATHelper: 패키징 (Windows (64-bit)):   Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.17-23.00.01:347][ 72]UATHelper: 패키징 (Windows (64-bit)):   Parsing headers for Project_MF
+[2023.04.17-23.00.01:373][ 75]UATHelper: 패키징 (Windows (64-bit)):     Running UnrealHeaderTool "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject" "D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\Project_MF\Development\Project_MF.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UHT-Project_MF-Win64-Development.txt" -installed
+[2023.04.17-23.00.02:234][178]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-23.00.05:928][610]UATHelper: 패키징 (Windows (64-bit)):   Reflection code generated for Project_MF in 4.5498876 seconds
+[2023.04.17-23.00.06:195][642]UATHelper: 패키징 (Windows (64-bit)):   Writing manifest to D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml
+[2023.04.17-23.00.06:313][656]UATHelper: 패키징 (Windows (64-bit)):   Building Project_MF...
+[2023.04.17-23.00.06:313][656]UATHelper: 패키징 (Windows (64-bit)):   Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.17-23.00.06:328][658]UATHelper: 패키징 (Windows (64-bit)):   Building 3 actions with 8 processes...
+[2023.04.17-23.00.18:904][164]UATHelper: 패키징 (Windows (64-bit)):     [1/3] Module.Project_MF.cpp
+[2023.04.17-23.00.25:421][939]UATHelper: 패키징 (Windows (64-bit)):     [2/3] Project_MF.exe
+[2023.04.17-23.00.25:421][939]UATHelper: 패키징 (Windows (64-bit)):        D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\Project_MF.lib ���̺귯�� �� D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Binaries\Win64\Project_MF.exp ��ü�� �����ϰ� �ֽ��ϴ�.
+[2023.04.17-23.00.25:588][959]UATHelper: 패키징 (Windows (64-bit)):     [3/3] Project_MF.target
+[2023.04.17-23.00.25:588][959]UATHelper: 패키징 (Windows (64-bit)):   Total time in Parallel executor: 19.27 seconds
+[2023.04.17-23.00.25:630][964]UATHelper: 패키징 (Windows (64-bit)):   Total execution time: 26.07 seconds
+[2023.04.17-23.00.25:671][969]UATHelper: 패키징 (Windows (64-bit)): Took 26.1526257s to run UnrealBuildTool.exe, ExitCode=0
+[2023.04.17-23.00.25:688][971]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND COMPLETED **********
+[2023.04.17-23.00.25:698][972]UATHelper: 패키징 (Windows (64-bit)): ********** COOK COMMAND STARTED **********
+[2023.04.17-23.00.25:705][973]UATHelper: 패키징 (Windows (64-bit)): Running UE4Editor Cook for project D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-23.00.25:705][973]UATHelper: 패키징 (Windows (64-bit)): Commandlet log file is D:\Program Files\Epic Games\UE_4.27\Engine\Programs\AutomationTool\Saved\Cook-2023.04.18-08.00.25.txt
+[2023.04.17-23.00.25:705][973]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -run=Cook  -TargetPlatform=WindowsNoEditor -fileopenlog -ddc=InstalledDerivedDataBackendGraph -unversioned -abslog="D:\Program Files\Epic Games\UE_4.27\Engine\Programs\AutomationTool\Saved\Cook-2023.04.18-08.00.25.txt" -stdout -CrashForUAT -unattended -NoLogTimes  -UTF8Output
+[2023.04.17-23.00.26:189][ 31]UATHelper: 패키징 (Windows (64-bit)):   LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+[2023.04.17-23.00.26:189][ 31]UATHelper: 패키징 (Windows (64-bit)):   LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+[2023.04.17-23.00.26:189][ 31]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Running engine for game: Project_MF
+[2023.04.17-23.00.27:078][137]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-23.00.27:635][204]UATHelper: 패키징 (Windows (64-bit)):   LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.04.17-23.00.27:920][238]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
+[2023.04.17-23.00.27:953][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.04.17-23.00.27:954][242]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.04.17-23.00.27:978][245]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.04.17-23.00.27:978][245]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.04.17-23.00.27:987][246]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.04.17-23.00.27:996][247]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
+[2023.04.17-23.00.28:003][248]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.04.17-23.00.28:003][248]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.04.17-23.00.28:019][250]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
+[2023.04.17-23.00.28:029][251]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
+[2023.04.17-23.00.28:029][251]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
+[2023.04.17-23.00.28:062][255]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
+[2023.04.17-23.00.28:062][255]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
+[2023.04.17-23.00.28:079][257]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacNoEditor'
+[2023.04.17-23.00.28:079][257]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
+[2023.04.17-23.00.28:087][258]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
+[2023.04.17-23.00.28:095][259]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
+[2023.04.17-23.00.28:103][260]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.04.17-23.00.28:103][260]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.04.17-23.00.28:120][262]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
+[2023.04.17-23.00.28:128][263]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.04.17-23.00.28:136][264]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.04.17-23.00.28:136][264]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.04.17-23.00.28:136][264]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Building Assets For WindowsNoEditor
+[2023.04.17-23.00.28:153][266]UATHelper: 패키징 (Windows (64-bit)):   LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.04.17-23.00.28:196][271]UATHelper: 패키징 (Windows (64-bit)):   LogTextureFormatOodle: Display: Oodle Texture 2.9.0 init RDO Off
+[2023.04.17-23.00.28:731][335]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Using Local Shader Compiler.
+[2023.04.17-23.00.29:406][416]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2023.04.17-23.00.29:466][423]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
+[2023.04.17-23.00.29:492][426]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.17-23.00.29:500][427]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.04ms. RandomReadSpeed=763.04MBs, RandomWriteSpeed=144.84MBs. Assigned SpeedClass 'Local'
+[2023.04.17-23.00.31:974][722]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.00.31:974][722]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-23.00.31:974][722]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.00.31:984][723]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.00.31:985][723]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-23.00.31:985][723]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-23.00.31:985][723]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.00.31:985][723]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-23.00.32:448][779]UATHelper: 패키징 (Windows (64-bit)):   LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.17-23.00.32:448][779]UATHelper: 패키징 (Windows (64-bit)):   LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFStageData::CurrentCheckPoint is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFObjectData::ObjectState is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFObjectData::ObjectMovement is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectLocation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectRotation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectScale is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectVelocity is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: 11 Uninitialized script struct members found including 4 object properties
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: CookSettings for Memory: MemoryMaxUsedVirtual 0MiB, MemoryMaxUsedPhysical 16384MiB, MemoryMinFreeVirtual 0MiB, MemoryMinFreePhysical 1024MiB
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Mobile HDR setting 1
+[2023.04.17-23.00.33:100][857]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Creating asset registry
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:100][857]PackagingResults: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.33:403][893]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Discovering localized assets for cultures: en
+[2023.04.17-23.00.33:422][895]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Clearing all cooked content for platform WindowsNoEditor
+[2023.04.17-23.00.33:432][896]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Sandbox cleanup took 0.027 seconds for platforms WindowsNoEditor
+[2023.04.17-23.00.34:619][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:
+[2023.04.17-23.00.34:619][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM5) Stats:
+[2023.04.17-23.00.34:619][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.00.34:619][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 191 (19100.00%)
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shaders: 1962, Unique Shaders: 1951 (99.44%)
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shader Size: 5.10mb, Unique Shaders Size: 5.09mb (99.93%)
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: === Extended info:
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Maximum number of shaders in shadermap: 264
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:     3, 3, 2, 2, 2, 2, 2, 2, 2, 1
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Shaders/PCD3D_SM5/ShaderDebug-Global-PCD3D_SM5/Dump.txt'
+[2023.04.17-23.00.34:620][ 36]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.00.34:958][ 77]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Warning: Unable to find package for cooking /Game/Levels/MainLevel
+[2023.04.17-23.00.34:959][ 77]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 0 Packages Remain 51 Total 51
+[2023.04.17-23.00.34:959][ 77]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook Diagnostics: OpenFileHandles=351, VirtualMemory=583MiB
+[2023.04.17-23.00.34:959][ 77]PackagingResults: Warning: Unable to find package for cooking /Game/Levels/MainLevel
+[2023.04.17-23.00.36:903][307]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 391 Packages Remain 0 Total 391
+[2023.04.17-23.00.36:903][307]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook Diagnostics: OpenFileHandles=395, VirtualMemory=872MiB
+[2023.04.17-23.00.36:903][307]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Finishing up...
+[2023.04.17-23.00.37:054][325]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Saving BulkData manifest(s)...
+[2023.04.17-23.00.37:054][325]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Done saving BulkData manifest(s)
+[2023.04.17-23.00.37:054][325]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Nativization Summary - AnimBP:
+[2023.04.17-23.00.37:054][325]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Name, Children, Non-empty Functions (Empty Functions), Variables, FunctionUsage, VariableUsage
+[2023.04.17-23.00.37:054][325]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Nativization Summary - Shared Variables From Graph: 0
+[2023.04.17-23.00.37:087][329]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Saving asset registry v8.
+[2023.04.17-23.00.37:113][332]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Generated asset registry num assets 397, size is 131.86kb
+[2023.04.17-23.00.37:113][332]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Done saving asset registry.
+[2023.04.17-23.00.37:179][340]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:
+[2023.04.17-23.00.37:179][340]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Shader Library 'Project_MF' (PCD3D_SM5) Stats:
+[2023.04.17-23.00.37:179][340]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Assets: 62, Unique Shadermaps: 54 (87.10%)
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shaders: 2094, Unique Shaders: 1713 (81.81%)
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shader Size: 4.32mb, Unique Shaders Size: 3.63mb (84.08%)
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: === Extended info:
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Minimum number of shaders in shadermap: 2
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Median number of shaders in shadermap: 18
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Maximum number of shaders in shadermap: 493
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:     16, 15, 11, 10, 10, 10, 8, 8, 8, 7
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Shaders/PCD3D_SM5/ShaderDebug-Project_MF-PCD3D_SM5/Dump.txt'
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.00.37:189][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook by the book total time in tick 1.440890s total time 4.087212
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Peak Used virtual 879 MiB Peak Used physical 923 MiB
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Hierarchy Timer Information:
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:   Root: 0.000s (0)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     CleanSandbox: 0.027s (1)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       ProcessingAccessedStrings: 0.002s (1)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     CollectFilesToCook: 0.337s (1)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       CookModificationDelegate: 0.000s (1)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     GenerateLongPackageName: 0.000s (1)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     TickCookOnTheSide: 1.439s (14999)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       PostLoadPackageFixup: 0.005s (30888)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       LoadPackageForCooking: 0.047s (391)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SavingPackages: 1.357s (452)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         BeginPackageCacheForCookedPlatformData: 0.013s (37)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         PrecachePlatformDataForNextPackage: 0.325s (377)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:           BeginPackageCacheForCookedPlatformData: 0.324s (354)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         SaveCookedPackage: 0.904s (391)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:           GEditorSavePackage: 0.888s (391)
+[2023.04.17-23.00.37:190][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:             ConvertingBlueprints: 0.005s (391)
+[2023.04.17-23.00.37:191][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:             VerifyCanCookPackage: 0.003s (388)
+[2023.04.17-23.00.37:191][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         ClearAllCachedCookedPlatformData: 0.005s (391)
+[2023.04.17-23.00.37:191][341]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     FinalizePackageStore: 0.001s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     GeneratingBlueprintAssets: 0.001s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     SavingCurrentIniSettings: 0.011s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       ProcessingAccessedStrings: 0.002s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     SavingAssetRegistry: 0.124s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       BuildChunkManifest: 0.017s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SaveManifests: 0.003s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SaveRealAssetRegistry: 0.020s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       WriteCookerOpenOrder: 0.039s (1)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Done!
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogSavePackage: Display: Took 0.000462s to verify the EDL loading graph.
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Misc Cook Stats
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ===============
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NiagaraShader.Misc
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ShaderCompiler
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     BlockingTimeSec=0.000022
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     AsyncCompileTimeSec=0.000000
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     GlobalBeginCompileShaderTimeSec=0.000000
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     GlobalBeginCompileShaderCalls=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ProcessAsyncResultsTimeSec=0.005137
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GlobalShader.Misc
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MeshMaterial.Misc
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MaterialShader.Misc
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.Load
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPreloadedDependencies=17
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumInlineLoads=3
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPackagesLoaded=198
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     LoadPackageTimeSec=1.247511
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: CookOnTheFlyServer
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakRequestQueueSize=30
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakLoadQueueSize=348
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakSaveQueueSize=340
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.Save
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPackagesSaved=391
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavePackageTimeSec=0.873316
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsPresaveTimeSec=0.297888
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsTimeSec=0.035816
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     FullyLoadLoadersTimeSec=0.000207
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ResetLoadersTimeSec=0.001916
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsGetObjectsWithOuter=0.004073
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsGetObjectsWithMarks=0.000285
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeImportsTimeSec=0.000000
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SortExportsSeekfreeInnerTimeSec=0.140958
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeExportsTimeSec=0.209005
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeBulkDataTimeSec=0.020305
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     AsyncWriteTimeSec=0.000000
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     MBWritten=179.174637
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.DifferentPackagesSizeMBPerAsset
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.NumberOfDifferencesInPackagesPerAsset
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.PackageDifferencesSizeMBPerAsset
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.DiffTotal
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumberOfDifferentPackages=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     DifferentPackagesSizeMB=0.000000
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumberOfDifferencesInPackages=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PackageDifferencesSizeMB=0.000000
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: UnversionedProperties
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavedStructs=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavedMB=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     EquivalentTaggedMB=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     CompressionRatio=-nan(ind)
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     BitfieldWasteKB=0
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Cook Profile
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ============
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0.CookWallTimeSec=11.243055
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 0.StartupWallTimeSec=7.149293
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1.CookByTheBookTimeSec=4.091865
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 0.StartCookByTheBookTimeSec=1.856310
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 0. 0.GameCookModificationDelegateTimeSec=0.000014
+[2023.04.17-23.00.37:204][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1.TickCookOnTheSideTimeSec=1.732174
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 0.TickCookOnTheSideLoadPackagesTimeSec=0.046754
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 1.TickCookOnTheSideSaveCookedPackageTimeSec=0.904502
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 1. 0.TickCookOnTheSideResolveRedirectorsTimeSec=0.000000
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 2.TickCookOnTheSideBeginPackageCacheForCookedPlatformDataTimeSec=0.337338
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 3.TickCookOnTheSideFinishPackageCacheForCookedPlatformDataTimeSec=0.000000
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 2.TickLoopGCTimeSec=0.000000
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 3.TickLoopRecompileShaderRequestsTimeSec=0.325391
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 4.TickLoopShaderProcessAsyncResultsTimeSec=0.006411
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 5.TickLoopProcessDeferredCommandsTimeSec=0.010594
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 6.TickLoopTickCommandletStatsTimeSec=0.001760
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DDC Summary Stats
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: =================
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGetHits    =       742
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGets       =       744
+[2023.04.17-23.00.37:205][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGetHitPct  =  0.997312
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: LocalGetHitPct  =  0.107527
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: SharedGetHitPct =  0.000000
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: OtherGetHitPct  =  0.889785
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GetMissPct      =  0.002688
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPutHits    =         0
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPuts       =         0
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPutHitPct  =  0.000000
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: PutMissPct      =  0.000000
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DDC Resource Stats
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: =======================================================================================================
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Asset Type                          Total Time (Sec)  GameThread Time (Sec)  Assets Built  MB Processed
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ----------------------------------  ----------------  ---------------------  ------------  ------------
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MaterialShader                                  0.20                   0.20             0          6.77
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Texture (Streaming)                             0.16                   0.00             0         46.68
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NiagaraScript                                   0.06                   0.06             0          0.35
+[2023.04.17-23.00.37:206][342]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: PhysX (BodySetup)                               0.03                   0.03             0          5.76
+[2023.04.17-23.00.37:228][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: SkeletalMesh                                    0.02                   0.02             0          2.65
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: StaticMesh                                      0.01                   0.01             0         11.94
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GlobalShader                                    0.01                   0.01             0          6.31
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: AnimSequence                                    0.01                   0.01             0          0.22
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NavCollision                                    0.00                   0.00             0          0.05
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Texture (Inline)                                0.00                   0.00             0        113.22
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DistanceField                                   0.00                   0.00             0          0.00
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Warning/Error Summary (Unique only)
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: -----------------------------------
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogCook: Warning: Unable to find package for cooking /Game/Levels/MainLevel
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Success - 0 error(s), 12 warning(s)
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   
+[2023.04.17-23.00.37:229][343]UATHelper: 패키징 (Windows (64-bit)):   Execution of commandlet took:  4.11 seconds
+[2023.04.17-23.00.37:388][362]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.17-23.00.37:388][362]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2023.04.17-23.00.37:388][362]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2023.04.17-23.00.37:388][362]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.04.17-23.00.37:388][362]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: ================================================
+[2023.04.17-23.00.38:087][433]UATHelper: 패키징 (Windows (64-bit)):   LogHttp: Display: cleaning up 0 outstanding Http requests.
+[2023.04.17-23.00.38:129][438]UATHelper: 패키징 (Windows (64-bit)):   LogContentStreaming: Display: There are 1 unreleased StreamingManagers
+[2023.04.17-23.00.39:630][618]UATHelper: 패키징 (Windows (64-bit)): Took 13.9223033s to run UE4Editor-Cmd.exe, ExitCode=0
+[2023.04.17-23.00.39:630][618]UATHelper: 패키징 (Windows (64-bit)): ********** COOK COMMAND COMPLETED **********
+[2023.04.17-23.00.39:638][619]UATHelper: 패키징 (Windows (64-bit)): ********** STAGE COMMAND STARTED **********
+[2023.04.17-23.00.39:688][625]UATHelper: 패키징 (Windows (64-bit)): Creating Staging Manifest...
+[2023.04.17-23.00.39:804][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditor.ini
+[2023.04.17-23.00.39:804][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorKeyBindings.ini
+[2023.04.17-23.00.39:804][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorPerProjectUserSettings.ini
+[2023.04.17-23.00.39:804][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorSettings.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseLightmass.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BasePakFileRules.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Category.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Editor.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\EditorTutorials.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Engine.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Keywords.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PortableObjectExport.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PortableObjectImport.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PropertyNames.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\RepairData.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\ToolTips.ini
+[2023.04.17-23.00.39:805][639]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\WordCount.ini
+[2023.04.17-23.00.39:818][640]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Config\DefaultEditor.ini
+[2023.04.17-23.00.39:949][656]UATHelper: 패키징 (Windows (64-bit)): Cleaning Stage Directory: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor
+[2023.04.17-23.00.39:999][662]UATHelper: 패키징 (Windows (64-bit)): Creating pak using staging manifest.
+[2023.04.17-23.00.40:174][683]UATHelper: 패키징 (Windows (64-bit)): Executing 1 UnrealPak command...
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)): Waiting for child processes to complete (1/1)
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)): Output from: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor\Project_MF\Content\Paks\Project_MF-WindowsNoEditor.pak -create="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\PakList_Project_MF-WindowsNoEditor.txt" -cryptokeys=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\Cooked\WindowsNoEditor\Project_MF\Metadata\Crypto.json -secondaryOrder=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log -patchpaddingalign=2048 -platform=Windows -compressionformats=Oodle -compressmethod=Kraken -compresslevel=3  -multiprocess -abslog="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UnrealPak-Project_MF-WindowsNoEditor-2023.04.18-08.00.40.txt" -compressionblocksize=256KB
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   OodleDataCompression: Display: Oodle v2.9.0 initializing with method=Kraken, level=3=Fast
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Parsing crypto keys from a crypto key cache file
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Loading response file C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\PakList_Project_MF-WindowsNoEditor.txt
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Added 1923 entries to add to pak file.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Loading pak order file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log...
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Finished loading pak order file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Collecting files to add to pak file...
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Collected 1923 files in 0.01s.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Creating pak D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor\Project_MF\Content\Paks\Project_MF-WindowsNoEditor.pak.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormats in priority order: Oodle, Zlib
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.00ms. RandomReadSpeed=999.00MBs, RandomWriteSpeed=999.00MBs. Assigned SpeedClass 'Local'
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 0 [Oodle] : 557 files, 197629844 -> 30821974 bytes
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 1 [Zlib] : 62 files, 3375371 -> 1136127 bytes
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 2 [None] : 1304 files, 10265461 -> 10265461 bytes
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Added 1923 files, 43149411 bytes total, time 1.58s.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: PrimaryIndex size: 31142 bytes
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: PathHashIndex size: 50904 bytes
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: FullDirectoryIndex size: 68943 bytes
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Compression summary: 15.90% of original size. Compressed Size 31958101 bytes, Original Size 201005215 bytes.
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Encryption - DISABLED
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Unreal pak executed in 1.642498 seconds
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)): UnrealPak terminated with exit code 0
+[2023.04.17-23.00.43:355][ 43]UATHelper: 패키징 (Windows (64-bit)): Copying NonUFSFiles to staging directory: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor
+[2023.04.17-23.00.43:561][ 67]UATHelper: 패키징 (Windows (64-bit)): ********** STAGE COMMAND COMPLETED **********
+[2023.04.17-23.00.43:561][ 67]UATHelper: 패키징 (Windows (64-bit)): ********** PACKAGE COMMAND STARTED **********
+[2023.04.17-23.00.43:561][ 67]UATHelper: 패키징 (Windows (64-bit)): ********** PACKAGE COMMAND COMPLETED **********
+[2023.04.17-23.00.43:561][ 67]UATHelper: 패키징 (Windows (64-bit)): ********** ARCHIVE COMMAND STARTED **********
+[2023.04.17-23.00.43:561][ 67]UATHelper: 패키징 (Windows (64-bit)): Archiving to D:/Users/qkrdl/Documents/Unreal Projects/Build
+[2023.04.17-23.00.43:769][ 92]UATHelper: 패키징 (Windows (64-bit)): ********** ARCHIVE COMMAND COMPLETED **********
+[2023.04.17-23.00.43:779][ 93]UATHelper: 패키징 (Windows (64-bit)): BUILD SUCCESSFUL
+[2023.04.17-23.00.43:779][ 93]UATHelper: 패키징 (Windows (64-bit)): AutomationTool exiting with ExitCode=0 (Success)
+[2023.04.17-23.00.58:871][353]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-23.01.35:728][278]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2023.04.17-23.01.42:209][883]LogSlate: Window '프로젝트 세팅' being destroyed
+[2023.04.17-23.01.42:215][883]LogSlate: Window '프로젝트 세팅' being destroyed
+[2023.04.17-23.01.46:734][172]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2023.04.17-23.02.03:742][423]LogUObjectHash: Compacting FUObjectHashTables data took   0.60ms
+[2023.04.17-23.02.05:087][423]LogMainFrame: Selected target: Project_MF
+[2023.04.17-23.02.05:089][423]LogLauncherProfile: Unable to use promoted target - receipt ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Binaries/Win64/Project_MF.target is not for a promoted target
+[2023.04.17-23.02.05:167][426]UATHelper: 패키징 (Windows (64-bit)): Running AutomationTool...
+[2023.04.17-23.02.05:251][429]UATHelper: 패키징 (Windows (64-bit)): Parsing command line: -ScriptsForProject=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject BuildCookRun -nocompileeditor -installed -nop4 -project=D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject -cook -stage -archive -archivedirectory="D:/Users/qkrdl/Documents/Unreal Projects/Build" -package -ue4exe="D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe" -compressed -ddc=InstalledDerivedDataBackendGraph -pak -prereqs -nodebuginfo -targetplatform=Win64 -build -target=Project_MF -clientconfig=Development -utf8output
+[2023.04.17-23.02.05:972][509]UATHelper: 패키징 (Windows (64-bit)): Setting up ProjectParams for D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-23.02.06:289][547]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND STARTED **********
+[2023.04.17-23.02.06:306][549]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\DotNET\UnrealBuildTool.exe Project_MF Win64 Development -Project=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject  D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -NoUBTMakefiles  -remoteini="D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF" -skipdeploy -Manifest=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml -NoHotReload -log="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UBT-Project_MF-Win64-Development.txt"
+[2023.04.17-23.02.07:026][635]UATHelper: 패키징 (Windows (64-bit)):   Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.17-23.02.09:074][880]UATHelper: 패키징 (Windows (64-bit)):   Writing manifest to D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Manifest.xml
+[2023.04.17-23.02.09:174][892]UATHelper: 패키징 (Windows (64-bit)):   Target is up to date
+[2023.04.17-23.02.09:184][893]UATHelper: 패키징 (Windows (64-bit)):   Total execution time: 2.83 seconds
+[2023.04.17-23.02.09:224][898]UATHelper: 패키징 (Windows (64-bit)): Took 2.9179538s to run UnrealBuildTool.exe, ExitCode=0
+[2023.04.17-23.02.09:242][900]UATHelper: 패키징 (Windows (64-bit)): ********** BUILD COMMAND COMPLETED **********
+[2023.04.17-23.02.09:250][901]UATHelper: 패키징 (Windows (64-bit)): ********** COOK COMMAND STARTED **********
+[2023.04.17-23.02.09:259][902]UATHelper: 패키징 (Windows (64-bit)): Running UE4Editor Cook for project D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject
+[2023.04.17-23.02.09:259][902]UATHelper: 패키징 (Windows (64-bit)): Commandlet log file is D:\Program Files\Epic Games\UE_4.27\Engine\Programs\AutomationTool\Saved\Cook-2023.04.18-08.02.09.txt
+[2023.04.17-23.02.09:259][902]UATHelper: 패키징 (Windows (64-bit)): Running: D:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject -run=Cook  -TargetPlatform=WindowsNoEditor -fileopenlog -ddc=InstalledDerivedDataBackendGraph -unversioned -abslog="D:\Program Files\Epic Games\UE_4.27\Engine\Programs\AutomationTool\Saved\Cook-2023.04.18-08.02.09.txt" -stdout -CrashForUAT -unattended -NoLogTimes  -UTF8Output
+[2023.04.17-23.02.09:752][961]UATHelper: 패키징 (Windows (64-bit)):   LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+[2023.04.17-23.02.09:752][961]UATHelper: 패키징 (Windows (64-bit)):   LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+[2023.04.17-23.02.09:752][961]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Running engine for game: Project_MF
+[2023.04.17-23.02.10:606][ 63]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-23.02.11:131][126]UATHelper: 패키징 (Windows (64-bit)):   LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.04.17-23.02.11:423][161]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'AllDesktop'
+[2023.04.17-23.02.11:449][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.04.17-23.02.11:449][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.04.17-23.02.11:449][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.04.17-23.02.11:449][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.04.17-23.02.11:450][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.04.17-23.02.11:450][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.04.17-23.02.11:450][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.04.17-23.02.11:450][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.04.17-23.02.11:450][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.04.17-23.02.11:450][164]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.04.17-23.02.11:473][167]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.04.17-23.02.11:473][167]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.04.17-23.02.11:483][168]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.04.17-23.02.11:490][169]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxNoEditor'
+[2023.04.17-23.02.11:498][170]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.04.17-23.02.11:498][170]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.04.17-23.02.11:515][172]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64NoEditor'
+[2023.04.17-23.02.11:515][172]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Client'
+[2023.04.17-23.02.11:524][173]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxAArch64Server'
+[2023.04.17-23.02.11:557][177]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Lumin'
+[2023.04.17-23.02.11:557][177]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'LuminClient'
+[2023.04.17-23.02.11:566][178]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacNoEditor'
+[2023.04.17-23.02.11:573][179]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
+[2023.04.17-23.02.11:573][179]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
+[2023.04.17-23.02.11:582][180]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
+[2023.04.17-23.02.11:590][181]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.04.17-23.02.11:590][181]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.04.17-23.02.11:607][183]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsNoEditor'
+[2023.04.17-23.02.11:616][184]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.04.17-23.02.11:616][184]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.04.17-23.02.11:623][185]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.04.17-23.02.11:623][185]UATHelper: 패키징 (Windows (64-bit)):   LogTargetPlatformManager: Display: Building Assets For WindowsNoEditor
+[2023.04.17-23.02.11:639][187]UATHelper: 패키징 (Windows (64-bit)):   LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.04.17-23.02.11:674][191]UATHelper: 패키징 (Windows (64-bit)):   LogTextureFormatOodle: Display: Oodle Texture 2.9.0 init RDO Off
+[2023.04.17-23.02.12:199][254]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Using Local Shader Compiler.
+[2023.04.17-23.02.12:874][335]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2023.04.17-23.02.12:909][339]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/qkrdl/AppData/Local/UnrealEngine/4.27/DerivedDataCache/Boot.ddc
+[2023.04.17-23.02.12:931][342]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.17-23.02.12:943][343]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.03ms. RandomReadSpeed=687.03MBs, RandomWriteSpeed=148.12MBs. Assigned SpeedClass 'Local'
+[2023.04.17-23.02.15:451][644]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.02.15:451][644]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-23.02.15:451][644]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.02.15:460][645]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.02.15:460][645]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-23.02.15:460][645]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-23.02.15:460][645]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.02.15:460][645]PackagingResults: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-23.02.15:910][699]UATHelper: 패키징 (Windows (64-bit)):   LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.17-23.02.15:910][699]UATHelper: 패키징 (Windows (64-bit)):   LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFStageData::CurrentCheckPoint is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFObjectData::ObjectState is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: IntProperty FMFObjectData::ObjectMovement is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectLocation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectRotation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectScale is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: StructProperty FMFObjectData::ObjectVelocity is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogClass: Display: 11 Uninitialized script struct members found including 4 object properties
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:502][770]UATHelper: 패키징 (Windows (64-bit)):   LogAutomationTest: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: CookSettings for Memory: MemoryMaxUsedVirtual 0MiB, MemoryMaxUsedPhysical 16384MiB, MemoryMinFreeVirtual 0MiB, MemoryMinFreePhysical 1024MiB
+[2023.04.17-23.02.16:503][770]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Mobile HDR setting 1
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Creating asset registry
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:503][770]PackagingResults: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.16:798][805]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Discovering localized assets for cultures: en
+[2023.04.17-23.02.16:816][807]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Inisetting is different for Windows Engine /Script/EngineSettings.GameMapsSettings GameDefaultMap 0, value /Game/Levels/UsedLevel/MainLevel.MainLevel != /Game/Levels/MainLevel.MainLevel invalidating cook
+[2023.04.17-23.02.16:816][807]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: To avoid this add blacklist setting to DefaultEditor.ini [CookSettings] Windows.Engine:/Script/EngineSettings.GameMapsSettings
+[2023.04.17-23.02.16:816][807]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Clearing all cooked content for platform WindowsNoEditor
+[2023.04.17-23.02.16:826][808]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Sandbox cleanup took 0.025 seconds for platforms WindowsNoEditor
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM5) Stats:
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 191 (19100.00%)
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shaders: 1962, Unique Shaders: 1951 (99.44%)
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shader Size: 5.10mb, Unique Shaders Size: 5.09mb (99.93%)
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: === Extended info:
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Maximum number of shaders in shadermap: 264
+[2023.04.17-23.02.18:001][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+[2023.04.17-23.02.18:002][949]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:     3, 3, 2, 2, 2, 2, 2, 2, 2, 1
+[2023.04.17-23.02.18:012][950]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Shaders/PCD3D_SM5/ShaderDebug-Global-PCD3D_SM5/Dump.txt'
+[2023.04.17-23.02.18:012][950]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.02.18:359][992]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 0 Packages Remain 52 Total 52
+[2023.04.17-23.02.18:359][992]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook Diagnostics: OpenFileHandles=351, VirtualMemory=550MiB
+[2023.04.17-23.02.18:991][ 67]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 200 Packages Remain 179 Total 379
+[2023.04.17-23.02.20:296][222]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cooked packages 406 Packages Remain 0 Total 406
+[2023.04.17-23.02.20:296][222]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook Diagnostics: OpenFileHandles=412, VirtualMemory=806MiB
+[2023.04.17-23.02.20:296][222]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Finishing up...
+[2023.04.17-23.02.20:478][244]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Saving BulkData manifest(s)...
+[2023.04.17-23.02.20:478][244]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Done saving BulkData manifest(s)
+[2023.04.17-23.02.20:478][244]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Nativization Summary - AnimBP:
+[2023.04.17-23.02.20:478][244]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Name, Children, Non-empty Functions (Empty Functions), Variables, FunctionUsage, VariableUsage
+[2023.04.17-23.02.20:478][244]UATHelper: 패키징 (Windows (64-bit)):   LogBlueprintCodeGen: Display: Nativization Summary - Shared Variables From Graph: 0
+[2023.04.17-23.02.20:503][247]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Saving asset registry v8.
+[2023.04.17-23.02.20:529][250]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Generated asset registry num assets 415, size is 141.76kb
+[2023.04.17-23.02.20:529][250]UATHelper: 패키징 (Windows (64-bit)):   LogAssetRegistryGenerator: Display: Done saving asset registry.
+[2023.04.17-23.02.20:594][258]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:
+[2023.04.17-23.02.20:594][258]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Shader Library 'Project_MF' (PCD3D_SM5) Stats:
+[2023.04.17-23.02.20:595][258]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Assets: 63, Unique Shadermaps: 55 (87.30%)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shaders: 2096, Unique Shaders: 1715 (81.82%)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Total Shader Size: 4.32mb, Unique Shaders Size: 3.64mb (84.09%)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: === Extended info:
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Minimum number of shaders in shadermap: 2
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Median number of shaders in shadermap: 17
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Maximum number of shaders in shadermap: 493
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display:     16, 15, 11, 10, 10, 10, 8, 8, 8, 7
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Shaders/PCD3D_SM5/ShaderDebug-Project_MF-PCD3D_SM5/Dump.txt'
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogShaderLibrary: Display: =================
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Cook by the book total time in tick 1.599101s total time 4.098755
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Peak Used virtual 843 MiB Peak Used physical 889 MiB
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Hierarchy Timer Information:
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:   Root: 0.000s (0)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     CleanSandbox: 0.025s (1)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       ProcessingAccessedStrings: 0.002s (1)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     CollectFilesToCook: 0.345s (1)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       CookModificationDelegate: 0.000s (1)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     GenerateLongPackageName: 0.000s (1)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     TickCookOnTheSide: 1.597s (11340)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       PostLoadPackageFixup: 0.005s (23402)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       LoadPackageForCooking: 0.142s (406)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SavingPackages: 1.428s (267)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         BeginPackageCacheForCookedPlatformData: 0.008s (25)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         PrecachePlatformDataForNextPackage: 0.338s (401)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:           BeginPackageCacheForCookedPlatformData: 0.337s (381)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         SaveCookedPackage: 0.970s (406)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:           GEditorSavePackage: 0.952s (406)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:             ConvertingBlueprints: 0.004s (406)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:             VerifyCanCookPackage: 0.003s (403)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:         ClearAllCachedCookedPlatformData: 0.006s (406)
+[2023.04.17-23.02.20:604][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     FinalizePackageStore: 0.001s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     GeneratingBlueprintAssets: 0.001s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     SavingCurrentIniSettings: 0.009s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       ProcessingAccessedStrings: 0.002s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:     SavingAssetRegistry: 0.117s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       BuildChunkManifest: 0.014s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SaveManifests: 0.003s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       SaveRealAssetRegistry: 0.020s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display:       WriteCookerOpenOrder: 0.038s (1)
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogCook: Display: Done!
+[2023.04.17-23.02.20:605][259]UATHelper: 패키징 (Windows (64-bit)):   LogSavePackage: Display: Took 0.000385s to verify the EDL loading graph.
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Misc Cook Stats
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ===============
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NiagaraShader.Misc
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ShaderCompiler
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     BlockingTimeSec=0.000035
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     AsyncCompileTimeSec=0.000000
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     GlobalBeginCompileShaderTimeSec=0.000000
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     GlobalBeginCompileShaderCalls=0
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ProcessAsyncResultsTimeSec=0.003344
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GlobalShader.Misc
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MeshMaterial.Misc
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MaterialShader.Misc
+[2023.04.17-23.02.20:618][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ShadersCompiled=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.Load
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPreloadedDependencies=29
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumInlineLoads=3
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPackagesLoaded=213
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     LoadPackageTimeSec=1.340606
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: CookOnTheFlyServer
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakRequestQueueSize=31
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakLoadQueueSize=348
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PeakSaveQueueSize=340
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.Save
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumPackagesSaved=406
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavePackageTimeSec=0.931897
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsPresaveTimeSec=0.307480
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsTimeSec=0.037453
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     FullyLoadLoadersTimeSec=0.000254
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     ResetLoadersTimeSec=0.002121
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsGetObjectsWithOuter=0.004031
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     TagPackageExportsGetObjectsWithMarks=0.000317
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeImportsTimeSec=0.000000
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SortExportsSeekfreeInnerTimeSec=0.154846
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeExportsTimeSec=0.235841
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SerializeBulkDataTimeSec=0.019436
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     AsyncWriteTimeSec=0.000000
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     MBWritten=185.259933
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.DifferentPackagesSizeMBPerAsset
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.NumberOfDifferencesInPackagesPerAsset
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.PackageDifferencesSizeMBPerAsset
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Package.DiffTotal
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumberOfDifferentPackages=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     DifferentPackagesSizeMB=0.000000
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     NumberOfDifferencesInPackages=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     PackageDifferencesSizeMB=0.000000
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: UnversionedProperties
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavedStructs=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     SavedMB=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     EquivalentTaggedMB=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     CompressionRatio=-nan(ind)
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:     BitfieldWasteKB=0
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Cook Profile
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ============
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0.CookWallTimeSec=11.082080
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 0.StartupWallTimeSec=6.976575
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1.CookByTheBookTimeSec=4.103373
+[2023.04.17-23.02.20:619][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 0.StartCookByTheBookTimeSec=1.848788
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 0. 0.GameCookModificationDelegateTimeSec=0.000016
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1.TickCookOnTheSideTimeSec=1.911314
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 0.TickCookOnTheSideLoadPackagesTimeSec=0.142102
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 1.TickCookOnTheSideSaveCookedPackageTimeSec=0.969789
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 1. 0.TickCookOnTheSideResolveRedirectorsTimeSec=0.000000
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 2.TickCookOnTheSideBeginPackageCacheForCookedPlatformDataTimeSec=0.345050
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 1. 3.TickCookOnTheSideFinishPackageCacheForCookedPlatformDataTimeSec=0.000000
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 2.TickLoopGCTimeSec=0.000000
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 3.TickLoopRecompileShaderRequestsTimeSec=0.218196
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 4.TickLoopShaderProcessAsyncResultsTimeSec=0.004427
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 5.TickLoopProcessDeferredCommandsTimeSec=0.007915
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:  0. 1. 6.TickLoopTickCommandletStatsTimeSec=0.001528
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DDC Summary Stats
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: =================
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGetHits    =       777
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGets       =       779
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalGetHitPct  =  0.997433
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: LocalGetHitPct  =  0.118100
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: SharedGetHitPct =  0.000000
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: OtherGetHitPct  =  0.879332
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GetMissPct      =  0.002567
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPutHits    =         0
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPuts       =         0
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: TotalPutHitPct  =  0.000000
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: PutMissPct      =  0.000000
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display:
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DDC Resource Stats
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: =======================================================================================================
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Asset Type                          Total Time (Sec)  GameThread Time (Sec)  Assets Built  MB Processed
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: ----------------------------------  ----------------  ---------------------  ------------  ------------
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: MaterialShader                                  0.21                   0.21             0          6.78
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Texture (Streaming)                             0.18                   0.00             0         50.30
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NiagaraScript                                   0.07                   0.07             0          0.35
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: PhysX (BodySetup)                               0.03                   0.03             0          5.76
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: StaticMesh                                      0.02                   0.02             0         12.25
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: GlobalShader                                    0.02                   0.02             0          6.31
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: SkeletalMesh                                    0.01                   0.01             0          2.65
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: AnimSequence                                    0.01                   0.01             0          0.22
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: NavCollision                                    0.00                   0.00             0          0.05
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: Texture (Inline)                                0.00                   0.00             0        114.26
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogCookCommandlet: Display: DistanceField                                   0.00                   0.00             0          0.00
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Warning/Error Summary (Unique only)
+[2023.04.17-23.02.20:620][260]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: -----------------------------------
+[2023.04.17-23.02.20:621][260]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] 'PlayerCharacterBlueprint_C' 에서 "_LfadeInRatio" 라는 이름의 변수를 찾을 수 없습니다.
+[2023.04.17-23.02.20:621][260]UATHelper: 패키징 (Windows (64-bit)):    _LfadeInRatio 구하기  에 대해 'PlayerCharacterBlueprint_C' 컴파일이 되었는지 확인하세요.
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogBlueprint: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\Resource\PlayerCharacter\Animations\PlayerCharacterBlueprint.uasset: [Compiler] bool로 포즈 블렌딩 의 프로퍼티 패스에 유효하지 않은 '_LfadeInRatio' 항목 존재
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogClass: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FMagneticBeginInfo::Magnetic is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorCheckInfo::CheckPoint is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: LogAutomationTest: Warning: ObjectProperty FActorBeginInfo::Actor is not initialized properly. Module:Project_MF File:GameMapSectionComponent.h
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Success - 0 error(s), 11 warning(s)
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display:
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   
+[2023.04.17-23.02.20:641][261]UATHelper: 패키징 (Windows (64-bit)):   Execution of commandlet took:  4.12 seconds
+[2023.04.17-23.02.20:789][279]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.17-23.02.20:789][279]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2023.04.17-23.02.20:789][279]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2023.04.17-23.02.20:789][279]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.04.17-23.02.20:789][279]UATHelper: 패키징 (Windows (64-bit)):   LogShaderCompilers: Display: ================================================
+[2023.04.17-23.02.21:540][369]UATHelper: 패키징 (Windows (64-bit)):   LogHttp: Display: cleaning up 0 outstanding Http requests.
+[2023.04.17-23.02.21:823][403]UATHelper: 패키징 (Windows (64-bit)):   LogContentStreaming: Display: There are 1 unreleased StreamingManagers
+[2023.04.17-23.02.23:291][579]UATHelper: 패키징 (Windows (64-bit)): Took 14.0324411s to run UE4Editor-Cmd.exe, ExitCode=0
+[2023.04.17-23.02.23:292][579]UATHelper: 패키징 (Windows (64-bit)): ********** COOK COMMAND COMPLETED **********
+[2023.04.17-23.02.23:301][580]UATHelper: 패키징 (Windows (64-bit)): ********** STAGE COMMAND STARTED **********
+[2023.04.17-23.02.23:366][588]UATHelper: 패키징 (Windows (64-bit)): Creating Staging Manifest...
+[2023.04.17-23.02.23:425][595]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditor.ini
+[2023.04.17-23.02.23:425][595]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorKeyBindings.ini
+[2023.04.17-23.02.23:425][595]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorPerProjectUserSettings.ini
+[2023.04.17-23.02.23:425][595]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseEditorSettings.ini
+[2023.04.17-23.02.23:425][595]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BaseLightmass.ini
+[2023.04.17-23.02.23:425][595]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\BasePakFileRules.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Category.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Editor.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\EditorTutorials.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Engine.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\Keywords.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PortableObjectExport.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PortableObjectImport.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\PropertyNames.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\RepairData.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\ToolTips.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Program Files\Epic Games\UE_4.27\Engine\Config\Localization\WordCount.ini
+[2023.04.17-23.02.23:434][596]UATHelper: 패키징 (Windows (64-bit)): Excluding config file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Config\DefaultEditor.ini
+[2023.04.17-23.02.23:575][613]UATHelper: 패키징 (Windows (64-bit)): Cleaning Stage Directory: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor
+[2023.04.17-23.02.23:650][622]UATHelper: 패키징 (Windows (64-bit)): Creating pak using staging manifest.
+[2023.04.17-23.02.23:817][642]UATHelper: 패키징 (Windows (64-bit)): Executing 1 UnrealPak command...
+[2023.04.17-23.02.26:882][  8]UATHelper: 패키징 (Windows (64-bit)): Waiting for child processes to complete (1/1)
+[2023.04.17-23.02.26:882][  8]UATHelper: 패키징 (Windows (64-bit)): Output from: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor\Project_MF\Content\Paks\Project_MF-WindowsNoEditor.pak -create="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\PakList_Project_MF-WindowsNoEditor.txt" -cryptokeys=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\Cooked\WindowsNoEditor\Project_MF\Metadata\Crypto.json -secondaryOrder=D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log -patchpaddingalign=2048 -platform=Windows -compressionformats=Oodle -compressmethod=Kraken -compresslevel=3  -multiprocess -abslog="C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\UnrealPak-Project_MF-WindowsNoEditor-2023.04.18-08.02.23.txt" -compressionblocksize=256KB
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogInit: Display: Loading text-based GConfig....
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   OodleDataCompression: Display: Oodle v2.9.0 initializing with method=Kraken, level=3=Fast
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Parsing crypto keys from a crypto key cache file
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Loading response file C:\Users\qkrdl\AppData\Roaming\Unreal Engine\AutomationTool\Logs\D+Program+Files+Epic+Games+UE_4.27\PakList_Project_MF-WindowsNoEditor.txt
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Added 1957 entries to add to pak file.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Loading pak order file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log...
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Finished loading pak order file D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Build\WindowsNoEditor\FileOpenOrder\CookerOpenOrder.log.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Collecting files to add to pak file...
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Collected 1957 files in 0.01s.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Creating pak D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor\Project_MF\Content\Paks\Project_MF-WindowsNoEditor.pak.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormats in priority order: Oodle, Zlib
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.00ms. RandomReadSpeed=999.00MBs, RandomWriteSpeed=999.00MBs. Assigned SpeedClass 'Local'
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 0 [Oodle] : 579 files, 204001146 -> 32367483 bytes
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 1 [Zlib] : 62 files, 3385519 -> 1138748 bytes
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: CompressionFormat 2 [None] : 1316 files, 10278046 -> 10278046 bytes
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Added 1957 files, 44736878 bytes total, time 1.69s.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: PrimaryIndex size: 31830 bytes
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: PathHashIndex size: 51312 bytes
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: FullDirectoryIndex size: 70162 bytes
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Compression summary: 16.16% of original size. Compressed Size 33506231 bytes, Original Size 207386665 bytes.
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Encryption - DISABLED
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)):   LogPakFile: Display: Unreal pak executed in 1.752734 seconds
+[2023.04.17-23.02.26:883][  8]UATHelper: 패키징 (Windows (64-bit)): UnrealPak terminated with exit code 0
+[2023.04.17-23.02.26:898][  9]UATHelper: 패키징 (Windows (64-bit)): Copying NonUFSFiles to staging directory: D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Saved\StagedBuilds\WindowsNoEditor
+[2023.04.17-23.02.27:062][ 29]UATHelper: 패키징 (Windows (64-bit)): ********** STAGE COMMAND COMPLETED **********
+[2023.04.17-23.02.27:070][ 30]UATHelper: 패키징 (Windows (64-bit)): ********** PACKAGE COMMAND STARTED **********
+[2023.04.17-23.02.27:070][ 30]UATHelper: 패키징 (Windows (64-bit)): ********** PACKAGE COMMAND COMPLETED **********
+[2023.04.17-23.02.27:070][ 30]UATHelper: 패키징 (Windows (64-bit)): ********** ARCHIVE COMMAND STARTED **********
+[2023.04.17-23.02.27:070][ 30]UATHelper: 패키징 (Windows (64-bit)): Archiving to D:/Users/qkrdl/Documents/Unreal Projects/Build
+[2023.04.17-23.02.27:265][ 53]UATHelper: 패키징 (Windows (64-bit)): ********** ARCHIVE COMMAND COMPLETED **********
+[2023.04.17-23.02.27:272][ 54]UATHelper: 패키징 (Windows (64-bit)): BUILD SUCCESSFUL
+[2023.04.17-23.02.27:272][ 54]UATHelper: 패키징 (Windows (64-bit)): AutomationTool exiting with ExitCode=0 (Success)
+[2023.04.17-23.02.55:797][836]LogUObjectHash: Compacting FUObjectHashTables data took   0.66ms
+[2023.04.17-23.02.55:831][836]LogSlate: Window 'Project_MF - 언리얼 에디터' being destroyed
+[2023.04.17-23.02.55:996][837]Cmd: QUIT_EDITOR
+[2023.04.17-23.02.55:996][837]LogCore: Engine exit requested (reason: UUnrealEdEngine::CloseEditor())
+[2023.04.17-23.02.56:000][837]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2023.04.17-23.02.56:038][837]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2023.04.17-23.02.56:038][837]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2023.04.17-23.02.56:038][837]LogAudio: Display: Audio Device unregistered from world 'MainLevel'.
+[2023.04.17-23.02.56:039][837]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.17-23.02.56:040][837]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.17-23.02.56:046][837]LogAudio: Display: Audio Device Manager Shutdown
+[2023.04.17-23.02.56:048][837]LogWindowsTextInputMethodSystem: Display: IME system activated using TSF (Microsoft 입력기).
+[2023.04.17-23.02.56:052][837]LogExit: Preparing to exit.
+[2023.04.17-23.02.56:229][837]LogUObjectHash: Compacting FUObjectHashTables data took   2.39ms
+[2023.04.17-23.02.56:329][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:330][837]LogWorld: UWorld::CleanupWorld for None, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:331][837]LogWorld: UWorld::CleanupWorld for None, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:332][837]LogWorld: UWorld::CleanupWorld for World_3, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:332][837]LogWorld: UWorld::CleanupWorld for World_4, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2023.04.17-23.02.56:333][837]LogWorld: UWorld::CleanupWorld for None, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:334][837]LogWorld: UWorld::CleanupWorld for World_6, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:334][837]LogWorld: UWorld::CleanupWorld for World_2, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:335][837]LogWorld: UWorld::CleanupWorld for World_5, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:366][837]LogDemo: Cleaned up 0 splitscreen connections with owner deletion
+[2023.04.17-23.02.56:381][837]LogWorld: UWorld::CleanupWorld for None, bSessionEnded=true, bCleanupResources=true
+[2023.04.17-23.02.56:382][837]LogExit: Editor shut down
+[2023.04.17-23.02.56:384][837]LogExit: Transaction tracking system shut down
+[2023.04.17-23.02.56:658][837]LogExit: Object subsystem successfully closed.
+[2023.04.17-23.02.56:671][837]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.17-23.02.56:671][837]LogShaderCompilers: Display: Total job queries 4, among them cache hits 0 (0.00%)
+[2023.04.17-23.02.56:671][837]LogShaderCompilers: Display: Tracking 4 distinct input hashes that result in 3 distinct outputs (75.00%)
+[2023.04.17-23.02.56:671][837]LogShaderCompilers: Display: RAM used: 0.01 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.04.17-23.02.56:671][837]LogShaderCompilers: Display: ================================================
+[2023.04.17-23.02.56:682][837]LogShaderCompilers: Display: Shaders left to compile 0
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module ExternalImagePicker (887)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module UATHelper (885)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module LauncherServices (883)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module Project_MF (881)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module BlueprintGraph (880)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module HierarchicalLODUtilities (878)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (876)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module Voice (874)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (872)
+[2023.04.17-23.02.56:696][837]LogModuleManager: Shutting down and abandoning module AddContentDialog (870)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module WidgetCarousel (869)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module EditorWidgets (866)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module SceneOutliner (864)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module StatsViewer (862)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (860)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (858)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module AutomationWorker (856)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module SteamVREditor (854)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module OculusMR (852)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module TakeRecorderSources (850)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module TakeRecorder (849)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module TakeTrackRecorders (846)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module TakesCore (844)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module OpenXRInput (842)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module GooglePADEditor (840)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (838)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module TemplateSequenceEditor (836)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module MatineeToLevelSequence (834)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (832)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module ActorSequenceEditor (830)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (828)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (826)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module WebMMediaFactory (824)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module WebMMediaEditor (822)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module WebMMedia (820)
+[2023.04.17-23.02.56:698][837]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (818)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (816)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module SequenceRecorder (815)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (812)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (810)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (808)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (806)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (804)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (802)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (800)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module MagicLeapMediaCodecFactory (798)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module MagicLeapMediaFactory (796)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module MagicLeapMediaEditor (794)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module PlanarCut (792)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module CharacterAI (790)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module TextureAlignMode (788)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module BspMode (786)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module GeometryMode (784)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module CameraShakePreviewer (782)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module SmartSnapping (780)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module SessionServices (778)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module MeshPaint (776)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module VirtualTexturingEditor (774)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module FoliageEdit (772)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module LandscapeEditor (770)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module MeshPaintMode (768)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (766)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module ActorPickerMode (764)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module PlacementMode (762)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module ViewportSnapping (760)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module ViewportInteraction (758)
+[2023.04.17-23.02.56:700][837]LogModuleManager: Shutting down and abandoning module ClothPainter (756)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (755)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module LogVisualizer (752)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module IntroTutorials (750)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (749)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module LuminPlatformEditor (746)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (744)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (742)
+[2023.04.17-23.02.56:701][837]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (741)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (738)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module LuminRuntimeSettings (736)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (734)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (732)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module TraceInsights (730)
+[2023.04.17-23.02.57:230][837]MemoryProfiler: Shutdown
+[2023.04.17-23.02.57:230][837]NetworkingProfiler: Shutdown
+[2023.04.17-23.02.57:230][837]LoadingProfiler: Shutdown
+[2023.04.17-23.02.57:230][837]TimingProfiler: Shutdown
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module TraceServices (729)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module EditorInteractiveToolsFramework (726)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module TimeManagementEditor (724)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module InputBindingEditor (722)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module MergeActors (720)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (718)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module LocalizationService (717)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module HardwareTargeting (714)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (712)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module UndoHistory (710)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module XmlParser (708)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module Blutility (706)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (704)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (703)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (700)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module InternationalizationSettings (699)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module SettingsEditor (696)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module ProjectLauncher (694)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module SessionFrontend (692)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module ProfilerClient (690)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module DeviceManager (688)
+[2023.04.17-23.02.57:230][837]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (687)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module AutomationController (684)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module AutomationWindow (682)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module Layers (680)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (678)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module DetailCustomizations (676)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module PackagesDialog (674)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module AnimationBlueprintEditor (672)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module Persona (670)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (669)
+[2023.04.17-23.02.57:263][837]LogModuleManager: Shutting down and abandoning module Kismet (666)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module KismetWidgets (665)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module GraphEditor (662)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module StructViewer (660)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module ClassViewer (658)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module Toolbox (656)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module ModuleUI (654)
+[2023.04.17-23.02.57:271][837]LogModuleManager: Shutting down and abandoning module OutputLog (652)
+[2023.04.17-23.02.57:273][837]LogModuleManager: Shutting down and abandoning module GammaUI (650)
+[2023.04.17-23.02.57:273][837]LogModuleManager: Shutting down and abandoning module Documentation (648)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module LiveCoding (646)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module LevelSequence (644)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (642)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module MovieScene (640)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (638)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module LauncherPlatform (636)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module AnalyticsET (634)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module PortalServices (632)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module PortalRpc (630)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module MessagingRpc (628)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module AudioMixerXAudio2 (626)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module AudioMixerCore (625)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module AIModule (622)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module GameplayDebugger (621)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module AITestSuite (619)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module NavigationSystem (617)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module ImageWriteQueue (614)
+[2023.04.17-23.02.57:274][837]LogModuleManager: Shutting down and abandoning module ProfilerService (612)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module TaskGraph (610)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaEditor (608)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module OculusEditor (606)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module OculusInput (604)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module ContentBrowserFileDataSource (602)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module ContentBrowserClassDataSource (600)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module ContentBrowserAssetDataSource (598)
+[2023.04.17-23.02.57:299][837]LogModuleManager: Shutting down and abandoning module CollectionManager (597)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module TakeSequencer (594)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module TakeMovieScene (592)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ScreenshotTools (590)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module SynthesisEditor (588)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module Synthesis (586)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (584)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (582)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module OpenXREditor (580)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (578)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GooglePAD (576)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module EditableMesh (574)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (572)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module CableComponent (570)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AudioCapture (568)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AudioCaptureRtAudio (567)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AssetTags (564)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (562)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AppleImageUtilsBlueprintSupport (560)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AppleImageUtils (558)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AndroidPermission (556)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ActorLayerUtilitiesEditor (554)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ActorLayerUtilities (552)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module TemplateSequence (550)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MediaCompositing (548)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ImgMedia (546)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MagicLeapSharedWorld (544)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MagicLeapLightEstimation (542)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MagicLeapHelperVulkan (540)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MagicLeapHelperOpenGL (538)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MagicLeapAudio (536)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module OpenImageDenoise (534)
+[2023.04.17-23.02.57:300][837]LogOpenImageDenoise: OIDN shutting down
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MotoSynthEditor (532)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MotoSynth (530)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module MeshConversion (528)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module DynamicMesh (526)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryAlgorithms (524)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometricObjects (522)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCollectionTracks (520)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCollectionSequencer (519)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCollectionEditor (516)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module NiagaraEditorWidgets (514)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCacheTracks (512)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCacheStreamer (510)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCacheSequencer (508)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ChaosSolverEditor (506)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ChaosNiagara (504)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module FractureEditor (502)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module FieldSystemEngine (501)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module ChaosClothEditor (498)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module BackChannel (496)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AutomationUtilsEditor (494)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AutomationUtils (492)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AlembicImporter (490)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module AlembicLibrary (489)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCache (488)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (487)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module VariantManagerContentEditor (482)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module DatasmithContentEditor (480)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (478)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (476)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module UObjectPlugin (474)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (472)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module RiderSourceCodeAccess (470)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module PluginUtils (468)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module PlasticSourceControl (466)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (464)
+[2023.04.17-23.02.57:300][837]LogModuleManager: Shutting down and abandoning module GitSourceControl (462)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module SourceControl (461)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (458)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (456)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module PluginBrowser (454)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module AnimationSharingEd (452)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (450)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module MaterialAnalyzer (448)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module CurveEditorTools (446)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (444)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module CryptoKeys (442)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module OodleNetworkHandlerComponent (440)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module LiveLinkSequencer (438)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module LiveLinkMovieScene (436)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module LiveLinkGraphNode (434)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module LiveLinkEditor (432)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module LiveLinkComponents (430)
+[2023.04.17-23.02.57:301][837]LogModuleManager: Shutting down and abandoning module LiveLink (428)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (426)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (424)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (422)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module Paper2DEditor (420)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module MeshPaintingToolset (418)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module MeshPaintEditorMode (416)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module AnimGraph (413)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module EnvironmentQueryEditor (410)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module SoundFields (408)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module SignificanceManager (406)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (404)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module PropertyAccessEditor (402)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (400)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (396)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module AudioSynesthesia (394)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaCore (392)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module ActorSequence (390)
+[2023.04.17-23.02.57:758][837]LogModuleManager: Shutting down and abandoning module UdpMessaging (388)
+[2023.04.17-23.02.57:859][837]LogModuleManager: Shutting down and abandoning module TcpMessaging (386)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module ImgMediaEngine (384)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapARPin (382)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapHandMeshing (380)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapSecureStorage (378)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapPrivileges (376)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapPlanes (374)
+[2023.04.17-23.02.57:960][837]LogMagicLeapPlanes: Planes tracker already destroyed.
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapImageTracker (372)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapIdentity (370)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapHandTracking (368)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapEyeTracker (366)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapController (364)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapARPinImpl (362)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module MagicLeapAR (360)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module PythonScriptPlugin (358)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module NiagaraAnimNotifies (356)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module Niagara (354)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module SignalProcessing (353)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module NiagaraEditor (351)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module NiagaraCore (348)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module PropertyAccessNode (346)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module AnimationSharing (344)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (342)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (340)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module FacialAnimation (338)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module DataValidation (336)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module GameplayCameras (334)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (332)
+[2023.04.17-23.02.57:960][837]LogModuleManager: Shutting down and abandoning module LevelEditor (331)
+[2023.04.17-23.02.57:962][837]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (330)
+[2023.04.17-23.02.57:962][837]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (328)
+[2023.04.17-23.02.57:962][837]LogModuleManager: Shutting down and abandoning module MainFrame (326)
+[2023.04.17-23.02.57:962][837]LogModuleManager: Shutting down and abandoning module HotReload (325)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module ToolMenus (321)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module ContentBrowser (319)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module ContentBrowserData (318)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module TreeMap (315)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (312)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module Paper2D (310)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module WebMMoviePlayer (308)
+[2023.04.17-23.02.57:963][837]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (306)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module NetworkReplayStreaming (304)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module PacketHandler (302)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (300)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntimeNv (298)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module MediaAssets (296)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module Overlay (294)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module OverlayEditor (293)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module VREditor (290)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module StringTableEditor (288)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (286)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (284)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module FunctionalTesting (282)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (280)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (279)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module UMG (276)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module UMGEditor (275)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module MessageLog (273)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module SlateReflector (268)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module Slate (266)
+[2023.04.17-23.02.57:970][837]LogModuleManager: Shutting down and abandoning module SlateCore (264)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module LandscapeEditorUtilities (262)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module UnrealEd (260)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module MRMesh (258)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (256)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (254)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module XAudio2 (252)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module Networking (250)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module Core (248)
+[2023.04.17-23.02.57:971][837]LogModuleManager: Shutting down and abandoning module MaterialEditor (246)
+[2023.04.17-23.02.57:972][837]LogModuleManager: Shutting down and abandoning module MovieSceneTools (244)
+[2023.04.17-23.02.57:972][837]LogModuleManager: Shutting down and abandoning module CurveEditor (243)
+[2023.04.17-23.02.57:972][837]LogModuleManager: Shutting down and abandoning module Sequencer (241)
+[2023.04.17-23.02.57:972][837]LogModuleManager: Shutting down and abandoning module EditorStyle (240)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module KismetCompiler (236)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module MeshBuilder (234)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module MeshUtilities (232)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (231)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (230)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module MeshBoneReduction (229)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module SkeletalMeshReduction (227)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module ProxyLODMeshReduction (225)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (223)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module MaterialBaking (219)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module NullInstallBundleManager (214)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module DerivedDataCache (212)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module TargetPlatform (210)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (209)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (207)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (205)
+[2023.04.17-23.02.57:973][837]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (203)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (201)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatOodle (199)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (197)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (195)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatETC2 (193)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (191)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (189)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (187)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module ImageWrapper (186)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (183)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (181)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (179)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (177)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (175)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (173)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (171)
+[2023.04.17-23.02.57:974][837]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (169)
+[2023.04.17-23.02.57:978][837]LogModuleManager: Shutting down and abandoning module MacServerTargetPlatform (167)
+[2023.04.17-23.02.57:978][837]LogModuleManager: Shutting down and abandoning module MacClientTargetPlatform (165)
+[2023.04.17-23.02.57:978][837]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (163)
+[2023.04.17-23.02.57:978][837]LogModuleManager: Shutting down and abandoning module MacNoEditorTargetPlatform (161)
+[2023.04.17-23.02.57:978][837]LogModuleManager: Shutting down and abandoning module LuminTargetPlatform (159)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxAArch64ServerTargetPlatform (157)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxAArch64ClientTargetPlatform (155)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxAArch64NoEditorTargetPlatform (153)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (151)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (149)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (147)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (145)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module Messaging (143)
+[2023.04.17-23.02.57:985][837]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (141)
+[2023.04.17-23.02.57:989][837]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (139)
+[2023.04.17-23.02.58:004][837]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (137)
+[2023.04.17-23.02.58:004][837]LogModuleManager: Shutting down and abandoning module D3D11RHI (134)
+[2023.04.17-23.02.58:004][837]LogModuleManager: Shutting down and abandoning module InputCore (132)
+[2023.04.17-23.02.58:004][837]LogModuleManager: Shutting down and abandoning module Settings (130)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (128)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module PhysXCooking (126)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module Chaos (124)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module WindowsPlatformFeatures (122)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module GameplayMediaEncoder (121)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module AVEncoder (120)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module SteamVRInputDevice (116)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module SteamVRInput (114)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module SteamVR (112)
+[2023.04.17-23.02.58:005][837]LogHMD: Freeing OpenVRDLLHandle.
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module OculusHMD (110)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module AISupportModule (108)
+[2023.04.17-23.02.58:005][837]LogModuleManager: Shutting down and abandoning module OpenXRHandTracking (106)
+[2023.04.17-23.02.58:006][837]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module OpenXREyeTracker (104)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module OpenXRAR (102)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module AugmentedReality (101)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module OpenXRHMD (98)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (96)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module ChunkDownloader (94)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (92)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module LauncherChunkInstaller (88)
+[2023.04.17-23.02.58:006][837]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (86)
+[2023.04.17-23.02.58:008][837]LogModuleManager: Shutting down and abandoning module XMPP (81)
+[2023.04.17-23.02.58:008][837]LogModuleManager: Shutting down and abandoning module WebSockets (80)
+[2023.04.17-23.02.58:017][837]LogModuleManager: Shutting down and abandoning module HTTP (77)
+[2023.04.17-23.02.58:018][837]LogHttp: Display: Http module shutting down, but needs to wait on 1 outstanding Http requests:
+[2023.04.17-23.02.58:018][837]LogHttp: Display: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BDB835847-4678-A058-0F3E-7CB5C05070F2%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.27.2-18319896%2B%2B%2BUE4%2BRelease-4.27&UserID=8704bdfd44f768383c3e46a2d75f42f1%7C00968bd6be13427aa3a079bae2497ed8%7C1482bd02-e8ca-4c55-b3ed-8d6d5d4861a1&AppEnvironment=datacollector-binary&UploadType=eteventstream] refs=[1] status=Processing
+[2023.04.17-23.02.58:018][837]LogHttp: Display: cleaning up 1 outstanding Http requests.
+[2023.04.17-23.02.58:035][837]LogModuleManager: Shutting down and abandoning module SSL (76)
+[2023.04.17-23.02.58:037][837]LogModuleManager: Shutting down and abandoning module WmfMedia (72)
+[2023.04.17-23.02.58:041][837]LogModuleManager: Shutting down and abandoning module Media (71)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module MediaInfo (70)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module ExrReaderGpu (66)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module MLSDK (64)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module MagicLeap (62)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module NiagaraVertexFactories (60)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module NiagaraShader (58)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module ChaosCloth (56)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module VariantManagerContent (54)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module DatasmithContent (52)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module PixWinPlugin (50)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module DesktopPlatform (48)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module PythonScriptPluginPreload (46)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module PlatformCryptoOpenSSL (44)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module PlatformCryptoTypes (42)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module PlatformCrypto (40)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module OodleDataCompressionFormat (38)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module XGEController (36)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module AnimationModifiers (34)
+[2023.04.17-23.02.58:042][837]LogModuleManager: Shutting down and abandoning module AudioEditor (32)
+[2023.04.17-23.02.58:043][837]LogModuleManager: Shutting down and abandoning module PropertyEditor (31)
+[2023.04.17-23.02.58:043][837]LogModuleManager: Shutting down and abandoning module TextureCompressor (28)
+[2023.04.17-23.02.58:043][837]LogModuleManager: Shutting down and abandoning module RenderCore (26)
+[2023.04.17-23.02.58:043][837]LogModuleManager: Shutting down and abandoning module Landscape (24)
+[2023.04.17-23.02.58:043][837]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (22)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (20)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module Renderer (18)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module Engine (16)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module CoreUObject (14)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module NetworkFile (12)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (10)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module StreamingFile (8)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module SandboxFile (6)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module PakFile (4)
+[2023.04.17-23.02.58:046][837]LogModuleManager: Shutting down and abandoning module RSA (3)
+[2023.04.17-23.02.58:046][837]LogContentStreaming: Display: There are 1 unreleased StreamingManagers
+[2023.04.17-23.02.58:058][837]LogD3D11RHI: Shutdown
+[2023.04.17-23.02.58:058][837]LogD3D11RHI: CleanupD3DDevice
+[2023.04.17-23.02.58:063][837]LogExit: Exiting.
+[2023.04.17-23.02.58:073][837]Log file closed, 04/18/23 08:02:58

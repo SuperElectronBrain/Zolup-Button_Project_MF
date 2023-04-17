@@ -26,7 +26,6 @@
 			"MainLevelPawn.cpp.obj",
 			"MainLevelPawnController.cpp.obj",
 			"MainLevelScriptActor.cpp.obj",
-			"MainLevelUICanvasWidget.cpp.obj",
 			"MFActor.cpp.obj",
 			"MFSaveGame.cpp.obj",
 			"MovementRegistComponent.cpp.obj",
@@ -38,6 +37,7 @@
 			"PlayerUIMagneticInfoWidget.cpp.obj",
 			"PowerComponent.cpp.obj",
 			"PowerConnectionComponent.cpp.obj",
+			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
 			"PowerGenerateComponent.cpp.obj",
@@ -53,7 +53,7 @@
 			"TestPlayerGameMode.cpp.obj",
 			"UIPopupTriggerComponent.cpp.obj",
 			"WidgetFunctionLibrary.cpp.obj",
-			"PowerConveyorMovementComponent.cpp.obj"
+			"MainLevelUICanvasWidget.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"ChangeLevelComponent.gen.cpp.obj",
