@@ -13,10 +13,12 @@ UPowerLightControlComponent::UPowerLightControlComponent()
 
 void UPowerLightControlComponent::BeginPlay()
 {
+	Super::BeginPlay();
 }
 
 void UPowerLightControlComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	Action(DeltaTime);
 }
 

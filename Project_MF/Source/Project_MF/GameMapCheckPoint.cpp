@@ -9,7 +9,8 @@ AGameMapCheckPoint::AGameMapCheckPoint()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
-#if WITH_EDITOR
-	RootComponent = Point = CreateDefaultSubobject<UGameMapCheckPointComponent>(TEXT("Point"));
+#if WITH_EDITORONLY_DATA
+	Point = CreateDefaultSubobject<UGameMapCheckPointComponent>(TEXT("Point"));
+	RootComponent;
 #endif
 }
