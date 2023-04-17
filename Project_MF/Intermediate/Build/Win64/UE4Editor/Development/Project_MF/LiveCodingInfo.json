@@ -15,7 +15,6 @@
 			"GameMapCheckPoint.cpp.obj",
 			"GameMapCheckPointComponent.cpp.obj",
 			"GameMapSectionComponent.cpp.obj",
-			"GamePlayerCharacter.cpp.obj",
 			"MagneticComponent.cpp.obj",
 			"MagneticMovementComponent.cpp.obj",
 			"MagneticSenserComponent.cpp.obj",
@@ -51,9 +50,13 @@
 			"StageOneLevelScriptActor.cpp.obj",
 			"TestActorObject.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
-			"UIPopupTriggerComponent.cpp.obj"
+			"UIPopupTriggerComponent.cpp.obj",
+			"WidgetFunctionLibrary.cpp.obj",
+			"ChangeLevelComponent.cpp.obj",
+			"GamePlayerCharacter.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
+			"ChangeLevelComponent.gen.cpp.obj",
 			"CustomGameInstance.gen.cpp.obj",
 			"DefaultMagneticMovementComponent.gen.cpp.obj",
 			"EditLevelGameMode.gen.cpp.obj",
@@ -97,13 +100,14 @@
 			"PowerMovementComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
-			"Project_MF.init.gen.cpp.obj",
 			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",
 			"StageOneLevelScriptActor.gen.cpp.obj",
 			"TestActorObject.gen.cpp.obj",
 			"TestPlayerGameMode.gen.cpp.obj",
-			"UIPopupTriggerComponent.gen.cpp.obj"
+			"UIPopupTriggerComponent.gen.cpp.obj",
+			"WidgetFunctionLibrary.gen.cpp.obj",
+			"Project_MF.init.gen.cpp.obj"
 		]
 	}
 }

@@ -35,7 +35,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/PlayerCharacter/Meshs/PlayerArmMeshNew.PlayerArmMeshNew")
 	);
 	static ConstructorHelpers::FClassFinder<UPlayerAnimInstance> ANIM_BLUEPRINT(
-		TEXT("/Game/PlayerCharacter/Animation/PlayerAnimBlueprint")
+		TEXT("/Game/PlayerCharacter/Animation/PlayerAnimBlueprint.PlayerAnimBlueprint_c")
 	);
 	static ConstructorHelpers::FClassFinder<UUserWidget> UI_CANVAS(
 		TEXT("/Game/UI/PlayerUI_Canvas")
