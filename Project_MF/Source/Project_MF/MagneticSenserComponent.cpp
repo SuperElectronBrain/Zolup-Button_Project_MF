@@ -32,6 +32,12 @@ void UMagneticSenserComponent::OnChildAttached(USceneComponent* ChildComponent)
 		if (range && IsValid(range))
 		{
 			_senseRange = range;
+
+			UShapeComponent* shape = Cast<UShapeComponent>(range);
+			if (shape)
+			{
+				shape->ShapeColor = FColor::Yellow;
+			}
 		}
 	}
 }
