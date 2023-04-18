@@ -3,7 +3,7 @@
 
 #include "TestPlayerGameMode.h"
 #include "GamePlayerCharacter.h"
-#include "PlayerCharacter.h"
+//#include "PlayerCharacter.h"
 
 ATestPlayerGameMode::ATestPlayerGameMode()
 {
