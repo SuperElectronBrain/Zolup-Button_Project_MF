@@ -62,14 +62,23 @@ void UPowerGenerateComponent::BeginPlay()
 	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
 	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
 	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
-	//Collider->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X), (OwnerRootScale.Y * OwnerRootBounds.Y), (OwnerRootScale.Z * OwnerRootBounds.Z)));
-	Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
-	//Trigger->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X) + (BoxSize / OwnerRootScale.X), (OwnerRootScale.Y * OwnerRootBounds.Y) + (BoxSize / OwnerRootScale.Y), (OwnerRootScale.Z * OwnerRootBounds.Z) + (BoxSize / OwnerRootScale.Z)));
-	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / OwnerRootScale.X), OwnerRootBounds.Y + (BoxSize / OwnerRootScale.Y), OwnerRootBounds.Z + (BoxSize / OwnerRootScale.Z)));
-	Trigger->SetCollisionProfileName("NewTrigger");
-	Trigger->SetGenerateOverlapEvents(true);
-	Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
-	Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapEnd);
+	
+	if (::IsValid(Collider) == true)
+	{
+		//Collider->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X), (OwnerRootScale.Y * OwnerRootBounds.Y), (OwnerRootScale.Z * OwnerRootBounds.Z)));
+		Collider->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
+	}
+	if (::IsValid(Trigger) == true)
+	{
+		//Trigger->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X) + (BoxSize / OwnerRootScale.X), (OwnerRootScale.Y * OwnerRootBounds.Y) + (BoxSize / OwnerRootScale.Y), (OwnerRootScale.Z * OwnerRootBounds.Z) + (BoxSize / OwnerRootScale.Z)));
+		Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		Trigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / OwnerRootScale.X), OwnerRootBounds.Y + (BoxSize / OwnerRootScale.Y), OwnerRootBounds.Z + (BoxSize / OwnerRootScale.Z)));
+		Trigger->SetCollisionProfileName("NewTrigger");
+		Trigger->SetGenerateOverlapEvents(true);
+		Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
+		Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapEnd);
+	}
 
 	SetPowerState(!bPowerState, true);
 	SetPowerState(!bPowerState, true);
@@ -90,23 +99,23 @@ void UPowerGenerateComponent::TickComponent(float DeltaTime, ELevelTick TickType
 
 void UPowerGenerateComponent::UpdateMaterialColor()
 {
-	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	if (::IsValid(OwnerRootComponent) == true)
-	{
-		UMaterialInstanceDynamic* DynamicMaterial = OwnerRootComponent->CreateDynamicMaterialInstance(0);
-		if (DynamicMaterial != nullptr)
-		{
-			if (bPowerState == true)
-			{
-				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(1.0f, 0.5f, 0.0f));
-			}
-
-			else if (bPowerState == false)
-			{
-				DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
-			}
-		}
-	}
+	//UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	//if (::IsValid(OwnerRootComponent) == true)
+	//{
+	//	UMaterialInstanceDynamic* DynamicMaterial = OwnerRootComponent->CreateDynamicMaterialInstance(0);
+	//	if (DynamicMaterial != nullptr)
+	//	{
+	//		if (bPowerState == true)
+	//		{
+	//			DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(1.0f, 0.5f, 0.0f));
+	//		}
+	//
+	//		else if (bPowerState == false)
+	//		{
+	//			DynamicMaterial->SetVectorParameterValue(TEXT("Color"), FVector(0.5f, 0.5f, 0.5f));
+	//		}
+	//	}
+	//}
 }
 
 void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)

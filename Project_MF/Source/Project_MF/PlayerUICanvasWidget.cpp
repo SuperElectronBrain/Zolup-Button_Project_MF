@@ -8,6 +8,7 @@ void UPlayerUICanvasWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
+	GetWorld();
 	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
 	_AimImage = Cast<UImage>(GetWidgetFromName(TEXT("Aim")));
 }

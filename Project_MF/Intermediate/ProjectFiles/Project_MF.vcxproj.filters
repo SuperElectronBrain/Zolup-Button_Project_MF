@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{65EF2B47-53D0-42C4-999F-9D4B12D65382}</UniqueIdentifier>
+      <UniqueIdentifier>{874AE198-24AB-4CE1-97F8-13A781B5CB85}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{639BD2BA-2E76-4585-BC0C-F3DA57850441}</UniqueIdentifier>
+      <UniqueIdentifier>{3BE2453C-A8D5-473B-A2D6-4B9D60D550D4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +27,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{C02314A6-CC91-445C-AAB3-5B03E009CB93}</UniqueIdentifier>
+      <UniqueIdentifier>{65BDF627-A515-42BB-B318-0C7D44C24105}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Project_MF\ChangeLevelComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\ChangeLevelComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -71,10 +77,34 @@
     <ClInclude Include="..\..\Source\Project_MF\EditLevelScriptActor.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameCheckPointContainerComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameCheckPointContainerComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameCheckPointRangeComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameCheckPointRangeComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\GameLevelCharacter.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\GameLevelCharacter.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameMapCheckPoint.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameMapCheckPoint.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameMapCheckPointComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameMapCheckPointComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\GameMapSectionComponent.cpp">
@@ -171,6 +201,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MyClass.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PlayerAirVent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PlayerAirVent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PlayerAnimInstance.cpp">
@@ -278,6 +314,12 @@
     <ClInclude Include="..\..\Source\Project_MF\RotatingMagMovementComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\StageOneLevelScriptActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\StageOneLevelScriptActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\TestActorObject.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -288,6 +330,18 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\TestPlayerGameMode.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\UIPopupTriggerComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\UIPopupTriggerComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\WidgetFunctionLibrary.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\WidgetFunctionLibrary.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
   </ItemGroup>
