@@ -42,7 +42,11 @@ void UPowerSensorComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 						UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
 						if (::IsValid(OverlapActorsPrimitive) == true)
 						{
-							if (OverlapActorsPrimitive->GetMass() > MinimumWeight)
+							float ActorMass = 0.0f;
+							if (OverlapActorsPrimitive->IsSimulatingPhysics() == true) { ActorMass = OverlapActorsPrimitive->GetMass(); }
+							else if(OverlapActorsPrimitive->IsSimulatingPhysics() == false) { ActorMass = 0.1f; }
+
+							if (ActorMass > MinimumWeight)
 							{
 								if (PlayerOnly == true)
 								{
