@@ -57,7 +57,6 @@
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"ChangeLevelComponent.gen.cpp.obj",
-			"CustomGameInstance.gen.cpp.obj",
 			"DefaultMagneticMovementComponent.gen.cpp.obj",
 			"EditLevelGameMode.gen.cpp.obj",
 			"EditLevelMFActorManagementActor.gen.cpp.obj",
@@ -76,11 +75,6 @@
 			"MagneticSenserComponent.gen.cpp.obj",
 			"MagneticSenserEffectComponent.gen.cpp.obj",
 			"MagSenserEffect_EnchantComponent.gen.cpp.obj",
-			"MainLevelGameMode.gen.cpp.obj",
-			"MainLevelPawn.gen.cpp.obj",
-			"MainLevelPawnController.gen.cpp.obj",
-			"MainLevelScriptActor.gen.cpp.obj",
-			"MainLevelUICanvasWidget.gen.cpp.obj",
 			"MFActor.gen.cpp.obj",
 			"MFSaveGame.gen.cpp.obj",
 			"MovementRegistComponent.gen.cpp.obj",
@@ -100,14 +94,20 @@
 			"PowerMovementComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
-			"Project_MF.init.gen.cpp.obj",
-			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",
 			"StageOneLevelScriptActor.gen.cpp.obj",
 			"TestActorObject.gen.cpp.obj",
 			"TestPlayerGameMode.gen.cpp.obj",
 			"UIPopupTriggerComponent.gen.cpp.obj",
-			"WidgetFunctionLibrary.gen.cpp.obj"
+			"WidgetFunctionLibrary.gen.cpp.obj",
+			"CustomGameInstance.gen.cpp.obj",
+			"MainLevelGameMode.gen.cpp.obj",
+			"MainLevelPawn.gen.cpp.obj",
+			"MainLevelPawnController.gen.cpp.obj",
+			"MainLevelScriptActor.gen.cpp.obj",
+			"MainLevelUICanvasWidget.gen.cpp.obj",
+			"Project_MF.init.gen.cpp.obj",
+			"Project_MFGameModeBase.gen.cpp.obj"
 		]
 	}
 }
