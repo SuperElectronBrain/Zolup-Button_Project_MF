@@ -26,6 +26,7 @@
 			"MainLevelPawn.cpp.obj",
 			"MainLevelPawnController.cpp.obj",
 			"MainLevelScriptActor.cpp.obj",
+			"MainLevelUICanvasWidget.cpp.obj",
 			"MFActor.cpp.obj",
 			"MFSaveGame.cpp.obj",
 			"MovementRegistComponent.cpp.obj",
@@ -52,8 +53,7 @@
 			"TestActorObject.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
 			"UIPopupTriggerComponent.cpp.obj",
-			"WidgetFunctionLibrary.cpp.obj",
-			"MainLevelUICanvasWidget.cpp.obj"
+			"WidgetFunctionLibrary.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"ChangeLevelComponent.gen.cpp.obj",
