@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{4E86A637-FCDB-45FE-B513-FB3CCCFD9EBB}</UniqueIdentifier>
+      <UniqueIdentifier>{874AE198-24AB-4CE1-97F8-13A781B5CB85}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{53C78FF4-95E3-4AB8-B92B-DC2D58D6F3D4}</UniqueIdentifier>
+      <UniqueIdentifier>{3BE2453C-A8D5-473B-A2D6-4B9D60D550D4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{68D92536-DB71-4999-9DCF-749BD3D6A012}</UniqueIdentifier>
+      <UniqueIdentifier>{65BDF627-A515-42BB-B318-0C7D44C24105}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\ChangeLevelComponent.cpp">
       <Filter>Source\Project_MF</Filter>
