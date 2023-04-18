@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Project_MF.cpp.obj": [
+			"ChangeLevelComponent.cpp.obj",
 			"CustomGameInstance.cpp.obj",
 			"DefaultMagneticMovementComponent.cpp.obj",
 			"EditLevelGameMode.cpp.obj",
@@ -9,7 +10,11 @@
 			"EditLevelPawn.cpp.obj",
 			"EditLevelPawnController.cpp.obj",
 			"EditLevelScriptActor.cpp.obj",
+			"GameCheckPointContainerComponent.cpp.obj",
+			"GameCheckPointRangeComponent.cpp.obj",
 			"GameLevelCharacter.cpp.obj",
+			"GameMapCheckPoint.cpp.obj",
+			"GameMapCheckPointComponent.cpp.obj",
 			"GameMapSectionComponent.cpp.obj",
 			"GamePlayerCharacter.cpp.obj",
 			"MagneticComponent.cpp.obj",
@@ -26,8 +31,8 @@
 			"MFSaveGame.cpp.obj",
 			"MovementRegistComponent.cpp.obj",
 			"MyClass.cpp.obj",
+			"PlayerAirVent.cpp.obj",
 			"PlayerAnimInstance.cpp.obj",
-			"PlayerCharacter.cpp.obj",
 			"PlayerUICanvasWidget.cpp.obj",
 			"PlayerUIMagneticInfoWidget.cpp.obj",
 			"PowerComponent.cpp.obj",
@@ -39,14 +44,18 @@
 			"PowerLightControlComponent.cpp.obj",
 			"PowerMovementComponent.cpp.obj",
 			"PowerRotationMovementComponent.cpp.obj",
+			"PowerSensorComponent.cpp.obj",
 			"Project_MF.cpp.obj",
-			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
+			"StageOneLevelScriptActor.cpp.obj",
 			"TestActorObject.cpp.obj",
-			"TestPlayerGameMode.cpp.obj",
-			"PowerSensorComponent.cpp.obj"
+			"UIPopupTriggerComponent.cpp.obj",
+			"WidgetFunctionLibrary.cpp.obj",
+			"Project_MFGameModeBase.cpp.obj",
+			"TestPlayerGameMode.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
+			"ChangeLevelComponent.gen.cpp.obj",
 			"CustomGameInstance.gen.cpp.obj",
 			"DefaultMagneticMovementComponent.gen.cpp.obj",
 			"EditLevelGameMode.gen.cpp.obj",
@@ -54,7 +63,11 @@
 			"EditLevelPawn.gen.cpp.obj",
 			"EditLevelPawnController.gen.cpp.obj",
 			"EditLevelScriptActor.gen.cpp.obj",
+			"GameCheckPointContainerComponent.gen.cpp.obj",
+			"GameCheckPointRangeComponent.gen.cpp.obj",
 			"GameLevelCharacter.gen.cpp.obj",
+			"GameMapCheckPoint.gen.cpp.obj",
+			"GameMapCheckPointComponent.gen.cpp.obj",
 			"GameMapSectionComponent.gen.cpp.obj",
 			"GamePlayerCharacter.gen.cpp.obj",
 			"MagneticComponent.gen.cpp.obj",
@@ -71,8 +84,8 @@
 			"MFSaveGame.gen.cpp.obj",
 			"MovementRegistComponent.gen.cpp.obj",
 			"MyClass.gen.cpp.obj",
+			"PlayerAirVent.gen.cpp.obj",
 			"PlayerAnimInstance.gen.cpp.obj",
-			"PlayerCharacter.gen.cpp.obj",
 			"PlayerUICanvasWidget.gen.cpp.obj",
 			"PlayerUIMagneticInfoWidget.gen.cpp.obj",
 			"PowerComponent.gen.cpp.obj",
@@ -85,11 +98,14 @@
 			"PowerMovementComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
-			"Project_MF.init.gen.cpp.obj",
 			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",
+			"StageOneLevelScriptActor.gen.cpp.obj",
 			"TestActorObject.gen.cpp.obj",
-			"TestPlayerGameMode.gen.cpp.obj"
+			"TestPlayerGameMode.gen.cpp.obj",
+			"UIPopupTriggerComponent.gen.cpp.obj",
+			"WidgetFunctionLibrary.gen.cpp.obj",
+			"Project_MF.init.gen.cpp.obj"
 		]
 	}
 }

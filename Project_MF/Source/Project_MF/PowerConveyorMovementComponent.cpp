@@ -28,6 +28,8 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 	
 	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 
+	ActingSpeed = 300.0f;
+
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
 	Trigger->SetBoxExtent(FVector(1.0f, 1.0f, 1.0f));

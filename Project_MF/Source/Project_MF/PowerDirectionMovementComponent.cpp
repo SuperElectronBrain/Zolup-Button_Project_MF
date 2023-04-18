@@ -31,7 +31,10 @@ void UPowerDirectionMovementComponent::BeginPlay()
 	Super::BeginPlay();
 	// ...
 	GetOwner()->GetRootComponent()->SetMobility(EComponentMobility::Movable);
-	ArrowComponent->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+	if (::IsValid(ArrowComponent) == true)
+	{
+		ArrowComponent->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+	}
 	//OriginPosition = GetOwner()->GetActorLocation();
 }
 
@@ -58,7 +61,7 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 					//UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f)"), temp.X, temp.Y, temp.Z);
 
 					//GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (ActingSpeed * DeltaTime));
-					GetOwner()->AddActorLocalOffset(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X) * (ActingSpeed * DeltaTime));
+					GetOwner()->AddActorLocalOffset((::IsValid(ArrowComponent) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetRelativeTransform().GetUnitAxis(EAxis::X) * (ActingSpeed * DeltaTime));
 				}
 				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
 				//GetOwner()->SetActorLocation(OriginPosition + MovementVector);
@@ -71,7 +74,7 @@ void UPowerDirectionMovementComponent::Action(float DeltaTime)
 					if (CurrentMovement > 0)
 					{
 						//GetOwner()->AddActorLocalOffset(FVector::ForwardVector * (-ActingSpeed * DeltaTime));
-						GetOwner()->AddActorLocalOffset(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X) * (-ActingSpeed * DeltaTime));
+						GetOwner()->AddActorLocalOffset((::IsValid(ArrowComponent) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetRelativeTransform().GetUnitAxis(EAxis::X) * (-ActingSpeed * DeltaTime));
 					}
 				}
 				//FVector MovementVector = GetOwner()->GetActorTransform().GetUnitAxis(EAxis::X) * CurrentMovement;
