@@ -3,9 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/SceneComponent.h"
 #include "GameMapCheckPointComponent.generated.h"
 
-class USceneComponent;
+//class USceneComponent;
 
 UCLASS(ClassGroup = (GameMapSection), meta = (BlueprintSpawnableComponent))
 class PROJECT_MF_API UGameMapCheckPointComponent final : public USceneComponent

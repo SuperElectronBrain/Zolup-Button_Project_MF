@@ -15,7 +15,7 @@ class PROJECT_MF_API UPowerMovementComponent : public USceneComponent
 
 public:
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) AActor* ObserveTarget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) TWeakObjectPtr<AActor> ObserveTarget;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) float ActingRange;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) float ActingSpeed;
 	UPROPERTY() float CurrentMovement;

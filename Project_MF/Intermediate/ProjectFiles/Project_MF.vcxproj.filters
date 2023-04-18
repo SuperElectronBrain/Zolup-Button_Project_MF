@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{78517BE9-C788-437C-B245-329DDCDD6889}</UniqueIdentifier>
+      <UniqueIdentifier>{874AE198-24AB-4CE1-97F8-13A781B5CB85}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{C71536EF-6666-4AB3-9A4D-015396F73C68}</UniqueIdentifier>
+      <UniqueIdentifier>{3BE2453C-A8D5-473B-A2D6-4B9D60D550D4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +27,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{FAA5A931-FEE1-4E9F-A8BA-1558EB87FB9F}</UniqueIdentifier>
+      <UniqueIdentifier>{65BDF627-A515-42BB-B318-0C7D44C24105}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Project_MF\ChangeLevelComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\ChangeLevelComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\CustomGameInstance.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -71,10 +77,40 @@
     <ClInclude Include="..\..\Source\Project_MF\EditLevelScriptActor.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameCheckPointContainerComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameCheckPointContainerComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameCheckPointRangeComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameCheckPointRangeComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\GameLevelCharacter.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\GameLevelCharacter.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameMapCheckPoint.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameMapCheckPoint.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameMapCheckPointComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameMapCheckPointComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameMapSectionComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameMapSectionComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\GamePlayerCharacter.cpp">
@@ -93,6 +129,24 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MagneticMovementComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MagneticSenserComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MagneticSenserComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MagneticSenserEffectComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MagneticSenserEffectComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MagSenserEffect_EnchantComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MagSenserEffect_EnchantComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MainLevelGameMode.cpp">
@@ -131,16 +185,28 @@
     <ClInclude Include="..\..\Source\Project_MF\MFActor.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Project_MF\MFCharacterMovementComponent.cpp">
+    <ClCompile Include="..\..\Source\Project_MF\MFSaveGame.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Project_MF\MFCharacterMovementComponent.h">
+    <ClInclude Include="..\..\Source\Project_MF\MFSaveGame.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MovementRegistComponent.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\MovementRegistComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MyClass.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MyClass.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PlayerAirVent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PlayerAirVent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PlayerAnimInstance.cpp">
@@ -248,16 +314,34 @@
     <ClInclude Include="..\..\Source\Project_MF\RotatingMagMovementComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Project_MF\TestActor.cpp">
+    <ClCompile Include="..\..\Source\Project_MF\StageOneLevelScriptActor.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Project_MF\TestActor.h">
+    <ClInclude Include="..\..\Source\Project_MF\StageOneLevelScriptActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\TestActorObject.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\TestActorObject.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\TestPlayerGameMode.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\TestPlayerGameMode.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\UIPopupTriggerComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\UIPopupTriggerComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\WidgetFunctionLibrary.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\WidgetFunctionLibrary.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
   </ItemGroup>

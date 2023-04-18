@@ -9,9 +9,15 @@ UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 	HitApplyType = EHitCheckPointRangeApplyType::SAVE_CHECKPOINT;
 	HitApplyAfterType = EHitCheckPointRangeApplyAfterType::NONE;
 	ShapeColor = FColor::Emerald;
-
-	this->OnComponentBeginOverlap;
 }
+
+void UGameCheckPointRangeComponent::FadeWait(AActor* actor)
+{
+	APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
+	if (c) c->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black, false, true);
+	ApplyRogic(actor);
+}
+
 
 void UGameCheckPointRangeComponent::BeginPlay()
 {
@@ -62,6 +68,15 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 			}
 			break;
 	}
+
+	//로직 적용 후의 로직을 적용한다.
+	switch (HitApplyAfterType){
+		case(EHitCheckPointRangeApplyAfterType::DESTROY_THIS):
+			DestroyComponent(true);
+			UE_LOG(LogTemp, Warning, TEXT("삭제될 운명!!"))
+			break;
+
+	}
 }
 
 void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -74,6 +89,22 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 
 		case(EHitCheckPointRangeApplyTiming::APPLY_AFTER_UI_FADEOUT):
 
+			APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
+			if (c) c->StartCameraFade(0.f, 1.f, 1.f, FLinearColor::Black, false, true);
+			
+			FTimerHandle handle;
+			FTimerDelegate callback = FTimerDelegate::CreateUObject(
+				this,
+				&UGameCheckPointRangeComponent::FadeWait,
+				OtherActor
+			);
+
+			GetWorld()->GetTimerManager().SetTimer(
+				handle,
+				callback,
+				2.f,
+				false
+			);
 			break;
 
 	}

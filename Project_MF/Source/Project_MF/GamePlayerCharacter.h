@@ -103,6 +103,9 @@ private:
 	UFUNCTION()
 	void MagnetMoveHit(AActor* hit, UMagneticComponent* magnet);
 
+	UFUNCTION()
+	void FadeWait(UGameMapSectionComponent* section);
+
 	/////////////////
 	///*Components*//
 	/////////////////
