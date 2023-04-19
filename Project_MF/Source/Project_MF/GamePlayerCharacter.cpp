@@ -530,7 +530,7 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 		FVector neckPos = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
 		FVector gunPos = GetMesh()->GetSocketLocation(PLAYER_GUN_BONE);
 
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(
+		auto temp = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
 			GetWorld(),
 			ShootEffect,
 			neckPos + forward * 40.f+right*22.f+down*20.f,
@@ -538,6 +538,8 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 			FVector(5.f, 5.f, 5.f)
 		);
 
+		UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), GetControlRotation().Euler().X, GetControlRotation().Euler().Y, GetControlRotation().Euler().Z);
+		UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), temp->GetComponentRotation().Euler().X, temp->GetComponentRotation().Euler().Y, temp->GetComponentRotation().Euler().Z);
 	}
 
 	//발사 위치 구하기
