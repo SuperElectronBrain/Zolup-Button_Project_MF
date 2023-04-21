@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Project_MF.cpp.obj": [
+			"CanvasActor.cpp.obj",
 			"ChangeLevelComponent.cpp.obj",
 			"CustomGameInstance.cpp.obj",
 			"DefaultMagneticMovementComponent.cpp.obj",
@@ -46,15 +47,16 @@
 			"PowerRotationMovementComponent.cpp.obj",
 			"PowerSensorComponent.cpp.obj",
 			"Project_MF.cpp.obj",
+			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
 			"StageOneLevelScriptActor.cpp.obj",
 			"TestActorObject.cpp.obj",
-			"UIPopupTriggerComponent.cpp.obj",
+			"TestPlayerGameMode.cpp.obj",
 			"WidgetFunctionLibrary.cpp.obj",
-			"Project_MFGameModeBase.cpp.obj",
-			"TestPlayerGameMode.cpp.obj"
+			"UIPopupTriggerComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
+			"CanvasActor.gen.cpp.obj",
 			"ChangeLevelComponent.gen.cpp.obj",
 			"CustomGameInstance.gen.cpp.obj",
 			"DefaultMagneticMovementComponent.gen.cpp.obj",

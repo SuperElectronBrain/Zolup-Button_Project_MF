@@ -17,6 +17,13 @@ void UUIPopupTriggerComponent::BeginPlay()
 	Super::BeginPlay();
 	SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 	SetGenerateOverlapEvents(true);
+
+	if (::IsValid(CanvasClass) == true)
+	{
+		CanvasInstance = CreateWidget<UUserWidget>(GetWorld(), CanvasClass);
+		CanvasInstance->AddToViewport();
+		CanvasInstance->SetVisibility(ESlateVisibility::Collapsed);
+	}
 }
 
 void UUIPopupTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -31,17 +38,19 @@ void UUIPopupTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 		{
 			if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
 			{
-				FOutputDeviceNull Ar;
-				const FString command = FString::Printf(TEXT("Activatewidget"));
-				bool result = GetWorld()->GetCurrentLevel()->GetLevelScriptActor()->CallFunctionByNameWithArguments(*command, Ar, NULL, true);
-				//if (result == true)
-				//{
-				//	UE_LOG(LogTemp, Warning, TEXT("î"));
-				//}
-
-				if (OneTime == true)
+				if (::IsValid(CanvasInstance) == true)
 				{
-					PrimaryComponentTick.bCanEverTick = false;
+					//FOutputDeviceNull Ar;
+					//bool result = GetWorld()->GetCurrentLevel()->GetLevelScriptActor()->CallFunctionByNameWithArguments(TEXT("Activatewidget"), Ar, NULL, true);
+					if (CanvasInstance->GetVisibility() == ESlateVisibility::Collapsed || CanvasInstance->GetVisibility() == ESlateVisibility::Hidden)
+					{
+						CanvasInstance->SetVisibility(ESlateVisibility::Visible);
+					}
+
+					if (OneTime == true)
+					{
+						PrimaryComponentTick.bCanEverTick = false;
+					}
 				}
 				break;
 			}
