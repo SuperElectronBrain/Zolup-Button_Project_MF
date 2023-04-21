@@ -538,8 +538,8 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 			FVector(5.f, 5.f, 5.f)
 		);
 
-		UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), GetControlRotation().Euler().X, GetControlRotation().Euler().Y, GetControlRotation().Euler().Z);
-		UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), temp->GetComponentRotation().Euler().X, temp->GetComponentRotation().Euler().Y, temp->GetComponentRotation().Euler().Z);
+		//UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), GetControlRotation().Euler().X, GetControlRotation().Euler().Y, GetControlRotation().Euler().Z);
+		//UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), temp->GetComponentRotation().Euler().X, temp->GetComponentRotation().Euler().Y, temp->GetComponentRotation().Euler().Z);
 	}
 
 	//발사 위치 구하기
