@@ -16,8 +16,7 @@ class PROJECT_MF_API UUIPopupTriggerComponent : public UBoxComponent
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = UI, Meta = (AllowPrivateAccess = true)) USceneComponent* SceneComponent;
-	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category = UI, Meta = (AllowPrivateAccess = true)) TSubclassOf<class UUserWidget> CanvasClass;
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Meta = (AllowPrivateAccess = true)) TSubclassOf<class UUserWidget> CanvasClass;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool OneTime;
 
