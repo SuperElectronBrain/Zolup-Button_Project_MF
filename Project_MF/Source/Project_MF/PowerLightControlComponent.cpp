@@ -9,20 +9,27 @@ UPowerLightControlComponent::UPowerLightControlComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 	ReversAction = false;
 	NonReversibleAction = false;
+	UseDisableColor = false;
 }
 
 void UPowerLightControlComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
+	OriginalColor = ObserveTargetLightComponent->GetLightColor().ToFColor(false);
+
 	if (NonReversibleAction == true)
 	{
-		ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
 		if (::IsValid(ObserveTargetLightComponent) == true)
 		{
-			if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
+			if (UseDisableColor == false)
 			{
 				ObserveTargetLightComponent->SetVisibility(ReversAction);
+			}
+			else if (UseDisableColor == true)
+			{
+				ObserveTargetLightComponent->SetLightColor(ReversAction == true ? OriginalColor : DisableColor);
 			}
 		}
 	}
@@ -43,27 +50,50 @@ void UPowerLightControlComponent::Action(float DeltaTime)
 		{
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
-				ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
-				if (::IsValid(ObserveTargetLightComponent) == true)
-				{
-					if (ObserveTargetLightComponent->IsVisible() == ReversAction)
-					{
-						ObserveTargetLightComponent->SetVisibility(!ReversAction);
-					}
-				}
-			}
-			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
-			{
-				if (NonReversibleAction == false)
+				if (bActingState == false)
 				{
 					ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
 					if (::IsValid(ObserveTargetLightComponent) == true)
 					{
-						if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
+						if (UseDisableColor == false)
 						{
-							ObserveTargetLightComponent->SetVisibility(ReversAction);
+							if (ObserveTargetLightComponent->IsVisible() == ReversAction)
+							{
+								ObserveTargetLightComponent->SetVisibility(!ReversAction);
+							}
+						}
+						else if (UseDisableColor == true)
+						{
+							ObserveTargetLightComponent->SetLightColor(ReversAction == false ? OriginalColor : DisableColor);
 						}
 					}
+
+					bActingState = true;
+				}
+			}
+			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+			{
+				if (bActingState == true)
+				{
+					if (NonReversibleAction == false)
+					{
+						ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
+						if (::IsValid(ObserveTargetLightComponent) == true)
+						{
+							if (UseDisableColor == false)
+							{
+								if (ObserveTargetLightComponent->IsVisible() == !ReversAction)
+								{
+									ObserveTargetLightComponent->SetVisibility(ReversAction);
+								}
+							}
+							else if (UseDisableColor == true)
+							{
+								ObserveTargetLightComponent->SetLightColor(ReversAction == true ? OriginalColor : DisableColor);
+							}
+						}
+					}
+					bActingState = false;
 				}
 			}
 		}
