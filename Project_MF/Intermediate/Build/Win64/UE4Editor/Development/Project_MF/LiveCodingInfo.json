@@ -39,11 +39,10 @@
 			"PowerComponent.cpp.obj",
 			"PowerConnectionComponent.cpp.obj",
 			"PowerConveyorMovementComponent.cpp.obj",
-			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
 			"PowerGenerateComponent.cpp.obj",
+			"PowerLightControlComponent.cpp.obj",
 			"PowerMovementComponent.cpp.obj",
-			"PowerRotationMovementComponent.cpp.obj",
 			"PowerSensorComponent.cpp.obj",
 			"Project_MF.cpp.obj",
 			"Project_MFGameModeBase.cpp.obj",
@@ -53,7 +52,8 @@
 			"TestPlayerGameMode.cpp.obj",
 			"UIPopupTriggerComponent.cpp.obj",
 			"WidgetFunctionLibrary.cpp.obj",
-			"PowerLightControlComponent.cpp.obj"
+			"PowerDirectionMovementComponent.cpp.obj",
+			"PowerRotationMovementComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CanvasActor.gen.cpp.obj",
@@ -100,14 +100,14 @@
 			"PowerMovementComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
-			"Project_MF.init.gen.cpp.obj",
 			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",
 			"StageOneLevelScriptActor.gen.cpp.obj",
 			"TestActorObject.gen.cpp.obj",
 			"TestPlayerGameMode.gen.cpp.obj",
 			"UIPopupTriggerComponent.gen.cpp.obj",
-			"WidgetFunctionLibrary.gen.cpp.obj"
+			"WidgetFunctionLibrary.gen.cpp.obj",
+			"Project_MF.init.gen.cpp.obj"
 		]
 	}
 }

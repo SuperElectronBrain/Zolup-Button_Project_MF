@@ -17,7 +17,9 @@ class PROJECT_MF_API UPowerDirectionMovementComponent : public UPowerMovementCom
 	
 private:
 //#if WITH_EDITORONLY_DATA
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UArrowComponent* ArrowComponent;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UArrowComponent* ArrowComponent;
+	UPROPERTY() TWeakObjectPtr<UArrowComponent> ArrowComponent;
+
 //#endif
 	//UPROPERTY() FVector OriginPosition;
 	/**
