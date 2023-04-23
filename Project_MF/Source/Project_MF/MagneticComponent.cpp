@@ -154,7 +154,6 @@ void UMagneticComponent::SetParentMaterial(EMagneticType type)
 		_material->SetVectorParameterValue(TEXT("Emissivecolor"), color);
 		_material->SetVectorParameterValue(TEXT("base"), color);
 		_goalMagMaterialApplyRatio = type == EMagneticType::NONE ? 1.f : 0.f;
-		UE_LOG(LogTemp, Warning, TEXT("curr: %f/ goal: %f"), _currMagMaterialApplyRatio, _goalMagMaterialApplyRatio)
 	}
 }
 
@@ -319,7 +318,7 @@ void UMagneticComponent::BeginPlay()
 		_blastUsedGravity = _parent->IsGravityEnabled();
 		_parent->SetMobility(EComponentMobility::Movable);
 		GetAttachmentRoot()->SetMobility(EComponentMobility::Movable);
-		if (_bUsedFixedWeight == false) _parent->SetMassOverrideInKg(NAME_None, 10000.f);
+		//if (_bUsedFixedWeight == false) _parent->SetMassOverrideInKg(NAME_None, 10000.f);
 	}
 
 	//무게 초기화.

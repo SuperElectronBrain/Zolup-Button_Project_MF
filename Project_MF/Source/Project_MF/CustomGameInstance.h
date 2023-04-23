@@ -4,24 +4,42 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "GameUIManager.h"
 #include "CustomGameInstance.generated.h"
 
-/**
- * 
+/*
+*게임을 전반적으로 관리하는 기능들이 내장된 GameInstance파생 클래스입니다.
  */
 UCLASS()
 class PROJECT_MF_API UCustomGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 	
-private:
-	UPROPERTY(VisibleAnywhere) bool bEditmode;
-
-protected:
-	virtual void Init() override;
 public:
+	////////////////////
+	/// Constructor ////
+	////////////////////
 	UCustomGameInstance();
-	
+
+	////////////////////////
+	/// Public methods ////
+	///////////////////////
 	bool GetEditmode();
 	void SetEditmode(bool param);
+	UGameUIManager* GetUIManager() const { return _UI; }
+
+private:
+	///////////////////////
+	/// Private methods ///
+	//////////////////////
+	virtual void Init() override;
+
+	////////////////////////////
+	/// fields And Components //
+	////////////////////////////
+	UPROPERTY(VisibleAnywhere)
+	bool bEditmode;
+
+	UPROPERTY()
+	UGameUIManager* _UI;
 };

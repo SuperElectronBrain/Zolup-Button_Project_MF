@@ -18,7 +18,9 @@ class PROJECT_MF_API UPlayerUICanvasWidget final : public UUserWidget
 
 public:
 	/*Construct*/
+	virtual void NativeOnInitialized() override;
 	virtual void NativeConstruct() override;
+	virtual void NativeDestruct() override;
 
 	void SetAnimColor(FColor color);
 	UPlayerUIMagneticInfoWidget* GetMagneticInfoWidget() const { return _MagneticInfo; }

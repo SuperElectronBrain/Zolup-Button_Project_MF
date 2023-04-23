@@ -19,10 +19,49 @@ void UDefaultMagneticMovementComponent::StartMovement(EMagnetMoveType moveType, 
 	_startPos = ownerPos;
 	_shakeDir = FVector::RightVector;
 	_moveDir = distance.GetSafeNormal();
+
+	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
+	if (ownerPhysics && ownerPhysics->IsSimulatingPhysics())
+	{
+		//ownerPhysics->SetPhysicsLinearVelocity(ownerPhysics->GetPhysicsLinearVelocity()*.3f);
+	}
 }
 
 AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime)
 {
+	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
+	UPrimitiveComponent* operatorPhysics = SafeMagOperator->GetAttachmentPrimitive();
+
+	//물리가 적용되는 녀석일 경우.
+	if (ownerPhysics && operatorPhysics && ownerPhysics->IsSimulatingPhysics())
+	{
+		FVector ownerCenter = ownerPhysics->GetCenterOfMass();
+		FVector operatorCenter = operatorPhysics->GetCenterOfMass();
+		FVector move = operatorCenter - ownerCenter;
+		FVector dir = move.GetSafeNormal();
+		float distance = move.Size();
+		float ownerRadius = owner->GetMagneticFieldRadius();
+		float operatorRadius = SafeMagOperator->GetMagneticFieldRadius();
+		float totalRadius = ownerRadius + operatorRadius;
+		float penetrateRatio = FMath::Clamp((totalRadius-distance)/operatorRadius, 0.f, 1.f);
+		float pow = 0.f;
+
+		if (type == EMagnetMoveType::PUSHED_OUT)
+		{
+			ownerPhysics->SetEnableGravity(true);
+			pow = totalRadius * penetrateRatio;
+			ownerPhysics->SetPhysicsLinearVelocity(-dir * pow);
+		}
+		else if(type==EMagnetMoveType::DRAWN_IN)
+		{
+			ownerPhysics->SetEnableGravity(false);
+			pow = 80000.f * penetrateRatio * ownerPhysics->GetMass();
+			ownerPhysics->AddForceAtLocation(dir * pow, ownerCenter);
+		}
+
+		return nullptr;
+	}
+
 	USceneComponent* updated = UpdatedComponent;
 
 	//계산에 필요한 요소들을 모두 구한다...
@@ -64,12 +103,8 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 	//끌어당겨질 경우
 	else if (type==EMagnetMoveType::DRAWN_IN)
 	{
-		//power = (.2f + 20.f * (penetrate * _operatorRadiusHalfDiv));
-		//if (penetrateRatio >= .8f) power += 50.f;
 		float distanceRatio = (ownerPos - _startPos).Size() * _distanceDiv;
-
-		if (distanceRatio >= .4f) power = _distance * 10.f * DeltaTime;
-		else power = (_distance * .5f + _distance * (distanceRatio+.3f*2.f) ) * DeltaTime;
+		power = (_distance * .5f + _distance * (distanceRatio+.3f*2.f) ) * DeltaTime;
 
 		Velocity = dir * power;
 	}
@@ -94,7 +129,6 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 	if (hit.bBlockingHit)
 	{
 		FHitResult hit2 = hit;
-		UpdatedComponent->SetWorldRotation(FQuat::Identity);
 		SlideAlongSurface(Velocity, 1.f - hit2.Time, hit2.Normal, hit2);
 	}
 

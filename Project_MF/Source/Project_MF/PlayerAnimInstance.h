@@ -58,7 +58,7 @@ private:
 	///////////////////////
 	///*Private mothods*///
 	///////////////////////
-	void ApplyStandingLeftHand(AGamePlayerCharacter* player);
+	bool ApplyStandingLeftHand(AGamePlayerCharacter* player);
 	void ApplyCreepyStandingHands(AGamePlayerCharacter* player);
 
 	////////////////////////////
@@ -117,5 +117,8 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
 	FTransform _ArmRAddOffsetTransform;
+
+	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadwrite)
+	float _LHandPenetrate;
 
 };

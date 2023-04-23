@@ -94,6 +94,8 @@ public:
 	void AddNoActiveMovement(UMovementComponent* element);
 	void RemoveNoActiveMovmeent(UMovementComponent* element);
 
+	UPrimitiveComponent* GetAttachmentPrimitive() const { return _parent; }
+
 private:
 	////////////////////////////
 	///// Private methods /////
