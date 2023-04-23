@@ -70,7 +70,7 @@ void UPowerRotationMovementComponent::Action(float DeltaTime)
 				{
 					//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
 					//GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
-					GetAttachParent()->AddLocalRotation(FQuat(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X), FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
+					GetAttachParent()->AddLocalRotation(FQuat((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetRelativeTransform().GetUnitAxis(EAxis::X), FMath::DegreesToRadians(ActingSpeed * DeltaTime)));
 				}
 #pragma region UnUsed
 				//UE_LOG(LogTemp, Warning, TEXT("(%f)"), CurrentMovement);
@@ -90,7 +90,7 @@ void UPowerRotationMovementComponent::Action(float DeltaTime)
 					{
 						//GetOwner()->AddActorWorldRotation(FQuat(GetOwner()->GetActorForwardVector(), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
 						//GetOwner()->AddActorLocalRotation(FQuat(FVector::ForwardVector, FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
-						GetAttachParent()->AddLocalRotation(FQuat(ArrowComponent->GetRelativeTransform().GetUnitAxis(EAxis::X), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
+						GetAttachParent()->AddLocalRotation(FQuat((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetRelativeTransform().GetUnitAxis(EAxis::X), FMath::DegreesToRadians(-ActingSpeed * DeltaTime)));
 					}
 				}
 #pragma region UnUsed
