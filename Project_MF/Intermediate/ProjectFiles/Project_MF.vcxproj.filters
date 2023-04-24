@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{874AE198-24AB-4CE1-97F8-13A781B5CB85}</UniqueIdentifier>
+      <UniqueIdentifier>{B8E838B0-57F4-46EB-8E63-653FC09EC7E8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{3BE2453C-A8D5-473B-A2D6-4B9D60D550D4}</UniqueIdentifier>
+      <UniqueIdentifier>{AB3D67CC-E78D-44B2-A20C-356A639FF24D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +27,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{65BDF627-A515-42BB-B318-0C7D44C24105}</UniqueIdentifier>
+      <UniqueIdentifier>{ED7F6893-3720-40B4-9B93-33148BAEE9CC}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Project_MF\CanvasActor.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\CanvasActor.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\ChangeLevelComponent.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -213,12 +219,6 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\PlayerAnimInstance.h">
-      <Filter>Source\Project_MF</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Project_MF\PlayerCharacter.cpp">
-      <Filter>Source\Project_MF</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Project_MF\PlayerCharacter.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PlayerUICanvasWidget.cpp">

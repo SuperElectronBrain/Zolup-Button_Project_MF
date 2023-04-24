@@ -8,6 +8,7 @@
 UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
+	//PrimaryComponentTick.TickGroup = TG_DuringPhysics;
 
 //#if WITH_EDITORONLY_DATA
 	//ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
@@ -27,8 +28,6 @@ UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 //#endif
 	
 	//Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
-
-	ActingSpeed = 300.0f;
 
 	Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	Trigger->SetupAttachment(this);
@@ -177,6 +176,7 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					MovableTargets[i]->AddActorWorldOffset((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector() * (ActingSpeed * DeltaTime));
 				}
 
+#pragma region UnUsed
 				//TArray<AActor*> OverlappingActors;
 				//Trigger->GetOverlappingActors(OverlappingActors);
 				//for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
@@ -201,7 +201,6 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 				//		//}
 				//	}
 				//}
-#pragma region UnUsed
 				//Collider->AddWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
 				////UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f) %f"), Collider->GetRelativeLocation().X, Collider->GetRelativeLocation().Y, Collider->GetRelativeLocation().Z, Collider->GetRelativeLocation().Size());
 				//if (Collider->GetRelativeLocation().Size() > 25.0f)
