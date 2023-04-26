@@ -3,9 +3,10 @@
 
 #include "CustomGameInstance.h"
 
-
 UCustomGameInstance::UCustomGameInstance()
 {
+	bEditmode = false;
+	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
 }
 
 void UCustomGameInstance::Init()

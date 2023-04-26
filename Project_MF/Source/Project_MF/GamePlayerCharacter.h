@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "GamePlayerCharacter.generated.h"
 
+#define PLAYER_FADE_ID 83
+
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
 class UPlayerUICanvasWidget;
@@ -13,6 +15,8 @@ class UMagneticComponent;
 class UNiagaraComponent;
 class UNiagaraSystem;
 class UDefaultMagneticMovementComponent;
+class UCustomGameInstance;
+class UGameMapSectionComponent;
 enum class EMagneticType;
 enum class EMagnetMoveType;
 
@@ -51,6 +55,7 @@ private:
 	//////////////////////
 
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	#if WITH_EDITOR
@@ -60,7 +65,6 @@ private:
 	///////////////////
 	//*Input methods*//
 	///////////////////
-
 	void MoveUpDown(float value);
 	void MoveRightLeft(float value);
 	void LookUp(float value);
@@ -77,7 +81,6 @@ private:
 	///////////////////////
 	///*Private methods*//
 	//////////////////////
-
 	void Shoot(EMagneticType shootType);
 	void ShootMine(EMagneticType shootType);
 
@@ -104,17 +107,11 @@ private:
 	void MagnetMoveHit(AActor* hit, UMagneticComponent* magnet);
 
 	UFUNCTION()
-	void FadeWait(UGameMapSectionComponent* section);
+	void FadeChange(bool isDark, int id);
 
 	/////////////////
 	///*Components*//
 	/////////////////
-	UPROPERTY()
-	UPlayerUICanvasWidget* PlayUIInstance;
-
-	UPROPERTY(EditInstanceOnly, Category = UI)
-	TSubclassOf<UPlayerUICanvasWidget> PlayUIClass;
-
 	UPROPERTY(VisibleAnywhere, Category = Camera, Meta = (AllowPrivateAccess = true))
 	UCameraComponent* Camera;
 
@@ -149,13 +146,15 @@ private:
 	//////////////
 	///*fields*///
 	//////////////
-
 	bool _bCanJump, _bShootMine;
 	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv, _stiffen;
-	AActor* _StickTo;
-	int32 _givenIndex = 0, _oldGivenIndex;
+	TWeakObjectPtr<UCustomGameInstance> _Instance;
+	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
+	TWeakObjectPtr<AActor> _StickTo;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
+	int32 _givenIndex = 0, _oldGivenIndex;
 	FVector _goalLook, _currLook;
+	FDelegateHandle _fadeHandle;
 
 public:
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))

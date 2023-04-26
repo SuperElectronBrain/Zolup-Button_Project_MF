@@ -10,6 +10,7 @@
 #include "GameCheckPointContainerComponent.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "CustomGameInstance.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -35,10 +36,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/PlayerCharacter/Meshs/PlayerArmMeshNew.PlayerArmMeshNew")
 	);
 	static ConstructorHelpers::FClassFinder<UPlayerAnimInstance> ANIM_BLUEPRINT(
-		TEXT("/Game/PlayerCharacter/Animation/PlayerAnimBlueprint.PlayerAnimBlueprint_c")
-	);
-	static ConstructorHelpers::FClassFinder<UUserWidget> UI_CANVAS(
-		TEXT("/Game/UI/PlayerUI_Canvas")
+		TEXT("/Game/PlayerCharacter/Animation/PlayerAnimBlueprint.PlayerAnimBlueprint_C")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Gun/Gun_effect_shoot_n.Gun_effect_shoot_n")
@@ -63,7 +61,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	Camera->SetRelativeLocationAndRotation(FVector(0.f, 0.f, 8.5f), FRotator::ZeroRotator);
 
 	/*CapsuleComponents*/
-	GetCapsuleComponent()->SetCapsuleRadius(160.4f);/*default: 80.f*/
+	GetCapsuleComponent()->SetCapsuleRadius(60.4f);/*default: 80.f*/
 	GetCapsuleComponent()->SetCapsuleHalfHeight(278.6f);/*default: 197.f*/
 
 	/*Player Mesh*/
@@ -83,12 +81,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (ANIM_BLUEPRINT.Succeeded())
 	{
 		PlayerMesh->SetAnimInstanceClass(ANIM_BLUEPRINT.Class);
-	}
-
-	/*Player UI*/
-	if (UI_CANVAS.Succeeded())
-	{
-		PlayUIClass = UI_CANVAS.Class;
 	}
 
 	/*CheckPoint*/
@@ -123,7 +115,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 void AGamePlayerCharacter::SetPlayerMode(EPlayerMode mode)
 {
 	PlayerMode = mode;
-	UNiagaraFunctionLibrary;
 
 	switch (mode)
 	{
@@ -195,35 +186,60 @@ void AGamePlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	#pragma region Omission
 	/*Magnetic*/
 	if (Magnetic)
 	{
 		Magnetic->OnMagneticEvent.AddUObject(this, &AGamePlayerCharacter::OnMagnetic);
 		Magnetic->OffMagneticEvent.AddUObject(this, &AGamePlayerCharacter::OffMagnetic);
+		Magnetic->MagnetMoveHitEvent.AddUObject(this, &AGamePlayerCharacter::MagnetMoveHit);
 		Magnetic->MagnetMoveStartEvent.AddUObject(this, &AGamePlayerCharacter::MagnetMoveStart);
 		//Magnetic->MagnetMoveEndEvent.AddUObject(this, &AGamePlayerCharacter::MagnetMoveEnd);
-		Magnetic->MagnetMoveHitEvent.AddUObject(this, &AGamePlayerCharacter::MagnetMoveHit);
-	}
-	
-	//카메라 페이드 아웃
-	APlayerController* c = Cast<APlayerController>(GetController());
-	if (c)
-	{
-		APlayerCameraManager* cm = c->PlayerCameraManager;
-		cm->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black);
 	}
 
+	//게임 인스턴스 참조
+	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
 
 	//애님 인스턴스 참조
 	PlayerAnim = Cast<UPlayerAnimInstance>(GetMesh()->GetAnimInstance());
 
 	//UI띄우기
-	PlayUIInstance = Cast<UPlayerUICanvasWidget>(CreateWidget(GetWorld(), PlayUIClass));
-
-	if (PlayUIInstance != nullptr)
+	if (_Instance.IsValid())
 	{
-		PlayUIInstance->AddToViewport();
-		PlayUIInstance->SetAnimColor(FColor(255, 255, 255, 150));
+		TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
+		TWeakObjectPtr<UUserWidget> blackScreen;
+
+		//Player UI
+		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+		if (playerUI.IsValid())
+		{
+			playerUI->AddToViewport();
+			playerUI->SetAnimColor(FColor(255, 255, 255, 150));
+		}
+
+		//BlackScreen 뷰포트에 추가 및 페이드 아웃->인
+		_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
+		if (blackScreen.IsValid())
+		{
+			blackScreen->AddToViewport();
+
+			_Instance->GetUIManager()->PlayFadeInOut(
+				EFadeType::DARK_TO_WHITE,
+				blackScreen.Get(),
+				1.f,
+				0.f,
+				1.f,
+				0.f,
+				1.5f,
+				0.f,
+				-1,
+				FLinearColor::Black,
+				FLinearColor::Black
+			);
+		}
+
+		//FadeChange 이벤트 추가.
+		_fadeHandle = _Instance->GetUIManager()->OnUIFadeChange.AddUObject(this, &AGamePlayerCharacter::FadeChange);
 	}
 
 	//캡슐 콜라이더 수정
@@ -266,6 +282,18 @@ void AGamePlayerCharacter::BeginPlay()
 	//		ENCPoolMethod::None
 	//	);
 	//}
+
+	#pragma endregion
+}
+
+void AGamePlayerCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->OnUIFadeChange.Remove(_fadeHandle);
+	}
 }
 
 void AGamePlayerCharacter::Tick(float DeltaTime)
@@ -424,15 +452,22 @@ void AGamePlayerCharacter::JumpEnd()
 	_bCanJump = false;
 }
 
-void AGamePlayerCharacter::FadeWait(UGameMapSectionComponent* section)
+void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 {
-	section->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+	if (id != PLAYER_FADE_ID || isDark==false) return;
+
+	_CurrSection->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
 	APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
 	if (c) c->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black, false, true);
 }
 
 void AGamePlayerCharacter::StageRestart()
 {
+	static bool apply = false;
+
+	GetWorldSettings()->SetTimeDilation(!apply?0.05f:1.f);
+	apply = !apply;
+	return;
 	if (_stiffen != 0.f) return;
 	TArray<UPrimitiveComponent*> overlaps;
 	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
@@ -440,25 +475,33 @@ void AGamePlayerCharacter::StageRestart()
 	int32 count = overlaps.Num();
 	for (auto p : overlaps)
 	{
-		UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(p);
-		if (section && ::IsValid(section))
+		_CurrSection = Cast<UGameMapSectionComponent>(p);
+		if (_CurrSection.IsValid())
 		{
-			APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
-			if (c) c->StartCameraFade(0.f, 1.f, 1.f, FLinearColor::Black, false, true);
+			//Player UI를 받아온다.
+			TWeakObjectPtr<UUserWidget> blackScreen;
+			if (_Instance.IsValid())
+			{
+				_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
 
-			FTimerHandle handle;
-			FTimerDelegate callback = FTimerDelegate::CreateUObject(
-				this,
-				&AGamePlayerCharacter::FadeWait,
-				section
-			);
-
-			GetWorld()->GetTimerManager().SetTimer(
-				handle,
-				callback,
-				2.f,
-				false
-			);
+				//페이드 인->아웃 실행.
+				if (blackScreen.IsValid())
+				{
+					_Instance->GetUIManager()->PlayFadeInOut(
+						EFadeType::WHITE_TO_DARK_TO_WHITE,
+						blackScreen.Get(),
+						2.f,
+						2.f,
+						1.f,
+						0.f,
+						0.f,
+						1.f,
+						PLAYER_FADE_ID,
+						FLinearColor::Black,
+						FLinearColor::Black
+					);
+				}
+			}
 			return;
 		}
 	}
@@ -467,8 +510,18 @@ void AGamePlayerCharacter::StageRestart()
 void AGamePlayerCharacter::ResetMagnetic()
 {
 	if (_stiffen != 0.f) return;
+	
 	//UI 초기화
-	PlayUIInstance->GetMagneticInfoWidget()->ClearInfo();
+	TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+		if (playerUI.IsValid())
+		{
+			playerUI->GetMagneticInfoWidget()->ClearInfo();
+		}
+	}
+
 	PlayerAnim->PlayResetMontage();
 	GetMovementComponent()->SetActive(true);
 
@@ -530,7 +583,7 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 		FVector neckPos = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
 		FVector gunPos = GetMesh()->GetSocketLocation(PLAYER_GUN_BONE);
 
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(
+		UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
 			GetWorld(),
 			ShootEffect,
 			neckPos + forward * 40.f+right*22.f+down*20.f,
@@ -538,6 +591,7 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 			FVector(5.f, 5.f, 5.f)
 		);
 
+		effect->SetVectorParameter(TEXT("Look"), forward);
 	}
 
 	//발사 위치 구하기
@@ -598,11 +652,21 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
 	bool isFulledGiven = IsFulledGiven();
 
+	TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+	}
+
 	//이미 기존의 리스트에 존재할 경우
 	if (alreadyGiven == false)
 	{
 		//UI를 갱신하고 마무리짓는다.
-		PlayUIInstance->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+		if (playerUI.IsValid())
+		{
+			playerUI->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+		}
+
 		return;
 	}
 
@@ -632,7 +696,10 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 			}
 		}
 
-		PlayUIInstance->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+		if (playerUI.IsValid())
+		{
+			playerUI->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+		}
 	}
 #pragma endregion
 }
@@ -669,8 +736,16 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 		if (_GivenMagnets[0] != nullptr) _oldGivenIndex = 0;
 	}
 
-	PlayUIInstance->GetMagneticInfoWidget()->ClearInfo();
-	PlayUIInstance->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+	TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+		if (playerUI.IsValid())
+		{
+			playerUI->GetMagneticInfoWidget()->ClearInfo();
+			playerUI->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+		}
+	}
 }
 
 void AGamePlayerCharacter::OnMagnetic(EMagneticType type, UMagneticComponent* magnet)
@@ -693,10 +768,10 @@ void AGamePlayerCharacter::OffMagnetic(EMagneticType prevType, UMagneticComponen
 
 void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* magnet)
 {
-	if (_StickTo != nullptr)
+	if (_StickTo.IsValid())
 	{
 		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-		_StickTo = nullptr;
+		_StickTo.Reset();
 	}
 
 	switch (moveType) {
@@ -724,6 +799,7 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* hit, UMagneticComponent* magnet
 
 	if (Magnetic->GetCurrentMagnetic() != EMagneticType::NONE)
 	{
+		_StickTo.Reset();
 		_StickTo = hit;
 		AttachToActor(hit, FAttachmentTransformRules::KeepWorldTransform);
 		PlayerAnim->PlayGloveStickMotage();

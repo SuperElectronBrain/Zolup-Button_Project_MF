@@ -3,14 +3,26 @@
 
 #include "PlayerUICanvasWidget.h"
 #include "MagneticComponent.h"
+#include "CustomGameInstance.h"
+
+void UPlayerUICanvasWidget::NativeOnInitialized()
+{
+	Super::NativeOnInitialized();
+
+	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
+	_AimImage = Cast<UImage>(GetWidgetFromName(TEXT("Aim")));
+}
 
 void UPlayerUICanvasWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	GetWorld();
-	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
-	_AimImage = Cast<UImage>(GetWidgetFromName(TEXT("Aim")));
+	
+}
+
+void UPlayerUICanvasWidget::NativeDestruct()
+{
+	Super::NativeDestruct();
 }
 
 void UPlayerUICanvasWidget::SetAnimColor(FColor color)
