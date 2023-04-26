@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Project_MF.cpp.obj": [
+			"CanvasActor.cpp.obj",
 			"ChangeLevelComponent.cpp.obj",
 			"CustomGameInstance.cpp.obj",
 			"DefaultMagneticMovementComponent.cpp.obj",
@@ -16,7 +17,9 @@
 			"GameMapCheckPoint.cpp.obj",
 			"GameMapCheckPointComponent.cpp.obj",
 			"GameMapSectionComponent.cpp.obj",
-			"GamePlayerCharacter.cpp.obj",
+			"GameUIHandler.cpp.obj",
+			"GameUIManager.cpp.obj",
+			"HandlerImage.cpp.obj",
 			"MagneticComponent.cpp.obj",
 			"MagneticMovementComponent.cpp.obj",
 			"MagneticSenserComponent.cpp.obj",
@@ -51,10 +54,12 @@
 			"StageOneLevelScriptActor.cpp.obj",
 			"TestActorObject.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
+			"UIBlackScreenWidget.cpp.obj",
 			"UIPopupTriggerComponent.cpp.obj",
-			"WidgetFunctionLibrary.cpp.obj"
+			"GamePlayerCharacter.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
+			"CanvasActor.gen.cpp.obj",
 			"ChangeLevelComponent.gen.cpp.obj",
 			"CustomGameInstance.gen.cpp.obj",
 			"DefaultMagneticMovementComponent.gen.cpp.obj",
@@ -70,6 +75,9 @@
 			"GameMapCheckPointComponent.gen.cpp.obj",
 			"GameMapSectionComponent.gen.cpp.obj",
 			"GamePlayerCharacter.gen.cpp.obj",
+			"GameUIHandler.gen.cpp.obj",
+			"GameUIManager.gen.cpp.obj",
+			"HandlerImage.gen.cpp.obj",
 			"MagneticComponent.gen.cpp.obj",
 			"MagneticMovementComponent.gen.cpp.obj",
 			"MagneticSenserComponent.gen.cpp.obj",
@@ -104,8 +112,8 @@
 			"StageOneLevelScriptActor.gen.cpp.obj",
 			"TestActorObject.gen.cpp.obj",
 			"TestPlayerGameMode.gen.cpp.obj",
-			"UIPopupTriggerComponent.gen.cpp.obj",
-			"WidgetFunctionLibrary.gen.cpp.obj"
+			"UIBlackScreenWidget.gen.cpp.obj",
+			"UIPopupTriggerComponent.gen.cpp.obj"
 		]
 	}
 }
