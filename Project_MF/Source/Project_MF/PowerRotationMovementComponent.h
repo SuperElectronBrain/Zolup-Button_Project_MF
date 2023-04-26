@@ -17,7 +17,8 @@ class PROJECT_MF_API UPowerRotationMovementComponent : public UPowerMovementComp
 	
 private:
 //#if WITH_EDITORONLY_DATA
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UArrowComponent* ArrowComponent;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UArrowComponent* ArrowComponent;
+	UPROPERTY() TWeakObjectPtr<UArrowComponent> ArrowComponent;
 //#endif
 	/**
 	* When activated, it moves infinitely.
