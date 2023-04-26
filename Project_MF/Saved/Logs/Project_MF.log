@@ -721,3 +721,1684 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2023.04.26-17.04.23:969][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
 [2023.04.26-17.04.24:093][  0]LogSlate: Took 0.001324 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
 [2023.04.26-17.04.24:093][  0]LogSlate: Took 0.000168 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2023.04.26-17.05.00:796][  0]LogSlate: Window '패키지 복원' being destroyed
+[2023.04.26-17.05.00:819][  0]LogWindowsTextInputMethodSystem: Display: IME system activated using TSF (Microsoft 입력기).
+[2023.04.26-17.05.00:820][  0]LogUnrealEdMisc: Loading editor; pre map load, took 44.247
+[2023.04.26-17.05.00:820][  0]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UnUsedLevel/EditTestLevel.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2023.04.26-17.05.00:821][  0]LightingResults: New page: 라이팅 빌드
+[2023.04.26-17.05.00:824][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.05.00:824][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.05.00:824][  0]MapCheck: New page: 맵 체크
+[2023.04.26-17.05.00:824][  0]LightingResults: New page: 라이팅 빌드
+[2023.04.26-17.05.00:832][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.05.00:836][  0]LogUObjectHash: Compacting FUObjectHashTables data took   1.39ms
+[2023.04.26-17.05.00:927][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'EditTestLevel'.
+[2023.04.26-17.05.00:928][  0]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.05.00:934][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.04.26-17.05.00:944][  0]LogUObjectHash: Compacting FUObjectHashTables data took   1.05ms
+[2023.04.26-17.05.00:945][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.04.26-17.05.00:945][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.085ms.
+[2023.04.26-17.05.00:945][  0]LogFileHelpers: Loading map 'EditTestLevel' took 0.124
+[2023.04.26-17.05.00:948][  0]LogUnrealEdMisc: Total Editor Startup Time, took 44.375
+[2023.04.26-17.05.01:047][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.05.01:059][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.05.01:072][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.05.01:080][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.05.01:097][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0123 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.05.01:100][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'WidgetCarousel' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2023.04.26-17.05.01:103][  0]LogPakFile: PakFile PrimaryIndexSize=187
+[2023.04.26-17.05.01:103][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:103][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.04.26-17.05.01:103][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPerson.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:103][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPerson.upack)
+[2023.04.26-17.05.01:103][  0]LogPakFile: OnPakFileMounted2Time == 0.000064
+[2023.04.26-17.05.01:104][  0]LogPakFile: PakFile PrimaryIndexSize=189
+[2023.04.26-17.05.01:104][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:104][  0]LogPakFile: PakFile FullDirectoryIndexSize=152
+[2023.04.26-17.05.01:104][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPersonBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:104][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/FP_FirstPersonBP.upack)
+[2023.04.26-17.05.01:104][  0]LogPakFile: OnPakFileMounted2Time == 0.000051
+[2023.04.26-17.05.01:105][  0]LogPakFile: PakFile PrimaryIndexSize=191
+[2023.04.26-17.05.01:105][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:105][  0]LogPakFile: PakFile FullDirectoryIndexSize=160
+[2023.04.26-17.05.01:105][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/MobileStarterContent.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:105][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/MobileStarterContent.upack)
+[2023.04.26-17.05.01:105][  0]LogPakFile: OnPakFileMounted2Time == 0.000043
+[2023.04.26-17.05.01:106][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.04.26-17.05.01:106][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:106][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.04.26-17.05.01:106][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/StarterContent.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:106][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/StarterContent.upack)
+[2023.04.26-17.05.01:106][  0]LogPakFile: OnPakFileMounted2Time == 0.000032
+[2023.04.26-17.05.01:106][  0]LogPakFile: PakFile PrimaryIndexSize=190
+[2023.04.26-17.05.01:106][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:106][  0]LogPakFile: PakFile FullDirectoryIndexSize=154
+[2023.04.26-17.05.01:106][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScroller.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:107][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScroller.upack)
+[2023.04.26-17.05.01:107][  0]LogPakFile: OnPakFileMounted2Time == 0.000042
+[2023.04.26-17.05.01:107][  0]LogPakFile: PakFile PrimaryIndexSize=192
+[2023.04.26-17.05.01:107][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:107][  0]LogPakFile: PakFile FullDirectoryIndexSize=158
+[2023.04.26-17.05.01:107][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScrollerBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:107][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_2DSideScrollerBP.upack)
+[2023.04.26-17.05.01:107][  0]LogPakFile: OnPakFileMounted2Time == 0.000034
+[2023.04.26-17.05.01:108][  0]LogPakFile: PakFile PrimaryIndexSize=182
+[2023.04.26-17.05.01:108][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:108][  0]LogPakFile: PakFile FullDirectoryIndexSize=138
+[2023.04.26-17.05.01:108][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Flying.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:108][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Flying.upack)
+[2023.04.26-17.05.01:108][  0]LogPakFile: OnPakFileMounted2Time == 0.000029
+[2023.04.26-17.05.01:109][  0]LogPakFile: PakFile PrimaryIndexSize=184
+[2023.04.26-17.05.01:109][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:109][  0]LogPakFile: PakFile FullDirectoryIndexSize=142
+[2023.04.26-17.05.01:109][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_FlyingBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:109][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_FlyingBP.upack)
+[2023.04.26-17.05.01:109][  0]LogPakFile: OnPakFileMounted2Time == 0.000041
+[2023.04.26-17.05.01:109][  0]LogPakFile: PakFile PrimaryIndexSize=188
+[2023.04.26-17.05.01:109][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:109][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
+[2023.04.26-17.05.01:110][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_HandheldARBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:110][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_HandheldARBP.upack)
+[2023.04.26-17.05.01:110][  0]LogPakFile: OnPakFileMounted2Time == 0.000044
+[2023.04.26-17.05.01:110][  0]LogPakFile: PakFile PrimaryIndexSize=182
+[2023.04.26-17.05.01:110][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:110][  0]LogPakFile: PakFile FullDirectoryIndexSize=138
+[2023.04.26-17.05.01:110][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Puzzle.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:110][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Puzzle.upack)
+[2023.04.26-17.05.01:110][  0]LogPakFile: OnPakFileMounted2Time == 0.000030
+[2023.04.26-17.05.01:111][  0]LogPakFile: PakFile PrimaryIndexSize=184
+[2023.04.26-17.05.01:111][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:111][  0]LogPakFile: PakFile FullDirectoryIndexSize=142
+[2023.04.26-17.05.01:111][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_PuzzleBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:111][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_PuzzleBP.upack)
+[2023.04.26-17.05.01:111][  0]LogPakFile: OnPakFileMounted2Time == 0.000047
+[2023.04.26-17.05.01:112][  0]LogPakFile: PakFile PrimaryIndexSize=183
+[2023.04.26-17.05.01:112][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:112][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
+[2023.04.26-17.05.01:112][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Rolling.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:112][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Rolling.upack)
+[2023.04.26-17.05.01:112][  0]LogPakFile: OnPakFileMounted2Time == 0.000034
+[2023.04.26-17.05.01:112][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.04.26-17.05.01:112][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:112][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.04.26-17.05.01:112][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_RollingBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:112][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_RollingBP.upack)
+[2023.04.26-17.05.01:112][  0]LogPakFile: OnPakFileMounted2Time == 0.000031
+[2023.04.26-17.05.01:113][  0]LogPakFile: PakFile PrimaryIndexSize=188
+[2023.04.26-17.05.01:113][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:113][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
+[2023.04.26-17.05.01:113][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScroller.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:113][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScroller.upack)
+[2023.04.26-17.05.01:113][  0]LogPakFile: OnPakFileMounted2Time == 0.000029
+[2023.04.26-17.05.01:114][  0]LogPakFile: PakFile PrimaryIndexSize=190
+[2023.04.26-17.05.01:114][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:114][  0]LogPakFile: PakFile FullDirectoryIndexSize=154
+[2023.04.26-17.05.01:114][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScrollerBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:114][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_SideScrollerBP.upack)
+[2023.04.26-17.05.01:114][  0]LogPakFile: OnPakFileMounted2Time == 0.000044
+[2023.04.26-17.05.01:115][  0]LogPakFile: PakFile PrimaryIndexSize=187
+[2023.04.26-17.05.01:115][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:115][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.04.26-17.05.01:115][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPerson.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:115][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPerson.upack)
+[2023.04.26-17.05.01:115][  0]LogPakFile: OnPakFileMounted2Time == 0.000042
+[2023.04.26-17.05.01:116][  0]LogPakFile: PakFile PrimaryIndexSize=189
+[2023.04.26-17.05.01:116][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:116][  0]LogPakFile: PakFile FullDirectoryIndexSize=152
+[2023.04.26-17.05.01:116][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPersonBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:116][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_ThirdPersonBP.upack)
+[2023.04.26-17.05.01:116][  0]LogPakFile: OnPakFileMounted2Time == 0.000041
+[2023.04.26-17.05.01:117][  0]LogPakFile: PakFile PrimaryIndexSize=183
+[2023.04.26-17.05.01:117][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:117][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
+[2023.04.26-17.05.01:117][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDown.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:117][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDown.upack)
+[2023.04.26-17.05.01:117][  0]LogPakFile: OnPakFileMounted2Time == 0.000052
+[2023.04.26-17.05.01:118][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.04.26-17.05.01:118][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:118][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.04.26-17.05.01:118][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDownBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:118][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TopDownBP.upack)
+[2023.04.26-17.05.01:118][  0]LogPakFile: OnPakFileMounted2Time == 0.000045
+[2023.04.26-17.05.01:118][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.04.26-17.05.01:119][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:119][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.04.26-17.05.01:119][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStick.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:119][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStick.upack)
+[2023.04.26-17.05.01:119][  0]LogPakFile: OnPakFileMounted2Time == 0.000045
+[2023.04.26-17.05.01:119][  0]LogPakFile: PakFile PrimaryIndexSize=187
+[2023.04.26-17.05.01:119][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:119][  0]LogPakFile: PakFile FullDirectoryIndexSize=148
+[2023.04.26-17.05.01:119][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStickBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:119][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_TwinStickBP.upack)
+[2023.04.26-17.05.01:120][  0]LogPakFile: OnPakFileMounted2Time == 0.000043
+[2023.04.26-17.05.01:120][  0]LogPakFile: PakFile PrimaryIndexSize=183
+[2023.04.26-17.05.01:120][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:120][  0]LogPakFile: PakFile FullDirectoryIndexSize=140
+[2023.04.26-17.05.01:120][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Vehicle.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:120][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_Vehicle.upack)
+[2023.04.26-17.05.01:120][  0]LogPakFile: OnPakFileMounted2Time == 0.000044
+[2023.04.26-17.05.01:121][  0]LogPakFile: PakFile PrimaryIndexSize=186
+[2023.04.26-17.05.01:121][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:121][  0]LogPakFile: PakFile FullDirectoryIndexSize=146
+[2023.04.26-17.05.01:121][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdv.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:121][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdv.upack)
+[2023.04.26-17.05.01:121][  0]LogPakFile: OnPakFileMounted2Time == 0.000032
+[2023.04.26-17.05.01:123][  0]LogPakFile: PakFile PrimaryIndexSize=188
+[2023.04.26-17.05.01:123][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:123][  0]LogPakFile: PakFile FullDirectoryIndexSize=150
+[2023.04.26-17.05.01:123][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdvBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:123][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleAdvBP.upack)
+[2023.04.26-17.05.01:123][  0]LogPakFile: OnPakFileMounted2Time == 0.000050
+[2023.04.26-17.05.01:124][  0]LogPakFile: PakFile PrimaryIndexSize=185
+[2023.04.26-17.05.01:124][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:124][  0]LogPakFile: PakFile FullDirectoryIndexSize=144
+[2023.04.26-17.05.01:124][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:124][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VehicleBP.upack)
+[2023.04.26-17.05.01:124][  0]LogPakFile: OnPakFileMounted2Time == 0.000032
+[2023.04.26-17.05.01:125][  0]LogPakFile: PakFile PrimaryIndexSize=192
+[2023.04.26-17.05.01:125][  0]LogPakFile: PakFile PathHashIndexSize=101
+[2023.04.26-17.05.01:125][  0]LogPakFile: PakFile FullDirectoryIndexSize=158
+[2023.04.26-17.05.01:125][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: PakFile 'D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VirtualRealityBP.upack' (chunk index -1, root 'root:/') mounted
+[2023.04.26-17.05.01:125][  0]LogShaderLibrary: Display: ShaderCodeLibraryPakFileMountedCallback: pending pak file info (ChunkID:-1 Root:root:/ File:D:/Program Files/Epic Games/UE_4.27/FeaturePacks/TP_VirtualRealityBP.upack)
+[2023.04.26-17.05.01:125][  0]LogPakFile: OnPakFileMounted2Time == 0.000054
+[2023.04.26-17.05.01:195][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'AddContentDialog' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2023.04.26-17.05.01:234][  0]LogSlate: Took 0.000263 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2023.04.26-17.05.01:239][  0]LogSlate: Took 0.001846 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
+[2023.04.26-17.05.01:240][  0]LogSlate: Took 0.000221 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2023.04.26-17.05.01:243][  0]LogSlate: Took 0.000268 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2023.04.26-17.05.01:297][  0]LogSlate: Took 0.001783 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicExtraBold.ttf' (4074K)
+[2023.04.26-17.05.01:364][  0]LogRenderer: Reallocating scene render targets to support 1520x588 Format 10 NumSamples 1 (Frame:1).
+[2023.04.26-17.05.01:409][  0]LogSlate: Took 0.000211 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.04.26-17.05.01:477][  0]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0003 seconds. Added 0 classes and 0 folders.
+[2023.04.26-17.05.01:477][  0]LogLoad: (Engine Initialization) Total time: 44.90 seconds
+[2023.04.26-17.05.01:477][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2023.04.26-17.05.01:589][  0]LogAssetRegistry: Asset discovery search completed in 41.9508 seconds
+[2023.04.26-17.05.01:597][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000004 seconds (updated 0 objects)
+[2023.04.26-17.05.01:598][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2023.04.26-17.05.01:614][  1]LogFileCache: Retrieving MD5 hashes for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/' took 0.12s
+[2023.04.26-17.05.04:921][373]Candidate modules for hot reload:
+[2023.04.26-17.05.04:921][373]  Project_MF
+[2023.04.26-17.05.04:921][373]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,6730 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.05.04:924][373]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:05:37
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Invalidating makefile for Project_MFEditor (working set of source files changed)
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:   [1/4] Module.Project_MF.cpp
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:   D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Source/Project_MF/DefaultMagneticMovementComponent.cpp(27): warning C4996: 'UPrimitiveComponent::SetPhysicsAngularVelocity': Use SetPhysicsAngularVelocityInDegrees instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:   D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Source/Project_MF/DefaultMagneticMovementComponent.cpp(37): warning C4996: 'UPrimitiveComponent::SetPhysicsAngularVelocity': Use SetPhysicsAngularVelocityInDegrees instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-6730.lib
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6730.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6730.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-6730.dll
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6730.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6730.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.05.37:068][106]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Total time in Parallel executor: 29.41 seconds
+[2023.04.26-17.05.37:068][106]CompilerResultsLog: Total execution time: 32.05 seconds
+[2023.04.26-17.05.37:068][106]LogMainFrame: MainFrame: Module compiling took 32.155 seconds
+[2023.04.26-17.05.37:124][106]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EFadeType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EMagneticType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: EHandType HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: MFStageData HotReload.
+[2023.04.26-17.05.37:124][106]LogClass: MFObjectData HotReload.
+[2023.04.26-17.05.37:139][106]LogHotReload: Re-instancing GamePlayerCharacter after hot-reload.
+[2023.04.26-17.05.37:147][106]LogHotReload: Re-instancing MagneticComponent after hot-reload.
+[2023.04.26-17.05.37:147][106]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.04.26-17.05.37:204][106]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.056 s
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: === Handled ensure: ===
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: 
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: Ensure condition failed: bArchetypeReinstanced [File:D:/Build/++UE4/Sync/Engine/Source/Editor/UnrealEd/Private/Kismet2/KismetReinstanceUtilities.cpp] [Line: 1903]
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: Reinstancing non-actor (/Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MAGNETIC); failed to resolve archetype object - property values may be lost.
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: Stack: 
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1d1c453e UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1c9f5a6f UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1c9f3473 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1c9f2616 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1c9ef435 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1c9ef98e UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eec6457 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eec6a99 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eebed16 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff338471c6 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff33825422 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff336eddc5 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1f1d1bea UE4Editor-Core.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1f1f15a3 UE4Editor-Core.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007fff1f1f0618 UE4Editor-Core.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eebb047 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:204][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eeb8fa7 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eeb9b6d UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ffe1eecc709 UE4Editor-HotReload.dll!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007fff1ef01d93 UE4Editor-Core.dll!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d2bca8 UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d40fcc UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d410ba UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d440dd UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d55984 UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d5853a UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007fffbb1e269d KERNEL32.DLL!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: [Callstack] 0x00007fffbbe8a9f8 ntdll.dll!UnknownFunction []
+[2023.04.26-17.05.37:205][106]LogOutputDevice: Error: 
+[2023.04.26-17.05.37:207][106]LogStats:                SubmitErrorReport -  0.000 s
+[2023.04.26-17.05.38:133][106]LogStats:                    SendNewReport -  0.926 s
+[2023.04.26-17.05.38:133][106]LogStats:             FDebug::EnsureFailed -  0.985 s
+[2023.04.26-17.05.38:147][106]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.05.38:155][106]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.05.38:166][106]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.05.38:225][106]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0102 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.05.38:229][106]Display: HotReload took 33.3s.
+[2023.04.26-17.05.38:239][106]LogSlate: Took 0.001938 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansFallback.ttf' (3848K)
+[2023.04.26-17.05.38:239][106]LogSlate: Last resort fallback font was requested. Font: '../../../Engine/Content/Slate/Fonts/DroidSansFallback.ttf', Character: 'ϰ (U+03f0)'
+[2023.04.26-17.05.38:243][106]LogSlate: Took 0.002129 seconds to synchronously load lazily loaded font '../../../Engine/Content/SlateDebug/Fonts/LastResort.ttf' (5269K)
+[2023.04.26-17.05.40:611][384]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.05.40:618][384]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.05.40:618][384]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:05:40)
+[2023.04.26-17.05.40:619][384]LogOnline: OSS: Creating online subsystem instance for: NULL
+[2023.04.26-17.05.40:620][384]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+[2023.04.26-17.05.40:621][384]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.05.40:623][384]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002559s)
+[2023.04.26-17.05.40:623][384]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.05.40:625][384]LogPlayLevel: PIE: World Init took: (0.001058s)
+[2023.04.26-17.05.40:625][384]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003728s)
+[2023.04.26-17.05.40:633][384]LogOutputDevice: Warning: 
+
+Script Stack (0 frames):
+
+[2023.04.26-17.05.41:416][384]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.783 s
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: === Handled ensure: ===
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: 
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: Ensure condition failed: GIsTransacting [File:D:/Build/++UE4/Sync/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp] [Line: 1147]
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: 
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: Stack: 
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff12504bf9 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff10f63ef0 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff10e4c960 UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff336dcbe8 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff336c778d UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff3358e5b4 UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff3358d57c UE4Editor-CoreUObject.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff111d4e3c UE4Editor-Engine.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1caf1d6e UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1cb1622f UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1caf397d UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1cb33772 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1cb36d31 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1cb365f8 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1c590c8c UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fff1ce92ba6 UE4Editor-UnrealEd.dll!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d287a0 UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d40fcc UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d410ba UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d440dd UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d55984 UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007ff6a2d5853a UE4Editor.exe!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fffbb1e269d KERNEL32.DLL!UnknownFunction []
+[2023.04.26-17.05.41:416][384]LogOutputDevice: Error: [Callstack] 0x00007fffbbe8a9f8 ntdll.dll!UnknownFunction []
+[2023.04.26-17.05.41:417][384]LogOutputDevice: Error: 
+[2023.04.26-17.05.41:427][384]LogStats:                SubmitErrorReport -  0.000 s
+[2023.04.26-17.05.42:699][384]LogStats:                    SendNewReport -  1.272 s
+[2023.04.26-17.05.42:700][384]LogStats:             FDebug::EnsureFailed -  2.066 s
+[2023.04.26-17.05.42:700][384]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_0' has 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_0.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_0.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerate'
+[2023.04.26-17.05.42:700][384]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_0' has 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_0.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_0.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerate'
+[2023.04.26-17.05.42:700][384]LogSceneComponent: Error: Component 'MagneticComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0' has 'SphereComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_COLLISION' in its AttachChildren array, however, 'SphereComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_COLLISION' believes it is attached to 'MagneticComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MAGNETIC'
+[2023.04.26-17.05.42:700][384]LogSceneComponent: Error: Component 'MagneticComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0' has 'SplineComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_SPLINE' in its AttachChildren array, however, 'SplineComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MagneticComponent_0.FIELD_SPLINE' believes it is attached to 'MagneticComponent /Engine/Transient.World_1:PersistentLevel.GamePlayerCharacter_0.MAGNETIC'
+[2023.04.26-17.05.42:701][384]LogUObjectHash: Compacting FUObjectHashTables data took   1.00ms
+[2023.04.26-17.05.42:702][384]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.05.42:702][384]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.05.42:702][384]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.05.42:703][384]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.05.42:703][384]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.05.42:703][384]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.05.42:703][384]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.05.42:707][384]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.05.42:707][384]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.05.42:717][384]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.05.42:717][384]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.05.42:717][384]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.05.42:717][384]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.05.42:718][384]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.05.42:718][384]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.05.42:718][384]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.05.42:719][384]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.05.42:719][384]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.05.42:719][384]LogInit: FAudioDevice initialized.
+[2023.04.26-17.05.42:719][384]LogAudio: Display: Audio Device (ID: 2) registered with world 'EditTestLevel'.
+[2023.04.26-17.05.42:724][384]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.05.42:726][384]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.05.42
+[2023.04.26-17.05.42:726][384]LogWorld: Bringing up level for play took: 0.000975
+[2023.04.26-17.05.42:726][384]LogOnline: OSS: Creating online subsystem instance for: :Context_6
+[2023.04.26-17.05.42:757][384]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'MovieSceneCapture' in 0.0003 seconds. Added 20 classes and 0 folders.
+[2023.04.26-17.05.42:758][384]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.05.42:760][384]PIE: 에디터에서 플레이 총 시작 시간 2.143초입니다.
+[2023.04.26-17.05.45:235][646]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.05.52:534][455]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.05.59:341][202]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.06.02:775][587]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.06.02:775][587]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.06.02:775][587]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.06.02:775][587]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.06.02:783][587]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.06.02:799][587]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.06.02:804][587]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.06.02:804][587]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.06.02:805][587]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.06.02:807][587]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.06.02:809][587]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2023.04.26-17.06.02:851][589]LogPlayLevel: Display: Destroying online subsystem :Context_6
+[2023.04.26-17.06.05:572][776]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.06.06:558][877]LogSlate: Took 0.000257 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2023.04.26-17.19.21:160][923]Candidate modules for hot reload:
+[2023.04.26-17.19.21:160][923]  Project_MF
+[2023.04.26-17.19.21:160][923]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,1456 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.19.21:164][923]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.19.41:166][784]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:19:41
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Invalidating makefile for Project_MFEditor (working set of source files changed)
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Building 5 actions with 8 processes...
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   [1/5] Module.Project_MF.cpp
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Source/Project_MF/DefaultMagneticMovementComponent.cpp(27): warning C4996: 'UPrimitiveComponent::SetPhysicsAngularVelocity': Use SetPhysicsAngularVelocityInDegrees instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Source/Project_MF/DefaultMagneticMovementComponent.cpp(37): warning C4996: 'UPrimitiveComponent::SetPhysicsAngularVelocity': Use SetPhysicsAngularVelocityInDegrees instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   [2/5] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   [3/5] UE4Editor-Project_MF-1456.lib
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1456.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1456.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   [4/5] UE4Editor-Project_MF-1456.dll
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1456.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1456.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.19.41:730][836]CompilerResultsLog:   [5/5] Project_MFEditor.target
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Total time in Parallel executor: 17.91 seconds
+[2023.04.26-17.19.41:730][836]CompilerResultsLog: Total execution time: 20.49 seconds
+[2023.04.26-17.19.41:730][836]LogMainFrame: MainFrame: Module compiling took 20.574 seconds
+[2023.04.26-17.19.41:778][836]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EFadeType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EMagneticType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.19.41:778][836]LogClass: EHandType HotReload.
+[2023.04.26-17.19.41:779][836]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.19.41:779][836]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.19.41:779][836]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.19.41:779][836]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.19.41:779][836]LogClass: MFStageData HotReload.
+[2023.04.26-17.19.41:779][836]LogClass: MFObjectData HotReload.
+[2023.04.26-17.19.41:798][836]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.19.41:807][836]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.19.41:816][836]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.19.41:881][836]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0148 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.19.41:886][836]Display: HotReload took 20.7s.
+[2023.04.26-17.19.43:353][988]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.19.43:360][988]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.19.43:360][988]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:19:43)
+[2023.04.26-17.19.43:361][988]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.19.43:363][988]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002530s)
+[2023.04.26-17.19.43:364][988]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.19.43:364][988]LogPlayLevel: PIE: World Init took: (0.001367s)
+[2023.04.26-17.19.43:364][988]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.004039s)
+[2023.04.26-17.19.43:369][988]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_1.Trigger' in its AttachChildren array, however, 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_1.Trigger' believes it is attached to 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerate'
+[2023.04.26-17.19.43:369][988]LogSceneComponent: Error: Component 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_1' has 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_1.Collider' in its AttachChildren array, however, 'BoxComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerateComponent_1.Collider' believes it is attached to 'PowerGenerateComponent /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.Cube2_5.PowerGenerate'
+[2023.04.26-17.19.43:370][988]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2023.04.26-17.19.43:370][988]LogAudio: Display: Creating Audio Device:                 Id: 3, Scope: Unique, Realtime: True
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.19.43:371][988]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.19.43:371][988]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.19.43:371][988]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.19.43:371][988]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.19.43:371][988]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.19.43:375][988]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.19.43:375][988]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.19.43:383][988]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.19.43:383][988]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.19.43:383][988]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.19.43:383][988]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.19.43:383][988]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.19.43:383][988]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.19.43:383][988]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.19.43:384][988]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.19.43:384][988]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.19.43:384][988]LogInit: FAudioDevice initialized.
+[2023.04.26-17.19.43:384][988]LogAudio: Display: Audio Device (ID: 3) registered with world 'EditTestLevel'.
+[2023.04.26-17.19.43:392][988]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.19.43:393][988]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.19.43
+[2023.04.26-17.19.43:393][988]LogWorld: Bringing up level for play took: 0.000690
+[2023.04.26-17.19.43:393][988]LogOnline: OSS: Creating online subsystem instance for: :Context_8
+[2023.04.26-17.19.43:395][988]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.19.43:395][988]PIE: 에디터에서 플레이 총 시작 시간 0.035초입니다.
+[2023.04.26-17.19.46:105][268]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.19.52:336][947]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.19.52:336][947]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.19.52:336][947]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.19.52:337][947]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.19.52:345][947]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.19.52:360][947]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.19.52:364][947]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.19.52:364][947]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.19.52:365][947]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.19.52:368][947]LogUObjectHash: Compacting FUObjectHashTables data took   0.88ms
+[2023.04.26-17.19.52:411][949]LogPlayLevel: Display: Destroying online subsystem :Context_8
+[2023.04.26-17.20.41:315][238]Candidate modules for hot reload:
+[2023.04.26-17.20.41:315][238]  Project_MF
+[2023.04.26-17.20.41:315][238]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,8865 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.20.41:319][238]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.20.47:482][875]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:20:47
+[2023.04.26-17.20.47:482][875]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.20.47:482][875]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.20.47:482][875]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.20.47:482][875]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.20.47:482][875]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.20.47:482][875]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.20.47:482][875]CompilerResultsLog:   D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerConveyorMovementComponent.cpp(420): fatal error C1057: ??ũ?? Ȯ?忡?? ????ġ ???? ?????? ???? ??Ÿ?????ϴ?.
+[2023.04.26-17.20.47:482][875]LogMainFrame: MainFrame: Module compiling took 6.172 seconds
+[2023.04.26-17.20.47:488][875]Warning: HotReload failed, recompile failed
+[2023.04.26-17.20.58:802][636]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.26-17.20.58:809][636]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.26-17.20.59:501][708]Candidate modules for hot reload:
+[2023.04.26-17.20.59:501][708]  Project_MF
+[2023.04.26-17.20.59:501][708]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,4377 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.20.59:505][708]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.21.05:632][392]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:21:05
+[2023.04.26-17.21.05:632][392]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.21.05:632][392]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.21.05:633][392]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.21.05:633][392]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.21.05:633][392]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.21.05:633][392]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.21.05:633][392]CompilerResultsLog:   D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Source\Project_MF\PowerConveyorMovementComponent.cpp(420): fatal error C1057: ??ũ?? Ȯ?忡?? ????ġ ???? ?????? ???? ??Ÿ?????ϴ?.
+[2023.04.26-17.21.05:633][392]LogMainFrame: MainFrame: Module compiling took 6.144 seconds
+[2023.04.26-17.21.05:633][392]Warning: HotReload failed, recompile failed
+[2023.04.26-17.21.24:514][821]Candidate modules for hot reload:
+[2023.04.26-17.21.24:514][821]  Project_MF
+[2023.04.26-17.21.24:514][821]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,9570 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.21.24:518][821]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.21.25:533][887]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.26-17.21.25:540][887]LogSlate: Window '메시지 로그' being destroyed
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:21:42
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.21.42:027][856]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.21.42:027][856]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-9570.lib
+[2023.04.26-17.21.42:027][856]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9570.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9570.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.21.42:027][856]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-9570.dll
+[2023.04.26-17.21.42:027][856]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9570.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-9570.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.21.42:027][856]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: Total time in Parallel executor: 16.34 seconds
+[2023.04.26-17.21.42:027][856]CompilerResultsLog: Total execution time: 17.44 seconds
+[2023.04.26-17.21.42:027][856]LogMainFrame: MainFrame: Module compiling took 17.525 seconds
+[2023.04.26-17.21.42:076][856]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EFadeType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EMagneticType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: EHandType HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: MFStageData HotReload.
+[2023.04.26-17.21.42:077][856]LogClass: MFObjectData HotReload.
+[2023.04.26-17.21.42:098][856]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.21.42:107][856]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0005 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.21.42:117][856]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.21.42:173][856]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0127 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.21.42:175][856]Display: HotReload took 17.7s.
+[2023.04.26-17.21.52:349][ 61]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.21.52:355][ 61]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.21.52:355][ 61]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:21:52)
+[2023.04.26-17.21.52:355][ 61]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.21.52:359][ 61]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002836s)
+[2023.04.26-17.21.52:359][ 61]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.21.52:360][ 61]LogPlayLevel: PIE: World Init took: (0.000905s)
+[2023.04.26-17.21.52:360][ 61]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003851s)
+[2023.04.26-17.21.52:401][ 61]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2023.04.26-17.21.52:401][ 61]LogAudio: Display: Creating Audio Device:                 Id: 4, Scope: Unique, Realtime: True
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.21.52:402][ 61]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.21.52:402][ 61]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.21.52:402][ 61]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.21.52:402][ 61]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.21.52:402][ 61]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.21.52:406][ 61]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.21.52:406][ 61]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.21.52:413][ 61]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.21.52:413][ 61]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.21.52:413][ 61]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.21.52:413][ 61]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.21.52:414][ 61]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.21.52:414][ 61]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.21.52:414][ 61]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.21.52:415][ 61]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.21.52:415][ 61]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.21.52:415][ 61]LogInit: FAudioDevice initialized.
+[2023.04.26-17.21.52:415][ 61]LogAudio: Display: Audio Device (ID: 4) registered with world 'EditTestLevel'.
+[2023.04.26-17.21.52:426][ 61]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.21.52:427][ 61]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.21.52
+[2023.04.26-17.21.52:427][ 61]LogWorld: Bringing up level for play took: 0.000701
+[2023.04.26-17.21.52:427][ 61]LogOnline: OSS: Creating online subsystem instance for: :Context_9
+[2023.04.26-17.21.52:430][ 61]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.21.52:431][ 61]PIE: 에디터에서 플레이 총 시작 시간 0.076초입니다.
+[2023.04.26-17.21.53:970][196]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.22.06:752][634]Cmd: EDIT COPY
+[2023.04.26-17.22.11:012][105]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2023.04.26-17.22.11:608][163]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.22.17:236][798]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.22.34:700][722]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.22.34:700][722]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.22.34:700][722]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.22.34:701][722]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.22.34:715][722]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.22.34:730][722]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.22.34:734][722]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.22.34:734][722]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.22.34:735][722]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.22.34:737][722]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.22.34:738][722]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2023.04.26-17.22.34:783][724]LogPlayLevel: Display: Destroying online subsystem :Context_9
+[2023.04.26-17.22.35:232][774]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.22.51:040][479]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2023.04.26-17.22.54:346][793]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.22.57:471][152]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.23.05:259][ 30]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2023.04.26-17.23.06:017][111]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.23.26:868][527]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.23.44:726][536]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.23.49:913][ 75]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.23.49:920][ 75]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.23.49:920][ 75]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:23:49)
+[2023.04.26-17.23.49:920][ 75]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.23.49:922][ 75]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002251s)
+[2023.04.26-17.23.49:923][ 75]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.23.49:923][ 75]LogPlayLevel: PIE: World Init took: (0.001035s)
+[2023.04.26-17.23.49:924][ 75]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003392s)
+[2023.04.26-17.23.49:931][ 75]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2023.04.26-17.23.49:931][ 75]LogAudio: Display: Creating Audio Device:                 Id: 5, Scope: Unique, Realtime: True
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.23.49:931][ 75]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.23.49:931][ 75]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.23.49:931][ 75]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.23.49:931][ 75]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.23.49:931][ 75]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.23.49:935][ 75]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.23.49:935][ 75]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.23.49:943][ 75]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.23.49:943][ 75]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.23.49:944][ 75]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.23.49:944][ 75]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.23.49:944][ 75]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.23.49:944][ 75]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.23.49:944][ 75]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.23.49:945][ 75]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.23.49:945][ 75]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.23.49:945][ 75]LogInit: FAudioDevice initialized.
+[2023.04.26-17.23.49:945][ 75]LogAudio: Display: Audio Device (ID: 5) registered with world 'EditTestLevel'.
+[2023.04.26-17.23.49:954][ 75]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.23.49:955][ 75]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.23.49
+[2023.04.26-17.23.49:956][ 75]LogWorld: Bringing up level for play took: 0.000659
+[2023.04.26-17.23.49:956][ 75]LogOnline: OSS: Creating online subsystem instance for: :Context_10
+[2023.04.26-17.23.49:957][ 75]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.23.49:958][ 75]PIE: 에디터에서 플레이 총 시작 시간 0.039초입니다.
+[2023.04.26-17.23.54:002][456]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.23.54:002][456]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.23.54:003][456]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.23.54:003][456]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.23.54:009][456]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.23.54:024][456]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.23.54:033][456]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.23.54:033][456]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.23.54:034][456]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.23.54:036][456]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.23.54:037][456]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2023.04.26-17.23.54:081][458]LogPlayLevel: Display: Destroying online subsystem :Context_10
+[2023.04.26-17.23.56:470][711]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.23.56:472][711]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.23.56:473][711]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.23.56:474][711]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.00:016][102]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.00:017][102]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.00:018][102]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.00:018][102]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.02:863][375]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.02:864][375]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.03:571][450]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.03:571][450]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.07:719][860]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.24.09:196][ 11]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.24.09:203][ 11]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.24.09:203][ 11]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:24:09)
+[2023.04.26-17.24.09:203][ 11]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.24.09:205][ 11]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002188s)
+[2023.04.26-17.24.09:206][ 11]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.24.09:206][ 11]LogPlayLevel: PIE: World Init took: (0.000888s)
+[2023.04.26-17.24.09:206][ 11]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003178s)
+[2023.04.26-17.24.09:233][ 11]LogUObjectHash: Compacting FUObjectHashTables data took   0.92ms
+[2023.04.26-17.24.09:234][ 11]LogAudio: Display: Creating Audio Device:                 Id: 6, Scope: Unique, Realtime: True
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.24.09:234][ 11]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.24.09:234][ 11]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.24.09:234][ 11]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.24.09:234][ 11]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.24.09:235][ 11]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.24.09:235][ 11]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.24.09:238][ 11]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.24.09:238][ 11]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.24.09:245][ 11]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.24.09:245][ 11]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.24.09:245][ 11]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.24.09:245][ 11]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.24.09:246][ 11]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.24.09:246][ 11]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.24.09:246][ 11]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.24.09:247][ 11]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.24.09:247][ 11]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.24.09:247][ 11]LogInit: FAudioDevice initialized.
+[2023.04.26-17.24.09:247][ 11]LogAudio: Display: Audio Device (ID: 6) registered with world 'EditTestLevel'.
+[2023.04.26-17.24.09:254][ 11]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.24.09:255][ 11]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.24.09
+[2023.04.26-17.24.09:255][ 11]LogWorld: Bringing up level for play took: 0.000661
+[2023.04.26-17.24.09:256][ 11]LogOnline: OSS: Creating online subsystem instance for: :Context_11
+[2023.04.26-17.24.09:257][ 11]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.24.09:258][ 11]PIE: 에디터에서 플레이 총 시작 시간 0.057초입니다.
+[2023.04.26-17.24.13:283][409]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.24.13:283][409]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.24.13:283][409]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.24.13:283][409]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.24.13:288][409]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.24.13:304][409]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.24.13:309][409]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.24.13:309][409]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.24.13:310][409]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.24.13:310][409]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.24.13:313][409]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2023.04.26-17.24.13:358][411]LogPlayLevel: Display: Destroying online subsystem :Context_11
+[2023.04.26-17.24.29:338][481]LogSlate: Took 0.000290 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.04.26-17.24.38:409][508]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2023.04.26-17.24.38:419][508]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/EditTestLevel_Auto1FD6634514D70CCCFF2112E8CE3C55F74.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Levels/UnUsedLevel/EditTestLevel_Auto1.umap'
+[2023.04.26-17.24.38:421][508]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.018
+[2023.04.26-17.24.38:421][508]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.018
+[2023.04.26-17.26.50:372][958]Candidate modules for hot reload:
+[2023.04.26-17.26.50:372][958]  Project_MF
+[2023.04.26-17.26.50:372][958]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,5445 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.26.50:377][958]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.26.52:450][138]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.27.07:161][525]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:27:07
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.27.07:870][605]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.27.07:870][605]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-5445.lib
+[2023.04.26-17.27.07:870][605]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5445.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5445.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.27.07:870][605]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-5445.dll
+[2023.04.26-17.27.07:870][605]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5445.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-5445.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.27.07:870][605]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: Total time in Parallel executor: 16.42 seconds
+[2023.04.26-17.27.07:870][605]CompilerResultsLog: Total execution time: 17.42 seconds
+[2023.04.26-17.27.07:870][605]LogMainFrame: MainFrame: Module compiling took 17.502 seconds
+[2023.04.26-17.27.07:925][605]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EFadeType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EMagneticType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: EHandType HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: MFStageData HotReload.
+[2023.04.26-17.27.07:925][605]LogClass: MFObjectData HotReload.
+[2023.04.26-17.27.07:946][605]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.27.07:953][605]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.27.07:963][605]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.27.08:015][605]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0100 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.27.08:017][605]Display: HotReload took 17.7s.
+[2023.04.26-17.27.09:961][781]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.11:493][944]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.15:722][373]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.17:600][592]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.19:284][772]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.20:990][959]PIE: Warning: AttachTo: '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMeshComponent0': 스태틱  (in blueprint "BP_Conveyorbelt") 이지 않아, 거기에 스태틱인 '/Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel:PersistentLevel.BP_Conveyorbelt_3.StaticMesh' 붙이기가 불가능합니다. 중단합니다.
+[2023.04.26-17.27.42:475][208]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (StaticMeshComponent0)
+[2023.04.26-17.27.45:994][607]Cmd: DELETE
+[2023.04.26-17.27.45:994][607]Cmd: ACTOR DELETE
+[2023.04.26-17.27.45:995][607]LogEditorActor: Deleted Actor: BP_Conveyorbelt_C
+[2023.04.26-17.27.46:001][607]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2023.04.26-17.27.46:002][607]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2023.04.26-17.28.05:922][774]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.28.10:923][335]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.28.23:678][644]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.28.23:685][644]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.28.23:686][644]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:28:23)
+[2023.04.26-17.28.23:686][644]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.28.23:688][644]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002215s)
+[2023.04.26-17.28.23:689][644]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.28.23:689][644]LogPlayLevel: PIE: World Init took: (0.001043s)
+[2023.04.26-17.28.23:689][644]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003371s)
+[2023.04.26-17.28.23:696][644]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2023.04.26-17.28.23:697][644]LogAudio: Display: Creating Audio Device:                 Id: 7, Scope: Unique, Realtime: True
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.28.23:697][644]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.28.23:697][644]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.28.23:697][644]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.28.23:697][644]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.28.23:697][644]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.28.23:700][644]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.28.23:700][644]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.28.23:707][644]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.28.23:707][644]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.28.23:707][644]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.28.23:707][644]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.28.23:708][644]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.28.23:708][644]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.28.23:708][644]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.28.23:709][644]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.28.23:709][644]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.28.23:709][644]LogInit: FAudioDevice initialized.
+[2023.04.26-17.28.23:709][644]LogAudio: Display: Audio Device (ID: 7) registered with world 'EditTestLevel'.
+[2023.04.26-17.28.23:718][644]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.28.23:718][644]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.28.23
+[2023.04.26-17.28.23:719][644]LogWorld: Bringing up level for play took: 0.000682
+[2023.04.26-17.28.23:719][644]LogOnline: OSS: Creating online subsystem instance for: :Context_12
+[2023.04.26-17.28.23:720][644]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.28.23:721][644]PIE: 에디터에서 플레이 총 시작 시간 0.038초입니다.
+[2023.04.26-17.28.25:481][830]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.28.30:929][443]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.28.30:930][443]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.28.30:930][443]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.28.30:930][443]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.28.30:940][443]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.28.30:955][443]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.28.30:960][443]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.28.30:960][443]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.28.30:961][443]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.28.30:963][443]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.28.30:965][443]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2023.04.26-17.28.30:996][444]LogPlayLevel: Display: Destroying online subsystem :Context_12
+[2023.04.26-17.28.31:995][560]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.28.35:713][995]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.28.35:721][995]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.28.35:721][995]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:28:35)
+[2023.04.26-17.28.35:721][995]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.28.35:723][995]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002246s)
+[2023.04.26-17.28.35:724][995]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.28.35:724][995]LogPlayLevel: PIE: World Init took: (0.000891s)
+[2023.04.26-17.28.35:724][995]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003265s)
+[2023.04.26-17.28.35:730][995]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2023.04.26-17.28.35:731][995]LogAudio: Display: Creating Audio Device:                 Id: 8, Scope: Unique, Realtime: True
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.28.35:731][995]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.28.35:731][995]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.28.35:731][995]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.28.35:732][995]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.28.35:732][995]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.28.35:732][995]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.28.35:735][995]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.28.35:735][995]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.28.35:743][995]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.28.35:744][995]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.28.35:744][995]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.28.35:744][995]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.28.35:744][995]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.28.35:744][995]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.28.35:744][995]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.28.35:745][995]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.28.35:745][995]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.28.35:745][995]LogInit: FAudioDevice initialized.
+[2023.04.26-17.28.35:745][995]LogAudio: Display: Audio Device (ID: 8) registered with world 'EditTestLevel'.
+[2023.04.26-17.28.35:763][995]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.28.35:764][995]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.28.35
+[2023.04.26-17.28.35:764][995]LogWorld: Bringing up level for play took: 0.000650
+[2023.04.26-17.28.35:764][995]LogOnline: OSS: Creating online subsystem instance for: :Context_13
+[2023.04.26-17.28.35:766][995]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.28.35:766][995]PIE: 에디터에서 플레이 총 시작 시간 0.047초입니다.
+[2023.04.26-17.28.49:622][632]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.29.01:220][911]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.29.01:220][911]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.29.01:221][911]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.29.01:221][911]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.29.01:229][911]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.29.01:244][911]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.29.01:248][911]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.29.01:248][911]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.29.01:250][911]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.29.01:252][911]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2023.04.26-17.29.01:295][913]LogPlayLevel: Display: Destroying online subsystem :Context_13
+[2023.04.26-17.29.13:544][243]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.29.16:077][524]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.29.16:084][524]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.29.16:084][524]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:29:16)
+[2023.04.26-17.29.16:084][524]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.29.16:086][524]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002116s)
+[2023.04.26-17.29.16:087][524]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.29.16:088][524]LogPlayLevel: PIE: World Init took: (0.001131s)
+[2023.04.26-17.29.16:088][524]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003357s)
+[2023.04.26-17.29.16:094][524]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2023.04.26-17.29.16:094][524]LogAudio: Display: Creating Audio Device:                 Id: 9, Scope: Unique, Realtime: True
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.29.16:094][524]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.29.16:094][524]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.29.16:095][524]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.29.16:095][524]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.29.16:095][524]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.29.16:095][524]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.29.16:098][524]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.29.16:098][524]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.29.16:105][524]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.29.16:105][524]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.29.16:105][524]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.29.16:105][524]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.29.16:106][524]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.29.16:106][524]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.29.16:106][524]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.29.16:106][524]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.29.16:107][524]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.29.16:107][524]LogInit: FAudioDevice initialized.
+[2023.04.26-17.29.16:107][524]LogAudio: Display: Audio Device (ID: 9) registered with world 'EditTestLevel'.
+[2023.04.26-17.29.16:113][524]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.29.16:114][524]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.29.16
+[2023.04.26-17.29.16:114][524]LogWorld: Bringing up level for play took: 0.000657
+[2023.04.26-17.29.16:114][524]LogOnline: OSS: Creating online subsystem instance for: :Context_14
+[2023.04.26-17.29.16:116][524]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.29.16:117][524]PIE: 에디터에서 플레이 총 시작 시간 0.033초입니다.
+[2023.04.26-17.29.16:723][573]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2023.04.26-17.29.17:190][613]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.29.31:192][168]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.29.31:192][168]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.29.31:192][168]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.29.31:192][168]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.29.31:199][168]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.29.31:215][168]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.29.31:219][168]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.29.31:219][168]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.29.31:220][168]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.29.31:221][168]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.29.31:223][168]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2023.04.26-17.29.31:265][170]LogPlayLevel: Display: Destroying online subsystem :Context_14
+[2023.04.26-17.29.40:270][333]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.29.43:694][722]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.29.43:700][722]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.29.43:700][722]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:29:43)
+[2023.04.26-17.29.43:700][722]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.29.43:702][722]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002108s)
+[2023.04.26-17.29.43:703][722]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.29.43:703][722]LogPlayLevel: PIE: World Init took: (0.000864s)
+[2023.04.26-17.29.43:703][722]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003069s)
+[2023.04.26-17.29.43:747][722]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2023.04.26-17.29.43:747][722]LogAudio: Display: Creating Audio Device:                 Id: 10, Scope: Unique, Realtime: True
+[2023.04.26-17.29.43:747][722]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.29.43:747][722]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.29.43:747][722]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.29.43:747][722]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.29.43:747][722]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.29.43:747][722]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.29.43:748][722]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.29.43:748][722]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.29.43:748][722]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.29.43:748][722]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.29.43:748][722]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.29.43:748][722]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.29.43:751][722]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.29.43:751][722]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.29.43:758][722]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.29.43:758][722]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.29.43:758][722]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.29.43:758][722]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.29.43:759][722]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.29.43:759][722]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.29.43:759][722]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.29.43:760][722]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.29.43:760][722]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.29.43:760][722]LogInit: FAudioDevice initialized.
+[2023.04.26-17.29.43:760][722]LogAudio: Display: Audio Device (ID: 10) registered with world 'EditTestLevel'.
+[2023.04.26-17.29.43:770][722]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.29.43:771][722]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.29.43
+[2023.04.26-17.29.43:771][722]LogWorld: Bringing up level for play took: 0.000665
+[2023.04.26-17.29.43:771][722]LogOnline: OSS: Creating online subsystem instance for: :Context_15
+[2023.04.26-17.29.43:773][722]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.29.43:774][722]PIE: 에디터에서 플레이 총 시작 시간 0.075초입니다.
+[2023.04.26-17.29.58:331][409]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.29.58:331][409]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.29.58:332][409]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.29.58:332][409]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.29.58:336][409]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.29.58:351][409]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.29.58:355][409]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.29.58:355][409]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.29.58:356][409]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.29.58:358][409]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.29.58:360][409]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2023.04.26-17.29.58:408][411]LogPlayLevel: Display: Destroying online subsystem :Context_15
+[2023.04.26-17.31.14:870][782]Candidate modules for hot reload:
+[2023.04.26-17.31.14:870][782]  Project_MF
+[2023.04.26-17.31.14:870][782]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,2104 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.31.14:874][782]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.31.32:479][584]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:31:32
+[2023.04.26-17.31.32:479][584]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.31.32:480][584]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.31.32:480][584]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.31.32:480][584]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.31.32:480][584]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.31.32:480][584]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.31.32:480][584]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-2104.lib
+[2023.04.26-17.31.32:480][584]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-2104.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-2104.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.31.32:480][584]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-2104.dll
+[2023.04.26-17.31.32:480][584]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-2104.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-2104.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.31.32:480][584]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.31.32:480][584]CompilerResultsLog: Total time in Parallel executor: 16.47 seconds
+[2023.04.26-17.31.32:480][584]CompilerResultsLog: Total execution time: 17.53 seconds
+[2023.04.26-17.31.32:480][584]LogMainFrame: MainFrame: Module compiling took 17.613 seconds
+[2023.04.26-17.31.32:531][584]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EFadeType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EMagneticType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: EHandType HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: MFStageData HotReload.
+[2023.04.26-17.31.32:531][584]LogClass: MFObjectData HotReload.
+[2023.04.26-17.31.32:552][584]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.31.32:560][584]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.31.32:570][584]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.31.32:620][584]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0104 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.31.32:623][584]Display: HotReload took 17.8s.
+[2023.04.26-17.31.33:943][733]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.31.33:951][733]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.31.33:951][733]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:31:33)
+[2023.04.26-17.31.33:951][733]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.31.33:953][733]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002128s)
+[2023.04.26-17.31.33:954][733]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.31.33:954][733]LogPlayLevel: PIE: World Init took: (0.000893s)
+[2023.04.26-17.31.33:954][733]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003121s)
+[2023.04.26-17.31.33:981][733]LogUObjectHash: Compacting FUObjectHashTables data took   0.95ms
+[2023.04.26-17.31.33:982][733]LogAudio: Display: Creating Audio Device:                 Id: 11, Scope: Unique, Realtime: True
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.31.33:982][733]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.31.33:982][733]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.31.33:982][733]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.31.33:982][733]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.31.33:982][733]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.31.33:986][733]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.31.33:986][733]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.31.33:993][733]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.31.33:994][733]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.31.33:994][733]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.31.33:994][733]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.31.33:994][733]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.31.33:994][733]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.31.33:994][733]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.31.33:995][733]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.31.33:995][733]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.31.33:995][733]LogInit: FAudioDevice initialized.
+[2023.04.26-17.31.33:995][733]LogAudio: Display: Audio Device (ID: 11) registered with world 'EditTestLevel'.
+[2023.04.26-17.31.34:007][733]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.31.34:008][733]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.31.34
+[2023.04.26-17.31.34:008][733]LogWorld: Bringing up level for play took: 0.000653
+[2023.04.26-17.31.34:008][733]LogOnline: OSS: Creating online subsystem instance for: :Context_16
+[2023.04.26-17.31.34:010][733]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.31.34:011][733]PIE: 에디터에서 플레이 총 시작 시간 0.062초입니다.
+[2023.04.26-17.31.35:965][935]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.31.35:965][935]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.31.35:965][935]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.31.35:965][935]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.31.35:970][935]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.31.35:984][935]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.31.35:989][935]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.31.35:989][935]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.31.35:990][935]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.31.35:991][935]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.31.35:993][935]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2023.04.26-17.31.36:019][936]LogPlayLevel: Display: Destroying online subsystem :Context_16
+[2023.04.26-17.31.36:710][  2]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.31.36:717][  2]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.31.36:717][  2]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:31:36)
+[2023.04.26-17.31.36:717][  2]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.31.36:720][  2]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002142s)
+[2023.04.26-17.31.36:720][  2]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.31.36:721][  2]LogPlayLevel: PIE: World Init took: (0.000881s)
+[2023.04.26-17.31.36:721][  2]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003128s)
+[2023.04.26-17.31.36:725][  2]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2023.04.26-17.31.36:725][  2]LogAudio: Display: Creating Audio Device:                 Id: 12, Scope: Unique, Realtime: True
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.31.36:725][  2]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.31.36:726][  2]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.31.36:726][  2]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.31.36:726][  2]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.31.36:726][  2]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.31.36:726][  2]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.31.36:730][  2]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.31.36:730][  2]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.31.36:737][  2]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.31.36:738][  2]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.31.36:738][  2]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.31.36:738][  2]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.31.36:738][  2]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.31.36:738][  2]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.31.36:738][  2]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.31.36:739][  2]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.31.36:739][  2]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.31.36:739][  2]LogInit: FAudioDevice initialized.
+[2023.04.26-17.31.36:739][  2]LogAudio: Display: Audio Device (ID: 12) registered with world 'EditTestLevel'.
+[2023.04.26-17.31.36:748][  2]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.31.36:749][  2]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.31.36
+[2023.04.26-17.31.36:749][  2]LogWorld: Bringing up level for play took: 0.000647
+[2023.04.26-17.31.36:749][  2]LogOnline: OSS: Creating online subsystem instance for: :Context_17
+[2023.04.26-17.31.36:751][  2]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.31.36:752][  2]PIE: 에디터에서 플레이 총 시작 시간 0.035초입니다.
+[2023.04.26-17.31.44:562][892]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.32.08:226][511]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.32.08:226][511]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.32.08:226][511]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.32.08:226][511]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.32.08:236][511]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.32.08:251][511]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.32.08:255][511]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.32.08:255][511]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.32.08:256][511]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.32.08:260][511]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2023.04.26-17.32.08:303][513]LogPlayLevel: Display: Destroying online subsystem :Context_17
+[2023.04.26-17.34.47:769][199]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.34.47:775][199]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.34.47:776][199]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:34:47)
+[2023.04.26-17.34.47:776][199]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.34.47:778][199]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002347s)
+[2023.04.26-17.34.47:779][199]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.34.47:779][199]LogPlayLevel: PIE: World Init took: (0.001326s)
+[2023.04.26-17.34.47:779][199]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003830s)
+[2023.04.26-17.34.47:785][199]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2023.04.26-17.34.47:785][199]LogAudio: Display: Creating Audio Device:                 Id: 13, Scope: Unique, Realtime: True
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.34.47:785][199]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.34.47:785][199]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.34.47:786][199]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.34.47:786][199]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.34.47:786][199]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.34.47:786][199]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.34.47:789][199]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.34.47:789][199]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.34.47:797][199]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.34.47:798][199]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.34.47:798][199]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.34.47:798][199]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.34.47:798][199]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.34.47:798][199]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.34.47:798][199]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.34.47:799][199]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.34.47:799][199]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.34.47:799][199]LogInit: FAudioDevice initialized.
+[2023.04.26-17.34.47:799][199]LogAudio: Display: Audio Device (ID: 13) registered with world 'EditTestLevel'.
+[2023.04.26-17.34.47:806][199]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.34.47:807][199]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.34.47
+[2023.04.26-17.34.47:807][199]LogWorld: Bringing up level for play took: 0.000767
+[2023.04.26-17.34.47:807][199]LogOnline: OSS: Creating online subsystem instance for: :Context_18
+[2023.04.26-17.34.47:809][199]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.34.47:810][199]PIE: 에디터에서 플레이 총 시작 시간 0.036초입니다.
+[2023.04.26-17.34.50:220][447]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.34.50:220][447]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.34.50:220][447]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.34.50:220][447]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.34.50:245][447]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.34.50:260][447]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.34.50:265][447]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.34.50:265][447]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.34.50:266][447]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.34.50:267][447]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.34.50:270][447]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2023.04.26-17.34.50:298][448]LogPlayLevel: Display: Destroying online subsystem :Context_18
+[2023.04.26-17.34.51:243][524]Candidate modules for hot reload:
+[2023.04.26-17.34.51:243][524]  Project_MF
+[2023.04.26-17.34.51:243][524]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,6998 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.34.51:246][524]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:35:08
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.35.08:655][409]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.35.08:655][409]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-6998.lib
+[2023.04.26-17.35.08:655][409]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6998.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6998.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.35.08:655][409]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-6998.dll
+[2023.04.26-17.35.08:655][409]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6998.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-6998.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.35.08:655][409]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: Total time in Parallel executor: 16.26 seconds
+[2023.04.26-17.35.08:655][409]CompilerResultsLog: Total execution time: 17.34 seconds
+[2023.04.26-17.35.08:655][409]LogMainFrame: MainFrame: Module compiling took 17.416 seconds
+[2023.04.26-17.35.08:700][409]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: EFadeType HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: EMagneticType HotReload.
+[2023.04.26-17.35.08:700][409]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: EHandType HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: MFStageData HotReload.
+[2023.04.26-17.35.08:701][409]LogClass: MFObjectData HotReload.
+[2023.04.26-17.35.08:721][409]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.35.08:730][409]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.35.08:740][409]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.35.08:791][409]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0099 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.35.08:794][409]Display: HotReload took 17.6s.
+[2023.04.26-17.35.09:586][499]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.35.09:592][499]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.35.09:592][499]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:35:09)
+[2023.04.26-17.35.09:592][499]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.35.09:594][499]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002140s)
+[2023.04.26-17.35.09:595][499]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.35.09:595][499]LogPlayLevel: PIE: World Init took: (0.000946s)
+[2023.04.26-17.35.09:595][499]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003185s)
+[2023.04.26-17.35.09:602][499]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2023.04.26-17.35.09:602][499]LogAudio: Display: Creating Audio Device:                 Id: 14, Scope: Unique, Realtime: True
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.35.09:602][499]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.35.09:602][499]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.35.09:603][499]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.35.09:603][499]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.35.09:603][499]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.35.09:603][499]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.35.09:606][499]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.35.09:606][499]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.35.09:613][499]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.35.09:613][499]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.35.09:613][499]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.35.09:613][499]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.35.09:614][499]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.35.09:614][499]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.35.09:614][499]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.35.09:615][499]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.35.09:615][499]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.35.09:615][499]LogInit: FAudioDevice initialized.
+[2023.04.26-17.35.09:615][499]LogAudio: Display: Audio Device (ID: 14) registered with world 'EditTestLevel'.
+[2023.04.26-17.35.09:620][499]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.35.09:621][499]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.35.09
+[2023.04.26-17.35.09:621][499]LogWorld: Bringing up level for play took: 0.000666
+[2023.04.26-17.35.09:621][499]LogOnline: OSS: Creating online subsystem instance for: :Context_19
+[2023.04.26-17.35.09:623][499]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.35.09:624][499]PIE: 에디터에서 플레이 총 시작 시간 0.033초입니다.
+[2023.04.26-17.35.11:430][687]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.35.11:430][687]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.35.11:430][687]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.35.11:430][687]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.35.11:441][687]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.35.11:456][687]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.35.11:460][687]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.35.11:460][687]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.35.11:461][687]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.35.11:463][687]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.35.11:465][687]LogUObjectHash: Compacting FUObjectHashTables data took   0.84ms
+[2023.04.26-17.35.11:510][689]LogPlayLevel: Display: Destroying online subsystem :Context_19
+[2023.04.26-17.36.18:927][911]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2023.04.26-17.36.18:936][911]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/EditTestLevel_Auto28D495F384B298D9FF689E68546775144.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Levels/UnUsedLevel/EditTestLevel_Auto2.umap'
+[2023.04.26-17.36.18:938][911]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.016
+[2023.04.26-17.36.18:938][911]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.016
+[2023.04.26-17.36.19:445][953]Candidate modules for hot reload:
+[2023.04.26-17.36.19:445][953]  Project_MF
+[2023.04.26-17.36.19:445][953]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,1343 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.36.19:448][953]Warning: Starting HotReload took  0.1s.
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:36:37
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.36.37:158][824]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.36.37:158][824]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-1343.lib
+[2023.04.26-17.36.37:158][824]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1343.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1343.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.36.37:158][824]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-1343.dll
+[2023.04.26-17.36.37:158][824]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1343.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1343.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.36.37:158][824]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: Total time in Parallel executor: 16.50 seconds
+[2023.04.26-17.36.37:158][824]CompilerResultsLog: Total execution time: 17.64 seconds
+[2023.04.26-17.36.37:158][824]LogMainFrame: MainFrame: Module compiling took 17.760 seconds
+[2023.04.26-17.36.37:206][824]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EFadeType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EMagneticType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: EHandType HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: MFStageData HotReload.
+[2023.04.26-17.36.37:206][824]LogClass: MFObjectData HotReload.
+[2023.04.26-17.36.37:228][824]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.36.37:237][824]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0004 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.36.37:247][824]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.36.37:302][824]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0110 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.36.37:304][824]Display: HotReload took 17.9s.
+[2023.04.26-17.36.37:935][896]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.36.37:942][896]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.36.37:942][896]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:36:37)
+[2023.04.26-17.36.37:942][896]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.36.37:945][896]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002386s)
+[2023.04.26-17.36.37:946][896]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.36.37:947][896]LogPlayLevel: PIE: World Init took: (0.001842s)
+[2023.04.26-17.36.37:947][896]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.004366s)
+[2023.04.26-17.36.37:953][896]LogUObjectHash: Compacting FUObjectHashTables data took   0.89ms
+[2023.04.26-17.36.37:953][896]LogAudio: Display: Creating Audio Device:                 Id: 15, Scope: Unique, Realtime: True
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.36.37:953][896]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.36.37:953][896]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.36.37:954][896]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.36.37:954][896]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.36.37:954][896]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.36.37:954][896]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.36.37:957][896]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.36.37:957][896]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.36.37:965][896]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.36.37:966][896]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.36.37:966][896]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.36.37:966][896]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.36.37:966][896]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.36.37:966][896]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.36.37:966][896]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.36.37:967][896]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.36.37:967][896]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.36.37:967][896]LogInit: FAudioDevice initialized.
+[2023.04.26-17.36.37:967][896]LogAudio: Display: Audio Device (ID: 15) registered with world 'EditTestLevel'.
+[2023.04.26-17.36.37:976][896]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.36.37:977][896]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.36.37
+[2023.04.26-17.36.37:977][896]LogWorld: Bringing up level for play took: 0.000702
+[2023.04.26-17.36.37:977][896]LogOnline: OSS: Creating online subsystem instance for: :Context_20
+[2023.04.26-17.36.37:979][896]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.36.37:981][896]PIE: 에디터에서 플레이 총 시작 시간 0.039초입니다.
+[2023.04.26-17.36.41:852][317]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.36.41:852][317]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.36.41:853][317]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.36.41:853][317]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.36.41:879][317]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.36.41:893][317]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.36.41:897][317]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.36.41:898][317]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.36.41:898][317]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.36.41:900][317]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.36.41:902][317]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2023.04.26-17.36.41:926][318]LogPlayLevel: Display: Destroying online subsystem :Context_20
+[2023.04.26-17.36.43:142][443]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.37.11:140][629]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.37.16:450][231]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.37.16:457][231]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.37.16:457][231]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:37:16)
+[2023.04.26-17.37.16:457][231]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.37.16:460][231]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002558s)
+[2023.04.26-17.37.16:461][231]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.37.16:461][231]LogPlayLevel: PIE: World Init took: (0.001195s)
+[2023.04.26-17.37.16:461][231]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003887s)
+[2023.04.26-17.37.16:471][231]LogUObjectHash: Compacting FUObjectHashTables data took   0.95ms
+[2023.04.26-17.37.16:471][231]LogAudio: Display: Creating Audio Device:                 Id: 16, Scope: Unique, Realtime: True
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.37.16:471][231]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.37.16:471][231]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.37.16:472][231]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.37.16:472][231]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.37.16:472][231]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.37.16:472][231]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.37.16:475][231]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.37.16:475][231]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.37.16:483][231]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.37.16:484][231]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.37.16:484][231]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.37.16:484][231]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.37.16:484][231]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.37.16:484][231]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.37.16:484][231]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.37.16:485][231]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.37.16:485][231]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.37.16:485][231]LogInit: FAudioDevice initialized.
+[2023.04.26-17.37.16:485][231]LogAudio: Display: Audio Device (ID: 16) registered with world 'EditTestLevel'.
+[2023.04.26-17.37.16:498][231]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.37.16:499][231]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.37.16
+[2023.04.26-17.37.16:499][231]LogWorld: Bringing up level for play took: 0.000668
+[2023.04.26-17.37.16:499][231]LogOnline: OSS: Creating online subsystem instance for: :Context_21
+[2023.04.26-17.37.16:501][231]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.37.16:502][231]PIE: 에디터에서 플레이 총 시작 시간 0.045초입니다.
+[2023.04.26-17.37.20:433][668]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.37.20:433][668]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.37.20:434][668]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.37.20:434][668]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.37.20:440][668]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.37.20:455][668]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.37.20:459][668]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.37.20:459][668]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.37.20:461][668]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.37.20:462][668]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.37.20:464][668]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2023.04.26-17.37.20:506][670]LogPlayLevel: Display: Destroying online subsystem :Context_21
+[2023.04.26-17.37.35:273][727]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt)
+[2023.04.26-17.37.37:137][935]Cmd: EDIT COPY
+[2023.04.26-17.37.37:503][979]Cmd: EDIT PASTE
+[2023.04.26-17.37.40:329][302]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.37.40:335][302]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.37.40:335][302]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:37:40)
+[2023.04.26-17.37.40:335][302]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.37.40:337][302]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002323s)
+[2023.04.26-17.37.40:338][302]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.37.40:338][302]LogPlayLevel: PIE: World Init took: (0.001031s)
+[2023.04.26-17.37.40:338][302]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003452s)
+[2023.04.26-17.37.40:345][302]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2023.04.26-17.37.40:346][302]LogAudio: Display: Creating Audio Device:                 Id: 17, Scope: Unique, Realtime: True
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.37.40:346][302]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.37.40:346][302]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.37.40:347][302]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.37.40:347][302]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.37.40:347][302]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.37.40:347][302]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.37.40:350][302]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.37.40:350][302]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.37.40:357][302]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.37.40:357][302]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.37.40:357][302]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.37.40:357][302]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.37.40:357][302]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.37.40:357][302]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.37.40:357][302]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.37.40:358][302]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.37.40:358][302]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.37.40:358][302]LogInit: FAudioDevice initialized.
+[2023.04.26-17.37.40:358][302]LogAudio: Display: Audio Device (ID: 17) registered with world 'EditTestLevel'.
+[2023.04.26-17.37.40:368][302]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.37.40:369][302]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.37.40
+[2023.04.26-17.37.40:369][302]LogWorld: Bringing up level for play took: 0.000726
+[2023.04.26-17.37.40:369][302]LogOnline: OSS: Creating online subsystem instance for: :Context_22
+[2023.04.26-17.37.40:371][302]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.37.40:371][302]PIE: 에디터에서 플레이 총 시작 시간 0.037초입니다.
+[2023.04.26-17.38.18:735][825]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.38.18:735][825]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.38.18:735][825]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.38.18:736][825]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.38.18:743][825]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.38.18:757][825]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.38.18:761][825]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.38.18:761][825]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.38.18:762][825]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.38.18:764][825]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.38.18:766][825]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2023.04.26-17.38.18:826][827]LogPlayLevel: Display: Destroying online subsystem :Context_22
+[2023.04.26-17.38.30:199][168]LogEditorViewport: Clicking on Actor (LMB): BP_Conveyorbelt_C (BP_Conveyorbelt2)
+[2023.04.26-17.38.31:258][293]Cmd: DELETE
+[2023.04.26-17.38.31:258][293]Cmd: ACTOR DELETE
+[2023.04.26-17.38.31:259][293]LogEditorActor: Deleted Actor: BP_Conveyorbelt_C
+[2023.04.26-17.38.31:265][293]LogUObjectHash: Compacting FUObjectHashTables data took   0.78ms
+[2023.04.26-17.38.31:266][293]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2023.04.26-17.38.34:776][713]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.38.34:783][713]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.38.34:783][713]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:38:34)
+[2023.04.26-17.38.34:784][713]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.38.34:786][713]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002354s)
+[2023.04.26-17.38.34:787][713]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.38.34:787][713]LogPlayLevel: PIE: World Init took: (0.000997s)
+[2023.04.26-17.38.34:787][713]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003461s)
+[2023.04.26-17.38.34:792][713]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2023.04.26-17.38.34:793][713]LogAudio: Display: Creating Audio Device:                 Id: 18, Scope: Unique, Realtime: True
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.38.34:793][713]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.38.34:793][713]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.38.34:793][713]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.38.34:793][713]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.38.34:793][713]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.38.34:796][713]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.38.34:796][713]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.38.34:804][713]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.38.34:805][713]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.38.34:805][713]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.38.34:805][713]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.38.34:805][713]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.38.34:805][713]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.38.34:805][713]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.38.34:806][713]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.38.34:806][713]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.38.34:806][713]LogInit: FAudioDevice initialized.
+[2023.04.26-17.38.34:806][713]LogAudio: Display: Audio Device (ID: 18) registered with world 'EditTestLevel'.
+[2023.04.26-17.38.34:811][713]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.38.34:811][713]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.38.34
+[2023.04.26-17.38.34:811][713]LogWorld: Bringing up level for play took: 0.000650
+[2023.04.26-17.38.34:811][713]LogOnline: OSS: Creating online subsystem instance for: :Context_23
+[2023.04.26-17.38.34:814][713]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.38.34:814][713]PIE: 에디터에서 플레이 총 시작 시간 0.032초입니다.
+[2023.04.26-17.39.07:216][546]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.39.07:216][546]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.39.07:216][546]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.39.07:217][546]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.39.07:223][546]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.39.07:224][546]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.39.07:228][546]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.39.07:229][546]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.39.07:230][546]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.39.07:231][546]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.39.07:233][546]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2023.04.26-17.39.07:315][550]LogPlayLevel: Display: Destroying online subsystem :Context_23
+[2023.04.26-17.40.16:556][871]Candidate modules for hot reload:
+[2023.04.26-17.40.16:556][871]  Project_MF
+[2023.04.26-17.40.16:556][871]Launching UnrealBuildTool... [D:/Program Files/Epic Games/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Project_MF,1634 Project_MFEditor Win64 Development -Project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" "D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -IgnoreJunk]
+[2023.04.26-17.40.16:561][871]Warning: Starting HotReload took  0.0s.
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: New page: 컴파일 - 2023. 4. 27. 오전 11:40:36
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF).
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: Building Project_MFEditor...
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: Using Visual Studio 2019 14.29.30147 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: [Adaptive unity build] Excluded from Project_MF unity file: PowerConveyorMovementComponent.cpp
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: Building 4 actions with 8 processes...
+[2023.04.26-17.40.36:506][144]CompilerResultsLog:   [1/4] PowerConveyorMovementComponent.cpp
+[2023.04.26-17.40.36:506][144]CompilerResultsLog:   [2/4] UE4Editor-Project_MF-1634.lib
+[2023.04.26-17.40.36:506][144]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1634.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1634.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.40.36:506][144]CompilerResultsLog:   [3/4] UE4Editor-Project_MF-1634.dll
+[2023.04.26-17.40.36:506][144]CompilerResultsLog:      D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1634.suppressed.lib ???̺귯?? ?? D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Intermediate\Build\Win64\UE4Editor\Development\Project_MF\UE4Editor-Project_MF-1634.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2023.04.26-17.40.36:506][144]CompilerResultsLog:   [4/4] Project_MFEditor.target
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: Total time in Parallel executor: 18.67 seconds
+[2023.04.26-17.40.36:506][144]CompilerResultsLog: Total execution time: 19.85 seconds
+[2023.04.26-17.40.36:506][144]LogMainFrame: MainFrame: Module compiling took 19.955 seconds
+[2023.04.26-17.40.36:574][144]LogClass: EHitCheckPointRangeApplyAfterType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EHitCheckPointRangeApplyType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EHitCheckPointRangeApplyTiming HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: ESectionSettingType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EPlayerMode HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EFadeType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EMagneticType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EMagnetMoveAxisType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EMagnetMoveType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: EHandType HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: MagneticBeginInfo HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: ActorCheckInfo HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: ActorBeginInfo HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: UIFadeInfo HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: MFStageData HotReload.
+[2023.04.26-17.40.36:574][144]LogClass: MFObjectData HotReload.
+[2023.04.26-17.40.36:604][144]LogHotReload: Re-instancing PowerGenerateComponent after hot-reload.
+[2023.04.26-17.40.36:615][144]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Project_MF' in 0.0005 seconds. Added 54 classes and 2 folders.
+[2023.04.26-17.40.36:629][144]Display: HotReload successful (45 functions remapped  6 scriptstructs remapped)
+[2023.04.26-17.40.36:686][144]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0109 seconds. Added 3949 classes and 958 folders.
+[2023.04.26-17.40.36:690][144]Display: HotReload took 20.1s.
+[2023.04.26-17.40.37:667][256]LogTemp: Repeating last play command: 시뮬레이트
+[2023.04.26-17.40.37:674][256]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2023.04.26-17.40.37:674][256]PIE: New page: SIE 세션: EditTestLevel (2023. 4. 27. 오전 11:40:37)
+[2023.04.26-17.40.37:674][256]LogPlayLevel: Creating play world package: /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.40.37:677][256]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002503s)
+[2023.04.26-17.40.37:678][256]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.04.26-17.40.37:679][256]LogPlayLevel: PIE: World Init took: (0.001178s)
+[2023.04.26-17.40.37:679][256]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel to /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel (0.003829s)
+[2023.04.26-17.40.37:685][256]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2023.04.26-17.40.37:685][256]LogAudio: Display: Creating Audio Device:                 Id: 19, Scope: Unique, Realtime: True
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2023.04.26-17.40.37:685][256]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2023.04.26-17.40.37:685][256]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.04.26-17.40.37:686][256]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.04.26-17.40.37:686][256]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.04.26-17.40.37:686][256]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.04.26-17.40.37:686][256]LogAudioMixer: Display: Initializing audio mixer.
+[2023.04.26-17.40.37:691][256]LogAudioMixer: Display: 0: FrontLeft
+[2023.04.26-17.40.37:691][256]LogAudioMixer: Display: 1: FrontRight
+[2023.04.26-17.40.37:700][256]LogAudioMixer: Display: Using Audio Device 스피커(Logi USB Headset H340)
+[2023.04.26-17.40.37:701][256]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.04.26-17.40.37:701][256]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.04.26-17.40.37:701][256]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.04.26-17.40.37:701][256]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2023.04.26-17.40.37:701][256]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2023.04.26-17.40.37:701][256]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2023.04.26-17.40.37:702][256]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2023.04.26-17.40.37:702][256]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2023.04.26-17.40.37:702][256]LogInit: FAudioDevice initialized.
+[2023.04.26-17.40.37:702][256]LogAudio: Display: Audio Device (ID: 19) registered with world 'EditTestLevel'.
+[2023.04.26-17.40.37:715][256]LogLoad: Game class is 'Project_MFGameModeBase'
+[2023.04.26-17.40.37:716][256]LogWorld: Bringing World /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel.EditTestLevel up for play (max tick rate 0) at 2023.04.27-02.40.37
+[2023.04.26-17.40.37:716][256]LogWorld: Bringing up level for play took: 0.000731
+[2023.04.26-17.40.37:716][256]LogOnline: OSS: Creating online subsystem instance for: :Context_24
+[2023.04.26-17.40.37:718][256]PIE: 서버가 로그인했습니다.
+[2023.04.26-17.40.37:719][256]PIE: 에디터에서 플레이 총 시작 시간 0.046초입니다.
+[2023.04.26-17.41.01:846][105]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Cube)
+[2023.04.26-17.41.10:519][ 75]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.41.10:519][ 75]LogWorld: BeginTearingDown for /Game/Levels/UnUsedLevel/UEDPIE_0_EditTestLevel
+[2023.04.26-17.41.10:519][ 75]LogWorld: UWorld::CleanupWorld for EditTestLevel, bSessionEnded=true, bCleanupResources=true
+[2023.04.26-17.41.10:520][ 75]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.41.10:544][ 75]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2023.04.26-17.41.10:566][ 75]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.04.26-17.41.10:570][ 75]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.04.26-17.41.10:571][ 75]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.41.10:572][ 75]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2023.04.26-17.41.10:573][ 75]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.04.26-17.41.10:575][ 75]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
+[2023.04.26-17.41.10:603][ 76]LogPlayLevel: Display: Destroying online subsystem :Context_24
+[2023.04.26-17.42.14:037][844]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2023.04.26-17.42.14:046][844]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/EditTestLevel06EC5C8D4AA33A45BAA94DAFA0260A4A.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UnUsedLevel/EditTestLevel.umap'
+[2023.04.26-17.42.14:070][844]AssetCheck: New page: 에셋 저장:  EditTestLevel
+[2023.04.26-17.42.14:070][844]LogContentValidation: Display: World /Game/Levels/UnUsedLevel/EditTestLevel.EditTestLevel 유효성 검사 중

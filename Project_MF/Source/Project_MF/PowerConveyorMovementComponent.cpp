@@ -184,19 +184,18 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					{
 						FVector MoveDirection = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector();
 						FVector OriginPoint = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetComponentLocation();
-						FVector GravitationDirection = OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection));
-						
+						FVector GravitationDirection = ((OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection))) - OverlapTarget->GetActorLocation()).GetSafeNormal();
 						
 						UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
 						if (::IsValid(TargetRoot) == true && PhysicsMovement == true)
 						{
-							TargetRoot->SetPhysicsLinearVelocity(MoveDirection * (ActingSpeed * DeltaTime), true);
-							TargetRoot->SetPhysicsLinearVelocity((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+							TargetRoot->SetPhysicsLinearVelocity((MoveDirection + GravitationDirection) * (ActingSpeed * DeltaTime), true);
 						}
-						else if (::IsValid(TargetRoot) == false)
+						else if (::IsValid(TargetRoot) == false || PhysicsMovement == false)
 						{
-							FVector Velocity = MoveDirection * ActingSpeed;
+							FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
 							UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
+							TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector);
 
 							//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
 							//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
@@ -414,7 +413,6 @@ void UPowerConveyorMovementComponent::OnOverlapEnd(UPrimitiveComponent* Overlapp
 void UPowerConveyorMovementComponent::UpdateTargetMovement(USceneComponent* UpdatedComponent, FVector& Velocity, const float DeltaTime)
 {
 	FVector Delta = Velocity * DeltaTime;
-
 	if (Delta.IsNearlyZero(1e-6f) == false)
 	{
 		const FVector OldLocation = UpdatedComponent->GetComponentLocation();
@@ -482,10 +480,10 @@ void UPowerConveyorMovementComponent::HandleImpact(const FHitResult& Hit, float 
 
 FVector UPowerConveyorMovementComponent::ConstrainNormalToPlane(FVector Normal) const
 {
-	if (false)
-	{
-		Normal = FVector::VectorPlaneProject(Normal, FVector::UpVector).GetSafeNormal();
-	}
+	//if (false)
+	//{
+	//	Normal = FVector::VectorPlaneProject(Normal, FVector::UpVector).GetSafeNormal();
+	//}
 
 	return Normal;
 }
@@ -592,10 +590,10 @@ float UPowerConveyorMovementComponent::SlideAlongSurface(USceneComponent* Update
 
 FVector UPowerConveyorMovementComponent::ConstrainDirectionToPlane(FVector Direction) const
 {
-	if (false)
-	{
-		Direction = FVector::VectorPlaneProject(Direction, FVector::UpVector);
-	}
+	//if (false)
+	//{
+	//	Direction = FVector::VectorPlaneProject(Direction, FVector::UpVector);
+	//}
 
 	return Direction;
 }
