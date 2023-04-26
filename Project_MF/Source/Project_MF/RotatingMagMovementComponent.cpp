@@ -14,14 +14,17 @@ AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagn
 	const FVector t1(magDir.X, magDir.Y, 0.f);
 	 FVector t2(goalDir.X, goalDir.Y, 0.f);
 
+	 //magDir가 ZeroVector일 경우.
+	 if (magDir==FVector::ZeroVector) FRotator rotator = owner->GetComponentRotation();
+
 	//움직임 상태에 따른 적용
 	t2 *= type == EMagnetMoveType::PUSHED_OUT ? -1.f : 1.f;
 
 	float cos = FMath::Acos(FVector::DotProduct(t1.GetSafeNormal(), t2.GetSafeNormal()));
 	FVector cross = FVector::CrossProduct(t1, t2);
 
+	//디버그용
 	//UE_LOG(LogTemp, Warning, TEXT("cos: %f"), FMath::RadiansToDegrees(FMath::Acos(cos)))
-
 	//DrawDebugLine(GetWorld(), updated->GetComponentLocation(), updated->GetComponentLocation() + goalDir * 1000.f, FColor::Red, false, 0.1f, 0U, 3.f);
 	//DrawDebugLine(GetWorld(), updated->GetComponentLocation(), updated->GetComponentLocation() + magDir * 1000.f, FColor::Blue, false, 0.1f, 0U, 3.f);
 

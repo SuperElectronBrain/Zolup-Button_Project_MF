@@ -10,7 +10,6 @@
 
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
-class UPlayerUICanvasWidget;
 class UMagneticComponent;
 class UNiagaraComponent;
 class UNiagaraSystem;

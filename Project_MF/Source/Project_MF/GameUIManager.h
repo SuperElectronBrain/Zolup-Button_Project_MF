@@ -8,13 +8,15 @@
 
 DECLARE_MULTICAST_DELEGATE_TwoParams(FUIFadeChangeDelegate, bool isDark, int id)
 
+class IGameUIHandler;
 class UPlayerUICanvasWidget;
+class UUIBlackScreenWidget;
 
 UENUM()
 enum class EFadeType
 {
 	DARK_TO_WHITE = 0b100,
-	WHITE_TO_DARK = 0b010,
+	WHITE_TO_DARK = 0b011,
 	DARK_TO_WHITE_TO_DARK = 0b101,
 	WHITE_TO_DARK_TO_WHITE = 0b010
 };
@@ -27,11 +29,12 @@ struct FUIFadeInfo
 public:
 	EFadeType type;
 	FLinearColor start, goal1, goal3;
-	TWeakObjectPtr<UUserWidget> applyWidget;
+	TScriptInterface<IGameUIHandler> handler;
 	int id;
 	float progressTime;
 	float goal1TimeDiv, goal2TimeDiv, startWaitTimeDiv, middleWaitTimeDiv;
 	int progress;
+	bool pendingKill;
 };
 
 /*게임의 모든 UI를 관리하고, UI관련 유틸리티 기능을 사용할 수 있도록 해주는 클래스입니다.
@@ -58,7 +61,7 @@ public:
 
 	/*Fade InOut*/
 	void PlayFadeInOut(	EFadeType fadeType,
-						UUserWidget* applyWidget,
+						TScriptInterface<IGameUIHandler> handler,
 						float darkTime,
 						float whiteTime,
 						float darkAlpha = 1.f,
@@ -70,15 +73,13 @@ public:
 						FLinearColor whiteColor=FLinearColor::White,
 						bool bStartAlphaUsedOrigin = false );
 
+	void StopFadeInOut(int fadeID);
+	void StopFadeInOutAll();
+	bool IsPlayingFadeByID(int fadeID);
 	bool IsPlayingFade() const { return _fadeInfos.Num() > 0; }
 
-	/*Player UI Canvas*/
 	void GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidget>& outPtr);
-	void DestroyPlayerUICanvasWidget();
-
-	/*BlackScreen*/
-	void GetUIBlackScreenWidget(TWeakObjectPtr<UUserWidget>& outPtr);
-	void DestroyUIBlackScreenWidget();
+	void GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>& outPtr);
 
 private:
 	/////////////////////////
@@ -99,18 +100,13 @@ private:
 	/////////////////////////////
 	/// Fields and Components ///
 	/////////////////////////////
-	UPROPERTY()
 	TArray<FUIFadeInfo> _fadeInfos;
-
-	UPROPERTY()
 	UPlayerUICanvasWidget* _PlayerUICanvas;
-
-	UPROPERTY()
-	UUserWidget* _BlackScreen;
+	UUIBlackScreenWidget* _BlackScreen;
 
 	UPROPERTY(EditInstanceOnly, Category = UI)
 	TSubclassOf<UPlayerUICanvasWidget> PlayerUICanvas_Class;
 
 	UPROPERTY(EditInstanceOnly, Category = UI)
-	TSubclassOf<UUserWidget> BlackScreen_Class;
+	TSubclassOf<UUIBlackScreenWidget> BlackScreen_Class;
 };

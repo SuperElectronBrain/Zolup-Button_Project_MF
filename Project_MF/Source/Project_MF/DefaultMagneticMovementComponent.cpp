@@ -21,9 +21,20 @@ void UDefaultMagneticMovementComponent::StartMovement(EMagnetMoveType moveType, 
 	_moveDir = distance.GetSafeNormal();
 
 	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
-	if (ownerPhysics && ownerPhysics->IsSimulatingPhysics())
+	if (ownerPhysics)
 	{
-		//ownerPhysics->SetPhysicsLinearVelocity(ownerPhysics->GetPhysicsLinearVelocity()*.3f);
+		ownerPhysics->SetPhysicsLinearVelocity(FVector::ZeroVector);
+		ownerPhysics->SetPhysicsAngularVelocity(FVector::ZeroVector);
+	}
+}
+
+void UDefaultMagneticMovementComponent::EndMovement(EMagnetMoveType endType, UMagneticComponent* owner)
+{
+	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
+	if (ownerPhysics)
+	{
+		ownerPhysics->SetPhysicsLinearVelocity(FVector::ZeroVector);
+		ownerPhysics->SetPhysicsAngularVelocity(FVector::ZeroVector);
 	}
 }
 
@@ -33,7 +44,7 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 	UPrimitiveComponent* operatorPhysics = SafeMagOperator->GetAttachmentPrimitive();
 
 	//물리가 적용되는 녀석일 경우.
-	if (ownerPhysics && operatorPhysics && ownerPhysics->IsSimulatingPhysics())
+	if (ownerPhysics && operatorPhysics && ownerPhysics->IsSimulatingPhysics() && type == EMagnetMoveType::DRAWN_IN)
 	{
 		FVector ownerCenter = ownerPhysics->GetCenterOfMass();
 		FVector operatorCenter = operatorPhysics->GetCenterOfMass();
@@ -55,8 +66,22 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 		else if(type==EMagnetMoveType::DRAWN_IN)
 		{
 			ownerPhysics->SetEnableGravity(false);
-			pow = 80000.f * penetrateRatio * ownerPhysics->GetMass();
-			ownerPhysics->AddForceAtLocation(dir * pow, ownerCenter);
+			//pow = 80000.f * penetrateRatio * ownerPhysics->GetMass();
+
+			//UE_LOG(LogTemp, Warning, TEXT("distance: %f"), distance)
+			if (penetrateRatio>=.7f)
+			{
+				pow = 100000.f * ownerPhysics->GetMass();
+				ownerPhysics->AddForceAtLocation(dir * pow, ownerCenter);
+			}
+			else
+			{
+				ownerPhysics->SetPhysicsLinearVelocity((300.f + 300.f * penetrateRatio) * dir);
+			}
+			
+			//UE_LOG(LogTemp, Warning, TEXT("LinearVelocity: %f / AngularVelocity: %f"), ownerPhysics->GetPhysicsLinearVelocity().Size(), ownerPhysics->GetPhysicsAngularVelocity().Size())
+			//ownerPhysics->AddForceAtLocation(dir * pow, ownerCenter);
+			//ownerPhysics->SetPhysicsAngularVelocity(FVector::ZeroVector);
 		}
 
 		return nullptr;

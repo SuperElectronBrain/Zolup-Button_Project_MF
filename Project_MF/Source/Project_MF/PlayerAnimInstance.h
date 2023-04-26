@@ -108,6 +108,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FTransform _ArmRReplaceTransform;
 
+	UPROPERTY(VisibleAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	FVector _LArmJointLocation;
+
 public:
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
 	bool _bPlayerCreep;
