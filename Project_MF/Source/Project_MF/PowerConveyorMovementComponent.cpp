@@ -182,10 +182,12 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					AActor* OverlapTarget = OverlappingActors[i];
 					if (OverlapTarget->GetRootComponent()->Mobility == EComponentMobility::Movable)
 					{
-						FVector MoveDirection = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector();
-						FVector OriginPoint = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetComponentLocation();
+						USceneComponent* DirectionComponent = ::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this);
+						FVector OriginPoint = DirectionComponent->GetComponentLocation();
+						FVector MoveDirection = DirectionComponent->GetForwardVector();
 						FVector GravitationDirection = ((OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection))) - OverlapTarget->GetActorLocation()).GetSafeNormal();
-						
+						if (true) { GravitationDirection = (DirectionComponent->GetRightVector() * FVector::DotProduct(DirectionComponent->GetRightVector(), GravitationDirection)).GetSafeNormal(); }
+
 						UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
 						if (::IsValid(TargetRoot) == true && PhysicsMovement == true)
 						{
@@ -195,7 +197,7 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 						{
 							FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
 							UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
-							TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector);
+							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector); }
 
 							//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
 							//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
