@@ -27,7 +27,4 @@ public:
 	virtual FLinearColor GetColor() const = 0;
 	virtual void SetColor(FLinearColor newColor) = 0;
 
-	virtual int GetIndex() const = 0;
-	virtual void SetIndex(int newIndex) = 0;
-
 };

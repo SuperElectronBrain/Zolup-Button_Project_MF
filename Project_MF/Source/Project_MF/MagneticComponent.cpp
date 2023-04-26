@@ -162,6 +162,7 @@ void UMagneticComponent::OnAttachmentChanged()
 	Super::OnAttachmentChanged();
 
 	USceneComponent* parent = GetAttachParent();
+
 	if (parent)
 	{
 		InitParentAndMaterial();
@@ -328,6 +329,11 @@ void UMagneticComponent::BeginPlay()
 void UMagneticComponent::DestroyComponent(bool bPromoteChilderen)
 {
 	Super::DestroyComponent(bPromoteChilderen);
+
+	if (_parentMesh && ::IsValid(_parentMesh))
+	{
+		_parentMesh->SetMaterial(0, nullptr);
+	}
 
 	if (FieldSpline)
 	{

@@ -1,27 +1,78 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "PlayerUIMagneticInfoWidget.h"
+#include "CustomGameInstance.h"
+#include "HandlerImage.h"
 
-void UPlayerUIMagneticInfoWidget::NativeConstruct()
+void UPlayerUIMagneticInfoWidget::NativeOnInitialized()
 {
-	Super::NativeConstruct();
+	Super::NativeOnInitialized();
+	LLast = RLast = EMagneticType::NONE;
 
-	_magL = Cast<UImage>(GetWidgetFromName(TEXT("MagnetL")));
-	_magR = Cast<UImage>(GetWidgetFromName(TEXT("MagnetR")));
+	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
+	_magL = Cast<UHandlerImage>(GetWidgetFromName(TEXT("MagnetL")));
+	_magR = Cast<UHandlerImage>(GetWidgetFromName(TEXT("MagnetR")));
 
 	//사용이 가능한 상태인지의 여부
 	_bAvaliableImages = _magL != nullptr && _magR != nullptr;
-	ClearInfo();
+
+	if (_bAvaliableImages)
+	{
+		LLast = RLast = EMagneticType::NONE;
+		_magL->SetAlpha(0.f);
+		_magR->SetAlpha(0.f);
+	}
 }
 
 void UPlayerUIMagneticInfoWidget::ClearInfo()
 {
 	if (!_bAvaliableImages) return;
-	
-	FLinearColor clearColor(.0f, .0f, .0f, .0f);
-	_magL->SetColorAndOpacity(clearColor);
-	_magR->SetColorAndOpacity(clearColor);
+
+	LLast = RLast = EMagneticType::NONE;
+	fadeOut(_magL, MAGINFO_FADEID_L);
+	fadeOut(_magR, MAGINFO_FADEID_R);
+}
+
+void UPlayerUIMagneticInfoWidget::fadeIn(UHandlerImage* handler, int id)
+{
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->StopFadeInOut(id);
+		_Instance->GetUIManager()->PlayFadeInOut(
+			EFadeType::WHITE_TO_DARK,
+			handler,
+			MAGINFO_FADE_SECOND,
+			0.f,
+			0.f,
+			0.f,
+			0.f,
+			0.f,
+			id,
+			handler->GetColor(),
+			handler->GetColor(),
+			true
+		);
+	}
+}
+
+void UPlayerUIMagneticInfoWidget::fadeOut(UHandlerImage* handler, int id)
+{
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->StopFadeInOut(id);
+		_Instance->GetUIManager()->PlayFadeInOut(
+			EFadeType::DARK_TO_WHITE,
+			handler,
+			0.f,
+			MAGINFO_FADE_SECOND,
+			1.f,
+			0.f,
+			0.f,
+			0.f,
+			id,
+			handler->GetColor(),
+			handler->GetColor(),
+			true
+		);
+	}
 }
 
 void UPlayerUIMagneticInfoWidget::SetInfo(EMagneticType type1, EMagneticType type2)
@@ -29,12 +80,34 @@ void UPlayerUIMagneticInfoWidget::SetInfo(EMagneticType type1, EMagneticType typ
 	if (!_bAvaliableImages) return;
 
 	FLinearColor clearColor(.0f, .0f, .0f, .0f);
+	bool changeL = type1 != LLast;
+	bool changeR = type2 != RLast;
 
-	if (type1 == EMagneticType::NONE) _magL->SetColorAndOpacity(clearColor);
-		else _magL->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type1));
+	//왼쪽 
+	if (changeL)
+	{
+		if (type1 == EMagneticType::NONE) fadeOut(_magL, MAGINFO_FADEID_L);
+		else
+		{
+			_magL->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type1));
+			fadeIn(_magL, MAGINFO_FADEID_L);
+		}
 
-	if (type2 != EMagneticType::NONE) _magR->SetColorAndOpacity(clearColor);
-		else _magR->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type2));
+		LLast = type1;
+	}
+
+	//오른쪽
+	if (changeR)
+	{
+		if (type2 == EMagneticType::NONE) fadeOut(_magR, MAGINFO_FADEID_R);
+		else
+		{
+			_magR->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type2));
+			fadeIn(_magR, MAGINFO_FADEID_R);
+		}
+
+		RLast = type2;
+	}
 }
 
 void UPlayerUIMagneticInfoWidget::SetInfo(UMagneticComponent* t1, UMagneticComponent* t2=nullptr)
@@ -43,19 +116,35 @@ void UPlayerUIMagneticInfoWidget::SetInfo(UMagneticComponent* t1, UMagneticCompo
 
 	FLinearColor clearColor(.0f, .0f, .0f, .0f);
 	EMagneticType type;
+	bool changeL = t1 ? t1->GetCurrentMagnetic() != LLast:false;
+	bool changeR = t2 ? t2->GetCurrentMagnetic() != RLast:false;
 
-	if (t1 != nullptr && ::IsValid(t1))
+	//왼쪽
+	if (changeL)
 	{
 		type = t1->GetCurrentMagnetic();
-		if (type == EMagneticType::NONE) _magL->SetColorAndOpacity(clearColor);
-		else _magL->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type));
+		if (type == EMagneticType::NONE) fadeOut(_magL, MAGINFO_FADEID_L);
+		else
+		{
+			_magL->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type));
+			fadeIn(_magL, MAGINFO_FADEID_L);
+		}
+
+		LLast = type;
 	}
 
-	if (t2 != nullptr && ::IsValid(t2))
+	//오른쪽
+	if (changeR)
 	{
 		type = t2->GetCurrentMagnetic();
-		if (type == EMagneticType::NONE) _magR->SetColorAndOpacity(clearColor);
-		else _magR->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type));
+		if (type == EMagneticType::NONE) fadeOut(_magR, MAGINFO_FADEID_R);
+		else
+		{
+			_magR->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type));
+			fadeIn(_magR, MAGINFO_FADEID_R);
+		}
+
+		RLast = type;
 	}
 
 

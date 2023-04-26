@@ -2,6 +2,7 @@
 #include "GameMapSectionComponent.h"
 #include "GameCheckPointContainerComponent.h"
 #include "CustomGameInstance.h"
+#include "UIBlackScreenWidget.h"
 
 UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 {
@@ -109,7 +110,7 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 			break;
 
 		case(EHitCheckPointRangeApplyTiming::APPLY_AFTER_UI_FADEOUT):
-			TWeakObjectPtr<UUserWidget> blackScreen;
+			TWeakObjectPtr<UUIBlackScreenWidget> blackScreen;
 			if (_Instance.IsValid())
 			{
 				_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);

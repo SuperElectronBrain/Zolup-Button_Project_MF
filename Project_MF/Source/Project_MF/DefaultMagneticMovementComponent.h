@@ -23,6 +23,7 @@ private:
 	//////////////////////
 	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
 	virtual void StartMovement(EMagnetMoveType moveType, UMagneticComponent* owner, UMagneticComponent* magOperator) override;
+	virtual void EndMovement(EMagnetMoveType endType, UMagneticComponent* owner) override;
 
 	///////////////////////
 	///*Private methods*///

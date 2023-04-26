@@ -1,5 +1,8 @@
 #include "GameUIManager.h"
 #include "PlayerUICanvasWidget.h"
+#include "UIBlackScreenWidget.h"
+#include "Blueprint/WidgetLayoutLibrary.h"
+#include "GameUIHandler.h"
 
 UGameUIManager::UGameUIManager()
 {
@@ -9,7 +12,7 @@ UGameUIManager::UGameUIManager()
 	static ConstructorHelpers::FClassFinder<UUserWidget> PLAYER_UI_CANVAS(
 		TEXT("/Game/UI/PlayerUI_Canvas")
 	);
-	static ConstructorHelpers::FClassFinder<UUserWidget> BLACK_SCREEN(
+	static ConstructorHelpers::FClassFinder<UUIBlackScreenWidget> BLACK_SCREEN(
 		TEXT("/Game/UI/UI_BlackScreen")
 	);
 
@@ -29,7 +32,7 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 		float progressRatio = 0.f;
 
 		//유효하지 않다면 삭제.
-		if (info.applyWidget.IsValid() == false)
+		if (info.handler==nullptr || info.pendingKill)
 		{
 			_fadeInfos.RemoveAt(i);
 			i--;
@@ -54,8 +57,7 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 				if (progressRatio >= 1.f) progressRatio = 1.f;
 				FLinearColor result((info.goal1-info.start)*progressRatio);
 
-				info.applyWidget->SetColorAndOpacity(info.start + result);
-
+				info.handler->SetColor(info.start + result);
 				break;
 			}
 
@@ -73,7 +75,7 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 				if (progressRatio >= 1.f) progressRatio = 1.f;
 				FLinearColor result((info.goal3 - info.goal1) * progressRatio);
 
-				info.applyWidget->SetColorAndOpacity(info.goal1 + result);
+				info.handler->SetColor(info.goal1 + result);
 				break;
 			}
 		}
@@ -92,7 +94,7 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 			info.progress++;
 
 			//종료처리
-			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A))
+			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A) || info.handler==nullptr || info.pendingKill)
 			{
 				_fadeInfos.RemoveAt(i);
 				i--;
@@ -113,7 +115,7 @@ void UGameUIManager::Tick(float DeltaTime)
 }
 
 void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
-									UUserWidget* applyWidget,
+									TScriptInterface<IGameUIHandler> handler,
 									float darkTime,
 									float whiteTime,
 									float darkAlpha,
@@ -125,26 +127,26 @@ void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
 									FLinearColor whiteColor,
 									bool bStartAlphaUsedOrigin)
 {
-	//유효하지 않은 위젯이라면 탈출.
-	if (applyWidget == nullptr || applyWidget && !::IsValid(applyWidget)) return;
-
-	//시간이 0보다 작다면 보정.
-	if (darkTime < 0.f) darkTime = 0.001f;
-	if (whiteTime < 0.f) whiteTime = 0.001f;
-	if (startWaitTime < 0.f) startWaitTime = 0.001f;
-	if (middleWaitTime < 0.f) middleWaitTime = 0.001f;
+	#pragma region Omission
+	//유효하지 않은 위젯이라면 스킵한다.
+	FUIFadeInfo info;
+	if (handler == nullptr) return;
+	info.handler = handler;
 
 	if (bStartAlphaUsedOrigin)
 	{
-		darkAlpha = applyWidget->ColorAndOpacity.A;
+		darkAlpha = info.handler->GetAlpha();
 	}
+
+	//시간이 0보다 작다면 보정.
+	if (darkTime <= 0.f) darkTime = 0.001f;
+	if (whiteTime <= 0.f) whiteTime = 0.001f;
+	if (startWaitTime <= 0.f) startWaitTime = 0.001f;
+	if (middleWaitTime <= 0.f) middleWaitTime = 0.001f;
 
 	bool startDark = ((int)fadeType & 0b100) >= 1;
 	bool middleDark = ((int)fadeType & 0b010) >= 1;
 	bool endDark = ((int)fadeType & 0b001) >= 1;
-
-	FUIFadeInfo info;
-	info.applyWidget = applyWidget;
 
 	info.start = startDark ? darkColor : whiteColor;
 	info.start.A = startDark ? darkAlpha : whiteAlpha;
@@ -156,9 +158,10 @@ void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
 	info.goal3.A = endDark ? darkAlpha : whiteAlpha;
 
 	info.type = fadeType;
+	info.pendingKill = false;
 
 	//계산에 필요한 요소들을 미리 구한다.
-	info.goal1TimeDiv = 1.f / (startDark ? darkTime:whiteTime);
+	info.goal1TimeDiv = 1.f / (middleDark ? darkTime : whiteTime);
 	info.goal2TimeDiv = 1.f / (endDark ? darkTime : whiteTime);
 	info.startWaitTimeDiv = 1.f / startWaitTime;
 	info.middleWaitTimeDiv = 1.f / middleWaitTime;
@@ -166,32 +169,52 @@ void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
 	info.progress = 0;
 	info.progressTime = 0.f;
 
-	//시작이 아웃일 경우
-	applyWidget->SetColorAndOpacity(info.start);
+	//시작 색깔을 적용한다.
+	info.handler->SetColor(info.start);
 
 	_fadeInfos.Add(info);
+	#pragma endregion
 }
 
-void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUserWidget>& outPtr)
+void UGameUIManager::StopFadeInOut(int fadeID)
+{
+	for (FUIFadeInfo& info : _fadeInfos)
+	{
+		if (info.id != fadeID) continue;
+		info.pendingKill = true;
+	}
+}
+
+void UGameUIManager::StopFadeInOutAll()
+{
+	for (FUIFadeInfo& info : _fadeInfos)
+	{
+		info.pendingKill = true;
+	}
+}
+
+bool UGameUIManager::IsPlayingFadeByID(int fadeID)
+{
+	for (FUIFadeInfo& info : _fadeInfos)
+	{
+		if (info.id != fadeID || info.pendingKill) continue;
+		
+		return true;
+	}
+
+	return false;
+}
+
+void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>& outPtr)
 {
 	if (_BlackScreen==nullptr || (_BlackScreen && !::IsValid(_BlackScreen)))
 	{
-		_BlackScreen = CreateWidget(GetWorld(), BlackScreen_Class);
+		_BlackScreen = Cast<UUIBlackScreenWidget>(CreateWidget(GetWorld(), BlackScreen_Class));
+		_BlackScreen->ConditionalBeginDestroy();
 	}
 
 	outPtr.Reset();
 	outPtr = _BlackScreen;
-}
-
-void UGameUIManager::DestroyUIBlackScreenWidget()
-{
-	if (_BlackScreen && ::IsValid(_BlackScreen))
-	{
-		_BlackScreen->RemoveFromViewport();
-		_BlackScreen->RemoveFromParent();
-		_BlackScreen->ConditionalBeginDestroy();
-		_BlackScreen = nullptr;
-	}
 }
 
 void UGameUIManager::GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidget>& outPtr)
@@ -203,15 +226,4 @@ void UGameUIManager::GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidge
 
 	outPtr.Reset();
 	outPtr = _PlayerUICanvas;
-}
-
-void UGameUIManager::DestroyPlayerUICanvasWidget()
-{
-	if (_PlayerUICanvas && ::IsValid(_PlayerUICanvas))
-	{
-		_PlayerUICanvas->RemoveFromViewport();
-		_PlayerUICanvas->RemoveFromParent();
-		_PlayerUICanvas->ConditionalBeginDestroy();
-		_PlayerUICanvas = nullptr;
-	}
 }

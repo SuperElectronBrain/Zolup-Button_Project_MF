@@ -11,6 +11,8 @@
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "CustomGameInstance.h"
+#include "GameUIHandler.h"
+#include "UIBlackScreenWidget.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -36,7 +38,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/PlayerCharacter/Meshs/PlayerArmMeshNew.PlayerArmMeshNew")
 	);
 	static ConstructorHelpers::FClassFinder<UPlayerAnimInstance> ANIM_BLUEPRINT(
-		TEXT("/Game/PlayerCharacter/Animation/PlayerAnimBlueprint.PlayerAnimBlueprint_C")
+		TEXT("/Game/PlayerCharacter/Animations/PlayerAnimBlueprint")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Gun/Gun_effect_shoot_n.Gun_effect_shoot_n")
@@ -58,7 +60,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/*Camera*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
 	Camera->SetupAttachment(SpringArm);
-	Camera->SetRelativeLocationAndRotation(FVector(0.f, 0.f, 8.5f), FRotator::ZeroRotator);
+	Camera->SetRelativeLocationAndRotation(FVector(0.f, 0.f, -1.3f), FRotator::ZeroRotator);
 
 	/*CapsuleComponents*/
 	GetCapsuleComponent()->SetCapsuleRadius(60.4f);/*default: 80.f*/
@@ -114,6 +116,8 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 void AGamePlayerCharacter::SetPlayerMode(EPlayerMode mode)
 {
+
+
 	PlayerMode = mode;
 
 	switch (mode)
@@ -207,7 +211,7 @@ void AGamePlayerCharacter::BeginPlay()
 	if (_Instance.IsValid())
 	{
 		TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
-		TWeakObjectPtr<UUserWidget> blackScreen;
+		TWeakObjectPtr<UUIBlackScreenWidget> blackScreen;
 
 		//Player UI
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
@@ -222,27 +226,14 @@ void AGamePlayerCharacter::BeginPlay()
 		if (blackScreen.IsValid())
 		{
 			blackScreen->AddToViewport();
-
-			_Instance->GetUIManager()->PlayFadeInOut(
-				EFadeType::DARK_TO_WHITE,
-				blackScreen.Get(),
-				1.f,
-				0.f,
-				1.f,
-				0.f,
-				1.5f,
-				0.f,
-				-1,
-				FLinearColor::Black,
-				FLinearColor::Black
-			);
+			blackScreen->SetAlpha(0.f);
 		}
 
 		//FadeChange 이벤트 추가.
 		_fadeHandle = _Instance->GetUIManager()->OnUIFadeChange.AddUObject(this, &AGamePlayerCharacter::FadeChange);
 	}
 
-	//캡슐 콜라이더 수정
+	//캡슐 콜라이더 
 	UCapsuleComponent* capsule = GetCapsuleComponent();
 	if (capsule)
 	{
@@ -465,9 +456,9 @@ void AGamePlayerCharacter::StageRestart()
 {
 	static bool apply = false;
 
-	GetWorldSettings()->SetTimeDilation(!apply?0.05f:1.f);
-	apply = !apply;
-	return;
+	//GetWorldSettings()->SetTimeDilation(!apply?0.05f:1.f);
+	//apply = !apply;
+	//return;
 	if (_stiffen != 0.f) return;
 	TArray<UPrimitiveComponent*> overlaps;
 	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
@@ -479,7 +470,7 @@ void AGamePlayerCharacter::StageRestart()
 		if (_CurrSection.IsValid())
 		{
 			//Player UI를 받아온다.
-			TWeakObjectPtr<UUserWidget> blackScreen;
+			TWeakObjectPtr<UUIBlackScreenWidget> blackScreen;
 			if (_Instance.IsValid())
 			{
 				_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
@@ -750,7 +741,7 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 
 void AGamePlayerCharacter::OnMagnetic(EMagneticType type, UMagneticComponent* magnet)
 {
-	if (type != EMagneticType::NONE) PlayerAnim->PlaySelfShootMontage(.3f, .85f);
+	if (type != EMagneticType::NONE && PlayerAnim) PlayerAnim->PlaySelfShootMontage(.3f, .85f);
 }
 
 void AGamePlayerCharacter::OffMagnetic(EMagneticType prevType, UMagneticComponent* magnet)

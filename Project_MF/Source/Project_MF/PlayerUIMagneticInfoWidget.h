@@ -8,6 +8,12 @@
 #include "MagneticComponent.h"
 #include "PlayerUIMagneticInfoWidget.generated.h"
 
+class UCustomGameInstance;
+class UHandlerImage;
+
+#define MAGINFO_FADEID_L 87
+#define MAGINFO_FADEID_R 88 
+#define MAGINFO_FADE_SECOND .8f
 
 UCLASS()
 class PROJECT_MF_API UPlayerUIMagneticInfoWidget final : public UUserWidget
@@ -15,22 +21,36 @@ class PROJECT_MF_API UPlayerUIMagneticInfoWidget final : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	/*Construct*/
-	virtual void NativeConstruct() override;
+	////////////////////
+	/// Constructor ////
+	////////////////////
+	virtual void NativeOnInitialized() override;
 
-	/*Public method*/
+	//////////////////////
+	/// Public method ///
+	/////////////////////
 	void ClearInfo();
 	void SetInfo(EMagneticType type1, EMagneticType type2);
 	void SetInfo(UMagneticComponent* t1, UMagneticComponent* t2);
 
 private:
-	/*fields and components*/
+	///////////////////////
+	/// Private methods ///
+	///////////////////////
+	void fadeIn(UHandlerImage* handler, int id);
+	void fadeOut(UHandlerImage* handler, int id);
+
+	////////////////////////////////
+	///// fields and components ////
+	///////////////////////////////
+	TWeakObjectPtr<UCustomGameInstance> _Instance;
 	bool _bAvaliableImages;
+	EMagneticType LLast, RLast;
 
 	UPROPERTY()
-	UImage* _magL;
+	UHandlerImage* _magL;
 
 	UPROPERTY()
-	UImage* _magR;
+	UHandlerImage* _magR;
 	
 };
