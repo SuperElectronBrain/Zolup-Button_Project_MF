@@ -184,18 +184,27 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 						FVector OriginPoint = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetComponentLocation();
 						FVector GravitationDirection = OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection));
 						
-						UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
-						if (::IsValid(TargetRoot) == true)
+						if(PhysicsMovement == true)
 						{
-							TargetRoot->SetPhysicsLinearVelocity(MoveDirection * (ActingSpeed * DeltaTime), true);
-							TargetRoot->SetPhysicsLinearVelocity((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+							UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
+							if (::IsValid(TargetRoot) == true)
+							{
+								TargetRoot->SetPhysicsLinearVelocity(MoveDirection * (ActingSpeed * DeltaTime), true);
+								TargetRoot->SetPhysicsLinearVelocity((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+							}
+							else if (::IsValid(TargetRoot) == false)
+							{
+								//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
+								OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
+								OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+							}
 						}
-						//else if (::IsValid(TargetRoot) == false)
-						//{
-							//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
-							//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
-							//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime);
-						//}
+						else if (PhysicsMovement == false)
+						{
+							OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
+							OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+						}
+						
 					}
 				}
 
