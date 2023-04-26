@@ -2,14 +2,16 @@
 
 
 #include "PowerConveyorMovementComponent.h"
-#include "MovementRegistComponent.h"
+//#include "MovementRegistComponent.h"
+#include "PhysicsEngine/PhysicsSettings.h"
+#include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/FloatingPawnMovement.h"
 #include "DrawDebugHelpers.h"
 
 UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
-	//PrimaryComponentTick.TickGroup = TG_DuringPhysics;
-
+	//PrimaryComponentTick.TickGroup = TG_PrePhysics;
 //#if WITH_EDITORONLY_DATA
 	//ArrowComponent = CreateEditorOnlyDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
 	//ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
@@ -79,7 +81,7 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
 	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
 	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
-	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X * 1.0f, OwnerRootBounds.Y * 1.0f, OwnerRootBounds.Z * 1.2f));
+	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X * 1.0f, OwnerRootBounds.Y * 1.0f, OwnerRootBounds.Z * 10.0f));
 	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
 
 	//ArrowComponent->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::KeepRelativeTransform);
@@ -171,12 +173,44 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 		{
 			if (ObserveTargetExecutionComponent->GetPowerState() == true)
 			{
-				for (int i = 0; i < MovableTargets.Num(); i = i + 1)
+				TArray<AActor*> OverlappingActors;
+				Trigger->GetOverlappingActors(OverlappingActors);
+				for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
 				{
-					MovableTargets[i]->AddActorWorldOffset((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector() * (ActingSpeed * DeltaTime));
+					AActor* OverlapTarget = OverlappingActors[i];
+					if (OverlapTarget->GetRootComponent()->Mobility == EComponentMobility::Movable)
+					{
+						FVector MoveDirection = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector();
+						FVector OriginPoint = (::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetComponentLocation();
+						FVector GravitationDirection = OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection));
+						
+						UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
+						if (::IsValid(TargetRoot) == true)
+						{
+							TargetRoot->SetPhysicsLinearVelocity(MoveDirection * (ActingSpeed * DeltaTime), true);
+							TargetRoot->SetPhysicsLinearVelocity((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+						}
+						//else if (::IsValid(TargetRoot) == false)
+						//{
+							//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
+							//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
+							//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime);
+						//}
+					}
 				}
 
 #pragma region UnUsed
+				//for (int i = 0; i < MovableTargets.Num(); i = i + 1)
+				//{
+				//	AActor* MovableTarget = MovableTargets[i];
+				//	MovableTarget->AddActorWorldOffset((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector() * (ActingSpeed * DeltaTime));
+				//	UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(MovableTarget->GetRootComponent());
+				//	if (::IsValid(TargetRoot) == true)
+				//	{
+				//		TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector, true);
+				//	}
+				//}
+				
 				//TArray<AActor*> OverlappingActors;
 				//Trigger->GetOverlappingActors(OverlappingActors);
 				//for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
