@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B8E838B0-57F4-46EB-8E63-653FC09EC7E8}</UniqueIdentifier>
+      <UniqueIdentifier>{B5FA6B03-C84E-4833-81D0-1ABEDD0B4C5F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{AB3D67CC-E78D-44B2-A20C-356A639FF24D}</UniqueIdentifier>
+      <UniqueIdentifier>{8297FE18-139D-430A-ADD0-CDB9F1ACB8E4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{ED7F6893-3720-40B4-9B93-33148BAEE9CC}</UniqueIdentifier>
+      <UniqueIdentifier>{5C72F8A7-F117-429F-8349-53033480D7E5}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CanvasActor.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -123,6 +123,24 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\GamePlayerCharacter.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameUIHandler.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameUIHandler.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\GameUIManager.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\GameUIManager.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\HandlerImage.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\HandlerImage.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MagneticComponent.cpp">
@@ -332,16 +350,16 @@
     <ClInclude Include="..\..\Source\Project_MF\TestPlayerGameMode.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\UIBlackScreenWidget.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\UIBlackScreenWidget.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\UIPopupTriggerComponent.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\UIPopupTriggerComponent.h">
-      <Filter>Source\Project_MF</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Project_MF\WidgetFunctionLibrary.cpp">
-      <Filter>Source\Project_MF</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Project_MF\WidgetFunctionLibrary.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
   </ItemGroup>
