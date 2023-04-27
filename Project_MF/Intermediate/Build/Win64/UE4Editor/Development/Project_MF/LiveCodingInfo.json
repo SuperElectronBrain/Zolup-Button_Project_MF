@@ -41,6 +41,7 @@
 			"PlayerUIMagneticInfoWidget.cpp.obj",
 			"PowerComponent.cpp.obj",
 			"PowerConnectionComponent.cpp.obj",
+			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
 			"PowerExecutionComponent.cpp.obj",
 			"PowerGenerateComponent.cpp.obj",
@@ -55,8 +56,7 @@
 			"TestActorObject.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
 			"UIBlackScreenWidget.cpp.obj",
-			"UIPopupTriggerComponent.cpp.obj",
-			"PowerConveyorMovementComponent.cpp.obj"
+			"UIPopupTriggerComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CanvasActor.gen.cpp.obj",
