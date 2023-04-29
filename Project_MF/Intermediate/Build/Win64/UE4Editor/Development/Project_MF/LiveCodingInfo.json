@@ -55,8 +55,9 @@
 			"TestActorObject.cpp.obj",
 			"TestPlayerGameMode.cpp.obj",
 			"UIBlackScreenWidget.cpp.obj",
-			"UIPopupTriggerComponent.cpp.obj",
-			"PowerConveyorMovementComponent.cpp.obj"
+			"PowerConveyorMovementComponent.cpp.obj",
+			"PowerObjectSpawnerComponent.cpp.obj",
+			"UIPopupTriggerComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CanvasActor.gen.cpp.obj",
@@ -104,6 +105,7 @@
 			"PowerGenerateComponent.gen.cpp.obj",
 			"PowerLightControlComponent.gen.cpp.obj",
 			"PowerMovementComponent.gen.cpp.obj",
+			"PowerObjectSpawnerComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
 			"Project_MF.init.gen.cpp.obj",

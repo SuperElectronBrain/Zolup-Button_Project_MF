@@ -49,7 +49,7 @@ void UUIPopupTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 
 					if (OneTime == true)
 					{
-						PrimaryComponentTick.bCanEverTick = false;
+						SetComponentTickEnabled(false);
 					}
 				}
 				break;
