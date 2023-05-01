@@ -19,6 +19,15 @@ void UPowerSensorComponent::BeginPlay()
 	Super::BeginPlay();
 	SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 	SetGenerateOverlapEvents(true);
+
+	if (::IsValid(ReceivingTarget) == true)
+	{
+		UPowerGenerateComponent* ReceivingTargetGenerateComponent = ReceivingTarget->FindComponentByClass<UPowerGenerateComponent>();
+		if (::IsValid(ReceivingTargetGenerateComponent) == true)
+		{
+			ReceivingTargetGenerateComponent->SetPowerState(ReversSignal, true);
+		}
+	}
 }
 
 void UPowerSensorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -72,6 +81,11 @@ void UPowerSensorComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 				if (ReceivingTargetGenerateComponent->GetPowerState() == ReversSignal)
 				{
 					ReceivingTargetGenerateComponent->SetPowerState(!ReversSignal, true);
+				}
+
+				if (NonReversibleSignal == true)
+				{
+					SetComponentTickEnabled(false);
 				}
 			}
 			else if (Count < 1)

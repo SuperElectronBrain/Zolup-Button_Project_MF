@@ -15,8 +15,8 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 #pragma endregion
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
-	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
+	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
+	//if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 #pragma region UnUsed
 	//Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -49,11 +49,11 @@ void UPowerGenerateComponent::BeginPlay()
 	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
 	if (::IsValid(OwnerRootPrimitive) == true)
 	{
-		if (MaterialOrigin != nullptr)
-		{
-			MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
-			OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
-		}
+		//if (MaterialOrigin != nullptr)
+		//{
+		//	MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
+		//	OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
+		//}
 		//OwnerRootPrimitive->SetCollisionProfileName(TEXT("Collider"));
 		//OwnerRootPrimitive->SetGenerateOverlapEvents(true);
 	}
@@ -82,7 +82,7 @@ void UPowerGenerateComponent::BeginPlay()
 
 	SetPowerState(!bPowerState, true);
 	SetPowerState(!bPowerState, true);
-	UpdateMaterialColor();
+	//UpdateMaterialColor();
 }
 
 void UPowerGenerateComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -177,7 +177,7 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 				}
 			}
 		}
-		UpdateMaterialColor();
+		//UpdateMaterialColor();
 	}
 }
 

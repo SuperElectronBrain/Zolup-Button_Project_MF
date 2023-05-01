@@ -3,7 +3,11 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
+<<<<<<< HEAD
       <UniqueIdentifier>{B5FA6B03-C84E-4833-81D0-1ABEDD0B4C5F}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{6E9A7072-5F40-468E-B282-A7A778D6D85B}</UniqueIdentifier>
+>>>>>>> 0.0.3-IJ
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +16,11 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
+<<<<<<< HEAD
       <UniqueIdentifier>{8297FE18-139D-430A-ADD0-CDB9F1ACB8E4}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{A5A63131-A0AE-49AE-8CD1-84C854C2FED4}</UniqueIdentifier>
+>>>>>>> 0.0.3-IJ
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +35,11 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
+<<<<<<< HEAD
       <UniqueIdentifier>{5C72F8A7-F117-429F-8349-53033480D7E5}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{3D0610D3-B097-4594-9A59-52033B26529B}</UniqueIdentifier>
+>>>>>>> 0.0.3-IJ
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CanvasActor.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -299,6 +311,12 @@
     <ClInclude Include="..\..\Source\Project_MF\PowerMovementComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerObjectSpawnerComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerObjectSpawnerComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PowerRotationMovementComponent.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -309,6 +327,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\PowerSensorComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerVisibleControlComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerVisibleControlComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <None Include="..\..\Source\Project_MF\Project_MF.Build.cs">

@@ -425,7 +425,7 @@ void UPowerConveyorMovementComponent::UpdateTargetMovement(USceneComponent* Upda
 
 		if (Hit.IsValidBlockingHit())
 		{
-			HandleImpact(Hit, DeltaTime, Delta);
+			//HandleImpact(Hit, DeltaTime, Delta);
 			// Try to slide the remaining distance along the surface.
 			SlideAlongSurface(UpdatedComponent, Delta, 1.0f - Hit.Time, Hit.Normal, Hit, true);
 		}
@@ -475,32 +475,33 @@ namespace MovementComponentCVars
 		ECVF_Default);
 }
 
-void UPowerConveyorMovementComponent::HandleImpact(const FHitResult& Hit, float TimeSlice, const FVector& MoveDelta)
-{
+//void UPowerConveyorMovementComponent::HandleImpact(const FHitResult& Hit, float TimeSlice, const FVector& MoveDelta)
+//{
+//
+//}
 
-}
-
-FVector UPowerConveyorMovementComponent::ConstrainNormalToPlane(FVector Normal) const
-{
-	//if (false)
-	//{
-	//	Normal = FVector::VectorPlaneProject(Normal, FVector::UpVector).GetSafeNormal();
-	//}
-
-	return Normal;
-}
+//FVector UPowerConveyorMovementComponent::ConstrainNormalToPlane(FVector Normal) const
+//{
+//	//if (false)
+//	//{
+//	//	Normal = FVector::VectorPlaneProject(Normal, FVector::UpVector).GetSafeNormal();
+//	//}
+//
+//	return Normal;
+//}
 
 FVector UPowerConveyorMovementComponent::ComputeSlideVector(const FVector& Delta, const float Time, const FVector& Normal, const FHitResult& Hit) const
 {
-	if (false)
-	{
-		return FVector::VectorPlaneProject(Delta, Normal) * Time;
-	}
-	else
-	{
-		const FVector ProjectedNormal = ConstrainNormalToPlane(Normal);
+	//if (false)
+	//{
+	//	return FVector::VectorPlaneProject(Delta, Normal) * Time;
+	//}
+	//else
+	//{
+		//const FVector ProjectedNormal = ConstrainNormalToPlane(Normal);
+		const FVector ProjectedNormal = Normal;
 		return FVector::VectorPlaneProject(Delta, ProjectedNormal) * Time;
-	}
+	//}
 }
 
 void UPowerConveyorMovementComponent::TwoWallAdjust(FVector& OutDelta, const FHitResult& Hit, const FVector& OldHitNormal) const
@@ -560,10 +561,10 @@ float UPowerConveyorMovementComponent::SlideAlongSurface(USceneComponent* Update
 		if (Hit.IsValidBlockingHit())
 		{
 			// Notify first impact
-			if (bHandleImpact)
-			{
-				HandleImpact(Hit, FirstHitPercent * Time, SlideDelta);
-			}
+			//if (bHandleImpact)
+			//{
+			//	HandleImpact(Hit, FirstHitPercent * Time, SlideDelta);
+			//}
 
 			// Compute new slide normal when hitting multiple surfaces.
 			TwoWallAdjust(SlideDelta, Hit, OldHitNormal);
@@ -577,10 +578,10 @@ float UPowerConveyorMovementComponent::SlideAlongSurface(USceneComponent* Update
 				PercentTimeApplied += SecondHitPercent;
 
 				// Notify second impact
-				if (bHandleImpact && Hit.bBlockingHit)
-				{
-					HandleImpact(Hit, SecondHitPercent * Time, SlideDelta);
-				}
+				//if (bHandleImpact && Hit.bBlockingHit)
+				//{
+				//	HandleImpact(Hit, SecondHitPercent * Time, SlideDelta);
+				//}
 			}
 		}
 
@@ -590,36 +591,45 @@ float UPowerConveyorMovementComponent::SlideAlongSurface(USceneComponent* Update
 	return 0.0f;
 }
 
-FVector UPowerConveyorMovementComponent::ConstrainDirectionToPlane(FVector Direction) const
-{
-	//if (false)
-	//{
-	//	Direction = FVector::VectorPlaneProject(Direction, FVector::UpVector);
-	//}
+//FVector UPowerConveyorMovementComponent::ConstrainDirectionToPlane(FVector Direction) const
+//{
+//	//if (false)
+//	//{
+//	//	Direction = FVector::VectorPlaneProject(Direction, FVector::UpVector);
+//	//}
+//
+//	return Direction;
+//}
 
-	return Direction;
-}
+//bool UPowerConveyorMovementComponent::MoveUpdatedComponentImpl(USceneComponent* UpdatedComponent, const FVector& Delta, const FQuat& NewRotation, bool bSweep, FHitResult* OutHit, ETeleportType Teleport)
+//{
+//	if (UpdatedComponent)
+//	{
+//		//const FVector NewDelta = ConstrainDirectionToPlane(Delta);
+//		const FVector NewDelta = Delta;
+//		return UpdatedComponent->MoveComponent(NewDelta, NewRotation, bSweep, OutHit, MoveComponentFlags, Teleport);
+//	}
+//	
+//	return false;
+//}
 
-bool UPowerConveyorMovementComponent::MoveUpdatedComponentImpl(USceneComponent* UpdatedComponent, const FVector& Delta, const FQuat& NewRotation, bool bSweep, FHitResult* OutHit, ETeleportType Teleport)
+FORCEINLINE_DEBUGGABLE bool UPowerConveyorMovementComponent::MoveUpdatedComponent(USceneComponent* UpdatedComponent, const FVector& Delta, const FQuat& NewRotation, bool bSweep, FHitResult* OutHit, ETeleportType Teleport)
 {
+	//return MoveUpdatedComponentImpl(UpdatedComponent, Delta, NewRotation, bSweep, OutHit, Teleport);
 	if (UpdatedComponent)
 	{
-		const FVector NewDelta = ConstrainDirectionToPlane(Delta);
+		//const FVector NewDelta = ConstrainDirectionToPlane(Delta);
+		const FVector NewDelta = Delta;
 		return UpdatedComponent->MoveComponent(NewDelta, NewRotation, bSweep, OutHit, MoveComponentFlags, Teleport);
 	}
 
 	return false;
 }
 
-FORCEINLINE_DEBUGGABLE bool UPowerConveyorMovementComponent::MoveUpdatedComponent(USceneComponent* UpdatedComponent, const FVector& Delta, const FQuat& NewRotation, bool bSweep, FHitResult* OutHit, ETeleportType Teleport)
-{
-	return MoveUpdatedComponentImpl(UpdatedComponent, Delta, NewRotation, bSweep, OutHit, Teleport);
-}
-
-FORCEINLINE_DEBUGGABLE bool UPowerConveyorMovementComponent::MoveUpdatedComponent(USceneComponent* UpdatedComponent, const FVector& Delta, const FRotator& NewRotation, bool bSweep, FHitResult* OutHit, ETeleportType Teleport)
-{
-	return MoveUpdatedComponentImpl(UpdatedComponent, Delta, NewRotation.Quaternion(), bSweep, OutHit, Teleport);
-}
+//FORCEINLINE_DEBUGGABLE bool UPowerConveyorMovementComponent::MoveUpdatedComponent(USceneComponent* UpdatedComponent, const FVector& Delta, const FRotator& NewRotation, bool bSweep, FHitResult* OutHit, ETeleportType Teleport)
+//{
+//	return MoveUpdatedComponentImpl(UpdatedComponent, Delta, NewRotation.Quaternion(), bSweep, OutHit, Teleport);
+//}
 
 FVector UPowerConveyorMovementComponent::GetPenetrationAdjustment(const FHitResult& Hit) const
 {
@@ -634,7 +644,8 @@ FVector UPowerConveyorMovementComponent::GetPenetrationAdjustment(const FHitResu
 
 	Result = Hit.Normal * (PenetrationDepth + PullBackDistance);
 
-	return ConstrainDirectionToPlane(Result);
+	//return ConstrainDirectionToPlane(Result);
+	return Result;
 }
 
 void UPowerConveyorMovementComponent::InitCollisionParams(USceneComponent* UpdatedComponent, FCollisionQueryParams& OutParams, FCollisionResponseParams& OutResponseParam) const
@@ -657,14 +668,15 @@ bool UPowerConveyorMovementComponent::OverlapTest(USceneComponent* UpdatedCompon
 bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* UpdatedComponent, const FVector& ProposedAdjustment, const FHitResult& Hit, const FQuat& NewRotationQuat)
 {
 	// SceneComponent can't be in penetration, so this function really only applies to PrimitiveComponent.
-	const FVector Adjustment = ConstrainDirectionToPlane(ProposedAdjustment);
+	//const FVector Adjustment = ConstrainDirectionToPlane(ProposedAdjustment);
+	const FVector Adjustment = ProposedAdjustment;
 	UPrimitiveComponent* UpdatedPrimitive = Cast<UPrimitiveComponent>(UpdatedComponent);
 	if (!Adjustment.IsZero() && ::IsValid(UpdatedPrimitive) == true)
 	{
 		QUICK_SCOPE_CYCLE_COUNTER(STAT_MovementComponent_ResolvePenetration);
 		// See if we can fit at the adjusted location without overlapping anything.
 		AActor* ActorOwner = UpdatedComponent->GetOwner();
-		if (!ActorOwner)
+		if (::IsValid(ActorOwner) == false)
 		{
 			return false;
 		}
@@ -683,7 +695,7 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 		// so make the overlap test a bit more restrictive.
 		const float OverlapInflation = MovementComponentCVars::PenetrationOverlapCheckInflation;
 		bool bEncroached = OverlapTest(UpdatedComponent, Hit.TraceStart + Adjustment, NewRotationQuat, UpdatedPrimitive->GetCollisionObjectType(), UpdatedPrimitive->GetCollisionShape(OverlapInflation), ActorOwner);
-		if (!bEncroached)
+		if (bEncroached == false)
 		{
 			// Move without sweeping.
 			MoveUpdatedComponent(UpdatedComponent, Adjustment, NewRotationQuat, false, nullptr, ETeleportType::TeleportPhysics);
@@ -701,12 +713,12 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 			UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (success = %d)"), *Adjustment.ToString(), bMoved);
 
 			// Still stuck?
-			if (!bMoved && SweepOutHit.bStartPenetrating)
+			if (bMoved == false && SweepOutHit.bStartPenetrating)
 			{
 				// Combine two MTD results to get a new direction that gets out of multiple surfaces.
 				const FVector SecondMTD = GetPenetrationAdjustment(SweepOutHit);
 				const FVector CombinedMTD = Adjustment + SecondMTD;
-				if (SecondMTD != Adjustment && !CombinedMTD.IsZero())
+				if (SecondMTD != Adjustment && CombinedMTD.IsZero() == false)
 				{
 					bMoved = MoveUpdatedComponent(UpdatedComponent, CombinedMTD, NewRotationQuat, true, nullptr, ETeleportType::TeleportPhysics);
 					UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (MTD combo success = %d)"), *CombinedMTD.ToString(), bMoved);
@@ -714,11 +726,12 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 			}
 
 			// Still stuck?
-			if (!bMoved)
+			if (bMoved == false)
 			{
 				// Try moving the proposed adjustment plus the attempted move direction. This can sometimes get out of penetrations with multiple objects
-				const FVector MoveDelta = ConstrainDirectionToPlane(Hit.TraceEnd - Hit.TraceStart);
-				if (!MoveDelta.IsZero())
+				//const FVector MoveDelta = ConstrainDirectionToPlane(Hit.TraceEnd - Hit.TraceStart);
+				const FVector MoveDelta = Hit.TraceEnd - Hit.TraceStart;
+				if (MoveDelta.IsZero() == false)
 				{
 					bMoved = MoveUpdatedComponent(UpdatedComponent, Adjustment + MoveDelta, NewRotationQuat, true, nullptr, ETeleportType::TeleportPhysics);
 					UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (adjusted attempt success = %d)"), *(Adjustment + MoveDelta).ToString(), bMoved);
@@ -765,7 +778,7 @@ bool UPowerConveyorMovementComponent::SafeMoveUpdatedComponent(USceneComponent* 
 	}
 
 	// Handle initial penetrations
-	if (OutHit.bStartPenetrating && UpdatedComponent)
+	if (OutHit.bStartPenetrating && IsValid(UpdatedComponent) == true)
 	{
 		const FVector RequestedAdjustment = GetPenetrationAdjustment(OutHit);
 		if (ResolvePenetration(UpdatedComponent, RequestedAdjustment, OutHit, NewRotation))
