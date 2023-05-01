@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Project_MF.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{15872663-E2E4-4F6A-A0B5-72FC6F4A4753}</UniqueIdentifier>
+      <UniqueIdentifier>{6E9A7072-5F40-468E-B282-A7A778D6D85B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Project_MF.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{C5ED15B3-0CE4-493E-85DD-FA0B4E2E3BE9}</UniqueIdentifier>
+      <UniqueIdentifier>{A5A63131-A0AE-49AE-8CD1-84C854C2FED4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Project_MF">
-      <UniqueIdentifier>{60E79000-A859-4B3F-9F99-B2D928DFBD73}</UniqueIdentifier>
+      <UniqueIdentifier>{3D0610D3-B097-4594-9A59-52033B26529B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Project_MF\CanvasActor.cpp">
       <Filter>Source\Project_MF</Filter>
@@ -315,6 +315,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\PowerSensorComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerVisibleControlComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerVisibleControlComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <None Include="..\..\Source\Project_MF\Project_MF.Build.cs">

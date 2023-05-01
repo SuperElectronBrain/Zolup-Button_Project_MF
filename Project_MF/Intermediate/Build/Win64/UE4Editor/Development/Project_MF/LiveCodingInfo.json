@@ -42,9 +42,13 @@
 			"PowerComponent.cpp.obj",
 			"PowerConveyorMovementComponent.cpp.obj",
 			"PowerDirectionMovementComponent.cpp.obj",
+			"PowerExecutionComponent.cpp.obj",
+			"PowerGenerateComponent.cpp.obj",
+			"PowerLightControlComponent.cpp.obj",
 			"PowerMovementComponent.cpp.obj",
 			"PowerObjectSpawnerComponent.cpp.obj",
 			"PowerRotationMovementComponent.cpp.obj",
+			"PowerSensorComponent.cpp.obj",
 			"Project_MF.cpp.obj",
 			"Project_MFGameModeBase.cpp.obj",
 			"RotatingMagMovementComponent.cpp.obj",
@@ -54,10 +58,7 @@
 			"UIBlackScreenWidget.cpp.obj",
 			"UIPopupTriggerComponent.cpp.obj",
 			"PowerConnectionComponent.cpp.obj",
-			"PowerExecutionComponent.cpp.obj",
-			"PowerGenerateComponent.cpp.obj",
-			"PowerLightControlComponent.cpp.obj",
-			"PowerSensorComponent.cpp.obj"
+			"PowerVisibleControlComponent.cpp.obj"
 		],
 		"Module.Project_MF.gen.cpp.obj": [
 			"CanvasActor.gen.cpp.obj",
@@ -108,6 +109,7 @@
 			"PowerObjectSpawnerComponent.gen.cpp.obj",
 			"PowerRotationMovementComponent.gen.cpp.obj",
 			"PowerSensorComponent.gen.cpp.obj",
+			"PowerVisibleControlComponent.gen.cpp.obj",
 			"Project_MF.init.gen.cpp.obj",
 			"Project_MFGameModeBase.gen.cpp.obj",
 			"RotatingMagMovementComponent.gen.cpp.obj",

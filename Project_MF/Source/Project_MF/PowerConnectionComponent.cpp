@@ -14,6 +14,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	ObjectLength = 1;
 	TriggerSize = 1;
 
+#pragma region UnUsed
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
 
@@ -34,7 +35,6 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 //	}
 //#endif
 
-#pragma region UnUsed
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Game/Resource/Materials/M_MFMaterial.M_MFMaterial"));
@@ -50,7 +50,6 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	//		Mesh->SetMaterial(0, M_MATERIAL.Object);
 	//	}
 	//}
-#pragma endregion
 
 	//LeftPart = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LeftPart"));
 	//LeftPart->SetupAttachment(this);
@@ -71,6 +70,7 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 	//		RightPart->SetMaterial(0, M_MATERIAL.Object);
 	//	}
 	//}
+#pragma endregion
 
 	LeftCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("LeftCollider"));
 	LeftCollider->SetupAttachment(this);
@@ -152,6 +152,7 @@ void UPowerConnectionComponent::BeginPlay()
 	OwnerRootBounds.Y = OwnerRootBounds.Y / OwnerRootScale.Y;
 	FVector ComponentLocation = FVector(0.0f, (OwnerRootBounds.Y * 2) * (ObjectLength - 1) / 2, 0.0f);
 
+#pragma region UnUsed
 	//SetRelativeScale3D(FVector::OneVector);
 	//Meshs[0]->SetRelativeScale3D(FVector(1.0f, 1.0f, 1.0f));
 	//UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
@@ -176,7 +177,7 @@ void UPowerConnectionComponent::BeginPlay()
 	//LeftPart->SetRelativeLocation(-ComponentLocation);
 	//CenterPart->SetRelativeScale3D(FVector(1.0f, ObjectLength < 4 ? 1 : ObjectLength - 2, 1.0f));
 	//RightPart->SetRelativeLocation(ComponentLocation);
-
+#pragma endregion
 
 	if (::IsValid(LeftCollider) == true)
 	{
@@ -550,7 +551,7 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 			}
 		}
 
-		UpdateMaterialColor();
+		//UpdateMaterialColor();
 	}
 }
 
