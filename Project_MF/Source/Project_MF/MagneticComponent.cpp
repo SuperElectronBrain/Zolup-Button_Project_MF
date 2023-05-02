@@ -117,7 +117,7 @@ void UMagneticComponent::RemoveNoActiveMovmeent(UMovementComponent* element)
 	_NoActiveMovements.Remove(element);
 }
 
-bool UMagneticComponent::CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const
+bool UMagneticComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
 	return (ChildComponent == FieldCollision || ChildComponent == FieldSpline);
 }
@@ -737,6 +737,3 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	}
 	#pragma endregion
 }
-
-
-

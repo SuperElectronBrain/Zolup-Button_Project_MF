@@ -24,7 +24,7 @@ void UDefaultMagneticMovementComponent::StartMovement(EMagnetMoveType moveType, 
 	if (ownerPhysics)
 	{
 		ownerPhysics->SetPhysicsLinearVelocity(FVector::ZeroVector);
-		ownerPhysics->SetPhysicsAngularVelocity(FVector::ZeroVector);
+		ownerPhysics->SetPhysicsAngularVelocityInRadians(FMath::DegreesToRadians(FVector::ZeroVector));
 	}
 }
 
@@ -34,7 +34,7 @@ void UDefaultMagneticMovementComponent::EndMovement(EMagnetMoveType endType, UMa
 	if (ownerPhysics)
 	{
 		ownerPhysics->SetPhysicsLinearVelocity(FVector::ZeroVector);
-		ownerPhysics->SetPhysicsAngularVelocity(FVector::ZeroVector);
+		ownerPhysics->SetPhysicsAngularVelocityInRadians(FMath::DegreesToRadians(FVector::ZeroVector));
 	}
 }
 

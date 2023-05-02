@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "PowerLightControlComponent.h"
 #include "Components/LightComponent.h"
 
@@ -19,7 +18,7 @@ void UPowerLightControlComponent::BeginPlay()
 	ULightComponent* ObserveTargetLightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
 	OriginalColor = ObserveTargetLightComponent->GetLightColor().ToFColor(false);
 
-	if (NonReversibleAction == true)
+	if (::IsValid(ObserveTarget.Get()) == true)
 	{
 		if (::IsValid(ObserveTargetLightComponent) == true)
 		{
@@ -66,6 +65,11 @@ void UPowerLightControlComponent::Action(float DeltaTime)
 						{
 							ObserveTargetLightComponent->SetLightColor(ReversAction == false ? OriginalColor : DisableColor);
 						}
+					}
+
+					if (NonReversibleAction == true)
+					{
+						SetComponentTickEnabled(false);
 					}
 
 					bActingState = true;

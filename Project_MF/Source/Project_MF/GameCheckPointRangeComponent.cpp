@@ -31,6 +31,10 @@ void UGameCheckPointRangeComponent::EndPlay(const EEndPlayReason::Type EndPlayRe
 	}
 }
 
+bool UGameCheckPointRangeComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
+{
+	return false;
+}
 
 void UGameCheckPointRangeComponent::BeginPlay()
 {

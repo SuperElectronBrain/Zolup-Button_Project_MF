@@ -38,7 +38,7 @@ private:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void OnChildAttached(USceneComponent* ChildComponent) override;
 	virtual void OnChildDetached(USceneComponent* ChildComponent) override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override;
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
 	virtual void DestroyComponent(bool bPromoteChilderen) override;
 
 	/*Private methods*/
