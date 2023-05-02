@@ -16,7 +16,8 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	_bIsJumping = false;
 	_bIsPulled = false;
 	_LHandPenetrate = 0.f;
-	_bLHandHitWall = false;
+	_bLHandHitWall = _bRHandHitWall = false;
+	_LHandHitBlendIn = _RHandHitBlendIn = 0.f;
 
 	/*CDO*/
 	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(
@@ -274,6 +275,40 @@ bool UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
 	#pragma endregion
 }
 
+void UPlayerAnimInstance::SetRHandStanding(FVector standingLocation, FRotator handRot, bool bApply, float blendInTime, bool bApplyNormalRot, FVector normal)
+{
+	_bRHandHitWall = bApply;
+	_RHandHitBlendIn = blendInTime;
+	_RArmLastTransform.SetLocation(standingLocation);
+
+	if (bApplyNormalRot)
+	{
+		FVector rightCross = -FVector::CrossProduct(normal, FVector::DownVector);
+		FVector upCross = -FVector::CrossProduct(normal, rightCross);
+		FVector result = upCross + rightCross;
+
+		_RArmLastTransform.SetRotation(result.Rotation().Quaternion());
+	}
+	else _RArmLastTransform.SetRotation(handRot.Quaternion());
+}
+
+void UPlayerAnimInstance::SetLHandStanding(FVector standingLocation, FRotator handRot, bool bApply, float blendInTime, bool bApplyNormalRot, FVector normal)
+{
+	_bLHandHitWall = bApply;
+	_LHandHitBlendIn = blendInTime;
+	_LArmLastTransform.SetLocation(standingLocation);
+
+	if (bApplyNormalRot)
+	{
+		FVector rightCross = -FVector::CrossProduct(normal, FVector::DownVector);
+		FVector upCross = -FVector::CrossProduct(normal, rightCross);
+		FVector result = upCross + rightCross;
+
+		_LArmLastTransform.SetRotation(result.Rotation().Quaternion());
+	}
+	else _LArmLastTransform.SetRotation(handRot.Quaternion());
+}
+
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
@@ -289,14 +324,14 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			_bIsJumping = character->GetMovementComponent()->Velocity.Z > 0.f;
 
 			//플레이어가 끌어당겨질 경우, 회전을 고정시킨다.
-			int ret = Montage_IsPlaying(PulledUpMontage) || Montage_IsPlaying(StickMotange) || Montage_IsPlaying(SelfShootMontage);
+			//int ret = Montage_IsPlaying(PulledUpMontage) || Montage_IsPlaying(StickMotange) || Montage_IsPlaying(SelfShootMontage);
 
-			ApplyStandingLeftHand(character);
+			//ApplyStandingLeftHand(character);
 
-			if (_bPlayerCreep)
-			{
-				ApplyCreepyStandingHands(character);
-			}
+			//if (_bPlayerCreep)
+			//{
+			//	ApplyCreepyStandingHands(character);
+			//}
 
 		}
 	}
