@@ -12,7 +12,7 @@ AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagn
 	const FVector magDir = (owner->GetComponentLocation()-updated->GetComponentLocation()).GetSafeNormal();
 	const FVector goalDir = (SafeMagOperator->GetComponentLocation() - updated->GetComponentLocation()).GetSafeNormal();
 	const FVector t1(magDir.X, magDir.Y, 0.f);
-	 FVector t2(goalDir.X, goalDir.Y, 0.f);
+	FVector t2(goalDir.X, goalDir.Y, 0.f);
 
 	 //magDir가 ZeroVector일 경우.
 	 if (magDir==FVector::ZeroVector) FRotator rotator = owner->GetComponentRotation();

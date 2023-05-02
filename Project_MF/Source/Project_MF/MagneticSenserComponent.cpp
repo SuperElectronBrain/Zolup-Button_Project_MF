@@ -197,14 +197,14 @@ void UMagneticSenserComponent::ReleaseEffect(UMagneticComponent* const magnet)
 	}
 }
 
-bool UMagneticSenserComponent::CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const
+bool UMagneticSenserComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
 	if (ChildComponent == nullptr || !::IsValid(ChildComponent)) return false;
 
 	//UE_LOG(LogTemp, Warning, TEXT("붙일 컴포넌트는: %s"), *ChildComponent->GetName())
 	if (GetRangeIsValid()==false)
 	{
-		UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(ChildComponent);
+		const UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(ChildComponent);
 		if (primitive)
 		{
 			return true;
@@ -213,7 +213,7 @@ bool UMagneticSenserComponent::CanAttachAsChild(USceneComponent* ChildComponent,
 
 	if (GetEffectIsValid()==false)
 	{
-		UMagneticSenserEffectComponent* effect = Cast<UMagneticSenserEffectComponent>(ChildComponent);
+		const UMagneticSenserEffectComponent* effect = Cast<UMagneticSenserEffectComponent>(ChildComponent);
 		if (effect)
 		{
 			return true;

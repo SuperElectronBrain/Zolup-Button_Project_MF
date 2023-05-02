@@ -536,9 +536,9 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 			{
 				for (int j = 0; j < HitResult.Num(); j = j + 1)
 				{
-					if (HitResult[j].Actor.IsValid() == true)
+					if (::IsValid(HitResult[j].GetActor()) == true)
 					{
-						UPowerComponent* PowerConnectionComponent = Cast<UPowerComponent>(HitResult[j].Actor->FindComponentByClass<UPowerComponent>());
+						UPowerComponent* PowerConnectionComponent = Cast<UPowerComponent>(HitResult[j].GetActor()->FindComponentByClass<UPowerComponent>());
 						if (::IsValid(PowerConnectionComponent) == true)
 						{
 							if (PowerConnectionComponent != this)

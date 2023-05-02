@@ -74,7 +74,7 @@ public:
 	void SetMaxHaveMagneticSeconds(float newValue) { if (newValue >= 0.f) MaxHaveMagneticSeconds = newValue; }
 
 	float GetWeight() const { return Weight; }
-	void SetWeight(float value, bool usedFixedWeight) { if (value > 0.f) { Weight = value; _bUsedFixedWeight = usedFixedWeight; } }
+	void SetWeight(float value, bool usedFixedWeight) { if (value > 0.f) { Weight = value; bUsedFixedWeight = usedFixedWeight; } }
 
 	float GetMagneticFieldRadius() const { return FieldCollision->GetScaledSphereRadius(); }
 	void SetMagneticFieldRadius(float newValue);
@@ -96,6 +96,8 @@ public:
 
 	UPrimitiveComponent* GetAttachmentPrimitive() const { return _parent; }
 
+	bool GetDefaultEnabledGravity() const { return _blastUsedGravity; }
+
 private:
 	////////////////////////////
 	///// Private methods /////
@@ -114,7 +116,7 @@ private:
 	///////////////////////////
 	virtual void OnAttachmentChanged() override;
 	virtual void BeginPlay() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override;
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
 	virtual void DestroyComponent(bool bPromoteChilderen) override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	#if WITH_EDITOR
@@ -126,7 +128,7 @@ private:
 	///////////////////////////////
 	float _RotCounter, _applyRadius, _goalRadius, _currMagMaterialApplyRatio, _goalMagMaterialApplyRatio;
 	EMagnetMoveType _lastMoveType;
-	bool _applyMovement, _bUsedFixedWeight, _blastUsedGravity;
+	bool _applyMovement, _blastUsedGravity;
 	FVector _fieldColor;
 	UMagneticMovementComponent* _movement;
 
@@ -187,8 +189,11 @@ private:
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
 	float MagneticFieldRadiusScale;
 
-	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
 	float Weight;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	bool bUsedFixedWeight;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	int32 CurrEnchantCount;
