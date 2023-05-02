@@ -74,7 +74,7 @@ public:
 	void SetMaxHaveMagneticSeconds(float newValue) { if (newValue >= 0.f) MaxHaveMagneticSeconds = newValue; }
 
 	float GetWeight() const { return Weight; }
-	void SetWeight(float value, bool usedFixedWeight) { if (value > 0.f) { Weight = value; _bUsedFixedWeight = usedFixedWeight; } }
+	void SetWeight(float value, bool usedFixedWeight) { if (value > 0.f) { Weight = value; bUsedFixedWeight = usedFixedWeight; } }
 
 	float GetMagneticFieldRadius() const { return FieldCollision->GetScaledSphereRadius(); }
 	void SetMagneticFieldRadius(float newValue);
@@ -95,6 +95,8 @@ public:
 	void RemoveNoActiveMovmeent(UMovementComponent* element);
 
 	UPrimitiveComponent* GetAttachmentPrimitive() const { return _parent; }
+
+	bool GetDefaultEnabledGravity() const { return _blastUsedGravity; }
 
 private:
 	////////////////////////////
@@ -126,7 +128,7 @@ private:
 	///////////////////////////////
 	float _RotCounter, _applyRadius, _goalRadius, _currMagMaterialApplyRatio, _goalMagMaterialApplyRatio;
 	EMagnetMoveType _lastMoveType;
-	bool _applyMovement, _bUsedFixedWeight, _blastUsedGravity;
+	bool _applyMovement, _blastUsedGravity;
 	FVector _fieldColor;
 	UMagneticMovementComponent* _movement;
 
@@ -187,8 +189,11 @@ private:
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
 	float MagneticFieldRadiusScale;
 
-	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
 	float Weight;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	bool bUsedFixedWeight;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	int32 CurrEnchantCount;
