@@ -160,12 +160,12 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 		{
 			for (int i = 0; i < HitResult.Num(); i = i + 1)
 			{
-				if (HitResult[i].Actor.IsValid() == true)
+				if (::IsValid(HitResult[i].GetActor()) == true)
 				{
-					UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(HitResult[i].Actor->FindComponentByClass<UPowerGenerateComponent>());
+					UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(HitResult[i].GetActor()->FindComponentByClass<UPowerGenerateComponent>());
 					if (PowerGenerateComponent == nullptr)
 					{
-						UPowerComponent* PowerComponent = Cast<UPowerComponent>(HitResult[i].Actor->FindComponentByClass<UPowerComponent>());
+						UPowerComponent* PowerComponent = Cast<UPowerComponent>(HitResult[i].GetActor()->FindComponentByClass<UPowerComponent>());
 						if (PowerComponent != nullptr)
 						{
 							if (PowerComponent != this)

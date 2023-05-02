@@ -6,7 +6,7 @@
 #include "MagneticComponent.h"
 #include "GameMapSectionComponent.h"
 #include "DefaultMagneticMovementComponent.h"
-#include "particles/PxParticleSystem.h"
+//#include "particles/PxParticleSystem.h"
 #include "GameCheckPointContainerComponent.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
