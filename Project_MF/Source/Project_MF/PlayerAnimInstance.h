@@ -48,6 +48,8 @@ public:
 	void PlayGloveStickMotage(float startTime=0.f, float speed=1.f);
 
 	void SetHandLookMagnetic(EHandType armType, bool apply, UMagneticComponent* magnetic = nullptr);
+	void SetLHandStanding(FVector standingLocation, FRotator handRot, bool bApply=false, float blendInTime=.3f, bool bApplyNormalRot=false, FVector normal=FVector::ZeroVector );
+	void SetRHandStanding(FVector standingLocation, FRotator handRot, bool bApply = false, float blendInTime = .3f, bool bApplyNormalRot = false, FVector normal = FVector::ZeroVector);
 
 private:
 	//////////////////////
@@ -97,10 +99,16 @@ private:
 	FTransform _LArmLastTransform;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform _RArmLastTransform;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool _bIsPulled;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool _bLHandHitWall;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bRHandHitWall;
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FTransform _ArmLReplaceTransform;
@@ -110,6 +118,12 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FVector _LArmJointLocation;
+
+	UPROPERTY(VisibleAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	float _LHandHitBlendIn;
+
+	UPROPERTY(VisibleAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	float _RHandHitBlendIn;
 
 public:
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)

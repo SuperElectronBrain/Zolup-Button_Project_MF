@@ -22,7 +22,7 @@ UMagneticComponent::UMagneticComponent()
 	CurrHaveMagneticSeconds = 0.f;
 	FinalMagneticFieldRadius = 0.f;
 	_applyMovement = false;
-	_bUsedFixedWeight = false;
+	bUsedFixedWeight = false;
 	_blastUsedGravity = false;
 	RGB = FColor::White;
 	MaxEnchantableCount = 0;
@@ -124,7 +124,7 @@ bool UMagneticComponent::CanAttachAsChild(USceneComponent* ChildComponent, FName
 
 void UMagneticComponent::SettingMagnetWeightAndFieldRange()
 {
-	if (!_bUsedFixedWeight)
+	if (!bUsedFixedWeight)
 	{
 		if (_parent && ::IsValid(_parent))
 		{
@@ -165,6 +165,7 @@ void UMagneticComponent::OnAttachmentChanged()
 
 	if (parent)
 	{
+		SetRelativeLocation(FVector::ZeroVector);
 		InitParentAndMaterial();
 		SettingMagnetWeightAndFieldRange();
 	}
@@ -324,6 +325,13 @@ void UMagneticComponent::BeginPlay()
 
 	//무게 초기화.
 	SettingMagnetWeightAndFieldRange();
+
+	if (CurrMagnetic!=EMagneticType::NONE)
+	{
+		EMagneticType type = CurrMagnetic;
+		CurrMagnetic = EMagneticType::NONE;
+		SetCurrentMagnetic(type);
+	}
 }
 
 void UMagneticComponent::DestroyComponent(bool bPromoteChilderen)
@@ -625,7 +633,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 
 	//자기장 애니메이션
 	if (bShowMagneticField && _applyRadius > 0.f) {
-		_applyRadius = _applyRadius + .1f * (_goalRadius - _applyRadius);
+		_applyRadius = _applyRadius + .03f * (_goalRadius - _applyRadius);
 
 		if (CurrMagnetic == EMagneticType::NONE && _applyRadius <= 0.09f)
 		{

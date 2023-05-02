@@ -13,6 +13,10 @@
 #include "CustomGameInstance.h"
 #include "GameUIHandler.h"
 #include "UIBlackScreenWidget.h"
+#include "UIStopTimerWidget.h"
+#include "Components/WidgetComponent.h"
+#include "PlayerAirVent.h"
+#include "DrawDebugHelpers.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -32,6 +36,12 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	_stiffen = 0.f;
 	PlayerMode = EPlayerMode::STANDING;
 	_goalLook = _currLook = FVector::ZeroVector;
+	_timeStopCurrTime = 0.f;
+	MaxTimeStopSeconds = 10.f;
+	_goalTimeDiv = _currTime = 0.f;
+	AirVentEnterSeconds = .8f;
+	_startPos = _endPos = _cPos1 = FVector::ZeroVector;
+	AirVentEnterHandSeconds = .6f;
 
 	//CDO
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	PLAYER_MESH(
@@ -41,10 +51,13 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/PlayerCharacter/Animations/PlayerAnimBlueprint")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_EFFECT_SYSTEM(
-		TEXT("/Game/Effect/Gun/Gun_effect_shoot_n.Gun_effect_shoot_n")
+		TEXT("/Game/Effect/Gun/Gun_effect_shoot_s_fix.Gun_effect_shoot_s_fix")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MAGNETIC_EFFECT_SYSTEM(
-		TEXT("/Game/Effect/Gun/Gun_effect_defalt_n.Gun_effect_defalt_n")
+		TEXT("/Game/Effect/Gun/Gun_effect_defalt_s_fix.Gun_effect_defalt_s_fix")
+	);
+	static ConstructorHelpers::FClassFinder<UUserWidget> STOPTIMER_WIDGET(
+		TEXT("/Game/UI/UIStopTimerWidget")
 	);
 
 	/*SpringArm*/
@@ -111,18 +124,35 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (SHOOT_EFFECT_SYSTEM.Succeeded()) ShootEffect = SHOOT_EFFECT_SYSTEM.Object;
 	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
 	
+	/*StopTimer Widget*/
+	TimerWidgetA = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentA"));
+	TimerWidgetB = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentB"));
+	if (STOPTIMER_WIDGET.Succeeded())
+	{
+		TimerWidgetA->SetupAttachment(RootComponent);
+		TimerWidgetA->SetRelativeLocation(FVector(0.f, 0.f, 300.f));
+		TimerWidgetA->SetWidgetSpace(EWidgetSpace::Screen);
+		TimerWidgetA->SetWidgetClass(STOPTIMER_WIDGET.Class);
+		TimerWidgetA->SetDrawSize(FVector2D(300.f, 300.f));
+		TimerWidgetA->SetVisibility(false);
+
+		TimerWidgetB->SetupAttachment(RootComponent);
+		TimerWidgetB->SetRelativeLocation(FVector(0.f, 0.f, 300.f));
+		TimerWidgetB->SetWidgetSpace(EWidgetSpace::Screen);
+		TimerWidgetB->SetWidgetClass(STOPTIMER_WIDGET.Class);
+		TimerWidgetB->SetDrawSize(FVector2D(300.f, 300.f));
+		TimerWidgetB->SetVisibility(false);
+	}
+
 	#pragma endregion
 }
 
 void AGamePlayerCharacter::SetPlayerMode(EPlayerMode mode)
 {
-
-
 	PlayerMode = mode;
 
 	switch (mode)
 	{
-		
 		case(EPlayerMode::STANDING): {
 			GetCapsuleComponent()->SetCapsuleRadius(160.4f);
 			GetCapsuleComponent()->SetCapsuleHalfHeight(278.6f);
@@ -233,7 +263,11 @@ void AGamePlayerCharacter::BeginPlay()
 		_fadeHandle = _Instance->GetUIManager()->OnUIFadeChange.AddUObject(this, &AGamePlayerCharacter::FadeChange);
 	}
 
-	//캡슐 콜라이더 
+	/*시간정지 위젯 참조 구하기*/
+	if (TimerWidgetA) TimerWidgetInsA = Cast<UUIStopTimerWidget>(TimerWidgetA->GetWidget());
+	if (TimerWidgetB) TimerWidgetInsB = Cast<UUIStopTimerWidget>(TimerWidgetB->GetWidget());
+
+	/*캡슐 콜라이더 회전 방지*/
 	UCapsuleComponent* capsule = GetCapsuleComponent();
 	if (capsule)
 	{
@@ -258,21 +292,21 @@ void AGamePlayerCharacter::BeginPlay()
 	//	MagneticEffectComp->SetRelativeScale3D(FVector(4.f, 4.f, 4.f));
 	//}
 
-	////발사 이펙트 추가.
-	//if (ShootEffect)
-	//{
-	//	ShootEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
-	//		ShootEffect,
-	//		GetMesh(),
-	//		TEXT("ShootSocket"),
-	//		FVector(30.f, 0.f, 0.f),
-	//		FRotator::ZeroRotator,
-	//		FVector(50.f, 50.f, 50.f),
-	//		EAttachLocation::SnapToTargetIncludingScale,
-	//		false, 
-	//		ENCPoolMethod::None
-	//	);
-	//}
+	//발사 이펙트 추가.
+	if (ShootEffect && false)
+	{
+		ShootEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
+			ShootEffect,
+			GetMesh(),
+			TEXT("ShootSocket"),
+			FVector::ZeroVector,
+			FRotator::ZeroRotator,
+			FVector(50.f, 50.f, 50.f),
+			EAttachLocation::KeepRelativeOffset,
+			true, 
+			ENCPoolMethod::None
+		);
+	}
 
 	#pragma endregion
 }
@@ -298,17 +332,251 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 		if (_stiffen <= 0.f) _stiffen = 0.f;
 	}
 
+	//타임스탑 적용
+	if (_timeStopCurrTime > 0.f)
+	{
+		_timeStopCurrTime -= DeltaTime;
+		float value = MaxTimeStopSeconds - _timeStopCurrTime;
+		if (TimerWidgetInsA) TimerWidgetInsA->SetCurrTime(value);
+		if (TimerWidgetInsB) TimerWidgetInsB->SetCurrTime(value);
+
+		if (_timeStopCurrTime <= 0.f)
+		{
+			_timeStopCurrTime = 0.f;
+			UnApplyTimeStop();
+		}
+	}
+
 	//점프키를 꾹 누르면 점프
 	if (_bCanJump && _stiffen == 0.f)
 	{
 		Jump();
 	}
 
-	//기어다닐 때의 카메라 변화
-	if (PlayerMode==EPlayerMode::CREEPY)
+	//기어다닐 때의 모션 적용.
+	CreepyProgress(DeltaTime);
+}
+
+void AGamePlayerCharacter::SetCreepyMode(APlayerAirVent* airvent)
+{
+	if (airvent == nullptr || !::IsValid(airvent)) return;
+
+	#pragma region Omission
+	_EnterAirVent = airvent;
+	_currTime = 0.f;
+	_stiffen = -1.f;
+
+	GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_None);
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	GetCapsuleComponent()->SetCapsuleRadius(80.f);
+	GetCapsuleComponent()->SetCapsuleHalfHeight(94.f);
+	SpringArm->TargetArmLength = 10.f;
+	SpringArm->SetRelativeLocation(FVector(0.f, 0.f, 0.f));
+	GetCharacterMovement()->MaxWalkSpeed = 100.f;
+	SetActorLocation(GetActorLocation() + FVector::UpVector * 280.f);
+
+	FVector airventPos = airvent->GetFinalEnterLocation();
+	FVector playerPos = GetActorLocation();
+	float xGap = FMath::Abs((airventPos - playerPos).X);
+	float yGap = FMath::Abs((airventPos - playerPos).Y);
+	float height = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+
+	_goalTimeDiv = 1.f / AirVentEnterSeconds;
+
+	FVector verticalDir = (playerPos - airventPos).GetSafeNormal();
+	PlayerMode = EPlayerMode::AIRVENT_ENTER_DOWN;
+	_startPos = playerPos;
+	_cPos1 = playerPos - (airvent->GetActorForwardVector() * (300.f - xGap));
+	_endPos = airventPos - (airvent->GetActorForwardVector() * 300.f);
+
+	#pragma endregion
+}
+
+FVector AGamePlayerCharacter::GetBezirCurve2(const FVector& startPos, const FVector& controlPos, const FVector& endPos, const float& timeRatio) const
+{
+	FVector ab = startPos + (controlPos - startPos) * timeRatio;
+	FVector bc = controlPos + (endPos - controlPos) * timeRatio;
+	FVector abbc = ab + (bc - ab) * timeRatio;
+
+	return abbc;
+}
+
+void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
+{
+	#pragma region Omission
+
+	//환풍구 참조가 유효하지 않다면 탈출.
+	if (_EnterAirVent.IsValid() == false)
 	{
-		
+		_EnterAirVent.Reset();
+		return;
 	}
+
+	//계산에 필요한 변수들.
+	int32 curveNum = _curveLists.Num();
+	float progressRatio = _currTime * _goalTimeDiv;
+
+	//환풍구 들어가기 전 애니메이션
+	switch (PlayerMode){
+
+		//////*위쪽에 있는 환풍구에 들어갈 경우*///////
+		case(EPlayerMode::AIRVENT_ENTER_UP):
+		{
+
+			break;
+		}
+
+		//////*비슷한 위치 또는 아래쪽에 있는 환풍구에 들어갈 경우*///////
+		case(EPlayerMode::AIRVENT_ENTER_DOWN):
+		{
+			//좌표 이동
+			if (progressRatio < 1.f)
+				SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
+
+			//카메라 시점 고정
+			FRotator controlRot = GetControlRotation();
+			FRotator rotator(0.f, (_EnterAirVent->GetActorLocation() - GetActorLocation()).Rotation().Yaw, 0.f);
+			GetController()->SetControlRotation(controlRot + (rotator - controlRot) * .025f);
+
+			//마무리 작업
+			if (progressRatio >= 1.f)
+			{
+				FVector airventLocation = _EnterAirVent->GetActorLocation();
+				FVector handLStandingLocation = _EnterAirVent->GetStandingHandLocation(EStandingHandType::DOWN_LEFT);
+				FRotator handLStandingRot = _EnterAirVent->GetStandingHandRotation(EStandingHandType::DOWN_LEFT);
+				FVector airventForward = _EnterAirVent->GetActorForwardVector();
+				FVector airventRight = _EnterAirVent->GetActorRightVector();
+
+				PlayerMode = EPlayerMode::AIRVENT_ENTER_LHAND;
+				_currTime = 0.f;
+				_goalTimeDiv = 1.f / AirVentEnterHandSeconds;
+				_startPos = GetActorLocation();
+				_endPos = _startPos + (_EnterAirVent->GetFinalEnterLocation() - _startPos)*.5f;
+				_cPos1 = _startPos + (_EnterAirVent->GetFinalEnterLocation() - _startPos) * .25f - airventRight*20.f;
+			}
+
+			_currTime += DeltaTime;
+			break;
+		}
+
+		//////*왼손부터 환풍구에 집어넣는다.*//////
+		case(EPlayerMode::AIRVENT_ENTER_LHAND):
+		{
+			//카메라 시점 고정
+			FRotator controlRot = GetControlRotation();
+			FVector airventRight = _EnterAirVent->GetActorRightVector();
+			FVector airventUp = _EnterAirVent->GetActorUpVector();
+			FVector lookPos = _EnterAirVent->GetFinalEnterLocation() - airventRight * 60.f-airventUp*100.f;
+			FRotator rotator = (lookPos - GetActorLocation()).Rotation();
+			GetController()->SetControlRotation(controlRot + (rotator - controlRot) * .05f);
+
+			//적용
+			if (progressRatio <= 1.f)
+			{
+				SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
+			}
+
+			if (PlayerAnim && PlayerAnim->GetSelfShootMontageIsPlaying()==false)
+			{
+				FVector handLStandingLocation;
+				FRotator handLStandingRot;
+
+				_EnterAirVent->GetStandingHandInfo(EStandingHandType::DOWN_LEFT, handLStandingLocation, handLStandingRot);
+
+				PlayerAnim->PlaySelfShootMontage(20.f);
+				PlayerAnim->SetLHandStanding(handLStandingLocation, handLStandingRot, true, 0.3f);
+			}
+
+			//마무리 작업
+			if (progressRatio>=.7f)
+			{
+				FVector airventForward = _EnterAirVent->GetActorForwardVector();
+				FVector airventPos = _EnterAirVent->GetActorLocation();
+				FVector handLStandingLocation;
+				FRotator handLStandingRot;
+
+				_EnterAirVent->GetStandingHandInfo(EStandingHandType::DOWN_RIGHT, handLStandingLocation, handLStandingRot);
+				if(PlayerAnim) PlayerAnim->SetRHandStanding(handLStandingLocation, handLStandingRot, true, 0.8f);
+
+				PlayerMode = EPlayerMode::AIRVENT_ENTER_RHAND;
+				_currTime = 0.f;
+				_goalTimeDiv = 1.f / AirVentEnterHandSeconds;
+				_startPos = GetActorLocation();
+				_endPos = _startPos + (airventPos - _startPos) * 1.5f;
+				_cPos1 = _startPos + (_endPos - _startPos)*.5f + airventRight * 30.f;
+			}
+
+			//if (progressRatio>=.5f && progressRatio <= .55f)_currTime += DeltaTime * .1f;
+			_currTime += DeltaTime;
+			break;
+		}
+
+		//////*오른손을 환풍구에 집어넣는다.*//////
+		case(EPlayerMode::AIRVENT_ENTER_RHAND):
+		{
+			//카메라 시점 고정
+			FRotator controlRot = GetControlRotation();
+			FVector airventRight = _EnterAirVent->GetActorRightVector();
+			FVector airventUp = _EnterAirVent->GetActorUpVector();
+			FVector lookPos = _EnterAirVent->GetFinalEnterLocation() + airventRight * 60.f + airventUp*10.f;
+			FRotator rotator = (lookPos - GetActorLocation()).Rotation();
+			GetController()->SetControlRotation(controlRot + (rotator - controlRot) * .03f);
+
+			SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
+
+			//마무리 작업
+			if (progressRatio >= .7f)
+			{
+				FVector airventForward = _EnterAirVent->GetActorForwardVector();
+				FVector airventPos = _EnterAirVent->GetActorLocation();
+				_startPos = GetActorLocation();
+				_endPos = _startPos + airventForward * 100.f;
+				_cPos1 = _startPos + (_endPos - _startPos) * .5f + airventRight * 30.f;
+				PlayerMode = EPlayerMode::AIRVENT_ENTER_FINAL;
+				_currTime = 0.f;
+				_goalTimeDiv = 1.f / AirVentEnterHandSeconds;
+			}
+
+			_currTime += DeltaTime;
+			break;
+		}
+
+		//////*마무리 작업.*//////
+		case(EPlayerMode::AIRVENT_ENTER_FINAL):
+		{
+			//카메라 시점 고정
+			FRotator controlRot = GetControlRotation();
+			FVector airventRight = _EnterAirVent->GetActorRightVector();
+			FVector airventUp = _EnterAirVent->GetActorUpVector();
+			FVector airventForward = _EnterAirVent->GetActorForwardVector();
+			FVector lookPos = _EnterAirVent->GetFinalEnterLocation() + airventForward * 10.f;
+			FRotator rotator = airventForward.Rotation();
+			GetController()->SetControlRotation(controlRot + (rotator - controlRot) * .015f);
+
+			if(progressRatio<=1.f)
+			SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
+
+			//마무리 작업
+			if (progressRatio >= 1.5f)
+			{
+				PlayerMode = EPlayerMode::CREEPY;
+				GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+				GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking);
+				PlayerAnim->StopAllMontages(0.8f);
+				//PlayerAnim->SetLHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
+				//PlayerAnim->SetRHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
+				PlayerAnim->_bPlayerCreep = true;
+
+				_stiffen = 0.f;
+			}
+
+			_currTime += DeltaTime;
+			break;
+		}
+	
+	}
+
+	#pragma endregion
 }
 
 void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -363,6 +631,10 @@ void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		TEXT("Shoot_S"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::ShootMagnetic_S
 	);
 
+	PlayerInputComponent->BindAction(
+		TEXT("TimeStop"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::ApplyTimeStop
+	);
+
 #pragma endregion
 }
 
@@ -386,6 +658,28 @@ void AGamePlayerCharacter::LookUp(float value)
 {
 	if (_stiffen != 0.f) return;
 
+	//기어다니는 상태일 경우 각도 제한
+	if (PlayerMode==EPlayerMode::CREEPY)
+	{
+		FVector forward = GetActorForwardVector();
+		FVector up = GetActorUpVector();
+		FVector right = GetActorRightVector();
+		float DeltaTime = GetWorld()->GetDeltaSeconds();
+		FHitResult result;
+		FCollisionQueryParams params;
+		params.AddIgnoredActor(this);
+
+		bool ret = GetWorld()->LineTraceSingleByChannel(
+			result,
+			GetActorLocation(),
+			GetActorLocation() - (up * value * 250.f),
+			ECollisionChannel::ECC_Visibility,
+			params
+		);
+
+		if (ret) return;
+	}
+
 	FRotator currRot = GetControlRotation();
 
 	currRot.Pitch -= CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
@@ -395,6 +689,28 @@ void AGamePlayerCharacter::LookUp(float value)
 void AGamePlayerCharacter::Turn(float value)
 {
 	if (_stiffen != 0.f) return;
+
+	//기어다니는 상태일 경우 각도 제한
+	if (PlayerMode == EPlayerMode::CREEPY)
+	{
+		FVector forward = GetActorForwardVector();
+		FVector right = GetActorRightVector();
+		float DeltaTime = GetWorld()->GetDeltaSeconds();
+		FHitResult result;
+		FCollisionQueryParams params;
+		params.AddIgnoredActor(this);
+
+		bool ret = GetWorld()->LineTraceSingleByChannel(
+			result,
+			GetActorLocation(),
+			GetActorLocation() + (right * value * 250.f),
+			ECollisionChannel::ECC_Visibility,
+			params
+		);
+
+		if (ret) return;
+	}
+
 	FRotator currRot = GetControlRotation();
 
 	currRot.Yaw += CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
@@ -445,20 +761,47 @@ void AGamePlayerCharacter::JumpEnd()
 
 void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 {
-	if (id != PLAYER_FADE_ID || isDark==false) return;
+	switch (id){
+		/*섹션 페이드 아웃*/
+		case(PLAYER_FADE_ID):
+		{
+			if (isDark == false) break;
+			_CurrSection->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+			break;
+		}
 
-	_CurrSection->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
-	APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
-	if (c) c->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black, false, true);
+		/*스톱타이머 UI 페이드 아웃*/
+		case(STOPTIMER_FADE_ID):
+		{
+			if (isDark) break;
+			if (TimerWidgetA && TimerWidgetA->IsVisible())
+			{
+				TimerWidgetA->DetachFromComponent(FDetachmentTransformRules::KeepRelativeTransform);
+				TimerWidgetA->SetVisibility(false);
+			}
+
+			if (TimerWidgetB && TimerWidgetB->IsVisible())
+			{
+				TimerWidgetB->DetachFromComponent(FDetachmentTransformRules::KeepRelativeTransform);
+				TimerWidgetB->SetVisibility(false);
+			}
+
+			break;
+		}
+
+	}
 }
 
 void AGamePlayerCharacter::StageRestart()
 {
-	static bool apply = false;
+	#pragma region Omission
 
+	//재시작 테스트
+	//static bool apply = false;
 	//GetWorldSettings()->SetTimeDilation(!apply?0.05f:1.f);
 	//apply = !apply;
 	//return;
+
 	if (_stiffen != 0.f) return;
 	TArray<UPrimitiveComponent*> overlaps;
 	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
@@ -496,6 +839,185 @@ void AGamePlayerCharacter::StageRestart()
 			return;
 		}
 	}
+	#pragma endregion
+}
+
+void AGamePlayerCharacter::ApplyTimeStop()
+{
+	if (_stiffen != 0.f || _timeStopCurrTime>0.f) return;
+
+	#pragma region Omission
+
+	//모든 페이드 아웃을 제거한다.
+	if(_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->StopFadeInOut(STOPTIMER_FADE_ID);
+	}
+
+	if (IsGivenInvalid(0))
+	{
+		//유효한 자석이라면 타임스탑 구조체에 추가한다.
+		UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(_GivenMagnets[0]->GetAttachmentRoot());
+		UPrimitiveComponent* attachPrimitive = _GivenMagnets[0]->GetAttachmentPrimitive();
+
+		if (primitive && attachPrimitive)
+		{
+			//페이드 아웃 적용
+			if (_Instance.IsValid())
+			{
+				FTimeStopMagnetInfo& info = _TimeStopMagnets[0];
+				info.Magnetic = _GivenMagnets[0];
+				info.DefaultCanMovement = info.Magnetic->bAllowMagneticMovement;
+				info.DefaultApplyPhysics = primitive->IsSimulatingPhysics();
+
+				TimerWidgetA->SetVisibility(true);
+				TimerWidgetA->SetRelativeLocation(FVector(10.f, 0.f, 30.f));
+				TimerWidgetA->AttachToComponent(attachPrimitive, FAttachmentTransformRules::KeepRelativeTransform);
+
+				//페이드 아웃 적용.
+				_Instance->GetUIManager()->PlayFadeInOut(
+					EFadeType::WHITE_TO_DARK,
+					TimerWidgetInsA,
+					1.f,
+					0.f,
+					1.f,
+					0.f,
+					0.f,
+					0.f,
+					STOPTIMER_FADE_ID,
+					FLinearColor::White,
+					FLinearColor::White
+				);
+
+				primitive->SetSimulatePhysics(false);
+				info.Magnetic->bAllowMagneticMovement = false;
+			}
+		}
+	}
+
+	if (IsGivenInvalid(1))
+	{
+		//유효한 자석이라면 타임스탑 구조체에 추가한다.
+		UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(_GivenMagnets[1]->GetAttachmentRoot());
+		UPrimitiveComponent* attachPrimitive = _GivenMagnets[1]->GetAttachmentPrimitive();
+
+		if (primitive && attachPrimitive)
+		{
+			//페이드 아웃 적용
+			if (_Instance.IsValid())
+			{
+				FTimeStopMagnetInfo& info = _TimeStopMagnets[1];
+				info.Magnetic = _GivenMagnets[1];
+				info.DefaultCanMovement = info.Magnetic->bAllowMagneticMovement;
+				info.DefaultApplyPhysics = primitive->IsSimulatingPhysics();
+
+				TimerWidgetB->SetVisibility(true);
+				TimerWidgetB->SetRelativeLocation(FVector(10.f, 0.f, 30.f));
+				TimerWidgetB->AttachToComponent(attachPrimitive, FAttachmentTransformRules::KeepRelativeTransform);
+
+				_Instance->GetUIManager()->PlayFadeInOut(
+					EFadeType::WHITE_TO_DARK,
+					TimerWidgetInsB,
+					1.f,
+					0.f,
+					1.f,
+					0.f,
+					0.f,
+					0.f,
+					STOPTIMER_FADE_ID,
+					FLinearColor::White,
+					FLinearColor::White
+				);
+
+				primitive->SetSimulatePhysics(false);
+				info.Magnetic->bAllowMagneticMovement = false;
+			}
+		}
+	}
+
+	_timeStopCurrTime = MaxTimeStopSeconds;
+
+	#pragma endregion
+}
+
+void AGamePlayerCharacter::UnApplyTimeStop()
+{
+	#pragma region Omission
+
+	if (PlayerAnim) PlayerAnim->PlayResetMontage();
+
+	//페이드 이벤트 종료
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->StopFadeInOut(STOPTIMER_FADE_ID);
+	}
+
+	//첫번째 타임스탑 자석이 유효할 경우
+	if (_TimeStopMagnets[0].Magnetic.IsValid())
+	{
+		//기본값으로 복원.
+		FTimeStopMagnetInfo& info = _TimeStopMagnets[0];
+		info.Magnetic->bAllowMagneticMovement = info.DefaultCanMovement;
+		if (UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(info.Magnetic->GetAttachmentRoot()))
+		{
+			primitive->SetSimulatePhysics(info.DefaultApplyPhysics);
+			primitive->SetEnableGravity(info.Magnetic->GetDefaultEnabledGravity());
+		}
+
+		//페이드 아웃 적용
+		if (_Instance.IsValid())
+		{
+			_Instance->GetUIManager()->PlayFadeInOut(
+				EFadeType::DARK_TO_WHITE,
+				TimerWidgetInsA,
+				0.f,
+				1.f,
+				1.f,
+				0.f,
+				0.f,
+				0.f,
+				STOPTIMER_FADE_ID,
+				FLinearColor::White,
+				FLinearColor::White
+			);
+		}
+
+		info.Magnetic.Reset();
+	}
+
+	//두번째 타임스탑 자석이 유효할 경우
+	if (_TimeStopMagnets[1].Magnetic.IsValid())
+	{
+		//기본값으로 복원.
+		FTimeStopMagnetInfo& info = _TimeStopMagnets[1];
+		info.Magnetic->bAllowMagneticMovement = info.DefaultCanMovement;
+		if (UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(info.Magnetic->GetAttachmentRoot()))
+		{
+			primitive->SetSimulatePhysics(info.DefaultApplyPhysics);
+			primitive->SetEnableGravity(info.Magnetic->GetDefaultEnabledGravity());
+		}
+
+		//페이드 아웃 적용
+		if (_Instance.IsValid())
+		{
+			_Instance->GetUIManager()->PlayFadeInOut(
+				EFadeType::DARK_TO_WHITE,
+				TimerWidgetInsB,
+				0.f,
+				1.f,
+				1.f,
+				0.f,
+				0.f,
+				0.f,
+				STOPTIMER_FADE_ID,
+				FLinearColor::White,
+				FLinearColor::White
+			);
+		}
+
+		info.Magnetic.Reset();
+	}
+	#pragma endregion
 }
 
 void AGamePlayerCharacter::ResetMagnetic()
@@ -565,25 +1087,33 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 	if(PlayerAnim) PlayerAnim->PlayAttackMontage();
 
 	//이펙트 실행
-	if (ShootEffect)
+	if (ShootEffectComp)
 	{
-		FVector forward = GetPlayerForwardVector();
-		FVector right = GetPlayerRightVector();
-		FVector down = GetPlayerDownVector();
-
-		FVector neckPos = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
-		FVector gunPos = GetMesh()->GetSocketLocation(PLAYER_GUN_BONE);
-
-		UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
-			GetWorld(),
-			ShootEffect,
-			neckPos + forward * 40.f+right*22.f+down*20.f,
-			GetControlRotation(),
-			FVector(5.f, 5.f, 5.f)
-		);
-
-		effect->SetVectorParameter(TEXT("Look"), forward);
+		UE_LOG(LogTemp, Warning, TEXT("location: %s"), *ShootEffectComp->GetComponentLocation().ToString())
+		ShootEffectComp->ResetSystem();
+		ShootEffectComp->Activate();
 	}
+
+
+	//if (ShootEffect)
+	//{
+	//	FVector forward = GetPlayerForwardVector();
+	//	FVector right = GetPlayerRightVector();
+	//	FVector down = GetPlayerDownVector();
+
+	//	FVector neckPos = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
+	//	FVector gunPos = GetMesh()->GetSocketLocation(PLAYER_GUN_BONE);
+
+	//	UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
+	//		GetWorld(),
+	//		ShootEffect,
+	//		neckPos + forward * 40.f+right*22.f+down*20.f,
+	//		GetControlRotation(),
+	//		FVector(5.f, 5.f, 5.f)
+	//	);
+
+	//	effect->SetVectorParameter(TEXT("Look"), forward);
+	//}
 
 	//발사 위치 구하기
 	APlayerController* pc = GetWorld()->GetFirstPlayerController();
@@ -638,6 +1168,8 @@ void AGamePlayerCharacter::ShootMine(EMagneticType shootType)
 void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagneticType givenType)
 {
 	#pragma region Omission
+	if (newMagnet == nullptr || !::IsValid(newMagnet)) return;
+
 	newMagnet->SetCurrentMagnetic(givenType);
 
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
