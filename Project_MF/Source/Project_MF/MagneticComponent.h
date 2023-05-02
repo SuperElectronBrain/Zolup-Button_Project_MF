@@ -116,7 +116,7 @@ private:
 	///////////////////////////
 	virtual void OnAttachmentChanged() override;
 	virtual void BeginPlay() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override;
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
 	virtual void DestroyComponent(bool bPromoteChilderen) override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	#if WITH_EDITOR

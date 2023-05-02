@@ -54,7 +54,7 @@ private:
 	////////////////////////
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override { return false; }
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
 
 	/////////////////////////
 	//// Private methods ////

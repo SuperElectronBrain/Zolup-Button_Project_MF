@@ -63,7 +63,7 @@ void UGameMapCheckPointComponent::OnAttachmentChanged()
 
 	if(GetAttachParent()!=nullptr) InitConeMaterial();
 }
-bool UGameMapCheckPointComponent::CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const
+bool UGameMapCheckPointComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
 	return (ChildComponent == ConeMesh);
 }
