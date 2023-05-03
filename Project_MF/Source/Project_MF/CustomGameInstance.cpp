@@ -11,6 +11,8 @@ UCustomGameInstance::UCustomGameInstance()
 
 void UCustomGameInstance::Init()
 {
+	Super::Init();
+
 	if (GetWorld()->WorldType == EWorldType::Game)
 	{
 		bEditmode = false;

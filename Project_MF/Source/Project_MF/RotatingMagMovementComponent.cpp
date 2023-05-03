@@ -5,6 +5,7 @@
 
 AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime)
 {
+	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
 	USceneComponent* updated = UpdatedComponent;
 
 	//계산에 필요한 것들을 구한다.

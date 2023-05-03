@@ -229,8 +229,9 @@ void APlayerAirVent::EnterVent(AGamePlayerCharacter* player)
 	//환풍구 방향과 반대 방향에서 들어왔으면, 환풍구에 들어간다.
 	if (Dot < 0)
 	{
-		player->SetCreepyMode(this);
+		player->SetCreepyMode(this, true);
 	}
+	else player->SetCreepyMode(this);
 
 	//출입구의 역할을 한다면
 	//if (_bIsEntrance)
@@ -252,8 +253,6 @@ void APlayerAirVent::EnterVent(AGamePlayerCharacter* player)
 
 	//	return;
 	//}
-
-	if (Dot >= 0) return;
 	//FRotator arrowRot = Arrow->GetComponentRotation();
 	//player->SetPlayerRotator(arrowRot);
 }
