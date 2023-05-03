@@ -14,6 +14,8 @@ class UPlayerAnimInstance;
 class UMagneticComponent;
 class UNiagaraComponent;
 class UNiagaraSystem;
+class UParticleSystemComponent;
+class UParticleSystem;
 class UDefaultMagneticMovementComponent;
 class UCustomGameInstance;
 class UGameMapSectionComponent;
@@ -33,7 +35,8 @@ enum class EPlayerMode
 	AIRVENT_ENTER_LHAND,
 	AIRVENT_ENTER_RHAND,
 	AIRVENT_ENTER_FINAL,
-	AIRVENT_EXIT,
+	AIRVENT_EXIT_UP,
+	AIRVENT_EXIT_DOWN,
 	CREEPY,
 	STICK_JUMP
 };
@@ -71,9 +74,9 @@ public:
 	FVector GetPlayerRightVector() const;
 	FVector GetPlayerDownVector() const;
 	FQuat GetPlayerQuat() const { if (GetController() == nullptr) return FQuat::Identity;  return GetController()->GetControlRotation().Quaternion(); }
-	void SetPlayerMode(EPlayerMode mode);
 	void SetPlayerRotator(FRotator& newValue);
-	void SetCreepyMode(APlayerAirVent* airvent=nullptr );
+	void SetPlayerWalkMode();
+	void SetCreepyMode(APlayerAirVent* airvent=nullptr, bool enter = false);
 
 private:
 	//////////////////////
@@ -167,17 +170,23 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	UDefaultMagneticMovementComponent* MagMovement;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* ShootEffect;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category=PlayerCharacter, Meta=(AllowPrivateAccess=true))
 	UNiagaraSystem* MagneticEffect;
+
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, Meta = (AllowPrivateAccess = true))
+	UParticleSystem* ShootWaveEffect;
 
 	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* MagneticEffectComp;
 
 	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* ShootEffectComp;
+
+	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
+	UParticleSystemComponent* ShootWaveEffectComp;
 
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;
@@ -201,7 +210,7 @@ private:
 	int32 _givenIndex = 0, _oldGivenIndex;
 	FVector _goalLook, _currLook;
 	FDelegateHandle _fadeHandle;
-
+	float _playerHeight;
 	float _goalTimeDiv, _currTime;
 	TArray<FVector> _curveLists;
 	FVector _startPos, _endPos, _cPos1;
@@ -233,6 +242,9 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
 	float AirVentEnterSeconds;
+
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
+	float AirVentExitSeconds;
 
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
 	float AirVentEnterHandSeconds;
