@@ -7,19 +7,25 @@ UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
 	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
+
+	SoundManager = NewObject<USoundManager>(this, USoundManager::StaticClass(), TEXT("SoundManager"));
 }
 
 void UCustomGameInstance::Init()
 {
-	if (GetWorld()->WorldType == EWorldType::Game)
-	{
-		bEditmode = false;
-	}
+	UGameInstance::Init();
+
+	if (::IsValid(SoundManager) == true) { SoundManager->Init(); }
+
+	//if (GetWorld()->WorldType == EWorldType::Game)
+	//{
+	//	bEditmode = false;
+	//}
 	//else if (GetWorld()->WorldType == EWorldType::PIE)
-	else
-	{
-		bEditmode = true;
-	}
+	//else
+	//{
+	//	bEditmode = true;
+	//}
 }
 
 bool UCustomGameInstance::GetEditmode()
