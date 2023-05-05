@@ -99,27 +99,30 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 	float power = 0.f;
 
 	//밀려날 경우
-	//if (type==EMagnetMoveType::PUSHED_OUT)
-	//{
-	//	power = (.2f + 20.f * (penetrate * _operatorRadiusHalfDiv));
-	//	if (penetrateRatio >= .65f) power += 10.f;
+	if (type == EMagnetMoveType::PUSHED_OUT)
+	{
+		float distanceRatio = (ownerPos - _startPos).Size() * _distanceDiv;
+		power = (.2f + 20.f *distanceRatio);
+		if (penetrateRatio >= .65f) power += 10.f;
 
-	//	Velocity = dir * (power * DeltaTime * 150.f);
-	//}
-	////끌어당겨질 경우
-	//else if (type == EMagnetMoveType::DRAWN_IN)
-	//{
-	//	float distanceRatio = (ownerPos - _startPos).Size() * _distanceDiv;
-	//	power = (_distance * .5f + _distance * (distanceRatio + .3f * 2.f));
-	//	power = (.2f + 20.f * (penetrate * _operatorRadiusHalfDiv));
+		Velocity = dir * (power * DeltaTime * 150.f);
+		if (Velocity.Size() > operatorRadius * .5f)
+		{
+			Velocity = Velocity.GetSafeNormal() * operatorRadius * .5f;
+		}
+	}
+	//끌어당겨질 경우
+	else if (type == EMagnetMoveType::DRAWN_IN)
+	{
+		//power = (.2f + 20.f * (penetrate * _operatorRadiusHalfDiv));
+		//if (penetrateRatio >= .8f) power += 50.f;
+		float distanceRatio = (ownerPos - _startPos).Size() * _distanceDiv;
 
-	//	Velocity = dir * (power * DeltaTime * 150.f);
-	//}
+		if (distanceRatio >= .4f) power = _distance * 10.f * DeltaTime;
+		else power = (_distance * .5f + _distance * (distanceRatio + .3f * 2.f)) * DeltaTime;
 
-	power = (1.f + 20.f * (penetrate * _distanceDiv));
-	if (penetrateRatio >= .55f) power += 10.f;
-
-	Velocity = dir * (power * DeltaTime * 50.f);
+		Velocity = dir * power;
+	}
 
 	//이동제한 방향에 따라서 이동량 제거
 	if (MoveType == EMagnetMoveAxisType::MOVE_ONLY_XY) Velocity.Z = 0.f;

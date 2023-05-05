@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/Public/Documents/Unreal Proejct/Zolup-Button_Project_MF/Project_MF/Content/Levels/MagneticTestLevel.umap",
+				"C:/Users/Public/Documents/Unreal Proejct/Zolup-Button_Project_MF/Project_MF/Content/Effect/Magnetic/MagneticEffect_Ver4/Magnet_glow_ver3_dots_texture.uasset",
+				"C:/Users/Public/Documents/Unreal Proejct/Zolup-Button_Project_MF/Project_MF/Content/Effect/Magnetic/MagneticEffect_Ver4/Magnet_glow_ver4_line_texture.uasset"
+			]
+		}
+	]
+}
