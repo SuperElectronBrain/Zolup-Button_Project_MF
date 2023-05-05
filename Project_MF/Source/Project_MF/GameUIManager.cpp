@@ -210,7 +210,6 @@ void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>
 	if (_BlackScreen==nullptr || (_BlackScreen && !::IsValid(_BlackScreen)))
 	{
 		_BlackScreen = Cast<UUIBlackScreenWidget>(CreateWidget(GetWorld(), BlackScreen_Class));
-		_BlackScreen->ConditionalBeginDestroy();
 	}
 
 	outPtr.Reset();

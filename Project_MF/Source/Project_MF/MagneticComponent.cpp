@@ -6,6 +6,9 @@
 #include "Components/SplineComponent.h"
 #include "Components/SplineMeshComponent.h"
 #include "MagneticMovementComponent.h"
+#include "Niagara/Classes/NiagaraSystem.h"
+#include "Niagara/Public/NiagaraComponent.h"
+#include "Niagara/Public/NiagaraFunctionLibrary.h"
 
 UMagneticComponent::UMagneticComponent()
 {
@@ -44,6 +47,9 @@ UMagneticComponent::UMagneticComponent()
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> FIELD(
 		TEXT("/Game/Resource/Magnetic/NewMaterial.NewMaterial")
 	);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> FIELD_EFFECT(
+		TEXT("/Game/Effect/Magnetic/Ring/Magnet_ring_n.Magnet_ring_n")
+	);
 
 	/*FieldSpline*/
 	FieldSpline = CreateDefaultSubobject<USplineComponent>(TEXT("FIELD_SPLINE"));
@@ -65,7 +71,8 @@ UMagneticComponent::UMagneticComponent()
 	if (FIELD_MESH.Succeeded()) MagneticFieldMesh = FIELD_MESH.Object;
 	if (FIELD.Succeeded()) MagneticFieldMaterial = FIELD.Object;
 	if (INTERFACE.Succeeded()) MagneticApplyMaterial = INTERFACE.Object;
-#pragma endregion
+	if (FIELD_EFFECT.Succeeded()) MagneticFieldEffect = FIELD_EFFECT.Object;
+	#pragma endregion
 }
 
 void UMagneticComponent::InitParentAndMaterial()
@@ -99,7 +106,6 @@ void UMagneticComponent::InitParentAndMaterial()
 	//Parent의 PrimitiveComponent 캐싱.
 	if (_parent == nullptr || _parent != GetAttachParent())
 		_parent = Cast<UPrimitiveComponent>(GetAttachParent());
-
 }
 
 void UMagneticComponent::AddNoActiveMovement(UMovementComponent* element)
@@ -311,10 +317,10 @@ void UMagneticComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//부착된 부모 컴포넌트 및 다이나믹 머터리얼을 초기화.
+	/*부착된 부모 컴포넌트 및 다이나믹 머터리얼을 초기화.*/
 	InitParentAndMaterial();
 
-	//물리가 적용되어 있다면 그에 대한 설정을 한다.
+	/*물리가 적용되어 있다면 그에 대한 설정을 한다.*/
 	if (_parent && ::IsValid(_parent))
 	{
 		_blastUsedGravity = _parent->IsGravityEnabled();
@@ -323,7 +329,7 @@ void UMagneticComponent::BeginPlay()
 		//if (_bUsedFixedWeight == false) _parent->SetMassOverrideInKg(NAME_None, 10000.f);
 	}
 
-	//무게 초기화.
+	/*무게 및 자기장 크기 초기화*/
 	SettingMagnetWeightAndFieldRange();
 
 	if (CurrMagnetic!=EMagneticType::NONE)
@@ -331,6 +337,21 @@ void UMagneticComponent::BeginPlay()
 		EMagneticType type = CurrMagnetic;
 		CurrMagnetic = EMagneticType::NONE;
 		SetCurrentMagnetic(type);
+	}
+
+	/*자성 필드 컴포넌트가 생성되어있지 않다면 생성한다.*/
+	if (MagneticFieldEffectComp == nullptr && MagneticFieldEffect)
+	{
+		MagneticFieldEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
+			MagneticFieldEffect,
+			this,
+			NAME_None,
+			FVector::ZeroVector,
+			FRotator::ZeroRotator,
+			EAttachLocation::SnapToTarget,
+			false,
+			false
+		);
 	}
 }
 
@@ -504,6 +525,13 @@ void UMagneticComponent::UpdateMagneticField()
 		return;
 	}
 
+	//if (MagneticFieldEffectComp)
+	//{
+	//	if (MagneticFieldEffectComp->IsActive() == false) MagneticFieldEffectComp->ActivateSystem(true);
+	//	MagneticFieldEffectComp->SetRelativeScale3D(FVector(2.f, 2.f, 2.f));
+	//}
+
+	//return;
 
 	FieldSpline->ClearSplinePoints(true);
 

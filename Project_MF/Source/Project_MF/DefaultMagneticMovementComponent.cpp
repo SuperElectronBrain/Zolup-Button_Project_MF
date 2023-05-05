@@ -56,16 +56,13 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 		float totalRadius = ownerRadius + operatorRadius;
 		float penetrate = FMath::Clamp(operatorRadius - length, 0.f, operatorRadius);
 		float penetrateRatio = penetrate / operatorRadius;
-		float pow = 100.f + 60000.f * penetrateRatio;
 		FRotator ownerRot = ownerPhysics->GetComponentRotation();
-
-		//최대 속도를 지정한다.
-		//if (pow >= 3200.f) pow = 3200.f;
-		Velocity = dir * pow;
 
 		//물리가 적용되고 있는 상황일 경우의 이동 적용.
 		if (ownerPhysics->IsSimulatingPhysics())
 		{
+			float pow = 100.f + 60000.f * penetrateRatio;
+			Velocity = dir * pow;
 			ownerPhysics->SetEnableGravity(false);
 			ownerPhysics->AddForceAtLocation(Velocity * ownerPhysics->GetMass(), ownerCenter);
 			return nullptr;
@@ -73,6 +70,10 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 
 		//물리가 적용되지 않을 경우의 이동 적용.
 		FHitResult result;
+		float pow = (_distance * penetrateRatio) * DeltaTime;
+
+		Velocity = dir * pow;
+
 		SafeMoveUpdatedComponent(Velocity, ownerPhysics->GetComponentRotation(), true, result, ETeleportType::TeleportPhysics);
 		if (result.bBlockingHit)
 		{

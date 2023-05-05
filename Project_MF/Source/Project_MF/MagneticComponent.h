@@ -6,6 +6,8 @@
 class USceneComponent;
 class USplineComponent;
 class USplineMeshComponent;
+class UNiagaraSystem;
+class UNiagaraComponent;
 class UMagneticMovementComponent;
 enum class EMagnetMoveType;
 
@@ -158,6 +160,12 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Magnetic)
 	bool EternalHaveMagnetic;
+
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AccessPrivateAccess = true))
+	UNiagaraSystem* MagneticFieldEffect;
+
+	UPROPERTY()
+	UNiagaraComponent* MagneticFieldEffectComp;
 
 	UPROPERTY()
 	UStaticMesh* MagneticFieldMesh;
