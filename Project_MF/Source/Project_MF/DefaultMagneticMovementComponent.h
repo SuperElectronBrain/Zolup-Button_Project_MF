@@ -42,6 +42,8 @@ private:
 	FVector _startPos, _moveDir, _shakeDir;
 	bool _originUsedGravity, _registerHit;
 
+	FVector start, middle, end;
+
 public:
 	UPROPERTY(EditAnywhere, Category = Magnetic)
 	EMagnetMoveAxisType MoveType = EMagnetMoveAxisType::MOVE_XYZ;
