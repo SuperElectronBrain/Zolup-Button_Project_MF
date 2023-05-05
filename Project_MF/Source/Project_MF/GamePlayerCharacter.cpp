@@ -53,7 +53,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/PlayerCharacter/Animations/PlayerAnimBlueprint")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_EFFECT_SYSTEM(
-		TEXT("/Game/Effect/Gun/Gun_effect_shoot_s_fix.Gun_effect_shoot_s_fix")
+		TEXT("/Game/Effect/Gun/Gun_effect_shoot_n_fix.Gun_effect_shoot_n_fix")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MAGNETIC_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Gun/Gun_effect_defalt_n_fix.Gun_effect_defalt_n_fix")
@@ -212,7 +212,7 @@ void AGamePlayerCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	#pragma region Omission
-	/*Magnetic*/
+	/*자성 델리게이트 등록*/
 	if (Magnetic)
 	{
 		Magnetic->OnMagneticEvent.AddUObject(this, &AGamePlayerCharacter::OnMagnetic);
@@ -225,8 +225,12 @@ void AGamePlayerCharacter::BeginPlay()
 	//게임 인스턴스 참조
 	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
 
-	//애님 인스턴스 참조
+	/*애님 인스턴스 참조 및 델리게이트 등록*/
 	PlayerAnim = Cast<UPlayerAnimInstance>(GetMesh()->GetAnimInstance());
+	if (PlayerAnim)
+	{
+		PlayerAnim->OnShootStartEvent.AddUObject(this, &AGamePlayerCharacter::ShootStart);
+	}
 
 	//UI띄우기
 	if (_Instance.IsValid())
@@ -268,7 +272,7 @@ void AGamePlayerCharacter::BeginPlay()
 		_playerHeight = capsule->GetScaledCapsuleHalfHeight()*2.f;
 	}
 
-	//자성 이펙트 추가.
+	/*총 자성 이펙트 추가*/
 	if (MagneticEffect)
 	{
 		MagneticEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
@@ -280,30 +284,46 @@ void AGamePlayerCharacter::BeginPlay()
 			EAttachLocation::SnapToTargetIncludingScale,
 			false
 		);
+
+		MagneticEffectComp->SetRelativeScale3D(FVector(.5f, 1.f, 1.f));
+		MagneticEffectComp->SetRelativeLocation(FVector(3.5f, 0.f, 0.f));
 	}
 
-	//발사 이펙트 추가.
-	if (ShootEffect && false)
+	/*총 발사 이펙트 추가*/
+	if (ShootEffect)
 	{
+		FVector forward = GetActorForwardVector();
+		FVector right = GetActorRightVector();
+		FVector up = GetActorUpVector();
+
 		ShootEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
 			ShootEffect,
-			GetMesh(),
-			TEXT("ShootSocket"),
-			FVector::ZeroVector,
-			FRotator::ZeroRotator,
-			FVector(50.f, 50.f, 50.f),
-			EAttachLocation::KeepRelativeOffset,
-			true, 
-			ENCPoolMethod::None
+			SpringArm,
+			NAME_None,
+			FVector(177.5, 54.1f, -26.16f),
+			FRotator(0, 0, 180),
+			EAttachLocation::SnapToTarget,
+			false,
+			false
 		);
 	}
 
-	//발사 웨이브 이펙트 추가.
+	/*총 레이저 발사 이펙트 추가*/
 	if (ShootWaveEffect)
 	{
-		//ShootWaveEffectComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SHOOT_WAVE_EFFECT"));
-		//ShootWaveEffectComp->SetupAttachment(RootComponent);
-		//ShootWaveEffectComp->SetTemplate(ShootWaveEffect);
+		ShootWaveEffectComp = UGameplayStatics::SpawnEmitterAttached(
+			ShootWaveEffect,
+			GetMesh(),
+			TEXT("ShootSocket"),
+			FVector(0.f, 0.f, 0.f),
+			FRotator::ZeroRotator,
+			EAttachLocation::KeepRelativeOffset,
+			false,
+			EPSCPoolMethod::None,
+			false
+		);
+
+		ShootWaveEffectComp->SetRelativeScale3D(FVector(.6f, .6f, .6f));
 	}
 
 	#pragma endregion
@@ -1142,42 +1162,50 @@ void AGamePlayerCharacter::ShootMagnetic_S()
 	Shoot(EMagneticType::S);
 }
 
+void AGamePlayerCharacter::ShootStart()
+{
+	/*발사 이펙트 실행.*/
+	if (ShootEffectComp)
+		ShootEffectComp->ActivateSystem(true);
+
+	/*발사 레이저 이펙트 실행*/
+	if (ShootWaveEffectComp)
+	{
+		//ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Source"), ShootWaveEffectComp->GetComponentLocation());
+		//ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Source"), ShootWaveEffectComp->GetComponentLocation());
+		//ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Target"), _ShootTargetInfo.ShootEnd);
+		//ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Target"), _ShootTargetInfo.ShootEnd);
+
+		ShootWaveEffectComp->ActivateSystem(true);
+	}
+
+	/*자성을 부여할 적에게 지정한 자성을 부여*/
+	if (_ShootTargetInfo.ApplyTarget.IsValid())
+	{
+		GivenTestMagnet(
+			_ShootTargetInfo.ApplyTarget.Get(),
+			_ShootTargetInfo.ApplyType
+		);
+
+		_ShootTargetInfo.ApplyTarget.Reset();
+	}
+}
+
 void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 {
 	if (_stiffen != 0.f) return;
+
 	#pragma region Omission
 
 	//몽타주 실행
 	if(PlayerAnim) PlayerAnim->PlayAttackMontage();
 
-	//이펙트 실행
-	if (ShootEffectComp)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("location: %s"), *ShootEffectComp->GetComponentLocation().ToString())
-		ShootEffectComp->ResetSystem();
-		ShootEffectComp->Activate();
-	}
-
-
-	//if (ShootEffect)
-	//{
-	//	FVector forward = GetPlayerForwardVector();
-	//	FVector right = GetPlayerRightVector();
-	//	FVector down = GetPlayerDownVector();
-
-	//	FVector neckPos = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
-	//	FVector gunPos = GetMesh()->GetSocketLocation(PLAYER_GUN_BONE);
-
-	//	UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
-	//		GetWorld(),
-	//		ShootEffect,
-	//		neckPos + forward * 40.f+right*22.f+down*20.f,
-	//		GetControlRotation(),
-	//		FVector(5.f, 5.f, 5.f)
-	//	);
-
-	//	effect->SetVectorParameter(TEXT("Look"), forward);
-	//}
+	FVector forward = GetPlayerForwardVector();
+	FVector right = GetPlayerRightVector();
+	FVector down = GetPlayerDownVector();
+	FVector neckPos = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
+	FVector gunPos = GetMesh()->GetSocketLocation(PLAYER_GUN_BONE);
+	FVector meshRelative = GetMesh()->GetRelativeLocation();
 
 	//발사 위치 구하기
 	APlayerController* pc = GetWorld()->GetFirstPlayerController();
@@ -1211,13 +1239,13 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 
 	if (ret)
 	{
-		//발사 웨이브 이펙트 실행
+		UMeshComponent* hitComponent = Cast<UMeshComponent>(hit.GetComponent());
+
 		if (ShootWaveEffectComp)
 		{
-			ShootWaveEffectComp->SetBeamTargetPoint(0, hit.Location, 0);
+			ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Target"), hit.Location);
+			ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Target"), hit.Location);
 		}
-
-		UMeshComponent* hitComponent = Cast<UMeshComponent>(hit.GetComponent());
 
 		if (hitComponent != nullptr && ::IsValid(hitComponent))
 		{
@@ -1229,13 +1257,14 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 				UMagneticComponent* mag = Cast<UMagneticComponent>(childrens[i]);
 				if (mag && ::IsValid(mag))
 				{
-					GivenTestMagnet(mag, shootType);
+					_ShootTargetInfo.ApplyTarget = mag;
+					_ShootTargetInfo.ApplyType = shootType;
 					return;
 				}
 			}
 		}
 	}
-#pragma endregion
+	#pragma endregion
 }
 
 void AGamePlayerCharacter::ShootMine(EMagneticType shootType)

@@ -14,6 +14,8 @@
 #define PLAYER_NECK_BONE TEXT("Bip001-Neck")
 #define PLAYER_GUN_BONE TEXT("Bone001")
 
+DECLARE_MULTICAST_DELEGATE(FShootStartDelegate)
+
 class UMagneticComponent;
 
 UENUM()
@@ -32,6 +34,11 @@ public:
 	//*Constructor*//
 	/////////////////
 	UPlayerAnimInstance();
+
+	///////////////////
+	//*Delegates*//
+	///////////////////
+	FShootStartDelegate OnShootStartEvent;
 
 	/////////////////////
 	///*Public Methods*//
@@ -62,6 +69,9 @@ private:
 	///////////////////////
 	bool ApplyStandingLeftHand(AGamePlayerCharacter* player);
 	void ApplyCreepyStandingHands(AGamePlayerCharacter* player);
+
+	UFUNCTION()
+	void AnimNotify_ShootStart();
 
 	////////////////////////////
 	///*fields and Components*//

@@ -52,6 +52,17 @@ public:
 	bool DefaultApplyPhysics = false;
 };
 
+USTRUCT()
+struct FShootTargetInfo
+{
+	GENERATED_BODY()
+
+public:
+	TWeakObjectPtr<UMagneticComponent> ApplyTarget;
+	EMagneticType ApplyType;
+	FVector ShootEnd;
+};
+
 /*
 *
 */
@@ -124,6 +135,9 @@ private:
 	bool IsGivenInvalid(int index) const;
 	void RemoveGiven(UMagneticComponent* remove);
 	void ClearGivens() { _GivenMagnets[0] = _GivenMagnets[1] = nullptr; _givenIndex = _oldGivenIndex = 0; }
+
+	UFUNCTION()
+	void ShootStart();
 
 	UFUNCTION()
 	void OnMagnetic(EMagneticType type, UMagneticComponent* magnet);
@@ -201,6 +215,7 @@ private:
 	bool _bCanJump, _bShootMine;
 	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv, _stiffen;
 	float _timeStopCurrTime;
+	FShootTargetInfo _ShootTargetInfo;
 	TWeakObjectPtr<UCustomGameInstance> _Instance;
 	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
 	TWeakObjectPtr<AActor> _StickTo;
