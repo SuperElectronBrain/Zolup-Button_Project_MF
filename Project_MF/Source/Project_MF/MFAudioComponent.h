@@ -21,7 +21,7 @@ struct FCollisionData
 /**
  * 
  */
-UCLASS(ClassGroup = (MF), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup = (MFComponent), meta = (BlueprintSpawnableComponent))
 class PROJECT_MF_API UMFAudioComponent : public UAudioComponent
 {
 	GENERATED_BODY()
@@ -30,6 +30,7 @@ private:
 	UPROPERTY() TArray<FCollisionData> HitActors;
 protected:
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) FString MaterialType;
 
 private:
 protected:
@@ -37,6 +38,9 @@ protected:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION() void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+	virtual void OnCollisionEnter(AActor* Collision);
+	virtual void OnCollisionExit(AActor* Collision);
+
 
 public:
 	UMFAudioComponent();

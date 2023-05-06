@@ -7,15 +7,11 @@ UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
 	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
-
-	SoundManager = NewObject<USoundManager>(this, USoundManager::StaticClass(), TEXT("SoundManager"));
 }
 
 void UCustomGameInstance::Init()
 {
 	UGameInstance::Init();
-
-	if (::IsValid(SoundManager) == true) { SoundManager->Init(); }
 
 	//if (GetWorld()->WorldType == EWorldType::Game)
 	//{

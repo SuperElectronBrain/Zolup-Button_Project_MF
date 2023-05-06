@@ -9,12 +9,12 @@
 #include "CustomGameInstance.generated.h"
 
 USTRUCT(BlueprintType)
-struct FSoundTuple
+struct FMaterialSoundData
 {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> MaterialSound;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Ignore;
 };
 
 /*
@@ -30,12 +30,11 @@ private:
 	UPROPERTY() bool bEditmode;
 
 	UPROPERTY() UGameUIManager* _UI;
-	UPROPERTY() TObjectPtr<USoundManager> SoundManager;
 
 protected:
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FSoundTuple> FSoundDatas;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
 
 	//Methods
 private:
@@ -46,7 +45,6 @@ protected:
 public:
 	UCustomGameInstance();
 	UGameUIManager* GetUIManager() const { return _UI; }
-	TObjectPtr<USoundManager> GetSoundManager() { return SoundManager; }
 	
 	bool GetEditmode();
 	void SetEditmode(bool param);
