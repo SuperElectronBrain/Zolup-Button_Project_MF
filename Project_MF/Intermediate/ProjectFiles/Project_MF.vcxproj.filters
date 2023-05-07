@@ -336,6 +336,12 @@
     <ClInclude Include="..\..\Source\Project_MF\PowerSensorComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerSoundControlComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerSoundControlComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PowerVisibleControlComponent.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>

@@ -5,7 +5,8 @@
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
 #include "GameUIManager.h"
-#include "SoundManager.h"
+#include "Sound/SoundMix.h"
+#include "Sound/SoundClass.h"
 #include "CustomGameInstance.generated.h"
 
 USTRUCT(BlueprintType)
@@ -14,6 +15,7 @@ struct FMaterialSoundData
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> MaterialSound;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Ignore;
 };
 
@@ -45,7 +47,7 @@ protected:
 public:
 	UCustomGameInstance();
 	UGameUIManager* GetUIManager() const { return _UI; }
-	
+
 	bool GetEditmode();
 	void SetEditmode(bool param);
 };

@@ -2,6 +2,7 @@
 
 
 #include "CustomGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 
 UCustomGameInstance::UCustomGameInstance()
 {
@@ -13,6 +14,12 @@ void UCustomGameInstance::Init()
 {
 	UGameInstance::Init();
 
+	//if (::IsValid(SoundMix) == true && ::IsValid(SoundClass) == true)
+	//{
+	//	UGameplayStatics::SetSoundMixClassOverride(GetWorld(), SoundMix, SoundClass, 0.0f);
+	//	UGameplayStatics::PushSoundMixModifier(GetWorld(), SoundMix);
+	//}
+	
 	//if (GetWorld()->WorldType == EWorldType::Game)
 	//{
 	//	bEditmode = false;
