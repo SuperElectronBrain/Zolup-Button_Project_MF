@@ -48,6 +48,11 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	if (STICK_MONTAGE.Succeeded()) StickMotange = STICK_MONTAGE.Object;
 }
 
+void UPlayerAnimInstance::AnimNotify_ShootStart()
+{
+	OnShootStartEvent.Broadcast();
+}
+
 void UPlayerAnimInstance::PlayGlovePulledUpMotage()
 {
 	if (PulledUpMontage == nullptr) return;
