@@ -17,6 +17,18 @@ enum class EMagneticType
 	NONE, S, N
 };
 
+UENUM()
+enum class EMagneticEffectColorType
+{
+	RING_EFFECT,
+	GUN_EFFECT_LAZER,
+	GUN_EFFECT_SPARK_MAX,
+	GUN_EFFECT_SPARK_MIN,
+	GUN_SHOOT_EFFECT_MIN,
+	GUN_SHOOT_EFFECT_MAX,
+	GRANT_EFFECT
+};
+
 DECLARE_MULTICAST_DELEGATE_TwoParams(FOnMagneticDelegate, EMagneticType, UMagneticComponent*)
 DECLARE_MULTICAST_DELEGATE_TwoParams(FOffMagneticDelegate, EMagneticType, UMagneticComponent*)
 DECLARE_MULTICAST_DELEGATE_TwoParams(FMoveStartDelegate, EMagnetMoveType, UMagneticComponent*)
@@ -92,6 +104,7 @@ public:
 	static FLinearColor GetMagneticLinearColor(EMagneticType type);
 	static FColor GetMagneticColor(EMagneticType type);
 	static FVector GetMagneticColorVector(EMagneticType type);
+	static FLinearColor GetMagneticEffectColor(EMagneticType type, EMagneticEffectColorType effect);
 
 	void AddNoActiveMovement(UMovementComponent* element);
 	void RemoveNoActiveMovmeent(UMovementComponent* element);
@@ -129,6 +142,8 @@ private:
 	//// Fields and Components ////
 	///////////////////////////////
 	float _RotCounter, _applyRadius, _goalRadius, _currMagMaterialApplyRatio, _goalMagMaterialApplyRatio;
+	float _magFieldDiv;
+	bool _magActivate;
 	EMagnetMoveType _lastMoveType;
 	bool _applyMovement, _blastUsedGravity;
 	FVector _fieldColor;
@@ -143,8 +158,8 @@ private:
 	UPROPERTY()
 	TArray<UMovementComponent*> _NoActiveMovements;
 
-	UPROPERTY()
-	TArray<USplineMeshComponent*> FieldMeshs;
+	//UPROPERTY()
+	//TArray<USplineMeshComponent*> FieldMeshs;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	EMagneticType CurrMagnetic;
@@ -161,35 +176,35 @@ private:
 	UPROPERTY(EditAnywhere, Category = Magnetic)
 	bool EternalHaveMagnetic;
 
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AccessPrivateAccess = true))
+	UPROPERTY()
 	UNiagaraSystem* MagneticFieldEffect;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AccessPrivateAccess = true))
 	UNiagaraComponent* MagneticFieldEffectComp;
 
-	UPROPERTY()
-	UStaticMesh* MagneticFieldMesh;
+	//UPROPERTY()
+	//UStaticMesh* MagneticFieldMesh;
 
-	UPROPERTY()
-	UMaterialInterface* MagneticFieldMaterial;
+	//UPROPERTY()
+	//UMaterialInterface* MagneticFieldMaterial;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Category=Magnetic, Meta=(AccessPrivateAccess=true))
 	UMaterialInterface* MagneticApplyMaterial;
 
 	UPROPERTY()
 	UMaterialInstanceDynamic* _material;
 
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	UTexture2D* Texture;
+	//UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	//UTexture2D* Texture;
 
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	FLinearColor RGB;
+	//UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	//FLinearColor RGB;
 
 	UPROPERTY()
 	USphereComponent* FieldCollision;
 
-	UPROPERTY()
-	USplineComponent* FieldSpline;
+	//UPROPERTY()
+	//USplineComponent* FieldSpline;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
 	float FinalMagneticFieldRadius;

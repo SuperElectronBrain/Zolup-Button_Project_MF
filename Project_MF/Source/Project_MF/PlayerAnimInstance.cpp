@@ -248,7 +248,7 @@ bool UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
 	);
 
 	//디버그용
-	//DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
+	DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
 	 
 	if (ret == false || ret && FVector::DotProduct(dir, hit.Normal) >= 0 || ret && hit.Distance == 0)
 	{
@@ -263,10 +263,10 @@ bool UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
 	FVector upCross = -FVector::CrossProduct(hit.Normal, rightCross);
 	FVector result = upCross + rightCross;
 
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + upCross* 110.f, FColor::Black, false, -1.f, 0U, 8.f);
+	DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
+	DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
+	DrawDebugLine(GetWorld(), hit.Location, hit.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 8.f);
+	DrawDebugLine(GetWorld(), hit.Location, hit.Location + upCross* 110.f, FColor::Black, false, -1.f, 0U, 8.f);
 
 	//적용
 	FVector lastLocation = hit.Location -hit.Normal * 15.f;
@@ -331,7 +331,7 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			//플레이어가 끌어당겨질 경우, 회전을 고정시킨다.
 			//int ret = Montage_IsPlaying(PulledUpMontage) || Montage_IsPlaying(StickMotange) || Montage_IsPlaying(SelfShootMontage);
 
-			//ApplyStandingLeftHand(character);
+			ApplyStandingLeftHand(character);
 
 			//if (_bPlayerCreep)
 			//{
