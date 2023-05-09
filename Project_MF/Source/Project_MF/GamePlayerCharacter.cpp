@@ -26,7 +26,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	ShootLength = 10000.f;
 	JumpPower = 1000.f;
 	CameraRotationSpeed = 420.f;
-	MoveSpeed = 1450.f;
+	MoveSpeed = 500.f;
 	_bCanJump = false;
 	_bShootMine = false;
 	_GivenIndex = _OldGivenIndex = 0;
@@ -73,7 +73,8 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	SpringArm->bInheritYaw = true;
 	SpringArm->bInheritRoll = true;
 	SpringArm->TargetArmLength = 10.f;
-	SpringArm->SetRelativeLocationAndRotation(FVector(.0f, .0f, 280.f), FRotator::ZeroRotator);
+	SpringArm->SetRelativeLocationAndRotation(FVector(.0f, .0f, 55.f), FRotator::ZeroRotator);
+	SpringArm->SetRelativeScale3D(FVector(0.25, 0.25f, 0.25f));
 
 	/*Camera*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
@@ -81,8 +82,8 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	Camera->SetRelativeLocationAndRotation(FVector(0.f, 0.f, -1.3f), FRotator::ZeroRotator);
 
 	/*CapsuleComponents*/
-	GetCapsuleComponent()->SetCapsuleRadius(60.4f);/*default: 80.f*/
-	GetCapsuleComponent()->SetCapsuleHalfHeight(278.6f);/*default: 197.f*/
+	GetCapsuleComponent()->SetCapsuleRadius(50.f);/*default: 50.65184f*/
+	GetCapsuleComponent()->SetCapsuleHalfHeight(86.74337f);/*default: 197.f*/
 
 	/*Player Mesh*/
 	USkeletalMeshComponent* PlayerMesh = GetMesh();
@@ -323,6 +324,7 @@ void AGamePlayerCharacter::BeginPlay()
 			false
 		);
 
+		ShootWaveEffectComp->CustomTimeDilation = 6.f;
 		ShootWaveEffectComp->SetRelativeScale3D(FVector(.6f, .6f, .6f));
 	}
 
@@ -1164,19 +1166,60 @@ void AGamePlayerCharacter::ShootMagnetic_S()
 
 void AGamePlayerCharacter::ShootStart()
 {
-	/*발사 이펙트 실행.*/
+	EMagneticType type = _ShootTargetInfo.ApplyType;
+
+	/*발사 이펙트 실행 및 색깔 변경*/
 	if (ShootEffectComp)
-		ShootEffectComp->ActivateSystem(true);
-
-	/*발사 레이저 이펙트 실행*/
-	if (ShootWaveEffectComp)
 	{
-		//ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Source"), ShootWaveEffectComp->GetComponentLocation());
-		//ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Source"), ShootWaveEffectComp->GetComponentLocation());
-		//ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Target"), _ShootTargetInfo.ShootEnd);
-		//ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Target"), _ShootTargetInfo.ShootEnd);
+		ShootEffectComp->ActivateSystem(true);
+		ShootEffectComp->SetColorParameter(
+			TEXT("DustMinColor"), 
+			UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_SHOOT_EFFECT_MIN)
+		);
+		ShootEffectComp->SetColorParameter(
+			TEXT("DustMaxColor"), 
+			UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_SHOOT_EFFECT_MAX)
+		);
+	}
 
-		ShootWaveEffectComp->ActivateSystem(true);
+	/*발사 레이저 이펙트 실행 및 색깔 변경*/
+	if (ShootWaveEffectComp && _ShootTargetInfo.isHit && ShootWaveEffect)
+	{
+		FVector spawnLocation = GetMesh()->GetSocketLocation(TEXT("ShootSocket"));
+
+		UParticleSystemComponent* NewWave = UGameplayStatics::SpawnEmitterAtLocation(
+			GetWorld(),
+			ShootWaveEffect,
+			spawnLocation
+		);
+
+		UMagneticComponent::GetMagneticEffectColor();
+
+		NewWave->CustomTimeDilation = 3.5f;
+		NewWave->SetVectorParameter(TEXT("Main_Target"), spawnLocation);
+		NewWave->SetVectorParameter(TEXT("Sub_Target"), _ShootTargetInfo.ShootEnd);
+
+		//ShootWaveEffectComp->ResetParticles(false);
+		//ShootWaveEffectComp->ActivateSystem(true);
+
+		_ShootTargetInfo.isHit = false;
+	}
+
+	/*자성 이펙트 색깔 변경*/
+	if (MagneticEffectComp)
+	{
+		MagneticEffectComp->SetColorParameter(
+			TEXT("Color"),
+			UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_EFFECT_LAZER)
+		);
+		MagneticEffectComp->SetColorParameter(
+			TEXT("SparkMinColor"),
+			UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_EFFECT_SPARK_MIN)
+		);
+		MagneticEffectComp->SetColorParameter(
+			TEXT("SparkMaxColor"),
+			UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_EFFECT_SPARK_MAX)
+		);
 	}
 
 	/*자성을 부여할 적에게 지정한 자성을 부여*/
@@ -1237,15 +1280,18 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 		params
 	);
 
+	_ShootTargetInfo.isHit = ret;
+	_ShootTargetInfo.ApplyType = shootType;
+
 	if (ret)
 	{
 		UMeshComponent* hitComponent = Cast<UMeshComponent>(hit.GetComponent());
-
-		if (ShootWaveEffectComp)
-		{
-			ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Target"), hit.Location);
-			ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Target"), hit.Location);
-		}
+		_ShootTargetInfo.ShootEnd = hit.Location;
+		//if (ShootWaveEffectComp)
+		//{
+		//	ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Target"), hit.Location);
+		//	ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Target"), hit.Location);
+		//}
 
 		if (hitComponent != nullptr && ::IsValid(hitComponent))
 		{
@@ -1258,7 +1304,6 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 				if (mag && ::IsValid(mag))
 				{
 					_ShootTargetInfo.ApplyTarget = mag;
-					_ShootTargetInfo.ApplyType = shootType;
 					return;
 				}
 			}

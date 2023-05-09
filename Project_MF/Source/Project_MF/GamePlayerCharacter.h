@@ -59,8 +59,9 @@ struct FShootTargetInfo
 
 public:
 	TWeakObjectPtr<UMagneticComponent> ApplyTarget;
-	EMagneticType ApplyType;
-	FVector ShootEnd;
+	EMagneticType ApplyType = EMagneticType::NONE;
+	FVector ShootEnd		= FVector::ZeroVector;
+	bool isHit				= false;
 };
 
 /*
