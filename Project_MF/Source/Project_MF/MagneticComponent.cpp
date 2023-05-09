@@ -571,8 +571,8 @@ void UMagneticComponent::UpdateMagneticField()
 			splineMeshComponent->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 			splineMeshComponent->RegisterComponentWithWorld(GetWorld());
 			splineMeshComponent->AttachToComponent(FieldSpline, FAttachmentTransformRules::KeepRelativeTransform);
-			splineMeshComponent->SetStartScale(FVector2D(UKismetSystemLibrary::MakeLiteralFloat(.07f), UKismetSystemLibrary::MakeLiteralFloat(.07f)));
-			splineMeshComponent->SetEndScale(FVector2D(UKismetSystemLibrary::MakeLiteralFloat(.07f), UKismetSystemLibrary::MakeLiteralFloat(.07f)));
+			//splineMeshComponent->SetStartScale(FVector2D(UKismetSystemLibrary::MakeLiteralFloat(.07f), UKismetSystemLibrary::MakeLiteralFloat(.07f)));
+			//splineMeshComponent->SetEndScale(FVector2D(UKismetSystemLibrary::MakeLiteralFloat(.07f), UKismetSystemLibrary::MakeLiteralFloat(.07f)));
 			splineMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 			//머터리얼 적용

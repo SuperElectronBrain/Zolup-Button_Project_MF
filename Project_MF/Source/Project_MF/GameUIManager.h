@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "PlayerUICanvasWidget.h"
 #include "GameUIManager.generated.h"
 
 DECLARE_MULTICAST_DELEGATE_TwoParams(FUIFadeChangeDelegate, bool isDark, int id)

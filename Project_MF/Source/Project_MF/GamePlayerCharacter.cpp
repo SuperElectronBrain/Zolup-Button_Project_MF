@@ -240,7 +240,7 @@ void AGamePlayerCharacter::BeginPlay()
 
 		//Player UI
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
-		if (playerUI.IsValid())
+		if (::IsValid(playerUI.Get()) == true)
 		{
 			playerUI->AddToViewport();
 			playerUI->SetAnimColor(FColor(255, 255, 255, 150));

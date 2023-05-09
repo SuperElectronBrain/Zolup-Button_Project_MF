@@ -12,8 +12,7 @@ UCustomGameInstance::UCustomGameInstance()
 
 void UCustomGameInstance::Init()
 {
-<<<<<<< HEAD
-	UGameInstance::Init();
+	Super::Init();
 
 	//if (::IsValid(SoundMix) == true && ::IsValid(SoundClass) == true)
 	//{
@@ -25,14 +24,7 @@ void UCustomGameInstance::Init()
 	//{
 	//	bEditmode = false;
 	//}
-=======
-	Super::Init();
 
-	if (GetWorld()->WorldType == EWorldType::Game)
-	{
-		bEditmode = false;
-	}
->>>>>>> 0.0.3-UE5-HW
 	//else if (GetWorld()->WorldType == EWorldType::PIE)
 	//else
 	//{

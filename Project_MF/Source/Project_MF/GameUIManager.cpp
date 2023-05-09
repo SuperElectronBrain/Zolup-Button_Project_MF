@@ -218,9 +218,12 @@ void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>
 
 void UGameUIManager::GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidget>& outPtr)
 {
-	if (_PlayerUICanvas==nullptr || (_PlayerUICanvas && !::IsValid(_PlayerUICanvas)))
+	if (::IsValid(_PlayerUICanvas) == false)
 	{
-		_PlayerUICanvas = Cast<UPlayerUICanvasWidget>(CreateWidget(GetWorld(), PlayerUICanvas_Class));
+		if (::IsValid(PlayerUICanvas_Class) == true)
+		{
+			_PlayerUICanvas = Cast<UPlayerUICanvasWidget>(CreateWidget(GetWorld(), PlayerUICanvas_Class));
+		}
 	}
 
 	outPtr.Reset();
