@@ -1193,8 +1193,6 @@ void AGamePlayerCharacter::ShootStart()
 			spawnLocation
 		);
 
-		UMagneticComponent::GetMagneticEffectColor();
-
 		NewWave->CustomTimeDilation = 3.5f;
 		NewWave->SetVectorParameter(TEXT("Main_Target"), spawnLocation);
 		NewWave->SetVectorParameter(TEXT("Sub_Target"), _ShootTargetInfo.ShootEnd);

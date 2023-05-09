@@ -365,6 +365,8 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 		/*자성이 부여되었을 때의 이펙트*/
 		case(EMagneticEffectColorType::GRANT_EFFECT):
 			return (isN ? FLinearColor(5.f, 0.f, 0.049996f, 1.f) : FLinearColor(0.014019f, 0.f, 70.f, 1.f));
+	
+		/*총 발사시 레이저 이펙트*/
 	}
 
 	return FLinearColor::White;
