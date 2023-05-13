@@ -1193,7 +1193,7 @@ void AGamePlayerCharacter::ShootStart()
 			spawnLocation
 		);
 
-		UMagneticComponent::GetMagneticEffectColor();
+		UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_SHOOT_EFFECT_MAX);
 
 		NewWave->CustomTimeDilation = 3.5f;
 		NewWave->SetVectorParameter(TEXT("Main_Target"), spawnLocation);

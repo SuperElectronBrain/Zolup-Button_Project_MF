@@ -4,6 +4,7 @@
 
 #include "EngineMinimal.h"
 #include "GameFramework/Character.h"
+#include "MagneticComponent.h"
 #include "GamePlayerCharacter.generated.h"
 
 #define PLAYER_FADE_ID 83
