@@ -386,7 +386,6 @@ void UMagneticComponent::BeginPlay()
 		_blastUsedGravity = _parent->IsGravityEnabled();
 		_parent->SetMobility(EComponentMobility::Movable);
 		GetAttachmentRoot()->SetMobility(EComponentMobility::Movable);
-		//if (_bUsedFixedWeight == false) _parent->SetMassOverrideInKg(NAME_None, 10000.f);
 	}
 
 	/*무게 및 자기장 크기 초기화*/
@@ -408,10 +407,11 @@ void UMagneticComponent::BeginPlay()
 			NAME_None,
 			FVector::ZeroVector,
 			FRotator::ZeroRotator,
-			EAttachLocation::SnapToTarget,
+			EAttachLocation::SnapToTargetIncludingScale,
 			false,
 			false
 		);
+		MagneticFieldEffectComp->SetUsingAbsoluteScale(true);
 	}
 }
 

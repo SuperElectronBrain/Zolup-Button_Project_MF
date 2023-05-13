@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "EngineMinimal.h"
@@ -22,6 +20,8 @@ class UGameMapSectionComponent;
 class UWidgetComponent;
 class UUIStopTimerWidget;
 class APlayerAirVent;
+class UAudioComponent;
+class USoundCue;
 enum class EMagneticType;
 enum class EMagnetMoveType;
 
@@ -64,8 +64,7 @@ public:
 	bool isHit				= false;
 };
 
-/*
-*
+/*게임의 플레이어 캐릭터의 모든 기능을 책임지는 클래스입니다.
 */
 UCLASS()
 class PROJECT_MF_API AGamePlayerCharacter final : public ACharacter
@@ -158,6 +157,9 @@ private:
 	UFUNCTION()
 	void FadeChange(bool isDark, int id);
 
+	UFUNCTION()
+	void ResetCamLookTarget();
+
 	/////////////////
 	///*Components*//
 	/////////////////
@@ -185,22 +187,22 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
 	UDefaultMagneticMovementComponent* MagMovement;
 
-	UPROPERTY(EditAnywhere, Category = PlayerCharacter, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* ShootEffect;
 
-	UPROPERTY(EditAnywhere, Category=PlayerCharacter, Meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditAnywhere, Category= PlayerEffect, Meta=(AllowPrivateAccess=true))
 	UNiagaraSystem* MagneticEffect;
 
-	UPROPERTY(EditAnywhere, Category = PlayerCharacter, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UParticleSystem* ShootWaveEffect;
 
-	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* MagneticEffectComp;
 
-	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* ShootEffectComp;
 
-	UPROPERTY(VisibleAnywhere, Category = Effect, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UParticleSystemComponent* ShootWaveEffectComp;
 
 	UPROPERTY()
@@ -208,6 +210,24 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = CheckPoint, Meta = (AllowPrivateAccess = true))
 	UGameCheckPointContainerComponent* CheckPointContainer;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	UAudioComponent* SoundEffectComp;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundCue* MagOnSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundCue* MagOffSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundCue* MagShootSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundCue* MagOnGloveSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundCue* MagOffGloveSound;
 
 private:
 	//////////////
@@ -221,6 +241,7 @@ private:
 	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
 	TWeakObjectPtr<AActor> _StickTo;
 	TWeakObjectPtr<APlayerAirVent> _EnterAirVent;
+	TWeakObjectPtr<AActor> _CamLookTarget;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
 	TStaticArray<FTimeStopMagnetInfo, 2> _TimeStopMagnets;
 	int32 _givenIndex = 0, _oldGivenIndex;
