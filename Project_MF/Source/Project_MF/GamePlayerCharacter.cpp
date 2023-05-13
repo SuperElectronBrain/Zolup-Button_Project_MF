@@ -17,6 +17,9 @@
 #include "PlayerAirVent.h"
 #include "DrawDebugHelpers.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Sound/SoundCue.h"
+#include "Components/AudioComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -64,6 +67,38 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<UParticleSystem> SHOOT_WAVE_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/HitScan/P_beam_main.P_beam_main")
 	);
+	static ConstructorHelpers::FObjectFinder<USoundCue> GIVE_SOUND_CUE(
+		TEXT("/Game/Sounds/MagSoundOn.MagSoundOn")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundCue> UNGIVE_SOUND_CUE(
+		TEXT("/Game/Sounds/MagSoundOff.MagSoundOff")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundCue> Shoot_SOUND_CUE(
+		TEXT("/Game/Sounds/MagShoot.MagShoot")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundCue> GLOVE_On_SOUND_CUE(
+		TEXT("/Game/Sounds/MagGloveOn.MagGloveOn")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundCue> GLOVE_OFF_SOUND_CUE(
+		TEXT("/Game/Sounds/MagGloveOff.MagGloveOff")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundCue> WALK_SOUND_CUE(
+		TEXT("/Game/Sounds/WalkSound.WalkSound")
+	);
+
+	/*Audio*/
+	SoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("SOUND_EFFECT_A"));
+	SoundEffectComp->SetupAttachment(RootComponent);
+	if (WALK_SOUND_CUE.Succeeded())
+	{
+		SoundEffectComp->SetSound(WALK_SOUND_CUE.Object);
+	}
+
+	if (GIVE_SOUND_CUE.Succeeded()) MagOnSound = GIVE_SOUND_CUE.Object;
+	if (UNGIVE_SOUND_CUE.Succeeded()) MagOffSound = UNGIVE_SOUND_CUE.Object;
+	if (Shoot_SOUND_CUE.Succeeded()) MagShootSound = Shoot_SOUND_CUE.Object;
+	if (GLOVE_On_SOUND_CUE.Succeeded()) MagOnGloveSound = GLOVE_On_SOUND_CUE.Object;
+	if (GLOVE_OFF_SOUND_CUE.Succeeded()) MagOffGloveSound = GLOVE_OFF_SOUND_CUE.Object;
 
 	/*SpringArm*/
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SPRINGARM"));
@@ -79,10 +114,12 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/*Camera*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
 	Camera->SetupAttachment(SpringArm);
-	Camera->SetRelativeLocationAndRotation(FVector(0.f, 0.f, -1.3f), FRotator::ZeroRotator);
+	Camera->SetRelativeLocationAndRotation(FVector(-8.f, 5.f, 21.f), FRotator::ZeroRotator);
+	Camera->SetOrthoNearClipPlane(-1.f);
+	//Default: (0.f, 0.f, -1.3f)
 
 	/*CapsuleComponents*/
-	GetCapsuleComponent()->SetCapsuleRadius(50.f);/*default: 50.65184f*/
+	GetCapsuleComponent()->SetCapsuleRadius(11.f);/*default: 50.65184f*/
 	GetCapsuleComponent()->SetCapsuleHalfHeight(86.74337f);/*default: 197.f*/
 
 	/*Player Mesh*/
@@ -119,7 +156,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	movement->FallingLateralFriction = 2.f;
 	movement->MaxWalkSpeed = MoveSpeed;
 	movement->MaxAcceleration = 1000.f;
-
 
 	/*Magnetic*/
 	Magnetic = CreateDefaultSubobject<UMagneticComponent>(TEXT("MAGNETIC"));
@@ -211,6 +247,7 @@ FVector AGamePlayerCharacter::GetPlayerRightVector() const
 void AGamePlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
 
 	#pragma region Omission
 	/*자성 델리게이트 등록*/
@@ -371,6 +408,15 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 	if (_bCanJump && _stiffen == 0.f)
 	{
 		Jump();
+		if(SoundEffectComp) SoundEffectComp->Stop();
+	}
+
+	//플레이어가 바라볼 타깃이 있을 경우
+	if (_CamLookTarget.IsValid())
+	{
+		FRotator curr = GetController()->GetControlRotation();
+		FRotator goal = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), _CamLookTarget->GetActorLocation());
+		GetController()->SetControlRotation( curr + (goal-curr)*.1f);
 	}
 
 	//기어다닐 때의 모션 적용.
@@ -547,7 +593,7 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 				_EnterAirVent->GetStandingHandInfo(EStandingHandType::DOWN_LEFT, handLStandingLocation, handLStandingRot);
 
 				PlayerAnim->PlaySelfShootMontage(20.f);
-				PlayerAnim->SetLHandStanding(handLStandingLocation, handLStandingRot, true, 0.3f);
+				//PlayerAnim->SetLHandStanding(handLStandingLocation, handLStandingRot, true, 0.3f);
 			}
 
 			//마무리 작업
@@ -559,7 +605,7 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 				FRotator handLStandingRot;
 
 				_EnterAirVent->GetStandingHandInfo(EStandingHandType::DOWN_RIGHT, handLStandingLocation, handLStandingRot);
-				if(PlayerAnim) PlayerAnim->SetRHandStanding(handLStandingLocation, handLStandingRot, true, 0.8f);
+				//if(PlayerAnim) PlayerAnim->SetRHandStanding(handLStandingLocation, handLStandingRot, true, 0.8f);
 
 				PlayerMode = EPlayerMode::AIRVENT_ENTER_RHAND;
 				_currTime = 0.f;
@@ -649,8 +695,8 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 			{
 				SetPlayerWalkMode();
 				if (PlayerAnim) PlayerAnim->_bPlayerCreep = false;
-				PlayerAnim->SetLHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
-				PlayerAnim->SetRHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
+				//PlayerAnim->SetLHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
+				//PlayerAnim->SetRHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
 				_stiffen = 0.f;
 				SetActorLocation(GetActorLocation() - FVector::UpVector * _playerHeight);
 				_EnterAirVent.Reset();
@@ -744,28 +790,6 @@ void AGamePlayerCharacter::LookUp(float value)
 {
 	if (_stiffen != 0.f) return;
 
-	//기어다니는 상태일 경우 각도 제한
-	//if (PlayerMode==EPlayerMode::CREEPY)
-	//{
-	//	FVector forward = GetActorForwardVector();
-	//	FVector up = GetActorUpVector();
-	//	FVector right = GetActorRightVector();
-	//	float DeltaTime = GetWorld()->GetDeltaSeconds();
-	//	FHitResult result;
-	//	FCollisionQueryParams params;
-	//	params.AddIgnoredActor(this);
-
-	//	bool ret = GetWorld()->LineTraceSingleByChannel(
-	//		result,
-	//		GetActorLocation(),
-	//		GetActorLocation() - (up * value * 250.f),
-	//		ECollisionChannel::ECC_Visibility,
-	//		params
-	//	);
-
-	//	if (ret) return;
-	//}
-
 	FRotator currRot = GetControlRotation();
 
 	currRot.Pitch -= CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
@@ -775,27 +799,6 @@ void AGamePlayerCharacter::LookUp(float value)
 void AGamePlayerCharacter::Turn(float value)
 {
 	if (_stiffen != 0.f) return;
-
-	//기어다니는 상태일 경우 각도 제한
-	//if (PlayerMode == EPlayerMode::CREEPY)
-	//{
-	//	FVector forward = GetActorForwardVector();
-	//	FVector right = GetActorRightVector();
-	//	float DeltaTime = GetWorld()->GetDeltaSeconds();
-	//	FHitResult result;
-	//	FCollisionQueryParams params;
-	//	params.AddIgnoredActor(this);
-
-	//	bool ret = GetWorld()->LineTraceSingleByChannel(
-	//		result,
-	//		GetActorLocation(),
-	//		GetActorLocation() + (right * value * 250.f),
-	//		ECollisionChannel::ECC_Visibility,
-	//		params
-	//	);
-
-	//	if (ret) return;
-	//}
 
 	FRotator currRot = GetControlRotation();
 
@@ -809,6 +812,21 @@ void AGamePlayerCharacter::MoveUpDown(float value)
 	const FRotator rotation = Controller->GetControlRotation();
 	const FRotator yawRotation(0, rotation.Yaw, 0);
 	const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::X);
+
+	//재생중이 아니라면
+	if (SoundEffectComp)
+	{
+		bool isPlaying = SoundEffectComp->IsPlaying();
+
+		if (isPlaying==false)
+		{
+			SoundEffectComp->Play();
+		}
+		else if(value==0.f)
+		{
+			SoundEffectComp->Stop();
+		}
+	}
 
 	AddMovementInput(dir, value);
 }
@@ -824,7 +842,6 @@ void AGamePlayerCharacter::MoveRightLeft(float value)
 
 void AGamePlayerCharacter::OnShootMine()
 {
-	if (_stiffen != 0.f) return;
 	_bShootMine = true;
 }
 
@@ -836,12 +853,10 @@ void AGamePlayerCharacter::OffShootMine()
 
 void AGamePlayerCharacter::JumpStart()
 {
-	if (_stiffen != 0.f) return;
 	_bCanJump = true;
 }
 void AGamePlayerCharacter::JumpEnd()
 {
-	if (_stiffen != 0.f) return;
 	_bCanJump = false;
 }
 
@@ -1193,14 +1208,9 @@ void AGamePlayerCharacter::ShootStart()
 			spawnLocation
 		);
 
-		UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_SHOOT_EFFECT_MAX);
-
 		NewWave->CustomTimeDilation = 3.5f;
 		NewWave->SetVectorParameter(TEXT("Main_Target"), spawnLocation);
 		NewWave->SetVectorParameter(TEXT("Sub_Target"), _ShootTargetInfo.ShootEnd);
-
-		//ShootWaveEffectComp->ResetParticles(false);
-		//ShootWaveEffectComp->ActivateSystem(true);
 
 		_ShootTargetInfo.isHit = false;
 	}
@@ -1219,6 +1229,17 @@ void AGamePlayerCharacter::ShootStart()
 		MagneticEffectComp->SetColorParameter(
 			TEXT("SparkMaxColor"),
 			UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_EFFECT_SPARK_MAX)
+		);
+	}
+
+	/*발사 소리 실행*/
+	if (MagShootSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			GetWorld(),
+			MagShootSound,
+			GetActorLocation(),
+			0.8f
 		);
 	}
 
@@ -1287,11 +1308,6 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 	{
 		UMeshComponent* hitComponent = Cast<UMeshComponent>(hit.GetComponent());
 		_ShootTargetInfo.ShootEnd = hit.Location;
-		//if (ShootWaveEffectComp)
-		//{
-		//	ShootWaveEffectComp->SetVectorParameter(TEXT("Main_Target"), hit.Location);
-		//	ShootWaveEffectComp->SetVectorParameter(TEXT("Sub_Target"), hit.Location);
-		//}
 
 		if (hitComponent != nullptr && ::IsValid(hitComponent))
 		{
@@ -1324,6 +1340,30 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	if (newMagnet == nullptr || !::IsValid(newMagnet)) return;
 
 	newMagnet->SetCurrentMagnetic(givenType);
+
+	//사운드 재생
+	if (MagOnSound && MagOffSound && MagShootSound && MagOnGloveSound && MagOffGloveSound)
+	{
+		bool bMineMagnetic = newMagnet == Magnetic;
+		EMagneticType magnetic = newMagnet->GetCurrentMagnetic();
+
+		if (magnetic != EMagneticType::NONE)
+		{
+			UGameplayStatics::PlaySoundAtLocation(
+				GetWorld(),
+				(bMineMagnetic ? MagOnGloveSound:MagOnSound),
+				newMagnet->GetComponentLocation()
+			);
+		}
+		else
+		{
+			UGameplayStatics::PlaySoundAtLocation(
+				GetWorld(),
+				(bMineMagnetic ? MagOffGloveSound: MagOffSound),
+				newMagnet->GetComponentLocation()
+			);
+		}
+	}
 
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
 	bool isFulledGiven = IsFulledGiven();
@@ -1436,9 +1476,10 @@ void AGamePlayerCharacter::OffMagnetic(EMagneticType prevType, UMagneticComponen
 		if (PlayerAnim->GetResetMontageIsPlaying() == false)
 			PlayerAnim->PlaySelfResetMontage();
 
-		PlayerAnim->SetHandLookMagnetic(EHandType::LEFT, false);
+		PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
 	}
 	
+	_CamLookTarget.Reset();
 	//RemoveGiven(Magnetic);
 }
 
@@ -1453,15 +1494,24 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 	switch (moveType) {
 
 	case(EMagnetMoveType::DRAWN_IN):
+		_CamLookTarget = magnet->GetAttachmentRootActor();
 		PlayerAnim->PlayGlovePulledUpMotage();
-		PlayerAnim->SetHandLookMagnetic(EHandType::LEFT, true, magnet);
 		GetMovementComponent()->SetActive(false);
 		break;
 
 	case(EMagnetMoveType::PUSHED_OUT):
+		_CamLookTarget.Reset();
 		GetMovementComponent()->SetActive(true);
 		break;
 	}
+
+	PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
+}
+
+void AGamePlayerCharacter::ResetCamLookTarget()
+{
+	_CamLookTarget.Reset();
+	PlayerAnim->SetHandFixedTransform(EHandType::LEFT, true);
 }
 
 void AGamePlayerCharacter::MagnetMoveEnd(EMagnetMoveType moveType, UMagneticComponent* magnet)
@@ -1473,11 +1523,22 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* hit, UMagneticComponent* magnet
 {
 	if (hit == nullptr) return;
 
-	if (Magnetic->GetCurrentMagnetic() != EMagneticType::NONE)
+	if (Magnetic->GetCurrentMagnetic() != EMagneticType::NONE && GetAttachParentActor()!=hit)
 	{
+		FTimerHandle handle;
+		FTimerDelegate delegate;
+		delegate.BindUObject(this, &AGamePlayerCharacter::ResetCamLookTarget);
+		GetWorld()->GetTimerManager().SetTimer(
+			handle,
+			delegate,
+			.3f,
+			false
+		);
+
+		_stiffen = 0.3f;
 		_StickTo.Reset();
 		_StickTo = hit;
 		AttachToActor(hit, FAttachmentTransformRules::KeepWorldTransform);
-		PlayerAnim->PlayGloveStickMotage();
+		PlayerAnim->PlayGloveStickMotage(20.f);
 	}
 }

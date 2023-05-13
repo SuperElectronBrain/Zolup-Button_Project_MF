@@ -26,7 +26,9 @@ enum class EMagneticEffectColorType
 	GUN_EFFECT_SPARK_MIN,
 	GUN_SHOOT_EFFECT_MIN,
 	GUN_SHOOT_EFFECT_MAX,
-	GRANT_EFFECT
+	GRANT_EFFECT,
+	GUN_WAVE_MIN,
+	GUN_WAVE_MAX
 };
 
 DECLARE_MULTICAST_DELEGATE_TwoParams(FOnMagneticDelegate, EMagneticType, UMagneticComponent*)
