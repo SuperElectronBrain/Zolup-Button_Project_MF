@@ -58,7 +58,7 @@ public:
 	void PlayGlovePulledUpMotage();
 	void PlayGloveStickMotage(float startTime=0.f, float speed=1.f);
 
-	void SetHandFixedTransform(EHandType armType, bool apply);
+	void SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet=nullptr);
 
 private:
 	//////////////////////

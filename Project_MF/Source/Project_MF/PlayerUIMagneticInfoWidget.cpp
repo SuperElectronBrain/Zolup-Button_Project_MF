@@ -1,6 +1,7 @@
 #include "PlayerUIMagneticInfoWidget.h"
 #include "CustomGameInstance.h"
 #include "HandlerImage.h"
+#include "MagneticComponent.h"
 
 void UPlayerUIMagneticInfoWidget::NativeOnInitialized()
 {
@@ -89,7 +90,7 @@ void UPlayerUIMagneticInfoWidget::SetInfo(EMagneticType type1, EMagneticType typ
 		if (type1 == EMagneticType::NONE) fadeOut(_magL, MAGINFO_FADEID_L);
 		else
 		{
-			_magL->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type1));
+			_magL->SetColorAndOpacity(UMagneticComponent::GetMagneticEffectColor(type1, EMagneticEffectColorType::GRANT_EFFECT));
 			fadeIn(_magL, MAGINFO_FADEID_L);
 		}
 
@@ -102,7 +103,7 @@ void UPlayerUIMagneticInfoWidget::SetInfo(EMagneticType type1, EMagneticType typ
 		if (type2 == EMagneticType::NONE) fadeOut(_magR, MAGINFO_FADEID_R);
 		else
 		{
-			_magR->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type2));
+			_magR->SetColorAndOpacity(UMagneticComponent::GetMagneticEffectColor(type1, EMagneticEffectColorType::GRANT_EFFECT));
 			fadeIn(_magR, MAGINFO_FADEID_R);
 		}
 
@@ -126,7 +127,7 @@ void UPlayerUIMagneticInfoWidget::SetInfo(UMagneticComponent* t1, UMagneticCompo
 		if (type == EMagneticType::NONE) fadeOut(_magL, MAGINFO_FADEID_L);
 		else
 		{
-			_magL->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type));
+			_magL->SetColorAndOpacity(UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GRANT_EFFECT));
 			fadeIn(_magL, MAGINFO_FADEID_L);
 		}
 
@@ -140,7 +141,7 @@ void UPlayerUIMagneticInfoWidget::SetInfo(UMagneticComponent* t1, UMagneticCompo
 		if (type == EMagneticType::NONE) fadeOut(_magR, MAGINFO_FADEID_R);
 		else
 		{
-			_magR->SetColorAndOpacity(UMagneticComponent::GetMagneticLinearColor(type));
+			_magR->SetColorAndOpacity(UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GRANT_EFFECT));
 			fadeIn(_magR, MAGINFO_FADEID_R);
 		}
 

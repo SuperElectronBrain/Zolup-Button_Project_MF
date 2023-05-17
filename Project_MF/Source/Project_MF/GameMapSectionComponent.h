@@ -9,7 +9,7 @@
 
 class UBoxComponent;
 class UMagneticComponent;
-enum class EMagneticType;
+enum class EMagneticType : uint8;
 
 UENUM()
 enum class ESectionSettingType

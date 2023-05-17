@@ -2,11 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/MovementComponent.h"
-#include "MagneticComponent.h"
 #include "MagneticMovementComponent.generated.h"
 
+class UMagneticComponent;
+
 UENUM()
-enum class EMagnetMoveType
+enum class EMagnetMoveType : uint8
 {
 	NONE,
 	PUSHED_OUT,
@@ -14,7 +15,7 @@ enum class EMagnetMoveType
 };
 
 UENUM()
-enum class EMagnetMoveAxisType
+enum class EMagnetMoveAxisType : uint8
 {
 	MOVE_ONLY_XY,
 	MOVE_ONLY_Z,
@@ -36,13 +37,13 @@ public:
 	/////*Public method*////
 	///////////////////////
 	virtual void SetUpdatedComponent(USceneComponent* NewUpdatedComponent) override;
-	AActor* ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime);
+	void ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime, FHitResult& HitResult);
 	virtual void StartMovement(EMagnetMoveType startType, UMagneticComponent* owner, UMagneticComponent* magOperator) {}
 	virtual void EndMovement(EMagnetMoveType endType, UMagneticComponent* owner) {}
 
 protected:
 	UFUNCTION()
-	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* safeOwner, UMagneticComponent* safeMagOperator, float DeltaTime) PURE_VIRTUAL(UMagneticMovementComponent::ApplyMovement, return false;);
+	virtual void ApplyMovement(EMagnetMoveType type, UMagneticComponent* safeOwner, UMagneticComponent* safeMagOperator, float DeltaTime, FHitResult& HitResult) PURE_VIRTUAL(UMagneticMovementComponent::ApplyMovement);
 	UMagneticComponent* GetOwnerMagnetic() const;
 	bool UpdatedPrimitiveIsValid() const { return UpdatedPrimitive && ::IsValid(UpdatedPrimitive) && UpdatedPrimitive->IsSimulatingPhysics(); }
 
