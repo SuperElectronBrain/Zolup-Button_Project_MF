@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "Components/BoxComponent.h"
 #include "GameMapSectionComponent.generated.h"
 
 class UBoxComponent;
 class UMagneticComponent;
-enum class EMagneticType;
+enum class EMagneticType : uint8;
 
 UENUM()
 enum class ESectionSettingType
@@ -83,7 +84,7 @@ private:
 	////////////////////////
 	virtual void BeginPlay() override;
 	virtual void OnAttachmentChanged() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override { return false; }
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override { return false; }
 
 	///////////////////////
 	// Private methods ///

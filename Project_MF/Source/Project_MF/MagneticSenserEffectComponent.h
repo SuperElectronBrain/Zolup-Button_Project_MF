@@ -21,6 +21,6 @@ public:
 	virtual void ReleaseEffect(UMagneticComponent* const magnet, UMagneticSenserComponent* const senser) PURE_VIRTUAL(UMagneticComponent::ReleaseEffect, );
 
 	/*Override methods*/
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override { return false; }
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override { return false; }
 		
 };

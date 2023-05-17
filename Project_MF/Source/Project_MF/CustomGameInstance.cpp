@@ -2,24 +2,34 @@
 
 
 #include "CustomGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 
 UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
-	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
 }
 
 void UCustomGameInstance::Init()
 {
-	if (GetWorld()->WorldType == EWorldType::Game)
-	{
-		bEditmode = false;
-	}
+	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
+	Super::Init();
+
+	//if (::IsValid(SoundMix) == true && ::IsValid(SoundClass) == true)
+	//{
+	//	UGameplayStatics::SetSoundMixClassOverride(GetWorld(), SoundMix, SoundClass, 0.0f);
+	//	UGameplayStatics::PushSoundMixModifier(GetWorld(), SoundMix);
+	//}
+	
+	//if (GetWorld()->WorldType == EWorldType::Game)
+	//{
+	//	bEditmode = false;
+	//}
+
 	//else if (GetWorld()->WorldType == EWorldType::PIE)
-	else
-	{
-		bEditmode = true;
-	}
+	//else
+	//{
+	//	bEditmode = true;
+	//}
 }
 
 bool UCustomGameInstance::GetEditmode()

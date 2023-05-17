@@ -5,9 +5,10 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include <UMG/Public/Components/Image.h>
-#include "MagneticComponent.h"
 #include "PlayerUIMagneticInfoWidget.generated.h"
 
+class UMagneticComponent;
+enum class EMagneticType : uint8;
 class UCustomGameInstance;
 class UHandlerImage;
 

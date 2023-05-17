@@ -17,7 +17,7 @@ class PROJECT_MF_API URotatingMagMovementComponent final : public UMagneticMovem
 
 private:
 	/*Override methods*/
-	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
+	virtual void ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime, FHitResult& HitResult) override;
 
 	/*fields And Components*/
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true, ClampMin = 0.f))

@@ -210,7 +210,6 @@ void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>
 	if (_BlackScreen==nullptr || (_BlackScreen && !::IsValid(_BlackScreen)))
 	{
 		_BlackScreen = Cast<UUIBlackScreenWidget>(CreateWidget(GetWorld(), BlackScreen_Class));
-		_BlackScreen->ConditionalBeginDestroy();
 	}
 
 	outPtr.Reset();
@@ -219,9 +218,12 @@ void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>
 
 void UGameUIManager::GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidget>& outPtr)
 {
-	if (_PlayerUICanvas==nullptr || (_PlayerUICanvas && !::IsValid(_PlayerUICanvas)))
+	if (::IsValid(_PlayerUICanvas) == false)
 	{
-		_PlayerUICanvas = Cast<UPlayerUICanvasWidget>(CreateWidget(GetWorld(), PlayerUICanvas_Class));
+		if (::IsValid(PlayerUICanvas_Class) == true)
+		{
+			_PlayerUICanvas = Cast<UPlayerUICanvasWidget>(CreateWidget(GetWorld(), PlayerUICanvas_Class));
+		}
 	}
 
 	outPtr.Reset();

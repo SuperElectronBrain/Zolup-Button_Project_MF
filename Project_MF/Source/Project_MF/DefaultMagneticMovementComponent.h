@@ -21,7 +21,7 @@ private:
 	///////////////////////
 	///*Override methods*//
 	//////////////////////
-	virtual AActor* ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime) override;
+	virtual void ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime, FHitResult& HitResult) override;
 	virtual void StartMovement(EMagnetMoveType moveType, UMagneticComponent* owner, UMagneticComponent* magOperator) override;
 	virtual void EndMovement(EMagnetMoveType endType, UMagneticComponent* owner) override;
 
@@ -41,6 +41,8 @@ private:
 	float _distance, _currTime, _goalTimeDiv, _distanceDiv, _shakePow;
 	FVector _startPos, _moveDir, _shakeDir;
 	bool _originUsedGravity, _registerHit;
+
+	FVector start, middle, end;
 
 public:
 	UPROPERTY(EditAnywhere, Category = Magnetic)

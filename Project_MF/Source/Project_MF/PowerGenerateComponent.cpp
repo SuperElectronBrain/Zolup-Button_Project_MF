@@ -15,8 +15,8 @@ UPowerGenerateComponent::UPowerGenerateComponent()
 	//static ConstructorHelpers::FObjectFinder<UStaticMesh> SM_BOX(TEXT("/Engine/BasicShapes/Cube.Cube"));
 	//if (SM_BOX.Succeeded() == true) { MeshOrigin = SM_BOX.Object; }
 #pragma endregion
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
-	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
+	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
+	//if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 #pragma region UnUsed
 	//Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
@@ -46,17 +46,17 @@ void UPowerGenerateComponent::BeginPlay()
 	Super::BeginPlay();
 	SetRelativeScale3D(FVector::OneVector);
 	USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
-	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
-	if (::IsValid(OwnerRootPrimitive) == true)
-	{
-		if (MaterialOrigin != nullptr)
-		{
-			MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
-			OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
-		}
+	//UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
+	//if (::IsValid(OwnerRootPrimitive) == true)
+	//{
+		//if (MaterialOrigin != nullptr)
+		//{
+		//	MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
+		//	OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
+		//}
 		//OwnerRootPrimitive->SetCollisionProfileName(TEXT("Collider"));
 		//OwnerRootPrimitive->SetGenerateOverlapEvents(true);
-	}
+	//}
 	
 	float BoxSize = TriggerSize * 100.0f;
 	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
@@ -82,7 +82,7 @@ void UPowerGenerateComponent::BeginPlay()
 
 	SetPowerState(!bPowerState, true);
 	SetPowerState(!bPowerState, true);
-	UpdateMaterialColor();
+	//UpdateMaterialColor();
 }
 
 void UPowerGenerateComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -139,33 +139,48 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 		bool bResult = GetWorld()->SweepMultiByChannel
 		(
 			HitResult,
-			GetOwner()->GetActorLocation(),
-			GetOwner()->GetActorLocation(),
+			GetComponentLocation(),
+			GetComponentLocation(),
 			FQuat::Identity,
 			ECollisionChannel::ECC_GameTraceChannel4,
 			FCollisionShape::MakeBox(TriggerVolume),
 			Params
 		);
 #pragma region UnUsed
-//#if ENABLE_DRAW_DEBUG
-//			FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
-//			float DebugLifeTime = 5.0f;
-//			float BoxSize = TriggerSize * 100.0f;
-//			FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
-//			DrawDebugBox(GetWorld(), GetOwner()->GetRootComponent()->GetComponentLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
-//#endif
+#if ENABLE_DRAW_DEBUG
+		//FColor DrawColor = bResult == true ? FColor::Green : FColor::Red;
+		//float DebugLifeTime = 0.1f;
+		//DrawDebugBox(GetWorld(), GetComponentLocation(), TriggerVolume, FQuat(GetOwner()->GetActorRotation()), DrawColor, false, DebugLifeTime);
+#endif
 #pragma endregion
 
 		if (bResult == true)
 		{
 			for (int i = 0; i < HitResult.Num(); i = i + 1)
-			{
-				if (HitResult[i].Actor.IsValid() == true)
+			{;
+				if (::IsValid(HitResult[i].GetComponent()) == true)
 				{
-					UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(HitResult[i].Actor->FindComponentByClass<UPowerGenerateComponent>());
+					if (::IsValid(HitResult[i].GetComponent()->GetAttachParent()) == true)
+					{
+						UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(HitResult[i].GetComponent()->GetAttachParent());
+						if (::IsValid(PowerGenerateComponent) == false)
+						{
+							//UE_LOG(LogTemp, Warning, TEXT("%s"), *HitResult[i].GetComponent()->GetAttachParent()->GetName());
+							UPowerComponent* PowerComponent = Cast<UPowerComponent>(HitResult[i].GetComponent()->GetAttachParent());
+							if (::IsValid(PowerComponent) == true)
+							{
+								if (PowerComponent != this)
+								{
+									
+									PowerComponent->SetPowerState(bPowerState);
+								}
+							}
+						}
+					}
+					/*UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(HitResult[i].GetActor()->FindComponentByClass<UPowerGenerateComponent>());
 					if (PowerGenerateComponent == nullptr)
 					{
-						UPowerComponent* PowerComponent = Cast<UPowerComponent>(HitResult[i].Actor->FindComponentByClass<UPowerComponent>());
+						UPowerComponent* PowerComponent = Cast<UPowerComponent>(HitResult[i].GetActor()->FindComponentByClass<UPowerComponent>());
 						if (PowerComponent != nullptr)
 						{
 							if (PowerComponent != this)
@@ -173,24 +188,28 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 								PowerComponent->SetPowerState(bPowerState);
 							}
 						}
-					}
+					}*/
 				}
 			}
 		}
-		UpdateMaterialColor();
+		//UpdateMaterialColor();
 	}
 }
 
 void UPowerGenerateComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UPowerComponent* PowerConnectionComponent = OtherActor->FindComponentByClass<UPowerComponent>();
-	if (PowerConnectionComponent != nullptr)
+	//UPowerComponent* PowerComponent = OtherActor->FindComponentByClass<UPowerComponent>();
+	if (::IsValid(OtherComp->GetAttachParent()) == true)
 	{
-		if (PowerConnectionComponent != this)
+		UPowerComponent* PowerComponent = Cast<UPowerComponent>(OtherComp->GetAttachParent());
+		if (::IsValid(PowerComponent) == true)
 		{
-			if (bPowerState == true)
+			if (PowerComponent != this)
 			{
-				PowerConnectionComponent->SetPowerState(true);
+				if (bPowerState == true)
+				{
+					PowerComponent->SetPowerState(true);
+				}
 			}
 		}
 	}
@@ -198,13 +217,18 @@ void UPowerGenerateComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp
 
 void UPowerGenerateComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	UPowerComponent* PowerConnectionComponent = OtherActor->FindComponentByClass<UPowerComponent>();
-	if (PowerConnectionComponent != nullptr)
+	//UPowerComponent* PowerComponent = OtherActor->FindComponentByClass<UPowerComponent>();
+
+	if (::IsValid(OtherComp->GetAttachParent()) == true)
 	{
-		if (PowerConnectionComponent != this)
+		UPowerComponent* PowerComponent = Cast<UPowerComponent>(OtherComp->GetAttachParent());
+		if (PowerComponent != nullptr)
 		{
-			SetPowerState(false);
-			PowerConnectionComponent->SetPowerState(false);
+			if (PowerComponent != this)
+			{
+				SetPowerState(false);
+				PowerComponent->SetPowerState(false);
+			}
 		}
 	}
 }

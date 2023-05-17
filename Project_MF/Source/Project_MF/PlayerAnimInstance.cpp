@@ -15,8 +15,6 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	_bPlayerCreep = false;
 	_bIsJumping = false;
 	_bIsPulled = false;
-	_LHandPenetrate = 0.f;
-	_bLHandHitWall = false;
 
 	/*CDO*/
 	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(
@@ -47,12 +45,17 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	if (STICK_MONTAGE.Succeeded()) StickMotange = STICK_MONTAGE.Object;
 }
 
+void UPlayerAnimInstance::AnimNotify_ShootStart()
+{
+	OnShootStartEvent.Broadcast();
+}
+
 void UPlayerAnimInstance::PlayGlovePulledUpMotage()
 {
 	if (PulledUpMontage == nullptr) return;
 
-	//_ArmLAddOffsetTransform.SetLocation(FVector(-7.f, -7.f, -5.f));
-	//_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
+	_ArmLAddOffsetTransform.SetLocation(FVector(-6.f, 2.f, 45.f));
+	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 
 	Montage_Play(PulledUpMontage, 2.f);
 }
@@ -61,6 +64,8 @@ void UPlayerAnimInstance::PlayGloveStickMotage(float startTime, float speed)
 {
 	if (StickMotange == nullptr || Montage_IsPlaying(StickMotange)) return;
 
+	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
+	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 	Montage_Play(StickMotange, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
@@ -68,6 +73,8 @@ void UPlayerAnimInstance::PlaySelfResetMontage()
 {
 	if (SelfResetMontage == nullptr) return;
 
+	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
+	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 	Montage_Play(SelfResetMontage, 2.f);
 }
 
@@ -75,6 +82,8 @@ void UPlayerAnimInstance::PlaySelfShootMontage(float startTime, float speed)
 {
 	if (SelfShootMontage == nullptr) return;
 
+	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
+	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 	Montage_Play(SelfShootMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
@@ -84,6 +93,9 @@ void UPlayerAnimInstance::PlayResetMontage()
 
 	if (!Montage_IsPlaying(ResetMontage))
 	{
+		_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
+		_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
+
 		float startTime = (GetSelfShootMontageIsPlaying() ? .6f : .3f);
 		Montage_Play(ResetMontage, .7f, EMontagePlayReturnType::MontageLength, startTime);
 	}
@@ -96,20 +108,31 @@ void UPlayerAnimInstance::PlayAttackMontage()
 	Montage_Play(AttackMontage, 1.5f);
 }
 
-void UPlayerAnimInstance::SetHandLookMagnetic(EHandType armType, bool apply, UMagneticComponent* magnetic)
+void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet)
 {
-	bool magnetValid = (magnetic && ::IsValid(magnetic));
-
 	switch (armType) {
 
 	case(EHandType::LEFT):
-		_targetMagnetic = magnetValid && apply ? magnetic : nullptr;
+		_bLArmRotFixed = apply;
 		break;
 
 	case(EHandType::RIGHT):
-		_targetMagnetic = magnetValid && apply ? magnetic : nullptr;
+		_bRArmRotFixed = apply;
 		break;
 	}
+
+	if (apply)
+	{
+		_targetMagnetic = magnet;
+		AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(TryGetPawnOwner());
+		if (character)
+		{
+			_LUpperArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LUPPERARM_BONE);
+			_LForArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
+			_LHandTransform = character->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
+		}
+	}
+	else _targetMagnetic.Reset();
 }
 
 void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
@@ -191,87 +214,62 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 	#pragma endregion
 }
 
-bool UPlayerAnimInstance::ApplyStandingLeftHand(AGamePlayerCharacter* player)
+void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player)
 {
-	#pragma region Omission
-	if (player == nullptr || !::IsValid(player)) return false;
-
-	FHitResult hit;
-	FCollisionQueryParams params;
-	FVector neckPos = player->GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
-	FVector armPos = player->GetMesh()->GetSocketLocation(PLAYER_LPOARM_BONE);
-	FVector handPos = player->GetMesh()->GetSocketLocation(PLAYER_LHAND_BONE);
-	FRotator armRotator = player->GetMesh()->GetSocketRotation(PLAYER_LPOARM_BONE);
-
+	//계산에 필요한 것들을 모조리 구한다.
+	bool	isLeft = type == EHandType::LEFT;
+	const USkeletalMeshComponent* const playerMesh = player->GetMesh();
+	FVector handPos = playerMesh->GetSocketLocation(isLeft ? PLAYER_LHAND_BONE : PLAYER_RHAND_BONE);
+	FVector forarmPos = playerMesh->GetSocketLocation(isLeft ? PLAYER_LPOARM_BONE : PLAYER_RPOARM_BONE);
+	FVector claviclePos = playerMesh->GetSocketLocation(isLeft ? PLAYER_LCLAVICLE_BONE : PLAYER_RCLAVICLE_BONE);
 	FVector forward = player->GetPlayerForwardVector();
 	FVector right = player->GetPlayerRightVector();
 	FVector down = player->GetPlayerDownVector();
-	FVector start = neckPos + down * 30.f - right * 40.f;
-	FVector end = start + forward * 200.f;
-	FVector dir = (end - start).GetSafeNormal();
+	FVector forarmTohandDir = (forarmPos - claviclePos).GetSafeNormal();
 
+	FVector start = player->GetActorLocation() + (right* -10.f) + (down*-50.f) + (forward*-10.f);
+	FVector end = start + (forward * CLA2HAND_LEN);
+
+	FHitResult result;
+	FCollisionQueryParams params;
 	params.AddIgnoredActor(player);
 
-	//만약 자성으로 인해 날라가고 있을 경우
-	if (_targetMagnetic && ::IsValid(_targetMagnetic))
-	{
-		dir = (_targetMagnetic->GetMagneticFieldLocation() - start).GetSafeNormal();
-		end = start + dir * 380.f;
-
-		//DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
-		FRotator rotator = FRotationMatrix::MakeFromX(dir).Rotator();
-		rotator.Yaw -= 90.f;
-
-		_ArmLAddOffsetTransform.SetScale3D(FVector(1.f, 1.f, 1.f));
-		_ArmLReplaceTransform.SetRotation(rotator.Quaternion());
-		_ArmLAddOffsetTransform.SetLocation(down * 40.f);
-		_bIsPulled = true;
-		end = handPos;
-	}
-	else _bIsPulled = false;
-
-	//손을 짚을 곳을 구한다.
-	bool ret = GetWorld()->SweepSingleByChannel(
-		hit,
+	//Test Trace
+	bool ret = GetWorld()->LineTraceSingleByChannel(
+		result,
 		start,
 		end,
-		player->GetPlayerQuat(),
 		ECollisionChannel::ECC_Visibility,
-		FCollisionShape::MakeSphere(20.f),
 		params
 	);
 
-	//디버그용
-	//DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 8.f);
-	 
-	if (ret == false || ret && FVector::DotProduct(dir, hit.Normal) >= 0 || ret && hit.Distance == 0)
+	//충돌했을 경우
+	if (ret && FVector::DotProduct(forward, result.Normal) < 0 && result.Distance > 0)
 	{
-		_bLHandHitWall = false;
-		return false;
+		//팔이 접힐 때의 손의 위치를 지정한다.
+		bApplyFold_LArm = true;
+		FoldLArmHandTransform.SetLocation(result.Location +result.Normal * 1.f);
+		
+		//손이 벽을 짚도록 한다.
+		FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
+		FVector upCross = -FVector::CrossProduct(result.Normal, rightCross);
+		FVector resultCross = upCross + rightCross;
+
+		FoldLArmHandTransform.SetRotation(resultCross.Rotation().Quaternion());
+
+		//충돌시의 디버그용 라인
+		//DrawDebugLine(GetWorld(), result.Location, result.Location + result.Normal * 110.f, FColor::Red, false, -1.f, 0U, 1.f);
+		//DrawDebugLine(GetWorld(), result.Location, result.Location + resultCross * 110.f, FColor::Blue, false, -1.f, 0U, 1.f);
+		//DrawDebugLine(GetWorld(), result.Location, result.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 1.f);
+		//DrawDebugLine(GetWorld(), result.Location, result.Location + upCross * 110.f, FColor::Black, false, -1.f, 0U, 1.f);
+
+		//접히는 방향
+		_LArmJointLocation = claviclePos + (right*-100.f) + (down*30.f);
+
 	}
+	else bApplyFold_LArm = false;
 
-	_bLHandHitWall = true;
-
-	//손을 짚었을 때의 회전값을 구한다.
-	FVector rightCross = -FVector::CrossProduct(hit.Normal, FVector::DownVector);
-	FVector upCross = -FVector::CrossProduct(hit.Normal, rightCross);
-	FVector result = upCross + rightCross;
-
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + upCross* 110.f, FColor::Black, false, -1.f, 0U, 8.f);
-
-	//적용
-	FVector lastLocation = hit.Location -hit.Normal * 15.f;
-	FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
-	
-	_LArmLastTransform.SetLocation(lastLocation);
-	_LArmLastTransform.SetRotation((lastRotation).Quaternion());
-	_LArmJointLocation = armPos + hit.Normal * 1000.f;
-
-	return true;
-	#pragma endregion
+	//DrawDebugLine(GetWorld(), start, _LArmJointLocation, FColor::Yellow, false, -1.f, 0U, 1.f);
 }
 
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -288,16 +286,11 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			_CurrentSpeed = character->GetVelocity().Size();
 			_bIsJumping = character->GetMovementComponent()->Velocity.Z > 0.f;
 
-			//플레이어가 끌어당겨질 경우, 회전을 고정시킨다.
-			int ret = Montage_IsPlaying(PulledUpMontage) || Montage_IsPlaying(StickMotange) || Montage_IsPlaying(SelfShootMontage);
+			//자성으로 날아감을 체크.
+			_bIsPulled = (Montage_IsPlaying(StickMotange) || Montage_IsPlaying(PulledUpMontage));
 
-			ApplyStandingLeftHand(character);
-
-			if (_bPlayerCreep)
-			{
-				ApplyCreepyStandingHands(character);
-			}
-
+			if(_bIsPulled)
+				FoldArmTestByStandHand(EHandType::LEFT, character);
 		}
 	}
 }

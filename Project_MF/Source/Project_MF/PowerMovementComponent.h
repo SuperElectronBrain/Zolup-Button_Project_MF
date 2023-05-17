@@ -20,11 +20,16 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = PowerMovementComponent, Meta = (AllowPrivateAccess = true)) float ActingSpeed;
 	UPROPERTY() float CurrentMovement;
 	UPROPERTY() bool bActingState;
+	UPROPERTY() TWeakObjectPtr<UPowerComponent> ObserveTargetExecutionComponent;
+
+private:	
+
+protected:
+	virtual void BeginPlay() override;
+
 public:	
 	// Sets default values for this component's properties
 	UPowerMovementComponent();
-
-public:	
 	UFUNCTION() void StartAction();
 	UFUNCTION() void EndAction();
 };

@@ -1,10 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "RotatingMagMovementComponent.h"
+#include "MagneticComponent.h"
 #include "DrawDebugHelpers.h"
 
-AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime)
+void URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime, FHitResult& HitResult)
 {
+	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
 	USceneComponent* updated = UpdatedComponent;
 
 	//계산에 필요한 것들을 구한다.
@@ -12,7 +14,7 @@ AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagn
 	const FVector magDir = (owner->GetComponentLocation()-updated->GetComponentLocation()).GetSafeNormal();
 	const FVector goalDir = (SafeMagOperator->GetComponentLocation() - updated->GetComponentLocation()).GetSafeNormal();
 	const FVector t1(magDir.X, magDir.Y, 0.f);
-	 FVector t2(goalDir.X, goalDir.Y, 0.f);
+	FVector t2(goalDir.X, goalDir.Y, 0.f);
 
 	 //magDir가 ZeroVector일 경우.
 	 if (magDir==FVector::ZeroVector) FRotator rotator = owner->GetComponentRotation();
@@ -35,8 +37,6 @@ AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagn
 	SafeMoveUpdatedComponent(FVector::ZeroVector, rot + rotation, true, hit);
 	if (hit.bBlockingHit)
 	{
-		return hit.GetActor();
+		HitResult = hit;
 	}
-
-	return nullptr;
 }
