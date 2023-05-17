@@ -38,18 +38,45 @@ void UPowerVisibleControlComponent::TickComponent(float DeltaTime, ELevelTick Ti
 
 void UPowerVisibleControlComponent::Action(float DeltaTime)
 {
-	if (::IsValid(ObserveTarget.Get()) == true)
+	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
 	{
-		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
-		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		if (ObserveTargetExecutionComponent->GetPowerState() == true)
 		{
-			if (ObserveTargetExecutionComponent->GetPowerState() == true)
+			if (bActingState == false)
 			{
-				if (bActingState == false)
+				if (GetAttachParent()->GetVisibleFlag() == ReversAction)
 				{
-					if (GetAttachParent()->GetVisibleFlag() == ReversAction)
+					GetAttachParent()->SetVisibility(!ReversAction);
+					if (UseCollisionControl == true)
 					{
-						GetAttachParent()->SetVisibility(!ReversAction);
+						UPrimitiveComponent* ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
+						if (::IsValid(ParentPrimitive) == true)
+						{
+							if (OriginCollisionProfile != TEXT(""))
+							{
+								ParentPrimitive->SetCollisionProfileName(ReversAction == false ? *OriginCollisionProfile : TEXT("NoCollision"));
+							}
+						}
+					}
+				}
+
+				if (NonReversibleAction == true)
+				{
+					SetComponentTickEnabled(false);
+				}
+
+				bActingState = true;
+			}
+		}
+		else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+		{
+			if (bActingState == true)
+			{
+				if (NonReversibleAction == false)
+				{
+					if (GetAttachParent()->GetVisibleFlag() == !ReversAction)
+					{
+						GetAttachParent()->SetVisibility(ReversAction);
 						if (UseCollisionControl == true)
 						{
 							UPrimitiveComponent* ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
@@ -57,44 +84,13 @@ void UPowerVisibleControlComponent::Action(float DeltaTime)
 							{
 								if (OriginCollisionProfile != TEXT(""))
 								{
-									ParentPrimitive->SetCollisionProfileName(ReversAction == false ? *OriginCollisionProfile : TEXT("NoCollision"));
+									ParentPrimitive->SetCollisionProfileName(ReversAction == true ? *OriginCollisionProfile : TEXT("NoCollision"));
 								}
 							}
 						}
 					}
-
-					if (NonReversibleAction == true)
-					{
-						SetComponentTickEnabled(false);
-					}
-
-					bActingState = true;
 				}
-			}
-			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
-			{
-				if (bActingState == true)
-				{
-					if (NonReversibleAction == false)
-					{
-						if (GetAttachParent()->GetVisibleFlag() == !ReversAction)
-						{
-							GetAttachParent()->SetVisibility(ReversAction);
-							if (UseCollisionControl == true)
-							{
-								UPrimitiveComponent* ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
-								if (::IsValid(ParentPrimitive) == true)
-								{
-									if (OriginCollisionProfile != TEXT(""))
-									{
-										ParentPrimitive->SetCollisionProfileName(ReversAction == true ? *OriginCollisionProfile : TEXT("NoCollision"));
-									}
-								}
-							}
-						}
-					}
-					bActingState = false;
-				}
+				bActingState = false;
 			}
 		}
 	}
