@@ -59,15 +59,64 @@ void UPowerSoundControlComponent::TickComponent(float DeltaTime, ELevelTick Tick
 
 void UPowerSoundControlComponent::Action(float DeltaTime)
 {
-	if (::IsValid(ObserveTarget.Get()) == true)
+	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
 	{
-		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
-		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		if (ObserveTargetExecutionComponent->GetPowerState() == true)
 		{
-			if (ObserveTargetExecutionComponent->GetPowerState() == true)
+			UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
+			if (bActingState == false)
 			{
-				UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
-				if (bActingState == false)
+				if (::IsValid(AudioComponent) == true)
+				{
+					if (ReversAction == false)
+					{
+						if (ContinueSound == true)
+						{
+							AudioComponent->SetPaused(ReversAction);
+						}
+						else if (ContinueSound == false)
+						{
+							AudioComponent->Play(StartingPoint);
+						}
+					}
+					else if (ReversAction == true)
+					{
+						if (ContinueSound == true)
+						{
+							AudioComponent->SetPaused(ReversAction);
+						}
+						else if (ContinueSound == false)
+						{
+							AudioComponent->Stop();
+						}
+					}
+				}
+
+				if (NonReversibleAction == true)
+				{
+					SetComponentTickEnabled(false);
+				}
+
+				bActingState = true;
+			}
+
+			if (ReversAction == false)
+			{
+				if (LoopSound == true)
+				{
+					if (AudioComponent->GetPlayState() == EAudioComponentPlayState::Stopped)
+					{
+						AudioComponent->Play(StartingPoint);
+					}
+				}
+			}
+		}
+		else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+		{
+			UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
+			if (bActingState == true)
+			{
+				if (NonReversibleAction == false)
 				{
 					if (::IsValid(AudioComponent) == true)
 					{
@@ -75,90 +124,37 @@ void UPowerSoundControlComponent::Action(float DeltaTime)
 						{
 							if (ContinueSound == true)
 							{
-								AudioComponent->SetPaused(ReversAction);
-							}
-							else if (ContinueSound == false)
-							{
-								AudioComponent->Play(StartingPoint);
-							}
-						}
-						else if (ReversAction == true)
-						{
-							if (ContinueSound == true)
-							{
-								AudioComponent->SetPaused(ReversAction);
+								AudioComponent->SetPaused(!ReversAction);
 							}
 							else if (ContinueSound == false)
 							{
 								AudioComponent->Stop();
 							}
 						}
-					}
-
-					if (NonReversibleAction == true)
-					{
-						SetComponentTickEnabled(false);
-					}
-
-					bActingState = true;
-				}
-
-				if (ReversAction == false)
-				{
-					if (LoopSound == true)
-					{
-						if (AudioComponent->GetPlayState() == EAudioComponentPlayState::Stopped)
+						else if (ReversAction == true)
 						{
-							AudioComponent->Play(StartingPoint);
+							if (ContinueSound == true)
+							{
+								AudioComponent->SetPaused(!ReversAction);
+							}
+							else if (ContinueSound == false)
+							{
+								AudioComponent->Play(StartingPoint);
+							}
 						}
 					}
 				}
+
+				bActingState = false;
 			}
-			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
-			{
-				UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
-				if (bActingState == true)
-				{
-					if (NonReversibleAction == false)
-					{
-						if (::IsValid(AudioComponent) == true)
-						{
-							if (ReversAction == false)
-							{
-								if (ContinueSound == true)
-								{
-									AudioComponent->SetPaused(!ReversAction);
-								}
-								else if (ContinueSound == false)
-								{
-									AudioComponent->Stop();
-								}
-							}
-							else if (ReversAction == true)
-							{
-								if (ContinueSound == true)
-								{
-									AudioComponent->SetPaused(!ReversAction);
-								}
-								else if (ContinueSound == false)
-								{
-									AudioComponent->Play(StartingPoint);
-								}
-							}
-						}
-					}
-					
-					bActingState = false;
-				}
 
-				if (ReversAction == true)
+			if (ReversAction == true)
+			{
+				if (LoopSound == true)
 				{
-					if (LoopSound == true)
+					if (AudioComponent->GetPlayState() == EAudioComponentPlayState::Stopped)
 					{
-						if (AudioComponent->GetPlayState() == EAudioComponentPlayState::Stopped)
-						{
-							AudioComponent->Play(StartingPoint);
-						}
+						AudioComponent->Play(StartingPoint);
 					}
 				}
 			}

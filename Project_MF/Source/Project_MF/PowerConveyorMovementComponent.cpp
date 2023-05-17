@@ -87,7 +87,17 @@ void UPowerConveyorMovementComponent::BeginPlay()
 	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
 
 	//ArrowComponent->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	ArrowComponent = GetOwner()->FindComponentByClass<UArrowComponent>();
+	TArray<USceneComponent*> ParentComponent = GetAttachParent()->GetAttachChildren();
+	for (int i = 0; i < ParentComponent.Num(); i = i + 1)
+	{
+		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentComponent[i]);
+		if (::IsValid(Arrow) == true)
+		{
+			ArrowComponent = Arrow;
+			ArrowComponent->AttachToComponent(GetAttachParent(), FAttachmentTransformRules::KeepRelativeTransform);
+			break;
+		}
+	}
 
 #pragma region UnUsed
 	//FVector TriggerVolume = FVector(50.01f * TriggerSize.X, 50.01f * TriggerSize.Y, 50.01f * TriggerSize.Z);
@@ -168,93 +178,90 @@ void UPowerConveyorMovementComponent::TickComponent(float DeltaTime, ELevelTick 
 
 void UPowerConveyorMovementComponent::Action(float DeltaTime)
 {
-	if (::IsValid(ObserveTarget.Get()) == true)
+	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
 	{
-		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
-		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		if (ObserveTargetExecutionComponent->GetPowerState() == true)
 		{
-			if (ObserveTargetExecutionComponent->GetPowerState() == true)
+			TArray<AActor*> OverlappingActors;
+			Trigger->GetOverlappingActors(OverlappingActors);
+			for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
 			{
-				TArray<AActor*> OverlappingActors;
-				Trigger->GetOverlappingActors(OverlappingActors);
-				for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
+				AActor* OverlapTarget = OverlappingActors[i];
+				if (OverlapTarget->GetRootComponent()->Mobility == EComponentMobility::Movable)
 				{
-					AActor* OverlapTarget = OverlappingActors[i];
-					if (OverlapTarget->GetRootComponent()->Mobility == EComponentMobility::Movable)
+					USceneComponent* DirectionComponent = ::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this);
+					FVector OriginPoint = DirectionComponent->GetComponentLocation();
+					FVector MoveDirection = DirectionComponent->GetForwardVector();
+					FVector GravitationDirection = ((OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection))) - OverlapTarget->GetActorLocation()).GetSafeNormal();
+					if (true) { GravitationDirection = (DirectionComponent->GetRightVector() * FVector::DotProduct(DirectionComponent->GetRightVector(), GravitationDirection)).GetSafeNormal(); }
+
+					UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
+					if (::IsValid(TargetRoot) == true && PhysicsMovement == true)
 					{
-						USceneComponent* DirectionComponent = ::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this);
-						FVector OriginPoint = DirectionComponent->GetComponentLocation();
-						FVector MoveDirection = DirectionComponent->GetForwardVector();
-						FVector GravitationDirection = ((OriginPoint - (MoveDirection * FVector::DotProduct(OriginPoint - OverlapTarget->GetActorLocation(), MoveDirection))) - OverlapTarget->GetActorLocation()).GetSafeNormal();
-						if (true) { GravitationDirection = (DirectionComponent->GetRightVector() * FVector::DotProduct(DirectionComponent->GetRightVector(), GravitationDirection)).GetSafeNormal(); }
-
-						UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(OverlapTarget->GetRootComponent());
-						if (::IsValid(TargetRoot) == true && PhysicsMovement == true)
+						if (TargetRoot->IsSimulatingPhysics() == true)
 						{
-							if (TargetRoot->IsSimulatingPhysics() == true)
-							{
-								TargetRoot->SetPhysicsLinearVelocity((MoveDirection + GravitationDirection) * (ActingSpeed * DeltaTime), true);
-							}
+							TargetRoot->SetPhysicsLinearVelocity((MoveDirection + GravitationDirection) * (ActingSpeed * DeltaTime), true);
 						}
-						else if (::IsValid(TargetRoot) == false || PhysicsMovement == false)
-						{
-							FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
-							UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
-							if (TargetRoot->IsSimulatingPhysics() == true)
-							{
-								if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector); }
-							}
-
-							//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
-							//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
-							//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
-						}
-						
 					}
+					else if (::IsValid(TargetRoot) == false || PhysicsMovement == false)
+					{
+						FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
+						UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
+						if (TargetRoot->IsSimulatingPhysics() == true)
+						{
+							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector); }
+						}
+
+						//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
+						//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
+						//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+					}
+
 				}
+			}
 
 #pragma region UnUsed
-				//for (int i = 0; i < MovableTargets.Num(); i = i + 1)
-				//{
-				//	AActor* MovableTarget = MovableTargets[i];
-				//	MovableTarget->AddActorWorldOffset((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector() * (ActingSpeed * DeltaTime));
-				//	UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(MovableTarget->GetRootComponent());
-				//	if (::IsValid(TargetRoot) == true)
-				//	{
-				//		TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector, true);
-				//	}
-				//}
-				
-				//TArray<AActor*> OverlappingActors;
-				//Trigger->GetOverlappingActors(OverlappingActors);
-				//for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
-				//{
-				//	if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
-				//	{
-				//		//UE_LOG(LogTemp, Warning, TEXT("오이오이"));
-				//
-				//		//UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
-				//		//if (OverlapActorsPrimitive->IsSimulatingPhysics() == true)
-				//		//{
-				//			//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = true;
-				//			//OverlapActorsPrimitive->SetPhysicsLinearVelocity(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime), true);
-				//			//OverlapActorsPrimitive->SetPhysicsLinearVelocity(ArrowComponent->GetForwardVector( * (ActingSpeed * DeltaTime), true);
-				//			//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = false;
-				//		//}
-				//		//else
-				//		//{
-				//			//OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
-				//			OverlappingActors[i]->AddActorWorldOffset(ArrowComponent->GetForwardVector() * (ActingSpeed * DeltaTime));
-				//
-				//		//}
-				//	}
-				//}
-				//Collider->AddWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
-				////UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f) %f"), Collider->GetRelativeLocation().X, Collider->GetRelativeLocation().Y, Collider->GetRelativeLocation().Z, Collider->GetRelativeLocation().Size());
-				//if (Collider->GetRelativeLocation().Size() > 25.0f)
-				//{
-				//	Collider->SetRelativeLocation(FVector(-25.0f, 0.0f, 0.0f));
-				//}
+			//for (int i = 0; i < MovableTargets.Num(); i = i + 1)
+			//{
+			//	AActor* MovableTarget = MovableTargets[i];
+			//	MovableTarget->AddActorWorldOffset((::IsValid(ArrowComponent.Get()) == true ? Cast<USceneComponent>(ArrowComponent) : Cast<USceneComponent>(this))->GetForwardVector() * (ActingSpeed * DeltaTime));
+			//	UPrimitiveComponent* TargetRoot = Cast<UPrimitiveComponent>(MovableTarget->GetRootComponent());
+			//	if (::IsValid(TargetRoot) == true)
+			//	{
+			//		TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector, true);
+			//	}
+			//}
+
+			//TArray<AActor*> OverlappingActors;
+			//Trigger->GetOverlappingActors(OverlappingActors);
+			//for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
+			//{
+			//	if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
+			//	{
+			//		//UE_LOG(LogTemp, Warning, TEXT("오이오이"));
+			//
+			//		//UPrimitiveComponent* OverlapActorsPrimitive = Cast<UPrimitiveComponent>(OverlappingActors[i]->GetRootComponent());
+			//		//if (OverlapActorsPrimitive->IsSimulatingPhysics() == true)
+			//		//{
+			//			//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = true;
+			//			//OverlapActorsPrimitive->SetPhysicsLinearVelocity(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime), true);
+			//			//OverlapActorsPrimitive->SetPhysicsLinearVelocity(ArrowComponent->GetForwardVector( * (ActingSpeed * DeltaTime), true);
+			//			//OverlapActorsPrimitive->GetBodyInstance()->bLockRotation = false;
+			//		//}
+			//		//else
+			//		//{
+			//			//OverlappingActors[i]->AddActorWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
+			//			OverlappingActors[i]->AddActorWorldOffset(ArrowComponent->GetForwardVector() * (ActingSpeed * DeltaTime));
+			//
+			//		//}
+			//	}
+			//}
+			//Collider->AddWorldOffset(GetOwner()->GetActorForwardVector() * (ActingSpeed * DeltaTime));
+			////UE_LOG(LogTemp, Warning, TEXT("(%f, %f, %f) %f"), Collider->GetRelativeLocation().X, Collider->GetRelativeLocation().Y, Collider->GetRelativeLocation().Z, Collider->GetRelativeLocation().Size());
+			//if (Collider->GetRelativeLocation().Size() > 25.0f)
+			//{
+			//	Collider->SetRelativeLocation(FVector(-25.0f, 0.0f, 0.0f));
+			//}
 
 //#if ENABLE_DRAW_DEBUG
 //				DrawDebugBox(GetWorld(), Collider->GetComponentLocation(), FVector(55.0f * GetOwner()->GetRootComponent()->GetRelativeScale3D().X / 2, 55.0f * GetOwner()->GetRootComponent()->GetRelativeScale3D().Y, 55.0f * GetOwner()->GetRootComponent()->GetRelativeScale3D().Z), FQuat(GetOwner()->GetActorRotation()), FColor::Red, false, 0.01f);
@@ -296,10 +303,9 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 				//	}
 				//}
 #pragma endregion
-			}
-			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
-			{
-			}
+		}
+		else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+		{
 		}
 	}
 }
@@ -505,8 +511,8 @@ FVector UPowerConveyorMovementComponent::ComputeSlideVector(const FVector& Delta
 	//else
 	//{
 		//const FVector ProjectedNormal = ConstrainNormalToPlane(Normal);
-		const FVector ProjectedNormal = Normal;
-		return FVector::VectorPlaneProject(Delta, ProjectedNormal) * Time;
+	const FVector ProjectedNormal = Normal;
+	return FVector::VectorPlaneProject(Delta, ProjectedNormal) * Time;
 	//}
 }
 
