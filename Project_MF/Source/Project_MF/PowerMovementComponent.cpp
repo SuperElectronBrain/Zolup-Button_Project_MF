@@ -12,6 +12,33 @@ UPowerMovementComponent::UPowerMovementComponent()
 	// ...
 }
 
+void UPowerMovementComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (::IsValid(ObserveTarget.Get()) == true)
+	{
+		ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerComponent>();
+	}
+	else if (::IsValid(ObserveTarget.Get()) == false)
+	{
+		USceneComponent* ParentComponent = GetAttachParent();
+		while (::IsValid(ParentComponent) == true)
+		{
+			UPowerComponent* ParentExecutionComponent = Cast<UPowerComponent>(ParentComponent);
+			if (::IsValid(ParentExecutionComponent) == true)
+			{
+				ObserveTargetExecutionComponent = ParentExecutionComponent;
+				ParentComponent = nullptr;
+			}
+			else if (::IsValid(ParentExecutionComponent) == false)
+			{
+				ParentComponent = ParentComponent->GetAttachParent();
+			}
+		}
+	}
+}
+
 void UPowerMovementComponent::StartAction()
 {
 	bActingState = true;

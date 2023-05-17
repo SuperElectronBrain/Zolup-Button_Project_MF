@@ -35,35 +35,31 @@ void UPowerObjectSpawnerComponent::TickComponent(float DeltaTime, ELevelTick Tic
 
 void UPowerObjectSpawnerComponent::Action(float DeltaTime)
 {
-	if (ObserveTarget != nullptr)
+	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
 	{
-		UPowerExecutionComponent* ObserveTargetExecutionComponent = ObserveTarget->FindComponentByClass<UPowerExecutionComponent>();
-		if (::IsValid(ObserveTargetExecutionComponent) == true)
+		if (ObserveTargetExecutionComponent->GetPowerState() == true)
 		{
-			if (ObserveTargetExecutionComponent->GetPowerState() == true)
+			if (bActingState == false)
 			{
-				if (bActingState == false)
+				bActingState = true;
+
+				if (::IsValid(ArrowComponent.Get()) == true)
 				{
-					bActingState = true;
-
-					if (::IsValid(ArrowComponent.Get()) == true)
-					{
-						GetWorld()->SpawnActor<AActor>(OriginActor, ArrowComponent->GetComponentLocation(), ArrowComponent->GetComponentRotation());
-					}
+					GetWorld()->SpawnActor<AActor>(OriginActor, ArrowComponent->GetComponentLocation(), ArrowComponent->GetComponentRotation());
+				}
 
 
-					if (OneTime == true)
-					{
-						SetComponentTickEnabled(false);
-					}
+				if (OneTime == true)
+				{
+					SetComponentTickEnabled(false);
 				}
 			}
-			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+		}
+		else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+		{
+			if (bActingState == true)
 			{
-				if (bActingState == true)
-				{
-					bActingState = false;
-				}
+				bActingState = false;
 			}
 		}
 	}

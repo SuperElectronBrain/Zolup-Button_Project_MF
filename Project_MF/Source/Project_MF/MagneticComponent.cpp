@@ -1,6 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MagneticComponent.h"
 #include "Components/SceneComponent.h"
 #include "Components/SplineComponent.h"
@@ -15,7 +12,7 @@ UMagneticComponent::UMagneticComponent()
 	#pragma region Summary
 	PrimaryComponentTick.bCanEverTick = true;
 	CurrMagnetic = EMagneticType::NONE;
-	EternalHaveMagnetic = false;
+	bEternalHaveMagnetic = false;
 	_RotCounter = FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION);
 	_applyRadius = _goalRadius = 0.f;
 	bShowMagneticField = true;
@@ -26,7 +23,7 @@ UMagneticComponent::UMagneticComponent()
 	FinalMagneticFieldRadius = 0.f;
 	_applyMovement = false;
 	bUsedFixedWeight = false;
-	_blastUsedGravity = false;
+	bDefaultPrimitiveGravity = false;
 	//RGB = FColor::White;
 	MaxEnchantableCount = 0;
 	CurrEnchantCount = 0;
@@ -87,7 +84,7 @@ void UMagneticComponent::InitParentAndMaterial()
 		if (parentMeshValid) _parentMesh->SetMaterial(0, nullptr);
 		_parentMesh = Cast<UMeshComponent>(GetAttachParent());
 	}
-
+	
 	if (_parentMesh && MagneticApplyMaterial)
 	{
 		//머터리얼이 없다면 생성한다.
@@ -102,29 +99,15 @@ void UMagneticComponent::InitParentAndMaterial()
 				_parentMesh->SetMaterial(0, _material);
 
 			//기본값을 세팅한다.
-			_material->SetVectorParameterValue(TEXT("Emissivecolor"), GetMagneticColorVector(EMagneticType::NONE));
+			_material->SetVectorParameterValue(TEXT("Emissivecolor"),FVector(GetMagneticEffectColor(EMagneticType::NONE, EMagneticEffectColorType::GRANT_EFFECT)));
 			_material->SetScalarParameterValue(TEXT("glow_alpha"), 0.f);
 		}
 	}
 
+	
 	//Parent의 PrimitiveComponent 캐싱.
 	if (_parent == nullptr || _parent != GetAttachParent())
 		_parent = Cast<UPrimitiveComponent>(GetAttachParent());
-}
-
-void UMagneticComponent::AddNoActiveMovement(UMovementComponent* element)
-{
-	if (element == nullptr || !::IsValid(element) || _NoActiveMovements.Contains(element))
-		return;
-
-	_NoActiveMovements.Add(element);
-}
-void UMagneticComponent::RemoveNoActiveMovmeent(UMovementComponent* element)
-{
-	if (element == nullptr || !::IsValid(element) || !_NoActiveMovements.Contains(element))
-		return;
-
-	_NoActiveMovements.Remove(element);
 }
 
 bool UMagneticComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
@@ -168,6 +151,15 @@ void UMagneticComponent::SetParentMaterial(EMagneticType type)
 	_goalMagMaterialApplyRatio  =  type==EMagneticType::NONE ? 0.f : 1.f;
 }
 
+void UMagneticComponent::SetWeight(float value, bool usedFixedWeight) 
+{ 
+	if (value > 0.f) 
+	{ 
+		Weight = value; 
+		bUsedFixedWeight = usedFixedWeight; 
+	} 
+}
+
 void UMagneticComponent::OnAttachmentChanged()
 {
 	Super::OnAttachmentChanged();
@@ -182,7 +174,7 @@ void UMagneticComponent::OnAttachmentChanged()
 	}
 }
 
-void UMagneticComponent::SetMagneticFieldRadius(float newValue)
+void UMagneticComponent::SetMagneticFieldRadiusScale(float newValue)
 {
 	if (newValue < 0.f) return;
 
@@ -242,99 +234,6 @@ void UMagneticComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyC
 }
 #endif
 
-FLinearColor UMagneticComponent::GetMagneticLinearColor(EMagneticType type)
-{
-	#pragma region Summary
-	FLinearColor result;
-
-	switch (type) {
-
-	case(EMagneticType::S):
-		result.R = 0.f;
-		result.G = 0.f;
-		result.B = 1.f;
-		result.A = 1.f;
-		break;
-
-	case(EMagneticType::N):
-		result.R = 1.f;
-		result.G = 0.f;
-		result.B = 0.f;
-		result.A = 1.f;
-		break;
-
-	default:
-		result.R = 1.f;
-		result.G = 1.f;
-		result.B = 1.f;
-		result.A = 1.f;
-	}
-
-	return result;
-	#pragma endregion
-}
-
-FColor UMagneticComponent::GetMagneticColor(EMagneticType type)
-{
-	#pragma region Summary
-	FColor result;
-
-	switch (type) {
-
-	case(EMagneticType::S):
-		result.R = 0;
-		result.G = 0;
-		result.B = 255;
-		result.A = 255;
-		break;
-
-	case(EMagneticType::N):
-		result.R = 255;
-		result.G = 0;
-		result.B = 0;
-		result.A = 255;
-		break;
-
-	default:
-		result.R = 255;
-		result.G = 255;
-		result.B = 255;
-		result.A = 255;
-	}
-
-	return result;
-	#pragma endregion
-}
-
-FVector UMagneticComponent::GetMagneticColorVector(EMagneticType type)
-{
-	#pragma region Summary
-	FVector result;
-
-	switch (type) {
-
-	case(EMagneticType::S):
-		result.X = 0.f;
-		result.Y = 0.70209f;
-		result.Z = 20.f;
-		break;
-
-	case(EMagneticType::N):
-		result.X = 20.f;
-		result.Y = 0.f;
-		result.Z = 0.574217f;
-		break;
-
-	default:
-		result.X = 0.f;
-		result.Y = 0.f;
-		result.Z = 0.f;
-	}
-
-	return result;
-	#pragma endregion
-}
-
 FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMagneticEffectColorType effect)
 {
 	if (type == EMagneticType::NONE) return FLinearColor::White;
@@ -383,7 +282,7 @@ void UMagneticComponent::BeginPlay()
 	/*물리가 적용되어 있다면 그에 대한 설정을 한다.*/
 	if (_parent && ::IsValid(_parent))
 	{
-		_blastUsedGravity = _parent->IsGravityEnabled();
+		bDefaultPrimitiveGravity = _parent->IsGravityEnabled();
 		_parent->SetMobility(EComponentMobility::Movable);
 		GetAttachmentRoot()->SetMobility(EComponentMobility::Movable);
 	}
@@ -423,11 +322,6 @@ void UMagneticComponent::DestroyComponent(bool bPromoteChilderen)
 	{
 		_parentMesh->SetMaterial(0, nullptr);
 	}
-
-	//if (FieldSpline)
-	//{
-	//	FieldSpline->DestroyComponent();
-	//}
 
 	if (FieldCollision)
 	{
@@ -535,36 +429,32 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 		_goalRadius = 0.f;
 
 		//Simulate physics 적용중이였다면, 중력 적용을 원상복귀 시킨다.
-		if (_parent && _parent->IsSimulatingPhysics()) _parent->SetEnableGravity(_blastUsedGravity);
+		if (_parent && _parent->IsSimulatingPhysics()) _parent->SetEnableGravity(bDefaultPrimitiveGravity);
 
 		//만약 이동중에 자성이 변경되었다면, 이동이 끝임을 수신하고 무시했던 MovementComponent들을 활성화.
 		if (_movement && _applyMovement)
 		{
-			MagnetMoveEndEvent.Broadcast(_lastMoveType, this);
-			SetNoActiveMovementsActive(true);
+			OnComponentMagnetEndMovement.Broadcast(_lastMoveType, this);
 			_lastMoveType = EMagnetMoveType::NONE;
 			_applyMovement = false;
 		}
-
-		OffMagneticEvent.Broadcast(newType, this);
 	}
 	else
 	{
 		CurrHaveMagneticSeconds = MaxHaveMagneticSeconds;
 		if (changeMagnetic)
 		{
-			//_currMagMaterialApplyRatio = 0.f;
 			_applyRadius = .1f;
 			_magActivate = false;
 		}
 
 		SettingMagnetWeightAndFieldRange();
 
-		_fieldColor = GetMagneticColorVector(newType);
+		_fieldColor = FVector(GetMagneticEffectColor(newType, EMagneticEffectColorType::RING_EFFECT));
 		UpdateFieldMeshsColor(newType);
-		OnMagneticEvent.Broadcast(newType, this);
 	}
 
+	OnComponentMagneticChanged.Broadcast(CurrMagnetic, this);
 	SetParentMaterial(CurrMagnetic);
 	#pragma endregion
 }
@@ -578,17 +468,6 @@ void UMagneticComponent::UpdateFieldMeshsColor(EMagneticType type)
 			GetMagneticEffectColor(type, EMagneticEffectColorType::RING_EFFECT)
 		);
 	}
-
-	//if (FieldMeshs.Num() > 0)
-	//{
-	//	FVector color = GetMagneticColorVector(type);
-
-	//	for (auto mesh : FieldMeshs)
-	//	{
-	//		mesh->SetVectorParameterValueOnMaterials(TEXT("color"), color);
-	//	}
-
-	//}
 }
 
 void UMagneticComponent::UpdateMagneticField()
@@ -611,70 +490,6 @@ void UMagneticComponent::UpdateMagneticField()
 	}
 
 	return;
-
-	//FieldSpline->ClearSplinePoints(true);
-
-	////원이 되도록 회전.
-	//FVector size = GetAttachParent()->GetComponentScale();
-	//float rot = .0f;
-	//FVector mov;
-
-	////라인을 먼저 그린다.
-	//FVector center = FieldCollision->GetComponentLocation();
-	//for (int32 i = 0; i <= MAGNETIC_FIELD_PRECISION; i++)
-	//{
-	//	FVector point(FMath::Cos(rot) * _applyRadius,
-	//		FMath::Sin(rot) * _applyRadius, .0f);
-
-	//	rot += _RotCounter;
-
-	//	FieldSpline->AddSplinePointAtIndex(center + point, i, ESplineCoordinateSpace::World);
-	//}
-
-	//int32 count = FieldSpline->GetNumberOfSplinePoints() - 1;
-
-	////현재 처음으로 적용되는 것이라면 SplineMeshComponent를 생성.
-	//int32 FieldMeshCount = FieldMeshs.Num();
-	//FVector color = GetMagneticColorVector(CurrMagnetic);
-	//if (FieldMeshCount == 0)
-	//{
-	//	//필요한 Mesh들을 생성.
-	//	for (int32 i = 0; i < count; i++)
-	//	{
-	//		USplineMeshComponent* splineMeshComponent = NewObject<USplineMeshComponent>(this, USplineMeshComponent::StaticClass());
-	//		splineMeshComponent->SetStaticMesh(MagneticFieldMesh);
-	//		splineMeshComponent->SetCastShadow(false);
-	//		splineMeshComponent->SetCastInsetShadow(false);
-	//		splineMeshComponent->SetForwardAxis(ESplineMeshAxis::Z);
-	//		splineMeshComponent->SetMobility(EComponentMobility::Movable);
-	//		splineMeshComponent->CreationMethod = EComponentCreationMethod::UserConstructionScript;
-	//		splineMeshComponent->RegisterComponentWithWorld(GetWorld());
-	//		splineMeshComponent->AttachToComponent(FieldSpline, FAttachmentTransformRules::KeepRelativeTransform);
-	//		splineMeshComponent->SetStartScale(FVector2D(UKismetSystemLibrary::MakeLiteralFloat(.07f), UKismetSystemLibrary::MakeLiteralFloat(.07f)));
-	//		splineMeshComponent->SetEndScale(FVector2D(UKismetSystemLibrary::MakeLiteralFloat(.07f), UKismetSystemLibrary::MakeLiteralFloat(.07f)));
-	//		splineMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
-	//		//머터리얼 적용
-	//		if (MagneticFieldMaterial)
-	//		{
-	//			splineMeshComponent->SetMaterial(0, MagneticFieldMaterial);
-	//			splineMeshComponent->SetVectorParameterValueOnMaterials(TEXT("color"), color);
-	//		}
-	//		FieldMeshs.Add(splineMeshComponent);
-	//	}
-	//}
-
-	////그려져 있는 라인에 따라서 메시를 연결시킨다.
-	//FieldMeshCount = FieldMeshs.Num();
-	//for (int32 i = 0; i < count && i < FieldMeshCount; i++)
-	//{
-	//	if (i >= FieldMeshCount || FieldMeshs[i] == nullptr || !::IsValid(FieldMeshs[i])) break;
-	//	const FVector startPoint = FieldSpline->GetLocationAtSplinePoint(i, ESplineCoordinateSpace::Local);
-	//	const FVector startTangent = FieldSpline->GetTangentAtSplinePoint(i, ESplineCoordinateSpace::Local);
-	//	const FVector endPoint = FieldSpline->GetLocationAtSplinePoint(i + 1, ESplineCoordinateSpace::Local);
-	//	const FVector endTangent = FieldSpline->GetTangentAtSplinePoint(i + 1, ESplineCoordinateSpace::Local);
-	//	FieldMeshs[i]->SetStartAndEnd(startPoint, startTangent, endPoint, endTangent, true);
-	//}
 	#pragma endregion
 }
 
@@ -707,25 +522,6 @@ void UMagneticComponent::ClearMagneticField()
 	#pragma endregion
 }
 
-void UMagneticComponent::SetNoActiveMovementsActive(bool value)
-{
-	int predictCount = _NoActiveMovements.Num();
-
-	if (_NoActiveMovements.Num() > 0)
-	{
-		for (int32 i = 0; i < predictCount; i++)
-		{
-			//유효하지 않은 무브먼트라면 제거하고 넘어간다.
-			if (_NoActiveMovements[i] == nullptr || !::IsValid(_NoActiveMovements[i])) {
-				_NoActiveMovements.RemoveAt(i--);
-				continue;
-			}
-
-			_NoActiveMovements[i]->SetActive(value);
-		}
-	}
-}
-
 // Called every frame
 void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -733,7 +529,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 
 	#pragma region Summary
 	//자성을 유지할 수 있는 시간이 넘으면 자성을 잃게 된다.
-	if (!EternalHaveMagnetic && CurrMagnetic != EMagneticType::NONE && CurrHaveMagneticSeconds > 0.f)
+	if (!bEternalHaveMagnetic && CurrMagnetic != EMagneticType::NONE && CurrHaveMagneticSeconds > 0.f)
 	{
 		CurrHaveMagneticSeconds -= DeltaTime;
 		if (CurrHaveMagneticSeconds <= 0.f)
@@ -785,6 +581,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	float maxWeight = 0.f;
 	bool applyLogic = false;
 	AActor* finalHit = nullptr;
+	FVector finalNormal = FVector::ZeroVector;
 	FieldCollision->GetOverlappingComponents(overlapList);
 
 	for (auto p : overlapList)
@@ -804,19 +601,20 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		EMagnetMoveType moveType = (magnet->CurrMagnetic == CurrMagnetic ? EMagnetMoveType::PUSHED_OUT : EMagnetMoveType::DRAWN_IN);
 		if (_applyMovement == false || _lastMoveType != moveType)
 		{
-			MagnetMoveStartEvent.Broadcast(moveType, magnet);
+			OnComponentMagnetBeginMovement.Broadcast(moveType, this, magnet);
 			_movement->StartMovement(moveType, this, magnet);
-			SetNoActiveMovementsActive(moveType == EMagnetMoveType::PUSHED_OUT ? true : false);
 		}
 		_applyMovement = true;
 		applyLogic = true;
 		CurrHaveMagneticSeconds = MaxHaveMagneticSeconds;
 
 		//부딫힌 것이 자석이라면
-		AActor* hit = _movement->ApplyUpdatedComponentMovement(moveType, this, magnet, DeltaTime);
-		if (hit == magnet->GetOwner())
+		FHitResult hit;
+		_movement->ApplyUpdatedComponentMovement(moveType, this, magnet, DeltaTime, hit);
+		if (hit.bBlockingHit && hit.GetActor() == magnet->GetOwner())
 		{
-			finalHit = hit;
+			finalHit = hit.GetActor();
+			finalNormal = hit.Normal;
 		}
 
 		if (maxWeight < magnet->Weight)
@@ -832,15 +630,14 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		_applyMovement = false;
 		_movement->EndMovement(_lastMoveType, this);
 		_lastMoveType = EMagnetMoveType::NONE;
-		MagnetMoveEndEvent.Broadcast(_lastMoveType, this);
-		SetNoActiveMovementsActive(true);
+		OnComponentMagnetEndMovement.Broadcast(_lastMoveType, this);
 
-		if (_parent && _parent->IsSimulatingPhysics()) _parent->SetEnableGravity(_blastUsedGravity);
+		if (_parent && _parent->IsSimulatingPhysics()) _parent->SetEnableGravity(bDefaultPrimitiveGravity);
 		return;
 	}
 	else if (applyLogic && finalHit != nullptr && ::IsValid(finalHit))
 	{
-		MagnetMoveHitEvent.Broadcast(finalHit, this);
+		OnComponentMagnetMoveHit.Broadcast(finalHit, this, finalNormal);
 	}
 	#pragma endregion
 }

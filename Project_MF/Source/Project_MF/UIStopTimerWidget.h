@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "GameUIHandler.h"
 #include "UIStopTimerWidget.generated.h"
 
 class UImage;
-class IGameUIHandler;
 
 UCLASS()
 class PROJECT_MF_API UUIStopTimerWidget : public UUserWidget, public IGameUIHandler

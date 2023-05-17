@@ -1,4 +1,5 @@
 #include "MagneticMovementComponent.h"
+#include "MagneticComponent.h"
 
 UMagneticMovementComponent::UMagneticMovementComponent()
 {
@@ -32,11 +33,11 @@ void UMagneticMovementComponent::SetUpdatedComponent(USceneComponent* NewUpdated
 	Super::SetUpdatedComponent(NewUpdatedComponent);
 }
 
-AActor* UMagneticMovementComponent::ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime)
+void UMagneticMovementComponent::ApplyUpdatedComponentMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* magOperator, float DeltaTime, FHitResult& HitResult)
 {
 	if (type == EMagnetMoveType::NONE || magOperator == nullptr && !::IsValid(magOperator) || owner == nullptr && !::IsValid(owner))
-		return false;
+		return;
 
 	//이동 상태에 따라서 알맞은 로직 처리
-	return ApplyMovement(type,owner, magOperator,  DeltaTime);
+	ApplyMovement(type,owner, magOperator,  DeltaTime, HitResult);
 }
