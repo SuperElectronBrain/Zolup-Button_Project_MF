@@ -2,7 +2,6 @@
 
 
 #include "UIStopTimerWidget.h"
-#include "GameUIHandler.h"
 #include "Components/Image.h"
 
 void UUIStopTimerWidget::NativeOnInitialized()

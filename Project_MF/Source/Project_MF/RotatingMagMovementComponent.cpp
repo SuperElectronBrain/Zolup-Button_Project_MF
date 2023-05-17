@@ -1,9 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "RotatingMagMovementComponent.h"
+#include "MagneticComponent.h"
 #include "DrawDebugHelpers.h"
 
-AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime)
+void URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime, FHitResult& HitResult)
 {
 	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
 	USceneComponent* updated = UpdatedComponent;
@@ -36,8 +37,6 @@ AActor* URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagn
 	SafeMoveUpdatedComponent(FVector::ZeroVector, rot + rotation, true, hit);
 	if (hit.bBlockingHit)
 	{
-		return hit.GetActor();
+		HitResult = hit;
 	}
-
-	return nullptr;
 }

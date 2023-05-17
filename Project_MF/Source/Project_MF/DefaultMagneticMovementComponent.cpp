@@ -1,5 +1,6 @@
 #include "DefaultMagneticMovementComponent.h"
 #include "DrawDebugHelpers.h"
+#include "MagneticComponent.h"
 
 UDefaultMagneticMovementComponent::UDefaultMagneticMovementComponent()
 {
@@ -38,7 +39,7 @@ void UDefaultMagneticMovementComponent::EndMovement(EMagnetMoveType endType, UMa
 	}
 }
 
-AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime)
+void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime, FHitResult& HitResult)
 {
 	UPrimitiveComponent* ownerPhysics = owner->GetAttachmentPrimitive();
 	UPrimitiveComponent* ownerRootPhysics = Cast<UPrimitiveComponent>(owner->GetAttachmentRoot());
@@ -68,7 +69,7 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 		Velocity = dir * pow;
 		ownerPhysics->SetEnableGravity(false);
 		ownerPhysics->AddForceAtLocation(Velocity * ownerPhysics->GetMass(), ownerCenter);
-		return nullptr;
+		return;
 	}
 
 
@@ -146,8 +147,8 @@ AActor* UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, U
 
 	if (hit.IsValidBlockingHit() && FVector::DotProduct(dir, hit.Normal) < 0 && type == EMagnetMoveType::DRAWN_IN && hit.GetActor() != nullptr && ::IsValid(hit.GetActor()))
 	{
-		return hit.GetActor();
+		HitResult = hit;
 	}
 
-	return nullptr;
+	return;
 }

@@ -108,7 +108,7 @@ void UPlayerAnimInstance::PlayAttackMontage()
 	Montage_Play(AttackMontage, 1.5f);
 }
 
-void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply)
+void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet)
 {
 	switch (armType) {
 
@@ -123,13 +123,13 @@ void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply)
 
 	if (apply)
 	{
+		_targetMagnetic = magnet;
 		AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(TryGetPawnOwner());
 		if (character)
 		{
 			_LUpperArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LUPPERARM_BONE);
 			_LForArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
 			_LHandTransform = character->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
-
 		}
 	}
 	else _targetMagnetic.Reset();
@@ -234,9 +234,6 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 	FCollisionQueryParams params;
 	params.AddIgnoredActor(player);
 
-	//만약 자성으로 인해 날라가고 있을 경우
-	_bIsPulled = _targetMagnetic.IsValid();
-
 	//Test Trace
 	bool ret = GetWorld()->LineTraceSingleByChannel(
 		result,
@@ -246,14 +243,12 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 		params
 	);
 
-	//DrawDebugLine(GetWorld(), start, end, FColor::Yellow, false, -1.f, 0U, 1.f);
-
 	//충돌했을 경우
 	if (ret && FVector::DotProduct(forward, result.Normal) < 0 && result.Distance > 0)
 	{
 		//팔이 접힐 때의 손의 위치를 지정한다.
 		bApplyFold_LArm = true;
-		FoldLArmHandTransform.SetLocation(result.Location +result.Normal * 0.5f);
+		FoldLArmHandTransform.SetLocation(result.Location +result.Normal * 1.f);
 		
 		//손이 벽을 짚도록 한다.
 		FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
@@ -291,7 +286,11 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			_CurrentSpeed = character->GetVelocity().Size();
 			_bIsJumping = character->GetMovementComponent()->Velocity.Z > 0.f;
 
-			FoldArmTestByStandHand(EHandType::LEFT, character);
+			//자성으로 날아감을 체크.
+			_bIsPulled = (Montage_IsPlaying(StickMotange) || Montage_IsPlaying(PulledUpMontage));
+
+			if(_bIsPulled)
+				FoldArmTestByStandHand(EHandType::LEFT, character);
 		}
 	}
 }
