@@ -22,33 +22,38 @@ void UPowerMovementComponent::BeginPlay()
 	}
 	else if (::IsValid(ObserveTarget.Get()) == false)
 	{
-		TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
-		for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
+		USceneComponent* ParentComponent = GetAttachParent();
+		while (::IsValid(ParentComponent) == true)
 		{
-			UPowerComponent* PowerComponent = Cast<UPowerComponent>(ParentsComponents[i]);
-			if (::IsValid(PowerComponent) == true)
+			UPowerComponent* ParentPowerComponent = Cast<UPowerComponent>(ParentComponent);
+			if (::IsValid(ParentPowerComponent) == true)
 			{
-				ObserveTargetExecutionComponent = PowerComponent;
-				break;
+				ObserveTargetExecutionComponent = ParentPowerComponent;
+				ParentComponent = nullptr;
+			}
+			else if (::IsValid(ParentPowerComponent) == false)
+			{
+				ParentComponent = ParentComponent->GetAttachParent();
 			}
 		}
 
 		if (::IsValid(ObserveTargetExecutionComponent.Get()) == false)
 		{
-			USceneComponent* ParentComponent = GetAttachParent();
-			while (::IsValid(ParentComponent) == true)
+			TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
+			for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
 			{
-				UPowerComponent* ParentPowerComponent = Cast<UPowerComponent>(ParentComponent);
-				if (::IsValid(ParentPowerComponent) == true)
+				UPowerComponent* PowerComponent = Cast<UPowerComponent>(ParentsComponents[i]);
+				if (::IsValid(PowerComponent) == true)
 				{
-					ObserveTargetExecutionComponent = ParentPowerComponent;
-					ParentComponent = nullptr;
-				}
-				else if (::IsValid(ParentPowerComponent) == false)
-				{
-					ParentComponent = ParentComponent->GetAttachParent();
+					ObserveTargetExecutionComponent = PowerComponent;
+					break;
 				}
 			}
+		}
+
+		if (::IsValid(ObserveTargetExecutionComponent.Get()) == false)
+		{
+			ObserveTargetExecutionComponent = GetOwner()->FindComponentByClass<UPowerComponent>();
 		}
 	}
 }

@@ -124,6 +124,8 @@ void UMFAudioComponent::OnCollisionExit(AActor* Collision)
 
 void UMFAudioComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
+	SetWorldLocation(Hit.ImpactPoint);
+
 	int32 Count = 0;
 	for (int32 i = 0; i < HitActors.Num(); i = i + 1)
 	{
