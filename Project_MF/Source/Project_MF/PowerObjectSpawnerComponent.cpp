@@ -13,10 +13,10 @@ void UPowerObjectSpawnerComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	TArray<USceneComponent*> ParentComponent = GetAttachParent()->GetAttachChildren();
-	for (int i = 0; i < ParentComponent.Num(); i = i + 1)
+	TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
+	for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
 	{
-		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentComponent[i]);
+		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentsComponents[i]);
 		if (::IsValid(Arrow) == true)
 		{
 			ArrowComponent = Arrow;
@@ -31,7 +31,6 @@ void UPowerObjectSpawnerComponent::TickComponent(float DeltaTime, ELevelTick Tic
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	Action(DeltaTime);
 }
-
 
 void UPowerObjectSpawnerComponent::Action(float DeltaTime)
 {

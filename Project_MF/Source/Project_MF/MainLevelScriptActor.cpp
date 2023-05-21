@@ -10,7 +10,7 @@
 
 AMainLevelScriptActor::AMainLevelScriptActor()
 {
-	static ConstructorHelpers::FClassFinder<UUserWidget> UI_UICANVAS_C(TEXT("/Game/UI/MainLevel_UICanvas.MainLevel_UICanvas_C"));
+	static ConstructorHelpers::FClassFinder<UUserWidget> UI_UICANVAS_C(TEXT("/Game/UI/Menu/MainLevel_UICanvas.MainLevel_UICanvas_C"));
 	if (UI_UICANVAS_C.Succeeded() == true)
 	{
 		MainLevelUICanvasClass = UI_UICANVAS_C.Class;

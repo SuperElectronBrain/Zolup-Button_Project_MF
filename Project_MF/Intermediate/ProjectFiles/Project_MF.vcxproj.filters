@@ -258,6 +258,12 @@
     <ClInclude Include="..\..\Source\Project_MF\PlayerAnimInstance.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PlayerUIAimWidget.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PlayerUIAimWidget.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PlayerUICanvasWidget.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
@@ -292,6 +298,12 @@
       <Filter>Source\Project_MF</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Project_MF\PowerDirectionMovementComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\PowerEffectControlComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\PowerEffectControlComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\PowerExecutionComponent.cpp">
