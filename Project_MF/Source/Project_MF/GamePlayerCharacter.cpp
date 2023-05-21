@@ -50,33 +50,33 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 	/*CDO - UI*/
 	static ConstructorHelpers::FClassFinder<UUserWidget> STOPTIMER_WIDGET(
-		TEXT("/Game/UI/UIStopTimerWidget")
+		TEXT("/Game/UI/Player/UIStopTimerWidget.UIStopTimerWidget_C")
 	);
 
 	/*CDO - Sound*/
 	static ConstructorHelpers::FObjectFinder<USoundBase> GIVE_SOUND(
-		TEXT("/Game/Sounds/MagneticOn.MagneticOn")
+		TEXT("/Game/Sounds/Magnetic/MagneticOn.MagneticOn")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> UNGIVE_SOUND(
-		TEXT("/Game/Sounds/MagneticOff.MagneticOff")
+		TEXT("/Game/Sounds/Magnetic/MagneticOff.MagneticOff")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> Shoot_SOUND(
-		TEXT("/Game/Sounds/GunShooting.GunShooting")
+		TEXT("/Game/Sounds/Gun/GunShooting.GunShooting")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> GLOVE_On_SOUND(
-		TEXT("/Game/Sounds/MagneticGloveOn.MagneticGloveOn")
+		TEXT("/Game/Sounds/Magnetic/MagneticGloveOn.MagneticGloveOn")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> GLOVE_OFF_SOUND(
-		TEXT("/Game/Sounds/MagneticGloveOff.MagneticGloveOff")
+		TEXT("/Game/Sounds/Magnetic/MagneticGloveOff.MagneticGloveOff")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> BREATH_DEFAULT_SOUND(
-		TEXT("/Game/Sounds/Breathing_Stay.Breathing_Stay")
+		TEXT("/Game/Sounds/Player/Breathing_Stay.Breathing_Stay")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> BREATH_DASH_SOUND(
-		TEXT("/Game/Sounds/Breathing_Run.Breathing_Run")
+		TEXT("/Game/Sounds/Player/Breathing_Run.Breathing_Run")
 	);
 	static ConstructorHelpers::FObjectFinder<USoundBase> GUN_MODE_CHANGE_SOUND(
-		TEXT("/Game/Sounds/Gun_Change_1.Gun_Change_1")
+		TEXT("/Game/Sounds/Gun/Gun_Change_1.Gun_Change_1")
 	);
 
 	/*Audio*/

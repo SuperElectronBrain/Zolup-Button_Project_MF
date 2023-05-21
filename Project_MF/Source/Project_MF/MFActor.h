@@ -12,7 +12,7 @@ class PROJECT_MF_API AMFActor : public AActor
 	GENERATED_BODY()
 	
 private:
-	UPROPERTY() UStaticMeshComponent* Mesh;
+	//UPROPERTY() UStaticMeshComponent* Mesh;
 
 public:	
 	// Sets default values for this actor's properties
@@ -20,13 +20,13 @@ public:
 
 protected:
 	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	virtual void PostInitializeComponents() override;
+	//virtual void BeginPlay() override;
+	//virtual void PostInitializeComponents() override;
 
-	UFUNCTION() UStaticMeshComponent* GetMesh();
+	//UFUNCTION() UStaticMeshComponent* GetMesh();
 
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	//virtual void Tick(float DeltaTime) override;
 
 };
