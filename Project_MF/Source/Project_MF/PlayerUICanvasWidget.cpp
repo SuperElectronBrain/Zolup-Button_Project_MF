@@ -3,19 +3,38 @@
 
 #include "PlayerUICanvasWidget.h"
 #include "MagneticComponent.h"
+#include "PlayerUIMagneticInfoWidget.h"
+#include "PlayerUIAimWidget.h"
+#include "CustomGameInstance.h"
+
+void UPlayerUICanvasWidget::NativeOnInitialized()
+{
+	Super::NativeOnInitialized();
+
+	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
+	_Aim = Cast<UPlayerUIAimWidget>(GetWidgetFromName(TEXT("PlayerUI_Aim")));
+}
 
 void UPlayerUICanvasWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	GetWorld();
-	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
-	_AimImage = Cast<UImage>(GetWidgetFromName(TEXT("Aim")));
+	
 }
 
-void UPlayerUICanvasWidget::SetAnimColor(FColor color)
+void UPlayerUICanvasWidget::NativeDestruct()
 {
-	if (_AimImage == nullptr || _MagneticInfo==nullptr) return;
+	Super::NativeDestruct();
+}
 
-	_AimImage->SetColorAndOpacity(color);
+void UPlayerUICanvasWidget::GetMagneticInfoWidget(TWeakObjectPtr<UPlayerUIMagneticInfoWidget>& outPtr) const
+{
+	outPtr.Reset();
+	outPtr = _MagneticInfo;
+}
+
+void UPlayerUICanvasWidget::GetAimWidget(TWeakObjectPtr<UPlayerUIAimWidget>& outPtr) const
+{
+	outPtr.Reset();
+	outPtr = _Aim;
 }

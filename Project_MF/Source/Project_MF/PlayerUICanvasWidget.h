@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "PlayerUIMagneticInfoWidget.h"
-#include "MagneticComponent.h"
 #include "PlayerUICanvasWidget.generated.h"
 
+class UImage;
+class UPlayerUIMagneticInfoWidget;
+class UPlayerUIAimWidget;
 /**
  * 
  */
@@ -18,10 +19,12 @@ class PROJECT_MF_API UPlayerUICanvasWidget final : public UUserWidget
 
 public:
 	/*Construct*/
+	virtual void NativeOnInitialized() override;
 	virtual void NativeConstruct() override;
+	virtual void NativeDestruct() override;
 
-	void SetAnimColor(FColor color);
-	UPlayerUIMagneticInfoWidget* GetMagneticInfoWidget() const { return _MagneticInfo; }
+	void GetMagneticInfoWidget(TWeakObjectPtr<UPlayerUIMagneticInfoWidget>& outPtr) const;
+	void GetAimWidget(TWeakObjectPtr<UPlayerUIAimWidget>& outPtr) const;
 
 private:
 	/*fields and Components*/
@@ -29,6 +32,6 @@ private:
 	UPlayerUIMagneticInfoWidget* _MagneticInfo;
 
 	UPROPERTY()
-	UImage* _AimImage;
+	UPlayerUIAimWidget* _Aim;
 	
 };

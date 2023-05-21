@@ -6,6 +6,10 @@
 #include "Components/BoxComponent.h"
 #include "GameCheckPointRangeComponent.generated.h"
 
+#define CHECKPOINT_FADE_ID 29
+
+class UCustomGameInstance;
+
 UENUM()
 enum class EHitCheckPointRangeApplyTiming
 {
@@ -49,7 +53,8 @@ private:
 	/// Override methods ///
 	////////////////////////
 	virtual void BeginPlay() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override { return false; }
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
 
 	/////////////////////////
 	//// Private methods ////
@@ -58,15 +63,17 @@ private:
 	void BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UFUNCTION()
-	void FadeWait(AActor* actor);
+	void FadeChange(bool isDark, int id);
 
 	void ApplyRogic(AActor* actor);
 
 	//////////////////////////////
 	/// Components and fields ////
 	//////////////////////////////
-	UPROPERTY()
-	UGameMapSectionComponent* Section;
+	FDelegateHandle _handle;
+	TWeakObjectPtr<UCustomGameInstance> _Instance;
+	TWeakObjectPtr<AActor> _moveTarget;
+	TWeakObjectPtr<UGameMapSectionComponent> Section;
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite,  Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
 	AActor* CheckPoint;

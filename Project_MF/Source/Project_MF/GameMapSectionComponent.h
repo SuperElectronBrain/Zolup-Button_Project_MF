@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "Components/BoxComponent.h"
 #include "GameMapSectionComponent.generated.h"
 
 class UBoxComponent;
 class UMagneticComponent;
-enum class EMagneticType;
+enum class EMagneticType : uint8;
 
 UENUM()
 enum class ESectionSettingType
@@ -56,6 +57,11 @@ public:
 	float MagneticFieldRadiusScale;
 };
 
+/*게임맵의 영역을 지정하고, 초기 상태를 기록하거나, 클리어 여부를 기록하는 컴포넌트입니다.
+* 이 컴포넌트가 엑터에게 부착되면, 부착되어있는 엑터의 모든 자식 엑터들의 초기 트랜스폼/자성정보등을 기록하고,
+* 원하는 시점에 되돌릴 수 있게 됩니다.
+*/
+
 UCLASS( ClassGroup=(GameMapSection), meta=(BlueprintSpawnableComponent) )
 class PROJECT_MF_API UGameMapSectionComponent final : public UBoxComponent
 {
@@ -78,7 +84,7 @@ private:
 	////////////////////////
 	virtual void BeginPlay() override;
 	virtual void OnAttachmentChanged() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override { return false; }
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override { return false; }
 
 	///////////////////////
 	// Private methods ///

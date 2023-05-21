@@ -1,6 +1,8 @@
 #include "GameCheckPointRangeComponent.h"
 #include "GameMapSectionComponent.h"
 #include "GameCheckPointContainerComponent.h"
+#include "CustomGameInstance.h"
+#include "UIBlackScreenWidget.h"
 
 UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 {
@@ -11,21 +13,45 @@ UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 	ShapeColor = FColor::Emerald;
 }
 
-void UGameCheckPointRangeComponent::FadeWait(AActor* actor)
+void UGameCheckPointRangeComponent::FadeChange(bool isDark, int id)
 {
-	APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
-	if (c) c->StartCameraFade(1.f, 0.f, 1.f, FLinearColor::Black, false, true);
-	ApplyRogic(actor);
+	if (isDark == false || id != CHECKPOINT_FADE_ID) return;
+
+	ApplyRogic(_moveTarget.Get());
+	_moveTarget.Reset();
 }
 
+void UGameCheckPointRangeComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+
+	if (_Instance.IsValid())
+	{
+		_Instance->GetUIManager()->OnUIFadeChange.Remove(_handle);
+	}
+}
+
+bool UGameCheckPointRangeComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
+{
+	return false;
+}
 
 void UGameCheckPointRangeComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	//부모 섹션에 대한 참조.
 	Section = Cast<UGameMapSectionComponent>(GetAttachParent());
 
+	//충돌에 대한 델리게이트 구독.
 	OnComponentBeginOverlap.AddDynamic(this, &UGameCheckPointRangeComponent::BeginOverlap);
+
+	//GameInstance 참조 확보 및 페이드 아웃 이벤트 구독.
+	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
+	if (_Instance.IsValid())
+	{
+		_handle = _Instance->GetUIManager()->OnUIFadeChange.AddUObject(this, &UGameCheckPointRangeComponent::FadeChange);
+	}
 
 	//게임 시작전부터 겹쳐있을 경우에 대한 처리
 	TArray<AActor*> overlaps;
@@ -40,9 +66,10 @@ void UGameCheckPointRangeComponent::BeginPlay()
 void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 {
 	//유효하지 않은 엑터라면, 아니라면 탈출.
+	if (actor == nullptr || actor && !::IsValid(actor)) return;
 	UGameCheckPointContainerComponent* container = Cast<UGameCheckPointContainerComponent>(actor->GetComponentByClass(UGameCheckPointContainerComponent::StaticClass()));
 
-	if (actor == nullptr || actor && !::IsValid(actor) || container==nullptr || container && !::IsValid(container)) return;
+	if (container == nullptr || container && !::IsValid(container)) return;
 
 	//적용할 로직을 결정한다.
 	switch (HitApplyType) {
@@ -73,7 +100,6 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 	switch (HitApplyAfterType){
 		case(EHitCheckPointRangeApplyAfterType::DESTROY_THIS):
 			DestroyComponent(true);
-			UE_LOG(LogTemp, Warning, TEXT("삭제될 운명!!"))
 			break;
 
 	}
@@ -88,23 +114,31 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 			break;
 
 		case(EHitCheckPointRangeApplyTiming::APPLY_AFTER_UI_FADEOUT):
+			TWeakObjectPtr<UUIBlackScreenWidget> blackScreen;
+			if (_Instance.IsValid())
+			{
+				_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
+				_moveTarget.Reset();
+				_moveTarget = OtherActor;
 
-			APlayerCameraManager* c = GetWorld()->GetFirstPlayerController()->PlayerCameraManager;
-			if (c) c->StartCameraFade(0.f, 1.f, 1.f, FLinearColor::Black, false, true);
-			
-			FTimerHandle handle;
-			FTimerDelegate callback = FTimerDelegate::CreateUObject(
-				this,
-				&UGameCheckPointRangeComponent::FadeWait,
-				OtherActor
-			);
-
-			GetWorld()->GetTimerManager().SetTimer(
-				handle,
-				callback,
-				2.f,
-				false
-			);
+				//페이드 아웃 실행
+				if (blackScreen.IsValid())
+				{
+					_Instance->GetUIManager()->PlayFadeInOut(
+						EFadeType::WHITE_TO_DARK_TO_WHITE,
+						blackScreen.Get(),
+						2.f,
+						2.f,
+						1.f,
+						0.f,
+						0.f,
+						1.f,
+						CHECKPOINT_FADE_ID,
+						FLinearColor::Black,
+						FLinearColor::Black
+					);
+				}
+			}
 			break;
 
 	}

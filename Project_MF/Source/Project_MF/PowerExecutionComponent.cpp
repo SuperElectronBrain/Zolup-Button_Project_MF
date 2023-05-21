@@ -9,8 +9,8 @@ UPowerExecutionComponent::UPowerExecutionComponent()
 	//Trigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Trigger"));
 	//Trigger->SetupAttachment(this);
 
-	static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
-	if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
+	//static ConstructorHelpers::FObjectFinder<UMaterial> M_MATERIAL(TEXT("/Engine/BasicShapes/BasicShapeMaterial.BasicShapeMaterial"));
+	//if (M_MATERIAL.Succeeded() == true) { MaterialOrigin = M_MATERIAL.Object; }
 
 	Collider = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
 	Collider->SetupAttachment(this);
@@ -25,15 +25,15 @@ void UPowerExecutionComponent::BeginPlay()
 	SetRelativeScale3D(FVector::OneVector);
 	//FVector TriggerVolume = FVector::OneVector;
 	USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
-	UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
-	if (::IsValid(OwnerRootPrimitive) == true)
-	{
-		if (MaterialOrigin != nullptr)
-		{
-			MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
-			OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
-		}
 #pragma region UnUsed
+	//UPrimitiveComponent* OwnerRootPrimitive = Cast<UPrimitiveComponent>(OwnerRootComponent);
+	//if (::IsValid(OwnerRootPrimitive) == true)
+	//{
+		//if (MaterialOrigin != nullptr)
+		//{
+		//	MaterialIndexNum = OwnerRootPrimitive->GetNumMaterials();
+		//	OwnerRootPrimitive->SetMaterial(0, MaterialOrigin);
+		//}
 		//OwnerRootComponent->SetCollisionProfileName(TEXT("Collider"));
 		//OwnerRootComponent->SetGenerateOverlapEvents(true);
 		//OwnerRootComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
@@ -45,8 +45,8 @@ void UPowerExecutionComponent::BeginPlay()
 		//Trigger->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
 
 		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
+	//}
 #pragma endregion
-	}
 	FVector OwnerScale = OwnerRootComponent->GetRelativeScale3D();
 	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
 	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
@@ -57,7 +57,7 @@ void UPowerExecutionComponent::BeginPlay()
 	Collider->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
 	Collider->OnComponentEndOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapEnd);
 
-	UpdateMaterialColor();
+	//UpdateMaterialColor();
 }
 
 void UPowerExecutionComponent::UpdateMaterialColor()
@@ -111,7 +111,7 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 		//	}
 		//}
 #pragma endregion
-		UpdateMaterialColor();
+		//UpdateMaterialColor();
 	}
 }
 

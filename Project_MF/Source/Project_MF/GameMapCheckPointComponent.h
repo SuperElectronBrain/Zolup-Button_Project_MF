@@ -25,7 +25,7 @@ private:
 	///////////////////////////
 	virtual void OnRegister() override;
 	virtual void OnAttachmentChanged() override;
-	virtual bool CanAttachAsChild(USceneComponent* ChildComponent, FName SocketName) const override;
+	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
 	virtual void DestroyComponent(bool bPromoteChilderen) override;
 #if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
