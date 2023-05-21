@@ -37,8 +37,8 @@ enum class EMagneticEffectColorType : uint8
 	MAGNETIC_INFO_UI
 };
 
-/*해당 컴포넌트가 */
-#define MAGNETIC_FIELD_PRECISION 60
+/*해당 컴포넌트에서 쓰이는 매크로입니다.*/
+constexpr int MAGNETIC_FIELD_PRECISION = 60;
 #define MAGNETIC_COLLISION_OBJECTTYPE ECollisionChannel::ECC_GameTraceChannel11
 #define MAGNETIC_COLLISION_PROFILE "MagneticField"
 
