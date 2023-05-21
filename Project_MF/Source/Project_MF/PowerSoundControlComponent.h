@@ -24,7 +24,7 @@ private:
 	/** Play from the point where you left off. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool ContinueSound;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) float StartingPoint;
-
+	UPROPERTY() TWeakObjectPtr<UAudioComponent> AudioComponent;
 
 
 protected:

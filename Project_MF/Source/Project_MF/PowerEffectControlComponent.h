@@ -4,32 +4,27 @@
 
 #include "CoreMinimal.h"
 #include "PowerMovementComponent.h"
-#include "PowerLightControlComponent.generated.h"
+#include "Particles/ParticleSystemComponent.h"
+#include "PowerEffectControlComponent.generated.h"
 
 /**
  * 
  */
 UCLASS(ClassGroup = (PowerMovement), meta = (BlueprintSpawnableComponent))
-class PROJECT_MF_API UPowerLightControlComponent : public UPowerMovementComponent
+class PROJECT_MF_API UPowerEffectControlComponent : public UPowerMovementComponent
 {
 	GENERATED_BODY()
-
+	
 private:
 	/** It works in reverse. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool ReversAction;
 	/** When disabled, it does nothing. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleAction;
-	/** When disabled, changes color. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool UseDisableColor;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) FColor DisableColor;
-	UPROPERTY() FColor OriginalColor;
-	UPROPERTY() TWeakObjectPtr<ULightComponent> LightComponent;
 protected:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
-	UPowerLightControlComponent();
-
+	UPowerEffectControlComponent();
 	UFUNCTION() virtual void Action(float DeltaTime);
 };
