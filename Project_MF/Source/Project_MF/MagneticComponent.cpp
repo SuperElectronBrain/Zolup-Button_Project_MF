@@ -43,9 +43,9 @@ UMagneticComponent::UMagneticComponent()
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> INTERFACE(
 		TEXT("/Game/Effect/Magnetic/Glow_Ver4/Glow_magnet_Default2.Glow_magnet_Default2")
 	);
-	static ConstructorHelpers::FObjectFinder<UMaterialInterface> FIELD(
-		TEXT("/Game/Resource/Magnetic/NewMaterial.NewMaterial")
-	);
+	//static ConstructorHelpers::FObjectFinder<UMaterialInterface> FIELD(
+	//	TEXT("/Game/Resource/Magnetic/NewMaterial.NewMaterial")
+	//);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> FIELD_EFFECT(
 		TEXT("/Game/Effect/Magnetic/Ring/Magnet_ring_n.Magnet_ring_n")
 	);

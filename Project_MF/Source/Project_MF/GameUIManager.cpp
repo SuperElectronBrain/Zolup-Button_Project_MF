@@ -10,10 +10,10 @@ UGameUIManager::UGameUIManager()
 
 	/*CDO*/
 	static ConstructorHelpers::FClassFinder<UUserWidget> PLAYER_UI_CANVAS(
-		TEXT("/Game/UI/PlayerUI_Canvas")
+		TEXT("/Game/UI/Player/PlayerUI_Canvas.PlayerUI_Canvas_C")
 	);
 	static ConstructorHelpers::FClassFinder<UUIBlackScreenWidget> BLACK_SCREEN(
-		TEXT("/Game/UI/UI_BlackScreen")
+		TEXT("/Game/UI/UI_BlackScreen.UI_BlackScreen_C")
 	);
 
 	/*Get Class*/

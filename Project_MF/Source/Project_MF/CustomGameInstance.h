@@ -38,6 +38,8 @@ protected:
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
 
+
+
 	//Methods
 private:
 	virtual void Init() override;
