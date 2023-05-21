@@ -24,6 +24,7 @@ protected:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
+
 	UPowerObjectSpawnerComponent();
 
 	UFUNCTION() virtual void Action(float DeltaTime);

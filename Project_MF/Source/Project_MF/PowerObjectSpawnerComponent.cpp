@@ -32,7 +32,6 @@ void UPowerObjectSpawnerComponent::TickComponent(float DeltaTime, ELevelTick Tic
 	Action(DeltaTime);
 }
 
-
 void UPowerObjectSpawnerComponent::Action(float DeltaTime)
 {
 	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)

@@ -7,6 +7,8 @@
 UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
+
+
 }
 
 void UCustomGameInstance::Init()
