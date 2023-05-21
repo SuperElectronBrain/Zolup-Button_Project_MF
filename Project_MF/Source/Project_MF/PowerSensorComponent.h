@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Components/BoxComponent.h"
 #include "PowerGenerateComponent.h"
+#include "Engine/EngineTypes.h"
 #include "PowerSensorComponent.generated.h"
 
 /**
@@ -21,7 +22,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool PlayerOnly;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool ReversSignal;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleSignal;
-	/** When disabled, it does nothing. */
+	UPROPERTY() TWeakObjectPtr<UPowerGenerateComponent> ReceivingTargetGenerateComponent;
 protected:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

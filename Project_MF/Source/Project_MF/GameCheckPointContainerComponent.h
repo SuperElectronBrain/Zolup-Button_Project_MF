@@ -21,6 +21,6 @@ public:
 	/////////////////////////////
 	/// Fields And Components ///
 	/////////////////////////////
-	UPROPERTY(VisibleAnywhere, Category = CheckPoint)
+	UPROPERTY(EditAnywhere, Category = CheckPoint)
 	AActor* CheckPoint;
 };

@@ -15,14 +15,14 @@ class PROJECT_MF_API UPowerConnectionComponent : public UPowerComponent
 	GENERATED_BODY()
 
 private:
-	UPROPERTY() UStaticMeshComponent* DebugMeshComponent;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* LeftPartMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* CenterPartMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* RightPartMesh;
-
-	UPROPERTY() UStaticMeshComponent* LeftPart;
-	UPROPERTY() UStaticMeshComponent* CenterPart;
-	UPROPERTY() UStaticMeshComponent* RightPart;
+	//UPROPERTY() UStaticMeshComponent* DebugMeshComponent;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* LeftPartMesh;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* CenterPartMesh;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) UStaticMesh* RightPartMesh;
+	//
+	//UPROPERTY() UStaticMeshComponent* LeftPart;
+	//UPROPERTY() UStaticMeshComponent* CenterPart;
+	//UPROPERTY() UStaticMeshComponent* RightPart;
 	UPROPERTY() UBoxComponent* LeftCollider;
 	UPROPERTY() UBoxComponent* RightCollider;
 	UPROPERTY() UBoxComponent* LeftTrigger;
