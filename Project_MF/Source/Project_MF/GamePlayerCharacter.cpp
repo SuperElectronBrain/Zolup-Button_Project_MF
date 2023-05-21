@@ -1,57 +1,33 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "GamePlayerCharacter.h"
+#include "PlayerAirVent.h"
 #include "PlayerAnimInstance.h"
-#include "PlayerUICanvasWidget.h"
+#include "CustomGameInstance.h"
 #include "MagneticComponent.h"
-#include "GameMapSectionComponent.h"
 #include "DefaultMagneticMovementComponent.h"
+#include "GameMapSectionComponent.h"
 #include "GameCheckPointContainerComponent.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
-#include "CustomGameInstance.h"
-#include "GameUIHandler.h"
-#include "UIBlackScreenWidget.h"
-#include "UIStopTimerWidget.h"
-#include "Components/WidgetComponent.h"
-#include "PlayerAirVent.h"
-#include "DrawDebugHelpers.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "PhysicalMaterials/PhysicalMaterial.h"
 #include "Sound/SoundCue.h"
 #include "Components/AudioComponent.h"
-#include "Kismet/KismetMathLibrary.h"
+#include "Components/WidgetComponent.h"
+#include "UIBlackScreenWidget.h"
+#include "PlayerUICanvasWidget.h"
+#include "UIStopTimerWidget.h"
+#include "PlayerUIAimWidget.h"
+#include "PlayerUIMagneticInfoWidget.h"
+#include "DrawDebugHelpers.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
 	#pragma region Omission
 	//Intialized Properts and Fields
 	PrimaryActorTick.bCanEverTick = true;
-	ShootLength = 10000.f;
-	JumpPower = 1000.f;
-	CameraRotationSpeed = 420.f;
-	MoveSpeed = 500.f;
-	_bCanJump = false;
-	_bShootMine = false;
-	_GivenIndex = _OldGivenIndex = 0;
-	_StickTo = nullptr;
-	_ArmPenetrateDiv = 1.0f / 90.f;
-	ShootExtend.Set(2.f, 2.f, 2.f);
-	_stiffen = 0.f;
-	PlayerMode = EPlayerMode::STANDING;
-	_goalLook = _currLook = FVector::ZeroVector;
-	_timeStopCurrTime = 0.f;
-	MaxTimeStopSeconds = 10.f;
-	_goalTimeDiv = _currTime = 0.f;
-	AirVentEnterSeconds = .8f;
-	AirVentExitSeconds = .8f;
-	_startPos = _endPos = _cPos1 = FVector::ZeroVector;
-	AirVentEnterHandSeconds = .6f;
-	_playerHeight = 0.f;
-	ClimbWallSeconds = 0.3f;
-	ClimbableWallHeight = 300.f;
-	_stickNormal = FVector::ZeroVector;
-	_currDashScale = 1.f;
-	PlayerDashScale = 1.3f;
 
 	/*CDO - Mesh & Animation*/
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	PLAYER_MESH(
@@ -78,38 +54,46 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	);
 
 	/*CDO - Sound*/
-	static ConstructorHelpers::FObjectFinder<USoundCue> GIVE_SOUND_CUE(
-		TEXT("/Game/Sounds/MagSoundOn.MagSoundOn")
+	static ConstructorHelpers::FObjectFinder<USoundBase> GIVE_SOUND(
+		TEXT("/Game/Sounds/MagneticOn.MagneticOn")
 	);
-	static ConstructorHelpers::FObjectFinder<USoundCue> UNGIVE_SOUND_CUE(
-		TEXT("/Game/Sounds/MagSoundOff.MagSoundOff")
+	static ConstructorHelpers::FObjectFinder<USoundBase> UNGIVE_SOUND(
+		TEXT("/Game/Sounds/MagneticOff.MagneticOff")
 	);
-	static ConstructorHelpers::FObjectFinder<USoundCue> Shoot_SOUND_CUE(
-		TEXT("/Game/Sounds/MagShoot.MagShoot")
+	static ConstructorHelpers::FObjectFinder<USoundBase> Shoot_SOUND(
+		TEXT("/Game/Sounds/GunShooting.GunShooting")
 	);
-	static ConstructorHelpers::FObjectFinder<USoundCue> GLOVE_On_SOUND_CUE(
-		TEXT("/Game/Sounds/MagGloveOn.MagGloveOn")
+	static ConstructorHelpers::FObjectFinder<USoundBase> GLOVE_On_SOUND(
+		TEXT("/Game/Sounds/MagneticGloveOn.MagneticGloveOn")
 	);
-	static ConstructorHelpers::FObjectFinder<USoundCue> GLOVE_OFF_SOUND_CUE(
-		TEXT("/Game/Sounds/MagGloveOff.MagGloveOff")
+	static ConstructorHelpers::FObjectFinder<USoundBase> GLOVE_OFF_SOUND(
+		TEXT("/Game/Sounds/MagneticGloveOff.MagneticGloveOff")
 	);
-	static ConstructorHelpers::FObjectFinder<USoundCue> WALK_SOUND_CUE(
-		TEXT("/Game/Sounds/WalkSound.WalkSound")
+	static ConstructorHelpers::FObjectFinder<USoundBase> BREATH_DEFAULT_SOUND(
+		TEXT("/Game/Sounds/Breathing_Stay.Breathing_Stay")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> BREATH_DASH_SOUND(
+		TEXT("/Game/Sounds/Breathing_Run.Breathing_Run")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> GUN_MODE_CHANGE_SOUND(
+		TEXT("/Game/Sounds/Gun_Change_1.Gun_Change_1")
 	);
 
 	/*Audio*/
-	SoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("SOUND_EFFECT_A"));
-	SoundEffectComp->SetupAttachment(RootComponent);
-	if (WALK_SOUND_CUE.Succeeded())
-	{
-		SoundEffectComp->SetSound(WALK_SOUND_CUE.Object);
-	}
+	MoveSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("MOVE_SE"));
+	MoveSoundEffectComp->SetupAttachment(RootComponent);
 
-	if (GIVE_SOUND_CUE.Succeeded()) MagOnSound = GIVE_SOUND_CUE.Object;
-	if (UNGIVE_SOUND_CUE.Succeeded()) MagOffSound = UNGIVE_SOUND_CUE.Object;
-	if (Shoot_SOUND_CUE.Succeeded()) MagShootSound = Shoot_SOUND_CUE.Object;
-	if (GLOVE_On_SOUND_CUE.Succeeded()) MagOnGloveSound = GLOVE_On_SOUND_CUE.Object;
-	if (GLOVE_OFF_SOUND_CUE.Succeeded()) MagOffGloveSound = GLOVE_OFF_SOUND_CUE.Object;
+	BreathSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("BREATH_SE"));
+	BreathSoundEffectComp->SetupAttachment(RootComponent);
+
+	if (GIVE_SOUND.Succeeded()) MagOnSound = GIVE_SOUND.Object;
+	if (UNGIVE_SOUND.Succeeded()) MagOffSound = UNGIVE_SOUND.Object;
+	if (Shoot_SOUND.Succeeded()) MagShootSound = Shoot_SOUND.Object;
+	if (GLOVE_On_SOUND.Succeeded()) MagOnGloveSound = GLOVE_On_SOUND.Object;
+	if (GLOVE_OFF_SOUND.Succeeded()) MagOffGloveSound = GLOVE_OFF_SOUND.Object;
+	if (GUN_MODE_CHANGE_SOUND.Succeeded()) MagGunChangeSound = GUN_MODE_CHANGE_SOUND.Object;
+	if (BREATH_DASH_SOUND.Succeeded()) PlayerDashBreathSound = BREATH_DASH_SOUND.Object;
+	if (BREATH_DEFAULT_SOUND.Succeeded()) PlayerDefaultBreathSound = BREATH_DEFAULT_SOUND.Object;
 
 	/*SpringArm*/
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SPRINGARM"));
@@ -255,12 +239,33 @@ FVector AGamePlayerCharacter::GetPlayerRightVector() const
 	return dir;
 }
 
+void AGamePlayerCharacter::EnterGround(const FHitResult& Hit)
+{
+	FString floorType;
+	DetectFloorType(floorType);
+
+	//체크한 바닥의 타입이 사운드풀에 존재하지 않다면 탈출
+	if (PlayerWalkSound.Contains(floorType)==false) return;
+
+	USoundBase* landedSound = PlayerWalkSound[floorType].JumpEndSound;
+	float capsuleHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+
+	//최종 실행
+	UGameplayStatics::PlaySoundAtLocation(
+		GetWorld(),
+		landedSound,
+		GetActorLocation() + (FVector::DownVector * capsuleHalfHeight),
+		2.f,
+		1.f
+	);
+}
+
 void AGamePlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
 	#pragma region Omission
-	/*자성 델리게이트 등록*/
+	/*델리게이트 등록*/
 	if (Magnetic)
 	{
 		Magnetic->OnComponentMagneticChanged.AddDynamic(this, &AGamePlayerCharacter::ChangeMagnetic);
@@ -268,6 +273,8 @@ void AGamePlayerCharacter::BeginPlay()
 		Magnetic->OnComponentMagnetEndMovement.AddDynamic(this, &AGamePlayerCharacter::MagnetMoveEnd);
 		Magnetic->OnComponentMagnetMoveHit.AddDynamic(this, &AGamePlayerCharacter::MagnetMoveHit);
 	}
+	LandedDelegate.AddDynamic(this, &AGamePlayerCharacter::EnterGround);
+	BreathSoundEffectComp->OnAudioFinished.AddDynamic(this, &AGamePlayerCharacter::BreathFinish);
 
 	//게임 인스턴스 참조
 	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
@@ -287,11 +294,7 @@ void AGamePlayerCharacter::BeginPlay()
 
 		//Player UI
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
-		if (::IsValid(playerUI.Get()) == true)
-		{
-			playerUI->AddToViewport();
-			playerUI->SetAnimColor(FColor(255, 255, 255, 150));
-		}
+		if (playerUI.IsValid()) playerUI->AddToViewport();
 
 		//BlackScreen 뷰포트에 추가 및 페이드 아웃->인
 		_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
@@ -303,6 +306,13 @@ void AGamePlayerCharacter::BeginPlay()
 
 		//FadeChange 이벤트 추가.
 		_fadeHandle = _Instance->GetUIManager()->OnUIFadeChange.AddUObject(this, &AGamePlayerCharacter::FadeChange);
+	}
+
+	/*Sound 관련*/
+	if (BreathSoundEffectComp && PlayerDefaultBreathSound)
+	{
+		BreathSoundEffectComp->SetSound(PlayerDefaultBreathSound);
+		BreathSoundEffectComp->Play();
 	}
 
 	/*시간정지 위젯 참조 구하기*/
@@ -417,7 +427,7 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 	if (_bCanJump && _stiffen == 0.f)
 	{
 		Jump();
-		if(SoundEffectComp) SoundEffectComp->Stop();
+		if(MoveSoundEffectComp) MoveSoundEffectComp->Stop();
 	}
 
 	//각종 움직임 적용
@@ -837,9 +847,9 @@ void AGamePlayerCharacter::MoveUpDown(float value)
 	const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::X);
 
 	//걷는소리 재생 및 중지
-	PlayMoveSound(value > 0.f);
+	PlayMoveSound(value != 0.f);
 
-	AddMovementInput(dir, value*_currDashScale);
+	AddMovementInput(dir, value);
 }
 void AGamePlayerCharacter::MoveRightLeft(float value)
 {
@@ -851,7 +861,7 @@ void AGamePlayerCharacter::MoveRightLeft(float value)
 	//걷는소리 재생 및 중지
 	PlayMoveSound(value > 0.f);
 
-	AddMovementInput(dir, value * _currDashScale);
+	AddMovementInput(dir, value);
 }
 
 void AGamePlayerCharacter::OnShootMine()
@@ -982,7 +992,6 @@ void AGamePlayerCharacter::StageRestart()
 	//GetWorldSettings()->SetTimeDilation(!apply?0.05f:1.f);
 	//apply = !apply;
 	//return;
-
 	if (_stiffen != 0.f) return;
 	TArray<UPrimitiveComponent*> overlaps;
 	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
@@ -1229,14 +1238,21 @@ void AGamePlayerCharacter::ResetMagnetic()
 	if (_stiffen != 0.f) return;
 	
 	//UI 초기화
-	TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
-	if (_Instance.IsValid())
-	{
+	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
+	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magneticInfoUI;
+	TWeakObjectPtr<UPlayerUIAimWidget>			aimUI;
+	if (_Instance.IsValid()) {
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+
+		//사용할 PlayerUI의 참조를 가져온다.
 		if (playerUI.IsValid())
 		{
-			playerUI->GetMagneticInfoWidget()->ClearInfo();
+			playerUI->GetMagneticInfoWidget(magneticInfoUI);
+			playerUI->GetAimWidget(aimUI);
 		}
+
+		if (magneticInfoUI.IsValid()) magneticInfoUI->ClearInfo();
+		if (aimUI.IsValid()) aimUI->SetAimUIByMagneticType(EMagneticType::NONE, EMagneticType::NONE, false);
 	}
 
 	PlayerAnim->PlayResetMontage();
@@ -1364,28 +1380,113 @@ void AGamePlayerCharacter::ShootStart()
 
 void AGamePlayerCharacter::DashStart()
 {
-	_currDashScale = PlayerDashScale;
+	GetCharacterMovement()->MaxWalkSpeed = MoveSpeed * PlayerDashScale;
+
+	if (PlayerDefaultBreathSound && BreathSoundEffectComp)
+	{
+		BreathSoundEffectComp->SetSound(PlayerDashBreathSound);
+		BreathSoundEffectComp->Play();
+	}
 }
 
 void AGamePlayerCharacter::DashEnd()
 {
-	_currDashScale = 1.f;
+	GetCharacterMovement()->MaxWalkSpeed = MoveSpeed;
+
+	if (PlayerDefaultBreathSound && BreathSoundEffectComp)
+	{
+		BreathSoundEffectComp->SetSound(PlayerDefaultBreathSound);
+		BreathSoundEffectComp->Play();
+	}
+}
+
+void AGamePlayerCharacter::BreathFinish()
+{
+	//if (_nextAudioInfo.Source.IsValid() == false) return;
+
+	//BreathSoundEffectComp->SetFadeInComplete();
+	//BreathSoundEffectComp->SetSound(_nextAudioInfo.Source.Get());
+	//BreathSoundEffectComp->Play(_nextAudioInfo.StartTime);
+
+	//_nextAudioInfo.Source.Reset();
+}
+
+void AGamePlayerCharacter::DetectFloorType(FString& outPhysMatName)
+{
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+	params.bReturnPhysicalMaterial = true;
+
+	float testHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+	float testRadius = GetCapsuleComponent()->GetScaledCapsuleRadius() * .9f;
+	FVector location = GetActorLocation() + (FVector::DownVector * testHalfHeight);
+
+	//현재 플레이어의 바닥을 검사한다.
+	TArray<FHitResult> results;
+	bool ret = GetWorld()->SweepMultiByChannel(
+		results,
+		location,
+		location,
+		FQuat::Identity,
+		ECollisionChannel::ECC_Visibility,
+		FCollisionShape::MakeSphere(testRadius),
+		params
+	);
+
+	for (auto result : results)
+	{
+		if (ret == false || result.PhysMaterial.IsValid() == false) continue;
+
+		outPhysMatName = result.PhysMaterial->GetName();
+		return;
+	}
 }
 
 void AGamePlayerCharacter::PlayMoveSound(bool playSound)
 {
-	if (SoundEffectComp)
+	if (MoveSoundEffectComp)
 	{
-		bool isPlaying = SoundEffectComp->IsPlaying();
+		FVector Velocity = GetVelocity();
+		bool isMoving = Velocity.X != 0.f || Velocity.Y != 0.f;
+		bool isJumping = GetCharacterMovement()->Velocity.Z > 0.f;
+		bool isPlaying = MoveSoundEffectComp->IsPlaying();
+		bool isDash = GetCharacterMovement()->MaxWalkSpeed > MoveSpeed;
 
-		if (isPlaying == false)
+		//이동을 멈췄고, 이동소리가 재생중이라면 중지시킨다.
+		if (isMoving==false)
 		{
-			SoundEffectComp->Play();
+			if (isPlaying || isPlaying && isJumping)
+			{
+				MoveSoundEffectComp->Stop();
+			}
+			return;
 		}
-		else if (playSound == 0.f)
+
+		FString floorName;
+
+		//현재 플레이어가 서있는 바닥의 타입을 탐색.
+		DetectFloorType(floorName);
+
+		//사운드 맵에 존재하지 않는 사운드일 경우 탈출.
+		if (PlayerWalkSound.Contains(floorName) == false)
 		{
-			SoundEffectComp->Stop();
+			//플레이어가 닿아있는 땅들중, 소리가 나는 땅이 없다면 소리를 멈춘다.
+			if (isPlaying) MoveSoundEffectComp->Stop();
+
+			return;
 		}
+
+		USoundBase* walkSound = (isDash ? PlayerWalkSound[floorName].DashSound : PlayerWalkSound[floorName].WalkSound);
+
+		//존재하지 않은 사운드이거나 이미 재생중인 사운드와 같다면 탈출
+		if (MoveSoundEffectComp->GetSound() != walkSound)
+		{
+			MoveSoundEffectComp->SetSound(walkSound);
+			isPlaying = MoveSoundEffectComp->IsPlaying();
+		}
+
+		//최종 실행
+		if (isPlaying == false) MoveSoundEffectComp->Play();
 	}
 }
 
@@ -1396,7 +1497,7 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 	#pragma region Omission
 
 	//몽타주 실행
-	if(PlayerAnim) PlayerAnim->PlayAttackMontage();
+	if (PlayerAnim) PlayerAnim->PlayAttackMontage();
 
 	FVector forward = GetPlayerForwardVector();
 	FVector right = GetPlayerRightVector();
@@ -1436,6 +1537,20 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 	);
 
 	_ShootTargetInfo.isHit = ret;
+
+	//총기 타입 전환 소리
+	if (MagGunChangeSound && _lastShootType!=shootType)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			GetWorld(),
+			MagGunChangeSound,
+			GetActorLocation(),
+			2.f
+		);
+
+		_lastShootType = shootType;
+	}
+
 	_ShootTargetInfo.ApplyType = shootType;
 
 	if (ret)
@@ -1448,8 +1563,7 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 			TArray<USceneComponent*> childrens;
 			hitComponent->GetChildrenComponents(false, childrens);
 
-			for (int i = childrens.Num() - 1; i >= 0; i--)
-			{
+			for (int i = childrens.Num() - 1; i >= 0; i--) {
 				UMagneticComponent* mag = Cast<UMagneticComponent>(childrens[i]);
 				if (mag && ::IsValid(mag))
 				{
@@ -1480,6 +1594,7 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	if (newMagnet == nullptr || !::IsValid(newMagnet)) return;
 
 	#pragma region Omission
+
 	//자성을 부여한다.
 	newMagnet->SetCurrentMagnetic(givenType);
 
@@ -1507,13 +1622,24 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 		}
 	}
 
-	TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
+	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
+	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magnetInfoUI;
+	TWeakObjectPtr<UPlayerUIAimWidget>			aimUI;
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
 	bool isFulledGiven = IsFulledGiven();
 
 	//갱신할 플레이어 UI를 얻어온다.
-	if (_Instance.IsValid())
+	if (_Instance.IsValid()) {
+
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+
+		//PlayerUI가 유효하면 나머지 PlayerUI도 가져온다.
+		if (playerUI.IsValid()) 
+		{
+			playerUI->GetMagneticInfoWidget(magnetInfoUI);
+			playerUI->GetAimWidget(aimUI);
+		}
+	}
 
 	//부여된 자성으로 인해 자성을 잃었을 경우
 	if ( alreadyGiven && newMagnet->GetCurrentMagnetic()==EMagneticType::NONE)
@@ -1558,8 +1684,11 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	}
 
 	//플레이어의 UI를 갱신하고 마무리.
-	if (playerUI.IsValid())
-		playerUI->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+	if (magnetInfoUI.IsValid()) 
+		magnetInfoUI->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+
+	if (aimUI.IsValid())
+		aimUI->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], false);
 
 	#pragma endregion
 }
@@ -1594,14 +1723,16 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 		if (_GivenMagnets[0] != nullptr) _oldGivenIndex = 0;
 	}
 
-	TWeakObjectPtr<UPlayerUICanvasWidget> playerUI;
-	if (_Instance.IsValid())
-	{
+	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
+	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magneticInfoUI;
+	if (_Instance.IsValid()) {
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
-		if (playerUI.IsValid())
+
+		if (playerUI.IsValid()) playerUI->GetMagneticInfoWidget(magneticInfoUI);
+		if (magneticInfoUI.IsValid())
 		{
-			playerUI->GetMagneticInfoWidget()->ClearInfo();
-			playerUI->GetMagneticInfoWidget()->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+			magneticInfoUI->ClearInfo();
+			magneticInfoUI->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 		}
 	}
 }

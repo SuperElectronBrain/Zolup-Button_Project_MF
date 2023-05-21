@@ -1,12 +1,11 @@
 #pragma once
-
 #include "EngineMinimal.h"
 #include "GameFramework/Character.h"
 #include "MagneticComponent.h"
 #include "GamePlayerCharacter.generated.h"
 
-#define PLAYER_FADE_ID 83
-#define STOPTIMER_FADE_ID 84
+constexpr int PLAYER_FADE_ID = 83;
+constexpr int STOPTIMER_FADE_ID = 84;
 
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
@@ -53,7 +52,6 @@ struct FTimeStopMagnetInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<UMagneticComponent> Magnetic;
 	bool DefaultCanMovement = false;
 	bool DefaultApplyPhysics = false;
@@ -67,12 +65,39 @@ struct FShootTargetInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<UMagneticComponent> ApplyTarget;
 	EMagneticType ApplyType = EMagneticType::NONE;
 	FVector ShootEnd		= FVector::ZeroVector;
 	bool isHit				= false;
 };
+
+USTRUCT(Blueprintable, BlueprintType)
+struct FPlayerMoveSoundInfo
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	USoundBase* WalkSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	USoundBase* DashSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	USoundBase* JumpEndSound;
+};
+
+USTRUCT()
+struct FAutioStartInfo
+{
+	GENERATED_BODY()
+
+	TWeakObjectPtr<USoundBase> Source;
+	float StartTime;
+};
+
+/**
+* 플레이어의 발자국 사운드를 담아둘 구조체입니다.
+*/
 
 /**
 *  게임의 플레이어 캐릭터의 모든 기능을 책임지는 클래스입니다.
@@ -134,13 +159,13 @@ private:
 	void StageRestart();
 	void ApplyTimeStop();
 
-
 	////////////////////////////////////
 	/////     Private methods   ///////
 	///////////////////////////////////
 	void UnApplyTimeStop();
 
 	/*Player Sound methods*/
+	void DetectFloorType(FString& outPhysMatName);
 	void PlayMoveSound(bool playSound);
 
 	/*Shoot Magnetic methods*/
@@ -200,17 +225,31 @@ private:
 	UFUNCTION()
 	void FadeChange(bool isDark, int id);
 
+	/**
+	* 사운드가 종료될 때 실행되는 델리게이트입니다.
+	*/
+	UFUNCTION()
+	void BreathFinish();
+
+
+
+	/**
+	* 플레이어가 땅에 닿았을 때 호출되는 함수입니다.
+	*/
+	UFUNCTION()
+	void EnterGround(const FHitResult& Hit);
+
 	UFUNCTION()
 	void ResetCamLookTarget();
 
 	///////////////////////////////
 	//// Fields and Components ///
 	//////////////////////////////
-	bool _bCanJump, _bShootMine;
-	float _timeStopCurrTime;
-	float _playerHeight;
-	float _stiffen;
-	float _currDashScale;
+	bool _bCanJump = false;
+	bool _bShootMine = false;
+	float _timeStopCurrTime = 0.f;
+	float _playerHeight = 0.f;
+	float _stiffen = 0.f;
 	FVector _stickNormal;
 
 	/**
@@ -218,20 +257,28 @@ private:
 	* 
 	* 플레이어가 자성을 부여하기위해 필요한 필드들입니다.
 	*/
-	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv;
-	int32 _givenIndex = 0, _oldGivenIndex;
+	int _givenIndex = 0;
+	int _oldGivenIndex = 0;
 
 	/**
 	* Action progress fields
 	* 
 	* 플레이어의 특정 동작에 대한 처리를 위해 필요한 필드들입니다.
 	*/
-	float _goalTimeDiv, _currTime;
+	float _goalTimeDiv = 0.f;
+	float _currTime = 0.f;
 	FVector _startPos, _endPos, _cPos1;
 	FVector _goalLook, _currLook;
+	EMagneticType _lastShootType = EMagneticType::NONE;
 
+	/**
+	* Ref fields
+	* 
+	* 나중에 접근이 필요한 참조들의 필드입니다.
+	*/
 	FDelegateHandle _fadeHandle;
 	FShootTargetInfo _ShootTargetInfo;
+	FAutioStartInfo	_nextAudioInfo;
 	TWeakObjectPtr<UCustomGameInstance> _Instance;
 	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
 	TWeakObjectPtr<AActor> _StickTo;
@@ -239,6 +286,7 @@ private:
 	TWeakObjectPtr<AActor> _CamLookTarget;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
 	TStaticArray<FTimeStopMagnetInfo, 2> _TimeStopMagnets;
+
 
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;
@@ -250,20 +298,32 @@ private:
 	*/
 
 	/**@Sounds fields*/
-	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOnSound;
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	TMap<FString, FPlayerMoveSoundInfo> PlayerWalkSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOffSound;
+	USoundBase* MagOnSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagShootSound;
+	USoundBase* MagOffSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOnGloveSound;
+	USoundBase* MagShootSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOffGloveSound;
+	USoundBase* MagOnGloveSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* MagOffGloveSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* MagGunChangeSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* PlayerDefaultBreathSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* PlayerDashBreathSound;
 
 	/**@UI fields*/
 	UPROPERTY()
@@ -286,47 +346,57 @@ public:
 	/**
 	* Player Default Status fields
 	*/
+	/**플레이어의 최대 발사 거리입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
-	float ShootLength;
+	float ShootLength = 10000.f;
 
+	/**플레이어가 발사할 자성의 크기입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	FVector ShootExtend;
+	FVector ShootExtend = FVector(2.f, 2.f, 2.f);
 
+	/**플레이어의 카메라 회전 속도입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	float CameraRotationSpeed;
+	float CameraRotationSpeed = 420.f;
 
+	/**플레이어의 점프력입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	float JumpPower;
+	float JumpPower = 1000.f;
 
+	/**플레이어의 이동속도입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
-	float MoveSpeed;
+	float MoveSpeed = 500.f;
 
-	UPROPERTY(EditAnywhere, Category = BoneTransform, BlueprintReadWrite)
-	FTransform _ArmLAddTransform;
-
+	/**플레이어에게 적용된 모드입니다. 기본적으로 Standing mode입니다.*/
 	UPROPERTY(VisibleAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	EPlayerMode PlayerMode;
-
+	EPlayerMode PlayerMode = EPlayerMode::STANDING;
+	
+	/**플레이어가 자석의 시간을 정지시킬 수 있는 최대 시간(초)입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite)
-	float MaxTimeStopSeconds;
+	float MaxTimeStopSeconds = 10.f;
 
+	/**플레이어가 환풍구로 들어가는데 걸리는 시간입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float AirVentEnterSeconds;
+	float AirVentEnterSeconds = .8f;
 
+	/**플레이어가 환풍구에서 나오는데 걸리는 시간입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float AirVentExitSeconds;
+	float AirVentExitSeconds = .8f;
 
+	/**플레이어가 환풍구에서 손을 짚는데 걸리는 시간(초)입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float AirVentEnterHandSeconds;
+	float AirVentEnterHandSeconds = .6f;
 
+	/**플레이어가 벽을 타고 올라가는데 걸리는 시간(초)입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float ClimbWallSeconds;
+	float ClimbWallSeconds = 0.3f;
 
+	/**플레이어가 벽을 탈 수 있는 최대 높이입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float ClimbableWallHeight;
+	float ClimbableWallHeight = 300.f;
 
+	/**플레이어가 대쉬를 하면 기본 스피드에서 증가할 배수입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float PlayerDashScale;
+	float PlayerDashScale = 2.f;
 
 private:
 	/**
@@ -372,7 +442,10 @@ private:
 	*Sound Components
 	*/
 	UPROPERTY(VisibleAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	UAudioComponent* SoundEffectComp;
+	UAudioComponent* MoveSoundEffectComp;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	UAudioComponent* BreathSoundEffectComp;
 
 	/**
 	* Map Components...

@@ -147,6 +147,4 @@ void UPlayerUIMagneticInfoWidget::SetInfo(UMagneticComponent* t1, UMagneticCompo
 
 		RLast = type;
 	}
-
-
 }

@@ -8,9 +8,9 @@
 #include "PlayerUIMagneticInfoWidget.generated.h"
 
 class UMagneticComponent;
-enum class EMagneticType : uint8;
 class UCustomGameInstance;
 class UHandlerImage;
+enum class EMagneticType : uint8;
 
 #define MAGINFO_FADEID_L 87
 #define MAGINFO_FADEID_R 88 
@@ -53,5 +53,8 @@ private:
 
 	UPROPERTY()
 	UHandlerImage* _magR;
+
+	UPROPERTY(EditAnywhere, Category = MangeticInfo, BlueprintReadwrite, Meta=(AllowPrivateAccess=true))
+	bool bUsedBlueprint;
 	
 };
