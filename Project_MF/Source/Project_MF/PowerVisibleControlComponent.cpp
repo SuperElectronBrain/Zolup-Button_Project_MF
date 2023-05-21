@@ -20,8 +20,8 @@ void UPowerVisibleControlComponent::BeginPlay()
 		GetAttachParent()->SetVisibility(ReversAction);
 		if (UseCollisionControl == true)
 		{
-			UPrimitiveComponent* ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
-			if (::IsValid(ParentPrimitive) == true)
+			ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
+			if (::IsValid(ParentPrimitive.Get()) == true)
 			{
 				OriginCollisionProfile = ParentPrimitive->GetCollisionProfileName().ToString();
 				ParentPrimitive->SetCollisionProfileName(ReversAction == true ? *OriginCollisionProfile : TEXT("NoCollision"));
@@ -49,8 +49,7 @@ void UPowerVisibleControlComponent::Action(float DeltaTime)
 					GetAttachParent()->SetVisibility(!ReversAction);
 					if (UseCollisionControl == true)
 					{
-						UPrimitiveComponent* ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
-						if (::IsValid(ParentPrimitive) == true)
+						if (::IsValid(ParentPrimitive.Get()) == true)
 						{
 							if (OriginCollisionProfile != TEXT(""))
 							{
@@ -79,8 +78,7 @@ void UPowerVisibleControlComponent::Action(float DeltaTime)
 						GetAttachParent()->SetVisibility(ReversAction);
 						if (UseCollisionControl == true)
 						{
-							UPrimitiveComponent* ParentPrimitive = Cast<UPrimitiveComponent>(GetAttachParent());
-							if (::IsValid(ParentPrimitive) == true)
+							if (::IsValid(ParentPrimitive.Get()) == true)
 							{
 								if (OriginCollisionProfile != TEXT(""))
 								{
