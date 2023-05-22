@@ -144,12 +144,13 @@ UPowerConnectionComponent::UPowerConnectionComponent()
 void UPowerConnectionComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	USceneComponent* OwnerRoot = GetOwner()->GetRootComponent();
-	FVector OwnerRootScale = OwnerRoot->GetRelativeScale3D();
-	if (ObjectLength < OwnerRootScale.Y) { ObjectLength = OwnerRootScale.Y; }
-	else if (ObjectLength > OwnerRootScale.Y) { OwnerRootScale.Y = ObjectLength; OwnerRoot->SetRelativeScale3D(OwnerRootScale); }
-	FVector OwnerRootBounds = ::IsValid(Cast<UStaticMeshComponent>(OwnerRoot)) == true ? Cast<UStaticMeshComponent>(OwnerRoot)->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
-	OwnerRootBounds.Y = OwnerRootBounds.Y / OwnerRootScale.Y;
+	//USceneComponent* OwnerRoot = GetOwner()->GetRootComponent();
+	//FVector OwnerRootScale = OwnerRoot->GetRelativeScale3D();
+	FVector ParentScale = GetAttachParent()->GetRelativeScale3D();
+	if (ObjectLength < ParentScale.Y) { ObjectLength = ParentScale.Y; }
+	else if (ObjectLength > ParentScale.Y) { ParentScale.Y = ObjectLength; GetAttachParent()->SetRelativeScale3D(ParentScale); }
+	FVector OwnerRootBounds = ::IsValid(Cast<UStaticMeshComponent>(GetAttachParent())) == true ? Cast<UStaticMeshComponent>(GetAttachParent())->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+	OwnerRootBounds.Y = OwnerRootBounds.Y / ParentScale.Y;
 	FVector ComponentLocation = FVector(0.0f, (OwnerRootBounds.Y * 2) * (ObjectLength - 1) / 2, 0.0f);
 
 #pragma region UnUsed
@@ -197,7 +198,7 @@ void UPowerConnectionComponent::BeginPlay()
 	if (::IsValid(LeftTrigger) == true)
 	{
 		//LeftTrigger->SetBoxExtent(FVector((OwnerRootScale.X * LeftPartBounds.X) + (BoxSize / OwnerScale.X), (OwnerRootScale.Y * LeftPartBounds.Y) + (BoxSize / OwnerScale.Y), (OwnerRootScale.Z * LeftPartBounds.Z) + (BoxSize / OwnerScale.Z)));
-		LeftTrigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / OwnerRootScale.X), OwnerRootBounds.Y + (BoxSize / OwnerRootScale.Y), OwnerRootBounds.Z + (BoxSize / OwnerRootScale.Z)));
+		LeftTrigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / ParentScale.X), OwnerRootBounds.Y + (BoxSize / ParentScale.Y), OwnerRootBounds.Z + (BoxSize / ParentScale.Z)));
 		LeftTrigger->SetRelativeLocation(-ComponentLocation);
 		LeftTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
 		LeftTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
@@ -205,7 +206,7 @@ void UPowerConnectionComponent::BeginPlay()
 	if(::IsValid(RightTrigger) == true)
 	{
 		//RightTrigger->SetBoxExtent(FVector((OwnerRootScale.X * RightPartBounds.X) + (BoxSize / OwnerScale.X), (OwnerRootScale.Y * RightPartBounds.Y) + (BoxSize / OwnerScale.Y), (OwnerRootScale.Z * RightPartBounds.Z) + (BoxSize / OwnerScale.Z)));
-		RightTrigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / OwnerRootScale.X), OwnerRootBounds.Y + (BoxSize / OwnerRootScale.Y), OwnerRootBounds.Z + (BoxSize / OwnerRootScale.Z)));
+		RightTrigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / ParentScale.X), OwnerRootBounds.Y + (BoxSize / ParentScale.Y), OwnerRootBounds.Z + (BoxSize / ParentScale.Z)));
 		RightTrigger->SetRelativeLocation(ComponentLocation);
 		RightTrigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapBegin);
 		RightTrigger->OnComponentEndOverlap.AddDynamic(this, &UPowerConnectionComponent::OnOverlapEnd);
@@ -505,10 +506,12 @@ void UPowerConnectionComponent::SetPowerState(bool param, bool IsGenerator)
 				)->GetComponentLocation();
 			//float BoxSize = TriggerSize * 50.0f;
 			float BoxSize = TriggerSize * 100.0f;
-			FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+			//FVector OwnerScale = GetOwner()->GetRootComponent()->GetRelativeScale3D();
+			FVector ParentScale = GetAttachParent()->GetRelativeScale3D();
 			//FVector PartBounds = ::IsValid((i == 0 ? LeftPart : RightPart)->GetStaticMesh()) == true ? (i == 0 ? LeftPart : RightPart)->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
-			FVector OwnerRootBounds = ::IsValid(Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent())) == true ? Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent())->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
-			TriggerVolume = FVector((OwnerScale.X * OwnerRootBounds.X) + BoxSize, (OwnerScale.Y * OwnerRootBounds.Y) + BoxSize, (OwnerScale.Z * OwnerRootBounds.Z) + BoxSize);
+			FVector ParentBounds = ::IsValid(Cast<UStaticMeshComponent>(GetAttachParent())) == true ? Cast<UStaticMeshComponent>(GetAttachParent())->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+			//FVector OwnerRootBounds = ::IsValid(Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent())) == true ? Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent())->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50;
+			TriggerVolume = FVector((ParentScale.X * ParentBounds.X) + BoxSize, (ParentScale.Y * ParentBounds.Y) + BoxSize, (ParentScale.Z * ParentBounds.Z) + BoxSize);
 			//TriggerVolume = FVector(BoxSize, BoxSize, BoxSize);
 
 			TArray<FHitResult> HitResult;
