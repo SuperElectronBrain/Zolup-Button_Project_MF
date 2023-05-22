@@ -209,9 +209,15 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					{
 						FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
 						UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
+						//if (TargetRoot->GetComponentRotation() != GetAttachParent()->GetComponentRotation())
+						//{
+							//TargetRoot->SetWorldRotation(FMath::RInterpTo(TargetRoot->GetComponentRotation(), GetAttachParent()->GetComponentRotation(), DeltaTime, 100.0f));
+						TargetRoot->SetWorldRotation(FRotator::ZeroRotator);
+						//}
+
 						if (TargetRoot->IsSimulatingPhysics() == true)
 						{
-							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector); }
+							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::DownVector); }
 						}
 
 						//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
