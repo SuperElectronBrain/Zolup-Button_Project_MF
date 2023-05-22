@@ -7,10 +7,15 @@
 #include "GameUIHandler.h"
 #include "PlayerUIAimWidget.generated.h"
 
+class UHandlerImage;
 class UImage;
 class UCustomGameInstance;
 class UMagneticComponent;
+class UGameUIManager;
 enum class EMagneticType : uint8;
+
+constexpr int AIML_FADE_ID =  36;
+constexpr int AIMR_FADE_ID = 37;
 
 UENUM()
 enum class EGivenAnimType : uint8
@@ -34,11 +39,12 @@ struct FGivenImgInfo
 	EMagneticType NextType	  = EMagneticType::NONE;
 
 	FVector2D OriginPos;
-	UImage* BlueImg;
-	UImage* RedImg;
+	UHandlerImage* BlueImg;
+	UHandlerImage* RedImg;
 
-	UImage* GetImgByMagType() const;
+	UHandlerImage* GetImgByMagType() const;
 	void SetImgOpacityByMagType();
+	void SetAllImgOpacityZero();
 };
 
 
@@ -54,8 +60,8 @@ public:
 	//////////////////////////////
 	////    Public methods   ////
 	/////////////////////////////
-	void SetAimUIByMagneticComp(UMagneticComponent* typeL, UMagneticComponent* typeR, bool playerMagChange = false);
-	void SetAimUIByMagneticType(EMagneticType typeL, EMagneticType typeR, bool playerMagChange = false);
+	void SetAimUIByMagneticComp(UMagneticComponent* typeL, UMagneticComponent* typeR, EMagneticType playerType = EMagneticType::NONE);
+	void SetAimUIByMagneticType(EMagneticType typeL, EMagneticType typeR, EMagneticType playerType=EMagneticType::NONE);
 
 
 	//////////////////////////////
@@ -77,15 +83,21 @@ public:
 	////   Private methods    /////
 	///////////////////////////////
 private:
-	void GivenAnimProgress(FGivenImgInfo& info, float DeltaTime);
+	void PlayerGivenAnimProgress(float DeltaTime);
+
+	UFUNCTION()
+	void FadeChange(bool isDark, int id);
 
 
 	////////////////////////////////////
 	////    Fields and Components  ////
 	///////////////////////////////////
-	bool _bIsInit = false;
-	UImage *_PlayerCircle_Red, *_PlayerCircle_Blue;
+	TWeakObjectPtr<UGameUIManager> _UIManager;
+	FDelegateHandle _FadeDelegateHandle;
 	FGivenImgInfo _GivenInfoL, _GivenInfoR;
+	UImage* _PlayerCircle_Red, * _PlayerCircle_Blue;
+	EMagneticType _PlayerType = EMagneticType::NONE;
+	EMagneticType _PlayerHopeType;
 
 	UPROPERTY(EditAnywhere, Category = PlayerAim, Meta = (AllowPrivateAccess = true), BlueprintReadWrite)
 	float MagGivenApplySeconds= .2f;
