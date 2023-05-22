@@ -44,8 +44,11 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MAGNETIC_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Gun/Gun_effect_defalt_n_fix.Gun_effect_defalt_n_fix")
 	);
-	static ConstructorHelpers::FObjectFinder<UParticleSystem> SHOOT_WAVE_EFFECT_SYSTEM(
-		TEXT("/Game/Effect/HitScan/P_beam_main.P_beam_main")
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_WAVE_EFFECT_SYSTEM(
+		TEXT("/Game/Effect/HitScan/Hit_scan_effect.Hit_scan_effect")
+	);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MAGNETIC_VIGNETTING_SYSTEM(
+		TEXT("/Game/Effect/electricVignetting/vignetting_reflection_niagara.vignetting_reflection_niagara")
 	);
 
 	/*CDO - UI*/
@@ -164,6 +167,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (SHOOT_EFFECT_SYSTEM.Succeeded()) ShootEffect = SHOOT_EFFECT_SYSTEM.Object;
 	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
 	if (SHOOT_WAVE_EFFECT_SYSTEM.Succeeded()) ShootWaveEffect = SHOOT_WAVE_EFFECT_SYSTEM.Object;
+	if (MAGNETIC_VIGNETTING_SYSTEM.Succeeded()) MagneticVignettingEffect = MAGNETIC_VIGNETTING_SYSTEM.Object;
 	
 	/*StopTimer Widget*/
 	TimerWidgetA = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentA"));
@@ -255,7 +259,7 @@ void AGamePlayerCharacter::EnterGround(const FHitResult& Hit)
 		GetWorld(),
 		landedSound,
 		GetActorLocation() + (FVector::DownVector * capsuleHalfHeight),
-		2.f,
+		1.f,
 		1.f
 	);
 }
@@ -365,23 +369,24 @@ void AGamePlayerCharacter::BeginPlay()
 		);
 	}
 
-	/*총 레이저 발사 이펙트 추가*/
-	if (ShootWaveEffect)
+	/*자성 비네팅 이펙트 추가.*/
+	if (MagneticVignettingEffect)
 	{
-		ShootWaveEffectComp = UGameplayStatics::SpawnEmitterAttached(
-			ShootWaveEffect,
-			GetMesh(),
-			TEXT("ShootSocket"),
-			FVector(0.f, 0.f, 0.f),
-			FRotator::ZeroRotator,
-			EAttachLocation::KeepRelativeOffset,
+		MagneticVignettingEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
+			MagneticVignettingEffect,
+			Camera,
+			NAME_None,
+			FVector(347.f, -2.45f, 23.f),
+			FRotator::MakeFromEuler(FVector(0.f, 0.f, -89.9f)),
+			FVector(.1f, .1f, .1f),
+			EAttachLocation::SnapToTarget,
 			false,
-			EPSCPoolMethod::None,
-			false
+			ENCPoolMethod::None,
+			true
 		);
 
-		ShootWaveEffectComp->CustomTimeDilation = 6.f;
-		ShootWaveEffectComp->SetRelativeScale3D(FVector(.6f, .6f, .6f));
+		_vignettingCurrColor = FLinearColor(1.f, 1.f, 1.f, 0.f);
+		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), FLinearColor(1.f, 1.f, 1.f, 0.f));
 	}
 
 	#pragma endregion
@@ -428,6 +433,19 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 	{
 		Jump();
 		if(MoveSoundEffectComp) MoveSoundEffectComp->Stop();
+	}
+
+	/*비네팅 러프*/
+	if (_vignettingcurrTime>0.f)
+	{
+		float progressRatio = (1.f - _vignettingcurrTime * _vignettingGoalDiv);
+
+		_vignettingCurrColor = _vignettingStartColor + _vignettingDistanceColor * progressRatio;
+		_vignettingcurrTime-= DeltaTime;
+
+		if (progressRatio>=1.f) _vignettingcurrTime = 0.f;
+
+		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), _vignettingCurrColor);
 	}
 
 	//각종 움직임 적용
@@ -1252,7 +1270,7 @@ void AGamePlayerCharacter::ResetMagnetic()
 		}
 
 		if (magneticInfoUI.IsValid()) magneticInfoUI->ClearInfo();
-		if (aimUI.IsValid()) aimUI->SetAimUIByMagneticType(EMagneticType::NONE, EMagneticType::NONE, false);
+		if (aimUI.IsValid()) aimUI->SetAimUIByMagneticType(EMagneticType::NONE, EMagneticType::NONE);
 	}
 
 	PlayerAnim->PlayResetMontage();
@@ -1319,19 +1337,27 @@ void AGamePlayerCharacter::ShootStart()
 	}
 
 	/*발사 레이저 이펙트 실행 및 색깔 변경*/
-	if (ShootWaveEffectComp && _ShootTargetInfo.isHit && ShootWaveEffect)
+	if (_ShootTargetInfo.isHit && ShootWaveEffect)
 	{
 		FVector spawnLocation = GetMesh()->GetSocketLocation(TEXT("ShootSocket"));
+		FVector spawnLength = _ShootTargetInfo.ShootEnd - spawnLocation;
 
-		UParticleSystemComponent* NewWave = UGameplayStatics::SpawnEmitterAtLocation(
+		UNiagaraComponent* NewWave = UNiagaraFunctionLibrary::SpawnSystemAtLocation(
 			GetWorld(),
 			ShootWaveEffect,
-			spawnLocation
+			spawnLocation,
+			FRotator::ZeroRotator,
+			FVector::OneVector
 		);
 
-		NewWave->CustomTimeDilation = 3.5f;
-		NewWave->SetVectorParameter(TEXT("Main_Target"), spawnLocation);
-		NewWave->SetVectorParameter(TEXT("Sub_Target"), _ShootTargetInfo.ShootEnd);
+		NewWave->SetVectorParameter(TEXT("Hit_Scan_Length"), spawnLength);
+		NewWave->SetColorParameter(
+			TEXT("Hit_Scan_Color"),
+			UMagneticComponent::GetMagneticEffectColor(
+				_ShootTargetInfo.ApplyType, 
+				EMagneticEffectColorType::GRANT_EFFECT
+			)
+		);
 
 		_ShootTargetInfo.isHit = false;
 	}
@@ -1651,13 +1677,13 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 			{
 				_GivenMagnets[i] = nullptr;
 				_givenIndex--;
-				return;
+				break;
 			}
 		}
 	}
 
 	//리스트에 존재하지 않을 경우
-	if (alreadyGiven==false)
+	else if (alreadyGiven==false)
 	{
 		//리스트가 가득차 있다면 리스트를 초기화.
 		if (isFulledGiven) 
@@ -1688,7 +1714,7 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 		magnetInfoUI->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 
 	if (aimUI.IsValid())
-		aimUI->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], false);
+		aimUI->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1]);
 
 	#pragma endregion
 }
@@ -1724,15 +1750,27 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 	}
 
 	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
+	TWeakObjectPtr<UPlayerUIAimWidget>			aimUI;
 	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magneticInfoUI;
 	if (_Instance.IsValid()) {
 		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
 
-		if (playerUI.IsValid()) playerUI->GetMagneticInfoWidget(magneticInfoUI);
+		if (playerUI.IsValid())
+		{
+			playerUI->GetMagneticInfoWidget(magneticInfoUI);
+			playerUI->GetAimWidget(aimUI);
+		}
+
+		/*적용*/
 		if (magneticInfoUI.IsValid())
 		{
 			magneticInfoUI->ClearInfo();
 			magneticInfoUI->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+		}
+
+		if (aimUI.IsValid())
+		{
+			aimUI->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1]);
 		}
 	}
 }
@@ -1742,9 +1780,32 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 	if (changedMagType != EMagneticType::NONE)
 	{
 		if (PlayerAnim) PlayerAnim->PlaySelfShootMontage(.3f, .85f);
+
+		/*자성 비네팅 이펙트 색깔 변경*/
+		if (MagneticVignettingEffectComp)
+		{
+			FLinearColor goal = UMagneticComponent::GetMagneticEffectColor(_ShootTargetInfo.ApplyType, EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT);
+
+			_vignettingStartColor = _vignettingCurrColor;
+			_vignettingDistanceColor = goal - _vignettingStartColor;
+			_vignettingcurrTime = 1.f;
+			_vignettingGoalDiv = 1.f / VignettingSeconds;
+		}
 	}
 	else
 	{
+		/*자성 비네팅 이펙트 색깔 변경*/
+		if (MagneticVignettingEffectComp)
+		{
+			FLinearColor goal = _vignettingCurrColor;
+			goal.A = 0.f;
+
+			_vignettingStartColor = _vignettingCurrColor;
+			_vignettingDistanceColor = goal - _vignettingStartColor;
+			_vignettingcurrTime = 1.f;
+			_vignettingGoalDiv = 1.f / VignettingSeconds;
+		}
+
 		if (PlayerAnim)
 		{
 			if (PlayerAnim->GetResetMontageIsPlaying() == false)

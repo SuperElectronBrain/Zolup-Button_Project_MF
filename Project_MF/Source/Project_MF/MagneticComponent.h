@@ -32,9 +32,7 @@ enum class EMagneticEffectColorType : uint8
 	GUN_SHOOT_EFFECT_MIN,
 	GUN_SHOOT_EFFECT_MAX,
 	GRANT_EFFECT,
-	GUN_WAVE_MIN,
-	GUN_WAVE_MAX,
-	MAGNETIC_INFO_UI
+	ELECTRIC_VIGNETTING_EFFECT
 };
 
 /*해당 컴포넌트에서 쓰이는 매크로입니다.*/
