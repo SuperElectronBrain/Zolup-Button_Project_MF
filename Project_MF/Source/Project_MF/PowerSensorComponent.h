@@ -22,7 +22,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool PlayerOnly;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool ReversSignal;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NonReversibleSignal;
-	UPROPERTY() TWeakObjectPtr<UPowerGenerateComponent> ReceivingTargetGenerateComponent;
+	UPROPERTY() TWeakObjectPtr<UPowerComponent> ReceivingTargetGenerateComponent;
 protected:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

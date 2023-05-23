@@ -29,7 +29,7 @@ void UPowerSensorComponent::BeginPlay()
 		USceneComponent* ParentComponent = GetAttachParent();
 		while (::IsValid(ParentComponent) == true)
 		{
-			UPowerGenerateComponent* ParentGenerateComponent = Cast<UPowerGenerateComponent>(ParentComponent);
+			UPowerComponent* ParentGenerateComponent = Cast<UPowerComponent>(ParentComponent);
 			if (::IsValid(ParentGenerateComponent) == true)
 			{
 				ReceivingTargetGenerateComponent = ParentGenerateComponent;
@@ -46,7 +46,7 @@ void UPowerSensorComponent::BeginPlay()
 			TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
 			for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
 			{
-				UPowerGenerateComponent* PowerGenerateComponent = Cast<UPowerGenerateComponent>(ParentsComponents[i]);
+				UPowerComponent* PowerGenerateComponent = Cast<UPowerComponent>(ParentsComponents[i]);
 				if (::IsValid(PowerGenerateComponent) == true)
 				{
 					ReceivingTargetGenerateComponent = PowerGenerateComponent;
@@ -57,7 +57,7 @@ void UPowerSensorComponent::BeginPlay()
 
 		if (::IsValid(ReceivingTargetGenerateComponent.Get()) == false)
 		{
-			ReceivingTargetGenerateComponent = GetOwner()->FindComponentByClass<UPowerGenerateComponent>();
+			ReceivingTargetGenerateComponent = GetOwner()->FindComponentByClass<UPowerComponent>();
 		}
 	}
 
