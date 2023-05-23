@@ -27,7 +27,6 @@ struct FUIFadeInfo
 {
 	GENERATED_BODY()
 
-public:
 	EFadeType type;
 	FLinearColor start, goal1, goal3;
 	TScriptInterface<IGameUIHandler> handler;

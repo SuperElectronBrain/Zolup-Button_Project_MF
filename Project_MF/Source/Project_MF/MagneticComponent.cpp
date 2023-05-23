@@ -264,6 +264,11 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 		/*자성이 부여되었을 때의 이펙트*/
 		case(EMagneticEffectColorType::GRANT_EFFECT):
 			return (isN ? FLinearColor(5.f, 0.f, 0.049996f, 1.f) : FLinearColor(0.014019f, 0.f, 70.f, 1.f));
+	
+		/*자성 비네팅 이펙트*/
+		case(EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT):
+			return (isN ? FLinearColor(0.984f, 0.135f, 0.161f, 0.95f) : FLinearColor(0.f, 0.690244f, 0.984375f, 0.95f));
+	
 	}
 
 	return FLinearColor::White;
