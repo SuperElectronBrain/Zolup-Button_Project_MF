@@ -47,6 +47,19 @@ struct FGivenImgInfo
 	void SetAllImgOpacityZero();
 };
 
+USTRUCT()
+struct FPlayerCircleInfo
+{
+	GENERATED_BODY()
+
+	UHandlerImage* BlueImg;
+	UHandlerImage* RedImg;
+
+	EMagneticType CurrType;
+	UHandlerImage* GetImgByMagType() const;
+
+};
+
 
 /**
  * 플레이어 UI의 애임에 대한 UI를 담당합니다.
@@ -96,8 +109,10 @@ private:
 	FDelegateHandle _FadeDelegateHandle;
 	FGivenImgInfo _GivenInfoL, _GivenInfoR;
 	UImage* _PlayerCircle_Red, * _PlayerCircle_Blue;
+
+	/**플레이어 원형 이펙트 애니메이션에 필요한 필드입니다.*/
 	EMagneticType _PlayerType = EMagneticType::NONE;
-	EMagneticType _PlayerHopeType;
+	FVector2D _startCircleScale, _goalCircleScale;
 
 	UPROPERTY(EditAnywhere, Category = PlayerAim, Meta = (AllowPrivateAccess = true), BlueprintReadWrite)
 	float MagGivenApplySeconds= .2f;

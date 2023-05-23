@@ -50,6 +50,9 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MAGNETIC_VIGNETTING_SYSTEM(
 		TEXT("/Game/Effect/electricVignetting/vignetting_reflection_niagara.vignetting_reflection_niagara")
 	);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> GAUNTLET_EFFECT_SYSTEM(
+		TEXT("/Game/Effect/Magnetic/Gauntlet/Glove_effect_n_fix.Glove_effect_n_fix")
+	);
 
 	/*CDO - UI*/
 	static ConstructorHelpers::FClassFinder<UUserWidget> STOPTIMER_WIDGET(
@@ -88,6 +91,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 	BreathSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("BREATH_SE"));
 	BreathSoundEffectComp->SetupAttachment(RootComponent);
+
 
 	if (GIVE_SOUND.Succeeded()) MagOnSound = GIVE_SOUND.Object;
 	if (UNGIVE_SOUND.Succeeded()) MagOffSound = UNGIVE_SOUND.Object;
@@ -168,6 +172,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
 	if (SHOOT_WAVE_EFFECT_SYSTEM.Succeeded()) ShootWaveEffect = SHOOT_WAVE_EFFECT_SYSTEM.Object;
 	if (MAGNETIC_VIGNETTING_SYSTEM.Succeeded()) MagneticVignettingEffect = MAGNETIC_VIGNETTING_SYSTEM.Object;
+	if (GAUNTLET_EFFECT_SYSTEM.Succeeded()) GauntletEffect = GAUNTLET_EFFECT_SYSTEM.Object;
 	
 	/*StopTimer Widget*/
 	TimerWidgetA = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentA"));
@@ -264,10 +269,25 @@ void AGamePlayerCharacter::EnterGround(const FHitResult& Hit)
 	);
 }
 
+float AGamePlayerCharacter::GetGauntletEffectScale() const
+{
+	return _gauntletScale;
+}
+
+void AGamePlayerCharacter::SetGauntletEffectScale(float newScale)
+{
+	if (GauntletEffectComp)
+	{
+		GauntletEffectComp->SetNiagaraVariableVec2(TEXT("circlescale"), FVector2D(400.f, 400.f) * newScale);
+		GauntletEffectComp->SetNiagaraVariableVec2(TEXT("thunderScale"), FVector2D(200.f, 50.f) * newScale);
+		GauntletEffectComp->SetVectorParameter(TEXT("meshScale"), FVector(5.f, 5.f, 5.f) * newScale);
+	}
+}
+
 void AGamePlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
 	#pragma region Omission
 	/*델리게이트 등록*/
 	if (Magnetic)
@@ -369,6 +389,22 @@ void AGamePlayerCharacter::BeginPlay()
 		);
 	}
 
+	/*건틀렛 이펙트 추가*/
+	if (GauntletEffect)
+	{
+		GauntletEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
+			GauntletEffect,
+			GetMesh(),
+			TEXT("GauntletSocket"),
+			FVector::ZeroVector,
+			FRotator::ZeroRotator,
+			EAttachLocation::SnapToTarget,
+			false,
+			true
+		);
+		SetGauntletEffectScale(0.f);
+	}
+
 	/*자성 비네팅 이펙트 추가.*/
 	if (MagneticVignettingEffect)
 	{
@@ -447,6 +483,10 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), _vignettingCurrColor);
 	}
+
+	/*건틀렛 구체 이펙트 러프*/
+	_gauntletCurrScale += DeltaTime * 2.f * (_gauntletGoalScale - _gauntletCurrScale);
+	SetGauntletEffectScale(_gauntletCurrScale);
 
 	//각종 움직임 적용
 	CamLookProgress(DeltaTime);
@@ -1791,6 +1831,18 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			_vignettingcurrTime = 1.f;
 			_vignettingGoalDiv = 1.f / VignettingSeconds;
 		}
+
+		/*건틀렛 이펙트 크기 변경*/
+		GauntletEffectComp->SetColorParameter(
+			TEXT("CircleColor"),
+			UMagneticComponent::GetMagneticEffectColor(changedMagType, EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT)
+		);
+
+		GauntletEffectComp->SetColorParameter(
+			TEXT("thundetColor"),
+			UMagneticComponent::GetMagneticEffectColor(changedMagType, EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT)
+		);
+		_gauntletGoalScale = 0.01f;
 	}
 	else
 	{
@@ -1805,6 +1857,9 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			_vignettingcurrTime = 1.f;
 			_vignettingGoalDiv = 1.f / VignettingSeconds;
 		}
+
+		/*건틀렛 이펙트 크기 초기화*/
+		_gauntletGoalScale = 0.f;
 
 		if (PlayerAnim)
 		{

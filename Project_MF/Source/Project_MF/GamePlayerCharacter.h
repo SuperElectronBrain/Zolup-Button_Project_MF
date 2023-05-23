@@ -126,6 +126,9 @@ public:
 	void SetPlayerWalkMode();
 	void SetCreepyMode(APlayerAirVent* airvent=nullptr, bool enter = false);
 
+	float GetGauntletEffectScale() const;
+	void SetGauntletEffectScale(float newScale);
+
 
 	//////////////////////////////////
 	//////    Override methods  //////
@@ -250,6 +253,7 @@ private:
 	float _timeStopCurrTime = 0.f;
 	float _playerHeight = 0.f;
 	float _stiffen = 0.f;
+	float _gauntletScale = 1.f;
 	FVector _stickNormal;
 
 	/**
@@ -262,6 +266,14 @@ private:
 	FLinearColor _vignettingDistanceColor;
 	float _vignettingcurrTime = 0.f;
 	float _vignettingGoalDiv = 0.f;
+
+	/**
+	*  Gauntlet Circle Effect Fields
+	* 
+	*  건틀렛 구체 이펙트를 위한 필드들입니다.
+	*/
+	float _gauntletCurrScale = 0.f;
+	float _gauntletGoalScale = 0.f;
 	
 
 	/**
@@ -356,6 +368,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* MagneticVignettingEffect;
+
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraSystem* GauntletEffect;
 
 public:
 	/**
@@ -456,6 +471,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* MagneticVignettingEffectComp;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraComponent* GauntletEffectComp;
 
 	/**
 	*Sound Components

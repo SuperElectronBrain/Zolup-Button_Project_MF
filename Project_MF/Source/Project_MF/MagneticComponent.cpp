@@ -269,6 +269,13 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 		case(EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT):
 			return (isN ? FLinearColor(0.984f, 0.135f, 0.161f, 0.95f) : FLinearColor(0.f, 0.690244f, 0.984375f, 0.95f));
 	
+		/*건틀렛 구체 이펙트*/
+		case(EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT):
+			return (isN ? FLinearColor(2.f, 0.f, 0.019997f, 0.5f) : FLinearColor(0.f, 0.059361f, 2.f, 1.f));
+
+		/*건틀렛 번개 이펙트*/
+		case(EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT):
+			return (isN ? FLinearColor(100.f, 0.f, 1.428556f, .5f) : FLinearColor(0.f, 1.484013f, 50.f, 1.f));
 	}
 
 	return FLinearColor::White;

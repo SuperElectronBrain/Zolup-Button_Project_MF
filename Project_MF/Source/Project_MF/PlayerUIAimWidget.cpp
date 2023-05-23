@@ -10,6 +10,11 @@ UHandlerImage* FGivenImgInfo::GetImgByMagType() const
 	return CurrType == EMagneticType::N ? RedImg : BlueImg; 
 }
 
+UHandlerImage* FPlayerCircleInfo::GetImgByMagType() const
+{
+	return CurrType == EMagneticType::N ? RedImg : BlueImg;
+}
+
 void FGivenImgInfo::SetImgOpacityByMagType()
 {
 	if (RedImg) RedImg->SetOpacity(CurrType == EMagneticType::N ? 1.f : 0.f);
