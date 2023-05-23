@@ -253,6 +253,18 @@ private:
 	FVector _stickNormal;
 
 	/**
+	*  Magnetic Vignetting Fields
+	* 
+	*  자성 비네팅 효과의 러프를 위한 필드들입니다.
+	*/
+	FLinearColor _vignettingCurrColor;
+	FLinearColor _vignettingStartColor;
+	FLinearColor _vignettingDistanceColor;
+	float _vignettingcurrTime = 0.f;
+	float _vignettingGoalDiv = 0.f;
+	
+
+	/**
 	* Magnet Shoot Fields
 	* 
 	* 플레이어가 자성을 부여하기위해 필요한 필드들입니다.
@@ -340,7 +352,10 @@ private:
 	UNiagaraSystem* MagneticEffect;
 
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
-	UParticleSystem* ShootWaveEffect;
+	UNiagaraSystem* ShootWaveEffect;
+
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraSystem* MagneticVignettingEffect;
 
 public:
 	/**
@@ -398,6 +413,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
 	float PlayerDashScale = 2.f;
 
+	/**플레이어의 카메라에서 자성 비네팅 이펙트가 적용되는 시간(초)입니다.*/
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
+	float VignettingSeconds = 1.f;
+
 private:
 	/**
 	* Magnetic Components
@@ -436,7 +455,7 @@ private:
 	UNiagaraComponent* ShootEffectComp;
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
-	UParticleSystemComponent* ShootWaveEffectComp;
+	UNiagaraComponent* MagneticVignettingEffectComp;
 
 	/**
 	*Sound Components
