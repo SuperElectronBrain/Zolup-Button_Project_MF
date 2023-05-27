@@ -6,11 +6,12 @@
 #include "PowerMovementComponent.h"
 #include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
+#include "Components/SceneComponent.h"
 #include "GameFramework/Character.h"
 #include "PowerObjectTeleporterComponent.generated.h"
 
 UENUM()
-enum EPowerActingTarget
+enum class EPowerActingTarget : uint8
 {
 	Everything UMETA(DisplayName = "It works anytime"),
 	PlayerIgnore UMETA(DisplayName = "Except for the Player"),

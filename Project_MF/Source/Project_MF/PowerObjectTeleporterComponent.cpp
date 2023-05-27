@@ -19,7 +19,8 @@ UPowerObjectTeleporterComponent::UPowerObjectTeleporterComponent()
 void UPowerObjectTeleporterComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
+	int32 ComponentsFindCount = 0;
 	TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
 	for (int32 i = 0; i < ParentsComponents.Num(); i = i + 1)
 	{
@@ -28,13 +29,9 @@ void UPowerObjectTeleporterComponent::BeginPlay()
 		{
 			ArrowComponent = Arrow;
 			ArrowComponent->AttachToComponent(GetAttachParent(), FAttachmentTransformRules::KeepRelativeTransform);
-			break;
+			ComponentsFindCount = ComponentsFindCount + 1;
 		}
-	}
 
-	TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
-	for (int32 i = 0; i < ParentsComponents.Num(); i = i + 1)
-	{
 		UBoxComponent* Box = Cast<UBoxComponent>(ParentsComponents[i]);
 		if (::IsValid(Box) == true)
 		{
@@ -44,6 +41,11 @@ void UPowerObjectTeleporterComponent::BeginPlay()
 			BoxComponent->SetGenerateOverlapEvents(true);
 			//BoxComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerObjectTeleporterComponent::OnOverlapBegin);
 			//BoxComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerObjectTeleporterComponent::OnOverlapEnd);
+			ComponentsFindCount = ComponentsFindCount + 1;
+		}
+
+		if (ComponentsFindCount > 1)
+		{
 			break;
 		}
 	}

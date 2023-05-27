@@ -1,5 +1,6 @@
 #pragma once
 #include "EngineMinimal.h"
+#include "MagneticMovementComponent.h"
 #include "MagneticComponent.generated.h"
 
 class USceneComponent;
@@ -7,7 +8,7 @@ class UNiagaraSystem;
 class UNiagaraComponent;
 class UMagneticMovementComponent;
 class UMagneticComponent;
-enum class EMagnetMoveType : uint8;
+//enum class EMagnetMoveType : uint8;
 enum class EMagneticType : uint8;
 
 /**

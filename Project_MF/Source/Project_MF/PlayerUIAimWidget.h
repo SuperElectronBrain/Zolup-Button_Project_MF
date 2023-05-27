@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "GameUIHandler.h"
+#include "MagneticComponent.h"
 #include "PlayerUIAimWidget.generated.h"
 
 class UHandlerImage;
@@ -12,7 +13,7 @@ class UImage;
 class UCustomGameInstance;
 class UMagneticComponent;
 class UGameUIManager;
-enum class EMagneticType : uint8;
+//enum class EMagneticType : uint8;
 
 constexpr int AIML_FADE_ID =  36;
 constexpr int AIMR_FADE_ID = 37;

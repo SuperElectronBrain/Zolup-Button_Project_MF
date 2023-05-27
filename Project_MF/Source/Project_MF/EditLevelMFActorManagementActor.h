@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MFActor.h"
+//#include "MFActor.h"
 #include "EditLevelMFActorManagementActor.generated.h"
 
 UCLASS()
@@ -14,7 +14,7 @@ class PROJECT_MF_API AEditLevelMFActorManagementActor : public AActor
 	
 private:
 	UPROPERTY() int32 ActorCount;
-	UPROPERTY() TArray<AMFActor*> MFActorsArray;
+	//UPROPERTY() TArray<AMFActor*> MFActorsArray;
 
 public:	
 	// Sets default values for this actor's properties
