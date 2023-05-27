@@ -18,7 +18,11 @@ class UDefaultMagneticMovementComponent;
 class UCustomGameInstance;
 class UGameMapSectionComponent;
 class UWidgetComponent;
+class UPlayerUICanvasWidget;
 class UUIStopTimerWidget;
+class UPlayerUIAimWidget;
+class UUIBlackScreenWidget;
+class UPlayerUIMagneticInfoWidget;
 class APlayerAirVent;
 class UAudioComponent;
 class USoundCue;
@@ -41,7 +45,20 @@ enum class EPlayerMode
 	AIRVENT_EXIT_UP,
 	AIRVENT_EXIT_DOWN,
 	CREEPY,
-	STICK_JUMP
+	STICK_JUMP,
+	GAMEOVER
+};
+
+/**
+* 플레이어의 게임오버에 대한 이유를 나타내는 열거형입니다.
+*/
+UENUM()
+enum class EPlayerGameOverReason
+{
+	NONE,
+	FALLEN,
+	DROWNING,
+	FIRED
 };
 
 /**
@@ -71,6 +88,9 @@ struct FShootTargetInfo
 	bool isHit				= false;
 };
 
+/**
+* 플레이어의 이동 사운드를 담아둘 구조체입니다.
+*/
 USTRUCT(Blueprintable, BlueprintType)
 struct FPlayerMoveSoundInfo
 {
@@ -85,19 +105,6 @@ struct FPlayerMoveSoundInfo
 	UPROPERTY(EditAnywhere, BlueprintReadwrite)
 	USoundBase* JumpEndSound;
 };
-
-USTRUCT()
-struct FAutioStartInfo
-{
-	GENERATED_BODY()
-
-	TWeakObjectPtr<USoundBase> Source;
-	float StartTime;
-};
-
-/**
-* 플레이어의 발자국 사운드를 담아둘 구조체입니다.
-*/
 
 /**
 *  게임의 플레이어 캐릭터의 모든 기능을 책임지는 클래스입니다.
@@ -117,15 +124,21 @@ public:
 	//////////////////////////////////
 	//////     Public methods   //////
 	//////////////////////////////////
+
+	/**플레이어의 방향벡터 및 회전값들을 얻어오는 함수들입니다.*/
 	FRotator GetPlayerCameraQuat() const;
 	FVector GetPlayerForwardVector() const;
 	FVector GetPlayerRightVector() const;
 	FVector GetPlayerDownVector() const;
 	FQuat GetPlayerQuat() const { if (GetController() == nullptr) return FQuat::Identity;  return GetController()->GetControlRotation().Quaternion(); }
 	void SetPlayerRotator(FRotator& newValue);
+
+	/**플레이어의 동작모드를 결정하는 함수입니다.*/
 	void SetPlayerWalkMode();
 	void SetCreepyMode(APlayerAirVent* airvent=nullptr, bool enter = false);
+	void SetPlayerGameOverMode(EPlayerGameOverReason gameOverReason);
 
+	/**건틀렛 이펙트의 크기를 조절 및 얻는 함수들입니다.*/
 	float GetGauntletEffectScale() const;
 	void SetGauntletEffectScale(float newScale);
 
@@ -138,7 +151,7 @@ private:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	#if WITH_EDITOR
+	#ifdef WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
 	#endif
 
@@ -162,12 +175,26 @@ private:
 	void StageRestart();
 	void ApplyTimeStop();
 
+
 	////////////////////////////////////
 	/////     Private methods   ///////
 	///////////////////////////////////
+
+	/**
+	* UI관련 함수들입니다.
+	* 
+	* @UpdateUIRef : 사용할 UI들의 참조를 최신화합니다.
+	* @UnApplyTimeStop : 현재 적용된 TimeStop UIWidget들에게 페이드 인을 적용합니다.
+	*/
+	void UpdateUIRef();
 	void UnApplyTimeStop();
 
-	/*Player Sound methods*/
+	/**
+	* 플레이어가 소리를 발생시키는데 사용될 함수들입니다.
+	* 
+	* @DetectFloorType : 플레이어가 서있는 바닥을 조사하고, 바닥의 재질 이름을 얻습니다.
+	* @PlayMoveSound : 플레이어가 이동할 때 나는 소리를 재생합니다.
+	*/
 	void DetectFloorType(FString& outPhysMatName);
 	void PlayMoveSound(bool playSound);
 
@@ -197,7 +224,7 @@ private:
 	void ShootStart();
 
 	/**
-	* 플레이어의 자성이 변화가 있을 때 호출됩니다.
+	* 플레이어의 자성이 변화했을 때 호출됩니다.
 	* 이 함수가 호출되는 시점에서, 플레이어의 건틀렛의 자성 부여/해제 모션이 실행됩니다.
 	*/
 	UFUNCTION()
@@ -234,6 +261,15 @@ private:
 	UFUNCTION()
 	void BreathFinish();
 
+	/**
+	* 플레이어가 충돌가능한 물체와 닿거나, 떨어졌을 때 호출되는 델리게이트입니다.
+	* 주로 플레이어가 속해있는 맵 섹션을 알아내기 위해서 쓰입니다.
+	*/
+	UFUNCTION()
+	void PlayerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void PlayerEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 
 	/**
@@ -302,14 +338,23 @@ private:
 	*/
 	FDelegateHandle _fadeHandle;
 	FShootTargetInfo _ShootTargetInfo;
-	FAutioStartInfo	_nextAudioInfo;
 	TWeakObjectPtr<UCustomGameInstance> _Instance;
 	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
 	TWeakObjectPtr<AActor> _StickTo;
 	TWeakObjectPtr<APlayerAirVent> _EnterAirVent;
-	TWeakObjectPtr<AActor> _CamLookTarget;
+	TWeakObjectPtr<UGameMapSectionComponent> _OverlapSection;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
 	TStaticArray<FTimeStopMagnetInfo, 2> _TimeStopMagnets;
+
+	/**플레이어가 특정 부분을 바라볼 때 사용되는 필드입니다.*/
+	TWeakObjectPtr<AActor> _CamLookTarget;
+
+
+	/**플레이어에서 사용할 UI Widget들의 참조 필드입니다.*/
+	TWeakObjectPtr<UUIBlackScreenWidget> _BlackScreenWidget;
+	TWeakObjectPtr<UPlayerUICanvasWidget> _PlayerUICanvasWidget;
+	TWeakObjectPtr<UPlayerUIAimWidget> _AimWidget;
+	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> _MagInfoWidget;
 
 
 	UPROPERTY()

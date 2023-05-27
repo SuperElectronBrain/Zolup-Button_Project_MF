@@ -31,10 +31,10 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 	/*CDO - Mesh & Animation*/
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	PLAYER_MESH(
-		TEXT("/Game/PlayerCharacter/Meshs/PlayerArmMeshNew.PlayerArmMeshNew")
+		TEXT("/Game/PlayerCharacter/Meshs2/Main_Character_pose.Main_Character_pose")
 	);
 	static ConstructorHelpers::FClassFinder<UPlayerAnimInstance> ANIM_BLUEPRINT(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerAnimBlueprint")
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerAnimBlueprint")
 	);
 
 	/*CDO - Effect*/
@@ -116,7 +116,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/*Camera*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
 	Camera->SetupAttachment(SpringArm);
-	Camera->SetRelativeLocationAndRotation(FVector(-8.f, 5.f, 21.f), FRotator::ZeroRotator);
+	Camera->SetRelativeLocationAndRotation(FVector(-8.f, 5.f, 105.0f), FRotator::ZeroRotator);
 	Camera->SetOrthoNearClipPlane(-1.f);
 	//Default: (0.f, 0.f, -1.3f)
 
@@ -284,11 +284,38 @@ void AGamePlayerCharacter::SetGauntletEffectScale(float newScale)
 	}
 }
 
+void AGamePlayerCharacter::SetPlayerGameOverMode(EPlayerGameOverReason gameOverReason)
+{
+
+
+
+}
+
+void AGamePlayerCharacter::PlayerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	_OverlapSection.Reset();
+	_OverlapSection = Cast<UGameMapSectionComponent>(OtherComp);
+}
+
+void AGamePlayerCharacter::PlayerEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (_OverlapSection.IsValid() && _OverlapSection.Get()==OtherComp && _OverlapSection->GetResetCountByExitPlayer())
+	{
+		_OverlapSection->SetCurrSectionDMGCount(0);
+		_OverlapSection.Reset();
+		return;
+	}
+
+	UGameMapSectionComponent* ExitSection = Cast<UGameMapSectionComponent>(OtherComp);
+	if (ExitSection && _OverlapSection->GetResetCountByExitPlayer()) ExitSection->SetCurrSectionDMGCount(0);
+}
+
 void AGamePlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
 	#pragma region Omission
+
 	/*델리게이트 등록*/
 	if (Magnetic)
 	{
@@ -299,6 +326,9 @@ void AGamePlayerCharacter::BeginPlay()
 	}
 	LandedDelegate.AddDynamic(this, &AGamePlayerCharacter::EnterGround);
 	BreathSoundEffectComp->OnAudioFinished.AddDynamic(this, &AGamePlayerCharacter::BreathFinish);
+
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerBeginOverlap);
+	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerEndOverlap);
 
 	//게임 인스턴스 참조
 	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
@@ -363,6 +393,7 @@ void AGamePlayerCharacter::BeginPlay()
 			FVector(0.f, 0.f, 0.f),
 			FRotator::ZeroRotator,
 			EAttachLocation::SnapToTargetIncludingScale,
+			false,
 			false
 		);
 
@@ -381,7 +412,7 @@ void AGamePlayerCharacter::BeginPlay()
 			ShootEffect,
 			SpringArm,
 			NAME_None,
-			FVector(177.5, 54.1f, -26.16f),
+			FVector(177.5, 54.1f, 80.16f),
 			FRotator(0, 0, 180),
 			EAttachLocation::SnapToTarget,
 			false,
@@ -412,7 +443,7 @@ void AGamePlayerCharacter::BeginPlay()
 			MagneticVignettingEffect,
 			Camera,
 			NAME_None,
-			FVector(347.f, -2.45f, 23.f),
+			FVector(347.f, -2.45f, -7.f),
 			FRotator::MakeFromEuler(FVector(0.f, 0.f, -89.9f)),
 			FVector(.1f, .1f, .1f),
 			EAttachLocation::SnapToTarget,
@@ -424,7 +455,6 @@ void AGamePlayerCharacter::BeginPlay()
 		_vignettingCurrColor = FLinearColor(1.f, 1.f, 1.f, 0.f);
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), FLinearColor(1.f, 1.f, 1.f, 0.f));
 	}
-
 	#pragma endregion
 }
 
@@ -1014,7 +1044,7 @@ void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 		/*섹션 페이드 아웃*/
 		case(PLAYER_FADE_ID):
 		{
-			if (isDark == false) break;
+			if (isDark == false || _CurrSection.IsValid()==false) break;
 			_CurrSection->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
 			break;
 		}
@@ -1045,46 +1075,28 @@ void AGamePlayerCharacter::StageRestart()
 {
 	#pragma region Omission
 
-	//재시작 테스트
-	//static bool apply = false;
-	//GetWorldSettings()->SetTimeDilation(!apply?0.05f:1.f);
-	//apply = !apply;
-	//return;
 	if (_stiffen != 0.f) return;
-	TArray<UPrimitiveComponent*> overlaps;
-	GetCapsuleComponent()->GetOverlappingComponents(overlaps);
 
-	int32 count = overlaps.Num();
-	for (auto p : overlaps)
+	if (_OverlapSection.IsValid())
 	{
-		_CurrSection = Cast<UGameMapSectionComponent>(p);
-		if (_CurrSection.IsValid())
-		{
-			//Player UI를 받아온다.
-			TWeakObjectPtr<UUIBlackScreenWidget> blackScreen;
-			if (_Instance.IsValid())
-			{
-				_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
+		//BlackScreen Widget 참조를 갱신 및 페이드 적용.
+		UpdateUIRef();
 
-				//페이드 인->아웃 실행.
-				if (blackScreen.IsValid())
-				{
-					_Instance->GetUIManager()->PlayFadeInOut(
-						EFadeType::WHITE_TO_DARK_TO_WHITE,
-						blackScreen.Get(),
-						2.f,
-						2.f,
-						1.f,
-						0.f,
-						0.f,
-						1.f,
-						PLAYER_FADE_ID,
-						FLinearColor::Black,
-						FLinearColor::Black
-					);
-				}
-			}
-			return;
+		if (_BlackScreenWidget.IsValid())
+		{
+			_Instance->GetUIManager()->PlayFadeInOut(
+				EFadeType::WHITE_TO_DARK_TO_WHITE,
+				_BlackScreenWidget.Get(),
+				2.f,
+				2.f,
+				1.f,
+				0.f,
+				0.f,
+				1.f,
+				PLAYER_FADE_ID,
+				FLinearColor::Black,
+				FLinearColor::Black
+			);
 		}
 	}
 	#pragma endregion
@@ -1295,23 +1307,14 @@ void AGamePlayerCharacter::ResetMagnetic()
 {
 	if (_stiffen != 0.f) return;
 	
-	//UI 초기화
-	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
-	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magneticInfoUI;
-	TWeakObjectPtr<UPlayerUIAimWidget>			aimUI;
-	if (_Instance.IsValid()) {
-		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+	//UI 갱신
+	UpdateUIRef();
 
-		//사용할 PlayerUI의 참조를 가져온다.
-		if (playerUI.IsValid())
-		{
-			playerUI->GetMagneticInfoWidget(magneticInfoUI);
-			playerUI->GetAimWidget(aimUI);
-		}
+	if (_MagInfoWidget.IsValid())
+		_MagInfoWidget->ClearInfo();
 
-		if (magneticInfoUI.IsValid()) magneticInfoUI->ClearInfo();
-		if (aimUI.IsValid()) aimUI->SetAimUIByMagneticType(EMagneticType::NONE, EMagneticType::NONE);
-	}
+	if (_AimWidget.IsValid())
+		_AimWidget->SetAimUIByMagneticType(EMagneticType::NONE, EMagneticType::NONE, EMagneticType::NONE);
 
 	PlayerAnim->PlayResetMontage();
 	GetMovementComponent()->SetActive(true);
@@ -1655,6 +1658,28 @@ void AGamePlayerCharacter::ShootMine(EMagneticType shootType)
 	GivenTestMagnet(Magnetic, shootType);
 }
 
+void AGamePlayerCharacter::UpdateUIRef()
+{
+	if (_Instance.IsValid() == false) return;
+
+	/*각 UI들에 대한 참조를 갱신한다.*/
+	if (_BlackScreenWidget.IsValid() == false)
+		_Instance->GetUIManager()->GetUIBlackScreenWidget(_BlackScreenWidget);
+
+	if (_PlayerUICanvasWidget.IsValid() == false) 
+		_Instance->GetUIManager()->GetPlayerUICanvasWidget(_PlayerUICanvasWidget);
+	
+	/*플레이어 UI들에 대한 참조를 갱신한다.*/
+	if(_PlayerUICanvasWidget.IsValid())
+	{
+		if (_AimWidget.IsValid() == false)
+			_PlayerUICanvasWidget->GetAimWidget(_AimWidget);
+
+		if (_MagInfoWidget.IsValid() == false)
+			_PlayerUICanvasWidget->GetMagneticInfoWidget(_MagInfoWidget);
+	}
+}
+
 void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagneticType givenType)
 {
 	if (newMagnet == nullptr || !::IsValid(newMagnet)) return;
@@ -1687,25 +1712,9 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 			);
 		}
 	}
-
-	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
-	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magnetInfoUI;
-	TWeakObjectPtr<UPlayerUIAimWidget>			aimUI;
 	bool alreadyGiven = IsAlreadyGiven(newMagnet);
 	bool isFulledGiven = IsFulledGiven();
-
-	//갱신할 플레이어 UI를 얻어온다.
-	if (_Instance.IsValid()) {
-
-		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
-
-		//PlayerUI가 유효하면 나머지 PlayerUI도 가져온다.
-		if (playerUI.IsValid()) 
-		{
-			playerUI->GetMagneticInfoWidget(magnetInfoUI);
-			playerUI->GetAimWidget(aimUI);
-		}
-	}
+	bool playerIsGiven = false;
 
 	//부여된 자성으로 인해 자성을 잃었을 경우
 	if ( alreadyGiven && newMagnet->GetCurrentMagnetic()==EMagneticType::NONE)
@@ -1750,11 +1759,20 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	}
 
 	//플레이어의 UI를 갱신하고 마무리.
-	if (magnetInfoUI.IsValid()) 
-		magnetInfoUI->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+	UpdateUIRef();
 
-	if (aimUI.IsValid())
-		aimUI->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1]);
+	if (_MagInfoWidget.IsValid()) 
+		_MagInfoWidget->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
+
+	if (_AimWidget.IsValid())
+		_AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], Magnetic->GetCurrentMagnetic());
+
+
+	/*현재 접촉해 있는 섹션의 카운트를 올린다.*/
+	if (_OverlapSection.IsValid())
+	{
+		_OverlapSection->SetCurrSectionDMGCount(_OverlapSection->GetCurrSectionDMGCount() + 1);
+	}
 
 	#pragma endregion
 }
@@ -1789,30 +1807,14 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 		if (_GivenMagnets[0] != nullptr) _oldGivenIndex = 0;
 	}
 
-	TWeakObjectPtr<UPlayerUICanvasWidget>		playerUI;
-	TWeakObjectPtr<UPlayerUIAimWidget>			aimUI;
-	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> magneticInfoUI;
-	if (_Instance.IsValid()) {
-		_Instance->GetUIManager()->GetPlayerUICanvasWidget(playerUI);
+	//플레이어의 UI를 갱신하고 마무리.
+	UpdateUIRef();
 
-		if (playerUI.IsValid())
-		{
-			playerUI->GetMagneticInfoWidget(magneticInfoUI);
-			playerUI->GetAimWidget(aimUI);
-		}
+	if (_MagInfoWidget.IsValid())
+		_MagInfoWidget->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 
-		/*적용*/
-		if (magneticInfoUI.IsValid())
-		{
-			magneticInfoUI->ClearInfo();
-			magneticInfoUI->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
-		}
-
-		if (aimUI.IsValid())
-		{
-			aimUI->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1]);
-		}
-	}
+	if (_AimWidget.IsValid())
+		_AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], Magnetic->GetCurrentMagnetic());
 }
 
 void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneticComponent* changedMagComp)
@@ -1839,10 +1841,11 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 		);
 
 		GauntletEffectComp->SetColorParameter(
-			TEXT("thundetColor"),
+			TEXT("thunterColor"),
 			UMagneticComponent::GetMagneticEffectColor(changedMagType, EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT)
 		);
-		_gauntletGoalScale = 0.01f;
+		_gauntletCurrScale = 0.f;
+		_gauntletGoalScale = 0.015f;
 	}
 	else
 	{
@@ -1869,6 +1872,8 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
 		}
 
+		Magnetic->bAllowMagneticMovement = true;
+
 		_CamLookTarget.Reset();
 	}
 }
@@ -1884,7 +1889,7 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 	switch (moveType) {
 
 	case(EMagnetMoveType::DRAWN_IN):
-		_CamLookTarget =operatorMagComp->GetAttachmentRootActor();
+		_CamLookTarget = operatorMagComp->GetAttachParentActor();
 		PlayerAnim->PlayGlovePulledUpMotage();
 		GetMovementComponent()->SetActive(false);
 		break;
@@ -1900,13 +1905,13 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 
 void AGamePlayerCharacter::ResetCamLookTarget()
 {
-	_CamLookTarget.Reset();
+	//_CamLookTarget.Reset();
 	PlayerAnim->SetHandFixedTransform(EHandType::LEFT, true);
 }
 
 void AGamePlayerCharacter::MagnetMoveEnd(EMagnetMoveType prevMoveType, UMagneticComponent* moveEndMagComp)
 {
-
+	UE_LOG(LogTemp, Warning, TEXT("이동 끝: %s"), prevMoveType==EMagnetMoveType::DRAWN_IN? L"Drawn_In":L"Pushed_out")
 }
 
 void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* HitMagComp, FVector hitNormal)
@@ -1925,12 +1930,15 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 			false
 		);
 
+		Magnetic->bAllowMagneticMovement = false;
+		PlayerAnim->SetHandFixedTransform(EHandType::LEFT, true);
+
 		_stickNormal = hitNormal;
 		_stiffen = 0.3f;
 		_StickTo.Reset();
 		_StickTo = HitActor;
 		AttachToActor(HitActor, FAttachmentTransformRules::KeepWorldTransform);
 		
-		if (PlayerAnim) PlayerAnim->PlayGloveStickMotage(20.f);
+		if (PlayerAnim) PlayerAnim->PlayGloveStickMotage(20.f, 3.f);
 	}
 }

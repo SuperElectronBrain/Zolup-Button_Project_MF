@@ -34,24 +34,25 @@ class PROJECT_MF_API UPlayerAnimInstance final: public UAnimInstance
 	GENERATED_BODY()
 
 public:
-	/////////////////
-	//*Constructor*//
-	/////////////////
+	//////////////////////////
+	///   Constructor   /////
+	/////////////////////////
 	UPlayerAnimInstance();
 
 
-	///////////////////
-	//*Delegates*//
-	///////////////////
+	/////////////////////////////////
+	//////   Public Delegates   /////
+	/////////////////////////////////
 	FShootStartDelegate OnShootStartEvent;
 
-	/////////////////////
-	///*Public Methods*//
-	/////////////////////
-	bool GetAttackMontageIsPlaying() const { return Montage_IsPlaying(AttackMontage); }
+
+	/////////////////////////////
+	////   Public methods  /////
+	////////////////////////////
+	bool GetAttackMontageIsPlaying() const { return Montage_IsPlaying(ShootMontage); }
 	bool GetResetMontageIsPlaying() const { return Montage_IsPlaying(ResetMontage); }
-	bool GetSelfResetMontageIsPlaying() const { return Montage_IsPlaying(SelfResetMontage); }
-	bool GetSelfShootMontageIsPlaying() const { return Montage_IsPlaying(SelfShootMontage); }
+	bool GetSelfResetMontageIsPlaying() const { return Montage_IsPlaying(GloveOffMontage); }
+	bool GetSelfShootMontageIsPlaying() const { return Montage_IsPlaying(GloveOnMontage); }
 	void PlayAttackMontage();
 	void PlayResetMontage();
 	void PlaySelfResetMontage();
@@ -61,71 +62,78 @@ public:
 
 	void SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet=nullptr);
 
+
+	/////////////////////////////////
+	/////   Override methods   //////
+	////////////////////////////////
 private:
-	//////////////////////
-	//*Override methods*//
-	/////////////////////
+	virtual void NativeBeginPlay() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
-	///////////////////////
-	///*Private mothods*///
-	///////////////////////
+
+	////////////////////////////
+	////  Private methods  ////
+	///////////////////////////
+	void DrawDebugHitPoint(const FVector& HitLocation, const FVector& HitNormal) const;
+
 	void ApplyCreepyStandingHands(AGamePlayerCharacter* player);
 	void FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player);
 
 	UFUNCTION()
 	void AnimNotify_ShootStart();
 
-	////////////////////////////
-	///*fields and Components*//
-	////////////////////////////
+
+	//////////////////////////////////
+	/////  Fields and Components  ///
+	/////////////////////////////////
+	TWeakObjectPtr<AGamePlayerCharacter> _gameCharacter;
 	TWeakObjectPtr<UMagneticComponent> _targetMagnetic;
 
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool	_bIsJumping;
-
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	float	_CurrentSpeed;
-
 	UPROPERTY(VisibleAnywhere, Meta=(AllowPrivateAccess=true))
-	UAnimMontage* AttackMontage;
+	UAnimMontage* ShootMontage;
 
 	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
 	UAnimMontage* ResetMontage;
 
 	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
-	UAnimMontage* SelfResetMontage;
+	UAnimMontage* GloveOffMontage;
 
 	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
-	UAnimMontage* SelfShootMontage;
+	UAnimMontage* GloveOnMontage;
 
 	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
-	UAnimMontage* PulledUpMontage;
+	UAnimMontage* GloveActonMontage;
 
 	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
-	UAnimMontage* StickMotange;
+	UAnimMontage* GloveAtMontage;
 
 	UPROPERTY(VisibleAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	FTransform FoldLArmHandTransform;
 
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool bApplyFold_LArm;
-
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bIsPulled;
-
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bLArmRotFixed;
-
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bRArmRotFixed;
-
 	UPROPERTY(VisibleAnywhere, Category = Player, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
 	FVector _LArmJointLocation;
 
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool	_bIsJumping = false;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	float	_CurrentSpeed = 0.f;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bApplyFold_LArm = false;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bIsPulled = false;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bLArmTransformFixed = false;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool _bRArmTransformFixed = false;
+
 public:
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
-	bool _bPlayerCreep;
+	bool _bPlayerCreep = false;
 
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
 	FTransform _ArmLAddOffsetTransform;
