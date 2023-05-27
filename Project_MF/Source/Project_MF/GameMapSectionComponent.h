@@ -5,11 +5,28 @@
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
 #include "Components/BoxComponent.h"
+#include "Engine/DataTable.h"
 #include "GameMapSectionComponent.generated.h"
 
-class UBoxComponent;
 class UMagneticComponent;
 enum class EMagneticType : uint8;
+
+USTRUCT(BlueprintType)
+struct FSectionData : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere, Category = GameMapSection, BlueprintReadWrite)
+	int32 MaxDMGCount = 0;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, BlueprintReadWrite)
+	bool bIgnorePlayerGiven = false;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, BlueprintReadWrite)
+	bool bResetCountByExitPlayer = false;
+};
+
 
 UENUM()
 enum class ESectionSettingType
@@ -24,9 +41,7 @@ struct FActorBeginInfo
 	GENERATED_BODY()
 
 public:
-	UPROPERTY()
-	AActor* Actor;
-
+	TWeakObjectPtr<AActor> Actor;
 	FTransform Transform;
 };
 
@@ -36,11 +51,8 @@ struct FActorCheckInfo
 	GENERATED_BODY()
 
 public:
-	UPROPERTY()
-	AActor* Actor;
-
-	UPROPERTY()
-	AActor* CheckPoint;
+	TWeakObjectPtr<AActor> Actor;
+	TWeakObjectPtr<AActor> CheckPoint;
 };
 
 USTRUCT()
@@ -49,9 +61,7 @@ struct FMagneticBeginInfo
 	GENERATED_BODY()
 
 public:
-	UPROPERTY()
-	UMagneticComponent* Magnetic;
-
+	TWeakObjectPtr<UMagneticComponent> Magnetic;
 	EMagneticType Type;
 	float MaxHaveMagneticSeconds;
 	float MagneticFieldRadiusScale;
@@ -73,10 +83,22 @@ public:
 	/////////////////////
 	UGameMapSectionComponent();
 
+
 	///////////////////////
 	//// Public methods ///
 	///////////////////////
 	void SetSection(ESectionSettingType type);
+
+	bool GetIgnorePlayerGiven() const { return _bIgnorePlayerGiven; }
+	bool GetResetCountByExitPlayer() const { return _bResetCountByExitPlayer; }
+
+	void SetCurrSectionDMGCount(int32 newValue);
+	int32 GetCurrSectionDMGCount() const { return CurrSectionDMGCount; }
+	int32 GetCurrSectionMaxDMGCount() const { return _MaxSectionDMGCount; };
+
+	void SetSectionDataName(const FString& newName) { SectionDataName = newName; };
+	const FString& GetSectionDataName() const { return SectionDataName; };
+
 
 private:
 	////////////////////////
@@ -85,6 +107,9 @@ private:
 	virtual void BeginPlay() override;
 	virtual void OnAttachmentChanged() override;
 	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override { return false; }
+#ifdef WITH_EDITOR
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
+#endif
 
 	///////////////////////
 	// Private methods ///
@@ -96,11 +121,20 @@ private:
 	/////////////////////////////
 	/// Fields And Components ///
 	////////////////////////////
+	UPROPERTY(VisibleAnywhere, Category=GameMapSection, Meta=(AllowPrivateAccess=true))
+	bool _bResetCountByExitPlayer = false;
+
+	UPROPERTY(VisibleAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
+	bool _bIgnorePlayerGiven = false;
+
 	UPROPERTY(VisibleAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
 	bool bIsCompleteSection;
 
 	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true))
 	bool bShowSectionRangeInGame;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (AllowPrivateAccess = true), BlueprintReadWrite)
+	FString SectionDataName;
 
 	UPROPERTY()
 	TArray<FActorCheckInfo> _checkList;
@@ -110,4 +144,13 @@ private:
 
 	UPROPERTY()
 	TArray<FMagneticBeginInfo> _magInfoList;
+
+	UPROPERTY()
+	UDataTable* _SectionDataTable;
+
+	UPROPERTY(VisibleAnywhere, Category=GameMapSection, Meta=(AllowPrivateAccess=true))
+	int32 _MaxSectionDMGCount = 0;
+
+	UPROPERTY(EditAnywhere, Category = GameMapSection, Meta = (ClampMin = 0))
+	int32 CurrSectionDMGCount = 0;
 };
