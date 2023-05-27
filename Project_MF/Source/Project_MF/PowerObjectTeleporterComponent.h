@@ -6,15 +6,23 @@
 #include "PowerMovementComponent.h"
 #include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Character.h"
 #include "PowerObjectTeleporterComponent.generated.h"
 
 UENUM()
-enum EPowerActingOption
+enum EPowerActingTarget
 {
-	None UMETA(DisplayName = "It works anytime"),
+	Everything UMETA(DisplayName = "It works anytime"),
 	PlayerIgnore UMETA(DisplayName = "Except for the Player"),
 	PlayerOnly UMETA(DisplayName = "Only works for Players"),
 };
+
+//UENUM()
+//enum EPowerTeleporterOption
+//{
+//	UseTeleporter,
+//	UseDespawner,
+//};
 
 /**
  * 
@@ -26,13 +34,16 @@ class PROJECT_MF_API UPowerObjectTeleporterComponent : public UPowerMovementComp
 private:
 	UPROPERTY() TWeakObjectPtr<UArrowComponent> ArrowComponent;
 	UPROPERTY() TWeakObjectPtr<UBoxComponent> BoxComponent;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) EPowerActingOption ActingOption;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 ActingTimes;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool NeedPower;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool ActivateDespawner;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) EPowerActingTarget ActingTarget;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool UnlimitedActing;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) int32 ActingTimes;
 
 protected:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	virtual void BeginDestroy() override;
 
 public:
 	UPowerObjectTeleporterComponent();

@@ -6,6 +6,9 @@
 UPowerObjectTeleporterComponent::UPowerObjectTeleporterComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
+	NeedPower = true;
+	ActivateDespawner = false;
+	ActingTarget = EPowerActingTarget::Everything;
 	UnlimitedActing = true;
 	ActingTimes = 1;
 
@@ -39,8 +42,8 @@ void UPowerObjectTeleporterComponent::BeginPlay()
 			BoxComponent->AttachToComponent(GetAttachParent(), FAttachmentTransformRules::KeepRelativeTransform);
 			BoxComponent->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 			BoxComponent->SetGenerateOverlapEvents(true);
-			BoxComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerObjectTeleporterComponent::OnOverlapBegin);
-			BoxComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerObjectTeleporterComponent::OnOverlapEnd);
+			//BoxComponent->OnComponentBeginOverlap.AddDynamic(this, &UPowerObjectTeleporterComponent::OnOverlapBegin);
+			//BoxComponent->OnComponentEndOverlap.AddDynamic(this, &UPowerObjectTeleporterComponent::OnOverlapEnd);
 			break;
 		}
 	}
@@ -54,45 +57,117 @@ void UPowerObjectTeleporterComponent::TickComponent(float DeltaTime, ELevelTick 
 
 void UPowerObjectTeleporterComponent::Action(float DeltaTime)
 {
-	
-}
+	bool Case_0 = false;
 
-void UPowerObjectTeleporterComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-	if (OtherActor != GetOwner())
+	if (NeedPower == false)
 	{
-		if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
-		{
-			if (ObserveTargetExecutionComponent->GetPowerState() == true)
-			{
-				if (bActingState == false)
-				{
-					bActingState = true;
+		Case_0 = true;
+	}
 
-					if (ActingTimes > 0)
+	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
+	{
+		if (ObserveTargetExecutionComponent->GetPowerState() == true)
+		{
+			Case_0 = true;
+
+			if (bActingState == false) { bActingState = true; }
+		}
+		else if (ObserveTargetExecutionComponent->GetPowerState() == false)
+		{
+			if (bActingState == true) { bActingState = false; }
+		}
+	}
+
+	if (Case_0 == true)
+	{
+		int Count = 0;
+		TArray<AActor*> OverlappingActors;
+		BoxComponent->GetOverlappingActors(OverlappingActors);
+		for (int i = 0; i < OverlappingActors.Num(); i = i + 1)
+		{
+			if (OverlappingActors[i] != GetOwner())
+			{
+				if (OverlappingActors[i]->GetRootComponent()->Mobility == EComponentMobility::Movable)
+				{
+					bool Case_1 = true;
+					if (ActingTarget == EPowerActingTarget::PlayerIgnore)
 					{
-						if (::IsValid(ArrowComponent.Get()) == true)
+						if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
 						{
-							OtherActor->SetActorLocationAndRotation(ArrowComponent->GetComponentLocation(), ArrowComponent->GetComponentRotation());
-							ActingTimes = ActingTimes - 1;
+							Case_1 = false;
+						}
+					}
+					else if (ActingTarget == EPowerActingTarget::PlayerOnly)
+					{
+						if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == false)
+						{
+							Case_1 = false;
 						}
 					}
 
-					//if (OneTime == true)
-					//{
-					//	SetComponentTickEnabled(false);
-					//}
-				}
-			}
-			else if (ObserveTargetExecutionComponent->GetPowerState() == false)
-			{
-				if (bActingState == true)
-				{
-					bActingState = false;
+					if (Case_1 == true)
+					{
+						if (UnlimitedActing == true)
+						{
+							if (ActingTimes < 1)
+							{
+								ActingTimes = 1;
+							}
+						}
+
+						if (ActingTimes > 0)
+						{
+							if (::IsValid(ArrowComponent.Get()) == true)
+							{
+								if (ActivateDespawner == false)
+								{
+									OverlappingActors[i]->SetActorLocationAndRotation(ArrowComponent->GetComponentLocation(), ArrowComponent->GetComponentRotation());
+								}
+								else if (ActivateDespawner == true)
+								{
+									if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
+									{
+
+									}
+									else if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == false)
+									{
+										OverlappingActors[i]->Destroy();
+									}
+								}
+
+								if (UnlimitedActing == false)
+								{
+									ActingTimes = ActingTimes - 1;
+								}
+							}
+						}
+						else if (ActingTimes < 1)
+						{
+							SetComponentTickEnabled(false);
+						}
+					}
 				}
 			}
 		}
 	}
+}
+
+void UPowerObjectTeleporterComponent::BeginDestroy()
+{
+	Super::BeginDestroy();
+
+	if (::IsValid(ArrowComponent.Get()) == true)
+	{
+		ArrowComponent->DestroyComponent();
+	}
+	if (::IsValid(BoxComponent.Get()) == true)
+	{
+		BoxComponent->DestroyComponent();
+	}
+}
+
+void UPowerObjectTeleporterComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
 }
 
 void UPowerObjectTeleporterComponent::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)

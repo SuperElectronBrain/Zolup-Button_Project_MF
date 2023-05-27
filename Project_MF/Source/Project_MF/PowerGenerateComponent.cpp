@@ -200,6 +200,20 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 	}
 }
 
+void UPowerGenerateComponent::BeginDestroy()
+{
+	Super::BeginDestroy();
+
+	if (::IsValid(Collider) == true)
+	{
+		Collider->DestroyComponent();
+	}
+	if (::IsValid(Trigger) == true)
+	{
+		Trigger->DestroyComponent();
+	}
+}
+
 void UPowerGenerateComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//UPowerComponent* PowerComponent = OtherActor->FindComponentByClass<UPowerComponent>();
