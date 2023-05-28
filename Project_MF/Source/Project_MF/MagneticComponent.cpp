@@ -77,10 +77,7 @@ void UMagneticComponent::InitParentAndMaterial()
 
 bool UMagneticComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
-	bool approve = (ChildComponent == FieldCollision || ChildComponent == MagneticFieldEffectComp);
-	if(ChildComponent && FieldCollision)
-	UE_LOG(LogTemp, Warning, TEXT("ChildComponent(%s): %p / FieldCollision(%s): %p"), *ChildComponent->GetName(),ChildComponent, *FieldCollision->GetName(), FieldCollision)
-	return approve;
+	return (ChildComponent == FieldCollision || ChildComponent == MagneticFieldEffectComp);
 }
 
 void UMagneticComponent::SettingMagnetWeightAndFieldRange()

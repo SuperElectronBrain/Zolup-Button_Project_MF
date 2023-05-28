@@ -526,10 +526,13 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 
 void AGamePlayerCharacter::CamLookProgress(float DeltaTime)
 {
-	if (_CamLookTarget.IsValid() == false) return;
+	if (_bApplyCamLook==false) return;
 
 	FRotator curr = GetController()->GetControlRotation();
-	FRotator goal = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), _CamLookTarget->GetActorLocation());
+	FRotator goal = (
+		_CamLookTarget.IsValid() ?
+		UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), _CamLookTarget->GetActorLocation()):_CamLookNormal.Rotation()
+	);
 
 	FRotator result = FMath::Lerp(curr, goal, DeltaTime * 10.f);
 	result.Roll = 0.f;
@@ -1819,6 +1822,8 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 
 void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneticComponent* changedMagComp)
 {
+	Magnetic->bAllowMagneticMovement = true;
+
 	if (changedMagType != EMagneticType::NONE)
 	{
 		if (PlayerAnim) PlayerAnim->PlaySelfShootMontage(.3f, .85f);
@@ -1861,9 +1866,6 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			_vignettingGoalDiv = 1.f / VignettingSeconds;
 		}
 
-		/*건틀렛 이펙트 크기 초기화*/
-		_gauntletGoalScale = 0.f;
-
 		if (PlayerAnim)
 		{
 			if (PlayerAnim->GetResetMontageIsPlaying() == false)
@@ -1872,9 +1874,11 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
 		}
 
-		Magnetic->bAllowMagneticMovement = true;
+		/*건틀렛 이펙트 크기 초기화*/
+		_gauntletGoalScale = 0.f;
 
 		_CamLookTarget.Reset();
+		_bApplyCamLook = false;
 	}
 }
 
@@ -1890,12 +1894,14 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 
 	case(EMagnetMoveType::DRAWN_IN):
 		_CamLookTarget = operatorMagComp->GetAttachParentActor();
+		_bApplyCamLook = true;
 		PlayerAnim->PlayGlovePulledUpMotage();
 		GetMovementComponent()->SetActive(false);
 		break;
 
 	case(EMagnetMoveType::PUSHED_OUT):
 		_CamLookTarget.Reset();
+		_bApplyCamLook = false;
 		GetMovementComponent()->SetActive(true);
 		break;
 	}
@@ -1905,7 +1911,8 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 
 void AGamePlayerCharacter::ResetCamLookTarget()
 {
-	//_CamLookTarget.Reset();
+	_CamLookTarget.Reset();
+	_bApplyCamLook = false;
 	PlayerAnim->SetHandFixedTransform(EHandType::LEFT, true);
 }
 
@@ -1931,7 +1938,8 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 		);
 
 		Magnetic->bAllowMagneticMovement = false;
-		PlayerAnim->SetHandFixedTransform(EHandType::LEFT, true);
+		_CamLookTarget.Reset();
+		_CamLookNormal = -hitNormal;
 
 		_stickNormal = hitNormal;
 		_stiffen = 0.3f;
@@ -1939,6 +1947,6 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 		_StickTo = HitActor;
 		AttachToActor(HitActor, FAttachmentTransformRules::KeepWorldTransform);
 		
-		if (PlayerAnim) PlayerAnim->PlayGloveStickMotage(20.f, 3.f);
+		if (PlayerAnim) PlayerAnim->PlayGloveStickMotage(0.f, 10.f);
 	}
 }

@@ -101,7 +101,7 @@ void UPlayerAnimInstance::PlayAttackMontage()
 	Montage_Play(ShootMontage, 1.5f);
 }
 
-void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet)
+void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply)
 {
 	switch (armType) {
 
@@ -114,16 +114,11 @@ void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply, U
 		break;
 	}
 
-	if (apply)
+	if (apply && _gameCharacter.IsValid())
 	{
-		_targetMagnetic = magnet;
-		AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(TryGetPawnOwner());
-		if (character)
-		{
-			_LUpperArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LUPPERARM_BONE);
-			_LForArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
-			_LHandTransform = character->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
-		}
+		_LUpperArmTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LUPPERARM_BONE);
+		_LForArmTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
+		_LHandTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
 	}
 	else _targetMagnetic.Reset();
 }
@@ -268,7 +263,7 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 		FoldLArmHandTransform.SetRotation(resultCross.Rotation().Quaternion());
 
 		/*충돌시의 디버그용*/
-		DrawDebugHitPoint(result.Location, result.Normal);
+		//DrawDebugHitPoint(result.Location, result.Normal);
 
 		//접히는 방향
 		_LArmJointLocation = claviclePos + (right*-100.f) + (down*30.f);
@@ -296,5 +291,6 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	_bIsJumping = _gameCharacter->GetMovementComponent()->Velocity.Z > 0.f;
 	_bIsPulled = (Montage_IsPlaying(GloveAtMontage) || Montage_IsPlaying(GloveActonMontage));
 
-	FoldArmTestByStandHand(EHandType::LEFT, _gameCharacter.Get());
+
+	if(_bIsPulled) FoldArmTestByStandHand(EHandType::LEFT, _gameCharacter.Get());
 }

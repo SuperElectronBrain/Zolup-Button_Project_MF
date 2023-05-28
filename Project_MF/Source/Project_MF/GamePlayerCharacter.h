@@ -348,7 +348,8 @@ private:
 
 	/**플레이어가 특정 부분을 바라볼 때 사용되는 필드입니다.*/
 	TWeakObjectPtr<AActor> _CamLookTarget;
-
+	FVector _CamLookNormal;
+	bool _bApplyCamLook = false;
 
 	/**플레이어에서 사용할 UI Widget들의 참조 필드입니다.*/
 	TWeakObjectPtr<UUIBlackScreenWidget> _BlackScreenWidget;

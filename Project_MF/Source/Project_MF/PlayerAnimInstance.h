@@ -5,21 +5,28 @@
 #include <Animation/AnimMontage.h>
 #include "PlayerAnimInstance.generated.h"
 
-#define PLAYER_LCLAVICLE_BONE TEXT("Bip001-L-Clavicle")
-#define PLAYER_RCLAVICLE_BONE TEXT("Bip001-R-Clavicle")
-#define PLAYER_SPINE1_BONE TEXT("Bip001-Spine1")
-#define PLAYER_LPOARM_BONE TEXT("Bip001-L-Forearm")
-#define PLAYER_LHAND_BONE TEXT("Bip001-L-Hand")
-#define PLAYER_RHAND_BONE TEXT("Bip001-R-Hand")
-#define PLAYER_RPOARM_BONE TEXT("Bip001-R-Forearm")
-#define PLAYER_NECK_BONE TEXT("Bip001-Neck")
-#define PLAYER_GUN_BONE TEXT("Bone001")
-#define PLAYER_LUPPERARM_BONE TEXT("Bip001-L-UpperArm")
-#define PLAYER_RUPPERARM_BONE TEXT("Bip001-R-UpperArm")
-#define CLA2HAND_LEN 40.f
-
 DECLARE_MULTICAST_DELEGATE(FShootStartDelegate)
 
+/**플레이어 메시의 본 이름들에 대한 문자열입니다.*/
+constexpr const TCHAR* const PLAYER_SPINE1_BONE = TEXT("Bip001-Spine1");
+constexpr const TCHAR* const PLAYER_NECK_BONE = TEXT("Bip001-Neck");
+constexpr const TCHAR* const PLAYER_GUN_BONE = TEXT("Bone001");
+
+constexpr const TCHAR* const PLAYER_LCLAVICLE_BONE = TEXT("Bip001-L-Clavicle");
+constexpr const TCHAR* const PLAYER_RCLAVICLE_BONE = TEXT("Bip001-R-Clavicle");
+
+constexpr const TCHAR* const PLAYER_LUPPERARM_BONE = TEXT("Bip001-L-UpperArm");
+constexpr const TCHAR* const PLAYER_RUPPERARM_BONE = TEXT("Bip001-R-UpperArm");
+
+constexpr const TCHAR* const PLAYER_LPOARM_BONE = TEXT("Bip001-L-Forearm");
+constexpr const TCHAR* const PLAYER_RPOARM_BONE = TEXT("Bip001-R-Forearm");
+
+constexpr const TCHAR* const PLAYER_LHAND_BONE = TEXT("Bip001-L-Hand");
+constexpr const TCHAR* const PLAYER_RHAND_BONE = TEXT("Bip001-R-Hand");
+
+constexpr const float CLA2HAND_LEN = 40.f;
+
+class AGamePlayerCharacter;
 class UMagneticComponent;
 
 UENUM()
@@ -28,6 +35,9 @@ enum class EHandType
 	LEFT, RIGHT
 };
 
+/**
+* GamePlayerCharacter의 모든 애니메이션들을 책임지는 클래스입니다.
+*/
 UCLASS()
 class PROJECT_MF_API UPlayerAnimInstance final: public UAnimInstance
 {
@@ -60,7 +70,7 @@ public:
 	void PlayGlovePulledUpMotage();
 	void PlayGloveStickMotage(float startTime=0.f, float speed=1.f);
 
-	void SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet=nullptr);
+	void SetHandFixedTransform(EHandType armType, bool apply);
 
 
 	/////////////////////////////////
