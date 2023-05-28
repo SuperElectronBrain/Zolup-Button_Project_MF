@@ -9,40 +9,33 @@
 
 UPlayerAnimInstance::UPlayerAnimInstance()
 {
-	/*intialize Property*/
-	_ArmLAddOffsetTransform = FTransform::Identity;
-	_targetMagnetic = nullptr;
-	_bPlayerCreep = false;
-	_bIsJumping = false;
-	_bIsPulled = false;
-
-	/*CDO*/
-	static ConstructorHelpers::FObjectFinder<UAnimMontage>  ATTACK_MONTAGE(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerAttackMontage.PlayerAttackMontage")
+	/*CDO - Montage*/
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> SHOOT_MONTAGE(
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_Shoot.PlayerMontage_Shoot")
 	);
 	static ConstructorHelpers::FObjectFinder<UAnimMontage>  RESET_MONTAGE(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerResetMontage.PlayerResetMontage")
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_Reset.PlayerMontage_Reset")
 	);
-	static ConstructorHelpers::FObjectFinder<UAnimMontage>	SELF_RESET_MONTAGE(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerSelfResetMontage.PlayerSelfResetMontage")
+	static ConstructorHelpers::FObjectFinder<UAnimMontage>	GLOVE_OFF_MONTAGE(
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_GloveOff.PlayerMontage_GloveOff")
 	);
-	static ConstructorHelpers::FObjectFinder<UAnimMontage>	SELF_SHOOT_MONTAGE(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerSelfShootMontage.PlayerSelfShootMontage")
+	static ConstructorHelpers::FObjectFinder<UAnimMontage>	GLOVE_ON_MONTAGE(
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_GloveOn.PlayerMontage_GloveOn")
 	);
-	static ConstructorHelpers::FObjectFinder<UAnimMontage>  STICK_MONTAGE(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerStickMontage.PlayerStickMontage")
+	static ConstructorHelpers::FObjectFinder<UAnimMontage>  GLOVE_AT_MONTAGE(
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_GloveAt.PlayerMontage_GloveAt")
 	);
-	static ConstructorHelpers::FObjectFinder<UAnimMontage> PULLED_UP_MONTAGE(
-		TEXT("/Game/PlayerCharacter/Animations/PlayerGloveActonMontage.PlayerGloveActonMontage")
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> GLOVE_ACTON_MONTAGE(
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_GloveActon.PlayerMontage_GloveActon")
 	);
 
-	/*Apply montage*/
-	if (ATTACK_MONTAGE.Succeeded()) AttackMontage = ATTACK_MONTAGE.Object;
+	/*Montage initialize*/
+	if (SHOOT_MONTAGE.Succeeded()) ShootMontage = SHOOT_MONTAGE.Object;
 	if (RESET_MONTAGE.Succeeded())	ResetMontage = RESET_MONTAGE.Object;
-	if (SELF_RESET_MONTAGE.Succeeded())	SelfResetMontage = SELF_RESET_MONTAGE.Object;
-	if (SELF_SHOOT_MONTAGE.Succeeded()) SelfShootMontage = SELF_SHOOT_MONTAGE.Object;
-	if (PULLED_UP_MONTAGE.Succeeded()) PulledUpMontage = PULLED_UP_MONTAGE.Object;
-	if (STICK_MONTAGE.Succeeded()) StickMotange = STICK_MONTAGE.Object;
+	if (GLOVE_OFF_MONTAGE.Succeeded())	GloveOffMontage = GLOVE_OFF_MONTAGE.Object;
+	if (GLOVE_ON_MONTAGE.Succeeded()) GloveOnMontage = GLOVE_ON_MONTAGE.Object;
+	if (GLOVE_ACTON_MONTAGE.Succeeded()) GloveActonMontage = GLOVE_ACTON_MONTAGE.Object;
+	if (GLOVE_AT_MONTAGE.Succeeded()) GloveAtMontage = GLOVE_AT_MONTAGE.Object;
 }
 
 void UPlayerAnimInstance::AnimNotify_ShootStart()
@@ -52,39 +45,39 @@ void UPlayerAnimInstance::AnimNotify_ShootStart()
 
 void UPlayerAnimInstance::PlayGlovePulledUpMotage()
 {
-	if (PulledUpMontage == nullptr) return;
+	if (GloveActonMontage == nullptr) return;
 
 	_ArmLAddOffsetTransform.SetLocation(FVector(-6.f, 2.f, 45.f));
 	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 
-	Montage_Play(PulledUpMontage, 2.f);
+	Montage_Play(GloveActonMontage, 2.f);
 }
 
 void UPlayerAnimInstance::PlayGloveStickMotage(float startTime, float speed)
 {
-	if (StickMotange == nullptr || Montage_IsPlaying(StickMotange)) return;
+	if (GloveAtMontage == nullptr || Montage_IsPlaying(GloveAtMontage)) return;
 
 	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
 	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
-	Montage_Play(StickMotange, speed, EMontagePlayReturnType::MontageLength, startTime);
+	Montage_Play(GloveAtMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
 void UPlayerAnimInstance::PlaySelfResetMontage()
 {
-	if (SelfResetMontage == nullptr) return;
+	if (GloveOffMontage == nullptr) return;
 
 	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
 	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
-	Montage_Play(SelfResetMontage, 2.f);
+	Montage_Play(GloveOffMontage, 2.f);
 }
 
 void UPlayerAnimInstance::PlaySelfShootMontage(float startTime, float speed)
 {
-	if (SelfShootMontage == nullptr) return;
+	if (GloveOnMontage == nullptr) return;
 
 	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
 	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
-	Montage_Play(SelfShootMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
+	Montage_Play(GloveOnMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
 void UPlayerAnimInstance::PlayResetMontage()
@@ -103,34 +96,29 @@ void UPlayerAnimInstance::PlayResetMontage()
 
 void UPlayerAnimInstance::PlayAttackMontage()
 {
-	if (AttackMontage == nullptr) return;
+	if (ShootMontage == nullptr) return;
 
-	Montage_Play(AttackMontage, 1.5f);
+	Montage_Play(ShootMontage, 1.5f);
 }
 
-void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply, UMagneticComponent* magnet)
+void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply)
 {
 	switch (armType) {
 
 	case(EHandType::LEFT):
-		_bLArmRotFixed = apply;
+		_bLArmTransformFixed = apply;
 		break;
 
 	case(EHandType::RIGHT):
-		_bRArmRotFixed = apply;
+		_bRArmTransformFixed = apply;
 		break;
 	}
 
-	if (apply)
+	if (apply && _gameCharacter.IsValid())
 	{
-		_targetMagnetic = magnet;
-		AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(TryGetPawnOwner());
-		if (character)
-		{
-			_LUpperArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LUPPERARM_BONE);
-			_LForArmTransform = character->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
-			_LHandTransform = character->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
-		}
+		_LUpperArmTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LUPPERARM_BONE);
+		_LForArmTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
+		_LHandTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
 	}
 	else _targetMagnetic.Reset();
 }
@@ -214,6 +202,23 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 	#pragma endregion
 }
 
+void UPlayerAnimInstance::DrawDebugHitPoint(const FVector& HitLocation, const FVector& HitNormal) const
+{
+#ifdef WITH_EDITOR 
+	{
+		FVector rightCross = -FVector::CrossProduct(HitNormal, FVector::DownVector);
+		FVector upCross = -FVector::CrossProduct(HitNormal, rightCross);
+		FVector resultCross = upCross + rightCross;
+
+		DrawDebugLine(GetWorld(), HitLocation, HitLocation + HitNormal * 110.f, FColor::Red, false, -1.f, 0U, 1.f);
+		DrawDebugLine(GetWorld(), HitLocation, HitLocation + resultCross * 110.f, FColor::Blue, false, -1.f, 0U, 1.f);
+		DrawDebugLine(GetWorld(), HitLocation, HitLocation + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 1.f);
+		DrawDebugLine(GetWorld(), HitLocation, HitLocation + upCross * 110.f, FColor::Black, false, -1.f, 0U, 1.f);
+
+	}
+#endif
+}
+
 void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player)
 {
 	//계산에 필요한 것들을 모조리 구한다.
@@ -257,11 +262,8 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 
 		FoldLArmHandTransform.SetRotation(resultCross.Rotation().Quaternion());
 
-		//충돌시의 디버그용 라인
-		//DrawDebugLine(GetWorld(), result.Location, result.Location + result.Normal * 110.f, FColor::Red, false, -1.f, 0U, 1.f);
-		//DrawDebugLine(GetWorld(), result.Location, result.Location + resultCross * 110.f, FColor::Blue, false, -1.f, 0U, 1.f);
-		//DrawDebugLine(GetWorld(), result.Location, result.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 1.f);
-		//DrawDebugLine(GetWorld(), result.Location, result.Location + upCross * 110.f, FColor::Black, false, -1.f, 0U, 1.f);
+		/*충돌시의 디버그용*/
+		//DrawDebugHitPoint(result.Location, result.Normal);
 
 		//접히는 방향
 		_LArmJointLocation = claviclePos + (right*-100.f) + (down*30.f);
@@ -272,25 +274,23 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 	//DrawDebugLine(GetWorld(), start, _LArmJointLocation, FColor::Yellow, false, -1.f, 0U, 1.f);
 }
 
+void UPlayerAnimInstance::NativeBeginPlay()
+{
+	/*플레이어의 참조를 가져온다.*/
+	_gameCharacter = Cast<AGamePlayerCharacter>(TryGetPawnOwner());
+}
+
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
 
-	APawn* player = TryGetPawnOwner();
-	if (player && ::IsValid(player))
-	{
-		AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(player);
+	if (_gameCharacter.IsValid() == false) return;
 
-		if (character != nullptr)
-		{
-			_CurrentSpeed = character->GetVelocity().Size();
-			_bIsJumping = character->GetMovementComponent()->Velocity.Z > 0.f;
+	/*유효한 플레이어의 상태를 갱신한다.*/
+	_CurrentSpeed = _gameCharacter->GetVelocity().Size();
+	_bIsJumping = _gameCharacter->GetMovementComponent()->Velocity.Z > 0.f;
+	_bIsPulled = (Montage_IsPlaying(GloveAtMontage) || Montage_IsPlaying(GloveActonMontage));
 
-			//자성으로 날아감을 체크.
-			_bIsPulled = (Montage_IsPlaying(StickMotange) || Montage_IsPlaying(PulledUpMontage));
 
-			if(_bIsPulled)
-				FoldArmTestByStandHand(EHandType::LEFT, character);
-		}
-	}
+	if(_bIsPulled) FoldArmTestByStandHand(EHandType::LEFT, _gameCharacter.Get());
 }

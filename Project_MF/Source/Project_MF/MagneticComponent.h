@@ -1,5 +1,6 @@
 #pragma once
 #include "EngineMinimal.h"
+#include "MagneticMovementComponent.h"
 #include "MagneticComponent.generated.h"
 
 class USceneComponent;
@@ -7,7 +8,7 @@ class UNiagaraSystem;
 class UNiagaraComponent;
 class UMagneticMovementComponent;
 class UMagneticComponent;
-enum class EMagnetMoveType : uint8;
+//enum class EMagnetMoveType : uint8;
 enum class EMagneticType : uint8;
 
 /**
@@ -32,13 +33,15 @@ enum class EMagneticEffectColorType : uint8
 	GUN_SHOOT_EFFECT_MIN,
 	GUN_SHOOT_EFFECT_MAX,
 	GRANT_EFFECT,
-	ELECTRIC_VIGNETTING_EFFECT
+	ELECTRIC_VIGNETTING_EFFECT,
+	GAUNTLET_SPHERE_EFFECT,
+	GAUNTLET_THUNDER_EFFECT
 };
 
-/*해당 컴포넌트에서 쓰이는 매크로입니다.*/
-constexpr int MAGNETIC_FIELD_PRECISION = 60;
-#define MAGNETIC_COLLISION_OBJECTTYPE ECollisionChannel::ECC_GameTraceChannel11
-#define MAGNETIC_COLLISION_PROFILE "MagneticField"
+/*해당 컴포넌트에서 쓰이는 컴파일 전용 상수다.*/
+constexpr const int					MAGNETIC_FIELD_PRECISION		= 60;
+constexpr const ECollisionChannel	MAGNETIC_COLLISION_OBJECTTYPE	= ECollisionChannel::ECC_GameTraceChannel11;
+constexpr const TCHAR*				MAGNETIC_COLLISION_PROFILE		= TEXT("MagneticField");
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComponentMagneticChanged, EMagneticType, changedMagType, UMagneticComponent*, changedMagComp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FComponentMagnetBeginMovement, EMagnetMoveType, moveType, UMagneticComponent*, moveBeginMagComp, UMagneticComponent*, operatorMagComp);
@@ -208,12 +211,13 @@ private:
 	///////////////////////////////
 	//// Fields and Components ////
 	///////////////////////////////
-	float _RotCounter, _applyRadius, _goalRadius, _currMagMaterialApplyRatio, _goalMagMaterialApplyRatio;
-	float _magFieldDiv;
-	bool _magActivate;
-	EMagnetMoveType _lastMoveType;
-	bool _applyMovement;
-	FVector _fieldColor;
+	float _RotCounter = FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION); 
+	float _applyRadius = 0.f, _goalRadius = 0.f;
+	float _currMagMaterialApplyRatio=0.f, _goalMagMaterialApplyRatio = 0.f;
+	float _magFieldDiv = 1.f / 1000.f;
+	bool _magActivate = false;
+	EMagnetMoveType _lastMoveType = EMagnetMoveType::NONE;
+	bool _applyMovement = true;
 	UMagneticMovementComponent* _movement;
 
 	UPROPERTY()
@@ -223,16 +227,16 @@ private:
 	UMeshComponent* _parentMesh;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
-	EMagneticType CurrMagnetic;
+	EMagneticType CurrMagnetic = EMagneticType::NONE;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	bool bCanChangeMagnetic;
+	bool bCanChangeMagnetic = true;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	float CurrHaveMagneticSeconds;
+	float CurrHaveMagneticSeconds = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
-	float MaxHaveMagneticSeconds;
+	float MaxHaveMagneticSeconds = 20.f;
 
 	UPROPERTY()
 	UNiagaraSystem* MagneticFieldEffect;
@@ -250,31 +254,31 @@ private:
 	USphereComponent* FieldCollision;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
-	float FinalMagneticFieldRadius;
+	float FinalMagneticFieldRadius = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
-	float MagneticFieldRadiusScale;
+	float MagneticFieldRadiusScale = 5.f;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (ClampMin = 0.f))
-	float Weight;
+	float Weight = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	bool bUsedFixedWeight;
+	bool bUsedFixedWeight = false;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	int32 CurrEnchantCount;
+	int32 CurrEnchantCount = 0;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (ClampMin = 1, AllowPrivateAccess = true))
-	int32 MaxEnchantableCount;
+	int32 MaxEnchantableCount = 0;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	float EnchantWeight;
+	float EnchantWeight = 0.f;
 
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	float EnchantRange;
+	float EnchantRange = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
-	bool bShowMagneticFieldSphereInGame;
+	bool bShowMagneticFieldSphereInGame=false;
 
 public:
 
@@ -283,33 +287,33 @@ public:
 	* true일 경우 인 게임중에 자기장이 표시됩니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Magnetic)
-	bool bShowMagneticField;
+	bool bShowMagneticField = true;
 
 	/**
 	* 주변 자성에 의해 영향을 받게 될 경우, 움직임을 구현할지에 대한 여부입니다.
 	* true일 경우 이 Component와 같은 Actor에 부착된 UMagneticMovementComponent의 움직임을 적용합니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Magnetic)
-	bool bAllowMagneticMovement;
+	bool bAllowMagneticMovement = true;
 
 	/**
 	* 자성 머터리얼을 이 Component가 부착된 Mesh에 적용할지에 대한 여부입니다.
 	* true일 경우 부착된 UMeshComponent의 머터리얼이 이 Component에 지정한 Material로 변경됩니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Magnetic)
-	bool bMagneticMaterialApplyAttachMesh;
+	bool bMagneticMaterialApplyAttachMesh = true;
 
 	/**
 	* 이 컴포넌트의 자성 움직임이 마무리될 때, 원상복귀될 부착된 엑터의 가장 최상위 UPrimitiveComponent의
 	* 중력 사용 여부입니다.
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))
-	bool bDefaultPrimitiveGravity;
+	bool bDefaultPrimitiveGravity = false;
 
 	/**
 	* 자성을 영원히 보유하는지에 대한 여부를 결정합니다.
 	* 만약 해당 값이 true일 경우, 자성 보유 시간이 감소되지 않게됩니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Magnetic)
-	bool bEternalHaveMagnetic;
+	bool bEternalHaveMagnetic = false;
 };

@@ -27,7 +27,7 @@ void AEditLevelMFActorManagementActor::Tick(float DeltaTime)
 
 void AEditLevelMFActorManagementActor::SpawnMFActor()
 {
-	MFActorsArray.Add(GetWorld()->SpawnActor<AMFActor>(AMFActor::StaticClass(), FVector(ActorCount * 100.0f, 0.0f, 0.0f), FRotator::ZeroRotator));
+	//MFActorsArray.Add(GetWorld()->SpawnActor<AMFActor>(AMFActor::StaticClass(), FVector(ActorCount * 100.0f, 0.0f, 0.0f), FRotator::ZeroRotator));
 	ActorCount = ActorCount + 1;
 }
 
