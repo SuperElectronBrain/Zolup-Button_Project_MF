@@ -197,6 +197,21 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	#pragma endregion
 }
 
+void AGamePlayerCharacter::SetLimitPlayerCamRotation(
+	FVector2D xAxisLimits, bool applyXAxis,
+	FVector2D yAxisLimits, bool applyYAxis,
+	FVector2D zAxisLimits, bool applyZAxis )
+{
+	_bApplyXRotLimit = applyXAxis;
+	_bApplyYRotLimit = applyYAxis;
+	_bApplyZRotLimit = applyZAxis;
+
+	//적용
+	if (applyXAxis) _XRotLimits = xAxisLimits;
+	if (applyYAxis) _YRotLimits = yAxisLimits;
+	if (applyZAxis) _ZRotLimits = zAxisLimits;
+}
+
 void AGamePlayerCharacter::SetPlayerWalkMode()
 {
 	PlayerMode = EPlayerMode::STANDING;
@@ -917,6 +932,18 @@ void AGamePlayerCharacter::LookUp(float value)
 	FRotator currRot = GetControlRotation();
 
 	currRot.Pitch -= CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
+
+	/*회전 제한이 있을 경우*/
+	if (_bApplyXRotLimit)
+	{
+		//방향에 따라서 별도로 적용한다.
+		if (value < 0.f && currRot.Pitch <= _XRotLimits.X)
+			currRot.Pitch = _XRotLimits.X;
+
+		else if (value > 0.f && currRot.Pitch >= _XRotLimits.Y)
+			currRot.Pitch = _XRotLimits.Y;
+	}
+
 	GetController()->SetControlRotation(currRot);
 }
 
@@ -927,6 +954,18 @@ void AGamePlayerCharacter::Turn(float value)
 	FRotator currRot = GetControlRotation();
 
 	currRot.Yaw += CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
+
+	/*회전 제한이 있을 경우*/
+	if (_bApplyYRotLimit)
+	{
+		//방향에 따라서 별도로 적용한다.
+		if (value < 0.f && currRot.Yaw <= _YRotLimits.X)
+			currRot.Yaw = _YRotLimits.X;
+
+		else if (value > 0.f && currRot.Yaw >= _YRotLimits.Y)
+			currRot.Yaw = _YRotLimits.Y;
+	}
+
 	GetController()->SetControlRotation(currRot);
 }
 
@@ -1874,6 +1913,9 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
 		}
 
+		/*회전제한해제*/
+		_bApplyYRotLimit = false;
+
 		/*건틀렛 이펙트 크기 초기화*/
 		_gauntletGoalScale = 0.f;
 
@@ -1940,6 +1982,15 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 		Magnetic->bAllowMagneticMovement = false;
 		_CamLookTarget.Reset();
 		_CamLookNormal = -hitNormal;
+
+		/**플레이어 회전축 제한.*/
+		FRotator currRot = (-hitNormal).Rotation();
+		SetLimitPlayerCamRotation(
+
+			FVector2D::ZeroVector, false,
+			FVector2D(currRot.Yaw - 100.f, currRot.Yaw + 170.f),
+			true
+		);
 
 		_stickNormal = hitNormal;
 		_stiffen = 0.3f;

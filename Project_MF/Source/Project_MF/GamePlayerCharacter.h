@@ -137,6 +137,9 @@ public:
 	void SetPlayerWalkMode();
 	void SetCreepyMode(APlayerAirVent* airvent=nullptr, bool enter = false);
 	void SetPlayerGameOverMode(EPlayerGameOverReason gameOverReason);
+	void SetLimitPlayerCamRotation(	FVector2D xAxisLimits = FVector2D::ZeroVector, bool applyXAxis = false,
+									FVector2D yAxisLimits = FVector2D::ZeroVector, bool applyYAxis = false,
+									FVector2D zAxisLimits = FVector2D::ZeroVector, bool applyZAxis = false );
 
 	/**건틀렛 이펙트의 크기를 조절 및 얻는 함수들입니다.*/
 	float GetGauntletEffectScale() const;
@@ -204,6 +207,7 @@ private:
 
 	/*Character action Start and progress methods*/
 	void CamLookProgress(float DeltaTime);
+
 	void ClimbProgress(float DeltaTime);
 	void CreepyProgress(float DeltaTime);
 	FVector GetBezirCurve2(const FVector& startPos, const FVector& controlPos, const FVector& endPos, const float& timeRatio) const;
@@ -274,6 +278,7 @@ private:
 
 	/**
 	* 플레이어가 땅에 닿았을 때 호출되는 함수입니다.
+	* 이 함수에서 땅에 닿았을 때 나는 액션들을 처리합니다.
 	*/
 	UFUNCTION()
 	void EnterGround(const FHitResult& Hit);
@@ -293,8 +298,16 @@ private:
 	FVector _stickNormal;
 
 	/**
-	*  Magnetic Vignetting Fields
-	* 
+	* 플레이어의 카메라 회전 제한에 필요한 필드들입니다.
+	*/
+	bool _bApplyXRotLimit = false,
+		 _bApplyYRotLimit = false, 
+		 _bApplyZRotLimit = false;
+	FVector2D _XRotLimits, 
+			  _YRotLimits, 
+			  _ZRotLimits;
+
+	/**
 	*  자성 비네팅 효과의 러프를 위한 필드들입니다.
 	*/
 	FLinearColor _vignettingCurrColor;
@@ -304,8 +317,6 @@ private:
 	float _vignettingGoalDiv = 0.f;
 
 	/**
-	*  Gauntlet Circle Effect Fields
-	* 
 	*  건틀렛 구체 이펙트를 위한 필드들입니다.
 	*/
 	float _gauntletCurrScale = 0.f;
@@ -313,16 +324,12 @@ private:
 	
 
 	/**
-	* Magnet Shoot Fields
-	* 
 	* 플레이어가 자성을 부여하기위해 필요한 필드들입니다.
 	*/
 	int _givenIndex = 0;
 	int _oldGivenIndex = 0;
 
 	/**
-	* Action progress fields
-	* 
 	* 플레이어의 특정 동작에 대한 처리를 위해 필요한 필드들입니다.
 	*/
 	float _goalTimeDiv = 0.f;
@@ -332,8 +339,6 @@ private:
 	EMagneticType _lastShootType = EMagneticType::NONE;
 
 	/**
-	* Ref fields
-	* 
 	* 나중에 접근이 필요한 참조들의 필드입니다.
 	*/
 	FDelegateHandle _fadeHandle;

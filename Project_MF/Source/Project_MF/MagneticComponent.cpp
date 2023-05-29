@@ -474,24 +474,6 @@ void UMagneticComponent::ClearMagneticField()
 		MagneticFieldEffectComp->Deactivate();
 		_magActivate = false;
 	}
-
-	//FieldSpline->ClearSplinePoints(true);
-
-	//if (FieldMeshs.Num() > 0)
-	//{
-	//	int32 count = FieldMeshs.Num();
-	//	for (int32 i = 0; i < count; i++) {
-
-	//		if (FieldMeshs[i])
-	//		{
-	//			//부모로부터 분리 후, 삭제
-	//			FieldMeshs[i]->DestroyComponent();
-	//		}
-	//	}
-
-	//	//초기화.
-	//	FieldMeshs.Empty();
-	//}
 	#pragma endregion
 }
 
@@ -543,7 +525,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	}
 
 	//자성이 부여되어 있지 않고, 부착된 MagneticMovement 컴포넌트가 없다면 움직일 이유가 없으니 스킵.
-	if (bAllowMagneticMovement == false || CurrMagnetic == EMagneticType::NONE || _movement == nullptr || _movement != nullptr && !::IsValid(_movement))
+	if (CurrMagnetic == EMagneticType::NONE || _movement == nullptr || _movement != nullptr && !::IsValid(_movement))
 	{
 		return;
 	}
@@ -580,6 +562,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		_applyMovement = true;
 		applyLogic = true;
 		CurrHaveMagneticSeconds = MaxHaveMagneticSeconds;
+		if (bAllowMagneticMovement == false) break;
 
 		//부딫힌 것이 자석이라면
 		FHitResult hit;

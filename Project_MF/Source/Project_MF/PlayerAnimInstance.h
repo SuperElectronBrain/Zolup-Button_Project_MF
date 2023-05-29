@@ -99,6 +99,7 @@ private:
 	TWeakObjectPtr<AGamePlayerCharacter> _gameCharacter;
 	TWeakObjectPtr<UMagneticComponent> _targetMagnetic;
 
+	/**애니메이션 몽타주들에 관련된 필드입니다.*/
 	UPROPERTY(VisibleAnywhere, Meta=(AllowPrivateAccess=true))
 	UAnimMontage* ShootMontage;
 
@@ -117,6 +118,8 @@ private:
 	UPROPERTY(VisibleAnywhere, Meta = (AllowPrivateAccess = true))
 	UAnimMontage* GloveAtMontage;
 
+
+	/**애니메이션에서 조건값 및 조절값으로 사용되는 필드값들입니다.*/
 	UPROPERTY(VisibleAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	FTransform FoldLArmHandTransform;
 
