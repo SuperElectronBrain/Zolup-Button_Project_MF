@@ -36,10 +36,10 @@ void UPowerRotationMovementComponent::BeginPlay()
 	//OriginNormalVector = GetOwner()->GetActorForwardVector();
 	GetAttachParent()->SetMobility(EComponentMobility::Movable);
 
-	TArray<USceneComponent*> ParentComponent = GetAttachParent()->GetAttachChildren();
-	for (int i = 0; i < ParentComponent.Num(); i = i + 1)
+	TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
+	for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
 	{
-		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentComponent[i]);
+		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentsComponents[i]);
 		if (::IsValid(Arrow) == true)
 		{
 			ArrowComponent = Arrow;

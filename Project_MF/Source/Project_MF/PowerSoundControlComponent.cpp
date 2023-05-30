@@ -19,33 +19,36 @@ void UPowerSoundControlComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
-	if (::IsValid(AudioComponent) == true)
+	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
 	{
-		AudioComponent->PitchMultiplier = AudioComponent->PitchMultiplier * ActingSpeed;
+		AudioComponent = Cast<UAudioComponent>(GetAttachParent());
+		if (::IsValid(AudioComponent.Get()) == true)
+		{
+			AudioComponent->PitchMultiplier = AudioComponent->PitchMultiplier * ActingSpeed;
 
-		if (ReversAction == false)
-		{
-			if (ContinueSound == true)
+			if (ReversAction == false)
 			{
-				AudioComponent->Play(StartingPoint);
-				AudioComponent->SetPaused(!ReversAction);
+				if (ContinueSound == true)
+				{
+					AudioComponent->Play(StartingPoint);
+					AudioComponent->SetPaused(!ReversAction);
+				}
+				else if (ContinueSound == false)
+				{
+					AudioComponent->Stop();
+				}
 			}
-			else if(ContinueSound == false)
+			else if (ReversAction == true)
 			{
-				AudioComponent->Stop();
-			}
-		}
-		else if (ReversAction == true)
-		{
-			if (ContinueSound == true)
-			{
-				AudioComponent->Play(StartingPoint);
-				AudioComponent->SetPaused(!ReversAction);
-			}
-			else if (ContinueSound == false)
-			{
-				AudioComponent->Play(StartingPoint);
+				if (ContinueSound == true)
+				{
+					AudioComponent->Play(StartingPoint);
+					AudioComponent->SetPaused(!ReversAction);
+				}
+				else if (ContinueSound == false)
+				{
+					AudioComponent->Play(StartingPoint);
+				}
 			}
 		}
 	}
@@ -63,10 +66,9 @@ void UPowerSoundControlComponent::Action(float DeltaTime)
 	{
 		if (ObserveTargetExecutionComponent->GetPowerState() == true)
 		{
-			UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
 			if (bActingState == false)
 			{
-				if (::IsValid(AudioComponent) == true)
+				if (::IsValid(AudioComponent.Get()) == true)
 				{
 					if (ReversAction == false)
 					{
@@ -113,12 +115,11 @@ void UPowerSoundControlComponent::Action(float DeltaTime)
 		}
 		else if (ObserveTargetExecutionComponent->GetPowerState() == false)
 		{
-			UAudioComponent* AudioComponent = Cast<UAudioComponent>(GetAttachParent());
 			if (bActingState == true)
 			{
 				if (NonReversibleAction == false)
 				{
-					if (::IsValid(AudioComponent) == true)
+					if (::IsValid(AudioComponent.Get()) == true)
 					{
 						if (ReversAction == false)
 						{

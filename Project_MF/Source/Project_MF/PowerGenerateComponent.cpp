@@ -59,21 +59,23 @@ void UPowerGenerateComponent::BeginPlay()
 	//}
 	
 	float BoxSize = TriggerSize * 100.0f;
-	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
-	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
-	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	FVector ParentScale = GetAttachParent()->GetRelativeScale3D();
+	//FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
+	UStaticMeshComponent* ParentStaticMesh = Cast<UStaticMeshComponent>(GetAttachParent());
+	FVector ParentBounds = ParentStaticMesh != nullptr ? (ParentStaticMesh->GetStaticMesh() != nullptr ? ParentStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	//FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
 	
 	if (::IsValid(Collider) == true)
 	{
-		//Collider->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X), (OwnerRootScale.Y * OwnerRootBounds.Y), (OwnerRootScale.Z * OwnerRootBounds.Z)));
-		Collider->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-		Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
+		//Collider->SetBoxExtent(FVector((ParentScale.X * OwnerRootBounds.X), (ParentScale.Y * OwnerRootBounds.Y), (ParentScale.Z * OwnerRootBounds.Z)));
+		//Collider->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		Collider->SetBoxExtent(FVector(ParentBounds.X, ParentBounds.Y, ParentBounds.Z));
 	}
 	if (::IsValid(Trigger) == true)
 	{
-		//Trigger->SetBoxExtent(FVector((OwnerRootScale.X * OwnerRootBounds.X) + (BoxSize / OwnerRootScale.X), (OwnerRootScale.Y * OwnerRootBounds.Y) + (BoxSize / OwnerRootScale.Y), (OwnerRootScale.Z * OwnerRootBounds.Z) + (BoxSize / OwnerRootScale.Z)));
-		Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-		Trigger->SetBoxExtent(FVector(OwnerRootBounds.X + (BoxSize / OwnerRootScale.X), OwnerRootBounds.Y + (BoxSize / OwnerRootScale.Y), OwnerRootBounds.Z + (BoxSize / OwnerRootScale.Z)));
+		//Trigger->SetBoxExtent(FVector((ParentScale.X * OwnerRootBounds.X) + (BoxSize / ParentScale.X), (ParentScale.Y * OwnerRootBounds.Y) + (BoxSize / ParentScale.Y), (ParentScale.Z * OwnerRootBounds.Z) + (BoxSize / ParentScale.Z)));
+		//Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		Trigger->SetBoxExtent(FVector(ParentBounds.X + (BoxSize / ParentScale.X), ParentBounds.Y + (BoxSize / ParentScale.Y), ParentBounds.Z + (BoxSize / ParentScale.Z)));
 		Trigger->SetCollisionProfileName("NewTrigger");
 		Trigger->SetGenerateOverlapEvents(true);
 		Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerGenerateComponent::OnOverlapBegin);
@@ -128,11 +130,13 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 		}
 
 		float BoxSize = TriggerSize * 100.0f;
-		USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
-		FVector OwnerScale = OwnerRootComponent->GetRelativeScale3D();
-		UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
-		FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
-		FVector TriggerVolume = FVector((OwnerScale.X * OwnerRootBounds.X) + BoxSize, (OwnerScale.Y * OwnerRootBounds.Y) + BoxSize, (OwnerScale.Z * OwnerRootBounds.Z) + BoxSize);
+		//USceneComponent* OwnerRootComponent = GetOwner()->GetRootComponent();
+		FVector ParentScale = GetAttachParent()->GetRelativeScale3D();
+		//FVector OwnerScale = OwnerRootComponent->GetRelativeScale3D();
+		UStaticMeshComponent* ParentStaticMesh = Cast<UStaticMeshComponent>(GetAttachParent());
+		//UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
+		FVector ParentBounds = ParentStaticMesh != nullptr ? (ParentStaticMesh->GetStaticMesh() != nullptr ? ParentStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+		FVector TriggerVolume = FVector((ParentScale.X * ParentBounds.X) + BoxSize, (ParentScale.Y * ParentBounds.Y) + BoxSize, (ParentScale.Z * ParentBounds.Z) + BoxSize);
 		
 		TArray<FHitResult> HitResult;
 		FCollisionQueryParams Params(NAME_None, false, GetOwner());
@@ -193,6 +197,20 @@ void UPowerGenerateComponent::SetPowerState(bool param, bool IsGenerator)
 			}
 		}
 		//UpdateMaterialColor();
+	}
+}
+
+void UPowerGenerateComponent::BeginDestroy()
+{
+	Super::BeginDestroy();
+
+	if (::IsValid(Collider) == true)
+	{
+		Collider->DestroyComponent();
+	}
+	if (::IsValid(Trigger) == true)
+	{
+		Trigger->DestroyComponent();
 	}
 }
 

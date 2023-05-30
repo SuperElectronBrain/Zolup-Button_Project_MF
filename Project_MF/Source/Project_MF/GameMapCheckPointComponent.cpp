@@ -13,7 +13,7 @@ UGameMapCheckPointComponent::UGameMapCheckPointComponent()
 		TEXT("/Engine/BasicShapes/Cone.Cone")
 	);
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> MATERIAL(
-		TEXT("/Game/Resource/Magnetic/NewMaterial.NewMaterial")
+		TEXT("/Game/Materials/Color/delivery")
 	);
 
 	////// *Cone Mesh* ///////

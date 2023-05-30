@@ -62,11 +62,11 @@ void UPowerConveyorMovementComponent::BeginPlay()
 //#endif
 #pragma endregion
 
-	FVector TriggerSize = FVector::OneVector;
-	UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	if (::IsValid(OwnerRootComponent) == true)
+	//FVector TriggerSize = FVector::OneVector;
+	//UPrimitiveComponent* OwnerRootComponent = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (::IsValid(Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent())) == true)
 	{
-		Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		//Trigger->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 		Trigger->SetCollisionProfileName("OverlapAllDynamic");
 		Trigger->SetGenerateOverlapEvents(true);
 		//Trigger->OnComponentBeginOverlap.AddDynamic(this, &UPowerConveyorMovementComponent::OnOverlapBegin);
@@ -77,20 +77,22 @@ void UPowerConveyorMovementComponent::BeginPlay()
 		//OwnerRootComponent->SetNotifyRigidBodyCollision(true);
 #pragma endregion
 
-		TriggerSize = OwnerRootComponent->GetRelativeScale3D();
+		//TriggerSize = OwnerRootComponent->GetRelativeScale3D();
 	}
 
-	FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
-	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
-	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
-	Trigger->SetBoxExtent(FVector(OwnerRootBounds.X * 1.0f, OwnerRootBounds.Y * 1.0f, OwnerRootBounds.Z * 1.2f));
+	//FVector ParentScale = GetAttachParent()->GetRelativeScale3D();
+	//FVector OwnerRootScale = OwnerRootComponent->GetRelativeScale3D();
+	UStaticMeshComponent* ParentStaticMesh = Cast<UStaticMeshComponent>(GetAttachParent());
+	//UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
+	FVector ParentBounds = ParentStaticMesh != nullptr ? (ParentStaticMesh->GetStaticMesh() != nullptr ? ParentStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	Trigger->SetBoxExtent(FVector(ParentBounds.X * 1.0f, ParentBounds.Y * 1.0f, ParentBounds.Z * 1.5f));
 	//Trigger->SetBoxExtent(FVector(50.0f * TriggerSize.X, 50.0f * TriggerSize.Y, 50.0f * TriggerSize.Z));
 
 	//ArrowComponent->AttachToComponent(OwnerRootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	TArray<USceneComponent*> ParentComponent = GetAttachParent()->GetAttachChildren();
-	for (int i = 0; i < ParentComponent.Num(); i = i + 1)
+	TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
+	for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
 	{
-		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentComponent[i]);
+		UArrowComponent* Arrow = Cast<UArrowComponent>(ParentsComponents[i]);
 		if (::IsValid(Arrow) == true)
 		{
 			ArrowComponent = Arrow;
@@ -207,9 +209,15 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 					{
 						FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
 						UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
+						//if (TargetRoot->GetComponentRotation() != GetAttachParent()->GetComponentRotation())
+						//{
+							//TargetRoot->SetWorldRotation(FMath::RInterpTo(TargetRoot->GetComponentRotation(), GetAttachParent()->GetComponentRotation(), DeltaTime, 100.0f));
+						TargetRoot->SetWorldRotation(FRotator::ZeroRotator);
+						//}
+
 						if (TargetRoot->IsSimulatingPhysics() == true)
 						{
-							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::ZeroVector); }
+							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::DownVector); }
 						}
 
 						//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);

@@ -11,30 +11,6 @@ UMagneticComponent::UMagneticComponent()
 {
 	#pragma region Summary
 	PrimaryComponentTick.bCanEverTick = true;
-	CurrMagnetic = EMagneticType::NONE;
-	bEternalHaveMagnetic = false;
-	_RotCounter = FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION);
-	_applyRadius = _goalRadius = 0.f;
-	bShowMagneticField = true;
-	MagneticFieldRadiusScale = 5.f;
-	bCanChangeMagnetic = true;
-	MaxHaveMagneticSeconds = 20.f;
-	CurrHaveMagneticSeconds = 0.f;
-	FinalMagneticFieldRadius = 0.f;
-	_applyMovement = false;
-	bUsedFixedWeight = false;
-	bDefaultPrimitiveGravity = false;
-	//RGB = FColor::White;
-	MaxEnchantableCount = 0;
-	CurrEnchantCount = 0;
-	_parent = nullptr;
-	_parentMesh = nullptr;
-	_material = nullptr;
-	bAllowMagneticMovement = true;
-	bMagneticMaterialApplyAttachMesh = true;
-	_currMagMaterialApplyRatio = _goalMagMaterialApplyRatio = 0.f;
-	_magFieldDiv = 1.f / 1000.f;
-	_magActivate = false;
 
 	/*CDO*/
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> FIELD_MESH(
@@ -43,18 +19,9 @@ UMagneticComponent::UMagneticComponent()
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> INTERFACE(
 		TEXT("/Game/Effect/Magnetic/Glow_Ver4/Glow_magnet_Default2.Glow_magnet_Default2")
 	);
-	static ConstructorHelpers::FObjectFinder<UMaterialInterface> FIELD(
-		TEXT("/Game/Resource/Magnetic/NewMaterial.NewMaterial")
-	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> FIELD_EFFECT(
 		TEXT("/Game/Effect/Magnetic/Ring/Magnet_ring_n.Magnet_ring_n")
 	);
-
-	/*FieldSpline*/
-	//FieldSpline = CreateDefaultSubobject<USplineComponent>(TEXT("FIELD_SPLINE"));
-	//FieldSpline->SetupAttachment(this);
-	//FieldSpline->ClearSplinePoints(true);
-	//FieldSpline->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	/*FieldCollision*/
 	FieldCollision = CreateDefaultSubobject<USphereComponent>(TEXT("FIELD_COLLISION"));
@@ -62,13 +29,11 @@ UMagneticComponent::UMagneticComponent()
 	FieldCollision->SetSphereRadius(0.f);
 	FieldCollision->SetGenerateOverlapEvents(true);
 	FieldCollision->SetCollisionObjectType(MAGNETIC_COLLISION_OBJECTTYPE);
-	FieldCollision->SetCollisionProfileName(TEXT(MAGNETIC_COLLISION_PROFILE));
+	FieldCollision->SetCollisionProfileName(MAGNETIC_COLLISION_PROFILE);
 	FieldCollision->SetVisibility(true, true);
 	FieldCollision->ShapeColor = FColor::Magenta;
 
 	/*Meshes or Materials*/
-	//if (FIELD_MESH.Succeeded()) MagneticFieldMesh = FIELD_MESH.Object;
-	//if (FIELD.Succeeded()) MagneticFieldMaterial = FIELD.Object;
 	if (INTERFACE.Succeeded()) MagneticApplyMaterial = INTERFACE.Object;
 	if (FIELD_EFFECT.Succeeded()) MagneticFieldEffect = FIELD_EFFECT.Object;
 	#pragma endregion
@@ -112,7 +77,7 @@ void UMagneticComponent::InitParentAndMaterial()
 
 bool UMagneticComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
-	return (ChildComponent == FieldCollision || ChildComponent==MagneticFieldEffectComp);
+	return (ChildComponent == FieldCollision || ChildComponent == MagneticFieldEffectComp);
 }
 
 void UMagneticComponent::SettingMagnetWeightAndFieldRange()
@@ -265,7 +230,17 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 		case(EMagneticEffectColorType::GRANT_EFFECT):
 			return (isN ? FLinearColor(5.f, 0.f, 0.049996f, 1.f) : FLinearColor(0.014019f, 0.f, 70.f, 1.f));
 	
-		/*총 발사시 레이저 이펙트*/
+		/*자성 비네팅 이펙트*/
+		case(EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT):
+			return (isN ? FLinearColor(0.984f, 0.135f, 0.161f, 0.95f) : FLinearColor(0.f, 0.690244f, 0.984375f, 0.95f));
+	
+		/*건틀렛 구체 이펙트*/
+		case(EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT):
+			return (isN ? FLinearColor(2.f, 0.f, 0.019997f, 0.5f) : FLinearColor(0.f, 0.059361f, 2.f, 1.f));
+
+		/*건틀렛 번개 이펙트*/
+		case(EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT):
+			return (isN ? FLinearColor(100.f, 0.f, 1.428556f, .5f) : FLinearColor(0.f, 1.484013f, 50.f, 1.f));
 	}
 
 	return FLinearColor::White;
@@ -449,8 +424,6 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 		}
 
 		SettingMagnetWeightAndFieldRange();
-
-		_fieldColor = FVector(GetMagneticEffectColor(newType, EMagneticEffectColorType::RING_EFFECT));
 		UpdateFieldMeshsColor(newType);
 	}
 
@@ -583,7 +556,7 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	AActor* finalHit = nullptr;
 	FVector finalNormal = FVector::ZeroVector;
 	FieldCollision->GetOverlappingComponents(overlapList);
-
+	
 	for (auto p : overlapList)
 	{
 		//해당 자석과 부착된 엑터가 같거나, USphereComponent가 아닐 경우 스킵.

@@ -47,11 +47,13 @@ void UPowerExecutionComponent::BeginPlay()
 		//TriggerVolume = OwnerRootComponent->GetRelativeScale3D();
 	//}
 #pragma endregion
-	FVector OwnerScale = OwnerRootComponent->GetRelativeScale3D();
-	UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
-	FVector OwnerRootBounds = OwnerRootStaticMesh != nullptr ? (OwnerRootStaticMesh->GetStaticMesh() != nullptr ? OwnerRootStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
+	//FVector ParentScale = GetAttachParent()->GetRelativeScale3D();
+	//FVector OwnerScale = OwnerRootComponent->GetRelativeScale3D();
+	UStaticMeshComponent* ParentStaticMesh = Cast<UStaticMeshComponent>(GetAttachParent());
+	//UStaticMeshComponent* OwnerRootStaticMesh = Cast<UStaticMeshComponent>(OwnerRootComponent);
+	FVector ParentBounds = ParentStaticMesh != nullptr ? (ParentStaticMesh->GetStaticMesh() != nullptr ? ParentStaticMesh->GetStaticMesh()->GetBounds().BoxExtent : FVector::OneVector * 50) : FVector::OneVector * 50;
 	//Collider->SetBoxExtent(FVector(OwnerRootBounds.X * OwnerScale.X, OwnerRootBounds.Y * OwnerScale.Y, OwnerRootBounds.Z * OwnerScale.Z));
-	Collider->SetBoxExtent(FVector(OwnerRootBounds.X, OwnerRootBounds.Y, OwnerRootBounds.Z));
+	Collider->SetBoxExtent(FVector(ParentBounds.X, ParentBounds.Y, ParentBounds.Z));
 	//Trigger->SetBoxExtent(FVector(50.01f * TriggerVolume.X, 50.01f * TriggerVolume.Y, 50.01f * TriggerVolume.Z));
 
 	Collider->OnComponentBeginOverlap.AddDynamic(this, &UPowerExecutionComponent::OnOverlapBegin);
@@ -115,6 +117,15 @@ void UPowerExecutionComponent::SetPowerState(bool param, bool IsGenerator)
 	}
 }
 
+void UPowerExecutionComponent::BeginDestroy()
+{
+	Super::BeginDestroy();
+
+	if (::IsValid(Collider) == true)
+	{
+		Collider->DestroyComponent();
+	}
+}
 
 void UPowerExecutionComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {

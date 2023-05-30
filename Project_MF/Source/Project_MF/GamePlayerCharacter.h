@@ -1,12 +1,11 @@
 #pragma once
-
 #include "EngineMinimal.h"
 #include "GameFramework/Character.h"
 #include "MagneticComponent.h"
 #include "GamePlayerCharacter.generated.h"
 
-#define PLAYER_FADE_ID 83
-#define STOPTIMER_FADE_ID 84
+constexpr int PLAYER_FADE_ID = 83;
+constexpr int STOPTIMER_FADE_ID = 84;
 
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
@@ -19,7 +18,11 @@ class UDefaultMagneticMovementComponent;
 class UCustomGameInstance;
 class UGameMapSectionComponent;
 class UWidgetComponent;
+class UPlayerUICanvasWidget;
 class UUIStopTimerWidget;
+class UPlayerUIAimWidget;
+class UUIBlackScreenWidget;
+class UPlayerUIMagneticInfoWidget;
 class APlayerAirVent;
 class UAudioComponent;
 class USoundCue;
@@ -42,7 +45,20 @@ enum class EPlayerMode
 	AIRVENT_EXIT_UP,
 	AIRVENT_EXIT_DOWN,
 	CREEPY,
-	STICK_JUMP
+	STICK_JUMP,
+	GAMEOVER
+};
+
+/**
+* 플레이어의 게임오버에 대한 이유를 나타내는 열거형입니다.
+*/
+UENUM()
+enum class EPlayerGameOverReason
+{
+	NONE,
+	FALLEN,
+	DROWNING,
+	FIRED
 };
 
 /**
@@ -53,7 +69,6 @@ struct FTimeStopMagnetInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<UMagneticComponent> Magnetic;
 	bool DefaultCanMovement = false;
 	bool DefaultApplyPhysics = false;
@@ -67,11 +82,28 @@ struct FShootTargetInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<UMagneticComponent> ApplyTarget;
 	EMagneticType ApplyType = EMagneticType::NONE;
 	FVector ShootEnd		= FVector::ZeroVector;
 	bool isHit				= false;
+};
+
+/**
+* 플레이어의 이동 사운드를 담아둘 구조체입니다.
+*/
+USTRUCT(Blueprintable, BlueprintType)
+struct FPlayerMoveSoundInfo
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	USoundBase* WalkSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	USoundBase* DashSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	USoundBase* JumpEndSound;
 };
 
 /**
@@ -92,14 +124,23 @@ public:
 	//////////////////////////////////
 	//////     Public methods   //////
 	//////////////////////////////////
+
+	/**플레이어의 방향벡터 및 회전값들을 얻어오는 함수들입니다.*/
 	FRotator GetPlayerCameraQuat() const;
 	FVector GetPlayerForwardVector() const;
 	FVector GetPlayerRightVector() const;
 	FVector GetPlayerDownVector() const;
 	FQuat GetPlayerQuat() const { if (GetController() == nullptr) return FQuat::Identity;  return GetController()->GetControlRotation().Quaternion(); }
 	void SetPlayerRotator(FRotator& newValue);
+
+	/**플레이어의 동작모드를 결정하는 함수입니다.*/
 	void SetPlayerWalkMode();
 	void SetCreepyMode(APlayerAirVent* airvent=nullptr, bool enter = false);
+	void SetPlayerGameOverMode(EPlayerGameOverReason gameOverReason);
+
+	/**건틀렛 이펙트의 크기를 조절 및 얻는 함수들입니다.*/
+	float GetGauntletEffectScale() const;
+	void SetGauntletEffectScale(float newScale);
 
 
 	//////////////////////////////////
@@ -110,7 +151,7 @@ private:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	#if WITH_EDITOR
+	#ifdef WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
 	#endif
 
@@ -138,9 +179,23 @@ private:
 	////////////////////////////////////
 	/////     Private methods   ///////
 	///////////////////////////////////
+
+	/**
+	* UI관련 함수들입니다.
+	* 
+	* @UpdateUIRef : 사용할 UI들의 참조를 최신화합니다.
+	* @UnApplyTimeStop : 현재 적용된 TimeStop UIWidget들에게 페이드 인을 적용합니다.
+	*/
+	void UpdateUIRef();
 	void UnApplyTimeStop();
 
-	/*Player Sound methods*/
+	/**
+	* 플레이어가 소리를 발생시키는데 사용될 함수들입니다.
+	* 
+	* @DetectFloorType : 플레이어가 서있는 바닥을 조사하고, 바닥의 재질 이름을 얻습니다.
+	* @PlayMoveSound : 플레이어가 이동할 때 나는 소리를 재생합니다.
+	*/
+	void DetectFloorType(FString& outPhysMatName);
 	void PlayMoveSound(bool playSound);
 
 	/*Shoot Magnetic methods*/
@@ -169,7 +224,7 @@ private:
 	void ShootStart();
 
 	/**
-	* 플레이어의 자성이 변화가 있을 때 호출됩니다.
+	* 플레이어의 자성이 변화했을 때 호출됩니다.
 	* 이 함수가 호출되는 시점에서, 플레이어의 건틀렛의 자성 부여/해제 모션이 실행됩니다.
 	*/
 	UFUNCTION()
@@ -200,45 +255,108 @@ private:
 	UFUNCTION()
 	void FadeChange(bool isDark, int id);
 
+	/**
+	* 사운드가 종료될 때 실행되는 델리게이트입니다.
+	*/
+	UFUNCTION()
+	void BreathFinish();
+
+	/**
+	* 플레이어가 충돌가능한 물체와 닿거나, 떨어졌을 때 호출되는 델리게이트입니다.
+	* 주로 플레이어가 속해있는 맵 섹션을 알아내기 위해서 쓰입니다.
+	*/
+	UFUNCTION()
+	void PlayerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void PlayerEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+
+	/**
+	* 플레이어가 땅에 닿았을 때 호출되는 함수입니다.
+	*/
+	UFUNCTION()
+	void EnterGround(const FHitResult& Hit);
+
 	UFUNCTION()
 	void ResetCamLookTarget();
 
 	///////////////////////////////
 	//// Fields and Components ///
 	//////////////////////////////
-	bool _bCanJump, _bShootMine;
-	float _timeStopCurrTime;
-	float _playerHeight;
-	float _stiffen;
-	float _currDashScale;
+	bool _bCanJump = false;
+	bool _bShootMine = false;
+	float _timeStopCurrTime = 0.f;
+	float _playerHeight = 0.f;
+	float _stiffen = 0.f;
+	float _gauntletScale = 1.f;
 	FVector _stickNormal;
+
+	/**
+	*  Magnetic Vignetting Fields
+	* 
+	*  자성 비네팅 효과의 러프를 위한 필드들입니다.
+	*/
+	FLinearColor _vignettingCurrColor;
+	FLinearColor _vignettingStartColor;
+	FLinearColor _vignettingDistanceColor;
+	float _vignettingcurrTime = 0.f;
+	float _vignettingGoalDiv = 0.f;
+
+	/**
+	*  Gauntlet Circle Effect Fields
+	* 
+	*  건틀렛 구체 이펙트를 위한 필드들입니다.
+	*/
+	float _gauntletCurrScale = 0.f;
+	float _gauntletGoalScale = 0.f;
+	
 
 	/**
 	* Magnet Shoot Fields
 	* 
 	* 플레이어가 자성을 부여하기위해 필요한 필드들입니다.
 	*/
-	float _GivenIndex, _OldGivenIndex, _ArmPenetrateDiv;
-	int32 _givenIndex = 0, _oldGivenIndex;
+	int _givenIndex = 0;
+	int _oldGivenIndex = 0;
 
 	/**
 	* Action progress fields
 	* 
 	* 플레이어의 특정 동작에 대한 처리를 위해 필요한 필드들입니다.
 	*/
-	float _goalTimeDiv, _currTime;
+	float _goalTimeDiv = 0.f;
+	float _currTime = 0.f;
 	FVector _startPos, _endPos, _cPos1;
 	FVector _goalLook, _currLook;
+	EMagneticType _lastShootType = EMagneticType::NONE;
 
+	/**
+	* Ref fields
+	* 
+	* 나중에 접근이 필요한 참조들의 필드입니다.
+	*/
 	FDelegateHandle _fadeHandle;
 	FShootTargetInfo _ShootTargetInfo;
 	TWeakObjectPtr<UCustomGameInstance> _Instance;
 	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
 	TWeakObjectPtr<AActor> _StickTo;
 	TWeakObjectPtr<APlayerAirVent> _EnterAirVent;
-	TWeakObjectPtr<AActor> _CamLookTarget;
+	TWeakObjectPtr<UGameMapSectionComponent> _OverlapSection;
 	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
 	TStaticArray<FTimeStopMagnetInfo, 2> _TimeStopMagnets;
+
+	/**플레이어가 특정 부분을 바라볼 때 사용되는 필드입니다.*/
+	TWeakObjectPtr<AActor> _CamLookTarget;
+	FVector _CamLookNormal;
+	bool _bApplyCamLook = false;
+
+	/**플레이어에서 사용할 UI Widget들의 참조 필드입니다.*/
+	TWeakObjectPtr<UUIBlackScreenWidget> _BlackScreenWidget;
+	TWeakObjectPtr<UPlayerUICanvasWidget> _PlayerUICanvasWidget;
+	TWeakObjectPtr<UPlayerUIAimWidget> _AimWidget;
+	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> _MagInfoWidget;
+
 
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;
@@ -250,20 +368,32 @@ private:
 	*/
 
 	/**@Sounds fields*/
-	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOnSound;
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	TMap<FString, FPlayerMoveSoundInfo> PlayerWalkSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOffSound;
+	USoundBase* MagOnSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagShootSound;
+	USoundBase* MagOffSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOnGloveSound;
+	USoundBase* MagShootSound;
 
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	USoundCue* MagOffGloveSound;
+	USoundBase* MagOnGloveSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* MagOffGloveSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* MagGunChangeSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* PlayerDefaultBreathSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* PlayerDashBreathSound;
 
 	/**@UI fields*/
 	UPROPERTY()
@@ -280,53 +410,73 @@ private:
 	UNiagaraSystem* MagneticEffect;
 
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
-	UParticleSystem* ShootWaveEffect;
+	UNiagaraSystem* ShootWaveEffect;
+
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraSystem* MagneticVignettingEffect;
+
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraSystem* GauntletEffect;
 
 public:
 	/**
 	* Player Default Status fields
 	*/
+	/**플레이어의 최대 발사 거리입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
-	float ShootLength;
+	float ShootLength = 10000.f;
 
+	/**플레이어가 발사할 자성의 크기입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	FVector ShootExtend;
+	FVector ShootExtend = FVector(2.f, 2.f, 2.f);
 
+	/**플레이어의 카메라 회전 속도입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	float CameraRotationSpeed;
+	float CameraRotationSpeed = 420.f;
 
+	/**플레이어의 점프력입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	float JumpPower;
+	float JumpPower = 1000.f;
 
+	/**플레이어의 이동속도입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta = (ClampMin = 0.f))
-	float MoveSpeed;
+	float MoveSpeed = 500.f;
 
-	UPROPERTY(EditAnywhere, Category = BoneTransform, BlueprintReadWrite)
-	FTransform _ArmLAddTransform;
-
+	/**플레이어에게 적용된 모드입니다. 기본적으로 Standing mode입니다.*/
 	UPROPERTY(VisibleAnywhere, Category = PlayerCharacter, BlueprintReadWrite)
-	EPlayerMode PlayerMode;
-
+	EPlayerMode PlayerMode = EPlayerMode::STANDING;
+	
+	/**플레이어가 자석의 시간을 정지시킬 수 있는 최대 시간(초)입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite)
-	float MaxTimeStopSeconds;
+	float MaxTimeStopSeconds = 10.f;
 
+	/**플레이어가 환풍구로 들어가는데 걸리는 시간입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float AirVentEnterSeconds;
+	float AirVentEnterSeconds = .8f;
 
+	/**플레이어가 환풍구에서 나오는데 걸리는 시간입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float AirVentExitSeconds;
+	float AirVentExitSeconds = .8f;
 
+	/**플레이어가 환풍구에서 손을 짚는데 걸리는 시간(초)입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float AirVentEnterHandSeconds;
+	float AirVentEnterHandSeconds = .6f;
 
+	/**플레이어가 벽을 타고 올라가는데 걸리는 시간(초)입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float ClimbWallSeconds;
+	float ClimbWallSeconds = 0.3f;
 
+	/**플레이어가 벽을 탈 수 있는 최대 높이입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float ClimbableWallHeight;
+	float ClimbableWallHeight = 300.f;
 
+	/**플레이어가 대쉬를 하면 기본 스피드에서 증가할 배수입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
-	float PlayerDashScale;
+	float PlayerDashScale = 2.f;
+
+	/**플레이어의 카메라에서 자성 비네팅 이펙트가 적용되는 시간(초)입니다.*/
+	UPROPERTY(EditAnywhere, Category = PlayerCharacter, BlueprintReadwrite, Meta = (ClampMin = 0.f))
+	float VignettingSeconds = 1.f;
 
 private:
 	/**
@@ -366,13 +516,19 @@ private:
 	UNiagaraComponent* ShootEffectComp;
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
-	UParticleSystemComponent* ShootWaveEffectComp;
+	UNiagaraComponent* MagneticVignettingEffectComp;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraComponent* GauntletEffectComp;
 
 	/**
 	*Sound Components
 	*/
 	UPROPERTY(VisibleAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
-	UAudioComponent* SoundEffectComp;
+	UAudioComponent* MoveSoundEffectComp;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	UAudioComponent* BreathSoundEffectComp;
 
 	/**
 	* Map Components...

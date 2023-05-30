@@ -20,20 +20,16 @@ void UPowerSensorComponent::BeginPlay()
 	SetCollisionProfileName(TEXT("OverlapAllDynamic"));
 	SetGenerateOverlapEvents(true);
 
-	if (::IsValid(ReceivingTarget) == true)
+	if (::IsValid(ReceivingTarget.Get()) == true)
 	{
 		ReceivingTargetGenerateComponent = ReceivingTarget->FindComponentByClass<UPowerGenerateComponent>();
-		if (::IsValid(ReceivingTargetGenerateComponent.Get()) == true)
-		{
-			ReceivingTargetGenerateComponent->SetPowerState(ReversSignal, true);
-		}
 	}
-	else if (::IsValid(ReceivingTarget) == false)
+	else if (::IsValid(ReceivingTarget.Get()) == false)
 	{
 		USceneComponent* ParentComponent = GetAttachParent();
 		while (::IsValid(ParentComponent) == true)
 		{
-			UPowerGenerateComponent* ParentGenerateComponent = Cast<UPowerGenerateComponent>(ParentComponent);
+			UPowerComponent* ParentGenerateComponent = Cast<UPowerComponent>(ParentComponent);
 			if (::IsValid(ParentGenerateComponent) == true)
 			{
 				ReceivingTargetGenerateComponent = ParentGenerateComponent;
@@ -44,6 +40,30 @@ void UPowerSensorComponent::BeginPlay()
 				ParentComponent = ParentComponent->GetAttachParent();
 			}
 		}
+
+		if (::IsValid(ReceivingTargetGenerateComponent.Get()) == false)
+		{
+			TArray<USceneComponent*> ParentsComponents = GetAttachParent()->GetAttachChildren();
+			for (int i = 0; i < ParentsComponents.Num(); i = i + 1)
+			{
+				UPowerComponent* PowerGenerateComponent = Cast<UPowerComponent>(ParentsComponents[i]);
+				if (::IsValid(PowerGenerateComponent) == true)
+				{
+					ReceivingTargetGenerateComponent = PowerGenerateComponent;
+					break;
+				}
+			}
+		}
+
+		if (::IsValid(ReceivingTargetGenerateComponent.Get()) == false)
+		{
+			ReceivingTargetGenerateComponent = GetOwner()->FindComponentByClass<UPowerComponent>();
+		}
+	}
+
+	if (::IsValid(ReceivingTargetGenerateComponent.Get()) == true)
+	{
+		ReceivingTargetGenerateComponent->SetPowerState(ReversSignal, true);
 	}
 }
 
