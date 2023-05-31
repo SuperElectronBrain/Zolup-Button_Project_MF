@@ -20,7 +20,7 @@ UMagneticComponent::UMagneticComponent()
 		TEXT("/Game/Effect/Magnetic/Glow_Ver4/Glow_magnet_Default2.Glow_magnet_Default2")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> FIELD_EFFECT(
-		TEXT("/Game/Effect/Magnetic/Ring/Magnet_ring_n.Magnet_ring_n")
+		TEXT("/Game/Effect/Magnetic/Field/magnet_scope_grow_big_nia.magnet_scope_grow_big_nia")
 	);
 
 	/*FieldCollision*/
@@ -459,7 +459,7 @@ void UMagneticComponent::UpdateMagneticField()
 			MagneticFieldEffectComp->ReinitializeSystem();
 			MagneticFieldEffectComp->ActivateSystem(true);
 		}
-		MagneticFieldEffectComp->SetRelativeScale3D(FVector(20.f, 20.f, 20.f) * (_applyRadius * _magFieldDiv));
+		//MagneticFieldEffectComp->SetFloatParameter(TEXT("magnet_scale"), _applyRadius * (_apply));
 	}
 
 	return;
