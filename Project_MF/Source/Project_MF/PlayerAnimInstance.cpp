@@ -204,7 +204,7 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 
 void UPlayerAnimInstance::DrawDebugHitPoint(const FVector& HitLocation, const FVector& HitNormal) const
 {
-#ifdef WITH_EDITOR 
+	#if WITH_EDITOR 
 	{
 		FVector rightCross = -FVector::CrossProduct(HitNormal, FVector::DownVector);
 		FVector upCross = -FVector::CrossProduct(HitNormal, rightCross);
@@ -216,7 +216,7 @@ void UPlayerAnimInstance::DrawDebugHitPoint(const FVector& HitLocation, const FV
 		DrawDebugLine(GetWorld(), HitLocation, HitLocation + upCross * 110.f, FColor::Black, false, -1.f, 0U, 1.f);
 
 	}
-#endif
+	#endif
 }
 
 void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player)
@@ -291,6 +291,6 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	_bIsJumping = _gameCharacter->GetMovementComponent()->Velocity.Z > 0.f;
 	_bIsPulled = (Montage_IsPlaying(GloveAtMontage) || Montage_IsPlaying(GloveActonMontage));
 
-
-	if(_bIsPulled) FoldArmTestByStandHand(EHandType::LEFT, _gameCharacter.Get());
+	if (_bIsPulled) FoldArmTestByStandHand(EHandType::LEFT, _gameCharacter.Get());
+	else bApplyFold_LArm = false;
 }
