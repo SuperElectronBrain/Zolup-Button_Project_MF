@@ -20,9 +20,9 @@ void UPowerMapDamageSensorComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (::IsValid(ReceivingTarget.Get()) == true)
+	if (::IsValid(ObserveTarget.Get()) == true)
 	{
-		ObserveTargetGameMapSectionComponent = ReceivingTarget->FindComponentByClass<UGameMapSectionComponent>();
+		ObserveTargetGameMapSectionComponent = ObserveTarget->FindComponentByClass<UGameMapSectionComponent>();
 	}
 
 	if (::IsValid(ReceivingTarget.Get()) == true)
