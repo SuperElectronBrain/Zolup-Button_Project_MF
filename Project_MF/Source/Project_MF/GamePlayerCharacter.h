@@ -487,10 +487,10 @@ private:
 	/**
 	* Magnetic Components
 	*/
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	UMagneticComponent* Magnetic;
 
-	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	UDefaultMagneticMovementComponent* MagMovement;
 
 	/**
