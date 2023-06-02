@@ -165,6 +165,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	Magnetic->SetupAttachment(GetCapsuleComponent());
 	Magnetic->SetRelativeLocation(FVector(0.f, 0.f, 70.f));
 	Magnetic->SetMagneticFieldRadiusScale(300.f);
+	Magnetic->bShowMagneticField = false;
 	Magnetic->SetWeight(1.f, true);
 
 	/*Effect*/
@@ -522,10 +523,10 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 		float progressRatio = (1.f - _vignettingcurrTime * _vignettingGoalDiv);
 
 		_vignettingCurrColor = _vignettingStartColor + _vignettingDistanceColor * progressRatio;
-		_vignettingcurrTime-= DeltaTime;
 
 		if (progressRatio>=1.f) _vignettingcurrTime = 0.f;
 
+		_vignettingcurrTime -= DeltaTime;
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), _vignettingCurrColor);
 	}
 
@@ -1607,9 +1608,6 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 
 	#pragma region Omission
 
-	//몽타주 실행
-	if (PlayerAnim) PlayerAnim->PlayAttackMontage();
-
 	FVector forward = GetPlayerForwardVector();
 	FVector right = GetPlayerRightVector();
 	FVector down = GetPlayerDownVector();
@@ -1686,11 +1684,14 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 					}
 
 					_ShootTargetInfo.ApplyTarget = mag;
-					return;
+					break;
 				}
 			}
 		}
 	}
+
+	//몽타주 실행
+	if (PlayerAnim) PlayerAnim->PlayAttackMontage();
 	#pragma endregion
 }
 
@@ -1806,9 +1807,8 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	if (_MagInfoWidget.IsValid()) 
 		_MagInfoWidget->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 
-	if (_AimWidget.IsValid())
+	if (_AimWidget.IsValid() && Magnetic)
 		_AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], Magnetic->GetCurrentMagnetic());
-
 
 	/*현재 접촉해 있는 섹션의 카운트를 올린다.*/
 	if (_OverlapSection.IsValid())

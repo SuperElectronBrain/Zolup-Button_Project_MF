@@ -4,8 +4,8 @@
 #include "MagneticComponent.h"
 #include "GamePlayerCharacter.generated.h"
 
-constexpr int PLAYER_FADE_ID = 83;
-constexpr int STOPTIMER_FADE_ID = 84;
+constexpr const int PLAYER_FADE_ID = 83;
+constexpr const int STOPTIMER_FADE_ID = 84;
 
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
@@ -33,7 +33,7 @@ enum class EMagnetMoveType : uint8;
 * 플레이어의 적용모드를 나타내는 열거형입니다.
 */
 UENUM()
-enum class EPlayerMode
+enum class EPlayerMode : uint8
 {
 	STANDING,
 	AIRVENT_ENTER,
@@ -53,7 +53,7 @@ enum class EPlayerMode
 * 플레이어의 게임오버에 대한 이유를 나타내는 열거형입니다.
 */
 UENUM()
-enum class EPlayerGameOverReason
+enum class EPlayerGameOverReason : uint8
 {
 	NONE,
 	FALLEN,
@@ -154,7 +154,7 @@ private:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	#ifdef WITH_EDITOR
+	#if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
 	#endif
 
@@ -341,15 +341,15 @@ private:
 	/**
 	* 나중에 접근이 필요한 참조들의 필드입니다.
 	*/
-	FDelegateHandle _fadeHandle;
-	FShootTargetInfo _ShootTargetInfo;
-	TWeakObjectPtr<UCustomGameInstance> _Instance;
+	FDelegateHandle                          _fadeHandle;
+	FShootTargetInfo                         _ShootTargetInfo;
+	TWeakObjectPtr<UCustomGameInstance>      _Instance;
 	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
-	TWeakObjectPtr<AActor> _StickTo;
-	TWeakObjectPtr<APlayerAirVent> _EnterAirVent;
+	TWeakObjectPtr<AActor>                   _StickTo;
+	TWeakObjectPtr<APlayerAirVent>           _EnterAirVent;
 	TWeakObjectPtr<UGameMapSectionComponent> _OverlapSection;
-	TStaticArray<UMagneticComponent*, 2> _GivenMagnets;
-	TStaticArray<FTimeStopMagnetInfo, 2> _TimeStopMagnets;
+	TStaticArray<UMagneticComponent*, 2>     _GivenMagnets;
+	TStaticArray<FTimeStopMagnetInfo, 2>     _TimeStopMagnets;
 
 	/**플레이어가 특정 부분을 바라볼 때 사용되는 필드입니다.*/
 	TWeakObjectPtr<AActor> _CamLookTarget;

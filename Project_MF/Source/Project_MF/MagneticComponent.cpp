@@ -13,11 +13,11 @@ UMagneticComponent::UMagneticComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	/*CDO*/
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> FIELD_MESH(
-		TEXT("/Engine/BasicShapes/Cylinder.Cylinder")
-	);
-	static ConstructorHelpers::FObjectFinder<UMaterialInterface> INTERFACE(
+	static ConstructorHelpers::FObjectFinder<UMaterialInterface> GRANT_MATERIAL(
 		TEXT("/Game/Effect/Magnetic/Glow_Ver4/Glow_magnet_Default2.Glow_magnet_Default2")
+	);
+	static ConstructorHelpers::FObjectFinder<UMaterialInterface> FIELD_SCOPE_MATERIAL(
+		TEXT("/Game/Effect/Magnetic/Field/magnet_scope_m.magnet_scope_m")
 	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> FIELD_EFFECT(
 		TEXT("/Game/Effect/Magnetic/Field/magnet_scope_grow_big_nia.magnet_scope_grow_big_nia")
@@ -34,7 +34,8 @@ UMagneticComponent::UMagneticComponent()
 	FieldCollision->ShapeColor = FColor::Magenta;
 
 	/*Meshes or Materials*/
-	if (INTERFACE.Succeeded()) MagneticApplyMaterial = INTERFACE.Object;
+	if (GRANT_MATERIAL.Succeeded()) MagneticApplyMaterial = GRANT_MATERIAL.Object;
+	if (FIELD_SCOPE_MATERIAL.Succeeded()) FieldScopeMaterial = FIELD_SCOPE_MATERIAL.Object;
 	if (FIELD_EFFECT.Succeeded()) MagneticFieldEffect = FIELD_EFFECT.Object;
 	#pragma endregion
 }
@@ -232,7 +233,7 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 	
 		/*자성 비네팅 이펙트*/
 		case(EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT):
-			return (isN ? FLinearColor(0.984f, 0.135f, 0.161f, 0.95f) : FLinearColor(0.f, 0.690244f, 0.984375f, 0.95f));
+			return (isN ? FLinearColor(0.984f, 0.135f, 0.161f, 0.3f) : FLinearColor(0.f, 0.690244f, 0.984375f, 0.3f));
 	
 		/*건틀렛 구체 이펙트*/
 		case(EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT):
@@ -253,6 +254,7 @@ void UMagneticComponent::BeginPlay()
 
 	/*부착된 부모 컴포넌트 및 다이나믹 머터리얼을 초기화.*/
 	InitParentAndMaterial();
+
 
 	/*물리가 적용되어 있다면 그에 대한 설정을 한다.*/
 	if (_parent && ::IsValid(_parent))
@@ -286,6 +288,13 @@ void UMagneticComponent::BeginPlay()
 			false
 		);
 		MagneticFieldEffectComp->SetUsingAbsoluteScale(true);
+
+		//새로운 머터리얼을 적용한다.
+		if(FieldScopeMaterial) _fieldScopeMaterial = UMaterialInstanceDynamic::Create(FieldScopeMaterial, this);
+		if (_fieldScopeMaterial) {
+			MagneticFieldEffectComp->SetVariableMaterial(TEXT("ScopeMaterial"), _fieldScopeMaterial);
+		}
+
 	}
 }
 
@@ -434,12 +443,18 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 
 void UMagneticComponent::UpdateFieldMeshsColor(EMagneticType type)
 {
-	if (MagneticFieldEffectComp)
+	if (_fieldScopeMaterial)
 	{
-		MagneticFieldEffectComp->SetColorParameter(
-			TEXT("RingColor"),
-			GetMagneticEffectColor(type, EMagneticEffectColorType::RING_EFFECT)
-		);
+		_fieldScopeMaterial->SetVectorParameterValue(TEXT("color"), UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::RING_EFFECT));
+
+		//UNiagaraDataInterface* param = overrideParams.GetDataInterface(
+		//	FNiagaraVariable(FNiagaraDataInterface)
+		//)
+
+		//MagneticFieldEffectComp->SetColorParameter(
+		//	TEXT("RingColor"),
+		//	GetMagneticEffectColor(type, EMagneticEffectColorType::RING_EFFECT)
+		//);
 	}
 }
 
@@ -459,7 +474,7 @@ void UMagneticComponent::UpdateMagneticField()
 			MagneticFieldEffectComp->ReinitializeSystem();
 			MagneticFieldEffectComp->ActivateSystem(true);
 		}
-		//MagneticFieldEffectComp->SetFloatParameter(TEXT("magnet_scale"), _applyRadius * (_apply));
+		MagneticFieldEffectComp->SetVectorParameter(TEXT("effect_scale"), FVector::OneVector * (_applyRadius * MAGNETIC_FIELD_RADIUS_DIV));
 	}
 
 	return;

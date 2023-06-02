@@ -15,8 +15,8 @@ class UMagneticComponent;
 class UGameUIManager;
 //enum class EMagneticType : uint8;
 
-constexpr int AIML_FADE_ID =  36;
-constexpr int AIMR_FADE_ID = 37;
+constexpr const int AIML_FADE_ID =  36;
+constexpr const int AIMR_FADE_ID = 37;
 
 UENUM()
 enum class EGivenAnimType : uint8

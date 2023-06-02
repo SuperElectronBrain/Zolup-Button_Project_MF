@@ -8,9 +8,9 @@
 DECLARE_MULTICAST_DELEGATE(FShootStartDelegate)
 
 /**플레이어 메시의 본 이름들에 대한 문자열입니다.*/
-constexpr const TCHAR* const PLAYER_SPINE1_BONE = TEXT("Bip001-Spine1");
-constexpr const TCHAR* const PLAYER_NECK_BONE = TEXT("Bip001-Neck");
-constexpr const TCHAR* const PLAYER_GUN_BONE = TEXT("Bone001");
+constexpr const TCHAR* const PLAYER_SPINE1_BONE	= TEXT("Bip001-Spine1");
+constexpr const TCHAR* const PLAYER_NECK_BONE	= TEXT("Bip001-Neck");
+constexpr const TCHAR* const PLAYER_GUN_BONE	= TEXT("Bone001");
 
 constexpr const TCHAR* const PLAYER_LCLAVICLE_BONE = TEXT("Bip001-L-Clavicle");
 constexpr const TCHAR* const PLAYER_RCLAVICLE_BONE = TEXT("Bip001-R-Clavicle");

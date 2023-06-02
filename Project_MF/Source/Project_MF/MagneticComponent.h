@@ -37,11 +37,17 @@ enum class EMagneticEffectColorType : uint8
 	GAUNTLET_THUNDER_EFFECT
 };
 
-/*해당 컴포넌트에서 쓰이는 컴파일 전용 상수다.*/
-constexpr const int					MAGNETIC_FIELD_PRECISION		= 60;
+/*해당 컴포넌트에서 쓰이는 컴파일 타임 상수다.*/
 constexpr const ECollisionChannel	MAGNETIC_COLLISION_OBJECTTYPE	= ECollisionChannel::ECC_GameTraceChannel11;
 constexpr const TCHAR*				MAGNETIC_COLLISION_PROFILE		= TEXT("MagneticField");
 
+constexpr const float				MAGNETIC_FIELD_RADIUS_DEFAULT	= 144.488693f;
+constexpr const float				MAGNETIC_FIELD_RADIUS_DIV		= 1.f / MAGNETIC_FIELD_RADIUS_DEFAULT;
+
+constexpr const float				MAGNETIC_FIELD_APPLY_GOAL_TIME		= .2f;
+constexpr const float				MAGNETIC_FIELD_APPLY_GOAL_TIME_DIV  = 1.f / MAGNETIC_FIELD_APPLY_GOAL_TIME;
+
+/**해당 컴포넌트에서 제공하는 델리게이트들입니다.*/
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComponentMagneticChanged, EMagneticType, changedMagType, UMagneticComponent*, changedMagComp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FComponentMagnetBeginMovement, EMagnetMoveType, moveType, UMagneticComponent*, moveBeginMagComp, UMagneticComponent*, operatorMagComp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComponentMagnetEndMovement, EMagnetMoveType, prevMoveType, UMagneticComponent*, moveEndMagComp);
@@ -210,10 +216,9 @@ private:
 	///////////////////////////////
 	//// Fields and Components ////
 	///////////////////////////////
-	float _RotCounter = FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION); 
 	float _applyRadius = 0.f, _goalRadius = 0.f;
+	float _radiusApplyTime = 0.f;
 	float _currMagMaterialApplyRatio=0.f, _goalMagMaterialApplyRatio = 0.f;
-	float _magFieldDiv = 1.f / 1000.f;
 	bool _magActivate = false;
 	EMagnetMoveType _lastMoveType = EMagnetMoveType::NONE;
 	bool _applyMovement = true;
@@ -247,7 +252,13 @@ private:
 	UMaterialInterface* MagneticApplyMaterial;
 
 	UPROPERTY()
+	UMaterialInterface* FieldScopeMaterial;
+
+	UPROPERTY()
 	UMaterialInstanceDynamic* _material;
+
+	UPROPERTY()
+	UMaterialInstanceDynamic* _fieldScopeMaterial;
 
 	UPROPERTY()
 	USphereComponent* FieldCollision;

@@ -56,8 +56,8 @@ void UPlayerUIAimWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTi
 
 void UPlayerUIAimWidget::SetAimUIByMagneticComp(UMagneticComponent* typeL, UMagneticComponent* typeR, EMagneticType playerType)
 {
-	EMagneticType t1 = ::IsValid(typeL) ? typeL->GetCurrentMagnetic() : EMagneticType::NONE;
-	EMagneticType t2 = ::IsValid(typeR) ? typeR->GetCurrentMagnetic() : EMagneticType::NONE;
+	EMagneticType t1 = typeL && ::IsValid(typeL) ? typeL->GetCurrentMagnetic() : EMagneticType::NONE;
+	EMagneticType t2 = typeR && ::IsValid(typeR) ? typeR->GetCurrentMagnetic() : EMagneticType::NONE;
 
 	SetAimUIByMagneticType(t1, t2, playerType);
 }
@@ -136,17 +136,17 @@ void UPlayerUIAimWidget::PlayerGivenAnimProgress(float DeltaTime)
 
 void UPlayerUIAimWidget::SetAimUIByMagneticType(EMagneticType typeL, EMagneticType typeR, EMagneticType playerType)
 {
-	bool bGivenLAddtive = _GivenInfoL.CurrType == EMagneticType::NONE && typeL != EMagneticType::NONE;
-	bool bGivenLSubtract = _GivenInfoL.CurrType != EMagneticType::NONE && _GivenInfoL.CurrType != typeL;
-	bool bGivenLEnd = _GivenInfoL.CurrType != EMagneticType::NONE && typeL == EMagneticType::NONE;
+	const bool bGivenLAddtive	 = (_GivenInfoL.CurrType == EMagneticType::NONE) && (typeL != EMagneticType::NONE);
+	const bool bGivenLSubtract	 = (_GivenInfoL.CurrType != EMagneticType::NONE) && (_GivenInfoL.CurrType != typeL);
+	const bool bGivenLEnd		 = (_GivenInfoL.CurrType != EMagneticType::NONE) && (typeL == EMagneticType::NONE);
 
-	bool bGivenRAddtive = _GivenInfoR.CurrType == EMagneticType::NONE && typeR != EMagneticType::NONE;
-	bool bGivenRSubtract = _GivenInfoR.CurrType != EMagneticType::NONE && _GivenInfoR.CurrType != typeR;
-	bool bGivenREnd = _GivenInfoR.CurrType != EMagneticType::NONE && typeR == EMagneticType::NONE;
+	const bool bGivenRAddtive	 = (_GivenInfoR.CurrType == EMagneticType::NONE) && (typeR != EMagneticType::NONE);
+	const bool bGivenRSubtract	 = (_GivenInfoR.CurrType != EMagneticType::NONE) && (_GivenInfoR.CurrType != typeR);
+	const bool bGivenREnd		 = (_GivenInfoR.CurrType != EMagneticType::NONE) && (typeR == EMagneticType::NONE);
 
-	bool bPCircleChange = _PlayerCircle.CurrType != playerType;
-	bool bPCircleScaleUp = _PlayerCircle.CurrType == EMagneticType::NONE && bPCircleChange;
-	bool bPCircleScaleDown = _PlayerCircle.CurrType != EMagneticType::NONE && bPCircleChange;
+	const bool bPCircleChange	 = (_PlayerCircle.CurrType != playerType);
+	const bool bPCircleScaleUp	 = (_PlayerCircle.CurrType == EMagneticType::NONE) && (bPCircleChange);
+	const bool bPCircleScaleDown = (_PlayerCircle.CurrType != EMagneticType::NONE) && (bPCircleChange);
 
 	/*플레이어 원형 이펙트*/
 	if (bPCircleChange)

@@ -40,7 +40,6 @@ struct FActorBeginInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<AActor> Actor;
 	FTransform Transform;
 };
@@ -50,7 +49,6 @@ struct FActorCheckInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<AActor> Actor;
 	TWeakObjectPtr<AActor> CheckPoint;
 };
@@ -60,7 +58,6 @@ struct FMagneticBeginInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<UMagneticComponent> Magnetic;
 	EMagneticType Type;
 	float MaxHaveMagneticSeconds;
@@ -107,7 +104,7 @@ private:
 	virtual void BeginPlay() override;
 	virtual void OnAttachmentChanged() override;
 	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override { return false; }
-#ifdef WITH_EDITOR
+#if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif
 
