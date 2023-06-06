@@ -463,37 +463,37 @@ void UPowerConveyorMovementComponent::UpdateTargetMovement(USceneComponent* Upda
 	UpdatedComponent->ComponentVelocity = Velocity;
 }
 
-namespace MovementComponentCVars
-{
-	// Typically we want to depenetrate regardless of direction, so we can get all the way out of penetration quickly.
-	// Our rules for "moving with depenetration normal" only get us so far out of the object. We'd prefer to pop out by the full MTD amount.
-	// Depenetration moves (in ResolvePenetration) then ignore blocking overlaps to be able to move out by the MTD amount.
-	int32 MoveIgnoreFirstBlockingOverlap = 0;
-	static FAutoConsoleVariableRef CVarMoveIgnoreFirstBlockingOverlap(
-		TEXT("p.MoveIgnoreFirstBlockingOverlap"),
-		MoveIgnoreFirstBlockingOverlap,
-		TEXT("Whether to ignore the first blocking overlap in SafeMoveUpdatedComponent (if moving out from object and starting in penetration).\n")
-		TEXT("The 'p.InitialOverlapTolerance' setting determines the 'move out' rules, but by default we always try to depenetrate first (not ignore the hit).\n")
-		TEXT("0: Disable (do not ignore), 1: Enable (ignore)"),
-		ECVF_Default);
-}
-
-namespace MovementComponentCVars
-{
-	float PenetrationPullbackDistance = 0.125f;
-	static FAutoConsoleVariableRef CVarPenetrationPullbackDistance(TEXT("p.PenetrationPullbackDistance"),
-		PenetrationPullbackDistance,
-		TEXT("Pull out from penetration of an object by this extra distance.\n")
-		TEXT("Distance added to penetration fix-ups."),
-		ECVF_Default);
-
-	float PenetrationOverlapCheckInflation = 0.100f;
-	static FAutoConsoleVariableRef CVarPenetrationOverlapCheckInflation(TEXT("p.PenetrationOverlapCheckInflation"),
-		PenetrationOverlapCheckInflation,
-		TEXT("Inflation added to object when checking if a location is free of blocking collision.\n")
-		TEXT("Distance added to inflation in penetration overlap check."),
-		ECVF_Default);
-}
+//namespace MovementComponentCVars
+//{
+//	// Typically we want to depenetrate regardless of direction, so we can get all the way out of penetration quickly.
+//	// Our rules for "moving with depenetration normal" only get us so far out of the object. We'd prefer to pop out by the full MTD amount.
+//	// Depenetration moves (in ResolvePenetration) then ignore blocking overlaps to be able to move out by the MTD amount.
+//	int32 MoveIgnoreFirstBlockingOverlap = 0;
+//	static FAutoConsoleVariableRef CVarMoveIgnoreFirstBlockingOverlap(
+//		TEXT("p.MoveIgnoreFirstBlockingOverlap"),
+//		MoveIgnoreFirstBlockingOverlap,
+//		TEXT("Whether to ignore the first blocking overlap in SafeMoveUpdatedComponent (if moving out from object and starting in penetration).\n")
+//		TEXT("The 'p.InitialOverlapTolerance' setting determines the 'move out' rules, but by default we always try to depenetrate first (not ignore the hit).\n")
+//		TEXT("0: Disable (do not ignore), 1: Enable (ignore)"),
+//		ECVF_Default);
+//}
+//
+//namespace MovementComponentCVars
+//{
+//	float PenetrationPullbackDistance = 0.125f;
+//	static FAutoConsoleVariableRef CVarPenetrationPullbackDistance(TEXT("p.PenetrationPullbackDistance"),
+//		PenetrationPullbackDistance,
+//		TEXT("Pull out from penetration of an object by this extra distance.\n")
+//		TEXT("Distance added to penetration fix-ups."),
+//		ECVF_Default);
+//
+//	float PenetrationOverlapCheckInflation = 0.100f;
+//	static FAutoConsoleVariableRef CVarPenetrationOverlapCheckInflation(TEXT("p.PenetrationOverlapCheckInflation"),
+//		PenetrationOverlapCheckInflation,
+//		TEXT("Inflation added to object when checking if a location is free of blocking collision.\n")
+//		TEXT("Distance added to inflation in penetration overlap check."),
+//		ECVF_Default);
+//}
 
 //void UPowerConveyorMovementComponent::HandleImpact(const FHitResult& Hit, float TimeSlice, const FVector& MoveDelta)
 //{
