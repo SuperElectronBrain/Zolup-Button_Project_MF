@@ -3,10 +3,9 @@
 
 #include "PowerConveyorMovementComponent.h"
 #include "PhysicsEngine/PhysicsSettings.h"
-#include "GameFramework/MovementComponent.h"
 #include "DrawDebugHelpers.h"
-#define LOCTEXT_NAMESPACE "MovementComponent"
-DEFINE_LOG_CATEGORY_STATIC(LogMovement, Log, All);
+//#define LOCTEXT_NAMESPACE "MovementComponent"
+//DEFINE_LOG_CATEGORY_STATIC(LogMovement, Log, All);
 
 UPowerConveyorMovementComponent::UPowerConveyorMovementComponent()
 {
@@ -215,11 +214,14 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 						TargetRoot->SetWorldRotation(FRotator::ZeroRotator);
 						//}
 
-						if (TargetRoot->IsSimulatingPhysics() == true)
+						if(::IsValid(TargetRoot) == true)
 						{
-							if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::DownVector); }
+							if (TargetRoot->IsSimulatingPhysics() == true)
+							{
+								if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::DownVector); }
+							}
 						}
-
+						
 						//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
 						//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
 						//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
@@ -659,7 +661,7 @@ FVector UPowerConveyorMovementComponent::GetPenetrationAdjustment(const FHitResu
 	}
 
 	FVector Result;
-	const float PullBackDistance = FMath::Abs(MovementComponentCVars::PenetrationPullbackDistance);
+	const float PullBackDistance = FMath::Abs(0.125f);
 	const float PenetrationDepth = (Hit.PenetrationDepth > 0.0f ? Hit.PenetrationDepth : 0.125f);
 
 	Result = Hit.Normal * (PenetrationDepth + PullBackDistance);
@@ -701,25 +703,25 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 			return false;
 		}
 
-		UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration: %s.%s at location %s inside %s.%s at location %s by %.3f (netmode: %d)"),
-			*ActorOwner->GetName(),
-			*UpdatedComponent->GetName(),
-			*UpdatedComponent->GetComponentLocation().ToString(),
-			*GetNameSafe(Hit.GetActor()),
-			*GetNameSafe(Hit.GetComponent()),
-			Hit.Component.IsValid() ? *Hit.GetComponent()->GetComponentLocation().ToString() : TEXT("<unknown>"),
-			Hit.PenetrationDepth,
-			(uint32)GetNetMode());
+		//UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration: %s.%s at location %s inside %s.%s at location %s by %.3f (netmode: %d)"),
+			//*ActorOwner->GetName(),
+			//*UpdatedComponent->GetName(),
+			//*UpdatedComponent->GetComponentLocation().ToString(),
+			//*GetNameSafe(Hit.GetActor()),
+			//*GetNameSafe(Hit.GetComponent()),
+			//Hit.Component.IsValid() ? *Hit.GetComponent()->GetComponentLocation().ToString() : TEXT("<unknown>"),
+			//Hit.PenetrationDepth,
+			//(uint32)GetNetMode());
 
 		// We really want to make sure that precision differences or differences between the overlap test and sweep tests don't put us into another overlap,
 		// so make the overlap test a bit more restrictive.
-		const float OverlapInflation = MovementComponentCVars::PenetrationOverlapCheckInflation;
+		const float OverlapInflation = 0.100f;
 		bool bEncroached = OverlapTest(UpdatedComponent, Hit.TraceStart + Adjustment, NewRotationQuat, UpdatedPrimitive->GetCollisionObjectType(), UpdatedPrimitive->GetCollisionShape(OverlapInflation), ActorOwner);
 		if (bEncroached == false)
 		{
 			// Move without sweeping.
 			MoveUpdatedComponent(UpdatedComponent, Adjustment, NewRotationQuat, false, nullptr, ETeleportType::TeleportPhysics);
-			UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   teleport by %s"), *Adjustment.ToString());
+			//UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   teleport by %s"), *Adjustment.ToString());
 			return true;
 		}
 		else
@@ -730,7 +732,7 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 			// Try sweeping as far as possible...
 			FHitResult SweepOutHit(1.0f);
 			bool bMoved = MoveUpdatedComponent(UpdatedComponent, Adjustment, NewRotationQuat, true, &SweepOutHit, ETeleportType::TeleportPhysics);
-			UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (success = %d)"), *Adjustment.ToString(), bMoved);
+			//UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (success = %d)"), *Adjustment.ToString(), bMoved);
 
 			// Still stuck?
 			if (bMoved == false && SweepOutHit.bStartPenetrating)
@@ -741,7 +743,7 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 				if (SecondMTD != Adjustment && CombinedMTD.IsZero() == false)
 				{
 					bMoved = MoveUpdatedComponent(UpdatedComponent, CombinedMTD, NewRotationQuat, true, nullptr, ETeleportType::TeleportPhysics);
-					UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (MTD combo success = %d)"), *CombinedMTD.ToString(), bMoved);
+					///UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (MTD combo success = %d)"), *CombinedMTD.ToString(), bMoved);
 				}
 			}
 
@@ -754,7 +756,7 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 				if (MoveDelta.IsZero() == false)
 				{
 					bMoved = MoveUpdatedComponent(UpdatedComponent, Adjustment + MoveDelta, NewRotationQuat, true, nullptr, ETeleportType::TeleportPhysics);
-					UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (adjusted attempt success = %d)"), *(Adjustment + MoveDelta).ToString(), bMoved);
+					//UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (adjusted attempt success = %d)"), *(Adjustment + MoveDelta).ToString(), bMoved);
 
 					// Finally, try the original move without MTD adjustments, but allowing depenetration along the MTD normal.
 					// This was blocked because MOVECOMP_NeverIgnoreBlockingOverlaps was true for the original move to try a better depenetration normal, but we might be running in to other geometry in the attempt.
@@ -762,7 +764,7 @@ bool UPowerConveyorMovementComponent::ResolvePenetrationImpl(USceneComponent* Up
 					if (!bMoved && FVector::DotProduct(MoveDelta, Adjustment) > 0.0f)
 					{
 						bMoved = MoveUpdatedComponent(UpdatedComponent, MoveDelta, NewRotationQuat, true, nullptr, ETeleportType::TeleportPhysics);
-						UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (Original move, attempt success = %d)"), *(MoveDelta).ToString(), bMoved);
+						//UE_LOG(LogMovement, Verbose, TEXT("ResolvePenetration:   sweep by %s (Original move, attempt success = %d)"), *(MoveDelta).ToString(), bMoved);
 					}
 				}
 			}
@@ -793,7 +795,7 @@ bool UPowerConveyorMovementComponent::SafeMoveUpdatedComponent(USceneComponent* 
 	{
 		// Conditionally ignore blocking overlaps (based on CVar)
 		const EMoveComponentFlags IncludeBlockingOverlapsWithoutEvents = (MOVECOMP_NeverIgnoreBlockingOverlaps | MOVECOMP_DisableBlockingOverlapDispatch);
-		TGuardValue<EMoveComponentFlags> ScopedFlagRestore(MoveComponentFlags, MovementComponentCVars::MoveIgnoreFirstBlockingOverlap ? MoveComponentFlags : (MoveComponentFlags | IncludeBlockingOverlapsWithoutEvents));
+		TGuardValue<EMoveComponentFlags> ScopedFlagRestore(MoveComponentFlags, 0 ? MoveComponentFlags : (MoveComponentFlags | IncludeBlockingOverlapsWithoutEvents));
 		bMoveResult = MoveUpdatedComponent(UpdatedComponent, Delta, NewRotation, bSweep, &OutHit, Teleport);
 	}
 

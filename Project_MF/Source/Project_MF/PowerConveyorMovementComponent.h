@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "PowerMovementComponent.h"
 #include "Components/ArrowComponent.h"
+#include "GameFramework/MovementComponent.h"
 #include "PowerConveyorMovementComponent.generated.h"
 
 /**
