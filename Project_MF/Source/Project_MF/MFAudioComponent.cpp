@@ -64,56 +64,56 @@ void UMFAudioComponent::OnCollisionEnter(AActor* Collision)
 {
 	if (GetOwner()->GetVelocity().Size() > 10.0f)
 	{
-		bool bSilence = false;
-		UMFAudioComponent* TargetAudioComp = Collision->FindComponentByClass<UMFAudioComponent>();
-		if (::IsValid(TargetAudioComp) == true)
-		{
-			UCustomGameInstance* GameInstance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
-			if (::IsValid(GameInstance) == true)
-			{
-				for (int32 i = 0; i < GameInstance->MaterialTypes.Num(); i = i + 1)
-				{
-					if (TargetAudioComp->MaterialType == GameInstance->MaterialTypes[i].MaterialType)
-					{
-						for (int32 j = 0; j < GameInstance->MaterialTypes[i].Ignore.Num(); j = j + 1)
-						{
-							if (MaterialType == GameInstance->MaterialTypes[i].Ignore[j])
-							{
-								bSilence = true;
-								break;
-							}
-						}
-						break;
-					}
-				}
-			}
-		}
+		//bool bSilence = false;
+		//UMFAudioComponent* TargetAudioComp = Collision->FindComponentByClass<UMFAudioComponent>();
+		//if (::IsValid(TargetAudioComp) == true)
+		//{
+			//UCustomGameInstance* GameInstance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
+			//if (::IsValid(GameInstance) == true)
+			//{
+			//	for (int32 i = 0; i < GameInstance->MaterialTypes.Num(); i = i + 1)
+			//	{
+			//		if (TargetAudioComp->MaterialType == GameInstance->MaterialTypes[i].MaterialType)
+			//		{
+			//			for (int32 j = 0; j < GameInstance->MaterialTypes[i].Ignore.Num(); j = j + 1)
+			//			{
+			//				if (MaterialType == GameInstance->MaterialTypes[i].Ignore[j])
+			//				{
+			//					bSilence = true;
+			//					break;
+			//				}
+			//			}
+			//			break;
+			//		}
+			//	}
+			//}
+		//}
 
 		VolumeMultiplier = GetOwner()->GetVelocity().Size() / 100;
 
-		if (bSilence == false)
-		{
-			if (::IsValid(Sound) == false)
-			{
-				UCustomGameInstance* GameInstance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
-				if (::IsValid(GameInstance) == true)
-				{
-					for (int32 i = 0; i < GameInstance->MaterialTypes.Num(); i = i + 1)
-					{
-						if (MaterialType == GameInstance->MaterialTypes[i].MaterialType)
-						{
-							if (::IsValid(GameInstance->MaterialTypes[i].MaterialSound) == true)
-							{
-								Sound = GameInstance->MaterialTypes[i].MaterialSound;
-							}
-							break;
-						}
-					}
-				}
-			}
+		//if (bSilence == false)
+		//{
+		//	if (::IsValid(Sound) == false)
+		//	{
+				//UCustomGameInstance* GameInstance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
+				//if (::IsValid(GameInstance) == true)
+				//{
+				//	for (int32 i = 0; i < GameInstance->MaterialTypes.Num(); i = i + 1)
+				//	{
+				//		if (MaterialType == GameInstance->MaterialTypes[i].MaterialType)
+				//		{
+				//			if (::IsValid(GameInstance->MaterialTypes[i].MaterialSound) == true)
+				//			{
+				//				Sound = GameInstance->MaterialTypes[i].MaterialSound;
+				//			}
+				//			break;
+				//		}
+				//	}
+				//}
+			//}
 
 			Play();
-		}
+		//}
 	}
 }
 

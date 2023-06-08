@@ -9,15 +9,15 @@
 #include "Sound/SoundClass.h"
 #include "CustomGameInstance.generated.h"
 
-USTRUCT(BlueprintType)
-struct FMaterialSoundData
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> MaterialSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Ignore;
-};
+//USTRUCT(BlueprintType)
+//struct FMaterialSoundData
+//{
+//	GENERATED_BODY()
+//
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> MaterialSound;
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Ignore;
+//};
 
 /*
 *게임을 전반적으로 관리하는 기능들이 내장된 GameInstance파생 클래스입니다.
@@ -36,7 +36,7 @@ private:
 protected:
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
 
 
 
