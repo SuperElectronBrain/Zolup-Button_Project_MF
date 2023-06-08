@@ -5,6 +5,7 @@
 #include "MagneticComponent.h"
 #include "PlayerUIMagneticInfoWidget.h"
 #include "PlayerUIAimWidget.h"
+#include "PlayerUIBloodWidget.h"
 #include "CustomGameInstance.h"
 
 void UPlayerUICanvasWidget::NativeOnInitialized()
@@ -13,6 +14,7 @@ void UPlayerUICanvasWidget::NativeOnInitialized()
 
 	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
 	_Aim = Cast<UPlayerUIAimWidget>(GetWidgetFromName(TEXT("PlayerUI_Aim")));
+	_Blood = Cast<UPlayerUIBloodWidget>(GetWidgetFromName(TEXT("PlayerUI_Blood")));
 }
 
 void UPlayerUICanvasWidget::NativeConstruct()
@@ -37,4 +39,10 @@ void UPlayerUICanvasWidget::GetAimWidget(TWeakObjectPtr<UPlayerUIAimWidget>& out
 {
 	outPtr.Reset();
 	outPtr = _Aim;
+}
+
+void UPlayerUICanvasWidget::GetBloodEffectWidget(TWeakObjectPtr<UPlayerUIBloodWidget>& outPtr) const
+{
+	outPtr.Reset();
+	outPtr = _Blood;
 }

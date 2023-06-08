@@ -379,7 +379,7 @@ void UPlayerUIAimWidget::NativeConstruct()
 
 	/*페이드 델리게이트 추가*/
 	if (_UIManager.IsValid())
-		_FadeDelegateHandle = _UIManager->OnUIFadeChange.AddUObject(this, &UPlayerUIAimWidget::FadeChange);
+		_UIManager->OnUIFadeChange.AddDynamic(this, &UPlayerUIAimWidget::FadeChange);
 
 }
 
@@ -389,7 +389,7 @@ void UPlayerUIAimWidget::NativeDestruct()
 
 	/*페이드 델리게이트 제거*/
 	if (_UIManager.IsValid())
-		_UIManager->OnUIFadeChange.Remove(_FadeDelegateHandle);
+		_UIManager->OnUIFadeChange.RemoveDynamic(this, &UPlayerUIAimWidget::FadeChange);
 }
 
 

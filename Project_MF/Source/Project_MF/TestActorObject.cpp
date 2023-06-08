@@ -2,34 +2,54 @@
 
 
 #include "TestActorObject.h"
-#include "MagneticSenserComponent.h"
-#include "MagSenserEffect_EnchantComponent.h"
-#include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h"
+#include "MagneticComponent.h"
+#include "MagneticFieldEffectComponent.h"
 
 // Sets default values
 ATestActorObject::ATestActorObject()
 {
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 	/*Sphere*/
 	RootComponent = Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere"));
 
-	/*Senser*/
-	Senser = CreateDefaultSubobject<UMagneticSenserComponent>(TEXT("SENSER"));
-	Senser->SetupAttachment(Sphere);
-	
-	/*Box*/
-	Box = CreateDefaultSubobject<UBoxComponent>(TEXT("BOX"));
-	Box->SetupAttachment(Senser);
+	/**Effect*/
+	FieldEffect = CreateDefaultSubobject<UMagneticFieldEffectComponent>(TEXT("EFFECT"));
+	FieldEffect->SetupAttachment(RootComponent);
+}
 
-	/*Box*/
-	Box2 = CreateDefaultSubobject<UBoxComponent>(TEXT("BOX2"));
-	Box2->SetupAttachment(Senser);
+void ATestActorObject::BeginPlay()
+{
+	Super::BeginPlay();
+}
 
-	/*Effect*/
-	Effect = CreateDefaultSubobject<UMagSenserEffect_EnchantComponent>(TEXT("EFFECT"));
-	Effect->SetupAttachment(Senser);
+void ATestActorObject::TickActor(float DeltaTime, enum ELevelTick TickType, FActorTickFunction& ThisTickFunction)
+{
+	Super::TickActor(DeltaTime, TickType, ThisTickFunction);
+
+	UE_LOG(LogTemp, Warning, TEXT("leftTime: %f"), leftTime)
+	if (leftTime<=0.f)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("적용됨."))
+		const EMagneticType currType = FieldEffect->GetFieldMagneticType();
+
+		switch (type) {
+			case(0): 
+				FieldEffect->SetMagneticFieldInfo(EMagneticType::S, 200.f);
+				break;
+
+			case(1):
+				FieldEffect->SetMagneticFieldInfo(EMagneticType::NONE, 300.f);
+				break;
+		}
+
+		leftTime = 10.f;
+		type++;
+		if (type > 1) type = 0;
+	}
+
+	leftTime -= DeltaTime;
 }
 
 

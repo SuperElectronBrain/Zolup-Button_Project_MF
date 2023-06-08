@@ -9,6 +9,7 @@
 class UImage;
 class UPlayerUIMagneticInfoWidget;
 class UPlayerUIAimWidget;
+class UPlayerUIBloodWidget;
 /**
  * 
  */
@@ -25,6 +26,7 @@ public:
 
 	void GetMagneticInfoWidget(TWeakObjectPtr<UPlayerUIMagneticInfoWidget>& outPtr) const;
 	void GetAimWidget(TWeakObjectPtr<UPlayerUIAimWidget>& outPtr) const;
+	void GetBloodEffectWidget(TWeakObjectPtr<UPlayerUIBloodWidget>& outPtr) const;
 
 private:
 	/*fields and Components*/
@@ -33,5 +35,8 @@ private:
 
 	UPROPERTY()
 	UPlayerUIAimWidget* _Aim;
+
+	UPROPERTY()
+	UPlayerUIBloodWidget* _Blood;
 	
 };

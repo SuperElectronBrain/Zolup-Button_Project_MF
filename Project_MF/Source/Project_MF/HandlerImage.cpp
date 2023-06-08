@@ -1,5 +1,4 @@
 #include "HandlerImage.h"
-#include "GameUIHandler.h"
 
 float UHandlerImage::GetAlpha() const { return ColorAndOpacity.A; }
 void UHandlerImage::SetAlpha(float newAlpha)

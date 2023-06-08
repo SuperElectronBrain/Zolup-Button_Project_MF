@@ -7,13 +7,12 @@
 UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
-
-
 }
 
 void UCustomGameInstance::Init()
 {
 	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
+
 	Super::Init();
 
 	//if (::IsValid(SoundMix) == true && ::IsValid(SoundClass) == true)

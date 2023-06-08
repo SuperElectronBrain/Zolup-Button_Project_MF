@@ -1,8 +1,6 @@
 #include "MagneticComponent.h"
-#include "Components/SceneComponent.h"
-#include "Components/SplineComponent.h"
-#include "Components/SplineMeshComponent.h"
 #include "MagneticMovementComponent.h"
+#include "MagneticFieldEffectComponent.h"
 #include "Niagara/Classes/NiagaraSystem.h"
 #include "Niagara/Public/NiagaraComponent.h"
 #include "Niagara/Public/NiagaraFunctionLibrary.h"
@@ -11,10 +9,14 @@ UMagneticComponent::UMagneticComponent()
 {
 	#pragma region Summary
 	PrimaryComponentTick.bCanEverTick = true;
+	_lastMoveType = EMagnetMoveType::NONE;
 
-	/*CDO*/
+	/*****************************************************
+	* CDO( Material + Effect )
+	* 이 컴포넌트에서 사용할 자성부여 머터리얼과 자기장 이펙트를 가져옵니다.
+	*****************************************************/
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> GRANT_MATERIAL(
-		TEXT("/Game/Effect/Magnetic/Glow_Ver4/Glow_magnet_Default2.Glow_magnet_Default2")
+		TEXT("/Game/Effect/Magnetic/Glow/Glow_ver5.Glow_ver7")
 	);
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> FIELD_SCOPE_MATERIAL(
 		TEXT("/Game/Effect/Magnetic/Field/magnet_scope_m.magnet_scope_m")
@@ -23,7 +25,14 @@ UMagneticComponent::UMagneticComponent()
 		TEXT("/Game/Effect/Magnetic/Field/magnet_scope_grow_big_nia.magnet_scope_grow_big_nia")
 	);
 
-	/*FieldCollision*/
+	if (GRANT_MATERIAL.Succeeded()) MagneticApplyMaterial = GRANT_MATERIAL.Object;
+	if (FIELD_SCOPE_MATERIAL.Succeeded()) FieldScopeMaterial = FIELD_SCOPE_MATERIAL.Object;
+
+
+	/**********************************************************
+	* Component( Sphere )
+	* 자기장 역할을 할 구체 컴포넌트를 초기화합니다.
+	**********************************************************/
 	FieldCollision = CreateDefaultSubobject<USphereComponent>(TEXT("FIELD_COLLISION"));
 	FieldCollision->SetupAttachment(this);
 	FieldCollision->SetSphereRadius(0.f);
@@ -32,11 +41,16 @@ UMagneticComponent::UMagneticComponent()
 	FieldCollision->SetCollisionProfileName(MAGNETIC_COLLISION_PROFILE);
 	FieldCollision->SetVisibility(true, true);
 	FieldCollision->ShapeColor = FColor::Magenta;
+	
 
-	/*Meshes or Materials*/
-	if (GRANT_MATERIAL.Succeeded()) MagneticApplyMaterial = GRANT_MATERIAL.Object;
-	if (FIELD_SCOPE_MATERIAL.Succeeded()) FieldScopeMaterial = FIELD_SCOPE_MATERIAL.Object;
-	if (FIELD_EFFECT.Succeeded()) MagneticFieldEffect = FIELD_EFFECT.Object;
+	/************************************************************
+	* Component( MagneticFieldEffect )
+	* 자기장 이펙트 컴포넌트를 초기화합니다.
+	*************************************************************/
+	FieldEffectComp = CreateDefaultSubobject<UMagneticFieldEffectComponent>(TEXT("FIELD_EFFECT"));
+	FieldEffectComp->SetUsingAbsoluteScale(true);
+	FieldEffectComp->SetupAttachment(FieldCollision);
+
 	#pragma endregion
 }
 
@@ -78,7 +92,8 @@ void UMagneticComponent::InitParentAndMaterial()
 
 bool UMagneticComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
-	return (ChildComponent == FieldCollision || ChildComponent == MagneticFieldEffectComp);
+	return true;
+	return (ChildComponent == FieldCollision || ChildComponent == FieldEffectComp);
 }
 
 void UMagneticComponent::SettingMagnetWeightAndFieldRange()
@@ -96,7 +111,7 @@ void UMagneticComponent::SettingMagnetWeightAndFieldRange()
 	if (FieldCollision && ::IsValid(FieldCollision) && FieldCollision->GetAttachParent()==this)
 	{
 		FieldCollision->SetSphereRadius(Weight * MagneticFieldRadiusScale + (CurrEnchantCount * EnchantRange));
-		_goalRadius = FinalMagneticFieldRadius = FieldCollision->GetScaledSphereRadius();
+		FinalMagneticFieldRadius = FieldCollision->GetScaledSphereRadius();
 		_magActivate = false;
 	}
 }
@@ -229,7 +244,7 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 
 		/*자성이 부여되었을 때의 이펙트*/
 		case(EMagneticEffectColorType::GRANT_EFFECT):
-			return (isN ? FLinearColor(5.f, 0.f, 0.049996f, 1.f) : FLinearColor(0.014019f, 0.f, 70.f, 1.f));
+			return (isN ? FLinearColor(25.f, 0.f, 0.083315f, 1.f) : FLinearColor(0.f, 0.160623f, 10.f, 1.f));
 	
 		/*자성 비네팅 이펙트*/
 		case(EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT):
@@ -273,29 +288,6 @@ void UMagneticComponent::BeginPlay()
 		CurrMagnetic = EMagneticType::NONE;
 		SetCurrentMagnetic(type);
 	}
-
-	/*자성 필드 컴포넌트가 생성되어있지 않다면 생성한다.*/
-	if (MagneticFieldEffectComp==nullptr && MagneticFieldEffect)
-	{
-		MagneticFieldEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
-			MagneticFieldEffect,
-			FieldCollision,
-			NAME_None,
-			FVector::ZeroVector,
-			FRotator::ZeroRotator,
-			EAttachLocation::SnapToTargetIncludingScale,
-			false,
-			false
-		);
-		MagneticFieldEffectComp->SetUsingAbsoluteScale(true);
-
-		//새로운 머터리얼을 적용한다.
-		if(FieldScopeMaterial) _fieldScopeMaterial = UMaterialInstanceDynamic::Create(FieldScopeMaterial, this);
-		if (_fieldScopeMaterial) {
-			MagneticFieldEffectComp->SetVariableMaterial(TEXT("ScopeMaterial"), _fieldScopeMaterial);
-		}
-
-	}
 }
 
 void UMagneticComponent::DestroyComponent(bool bPromoteChilderen)
@@ -332,7 +324,7 @@ void UMagneticComponent::SetEnchantInfo(int32 maxEnchantCount, float enchantWeig
 	//자성이 활성화된 상태라면
 	if (CurrMagnetic != EMagneticType::NONE)
 	{
-		_goalRadius = FieldCollision->GetScaledSphereRadius();
+		FieldEffectComp->SetMagneticFieldInfo(CurrMagnetic, FinalMagneticFieldRadius);
 		_magActivate = false;
 	}
 }
@@ -410,7 +402,7 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 	{
 		CurrHaveMagneticSeconds = 0.f;
 		CurrEnchantCount = 0;
-		_goalRadius = 0.f;
+		FieldEffectComp->SetMagneticFieldInfo(EMagneticType::NONE, FinalMagneticFieldRadius);
 
 		//Simulate physics 적용중이였다면, 중력 적용을 원상복귀 시킨다.
 		if (_parent && _parent->IsSimulatingPhysics()) _parent->SetEnableGravity(bDefaultPrimitiveGravity);
@@ -428,67 +420,15 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 		CurrHaveMagneticSeconds = MaxHaveMagneticSeconds;
 		if (changeMagnetic)
 		{
-			_applyRadius = .1f;
 			_magActivate = false;
 		}
 
 		SettingMagnetWeightAndFieldRange();
-		UpdateFieldMeshsColor(newType);
+		FieldEffectComp->SetMagneticFieldInfo(CurrMagnetic, FinalMagneticFieldRadius);
 	}
 
 	OnComponentMagneticChanged.Broadcast(CurrMagnetic, this);
 	SetParentMaterial(CurrMagnetic);
-	#pragma endregion
-}
-
-void UMagneticComponent::UpdateFieldMeshsColor(EMagneticType type)
-{
-	if (_fieldScopeMaterial)
-	{
-		_fieldScopeMaterial->SetVectorParameterValue(TEXT("color"), UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::RING_EFFECT));
-
-		//UNiagaraDataInterface* param = overrideParams.GetDataInterface(
-		//	FNiagaraVariable(FNiagaraDataInterface)
-		//)
-
-		//MagneticFieldEffectComp->SetColorParameter(
-		//	TEXT("RingColor"),
-		//	GetMagneticEffectColor(type, EMagneticEffectColorType::RING_EFFECT)
-		//);
-	}
-}
-
-void UMagneticComponent::UpdateMagneticField()
-{
-	#pragma region Summary
-	if (_parent == nullptr && !::IsValid(_parent))
-	{
-		return;
-	}
-
-	if (MagneticFieldEffectComp)
-	{
-		if (_magActivate==false)
-		{
-			_magActivate = true;
-			MagneticFieldEffectComp->ReinitializeSystem();
-			MagneticFieldEffectComp->ActivateSystem(true);
-		}
-		MagneticFieldEffectComp->SetVectorParameter(TEXT("effect_scale"), FVector::OneVector * (_applyRadius * MAGNETIC_FIELD_RADIUS_DIV));
-	}
-
-	return;
-	#pragma endregion
-}
-
-void UMagneticComponent::ClearMagneticField()
-{
-	#pragma region Summary
-	if (MagneticFieldEffectComp)
-	{
-		MagneticFieldEffectComp->Deactivate();
-		_magActivate = false;
-	}
 	#pragma endregion
 }
 
@@ -505,21 +445,9 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		if (CurrHaveMagneticSeconds <= 0.f)
 		{
 			CurrHaveMagneticSeconds = 0.f;
-			_goalRadius = 0.f;
+			FieldEffectComp->SetMagneticFieldInfo(CurrMagnetic, 0.f);
 			SetCurrentMagnetic(EMagneticType::NONE);
 		}
-	}
-
-	//자기장 애니메이션
-	if (bShowMagneticField && _applyRadius > 0.f) {
-		_applyRadius = _applyRadius + .1f * (_goalRadius - _applyRadius);
-
-		if (CurrMagnetic == EMagneticType::NONE && _applyRadius <= 0.09f)
-		{
-			_applyRadius = 0.f;
-			ClearMagneticField();
-		}
-		else UpdateMagneticField();
 	}
 
 	//자성 변경 애니메이션
@@ -530,12 +458,12 @@ void UMagneticComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 		if (FMath::Abs(gap)<=0.02f)
 		{
 			_currMagMaterialApplyRatio = _goalMagMaterialApplyRatio;
-			_material->SetScalarParameterValue(TEXT("glow_alpha"), _currMagMaterialApplyRatio);
+			_material->SetScalarParameterValue(MAGNETIC_GRANT_COLOR_PARAM, _currMagMaterialApplyRatio);
 		}
 		else
 		{
 			_currMagMaterialApplyRatio += 0.1f * gap;
-			_material->SetScalarParameterValue(TEXT("glow_alpha"), _currMagMaterialApplyRatio);
+			_material->SetScalarParameterValue(MAGNETIC_GRANT_COLOR_PARAM, _currMagMaterialApplyRatio);
 		}
 	}
 

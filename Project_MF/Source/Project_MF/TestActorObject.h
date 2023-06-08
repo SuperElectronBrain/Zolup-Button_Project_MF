@@ -10,6 +10,7 @@ class UMagneticSenserComponent;
 class UMagSenserEffect_EnchantComponent;
 class UBoxComponent;
 class USphereComponent;
+class UMagneticFieldEffectComponent;
 
 UCLASS()
 class PROJECT_MF_API ATestActorObject : public AActor
@@ -21,18 +22,16 @@ public:
 	ATestActorObject();
 
 private:
-	UPROPERTY(VisibleAnywhere, Category = Test, Meta = (AllowPrivateAccess = true))
-	UMagneticSenserComponent* Senser;
+	float leftTime = 10.f;
+	int type = 0;
 
-	UPROPERTY(VisibleAnywhere, Category = Test, Meta = (AllowPrivateAccess = true))
-	UMagSenserEffect_EnchantComponent* Effect;
+	virtual void BeginPlay() override;
+	virtual void TickActor(float DeltaTime, enum ELevelTick TickType, FActorTickFunction& ThisTickFunction) override;
 
-	UPROPERTY(VisibleAnywhere, Category = Test, Meta = (AllowPrivateAccess = true))
-	UBoxComponent* Box;
-
-	UPROPERTY(VisibleAnywhere, Category = Test, Meta = (AllowPrivateAccess = true))
-	UBoxComponent* Box2;
 
 	UPROPERTY(VisibleAnywhere, Category = Test, Meta = (AllowPrivateAccess = true))
 	USphereComponent* Sphere;
+
+	UPROPERTY(VisibleAnywhere, Category = Test, Meta = (AllowPrivateAccess = true))
+	UMagneticFieldEffectComponent* FieldEffect;
 };

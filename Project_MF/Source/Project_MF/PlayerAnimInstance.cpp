@@ -43,62 +43,56 @@ void UPlayerAnimInstance::AnimNotify_ShootStart()
 	OnShootStartEvent.Broadcast();
 }
 
-void UPlayerAnimInstance::PlayGlovePulledUpMotage()
+void UPlayerAnimInstance::AnimNotify_ShootEnd()
+{
+	Montage_SetPlayRate(ShootMontage, .9f);
+}
+
+void UPlayerAnimInstance::AnimNotify_ResetStart()
+{
+	OnResetStartEvent.Broadcast();
+}
+
+void UPlayerAnimInstance::PlayGlovePulledUpMotage(float startTime, float speed)
 {
 	if (GloveActonMontage == nullptr) return;
-
-	_ArmLAddOffsetTransform.SetLocation(FVector(-6.f, 2.f, 45.f));
-	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
-
-	Montage_Play(GloveActonMontage, 2.f);
+	Montage_Play(GloveActonMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
 void UPlayerAnimInstance::PlayGloveStickMotage(float startTime, float speed)
 {
 	if (GloveAtMontage == nullptr || Montage_IsPlaying(GloveAtMontage)) return;
-
-	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
-	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 	Montage_Play(GloveAtMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
-void UPlayerAnimInstance::PlaySelfResetMontage()
+void UPlayerAnimInstance::PlaySelfResetMontage(float startTime, float speed)
 {
 	if (GloveOffMontage == nullptr) return;
-
-	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
-	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
-	Montage_Play(GloveOffMontage, 2.f);
+	Montage_Play(GloveOffMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
 void UPlayerAnimInstance::PlaySelfShootMontage(float startTime, float speed)
 {
 	if (GloveOnMontage == nullptr) return;
-
-	_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
-	_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
 	Montage_Play(GloveOnMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
-void UPlayerAnimInstance::PlayResetMontage()
+void UPlayerAnimInstance::PlayResetMontage(float startTime, float speed)
 {
 	if (ResetMontage == nullptr) return;
 
 	if (!Montage_IsPlaying(ResetMontage))
 	{
-		_ArmLAddOffsetTransform.SetLocation(FVector::ZeroVector);
-		_ArmLAddOffsetTransform.SetRotation(FQuat::Identity);
-
 		float startTime = (GetSelfShootMontageIsPlaying() ? .6f : .3f);
 		Montage_Play(ResetMontage, .7f, EMontagePlayReturnType::MontageLength, startTime);
 	}
 }
 
-void UPlayerAnimInstance::PlayAttackMontage()
+void UPlayerAnimInstance::PlayAttackMontage(float startTime, float speed)
 {
 	if (ShootMontage == nullptr) return;
 
-	Montage_Play(ShootMontage, 1.5f);
+	Montage_Play(ShootMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
 }
 
 void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply)
@@ -120,7 +114,6 @@ void UPlayerAnimInstance::SetHandFixedTransform(EHandType armType, bool apply)
 		_LForArmTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LPOARM_BONE);
 		_LHandTransform = _gameCharacter->GetMesh()->GetSocketTransform(PLAYER_LHAND_BONE);
 	}
-	else _targetMagnetic.Reset();
 }
 
 void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
@@ -167,7 +160,6 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 		FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
 
 		//적용.
-		_ArmLAddOffsetTransform.SetLocation((hit.Location - startL) - down * 30.f);
 	}
 
 	//오른손도 짚을 곳을 구하고, 그에 따른 이동을 적용한다.
@@ -190,15 +182,7 @@ void UPlayerAnimInstance::ApplyCreepyStandingHands(AGamePlayerCharacter* player)
 		FRotator lastRotation = FRotationMatrix::MakeFromX(result).Rotator();
 
 		//적용.
-		_ArmRAddOffsetTransform.SetLocation((hit.Location - startR) - down*45.f);
 	}
-
-	//디버그
-	//DrawDebugLine(GetWorld(), startL, endL, FColor::Yellow, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + hit.Normal * 110.f, FColor::Red, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + result * 110.f, FColor::Blue, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + rightCross * 110.f, FColor::Purple, false, -1.f, 0U, 8.f);
-	//DrawDebugLine(GetWorld(), hit.Location, hit.Location + upCross * 110.f, FColor::Black, false, -1.f, 0U, 8.f);
 	#pragma endregion
 }
 
@@ -232,14 +216,14 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 	FVector down = player->GetPlayerDownVector();
 	FVector forarmTohandDir = (forarmPos - claviclePos).GetSafeNormal();
 
-	FVector start = player->GetActorLocation() + (right* -10.f) + (down*-50.f) + (forward*-10.f);
+	FVector start = player->GetActorLocation() + (right* -20.f) + (down*-70.f) + (forward*-10.f);
 	FVector end = start + (forward * CLA2HAND_LEN);
 
 	FHitResult result;
 	FCollisionQueryParams params;
 	params.AddIgnoredActor(player);
 
-	//Test Trace
+	//레이캐스트로 앞에 장애물이 있는지 검사한다.
 	bool ret = GetWorld()->LineTraceSingleByChannel(
 		result,
 		start,
@@ -253,14 +237,17 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 	{
 		//팔이 접힐 때의 손의 위치를 지정한다.
 		bApplyFold_LArm = true;
-		FoldLArmHandTransform.SetLocation(result.Location +result.Normal * 1.f);
 		
 		//손이 벽을 짚도록 한다.
 		FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
 		FVector upCross = -FVector::CrossProduct(result.Normal, rightCross);
 		FVector resultCross = upCross + rightCross;
+		FVector finalLocation = result.Location;
 
 		FoldLArmHandTransform.SetRotation(resultCross.Rotation().Quaternion());
+		FoldLArmHandTransform.SetLocation(finalLocation + (result.Normal * 1.f));
+		ForarmTouchLocation = finalLocation + (result.Normal * 20.f) + (upCross * -8.f) + (rightCross * -.15f);
+		ForarmTouchRotation = (FoldLArmHandTransform.GetLocation() - ForarmTouchLocation).Rotation();
 
 		/*충돌시의 디버그용*/
 		//DrawDebugHitPoint(result.Location, result.Normal);
@@ -270,8 +257,6 @@ void UPlayerAnimInstance::FoldArmTestByStandHand(EHandType type, const AGamePlay
 
 	}
 	else bApplyFold_LArm = false;
-
-	//DrawDebugLine(GetWorld(), start, _LArmJointLocation, FColor::Yellow, false, -1.f, 0U, 1.f);
 }
 
 void UPlayerAnimInstance::NativeBeginPlay()

@@ -6,9 +6,10 @@
 
 UGameUIManager::UGameUIManager()
 {
-	_PlayerUICanvas = nullptr;
-
-	/*CDO*/
+	/*********************************************************
+	* CDO( UserWidget )
+	* 전역으로 사용될 위젯 에셋들을 가져오고, 유효하면 참조를 저장합니다.
+	***********************************************************/
 	static ConstructorHelpers::FClassFinder<UUserWidget> PLAYER_UI_CANVAS(
 		TEXT("/Game/UI/Player/PlayerUI_Canvas.PlayerUI_Canvas_C")
 	);
@@ -16,7 +17,7 @@ UGameUIManager::UGameUIManager()
 		TEXT("/Game/UI/UI_BlackScreen.UI_BlackScreen_C")
 	);
 
-	/*Get Class*/
+
 	if (PLAYER_UI_CANVAS.Succeeded()) PlayerUICanvas_Class = PLAYER_UI_CANVAS.Class;
 	if (BLACK_SCREEN.Succeeded()) BlackScreen_Class = BLACK_SCREEN.Class;
 }
@@ -30,9 +31,10 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 	{
 		FUIFadeInfo& info = _fadeInfos[i];
 		float progressRatio = 0.f;
+		bool bHandlerIsValid = (::IsValid(info.handler.GetObject())) || (info.handler.GetInterface() != nullptr);
 
 		//유효하지 않다면 삭제.
-		if (info.handler==nullptr || info.pendingKill)
+		if (bHandlerIsValid==false || info.pendingKill)
 		{
 			_fadeInfos.RemoveAt(i);
 			i--;
@@ -94,7 +96,7 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 			info.progress++;
 
 			//종료처리
-			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A) || info.handler==nullptr || info.pendingKill)
+			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A) || bHandlerIsValid ==false || info.pendingKill)
 			{
 				_fadeInfos.RemoveAt(i);
 				i--;
@@ -130,7 +132,7 @@ void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
 	#pragma region Omission
 	//유효하지 않은 위젯이라면 스킵한다.
 	FUIFadeInfo info;
-	if (handler == nullptr) return;
+	if (::IsValid(handler.GetObject())==false) return;
 	info.handler = handler;
 
 	if (bStartAlphaUsedOrigin)
@@ -205,11 +207,59 @@ bool UGameUIManager::IsPlayingFadeByID(int fadeID)
 	return false;
 }
 
+UPlayerUICanvasWidget* UGameUIManager::GetPlayerUICanvasWidget()
+{
+	TWeakObjectPtr<UPlayerUICanvasWidget> temp;
+	GetPlayerUICanvasWidget(temp);
+
+	return temp.Get();
+}
+
+void UGameUIManager::StopFadeInOutByHandler(TScriptInterface<IGameUIHandler> handler)
+{
+	if (handler.GetInterface() == nullptr) return;
+
+	for (FUIFadeInfo& info : _fadeInfos)
+	{
+		if (info.handler != handler) continue;
+
+		//실행중임이 확인됬을 경우 pendingKill상태로 만든다.
+		info.pendingKill = true;
+		return;
+	}
+
+	return;
+}
+
+bool UGameUIManager::IsPlayingFadeByHandler(TScriptInterface<IGameUIHandler> handler)
+{
+	if (handler.GetInterface() == nullptr) return false;
+
+	for (FUIFadeInfo& info : _fadeInfos)
+	{
+		if (info.handler != handler) continue;
+
+		//실행중임이 확인됬을 경우
+		return true;
+	}
+
+	return false;
+}
+
+UUIBlackScreenWidget* UGameUIManager::GetUIBlackScreenWidget()
+{
+	TWeakObjectPtr<UUIBlackScreenWidget> temp;
+	GetUIBlackScreenWidget(temp);
+
+	return temp.Get();
+}
+
 void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>& outPtr)
 {
-	if (_BlackScreen==nullptr || (_BlackScreen && !::IsValid(_BlackScreen)))
+	if (::IsValid(_BlackScreen)==false && BlackScreen_Class)
 	{
-		_BlackScreen = Cast<UUIBlackScreenWidget>(CreateWidget(GetWorld(), BlackScreen_Class));
+		UGameInstance* ins = GetWorld()->GetGameInstance();
+		_BlackScreen = Cast<UUIBlackScreenWidget>(CreateWidget(ins, BlackScreen_Class));
 	}
 
 	outPtr.Reset();
@@ -218,12 +268,10 @@ void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>
 
 void UGameUIManager::GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidget>& outPtr)
 {
-	if (::IsValid(_PlayerUICanvas) == false)
+	if (::IsValid(_PlayerUICanvas)==false && PlayerUICanvas_Class)
 	{
-		if (::IsValid(PlayerUICanvas_Class) == true)
-		{
-			_PlayerUICanvas = Cast<UPlayerUICanvasWidget>(CreateWidget(GetWorld(), PlayerUICanvas_Class));
-		}
+		UGameInstance* ins = GetWorld()->GetGameInstance();
+		_PlayerUICanvas = Cast<UPlayerUICanvasWidget>(CreateWidget(ins, PlayerUICanvas_Class));
 	}
 
 	outPtr.Reset();
