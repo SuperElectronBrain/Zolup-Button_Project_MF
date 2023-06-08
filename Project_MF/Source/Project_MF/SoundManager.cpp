@@ -3,22 +3,22 @@
 
 #include "SoundManager.h"
 
-FSoundList* USoundManager::GetSoundList(FName SoundListName)
-{
-	for (int i = 0; i < SoundLists.Num(); i = i + 1)
-	{
-		if (SoundLists[i]->SoundListName == SoundListName.ToString())
-		{
-			return SoundLists[i];
-		}
-		else
-		{
-			return nullptr;
-		}
-	}
-
-	return nullptr;
-}
+//FSoundList* USoundManager::GetSoundList(FName SoundListName)
+//{
+//	for (int i = 0; i < SoundLists.Num(); i = i + 1)
+//	{
+//		if (SoundLists[i].SoundListName == SoundListName.ToString())
+//		{
+//			return &SoundLists[i];
+//		}
+//		else
+//		{
+//			return nullptr;
+//		}
+//	}
+//
+//	return nullptr;
+//}
 
 USoundManager::USoundManager()
 {
@@ -26,5 +26,4 @@ USoundManager::USoundManager()
 
 void USoundManager::Init()
 {
-
 }

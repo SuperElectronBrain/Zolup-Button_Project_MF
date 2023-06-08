@@ -8,13 +8,25 @@ UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
 
-
+	//static ConstructorHelpers::FClassFinder<USoundManager> BP_SOUND(TEXT("/Game/Blueprints/GameSetting/BP_SoundManager.BP_SoundManager_c"));
+	//if (BP_SOUND.Succeeded() == true)
+	//{
+	//	SoundManagerClass = BP_SOUND.Class;
+	//}
 }
 
 void UCustomGameInstance::Init()
 {
 	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
 	Super::Init();
+
+	//if (::IsValid(SoundManager) == false)
+	//{
+		//if (::IsValid(SoundManagerClass) == true)
+		//{
+			//SoundManager = NewObject<USoundManager>(this, SoundManagerClass, TEXT("SOUND_MANAGER"));
+		//}
+	//}
 
 	//if (::IsValid(SoundMix) == true && ::IsValid(SoundClass) == true)
 	//{

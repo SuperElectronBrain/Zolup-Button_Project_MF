@@ -204,14 +204,14 @@ void UPowerGenerateComponent::BeginDestroy()
 {
 	Super::BeginDestroy();
 
-	if (::IsValid(Collider) == true)
-	{
-		Collider->DestroyComponent();
-	}
-	if (::IsValid(Trigger) == true)
-	{
-		Trigger->DestroyComponent();
-	}
+	//if (::IsValid(Collider) == true)
+	//{
+	//	Collider->DestroyComponent();
+	//}
+	//if (::IsValid(Trigger) == true)
+	//{
+	//	Trigger->DestroyComponent();
+	//}
 }
 
 void UPowerGenerateComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)

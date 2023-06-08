@@ -7,6 +7,7 @@
 #include "GameUIManager.h"
 #include "Sound/SoundMix.h"
 #include "Sound/SoundClass.h"
+#include "SoundManager.h"
 #include "CustomGameInstance.generated.h"
 
 //USTRUCT(BlueprintType)
@@ -31,7 +32,9 @@ class PROJECT_MF_API UCustomGameInstance : public UGameInstance
 private:
 	UPROPERTY() bool bEditmode;
 
-	UPROPERTY() UGameUIManager* _UI;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<UGameUIManager> _UI;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<USoundManager> SoundManager;
+	//UPROPERTY() TSubclassOf<USoundManager> SoundManagerClass;
 
 protected:
 
@@ -49,6 +52,7 @@ protected:
 public:
 	UCustomGameInstance();
 	UGameUIManager* GetUIManager() const { return _UI; }
+	//USoundManager* GetSoundManager() { return SoundManager; }
 
 	bool GetEditmode();
 	void SetEditmode(bool param);
