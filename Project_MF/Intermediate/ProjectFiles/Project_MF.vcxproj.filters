@@ -222,6 +222,12 @@
     <ClInclude Include="..\..\Source\Project_MF\MFAudioComponent.h">
       <Filter>Source\Project_MF</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Project_MF\MFCollisionDamageComponent.cpp">
+      <Filter>Source\Project_MF</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Project_MF\MFCollisionDamageComponent.h">
+      <Filter>Source\Project_MF</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Project_MF\MFSaveGame.cpp">
       <Filter>Source\Project_MF</Filter>
     </ClCompile>

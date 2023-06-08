@@ -33,15 +33,13 @@ private:
 	UPROPERTY() bool bEditmode;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<UGameUIManager> _UI;
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<USoundManager> SoundManager;
-	//UPROPERTY() TSubclassOf<USoundManager> SoundManagerClass;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<USoundManager> SoundManager;
+	UPROPERTY() TSubclassOf<USoundManager> SoundManagerClass;
 
 protected:
 
 public:
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
-
-
 
 	//Methods
 private:
@@ -52,7 +50,7 @@ protected:
 public:
 	UCustomGameInstance();
 	UGameUIManager* GetUIManager() const { return _UI; }
-	//USoundManager* GetSoundManager() { return SoundManager; }
+	USoundManager* GetSoundManager() { return SoundManager; }
 
 	bool GetEditmode();
 	void SetEditmode(bool param);
