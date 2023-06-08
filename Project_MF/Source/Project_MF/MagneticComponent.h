@@ -1,14 +1,13 @@
 #pragma once
 #include "EngineMinimal.h"
-#include "MagneticMovementComponent.h"
+#include "Components/SceneComponent.h"
 #include "MagneticComponent.generated.h"
 
-class USceneComponent;
 class UNiagaraSystem;
 class UNiagaraComponent;
 class UMagneticMovementComponent;
-class UMagneticComponent;
-enum class EMagneticType : uint8;
+class UMagneticFieldEffectComponent;
+enum class EMagnetMoveType : uint8;
 
 /**
 *자석 컴포넌트가 가지는 자성의 종류에 대한 열거형입니다.
@@ -37,11 +36,12 @@ enum class EMagneticEffectColorType : uint8
 	GAUNTLET_THUNDER_EFFECT
 };
 
-/*해당 컴포넌트에서 쓰이는 컴파일 전용 상수다.*/
-constexpr const int					MAGNETIC_FIELD_PRECISION		= 60;
+/*해당 컴포넌트에서 쓰이는 컴파일 타임 상수다.*/
 constexpr const ECollisionChannel	MAGNETIC_COLLISION_OBJECTTYPE	= ECollisionChannel::ECC_GameTraceChannel11;
 constexpr const TCHAR*				MAGNETIC_COLLISION_PROFILE		= TEXT("MagneticField");
+constexpr const TCHAR*				MAGNETIC_GRANT_COLOR_PARAM		= TEXT("glow_alpha");
 
+/**해당 컴포넌트에서 제공하는 델리게이트들입니다.*/
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComponentMagneticChanged, EMagneticType, changedMagType, UMagneticComponent*, changedMagComp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FComponentMagnetBeginMovement, EMagnetMoveType, moveType, UMagneticComponent*, moveBeginMagComp, UMagneticComponent*, operatorMagComp);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FComponentMagnetEndMovement, EMagnetMoveType, prevMoveType, UMagneticComponent*, moveEndMagComp);
@@ -199,10 +199,6 @@ private:
 	///////////////////////////////////
 	//////   Private methods    ///////
 	///////////////////////////////////
-	void UpdateMagneticField();
-	void UpdateFieldMeshsColor(EMagneticType type);
-	void ClearMagneticField();
-
 	void InitParentAndMaterial();
 	void SetParentMaterial(EMagneticType type);
 
@@ -210,12 +206,9 @@ private:
 	///////////////////////////////
 	//// Fields and Components ////
 	///////////////////////////////
-	float _RotCounter = FMath::DegreesToRadians(360.f / MAGNETIC_FIELD_PRECISION); 
-	float _applyRadius = 0.f, _goalRadius = 0.f;
 	float _currMagMaterialApplyRatio=0.f, _goalMagMaterialApplyRatio = 0.f;
-	float _magFieldDiv = 1.f / 1000.f;
 	bool _magActivate = false;
-	EMagnetMoveType _lastMoveType = EMagnetMoveType::NONE;
+	EMagnetMoveType _lastMoveType;
 	bool _applyMovement = true;
 	UMagneticMovementComponent* _movement;
 
@@ -238,16 +231,19 @@ private:
 	float MaxHaveMagneticSeconds = 20.f;
 
 	UPROPERTY()
-	UNiagaraSystem* MagneticFieldEffect;
-
-	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AccessPrivateAccess = true))
-	UNiagaraComponent* MagneticFieldEffectComp;
+	UMagneticFieldEffectComponent* FieldEffectComp;
 
 	UPROPERTY(EditAnywhere, Category=Magnetic, Meta=(AccessPrivateAccess=true))
 	UMaterialInterface* MagneticApplyMaterial;
 
 	UPROPERTY()
+	UMaterialInterface* FieldScopeMaterial;
+
+	UPROPERTY()
 	UMaterialInstanceDynamic* _material;
+
+	UPROPERTY()
+	UMaterialInstanceDynamic* _fieldScopeMaterial;
 
 	UPROPERTY()
 	USphereComponent* FieldCollision;

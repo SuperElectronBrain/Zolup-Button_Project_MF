@@ -40,7 +40,6 @@ struct FActorBeginInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<AActor> Actor;
 	FTransform Transform;
 };
@@ -50,7 +49,6 @@ struct FActorCheckInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<AActor> Actor;
 	TWeakObjectPtr<AActor> CheckPoint;
 };
@@ -60,7 +58,6 @@ struct FMagneticBeginInfo
 {
 	GENERATED_BODY()
 
-public:
 	TWeakObjectPtr<UMagneticComponent> Magnetic;
 	EMagneticType Type;
 	float MaxHaveMagneticSeconds;

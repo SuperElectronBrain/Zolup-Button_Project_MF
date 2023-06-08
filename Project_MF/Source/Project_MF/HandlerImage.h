@@ -4,9 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/Image.h"
+#include "GameUIHandler.h"
 #include "HandlerImage.generated.h"
-
-class IGameUIHandler;
 
 /**
  * 

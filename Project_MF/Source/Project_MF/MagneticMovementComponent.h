@@ -17,6 +17,7 @@ enum class EMagnetMoveType : uint8
 UENUM()
 enum class EMagnetMoveAxisType : uint8
 {
+	NONE,
 	MOVE_ONLY_XY,
 	MOVE_ONLY_Z,
 	MOVE_XYZ

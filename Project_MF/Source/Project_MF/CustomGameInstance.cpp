@@ -7,7 +7,7 @@
 UCustomGameInstance::UCustomGameInstance()
 {
 	bEditmode = false;
-
+	
 	static ConstructorHelpers::FClassFinder<USoundManager> BP_SOUND(TEXT("/Game/Blueprints/GameSetting/BP_SoundManager.BP_SoundManager_c"));
 	if (BP_SOUND.Succeeded() == true)
 	{
@@ -18,6 +18,7 @@ UCustomGameInstance::UCustomGameInstance()
 void UCustomGameInstance::Init()
 {
 	_UI = NewObject<UGameUIManager>(this, TEXT("UI_MANAGER"));
+
 	Super::Init();
 
 	if (::IsValid(SoundManager) == false)

@@ -2,6 +2,8 @@
 
 #include "RotatingMagMovementComponent.h"
 #include "MagneticComponent.h"
+#include "MagneticMovementComponent.h"
+#include "GameFramework/MovementComponent.h"
 #include "DrawDebugHelpers.h"
 
 void URotatingMagMovementComponent::ApplyMovement(EMagnetMoveType type, UMagneticComponent* owner, UMagneticComponent* SafeMagOperator, float DeltaTime, FHitResult& HitResult)

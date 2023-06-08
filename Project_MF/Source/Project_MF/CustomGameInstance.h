@@ -8,6 +8,8 @@
 #include "Sound/SoundMix.h"
 #include "Sound/SoundClass.h"
 #include "SoundManager.h"
+#include "UIBlackScreenWidget.h"
+#include "Blueprint/UserWidget.h"
 #include "CustomGameInstance.generated.h"
 
 //USTRUCT(BlueprintType)

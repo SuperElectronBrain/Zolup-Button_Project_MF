@@ -27,7 +27,7 @@ void UGameCheckPointRangeComponent::EndPlay(const EEndPlayReason::Type EndPlayRe
 
 	if (_Instance.IsValid())
 	{
-		_Instance->GetUIManager()->OnUIFadeChange.Remove(_handle);
+		_Instance->GetUIManager()->OnUIFadeChange.RemoveDynamic(this, &UGameCheckPointRangeComponent::FadeChange);
 	}
 }
 
@@ -50,7 +50,7 @@ void UGameCheckPointRangeComponent::BeginPlay()
 	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
 	if (_Instance.IsValid())
 	{
-		_handle = _Instance->GetUIManager()->OnUIFadeChange.AddUObject(this, &UGameCheckPointRangeComponent::FadeChange);
+		 _Instance->GetUIManager()->OnUIFadeChange.AddDynamic(this, &UGameCheckPointRangeComponent::FadeChange);
 	}
 
 	//게임 시작전부터 겹쳐있을 경우에 대한 처리

@@ -15,8 +15,8 @@ class UMagneticComponent;
 class UGameUIManager;
 //enum class EMagneticType : uint8;
 
-constexpr int AIML_FADE_ID =  36;
-constexpr int AIMR_FADE_ID = 37;
+constexpr const int AIML_FADE_ID =  36;
+constexpr const int AIMR_FADE_ID = 37;
 
 UENUM()
 enum class EGivenAnimType : uint8
@@ -114,7 +114,7 @@ private:
 	EMagneticType _PlayerType = EMagneticType::NONE;
 	FVector2D _startCircleScale, _goalCircleScale;
 
-	/**자성 부여시 나타거나*/
+	/**애임 위젯 애니메이션이 적용되는 시간값 필드입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerAim, Meta = (AllowPrivateAccess = true), BlueprintReadWrite)
 	float MagGivenApplySeconds= .2f;
 
