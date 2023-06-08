@@ -7,17 +7,18 @@
 #include "GameUIManager.h"
 #include "Sound/SoundMix.h"
 #include "Sound/SoundClass.h"
+#include "SoundManager.h"
 #include "CustomGameInstance.generated.h"
 
-USTRUCT(BlueprintType)
-struct FMaterialSoundData
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> MaterialSound;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Ignore;
-};
+//USTRUCT(BlueprintType)
+//struct FMaterialSoundData
+//{
+//	GENERATED_BODY()
+//
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> MaterialSound;
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite) TArray<FString> Ignore;
+//};
 
 /*
 *게임을 전반적으로 관리하는 기능들이 내장된 GameInstance파생 클래스입니다.
@@ -31,14 +32,14 @@ class PROJECT_MF_API UCustomGameInstance : public UGameInstance
 private:
 	UPROPERTY() bool bEditmode;
 
-	UPROPERTY() UGameUIManager* _UI;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<UGameUIManager> _UI;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<USoundManager> SoundManager;
+	UPROPERTY() TSubclassOf<USoundManager> SoundManagerClass;
 
 protected:
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
-
-
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
 
 	//Methods
 private:
@@ -49,6 +50,7 @@ protected:
 public:
 	UCustomGameInstance();
 	UGameUIManager* GetUIManager() const { return _UI; }
+	USoundManager* GetSoundManager() { return SoundManager; }
 
 	bool GetEditmode();
 	void SetEditmode(bool param);

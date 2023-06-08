@@ -107,7 +107,7 @@ private:
 	virtual void BeginPlay() override;
 	virtual void OnAttachmentChanged() override;
 	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override { return false; }
-#ifdef WITH_EDITOR
+#if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif
 

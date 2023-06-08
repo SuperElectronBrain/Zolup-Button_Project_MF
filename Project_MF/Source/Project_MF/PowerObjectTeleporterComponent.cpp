@@ -158,14 +158,14 @@ void UPowerObjectTeleporterComponent::BeginDestroy()
 {
 	Super::BeginDestroy();
 
-	if (::IsValid(ArrowComponent.Get()) == true)
-	{
-		ArrowComponent->DestroyComponent();
-	}
-	if (::IsValid(BoxComponent.Get()) == true)
-	{
-		BoxComponent->DestroyComponent();
-	}
+	//if (::IsValid(ArrowComponent.Get()) == true)
+	//{
+	//	ArrowComponent->DestroyComponent();
+	//}
+	//if (::IsValid(BoxComponent.Get()) == true)
+	//{
+	//	BoxComponent->DestroyComponent();
+	//}
 }
 
 void UPowerObjectTeleporterComponent::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
