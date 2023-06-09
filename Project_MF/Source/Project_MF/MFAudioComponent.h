@@ -6,10 +6,10 @@
 #include "Components/AudioComponent.h"
 #include "MFAudioComponent.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT(Atomic, BlueprintType)
 struct FCollisionData
 {
-	GENERATED_BODY()
+	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY() TWeakObjectPtr<AActor> HitActor;
 	UPROPERTY() int32 HitCount;
@@ -18,6 +18,15 @@ struct FCollisionData
 	FCollisionData(AActor *Actor = nullptr, int32 Value1 = 0, int32 Value2 = 0) : HitActor(Actor), HitCount(Value1), TickCount(Value2) {}
 };
 
+USTRUCT(Atomic, BlueprintType)
+struct FVolumeMultiplySetting
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) FString MaterialType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) TObjectPtr<USoundBase> VariationSound;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float VolumeMultiply;
+};
 /**
  * 
  */
@@ -31,6 +40,7 @@ private:
 protected:
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) FString MaterialType;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) TArray<FVolumeMultiplySetting> VolumeMultiplySetting;
 
 private:
 protected:
