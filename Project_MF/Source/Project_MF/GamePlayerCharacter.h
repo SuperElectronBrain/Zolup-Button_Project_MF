@@ -45,7 +45,9 @@ enum class EPlayerMode : uint8
 	AIRVENT_EXIT_UP,
 	AIRVENT_EXIT_DOWN,
 	CREEPY,
+	STICK_JUMP_READY,
 	STICK_JUMP,
+	STICK_JUMP_STANDING,
 	GAMEOVER
 };
 
@@ -133,6 +135,8 @@ public:
 	FVector GetPlayerDownVector() const;
 	FQuat GetPlayerQuat() const { if (GetController() == nullptr) return FQuat::Identity;  return GetController()->GetControlRotation().Quaternion(); }
 	void SetPlayerRotator(FRotator& newValue);
+	float GetPlayerHeight() const;
+	void GetPlayerCameraComponent(TWeakObjectPtr<class UCameraComponent>& OutPtr);
 
 	/**플레이어의 동작모드를 결정하는 함수입니다.*/
 	void SetPlayerWalkMode();
@@ -226,6 +230,7 @@ private:
 	**********************************************************************************/
 	void DetectFloorType(FString& outPhysMatName);
 	void PlayMoveSound(bool playSound);
+	void PlayDamagedSound();
 
 
 	/*********************************************************************************
@@ -319,6 +324,7 @@ private:
 	bool _bShootMine = false;
 	float _timeStopCurrTime = 0.f;
 	float _playerHeight = 0.f;
+	float _noHitTime = 0.f;
 	float _stiffen = 0.f;
 	float _gauntletScale = 1.f;
 	FVector _stickNormal;
@@ -383,6 +389,9 @@ private:
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;
 
+	UPROPERTY()
+	bool bTestPlay = false;
+
 	/**
 	* 해당 클래스에서 사용될 오디오 & UI & 이펙트등의 원본 소스의 참조값을 담는 필드들입니다.
 	*/
@@ -418,6 +427,15 @@ private:
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
 	USoundBase* GauntletStickSound;
 
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* DamagedSound1;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* DamagedSound2;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* DamagedSound3;
+
 	/**@UI fields*/
 	UPROPERTY()
 	UUIStopTimerWidget* TimerWidgetInsA;
@@ -447,6 +465,9 @@ private:
 	/**플레이어에게 적용된 모드입니다. 기본적으로 Standing mode입니다.*/
 	UPROPERTY(VisibleAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta=(AllowPrivateAccess=true))
 	EPlayerMode PlayerMode = EPlayerMode::STANDING;
+
+	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite, Meta = (ClampMin = 0, AllowPrivateAccess = true))
+	float PlayerNoDamageTime = 1.3f;
 
 	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite, Meta = (ClampMin = 0, AllowPrivateAccess=true))
 	float PlayerMaxHP = 3.f;

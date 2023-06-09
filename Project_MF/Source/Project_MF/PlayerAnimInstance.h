@@ -5,6 +5,61 @@
 #include <Animation/AnimMontage.h>
 #include "PlayerAnimInstance.generated.h"
 
+UENUM()
+enum class EHandType
+{
+	LEFT, RIGHT
+};
+
+UENUM()
+enum class EPlayerBoneType
+{
+	NONE,
+	LEFT_HAND		= 0b10000000,
+	LEFT_POARM		= 0b01000000,
+	LEFT_UPPERARM	= 0b00100000,
+	LEFT_ARM		= 0b11100000,
+
+	RIGHT_HAND		= 0b00010000,
+	RIGHT_POARM		= 0b00001000,
+	RIGHT_UPPERARM	= 0b00000100,
+	RIGHT_ARM		= 0b00011100
+};
+
+UENUM()
+enum class EPlayerAnimProgressType : uint8
+{
+	NONE
+
+};
+
+USTRUCT(BlueprintType)
+struct FClimbMontageData
+{
+	GENERATED_BODY()
+
+	FVector ClimbGoalLocation;
+	FVector StickWallNormal;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerClimbData, BlueprintReadOnly)
+	bool bApplyClimb = false;
+};
+
+USTRUCT(BlueprintType)
+struct FGloveActionData
+{
+	GENERATED_BODY()
+
+	UPROPERTY(VisibleAnywhere, Category=PlayerGloveActionData, BlueprintReadOnly)
+	bool bApplyGloveAction = false;
+
+	UPROPERTY(VisibleAnywhere, Category=PlayerGloveActionData, BlueprintReadOnly)
+	FTransform HandTransform;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerGloveActionData, BlueprintReadOnly)
+	FTransform PoarmTransform;
+};
+
 DECLARE_MULTICAST_DELEGATE(FShootStartDelegate)
 DECLARE_MULTICAST_DELEGATE(FResetStartDelegate)
 
@@ -27,15 +82,6 @@ constexpr const TCHAR* const PLAYER_RHAND_BONE = TEXT("Bip001-R-Hand");
 
 constexpr const float CLA2HAND_LEN = 70.f;
 
-class AGamePlayerCharacter;
-class UMagneticComponent;
-
-UENUM()
-enum class EHandType
-{
-	LEFT, RIGHT
-};
-
 /**
 * GamePlayerCharacter의 모든 애니메이션들을 책임지는 클래스입니다.
 */
@@ -45,53 +91,83 @@ class PROJECT_MF_API UPlayerAnimInstance final: public UAnimInstance
 	GENERATED_BODY()
 
 public:
-	//////////////////////////
-	///   Constructor   /////
-	/////////////////////////
+	////////////////////////////////////////////////
+	///											///
+	///			  *Constructor*					///
+	///											///
+	///////////////////////////////////////////////
 	UPlayerAnimInstance();
 
 
-	/////////////////////////////////
-	//////   Public Delegates   /////
-	/////////////////////////////////
+	////////////////////////////////////////////////
+	///											///
+	///			  *Public methods*				///
+	///											///
+	///////////////////////////////////////////////
 	FShootStartDelegate OnShootStartEvent;
 	FResetStartDelegate OnResetStartEvent;
 
-	/////////////////////////////
-	////   Public methods  /////
-	////////////////////////////
 
-	bool GetAttackMontageIsPlaying() const { return Montage_IsPlaying(ShootMontage); }
+	////////////////////////////////////////////////
+	///											///
+	///			  *Public methods*				///
+	///											///
+	///////////////////////////////////////////////
+
+	void DrawDebugHitPoint(const FVector& HitLocation, const FVector& HitNormal, float LifeTime = -1.f) const;
+	void SetFixedPlayerBoneTransform(EPlayerBoneType fixedTarget, bool apply);
+
+	/*************************************************************************
+	* 몽타주 애니메이션 재생 관련 함수들입니다.
+	*/
+	bool GetShootMontageIsPlaying() const { return Montage_IsPlaying(ShootMontage); }
+	void PlayShootMontage(float startTime = 0.f, float speed = 1.f);
+
 	bool GetResetMontageIsPlaying() const { return Montage_IsPlaying(ResetMontage); }
-	bool GetSelfResetMontageIsPlaying() const { return Montage_IsPlaying(GloveOffMontage); }
-	bool GetSelfShootMontageIsPlaying() const { return Montage_IsPlaying(GloveOnMontage); }
-
-	void PlayAttackMontage(float startTime = 0.f, float speed = 1.f);
 	void PlayResetMontage(float startTime = 0.f, float speed = 1.f);
-	void PlaySelfResetMontage(float startTime = 0.f, float speed = 1.f);
-	void PlaySelfShootMontage(float startTime = 0.f, float speed = 1.f);
-	void PlayGlovePulledUpMotage(float startTime = 0.f, float speed = 1.f);
-	void PlayGloveStickMotage(float startTime=0.f, float speed=1.f);
 
-	void SetHandFixedTransform(EHandType armType, bool apply);
+	bool GetGloveOffMontageIsPlaying() const { return Montage_IsPlaying(GloveOffMontage); }
+	void PlayGloveOffMontage(float startTime = 0.f, float speed = 1.f);
+
+	bool GetGloveOnMontageIsPlaying() const { return Montage_IsPlaying(GloveOnMontage); }
+	void PlayGloveOnMontage(float startTime = 0.f, float speed = 1.f);
+
+	bool GetGloveActonMontage() const { return Montage_IsPlaying(GloveActonMontage); }
+	void PlayGloveActonMontage(float startTime = 0.f, float speed = 1.f);
+	
+	bool GetGloveAtMontage() const { return Montage_IsPlaying(GloveAtMontage); }
+	void PlayGloveAtMotage(float startTime=0.f, float speed=1.f);
+
+	bool GetClimbMontage() const { return Montage_IsPlaying(ClimbMontage); }
+	void PlayClimbMontage(float startTime = 0.f, float speed = 1.f);
 
 
-	/////////////////////////////////
-	/////   Override methods   //////
-	////////////////////////////////
+	////////////////////////////////////////////////
+	///											///
+	///			 *Override methods*				///
+	///											///
+	///////////////////////////////////////////////
 private:
 	virtual void NativeBeginPlay() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 
-	////////////////////////////
-	////  Private methods  ////
-	///////////////////////////
-	void DrawDebugHitPoint(const FVector& HitLocation, const FVector& HitNormal) const;
+	////////////////////////////////////////////////
+	///											///
+	///			  *Private methods*				///
+	///											///
+	///////////////////////////////////////////////
 
-	void ApplyCreepyStandingHands(AGamePlayerCharacter* player);
 	void FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player);
 
+	/**************************************************************
+	* 특정 몽타주 및 애니메이션 진행에서 쓰이는 함수들입니다.
+	*/
+	void ClimbMontageProgress();
+
+	/***************************************************************
+	* 애니메이션 실행중, 노티파이로 수신을 받게될 함수들입니다.
+	*/
 	UFUNCTION()
 	void AnimNotify_ShootStart();
 
@@ -101,81 +177,127 @@ private:
 	UFUNCTION()
 	void AnimNotify_ResetStart();
 
+	UFUNCTION()
+	void AnimNotify_StartLHandClimb();
 
-	//////////////////////////////////
-	/////  Fields and Components  ///
-	/////////////////////////////////
-	TWeakObjectPtr<AGamePlayerCharacter> _gameCharacter;
+	UFUNCTION()
+	void AnimNotify_StartRHandClimb();
 
-	/**
+
+	////////////////////////////////////////////////
+	///											///
+	///			*Fields and Components*			///
+	///											///
+	///////////////////////////////////////////////
+
+	/*******************************************************************
+	* 해당 AnimInstance가 참조하는 플레이어 및 관련 컴포넌트들의 참조값들입니다.
+	*/
+	TWeakObjectPtr<class AGamePlayerCharacter>		TargetPlayer;
+	TWeakObjectPtr<class UCameraComponent>			TargetPlayerCamera;
+	TWeakObjectPtr<class USkeletalMeshComponent>	TargetPlayerMesh;
+
+
+	/***************************************************************
+	* 특정 몽타주 및 애니메이션에서 쓰이는 정보들에 대한 필드입니다.
+	*/
+	EPlayerAnimProgressType PrgoressType;
+
+	UPROPERTY(VisibleAnywhere, Category=AnimProgressData, BlueprintReadOnly, Meta=(AllowPrivateAccess=true))
+	FClimbMontageData ClimbData;
+
+	UPROPERTY(VisibleAnywhere, Category = AnimProgressData, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
+	FGloveActionData GloveActionData;
+
+
+	/*********************************************************
 	* 이 애니메이션에서 사용할 몽타주 에셋들에 대한 필드들입니다.
 	*/
-	UPROPERTY(VisibleAnywhere, Category=PlayerAnimAsset, Meta=(AllowPrivateAccess=true))
+	UPROPERTY()
 	UAnimMontage* ShootMontage;
 
-	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* ResetMontage;
 
-	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* GloveOffMontage;
 
-	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* GloveOnMontage;
 
-	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* GloveActonMontage;
 
-	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
+	UPROPERTY()
 	UAnimMontage* GloveAtMontage;
 
-	/**
-	* 왼쪽팔을 접거나, 고정시키는데 사용되는 필드입니다.
+	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
+	UAnimMontage* ClimbMontage;
+
+	/*********************************************************
+	* 각 팔들을 고정시키는데 사용되는 필드입니다.
 	*/
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FTransform FoldLArmHandTransform;
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bFixedLHand= false;
 
-	UPROPERTY(VisibleAnywhere, Category = PlayerLArm, BlueprintReadOnly, Meta = (AllowPrivateAccess = true))
-	FVector _LArmJointLocation;
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bFixedLPoarm = false;
 
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FVector ForarmTouchLocation;
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bFixedLUpperArm = false;
 
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FRotator ForarmTouchRotation;
 
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FTransform _LUpperArmTransform;
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bFixedRHand = false;
 
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FTransform _LForArmTransform;
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bFixedRPoarm = false;
 
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	FTransform _LHandTransform;
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bFixedRUpperArm = false;
 
-	UPROPERTY(EditAnywhere, Category = PlayerLArm, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bLArmTransformFixed = false;
 
-	/**
-	* 애니메이션 FSM에서 쓰이는 필드들입니다.
-	* 
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform LUpperArm_FixedTransform;
+
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform RUpperArm_FixedTransform;
+
+
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform LPoArm_FixedTransform;
+
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform RPoArm_FixedTransform;
+
+
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform LHand_FixedTransform;
+
+	UPROPERTY(EditAnywhere, Category = FixedBone, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	FTransform RHand_FixedTransform;
+
+
+	/*******************************************************
+	* 애니메이션 FSM에서 쓰이는 상태값들입니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool	_bIsJumping = false;
+	bool bIsJumping = false;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	float	_CurrentSpeed = 0.f;
+	float CurrentSpeed = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	bool bApplyFold_LArm = false;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bIsPulled = false;
+	bool bIsPulled = false;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool _bRArmTransformFixed = false;
+	bool bRArmTransformFixed = false;
 
 public:
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
-	bool _bPlayerCreep = false;
+	bool bPlayerCreep = false;
 
 };

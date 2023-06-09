@@ -100,6 +100,15 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<USoundBase> GAUNTLET_STICK_SOUND(
 		TEXT("/Game/Sounds/Player/Gauntlet_Stick.Gauntlet_Stick")
 	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_DAMAGED_SOUND1(
+		TEXT("/Game/Sounds/Player/PlayerDamaged_1.PlayerDamaged_1")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_DAMAGED_SOUND2(
+		TEXT("/Game/Sounds/Player/PlayerDamaged_2.PlayerDamaged_2")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_DAMAGED_SOUND3(
+		TEXT("/Game/Sounds/Player/PlayerDamaged_3.PlayerDamaged_3")
+	);
 
 	/*****************************************************************
 	* Component(Audio)
@@ -120,6 +129,9 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (BREATH_DASH_SOUND.Succeeded()) PlayerDashBreathSound = BREATH_DASH_SOUND.Object;
 	if (BREATH_DEFAULT_SOUND.Succeeded()) PlayerDefaultBreathSound = BREATH_DEFAULT_SOUND.Object;
 	if (GAUNTLET_STICK_SOUND.Succeeded()) GauntletStickSound = GAUNTLET_STICK_SOUND.Object;
+	if (PLAYER_DAMAGED_SOUND1.Succeeded()) DamagedSound1 = PLAYER_DAMAGED_SOUND1.Object;
+	if (PLAYER_DAMAGED_SOUND2.Succeeded()) DamagedSound2 = PLAYER_DAMAGED_SOUND2.Object;
+	if (PLAYER_DAMAGED_SOUND3.Succeeded()) DamagedSound3 = PLAYER_DAMAGED_SOUND3.Object;
 
 	/*******************************************************************
 	* Component(SpringArm)
@@ -244,6 +256,11 @@ void AGamePlayerCharacter::SetLimitPlayerCamRotation(
 	if (applyZAxis) _ZRotLimits = zAxisLimits;
 }
 
+float AGamePlayerCharacter::GetPlayerHeight() const
+{
+	return GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+}
+
 void AGamePlayerCharacter::SetPlayerWalkMode()
 {
 	PlayerMode = EPlayerMode::STANDING;
@@ -251,7 +268,7 @@ void AGamePlayerCharacter::SetPlayerWalkMode()
 	GetCapsuleComponent()->SetCapsuleHalfHeight(278.6f);/*default: 197.f*/
 	SpringArm->TargetArmLength = 10.f;
 	SpringArm->SetRelativeLocation(FVector(0.f, 0.f, 280.f));
-	if (PlayerAnim) PlayerAnim->_bPlayerCreep = false;
+	if (PlayerAnim) PlayerAnim->bPlayerCreep = false;
 	GetCharacterMovement()->MaxWalkSpeed = MoveSpeed;
 }
 
@@ -342,12 +359,62 @@ void AGamePlayerCharacter::SetPlayerMaxHP(float newMaxHP)
 	PlayerCurrHP = FMath::Clamp(PlayerCurrHP, 0, PlayerMaxHP);
 }
 
+void AGamePlayerCharacter::PlayDamagedSound()
+{
+	if (DamagedSound1 && PlayerCurrHP==2)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			GetWorld(),
+			DamagedSound1,
+			GetActorLocation(),
+			3.f,
+			1.f,
+			3.f
+		);
+
+		return;
+	}
+
+	if (DamagedSound2 && PlayerCurrHP == 1)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			GetWorld(),
+			DamagedSound2,
+			GetActorLocation(),
+			3.f,
+			1.f
+		);
+
+		return;
+	}
+
+	if (DamagedSound3 && PlayerCurrHP == 0)
+	{
+		UGameplayStatics::PlaySoundAtLocation(
+			GetWorld(),
+			DamagedSound3,
+			GetActorLocation(),
+			3.f,
+			1.f,
+			3.f
+		);
+
+		return;
+	}
+}
+
 float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
 	float finalDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 
+	if (_noHitTime > 0.f) return finalDamage;
+
 	PlayerCurrHP = FMath::Clamp(PlayerCurrHP - finalDamage, 0, PlayerMaxHP);
 
+	//피격 소리
+	PlayDamagedSound();
+
+	//자성 효과
 	if(_BloodWidget.IsValid())
 		_BloodWidget->ShowBloodEffect(PlayerCurrHP);
 
@@ -357,6 +424,8 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 		SetCanBeDamaged(false);
 		SetPlayerGameOverMode(EPlayerGameOverReason::HURT);
 	}
+
+	_noHitTime = PlayerNoDamageTime;
 
 	return finalDamage;
 }
@@ -543,6 +612,13 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 	{
 		_stiffen -= DeltaTime;
 		if (_stiffen <= 0.f) _stiffen = 0.f;
+	}
+
+	//무적 시간
+	if (_noHitTime>0.f)
+	{
+		_noHitTime -= DeltaTime;
+		if (_noHitTime <= 0.f) _noHitTime = 0.f;
 	}
 
 	//타임스탑 적용
@@ -766,15 +842,14 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 				SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
 			}
 
-			if (PlayerAnim && PlayerAnim->GetSelfShootMontageIsPlaying()==false)
+			if (PlayerAnim && PlayerAnim->GetGloveOnMontageIsPlaying()==false)
 			{
 				FVector handLStandingLocation;
 				FRotator handLStandingRot;
 
 				_EnterAirVent->GetStandingHandInfo(EStandingHandType::DOWN_LEFT, handLStandingLocation, handLStandingRot);
 
-				PlayerAnim->PlaySelfShootMontage(20.f);
-				//PlayerAnim->SetLHandStanding(handLStandingLocation, handLStandingRot, true, 0.3f);
+				PlayerAnim->PlayGloveOnMontage(20.f);
 			}
 
 			//마무리 작업
@@ -855,7 +930,7 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 				PlayerAnim->StopAllMontages(0.8f);
 				//PlayerAnim->SetLHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
 				//PlayerAnim->SetRHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
-				PlayerAnim->_bPlayerCreep = true;
+				PlayerAnim->bPlayerCreep = true;
 				_EnterAirVent.Reset();
 
 				_stiffen = 0.f;
@@ -876,7 +951,7 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 			if (progressRatio>=1.f)
 			{
 				SetPlayerWalkMode();
-				if (PlayerAnim) PlayerAnim->_bPlayerCreep = false;
+				if (PlayerAnim) PlayerAnim->bPlayerCreep = false;
 				//PlayerAnim->SetLHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
 				//PlayerAnim->SetRHandStanding(FVector::ZeroVector, FRotator::ZeroRotator, false);
 				_stiffen = 0.f;
@@ -972,6 +1047,10 @@ void AGamePlayerCharacter::PostEditChangeProperty(FPropertyChangedEvent& Propert
 	else if (changed == "MoveSpeed")
 	{
 		GetCharacterMovement()->MaxWalkSpeed = MoveSpeed;
+	}
+	else if (changed=="bTestPlay")
+	{
+
 	}
 }
 #endif
@@ -1107,7 +1186,16 @@ void AGamePlayerCharacter::JumpStart()
 		_StickTo.Reset();
 		Magnetic->SetCurrentMagnetic(EMagneticType::NONE);
 
-		if (PlayerAnim) PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
+		//파쿠르 애니메이션 실행
+		if (PlayerAnim)
+		{
+			if (PlayerAnim) PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
+
+			FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
+			FVector handTouchPos = result.Location + (FVector::DownVector * GetPlayerHeight() * 1.5f);
+			PlayerAnim->PlayClimbMontage();
+		}
+
 		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
 		//UI갱신
@@ -1117,12 +1205,14 @@ void AGamePlayerCharacter::JumpStart()
 		//점프 적용.
 		PlayerMode = EPlayerMode::STICK_JUMP;
 		_stiffen = -1.f;
-		FVector jumPow = FVector::UpVector * (result.Location - playerPos).Z * 10.f;
 		_startPos = playerPos;
 		_endPos = result.Location;
 		_cPos1 = FVector( _startPos.X, _startPos.Y, _endPos.Z );
 		_currTime = 0.f;
 		_goalTimeDiv = 1.f / ClimbWallSeconds;
+
+		_bApplyCamLook = true;
+		_CamLookNormal = FVector::UpVector - _stickNormal;
 
 		return;
 	}
@@ -1199,10 +1289,21 @@ void AGamePlayerCharacter::StageRestart()
 	#pragma endregion
 }
 
+void AGamePlayerCharacter::GetPlayerCameraComponent(TWeakObjectPtr<class UCameraComponent>& OutPtr)
+{
+	OutPtr.Reset();
+	OutPtr = Camera;
+}
+
 void AGamePlayerCharacter::ClimbProgress(float DeltaTime)
 {
-	if (PlayerMode != EPlayerMode::STICK_JUMP) return;
+	if (PlayerMode != EPlayerMode::STICK_JUMP) return;	
 
+	FVector neckPos  = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
+	neckPos += _stickNormal * 20.f;
+	Camera->SetWorldLocation(neckPos);
+
+	return;
 	float progressRatio = _currTime * _goalTimeDiv;
 
 	SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
@@ -1214,7 +1315,7 @@ void AGamePlayerCharacter::ClimbProgress(float DeltaTime)
 		_stiffen = 0.f;
 		if (PlayerAnim)
 		{
-			PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
+			PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
 			PlayerAnim->StopAllMontages(0.2f);
 		}
 	}
@@ -1407,7 +1508,7 @@ void AGamePlayerCharacter::ResetMagnetic()
 	if (_StickTo.IsValid())
 	{
 		PlayerAnim->PlayResetMontage(0.f, 1.5f);
-		PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
+		PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
 		ResetStart();
 	}
 	else PlayerAnim->PlayResetMontage(0.f, 1.5f);
@@ -1741,8 +1842,8 @@ void AGamePlayerCharacter::Shoot(EMagneticType shootType)
 	}
 
 	//몽타주 실행
-	if (PlayerAnim && PlayerAnim->GetAttackMontageIsPlaying()==false) 
-				PlayerAnim->PlayAttackMontage(0.f, 1.5f);
+	if (PlayerAnim && PlayerAnim->GetShootMontageIsPlaying()==false) 
+				PlayerAnim->PlayShootMontage(0.f, 1.5f);
 	#pragma endregion
 }
 
@@ -1919,8 +2020,8 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 
 	if (changedMagType != EMagneticType::NONE)
 	{
-		if (PlayerAnim && PlayerAnim->GetSelfShootMontageIsPlaying()==false) 
-					PlayerAnim->PlaySelfShootMontage(.3f, .85f);
+		if (PlayerAnim && PlayerAnim->GetGloveOnMontageIsPlaying()==false) 
+					PlayerAnim->PlayGloveOnMontage(.3f, .85f);
 
 		/*자성 비네팅 이펙트 색깔 변경*/
 		if (MagneticVignettingEffectComp)
@@ -1964,8 +2065,8 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 		{
 			if (PlayerAnim->GetResetMontageIsPlaying() == false && _StickTo.IsValid() == false)
 			{
-				PlayerAnim->PlaySelfResetMontage(0.f, 1.5f);
-				PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
+				PlayerAnim->PlayGloveOffMontage(0.f, 1.5f);
+				PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
 			}
 		}
 
@@ -1993,7 +2094,7 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 	case(EMagnetMoveType::DRAWN_IN):
 		_CamLookTarget = operatorMagComp->GetAttachParentActor();
 		_bApplyCamLook = true;
-		PlayerAnim->PlayGlovePulledUpMotage();
+		PlayerAnim->PlayGloveActonMontage();
 		GetMovementComponent()->SetActive(false);
 		break;
 
@@ -2004,14 +2105,14 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 		break;
 	}
 
-	PlayerAnim->SetHandFixedTransform(EHandType::LEFT, false);
+	PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
 }
 
 void AGamePlayerCharacter::ResetCamLookTarget()
 {
 	_CamLookTarget.Reset();
 	_bApplyCamLook = false;
-	PlayerAnim->SetHandFixedTransform(EHandType::LEFT, true);
+	PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, true);
 }
 
 void AGamePlayerCharacter::MagnetMoveEnd(EMagnetMoveType prevMoveType, UMagneticComponent* moveEndMagComp)
@@ -2065,6 +2166,6 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 		_StickTo = HitActor;
 		AttachToActor(HitActor, FAttachmentTransformRules::KeepWorldTransform);
 		
-		if (PlayerAnim) PlayerAnim->PlayGloveStickMotage(0.f, 10.f);
+		if (PlayerAnim) PlayerAnim->PlayGloveAtMotage(0.f, 10.f);
 	}
 }
