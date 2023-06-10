@@ -23,7 +23,7 @@ private:
 
 	//#endif
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))
-	UPROPERTY() UBoxComponent* Trigger;
+	UPROPERTY() TWeakObjectPtr<UBoxComponent> Trigger;
 	//UPROPERTY() UBoxComponent* Collider;
 	UPROPERTY() TArray<AActor*> MovableTargets;
 	EMoveComponentFlags MoveComponentFlags;
