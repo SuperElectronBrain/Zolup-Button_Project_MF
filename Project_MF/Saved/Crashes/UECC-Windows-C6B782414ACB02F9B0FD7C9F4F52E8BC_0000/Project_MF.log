@@ -1,0 +1,1518 @@
+﻿Log file open, 06/09/23 22:07:51
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=0)
+LogWindows: File 'aqProf.dll' does not exist
+LogProfilingDebugging: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=0)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=0)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogWindows: Started CrashReportClient (pid=18468)
+LogWindows: Custom abort handler registered for crash reporting.
+LogInit: Display: Running engine for game: Project_MF
+LogCore: UnrealTraceServer: Trace store launch successful
+LogCore: Initializing trace...
+LogCore: Display: Requested channels: 'cpu,gpu,frame,log,bookmark'
+LogCore: Finished trace initialization.
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.1-CL-23901901"
+LogCsvProfiler: Display: Metadata set : engineversion="5.1.1-23901901+++UE5+Release-5.1"
+LogCsvProfiler: Display: Metadata set : commandline="" D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Project_MF.uproject""
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (22H2) [10.0.22621.1702] "
+LogCsvProfiler: Display: Metadata set : cpu="AuthenticAMD|AMD Ryzen 3 3300X 4-Core Processor"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : loginid="8704bdfd44f768383c3e46a2d75f42f1"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogStats: Stats thread started at 0.604879
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +9:00, Platform Override: ''
+LogInit: Session CrashGUID >====================================================
+         Session CrashGUID >   UECC-Windows-C6B782414ACB02F9B0FD7C9F4F52E8BC
+         Session CrashGUID >====================================================
+EditorErrors: Warning: Click to open file Found a deprecated ini section name in ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Config/DefaultGame.ini. Search for [IniKeyBlacklist] and replace with [IniKeyDenylist]
+LogConfig: Warning: Found a deprecated ini section name in ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Config/DefaultGame.ini. Search for [IniKeyBlacklist] and replace with [IniKeyDenylist]
+LogConfig: Display: Loading HoloLens ini files took 0.03 seconds
+LogConfig: Display: Loading IOS ini files took 0.04 seconds
+LogConfig: Display: Loading Android ini files took 0.04 seconds
+LogConfig: Display: Loading Linux ini files took 0.04 seconds
+LogConfig: Display: Loading TVOS ini files took 0.02 seconds
+LogConfig: Display: Loading Unix ini files took 0.02 seconds
+LogConfig: Display: Loading LinuxArm64 ini files took 0.03 seconds
+LogConfig: Display: Loading Mac ini files took 0.03 seconds
+LogConfig: Display: Loading VulkanPC ini files took 0.01 seconds
+LogConfig: Display: Loading Windows ini files took 0.02 seconds
+LogPluginManager: Mounting Engine plugin Bridge
+LogPluginManager: Mounting Engine plugin EnhancedInput
+LogPluginManager: Mounting Engine plugin FastBuildController
+LogPluginManager: Mounting Engine plugin MeshPainting
+LogPluginManager: Mounting Engine plugin TraceUtilities
+LogPluginManager: Mounting Engine plugin XGEController
+LogPluginManager: Mounting Engine plugin AISupport
+LogPluginManager: Mounting Engine plugin EnvironmentQueryEditor
+LogPluginManager: Mounting Engine plugin AutomationUtils
+LogPluginManager: Mounting Engine plugin BackChannel
+LogPluginManager: Mounting Engine plugin ChaosCaching
+LogPluginManager: Mounting Engine plugin ChaosCloth
+LogPluginManager: Mounting Engine plugin ChaosClothEditor
+LogPluginManager: Mounting Engine plugin ChaosEditor
+LogPluginManager: Mounting Engine plugin ChaosNiagara
+LogPluginManager: Mounting Engine plugin ChaosSolverPlugin
+LogPluginManager: Mounting Engine plugin ChaosUserDataPT
+LogPluginManager: Mounting Engine plugin CharacterAI
+LogPluginManager: Mounting Engine plugin Dataflow
+LogPluginManager: Mounting Engine plugin FullBodyIK
+LogPluginManager: Mounting Engine plugin GeometryCollectionPlugin
+LogPluginManager: Mounting Engine plugin Iris
+LogPluginManager: Mounting Engine plugin MeshModelingToolsetExp
+LogPluginManager: Mounting Engine plugin OpenImageDenoise
+LogPluginManager: Mounting Engine plugin PlatformCrypto
+LogPluginManager: Mounting Engine plugin PlanarCut
+LogPluginManager: Mounting Engine plugin ProxyLODPlugin
+LogPluginManager: Mounting Engine plugin PythonScriptPlugin
+LogPluginManager: Mounting Engine plugin SkeletalReduction
+LogPluginManager: Mounting Engine plugin UVEditor
+LogPluginManager: Mounting Engine plugin AndroidMedia
+LogPluginManager: Mounting Engine plugin AvfMedia
+LogPluginManager: Mounting Engine plugin ImgMedia
+LogPluginManager: Mounting Engine plugin MediaCompositing
+LogPluginManager: Mounting Engine plugin MediaPlate
+LogPluginManager: Mounting Engine plugin MediaPlayerEditor
+LogPluginManager: Mounting Engine plugin OnlineBase
+LogPluginManager: Mounting Engine plugin WebMMedia
+LogPluginManager: Mounting Engine plugin WmfMedia
+LogPluginManager: Mounting Engine plugin OnlineServices
+LogPluginManager: Mounting Engine plugin OnlineSubsystem
+LogPluginManager: Mounting Engine plugin OnlineSubsystemNull
+LogPluginManager: Mounting Engine plugin AnimationModifierLibrary
+LogPluginManager: Mounting Engine plugin OnlineSubsystemUtils
+LogPluginManager: Mounting Engine plugin BlendSpaceMotionAnalysis
+LogPluginManager: Mounting Engine plugin ControlRigSpline
+LogPluginManager: Mounting Engine plugin ControlRig
+LogPluginManager: Mounting Engine plugin OodleNetwork
+LogPluginManager: Mounting Engine plugin IKRig
+LogPluginManager: Mounting Engine plugin AnimationSharing
+LogPluginManager: Mounting Engine plugin CodeLiteSourceCodeAccess
+LogPluginManager: Mounting Engine plugin CLionSourceCodeAccess
+LogPluginManager: Mounting Engine plugin DumpGPUServices
+LogPluginManager: Mounting Engine plugin GitSourceControl
+LogPluginManager: Mounting Engine plugin KDevelopSourceCodeAccess
+LogPluginManager: Mounting Engine plugin NullSourceCodeAccess
+LogPluginManager: Mounting Engine plugin PerforceSourceControl
+LogPluginManager: Mounting Engine plugin PixWinPlugin
+LogPluginManager: Mounting Engine plugin PlasticSourceControl
+LogPluginManager: Mounting Engine plugin PluginUtils
+LogPluginManager: Mounting Engine plugin PropertyAccessNode
+LogPluginManager: Mounting Engine plugin RiderSourceCodeAccess
+LogPluginManager: Mounting Engine plugin SubversionSourceControl
+LogPluginManager: Mounting Engine plugin TextureFormatOodle
+LogPluginManager: Mounting Engine plugin TraceDataFilters
+LogPluginManager: Mounting Engine plugin UObjectPlugin
+LogPluginManager: Mounting Engine plugin VisualStudioCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin Niagara
+LogPluginManager: Mounting Engine plugin VisualStudioSourceCodeAccess
+LogPluginManager: Mounting Engine plugin XCodeSourceCodeAccess
+LogPluginManager: Mounting Engine plugin LauncherChunkInstaller
+LogPluginManager: Mounting Engine plugin InterchangeTests
+LogPluginManager: Mounting Engine plugin AssetManagerEditor
+LogPluginManager: Mounting Engine plugin BlueprintHeaderView
+LogPluginManager: Mounting Engine plugin CryptoKeys
+LogPluginManager: Mounting Engine plugin CurveEditorTools
+LogPluginManager: Mounting Engine plugin DataValidation
+LogPluginManager: Mounting Engine plugin EditorDebugTools
+LogPluginManager: Mounting Engine plugin EditorScriptingUtilities
+LogPluginManager: Mounting Engine plugin FacialAnimation
+LogPluginManager: Mounting Engine plugin GameplayTagsEditor
+LogPluginManager: Mounting Engine plugin GeometryMode
+LogPluginManager: Mounting Engine plugin GLTFImporter
+LogPluginManager: Mounting Engine plugin MacGraphicsSwitching
+LogPluginManager: Mounting Engine plugin MaterialAnalyzer
+LogPluginManager: Mounting Engine plugin MobileLauncherProfileWizard
+LogPluginManager: Mounting Engine plugin PluginBrowser
+LogPluginManager: Mounting Engine plugin SequencerAnimTools
+LogPluginManager: Mounting Engine plugin SpeedTreeImporter
+LogPluginManager: Mounting Engine plugin AlembicImporter
+LogPluginManager: Mounting Engine plugin WorldPartitionHLODUtilities
+LogPluginManager: Mounting Engine plugin UdpMessaging
+LogPluginManager: Mounting Engine plugin TcpMessaging
+LogPluginManager: Mounting Engine plugin InterchangeEditor
+LogPluginManager: Mounting Engine plugin Takes
+LogPluginManager: Mounting Engine plugin ActorSequence
+LogPluginManager: Mounting Engine plugin Interchange
+LogPluginManager: Found config from plugin[Interchange] Game
+LogPluginManager: Mounting Engine plugin Paper2D
+LogPluginManager: Mounting Engine plugin LevelSequenceEditor
+LogPluginManager: Mounting Engine plugin CameraShakePreviewer
+LogPluginManager: Mounting Engine plugin SequencerScripting
+LogPluginManager: Mounting Engine plugin GameplayCameras
+LogPluginManager: Mounting Engine plugin TemplateSequence
+LogPluginManager: Mounting Engine plugin DatasmithContent
+LogPluginManager: Mounting Engine plugin GLTFExporter
+LogPluginManager: Mounting Engine plugin VariantManager
+LogPluginManager: Mounting Engine plugin VariantManagerContent
+LogPluginManager: Mounting Engine plugin ActorLayerUtilities
+LogPluginManager: Mounting Engine plugin AndroidDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin AndroidFileServer
+LogPluginManager: Mounting Engine plugin AndroidMoviePlayer
+LogPluginManager: Mounting Engine plugin AndroidPermission
+LogPluginManager: Mounting Engine plugin AppleImageUtils
+LogPluginManager: Mounting Engine plugin AppleMoviePlayer
+LogPluginManager: Mounting Engine plugin ArchVisCharacter
+LogPluginManager: Mounting Engine plugin AssetTags
+LogPluginManager: Mounting Engine plugin AudioCapture
+LogPluginManager: Mounting Engine plugin AudioSynesthesia
+LogPluginManager: Mounting Engine plugin AudioWidgets
+LogPluginManager: Mounting Engine plugin CableComponent
+LogPluginManager: Mounting Engine plugin ChunkDownloader
+LogPluginManager: Mounting Engine plugin CustomMeshComponent
+LogPluginManager: Mounting Engine plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin GeometryCache
+LogPluginManager: Mounting Engine plugin GeometryProcessing
+LogPluginManager: Mounting Engine plugin GoogleCloudMessaging
+LogPluginManager: Mounting Engine plugin GooglePAD
+LogPluginManager: Mounting Engine plugin InputDebugging
+LogPluginManager: Mounting Engine plugin IOSDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LinuxDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin LocationServicesBPLibrary
+LogPluginManager: Mounting Engine plugin MeshModelingToolset
+LogPluginManager: Mounting Engine plugin Metasound
+LogPluginManager: Mounting Engine plugin MobilePatchingUtils
+LogPluginManager: Mounting Engine plugin ProceduralMeshComponent
+LogPluginManager: Mounting Engine plugin PropertyAccessEditor
+LogPluginManager: Mounting Engine plugin ResonanceAudio
+LogPluginManager: Mounting Engine plugin SignificanceManager
+LogPluginManager: Mounting Engine plugin SoundFields
+LogPluginManager: Mounting Engine plugin Synthesis
+LogPluginManager: Mounting Engine plugin WaveTable
+LogPluginManager: Mounting Engine plugin WebMMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin WindowsMoviePlayer
+LogPluginManager: Mounting Engine plugin ContentBrowserAssetDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserFileDataSource
+LogPluginManager: Mounting Engine plugin ContentBrowserClassDataSource
+LogPluginManager: Mounting Engine plugin LightMixer
+LogPluginManager: Mounting Engine plugin ObjectMixer
+LogPluginManager: Mounting Engine plugin OnlineSubsystemGooglePlay
+LogPluginManager: Mounting Engine plugin OnlineSubsystemIOS
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Bridge/Content/' mounted to '/Bridge/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosCaching/Content/' mounted to '/ChaosCaching/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosClothEditor/Content/' mounted to '/ChaosClothEditor/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosNiagara/Content/' mounted to '/ChaosNiagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/ChaosSolverPlugin/Content/' mounted to '/ChaosSolverPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/Dataflow/Content/' mounted to '/Dataflow/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/FullBodyIK/Content/' mounted to '/FullBodyIK/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/GeometryCollectionPlugin/Content/' mounted to '/GeometryCollectionPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/MeshModelingToolsetExp/Content/' mounted to '/MeshModelingToolsetExp/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/PythonScriptPlugin/Content/' mounted to '/PythonScriptPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Experimental/UVEditor/Content/' mounted to '/UVEditor/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Media/MediaCompositing/Content/' mounted to '/MediaCompositing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Media/MediaPlate/Content/' mounted to '/MediaPlate/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRigSpline/Content/' mounted to '/ControlRigSpline/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/ControlRig/Content/' mounted to '/ControlRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Animation/IKRig/Content/' mounted to '/IKRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Developer/AnimationSharing/Content/' mounted to '/AnimationSharing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/FX/Niagara/Content/' mounted to '/Niagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/BlueprintHeaderView/Content/' mounted to '/BlueprintHeaderView/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/GeometryMode/Content/' mounted to '/GeometryMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/GLTFImporter/Content/' mounted to '/GLTFImporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/SpeedTreeImporter/Content/' mounted to '/SpeedTreeImporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/VirtualProduction/Takes/Content/' mounted to '/Takes/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Interchange/Runtime/Content/' mounted to '/Interchange/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/2D/Paper2D/Content/' mounted to '/Paper2D/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/MovieScene/SequencerScripting/Content/' mounted to '/SequencerScripting/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Enterprise/DatasmithContent/Content/' mounted to '/DatasmithContent/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Enterprise/GLTFExporter/Content/' mounted to '/GLTFExporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/AudioSynesthesia/Content/' mounted to '/AudioSynesthesia/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/AudioWidgets/Content/' mounted to '/AudioWidgets/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/GeometryProcessing/Content/' mounted to '/GeometryProcessing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/MeshModelingToolset/Content/' mounted to '/MeshModelingToolset/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/Metasound/Content/' mounted to '/Metasound/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/ResonanceAudio/Content/' mounted to '/ResonanceAudio/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/Synthesis/Content/' mounted to '/Synthesis/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Runtime/WaveTable/Content/' mounted to '/WaveTable/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/ObjectMixer/LightMixer/Content/' mounted to '/LightMixer/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/Editor/ObjectMixer/ObjectMixer/Content/' mounted to '/ObjectMixer/'
+SourceControl: Source control is disabled
+SourceControl: Source control is disabled
+LogInit: Using libcurl 7.83.1
+LogInit:  - built for Windows
+LogInit:  - supports SSL with OpenSSL/1.1.1n
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.12
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: Created online subsystem instance for: NULL
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogInit: Build: ++UE5+Release-5.1-CL-23901901
+LogInit: Engine Version: 5.1.1-23901901+++UE5+Release-5.1
+LogInit: Compatible Engine Version: 5.1.0-23058290+++UE5+Release-5.1
+LogInit: Net CL: 23058290
+LogInit: OS: Windows 11 (22H2) [10.0.22621.1702] (), CPU: AMD Ryzen 3 3300X 4-Core Processor             , GPU: NVIDIA GeForce RTX 2060 SUPER
+LogInit: Compiled (64-bit): Jan 30 2023 05:19:00
+LogInit: Compiled with Visual C++: 19.29.30147.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE5+Release-5.1
+LogInit: Command Line: 
+LogInit: Base Directory: D:/Program Files/Epic Games/UE_5.1/Engine/Binaries/Win64/
+LogInit: Allocator: Mimalloc
+LogInit: Installed Engine Build: 1
+LogDevObjectVersion: Number of dev versions registered: 35
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 20
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 80
+LogDevObjectVersion:   FortniteNC (5B4C06B7-2463-4AF8-805B-BF70CDF5D0DD): 10
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 4
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   UE5-Main (697DD581-E64F-41AB-AA4A-51ECBEB7B628): 88
+LogDevObjectVersion:   UE5-Release (D89B5E42-24BD-4D46-8412-ACA8DF641779): 41
+LogDevObjectVersion:   UE5-PrivateFrosty (59DA5D52-1232-4948-B878-597870B8E98B): 8
+LogDevObjectVersion:   UE5-Dev-Cooker (26075A32-730F-4708-88E9-8C32F1599D05): 0
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogDevObjectVersion:   UE5-Dev-LWCRendering (30D58BE3-95EA-4282-A6E3-B159D8EBB06A): 1
+LogInit: Presizing for max 25165824 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+LogConfig: Set CVar [[con.DebugEarlyDefault:1]]
+LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+LogConfig: Set CVar [[r.setres:1280x720]]
+LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+LogConfig: CVar [[fx.NiagaraAllowRuntimeScalabilityChanges:1]] deferred - dummy variable created
+LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+LogConfig: Set CVar [[r.Occlusion.SingleRHIThreadStall:1]]
+LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.VSync:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.RHICmdBypass:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [Engine]
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VisualizeCalibrationColorMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationColor.PPM_DefaultCalibrationColor]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VisualizeCalibrationGrayscaleMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationGrayscale.PPM_DefaultCalibrationGrayscale]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.GPUCrashDebugging:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[MaxSkinBones:(Default=65536,PerPlatform=(("Mobile", 256)))]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.DefaultFeature.AutoExposure:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.DefaultFeature.AutoExposure.Bias:1.000000]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.DefaultFeature.AutoExposure.Method:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.ReflectionMethod:2]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.GenerateMeshDistanceFields:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.DynamicGlobalIlluminationMethod:2]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.SkinCache.CompileShaders:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.RayTracing:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.Lumen.HardwareRayTracing:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.Lumen.TraceMeshSDFs:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.AllowStaticLighting:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.Shadow.Virtual.Enable:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[r.VirtualTextures:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [Engine]
+[2023.06.09-13.07.52:829][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [Engine]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.MinBulkDataSizeForAsyncLoading:131072]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.AsyncLoadingThreadEnabled:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.EventDrivenLoaderEnabled:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.WarnIfTimeLimitExceeded:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.TimeLimitExceededMultiplier:1.5]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.TimeLimitExceededMinTime:0.005]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.UseBackgroundLevelStreaming:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.PriorityAsyncLoadingExtraTime:15.0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.LevelStreamingActorsUpdateTimeLimit:5.0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.PriorityLevelStreamingActorsUpdateExtraTime:5.0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.LevelStreamingComponentsRegistrationGranularity:10]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.UnregisterComponentsTimeLimit:1.0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.LevelStreamingComponentsUnregistrationGranularity:5]]
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[s.MaxPackageSummarySize:16384]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[s.FlushStreamingOnExit:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__SoundBase]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__MaterialInterface]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__DeviceProfileManager]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [Engine]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.MaxObjectsNotConsideredByGC:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.SizeOfPermanentObjectPool:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.FlushStreamingOnGC:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.NumRetriesBeforeForcingGC:10]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.AllowParallelGC:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.TimeBetweenPurgingPendingKillObjects:61.1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.MaxObjectsInEditor:25165824]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.IncrementalBeginDestroyEnabled:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.CreateGCClusters:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.MinGCClusterSize:5]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.AssetClustreringEnabled:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.ActorClusteringEnabled:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.BlueprintClusteringEnabled:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.UseDisregardForGCOnDedicatedServers:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.MultithreadedDestructionEnabled:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.VerifyGCObjectNames:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.VerifyUObjectsAreNotFGCObjects:0]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Set CVar [[gc.PendingKillEnabled:1]]
+[2023.06.09-13.07.52:829][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [Engine]
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Average",ToolTip="Simulates average internet conditions")]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Bad",ToolTip="Simulates laggy internet conditions")]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: Applying CVar settings from Section [/Script/UnrealEd.CookerSettings] File [Engine]
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[DefaultPVRTCQuality:1]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[DefaultASTCQualityBySpeed:1]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[DefaultASTCQualityBySize:3]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:WidgetBlueprint]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GroupActor]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MetaData]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ObjectRedirector]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NavMeshRenderingComponent]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ReflectionCaptureComponent]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:TextRenderComponent]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:Font]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:InterpCurveEdSetup]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:MaterialExpression]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraEmitter]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:NiagaraScript]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleEmitter]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleLODLevel]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:ParticleModule]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SubUVAnimation]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:SoundNode]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedServer:GameplayEffectUIData]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:WidgetBlueprint]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:GroupActor]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:MetaData]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:ObjectRedirector]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[ClassesExcludedOnDedicatedClient:InterpCurveEdSetup]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.AllowStaticLighting]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.GBuffer]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.VelocityOutputPass]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.SelectiveBasePassOutputs]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.DBuffer]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.Symbols]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.GenerateSymbols]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.WriteSymbols]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.AllowUniqueSymbols]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.ExtraData]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.Shaders.Optimize]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.CompileShadersForDevelopment]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.MobileHDR]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[VersionedIntRValues:r.UsePreExposure]] deferred - dummy variable created
+[2023.06.09-13.07.52:829][  0]LogConfig: CVar [[bCookOnTheFlyForLaunchOn:0]] deferred - dummy variable created
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SkeletalMeshLODBias:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.ViewDistanceScale:1.0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.FXAA.Quality:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TemporalAA.Quality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.History.R11G11B10:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.History.ScreenPercentage:100]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.History.UpdateQuality:3]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.History.GrandReprojection:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.ShadingRejection.Flickering:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.Velocity.Extrapolation:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: CVar [[r.TSR.Velocity.HoleFill:1]] deferred - dummy variable created
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TSR.RejectionAntiAliasingQuality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LightFunctionQuality:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.ShadowQuality:5]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.CSM.MaxCascades:10]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.MaxResolution:2048]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.MaxCSMResolution:2048]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.RadiusThreshold:0.01]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.DistanceScale:1.0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.CSM.TransitionScale:1.0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.PreShadowResolutionFactor:1.0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DistanceFieldShadowing:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DistanceFieldAO:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.AOQuality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.VolumetricFog:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.VolumetricFog.GridPixelSize:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.VolumetricFog.GridSizeZ:128]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.VolumetricFog.HistoryMissSupersampleCount:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LightMaxDrawDistanceScale:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.CapsuleShadows:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.MaxPhysicalPages:4096]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.ResolutionLodBiasDirectional:-1.5]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.ResolutionLodBiasLocal:0.0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.SMRT.RayCountDirectional:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.SMRT.SamplesPerRayDirectional:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.SMRT.RayCountLocal:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Shadow.Virtual.SMRT.SamplesPerRayLocal:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [GlobalIlluminationQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.DiffuseIndirect.Allow:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LumenScene.Radiosity.ProbeSpacing:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LumenScene.Radiosity.HemisphereProbeResolution:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TraceMeshSDFs.Allow:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.RadianceCache.ProbeResolution:32]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.RadianceCache.NumProbesToTraceBudget:300]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.ScreenSpaceBentNormal:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.DownsampleFactor:16]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.TracingOctahedronResolution:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.IrradianceFormat:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.StochasticInterpolation:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.FullResolutionJitterWidth:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.ScreenProbeGather.TwoSidedFoliageBackfaceDiffuse:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyVolume.GridPixelSize:32]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyVolume.TraceFromVolume:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyVolume.TracingOctahedronResolution:3]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyVolume.RadianceCache.ProbeResolution:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyVolume.RadianceCache.NumProbesToTraceBudget:200]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LumenScene.SurfaceCache.CardCaptureRefreshFraction:0.125]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [ReflectionQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.Reflections.Allow:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.Reflections.DownsampleFactor:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyReflections.FrontLayer.Allow:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Lumen.TranslucencyReflections.FrontLayer.Enable:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.MotionBlurQuality:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.MotionBlur.HalfResGather:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.AmbientOcclusionMipLevelFactor:0.4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.AmbientOcclusionMaxQuality:100]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.AmbientOcclusionLevels:-1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.AmbientOcclusionRadiusScale:1.0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DepthOfFieldQuality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.RenderTargetPoolMin:400]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LensFlareQuality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SceneColorFringeQuality:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.EyeAdaptationQuality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.BloomQuality:5]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Bloom.ScreenPercentage:70.711]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.FastBlurThreshold:100]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Upscale.Quality:3]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Tonemapper.GrainQuantization:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.LightShaftQuality:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Filter.SizeScale:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Tonemapper.Quality:5]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Gather.AccumulatorQuality:1        ; higher gathering accumulator quality]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Gather.PostfilterMethod:1          ; Median3x3 postfilering method]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Gather.EnableBokehSettings:0       ; no bokeh simulation when gathering]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Gather.RingCount:4                 ; medium number of samples when gathering]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Scatter.ForegroundCompositing:1    ; additive foreground scattering]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Scatter.BackgroundCompositing:2    ; additive background scattering]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Scatter.EnableBokehSettings:1      ; bokeh simulation when scattering]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Scatter.MaxSpriteRatio:0.1         ; only a maximum of 10% of scattered bokeh]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Recombine.Quality:1                ; cheap slight out of focus]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Recombine.EnableBokehSettings:0    ; no bokeh simulation on slight out of focus]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.TemporalAAQuality:1                ; more stable temporal accumulation]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Kernel.MaxForegroundRadius:0.025]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DOF.Kernel.MaxBackgroundRadius:0.025]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.MipBias:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.AmortizeCPUToGPUCopy:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.MaxNumTexturesToStreamPerFrame:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.Boost:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.MaxAnisotropy:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.VT.MaxAnisotropy:8]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.LimitPoolSizeToVRAM:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.PoolSize:1000]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.Streaming.MaxEffectiveScreenSize:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [Scalability]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TranslucencyLightingVolumeDim:64]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.RefractionQuality:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSR.Quality:3]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSR.HalfResSceneColor:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SceneColorFormat:4]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.DetailMode:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.TranslucencyVolumeBlur:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.MaterialQualityLevel:1 ; High quality]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSS.Scale:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSS.SampleSet:2]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSS.Quality:1]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSS.HalfRes:0]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.SSGI.Quality:3]]
+[2023.06.09-13.07.52:831][  0]LogConfig: Set CVar [[r.EmitterSpawnRateScale:1.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.ParticleLightQuality:2]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.FastApplyOnOpaque:1 ; Always have FastSkyLUT 1 in this case to avoid wrong sky]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.SampleCountMaxPerSlice:4]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.AerialPerspectiveLUT.DepthResolution:16.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.FastSkyLUT:1]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMin:4.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.FastSkyLUT.SampleCountMax:128.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.SampleCountMin:4.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.SampleCountMax:128.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.TransmittanceLUT.UseSmallFormat:0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.TransmittanceLUT.SampleCount:10.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyAtmosphere.MultiScatteringLUT.SampleCount:15.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.SkyLight.RealTimeReflectionCapture:1]]
+[2023.06.09-13.07.52:832][  0]LogConfig: CVar [[fx.Niagara.QualityLevel:3]] deferred - dummy variable created
+[2023.06.09-13.07.52:832][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [Scalability]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[foliage.DensityScale:1.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[grass.DensityScale:1.0]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [Scalability]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.HairStrands.SkyLighting.IntegrationType:2]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.HairStrands.SkyAO.SampleCount:4]]
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.HairStrands.Visibility.MSAA.SamplePerPixel:4]]
+[2023.06.09-13.07.52:832][  0]LogConfig: CVar [[r.HairStrands.Interpolation.UseSingleGuide:0]] deferred - dummy variable created
+[2023.06.09-13.07.52:832][  0]LogConfig: Set CVar [[r.AnisotropicMaterials:1]]
+[2023.06.09-13.07.52:926][  0]LogD3D12RHI: Aftermath initialized
+[2023.06.09-13.07.52:926][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2023.06.09-13.07.53:094][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 2060 SUPER (Max supported Feature Level 12_2, shader model 6.6)
+[2023.06.09-13.07.53:094][  0]LogD3D12RHI: Adapter has 8019MB of dedicated video memory, 0MB of dedicated system memory, and 16339MB of shared system memory, 1 output[s]
+[2023.06.09-13.07.53:111][  0]LogD3D12RHI: Found D3D12 adapter 1: Microsoft Basic Render Driver (Max supported Feature Level 12_1, shader model 6.2)
+[2023.06.09-13.07.53:111][  0]LogD3D12RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 16339MB of shared system memory, 0 output[s]
+[2023.06.09-13.07.53:111][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2023.06.09-13.07.53:111][  0]LogInit: Selected Device Profile: [WindowsEditor]
+[2023.06.09-13.07.53:111][  0]LogHAL: Display: Platform has ~ 32 GB [34266505216 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2023.06.09-13.07.53:111][  0]LogDeviceProfileManager: Going up to parent DeviceProfile [Windows]
+[2023.06.09-13.07.53:111][  0]LogDeviceProfileManager: Going up to parent DeviceProfile []
+[2023.06.09-13.07.53:111][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2023.06.09-13.07.53:117][  0]LogConfig: Set CVar [[r.DumpShaderDebugInfo:2]]
+[2023.06.09-13.07.53:117][  0]LogConfig: Set CVar [[p.chaos.AllowCreatePhysxBodies:1]]
+[2023.06.09-13.07.53:117][  0]LogConfig: Set CVar [[fx.SkipVectorVMBackendOptimizations:1]]
+[2023.06.09-13.07.53:117][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [Engine]
+[2023.06.09-13.07.53:117][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Config/WindowsEditor/Editor.ini]
+[2023.06.09-13.07.53:117][  0]LogInit: Computer: DESKTOP-7O2N4A7
+[2023.06.09-13.07.53:117][  0]LogInit: User: qkrdl
+[2023.06.09-13.07.53:117][  0]LogInit: CPU Page size=4096, Cores=4
+[2023.06.09-13.07.53:117][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2023.06.09-13.07.53:117][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2023.06.09-13.07.53:117][  0]LogMemory: Platform Memory Stats for WindowsEditor
+[2023.06.09-13.07.53:117][  0]LogMemory: Process Physical Memory: 287.04 MB used, 314.30 MB peak
+[2023.06.09-13.07.53:117][  0]LogMemory: Process Virtual Memory: 252.81 MB used, 252.81 MB peak
+[2023.06.09-13.07.53:117][  0]LogMemory: Physical Memory: 22954.32 MB used,  9724.77 MB free, 32679.09 MB total
+[2023.06.09-13.07.53:117][  0]LogMemory: Virtual Memory: 45733.27 MB used,  11232.31 MB free, 56965.58 MB total
+[2023.06.09-13.07.53:117][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2023.06.09-13.07.53:122][  0]LogWindows: WindowsPlatformFeatures enabled
+[2023.06.09-13.07.53:192][  0]LogInit: Physics initialised using underlying interface: Chaos
+[2023.06.09-13.07.53:193][  0]LogInit: Using OS detected language (ko-KR).
+[2023.06.09-13.07.53:193][  0]LogInit: Using OS detected locale (ko-KR).
+[2023.06.09-13.07.53:199][  0]LogTextLocalizationManager: No specific localization for 'ko-KR' exists, so 'ko' will be used for the language.
+[2023.06.09-13.07.53:368][  0]LogInit: Setting process to per monitor DPI aware
+[2023.06.09-13.07.53:391][  0]LogWindowsTextInputMethodSystem: Available input methods:
+[2023.06.09-13.07.53:391][  0]LogWindowsTextInputMethodSystem:   - 한국어(대한민국) - Microsoft 입력기 (TSF IME).
+[2023.06.09-13.07.53:391][  0]LogWindowsTextInputMethodSystem:   - 한국어(대한민국) - 터치식 입력 수정 (TSF IME).
+[2023.06.09-13.07.53:391][  0]LogWindowsTextInputMethodSystem: Activated input method: 한국어(대한민국) - Microsoft 입력기 (TSF IME).
+[2023.06.09-13.07.53:473][  0]LogSlate: New Slate User Created. Platform User Id 0, User Index 0, Is Virtual User: 0
+[2023.06.09-13.07.53:473][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2023.06.09-13.07.55:686][  0]LogD3D12RHI: Display: Creating D3D12 RHI with Max Feature Level SM6
+[2023.06.09-13.07.55:687][  0]LogWindows: Attached monitors:
+[2023.06.09-13.07.55:687][  0]LogWindows:     resolution: 1920x1080, work area: (0, 0) -> (1920, 1032), device: '\\.\DISPLAY1' [PRIMARY]
+[2023.06.09-13.07.55:687][  0]LogWindows: Found 1 attached monitors.
+[2023.06.09-13.07.55:687][  0]LogWindows: Gathering driver information using Windows Setup API
+[2023.06.09-13.07.55:687][  0]LogRHI: RHI Adapter Info:
+[2023.06.09-13.07.55:687][  0]LogRHI:             Name: NVIDIA GeForce RTX 2060 SUPER
+[2023.06.09-13.07.55:687][  0]LogRHI:   Driver Version: 532.03 (internal:31.0.15.3203, unified:532.03)
+[2023.06.09-13.07.55:687][  0]LogRHI:      Driver Date: 5-19-2023
+[2023.06.09-13.07.55:687][  0]LogD3D12RHI:     GPU DeviceId: 0x1f06 (for the marketing name, search the web for "GPU Device Id")
+[2023.06.09-13.07.55:687][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2023.06.09-13.07.55:690][  0]LogD3D12RHI: [Aftermath] Aftermath crash dumping enabled
+[2023.06.09-13.07.55:690][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: [Aftermath] Aftermath enabled and primed
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: [Aftermath] Aftermath resource tracking enabled
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device8 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device9 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: ID3D12Device10 is supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: Bindless resources are supported
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 and bindless resources are supported.
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2023.06.09-13.07.55:779][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2023.06.09-13.07.55:850][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (3D)
+[2023.06.09-13.07.55:850][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Copy)
+[2023.06.09-13.07.55:850][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Compute)
+[2023.06.09-13.07.55:865][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2023.06.09-13.07.55:865][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2023.06.09-13.07.55:865][  0]LogRHI: Texture pool is 4568 MB (70% of 6525 MB)
+[2023.06.09-13.07.55:865][  0]LogD3D12RHI: Async texture creation enabled
+[2023.06.09-13.07.55:865][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2023.06.09-13.07.55:961][  0]LogTurnkeySupport: Running Turnkey SDK detection: ' -ScriptsForProject="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyReport_0.log" -log="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyLog_0.log" -project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -platform=all'
+[2023.06.09-13.07.55:961][  0]LogMonitoredProcess: Running Serialized UAT: [ cmd.exe /c ""D:/Program Files/Epic Games/UE_5.1/Engine/Build/BatchFiles/RunUAT.bat"  -ScriptsForProject="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyReport_0.log" -log="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyLog_0.log" -project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -platform=all" ]
+[2023.06.09-13.07.56:149][  0]LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatASTC
+[2023.06.09-13.07.56:149][  0]LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatDXT
+[2023.06.09-13.07.56:149][  0]LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatETC2
+[2023.06.09-13.07.56:149][  0]LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatIntelISPCTexComp
+[2023.06.09-13.07.56:149][  0]LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatUncompressed
+[2023.06.09-13.07.56:149][  0]LogTextureFormatOodle: Display: Oodle Texture TFO init; latest sdk version = 2.9.8
+[2023.06.09-13.07.56:149][  0]LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.5.dll
+[2023.06.09-13.07.56:172][  0]LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.6.dll
+[2023.06.09-13.07.56:194][  0]LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.7.dll
+[2023.06.09-13.07.56:214][  0]LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.8.dll
+[2023.06.09-13.07.56:237][  0]LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatOodle
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+[2023.06.09-13.07.56:263][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+[2023.06.09-13.07.56:312][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLens'
+[2023.06.09-13.07.56:312][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'HoloLensClient'
+[2023.06.09-13.07.56:337][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+[2023.06.09-13.07.56:338][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+[2023.06.09-13.07.56:362][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+[2023.06.09-13.07.56:362][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxEditor'
+[2023.06.09-13.07.56:362][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+[2023.06.09-13.07.56:362][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+[2023.06.09-13.07.56:383][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64'
+[2023.06.09-13.07.56:384][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Server'
+[2023.06.09-13.07.56:384][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxArm64Client'
+[2023.06.09-13.07.56:403][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+[2023.06.09-13.07.56:403][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+[2023.06.09-13.07.56:447][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+[2023.06.09-13.07.56:447][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsEditor'
+[2023.06.09-13.07.56:447][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+[2023.06.09-13.07.56:447][  0]LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+[2023.06.09-13.07.56:447][  0]LogTargetPlatformManager: Display: Building Assets For WindowsEditor
+[2023.06.09-13.07.56:555][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2023.06.09-13.07.56:576][  0]LogTargetPlatformManager: Unable to find audio format BINKA from hinted modules, loading all potential format modules to find it
+[2023.06.09-13.07.56:576][  0]LogTargetPlatformManager: Loaded format module AudioFormatADPCM
+[2023.06.09-13.07.56:576][  0]LogTargetPlatformManager:   ADPCM
+[2023.06.09-13.07.56:576][  0]LogTargetPlatformManager:   PCM
+[2023.06.09-13.07.56:597][  0]LogTargetPlatformManager: Loaded format module AudioFormatBink
+[2023.06.09-13.07.56:597][  0]LogTargetPlatformManager:   BINKA
+[2023.06.09-13.07.56:597][  0]LogTargetPlatformManager: Loaded format module AudioFormatOgg
+[2023.06.09-13.07.56:597][  0]LogTargetPlatformManager:   OGG
+[2023.06.09-13.07.56:597][  0]LogTargetPlatformManager: Loaded format module AudioFormatOpus
+[2023.06.09-13.07.56:597][  0]LogTargetPlatformManager:   OPUS
+[2023.06.09-13.07.57:009][  0]LogTargetPlatformManager: Unable to find shader format SF_METAL from hinted modules, loading all potential format modules to find it
+[2023.06.09-13.07.57:055][  0]LogTargetPlatformManager: Loaded format module MetalShaderFormat
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL_MRT
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL_TVOS
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL_MRT_TVOS
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL_SM5
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL_MACES3_1
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   SF_METAL_MRT_MAC
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager: Loaded format module ShaderFormatD3D
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   PCD3D_SM6
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   PCD3D_SM5
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   PCD3D_ES31
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   D3D_ES3_1_HOLOLENS
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager: Loaded format module ShaderFormatOpenGL
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   GLSL_150_ES31
+[2023.06.09-13.07.57:056][  0]LogTargetPlatformManager:   GLSL_ES3_1_ANDROID
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager: Loaded format module ShaderFormatVectorVM
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager:   VVM_1_0
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager: Loaded format module VulkanShaderFormat
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager:   SF_VULKAN_SM5
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager:   SF_VULKAN_ES31_ANDROID
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager:   SF_VULKAN_ES31
+[2023.06.09-13.07.57:110][  0]LogTargetPlatformManager:   SF_VULKAN_SM5_ANDROID
+[2023.06.09-13.07.57:110][  0]LogRendererCore: Ray tracing is enabled for the editor. Reason: r.RayTracing=1 and r.RayTracing.EnableInEditor=1.
+[2023.06.09-13.07.57:113][  0]LogDerivedDataCache: FDerivedDataBackendGraph: Pak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2023.06.09-13.07.57:113][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchy Hierarchy.
+[2023.06.09-13.07.57:113][  0]LogDerivedDataCache: FDerivedDataBackendGraph: CompressedPak pak cache file ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.06.09-13.07.57:113][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchy Hierarchy.
+[2023.06.09-13.07.57:141][  0]LogDerivedDataCache: Display: ../../../Engine/DerivedDataCache/Compressed.ddp: Opened pak cache for reading. (1363 MiB)
+[2023.06.09-13.07.57:141][  0]LogDerivedDataCache: FDerivedDataBackendGraph: EnterprisePak pak cache file ../../../Enterprise/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2023.06.09-13.07.57:141][  0]LogDerivedDataCache: Unable to find inner node EnterprisePak for hierarchy Hierarchy.
+[2023.06.09-13.07.57:188][  0]LogDerivedDataCache: Speed tests for C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache took 0.05 seconds
+[2023.06.09-13.07.57:188][  0]LogDerivedDataCache: Display: Performance to C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Latency=0.12ms. RandomReadSpeed=24.64MBs, RandomWriteSpeed=132.83MBs. Assigned SpeedClass 'Local'
+[2023.06.09-13.07.57:190][  0]LogDerivedDataCache: Using Local data cache path C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2023.06.09-13.07.57:190][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2023.06.09-13.07.57:190][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchy Hierarchy.
+[2023.06.09-13.07.57:190][  0]LogVirtualization: Display: VirtualizationSystem name found in ini file: None
+[2023.06.09-13.07.57:190][  0]LogVirtualization: Display: FNullVirtualizationSystem mounted, virtualization will be disabled
+[2023.06.09-13.07.57:190][  0]LogShaderCompilers: Guid format shader working directory is -36 characters bigger than the processId version (../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/Shaders/WorkingDirectory/23148/).
+[2023.06.09-13.07.57:190][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/qkrdl/AppData/Local/Temp/UnrealShaderWorkingDir/8C18CE4F449CCF81AC000489591E710E/'.
+[2023.06.09-13.07.57:191][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2023.06.09-13.07.57:191][  0]LogShaderCompilers: Display: Using Local Shader Compiler with 5 workers.
+[2023.06.09-13.08.01:742][  0]LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/ShaderAutogen/PCD3D_SM6/AutogenShaderHeaders.ush
+[2023.06.09-13.08.01:742][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2023.06.09-13.08.03:305][  0]LogTurnkeySupport: Completed SDK detection: ExitCode = 0
+[2023.06.09-13.08.03:673][  0]LogSlate: Using FreeType 2.10.0
+[2023.06.09-13.08.03:680][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2023.06.09-13.08.03:937][  0]LogAssetRegistry: FAssetRegistry took 0.0122 seconds to start up
+[2023.06.09-13.08.03:945][  0]LogEditorDomain: Display: EditorDomain is Disabled
+[2023.06.09-13.08.04:124][  0]LogTexture: Display: Texture Encode Speed: FinalIfAvailable (editor).
+[2023.06.09-13.08.04:476][  0]LogInit: Selected Device Profile: [WindowsEditor]
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: Available device profiles:
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2462600][000005FAA9C41800 52] GlobalDefaults, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463A00][000005FAAA745000 52] Windows, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463C00][000005FAAA74C800 52] WindowsEditor, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2462000][000005FAAA747800 52] WindowsServer, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2462C00][000005FAAA740000 52] WindowsClient, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463600][000005FAAB710000 52] IOS, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461600][000005FAA9ECA000 52] iPadAir2, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464400][000005FAAA74A000 52] IPadPro, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464600][000005FAAB715000 52] iPadAir3, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2462400][000005FAAE92C800 52] iPadAir4, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464200][000005FAB3040000 52] iPadAir5, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461C00][000005FAB3045000 52] iPadMini4, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463800][000005FAB3047800 52] iPadMini5, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461000][000005FAB304A000 52] iPadMini6, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466200][000005FAB30B0000 52] iPhone6S, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466400][000005FAB30B2800 52] iPhone7, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466600][000005FAB30B5000 52] iPodTouch7, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465200][000005FAB30BA000 52] iPhone6SPlus, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2462E00][000005FAB30BC800 52] iPhone7Plus, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464C00][000005FAA1F22800 52] iPhoneSE, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464A00][000005FAB304C800 52] iPhone8, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2462A00][000005FAB30B7800 52] iPhone8Plus, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461E00][000005FAB3050000 52] iPhoneX, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466000][000005FAB3055000 52] iPhoneXS, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466E00][000005FAB3057800 52] iPhoneXSMax, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464800][000005FAB305A000 52] iPhoneXR, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465400][000005FAB305C800 52] iPhone11, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465E00][000005FAB3042800 52] iPhone11Pro, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463400][000005FAB3060000 52] iPhone11ProMax, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463E00][000005FAB3065000 52] iPhoneSE2, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465000][000005FAB3067800 52] iPhone12Mini, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461400][000005FAB306A000 52] iPhone12, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466A00][000005FAB306C800 52] iPhone12Pro, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466C00][000005FAB3052800 52] iPhone12ProMax, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465A00][000005FAB3080000 52] iPhone13Mini, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465C00][000005FAB3085000 52] iPhone13, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464E00][000005FAB3087800 52] iPhone13Pro, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467000][000005FAB308A000 52] iPhone13ProMax, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467200][000005FAB308C800 52] iPhoneSE3, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467600][000005FAB3062800 52] iPhone14, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467800][000005FAB3090000 52] iPhone14Plus, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467C00][000005FAB3095000 52] iPhone14Pro, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465800][000005FAB3097800 52] iPhone14ProMax, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463200][000005FAB309A000 52] iPadPro105, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2465600][000005FAB309C800 52] iPadPro129, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468000][000005FAB3082800 52] iPadPro97, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468200][000005FAB30A0000 52] iPadPro2_129, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468600][000005FAB30A5000 52] iPad5, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468800][000005FAB30A7800 52] iPad6, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468C00][000005FAB30AA000 52] iPad7, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461200][000005FAB30AC800 52] iPad8, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2461800][000005FAB3092800 52] iPad9, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2464000][000005FAB30D0000 52] iPad10, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469000][000005FAB30D5000 52] iPadPro11, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469200][000005FAB30D7800 52] iPadPro2_11, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469600][000005FAB30DA000 52] iPadPro3_11, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469800][000005FAB30DC800 52] iPadPro4_11, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469C00][000005FAB30A2800 52] iPadPro3_129, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2466800][000005FAB30E0000 52] iPadPro4_129, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2463000][000005FAB30E5000 52] iPadPro5_129, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467A00][000005FAB30E7800 52] iPadPro6_129, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246A000][000005FAB30EA000 52] AppleTV, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246A200][000005FAB30EC800 52] AppleTV4K, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246A600][000005FAB30D2800 52] AppleTV2_4K, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246A800][000005FAB30F0000 52] TVOS, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246BA00][000005FAB30F7800 52] Mac, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246BC00][000005FAB30F5000 52] MacEditor, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467400][000005FAB30FA000 52] MacClient, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246B800][000005FAB30FC800 52] MacServer, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246C000][000005FAB3100000 52] Linux, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246C200][000005FAB3102800 52] LinuxEditor, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469E00][000005FAB3107800 52] LinuxArm64Editor, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246C800][000005FAB310A000 52] LinuxArm64, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246CC00][000005FAB310C800 52] LinuxClient, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2467E00][000005FAB30E2800 52] LinuxArm64Client, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246BE00][000005FAB3105000 52] LinuxServer, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246C600][000005FAB3130000 52] LinuxArm64Server, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246B400][000005FAB3135000 52] Android, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469400][000005FAB3137800 52] Android_Preview_OpenGL, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246CE00][000005FAB313A000 52] Android_Preview_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246B200][000005FAB313C800 52] Android_Low, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246AA00][000005FAB30F2800 52] Android_Mid, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246B000][000005FAB3140000 52] Android_High, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468400][000005FAB3145000 52] Android_Default, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468E00][000005FAB3147800 52] Android_Adreno4xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246D000][000005FAB314A000 52] Android_Adreno5xx_Low, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246D200][000005FAB314C800 52] Android_Adreno5xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246D600][000005FAB3132800 52] Android_Adreno6xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246D800][000005FAB3150000 52] Android_Adreno6xx_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246DC00][000005FAB3155000 52] Android_Adreno7xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2468A00][000005FAB3157800 52] Android_Adreno7xx_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246AE00][000005FAB315A000 52] Android_Mali_T6xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246A400][000005FAB315C800 52] Android_Mali_T7xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246E000][000005FAB3142800 52] Android_Mali_T8xx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246E200][000005FAB3160000 52] Android_Mali_G71, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246E600][000005FAB3165000 52] Android_Mali_G72, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246E800][000005FAB3167800 52] Android_Mali_G72_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246EC00][000005FAB316A000 52] Android_Mali_G76, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246AC00][000005FAB316C800 52] Android_Mali_G76_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB2469A00][000005FAB3152800 52] Android_Mali_G77, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246B600][000005FAB3170000 52] Android_Mali_G77_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246F000][000005FAB3175000 52] Android_Mali_G78, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246F200][000005FAB3177800 52] Android_Mali_G78_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246F600][000005FAB317A000 52] Android_Mali_G710, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246F800][000005FAB317C800 52] Android_Mali_G710_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246FC00][000005FAB3162800 52] Android_Xclipse_920, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246CA00][000005FAB3180000 52] Android_Xclipse_920_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246C400][000005FAB3185000 52] Android_Vulkan_SM5, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB246DA00][000005FAB3187800 52] Android_PowerVR_G6xxx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB1ECFE00][000005FAB318A000 52] Android_PowerVR_GT7xxx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAACABEC00][000005FAB318C800 52] Android_PowerVR_GE8xxx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3191200][000005FAB3172800 52] Android_PowerVR_GM9xxx, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3191600][000005FAB31A0000 52] Android_PowerVR_GM9xxx_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3191C00][000005FAB31A5000 52] Android_TegraK1, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3191000][000005FAB31A7800 52] Android_Unknown_Vulkan, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3190A00][000005FAB31AA000 52] Oculus_Quest, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3190200][000005FAB31AC800 52] Oculus_Quest2, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: 	[000005FAB3192000][000005FAB3182800 52] HoloLens, 
+[2023.06.09-13.08.04:477][  0]LogDeviceProfileManager: Active device profile: [000005FAB2463C00][000005FAAA74C800 52] WindowsEditor
+[2023.06.09-13.08.04:477][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="WindowsEditor"
+[2023.06.09-13.08.04:477][  0]LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/ShaderAutogen/PCD3D_SM5/AutogenShaderHeaders.ush
+[2023.06.09-13.08.04:482][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2023.06.09-13.08.04:482][  0]LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/ShaderAutogen/PCD3D_ES3_1/AutogenShaderHeaders.ush
+[2023.06.09-13.08.04:486][  0]LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+[2023.06.09-13.08.04:489][  0]LogTurnkeySupport: Turnkey Platform: Android: (Status=Invalid, Allowed_Sdk=r25b, Current_Sdk=, Allowed_AutoSdk=r25b, Current_AutoSdk=, Flags="Platform_InvalidHostPrerequisites", Error="Android Studio is not installed correctly.|Android SDK directory is not set correctly.")
+[2023.06.09-13.08.04:489][  0]LogTurnkeySupport: Turnkey Platform: IOS: (Status=Invalid, MinAllowed_Sdk=1100.0.0.0, MaxAllowed_Sdk=1499.0, Current_Sdk=, Allowed_AutoSdk=13.3, Current_AutoSdk=, Flags="Platform_ValidHostPrerequisites")
+[2023.06.09-13.08.04:489][  0]LogTurnkeySupport: Turnkey Platform: Linux: (Status=Invalid, Allowed_Sdk=v20_clang-13.0.1-centos7, Current_Sdk=, Allowed_AutoSdk=v20_clang-13.0.1-centos7, Current_AutoSdk=, Flags="Platform_ValidHostPrerequisites")
+[2023.06.09-13.08.04:489][  0]LogTurnkeySupport: Turnkey Platform: LinuxArm64: (Status=Invalid, Allowed_Sdk=v20_clang-13.0.1-centos7, Current_Sdk=, Allowed_AutoSdk=v20_clang-13.0.1-centos7, Current_AutoSdk=, Flags="Platform_ValidHostPrerequisites")
+[2023.06.09-13.08.04:489][  0]LogTurnkeySupport: Turnkey Platform: Win64: (Status=Valid, MinAllowed_Sdk=10.0.00000.0, MaxAllowed_Sdk=10.9.99999.0, Current_Sdk=10.0.22621.0, Allowed_AutoSdk=10.0.18362.0, Current_AutoSdk=, Flags="InstalledSdk_ValidVersionExists")
+[2023.06.09-13.08.04:513][  0]LogTurnkeySupport: Running Turnkey device detection: ' -ScriptsForProject="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyReport_1.log" -log="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyLog_1.log" -project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -Device=Win64@DESKTOP-7O2N4A7'
+[2023.06.09-13.08.04:513][  0]LogMonitoredProcess: Running Serialized UAT: [ cmd.exe /c ""D:/Program Files/Epic Games/UE_5.1/Engine/Build/BatchFiles/RunUAT.bat"  -ScriptsForProject="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject" Turnkey -utf8output -WaitForUATMutex -command=VerifySdk -ReportFilename="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyReport_1.log" -log="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Intermediate/TurnkeyLog_1.log" -project="D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Project_MF.uproject"  -Device=Win64@DESKTOP-7O2N4A7" -nocompile -nocompileuat ]
+[2023.06.09-13.08.04:603][  0]LogTexture: Display: Oodle Texture Encode Speed settings: Fast: RDO Off Lambda=0, Effort=Normal Final: RDO Off Lambda=0, Effort=Normal
+[2023.06.09-13.08.04:765][  0]LogMaterial: Display: WorldGridMaterial-SM6-Default: MATSM_01614A42F67F4FFC8600AD04D15D199F_PCD3D_SM6_2056272690__BC5N_NoCCBN_NoIris_DEV_SL_GV_PreExp_DBuf_UnInt_DXC0_VFO_SKYATM_SKYHF_SLWDFS_gs1_sdct_VT-0-0-1-0_DF_MS_T0_MS_T1_BNDLS_RAY-CHS1AHS1LOD0_VED_Aniso-1_ComprOodle_Compr2_Lev6_ExclNonPipSh-1_LWC-2097152_3152175004D223CF754F51059EF2CB96AE54674576_Num_SM6_FL_0000000d_MFA_00000008_V_B6A0A753ED62499D8F30931E61FCAB05_0_DB3E993F4E2E98B305AD13B92D8C5DA5_5ED0A2783F630BA5CB3EC77766BEDE91B3ED4A5F___TShadowDepthPSPixelShadowDepth_PerspectiveCorrectF449D5DEDCF833608913E6CD8B760EAB37A0558772C96EE55043153763054472F92891367BC849EC_FLumenCardPS<false>C99F08DFC47581645B636159483DE183E5DB9135B4AFBC835B0E8511B596BB98C6C375E96F613E4D_TShadowDepthPSPixelShadowDepth_NonPerspectiveCorrectF449D5DEDCF833608913E6CD8B760EAB37A055875D9003A07122BE7BD2876C98DF8D858F5E00365D_TShadowDepthVSVertexShadowDepth_OutputDepthPositionOnly566268C17842BE32F7F4196A64F1F860A951687BFCFDE4884D635EDF4F18BD3392801DB627240626_FMicropolyRasterizeCS84D2AD0C1762EC1B1A376348479AF93FE79505AD38D66192BF0D34515EC5AD2CDACFA24FFB6B4CAC_TLightMapDensityPSTLightMapPolicyHQC84C3C8B1FA855658F9C0A2A371DDABD1F79452E29E8E0F5F6FD2EDF413A1250AA7BE6E52C951D64_FRayTracingDynamicGeometryConverterCS0ABB639F68310E146B7E7A53D616A4A2EC4808E4072A0E200FA023B5D99FFB5F1AAF71DA03AF2DA3_TBasePassPSFPrecomputedVolumetricLightmapLightingPolicySkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C72C399F00EA0D8E90CF7BA4C61EF5A3EF74973E9_TMaterialCHSFNoLightMapPolicyBB49766FB142EEA39161FDD803D8E31666101F38BD06F44751740657E9BD2E738874A07D74DA1485_TBasePassPSTLightMapPolicyLQSkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C2E4EA8FEEED7EE52C208FC54424FEDB2CB987C3B_FLandscapeGrassWeightVSCE760ED4917D7AE7004CF8C6F5F4499E9B97C589A469FA5FCF448A131F926D214995E53915A18256_TLightMapDensityVSFNoLightMapPolicyC84C3C8B1FA855658F9C0A2A371DDABD1F79452E891C1124EC1B5DB941DF1BA5FABB4BBFA352223F_TBasePassPSTDistanceFieldShadowsAndLightMapPolicyHQA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C69888500E07A0F62E3747DCAFAE5FAC8F032AD04_FHWRasterizeVS84D2AD0C1762EC1B1A376348479AF93FE79505AD48C83E6C6E5EB20B8752F7226BE8C1194A6F8F77_FHitProxyVS7C36940791A54FBE6A358BA344C8BFAD3CAD2B93B282128ADBC0C8F2E22B2C5B575EEDED30A8B7B8_FHitProxyPSF2A8FCCDF8BB1EBC7BCC3C20C862B59EB528CDEF2A74A59EB00EA821209C26349094BBB03F4D6ED5_TMaterialCHSTLightMapPolicyHQBB49766FB142EEA39161FDD803D8E31666101F38625CF756CDCFD5661AE72DF209C35A5CE9F64B72_FLandscapeGrassWeightPSCE760ED4917D7AE7004CF8C6F5F4499E9B97C589106C943CF2E5C6D33DAE5FDC4A4E9B8232B7C78A_TBasePassPSFNoLightMapPolicyA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C6C8686026B054D9BD961D4C440F5FDD54CA38C07_FHWRasterizePS84D2AD0C1762EC1B1A376348479AF93FE79505AD48C028453BCF70A104115FCB364BA6A5C3C4AAA0_TMaterialCHSFPrecomputedVolumetricLightmapLightingPolicyBB49766FB142EEA39161FDD803D8E31666101F38ECDE79919B77FF7F124296B0406F194F36229E0E_TShadowDepthVSVertexShadowDepth_OutputDepth566268C17842BE32F7F4196A64F1F860A951687B5C128A2F6D1507D174ED09775E1D5BB050F02683_TDepthOnlyVS<true>77E78BED1A1AECF5E6A7B716F216702EBC4CCE9C2A9A9EB6F6AEC78D04ED0798341235919F1C7EA3_FLandscapePhysicalMaterialPS9BD56FDC1A69F5A3842C3E86AD24E497CDE01F1CBD4AAA5E1E701CB0F79C3E8D450BEF8AC937258A_TLightMapDensityVSFDummyLightMapPolicyC84C3C8B1FA855658F9C0A2A371DDABD1F79452EA8D01D556A2A6347711968CC5B2C44E20848E17B_FLumenCardVSAC81B5EC2471BF6EB1C6B5C0DED961C1BBCB3000617646237FDC69FB38D590AA0B687E0FB01A281E_TShadowDepthPSPixelShadowDepth_VirtualShadowMapF449D5DEDCF833608913E6CD8B760EAB37A05587DFFF0B5EA8BD51A79796C1533647D79F12B2FEBD_TBasePassVSFPrecomputedVolumetricLightmapLightingPolicyD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD6279FB996F0BE2BDCDA243D4A21F958EA439EF10418F_TBasePassPSTDistanceFieldShadowsAndLightMapPolicyHQSkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435CE098E06E3A7ED4E7D0AE384D374798EAC9E671FB_TBasePassPSFPrecomputedVolumetricLightmapLightingPolicyA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C1BF2DD414CE38D1A46E8BD153A9AAA4080A3ED8A_TMaterialCHSTDistanceFieldShadowsAndLightMapPolicyHQBB49766FB142EEA39161FDD803D8E31666101F38D64226B02F9EEA5B8FC4DE93BB3C89AE575A344D_TMaterialCHSTLightMapPolicyLQBB49766FB142EEA39161FDD803D8E31666101F382622F850AD92469695EFED6405C30D148D2C9676_TBasePassPSTLightMapPolicyHQA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C26BD9FE44090B7A8EDCBBA02B66941E951A0847F_FLumenCardPS<true>C99F08DFC47581645B636159483DE183E5DB913510BC213CA7B98C6BDB504A3A124DF8170F9D2A6B_TLightMapDensityPSFDummyLightMapPolicyC84C3C8B1FA855658F9C0A2A371DDABD1F79452E696F9EC07D698191FA845F9186A9C2C14B87D692_TBasePassPSFCachedPointIndirectLightingPolicySkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435CEA781543209A66E56FAA33319B50428AB09B65E2_FTranslucentLightingInjectPSCCCA088722FF1CDD2E95226DEA88C3E868FF7BC670CF5C264EEE993F300F770C1E5D8BD55181BC8A_TBasePassVSFCachedPointIndirectLightingPolicyD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD6279D1726533EF0C3E687EA7E3E99D89F6645873B5F6_FHWRasterizeMS84D2AD0C1762EC1B1A376348479AF93FE79505AD82A55489FBDC4449CDA421AFD89E7C8F3ED6A32B_TBasePassPSFCachedPointIndirectLightingPolicyA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C233B673B73AD5C3DA45AB58558A2FEAF1AB5A7AA_FVelocityPSC89A3E8742CC125CAF8FEB3824D895F0E057EC90CC98E6311AC1581B96A09EEE8AE8F6960285B5A2_TBasePassPSFCachedVolumeIndirectLightingPolicyA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C80D0A4694439F865D3CC508893BCA55969638F38_TShadowDepthVSVertexShadowDepth_PerspectiveCorrect566268C17842BE32F7F4196A64F1F860A951687BC004ABA017AA57991204B7B624FFD889C3B24A57_TBasePassPSFCachedVolumeIndirectLightingPolicySkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C588D69EC55B53A1F6EF1FDFE007D13A68C0DD945_TLightMapDensityPSFNoLightMapPolicyC84C3C8B1FA855658F9C0A2A371DDABD1F79452E0E6A1E8C16C0AF9964CF3FEFC1B82F1F3B567770_TLightMapDensityVSTLightMapPolicyLQC84C3C8B1FA855658F9C0A2A371DDABD1F79452E436509D3C31F9011DB1B52E8E02F2100F14082F9_TBasePassVSTLightMapPolicyHQD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD6279CE573C2FA544614368F38DB987E943642455C304_FLandscapePhysicalMaterialVS9BD56FDC1A69F5A3842C3E86AD24E497CDE01F1CDE0D5BCEA7EC56FCFAF6FE24C7902B1E6C1A2354_TBasePassPSFNoLightMapPolicySkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C3C0FD33120C8575A512698C01E1EBF84CB90BE73_TBasePassVSFCachedVolumeIndirectLightingPolicyD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD627952DA8047FE3873ACFEEB67FCFF3AF5DF1AA7C5C8_TShadowDepthPSPixelShadowDepth_OnePassPointLightF449D5DEDCF833608913E6CD8B760EAB37A055871C20FE0F6421C3566B37C59CBA77F6639400AC09_TShadowDepthVSVertexShadowDepth_PerspectiveCorrectPositionOnly566268C17842BE32F7F4196A64F1F860A951687B860900EDBECB877A088A2E4A829C4D0BA92DB982_TBasePassVSTDistanceFieldShadowsAndLightMapPolicyHQD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD627960D5E6FFDE96A687BE1C1A2ED9EDE815F8E41839_TShadowDepthVSVertexShadowDepth_VirtualShadowMap566268C17842BE32F7F4196A64F1F860A951687BB4ECC9EA8AA550391078AD8904E08901E177AD2E_FPathTracingMaterialCHSB9F75F5F2E5424C136689C37CFF347F5CB3422B7DAF5C85E5C7F2DC5DB6657AC1A5C05CBF3CE19DD_TShadowDepthVSVertexShadowDepth_OnePassPointLight566268C17842BE32F7F4196A64F1F860A951687B56E359529EA5F920092BA8DF37812C451EC3EEF6_TBasePassPSTLightMapPolicyLQA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C94FC918ED25A4366478C0CE664DD0F431FB434A6_TLightMapDensityPSTLightMapPolicyLQC84C3C8B1FA855658F9C0A2A371DDABD1F79452E0B66239385DAE6F5050046365A9D116D80E52224_TBasePassVSTLightMapPolicyLQD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD6279BFC5C974DD65E6DA17A7D3C21BFBF250BA30283F_TLightMapDensityVSTLightMapPolicyHQC84C3C8B1FA855658F9C0A2A371DDABD1F79452EB0E82574BC7F5C377B8E738E24BDE3D732363B44_TShadowDepthVSVertexShadowDepth_VirtualShadowMapPositionOnly566268C17842BE32F7F4196A64F1F860A951687B2206E6F09C16C096D9488323D49A0F7639FE2E34_FDebugViewModePS56838088095D59EE5193ECF20E85FE62298C7B9EE177622259CDB9DC1140CF61335F5353997EC8B6_TBasePassPSTLightMapPolicyHQSkylightA50322446B83A4AA2D12EFC7A6D5C9AEFA80435C25C2A51F6B76462E73EA9720145CE5233C11211C_TDepthOnlyVS<false>24730E33B4CBAAD6CC8E99A19D1BC1E6B4CB0B0AACA14F90957AEBF5BC1C2C3E6DB6BC750BA01CCD_FVelocityVSC89A3E8742CC125CAF8FEB3824D895F0E057EC90C043BB9FD7164B6E8DBD4123FD00693BC9B4513E_FDebugViewModeVS3D41E5A6CFCAEA88797E908D01A0A213270F85AA809CB80A6A7260721600DBFAB6C1E0001BD9B8AE_TShadowDepthVSVertexShadowDepth_OnePassPointLightPositionOnly566268C17842BE32F7F4196A64F1F860A951687B6EB2AEF0350E0D6AC5867CF6F9990BDA65424641_TBasePassVSFNoLightMapPolicyD04A42A3D7B4A6D063A7A38C2B9ADF7F0EFD62792677AEB94C74F9DCEF44AB17F94D82839B020A23_DepthPosOnlyNoPixelPipeline77E78BED1A1AECF5E6A7B716F216702EBC4CCE9C_VelocityPipeline870119D18CF0465BE0070A38FCB3F092A61618D2_DepthNoPixelPipeline24730E33B4CBAAD6CC8E99A19D1BC1E6B4CB0B0A_FGPUSpriteVertexFactoryB023D948191B883949FF744AF068D58B6674E0495C5BE91DA01DC2B25B1018F3EDA7A6FC7D1D30AEB9CA513CCBA4F1E3AF7D9556DD0F2FF45E951E1A_FNiagaraRibbonVertexFactory02111BEB92300CA1083426DF3B5036FB866E6D3DA5C2BD7C8E1CB8C2C0438E13767AF67A0D5B5966DE03DD13CEAD2D60503F2AAC85D4762994EF4025A5C2BD7C8E1CB8C2C0438E13767AF67A0D5B5966A5C2BD7C8E1CB8C2C0438E13767AF67A0D5B5966_TGPUSkinAPEXClothVertexFactoryDefault78B6E71606342DB0718C0CB5514BFF039A3BFC1D594A4B2FCC58950587792A2CD41332131D3786E2_FParticleSpriteVertexFactory0B9848D46CEFCCD36BD972B3DCD50B8535368BABF99E1B0FB635933CEEAC41CF9441DF5EA4A994CA9DAE5A7C55936FD50BC3B20BD063C1832A4D4247_TGPUSkinVertexFactoryUnlimited78B6E71606342DB0718C0CB5514BFF039A3BFC1D180376A7171B50BD465E9983F32BCB5A07542FE7_FVectorFieldVisualizationVertexFactory29E6C71148328626051CD3685ED4463389FCC050CC854D8E74FEAEF90804D69AF6B78BD07A141ACC_FNiagaraMeshVertexFactoryABADC3FDA7FFF8E984F9BD6ABC7F9CC89BF514854B3A20E0CA93D5CA5A60C16EF2EB14EA073FC9571BD81B2CBA1F364F28A837532353718EB814537B4B3A20E0CA93D5CA5A60C16EF2EB14EA073FC9574B3A20E0CA93D5CA5A60C16EF2EB14EA073FC957_FParticleBeamTrailVertexFactory713DBD8F3CB30EBEE7F1075062B25AE25537E1D1378BBDDEC2CEAC35A309C357B38D702E7981D5D3_TGPUSkinVertexFactoryDefault78B6E71606342DB0718C0CB5514BFF039A3BFC1D180376A7171B50BD465E9983F32BCB5A07542FE7_TGPUSkinAPEXClothVertexFactoryUnlimited78B6E71606342DB0718C0CB5514BFF039A3BFC1D594A4B2FCC58950587792A2CD41332131D3786E2_FGeometryCollectionVertexFactoryF791AC6341FF97FC6CF0C8483241C9BC3B55570949D716CAD02F0AC031CC93ACB2AFCB9C42E7DC4149D716CAD02F0AC031CC93ACB2AFCB9C42E7DC4149D716CAD02F0AC031CC93ACB2AFCB9C42E7DC41_FLandscapeXYOffsetVertexFactory10E569238A1467FCD7FB548253D74CF0ABE0F4F8B1684FBEF19B946A8709F4309D7CC4E5FC6044ADEBA49461CECB1EA5D21E2BF8918B91C7C3994DCEB1684FBEF19B946A8709F4309D7CC4E5FC6044ADB1684FBEF19B946A8709F4309D7CC4E5FC6044AD_FMeshParticleVertexFactory083F8367142CEF5680A007B3BEFDF4AD3B6626EEF773920348F231C490A74B1A551F8CE3ABF04791_FInstancedStaticMeshVertexFactory3B3DFB1FEDE34A7A85FB5103E7AD47D9FB2DAB05A163AB24C1DAF4D0703BC40B6B0C866D318AC9F8A163AB24C1DAF4D0703BC40B6B0C866D318AC9F8A163AB24C1DAF4D0703BC40B6B0C866D318AC9F8A163AB24C1DAF4D0703BC40B6B0C866D318AC9F8_FSplineMeshVertexFactory3B3DFB1FEDE34A7A85FB5103E7AD47D9FB2DAB05A747D67BD07743C1BEA1DE549F682B82EB7B9965_FLocalVertexFactory3B3DFB1FEDE34A7A85FB5103E7AD47D9FB2DAB05AC1A437FDC42E3432CC66409573A167E09487E70AC1A437FDC42E3432CC66409573A167E09487E70AC1A437FDC42E3432CC66409573A167E09487E70_FLandscapeVertexFactory10E569238A1467FCD7FB548253D74CF0ABE0F4F8B1684FBEF19B946A8709F4309D7CC4E5FC6044ADEBA49461CECB1EA5D21E2BF8918B91C7C3994DCEB1684FBEF19B946A8709F4309D7CC4E5FC6044ADB1684FBEF19B946A8709F4309D7CC4E5FC6044AD_FNiagaraSpriteVertexFactory983CF9980B73A474E8D7D8E01013CC0E6E16DAAE5957CFEE095AEFFBA7F83F09F020F15CF6555718EFF166204144512228FF7A163011544EEF3FD2265957CFEE095AEFFBA7F83F09F020F15CF65557185957CFEE095AEFFBA7F83F09F020F15CF6555718_Nanite::FVertexFactory7385151ADD4080DE340A31F56C59707655B6838D_FGeometryCacheVertexVertexFactory921F6B033EF261C9D21AB065EC0B6C351583BCAA76143182082C57C6F98756E7AE927ED26DD4479A76143182082C57C6F98756E7AE927ED26DD4479A_FLandscapeFixedGridVertexFactory10E569238A1467FCD7FB548253D74CF0ABE0F4F83F5F45F5620EF6411E27211E3D675CEA50B38DFBEBA49461CECB1EA5D21E2BF8918B91C7C3994DCE3F5F45F5620EF6411E27211E3D675CEA50B38DFB3F5F45F5620EF6411E27211E3D675CEA50B38DFB254810141414444414441444141414141444447401010101010131454444143314401310102044441615121414240444424141413131014344447443424144444444404444444444444444341414141424044444444444444442434141415101010110131313331213333434141423141342044444141413131343041413101015101010103561616135343434146461616161616146121316161606434343434441444444445151510101011310105361616161210004040404040404040404040404040434343434343434444434343434040404040404043434343404040404444424244444444344444424241412141444444424141414341414141414141414131313131314443444444444141414141414141414141414343434444444444444344404441414141444141414141414341414144414141414444414141414141334144244444414141432341414141413141414142412343424143434341434141444141413131313432444141412441413131344443414141212124212131314442122226141142210121212124244444444440414151015101530434101331414600144444451011015151515161616161610101010101505242131616161616111260101117044313131413143101410101010101015101010101030445101101010101010101010101010101010101010106001404044414040421213131344141010101010101010131010002431313141616161101016164642141313131212121212121212141444444444441402444444212121212121212121212121213121212121212121212121412121212121212121214344314110131313131616161616161616023144444444434144414141414242212121212121212121213121212121212121212121212121212121444442424243434341414441414141414444444444444444214421101313131313131616161606010121010101015101210140444444043424044424141315004444444444443434101313133214030404043414443414331443341433143314341434143314331433142214143314441441210431413141015101010146444444044464444444444044401415101510151015000101010101010101010101010110000444140404141210101000010101010101014444424201404444444444444444444444444444444444444444444444444444444444444444444444444404444444444444434144414141414342101313131212132322222212101010101000010101010144444242412101010101510151014101015101010101004444441415151040404043410004040404040404040404040404040434343434343434444434343434040404040404043434343404040404444424244444444344444424241412141444444424141414341414141414141414131313131314443444444444141414141414141414141414343434444444444444344404441414141444141414141414341414144414141414444414141414141334144244444414141432341414141413141414142412343424143434341434141444141413131313432444141412441413131344443414141212124212131314141010151515151515151515151010101010101010101515151515101510151015101510151010101010101015101616161616151015101510151015101510151013131515151510151010151016461414151010161617161636340431313131313131314422223141414101010101010000110000001300000013000000130000001300000013000000130000000C00000013000000130000000D00000008000000140000000F00000010000000080000000900000008000000230000001000000010000000090000000800000008000000100000001000000010000000100000000800000008000000080000001000000010000000CE00000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000120000001000000008000000080000000800000014000000140000001300000008000000100000000800000008000000080000000800000008000000080000001300000009000000140000000E00000013000000130000001300000013000000130000001300000008000000100000000900000008000000090000000800000008000000130000000900000008000000090000000800000009000000080000000C00000009000000080000000900000009000000090000000900000009000000080000000800000008000000080000000800000013000000100000001000000010000000130000001000000010000000100000001000000009000000090000000900000010000000100000001000000010000000080000001A00000014000000290000000D000000440000000B0000000B00000013000000130000000900000009000000090000001400000008000000090000000D0000000C00000010000000080000000800000028000000100000001000000010000000100000000900000008000000100000001000000010000000100000001000000009000000080000000800000008000000080000000D00000009000000090000000900000009000000090000000900000009000000090000000900000009000000090000000C000000080000000C00000013000000100000001000000010000000100000001000000010000000100000000D0000000C00000009000000080000000900000008000000090000000C0000000800000013000000260000000F000000110000000900000009000000090000000900000009000000100000001B0000001300000013000000130000001300000013000000090000000800000009000000080000000800000008000000140000001400000008000000090000000900000008000000080000001000000008000000080000001000000010000000290100001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000080000000800000008000000140000001000000010000000100000001000000009000000433AFC833894B7681A1D3DDBA35F7F5A9509A899000000000000000000000000000000000000000054BDFD528AA46A4E9413E044DCAC9A8F37A07E9D_101_101_4;
+[2023.06.09-13.08.05:256][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2023.06.09-13.08.05:257][  0]LogMeshReduction: Using SimplygonMeshReduction for automatic skeletal mesh reduction
+[2023.06.09-13.08.05:257][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2023.06.09-13.08.05:257][  0]LogMeshReduction: No distributed automatic mesh merging module available
+[2023.06.09-13.08.05:257][  0]LogMeshMerging: No distributed automatic mesh merging module available
+[2023.06.09-13.08.05:697][  0]LogTurnkeySupport: Completed device detection: Code = 0
+[2023.06.09-13.08.06:261][  0]LogNetVersion: Project_MF 1.0.0, NetCL: 23058290, EngineNetVer: 30, GameNetVer: 0 (Checksum: 3422862551)
+[2023.06.09-13.08.07:114][  0]LogUObjectArray: 20936 objects as part of root set at end of initial load.
+[2023.06.09-13.08.07:114][  0]LogUObjectAllocator: 5786376 out of 0 bytes used by permanent object pool.
+[2023.06.09-13.08.07:114][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2023.06.09-13.08.07:243][  0]LogSlate: Border
+[2023.06.09-13.08.07:243][  0]LogSlate: BreadcrumbButton
+[2023.06.09-13.08.07:243][  0]LogSlate: Brushes.Title
+[2023.06.09-13.08.07:243][  0]LogSlate: Default
+[2023.06.09-13.08.07:243][  0]LogSlate: Icons.Save
+[2023.06.09-13.08.07:243][  0]LogSlate: Icons.Toolbar.Settings
+[2023.06.09-13.08.07:243][  0]LogSlate: ListView
+[2023.06.09-13.08.07:243][  0]LogSlate: SoftwareCursor_CardinalCross
+[2023.06.09-13.08.07:243][  0]LogSlate: SoftwareCursor_Grab
+[2023.06.09-13.08.07:243][  0]LogSlate: TableView.DarkRow
+[2023.06.09-13.08.07:243][  0]LogSlate: TableView.Row
+[2023.06.09-13.08.07:243][  0]LogSlate: TreeView
+[2023.06.09-13.08.08:750][  0]LogTurnkeySupport: Turnkey Device: Win64@DESKTOP-7O2N4A7: (Name=DESKTOP-7O2N4A7, Type=Computer, Status=Valid, , Flags="Device_InstallSoftwareValid")
+[2023.06.09-13.08.09:904][  0]LogPython: Using Python 3.9.7
+[2023.06.09-13.08.11:281][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: E1280C4F4DF8C3BD13AE41BCA9A27232 | Instance: F938EB274AEFD6CEE1986FA59473961D (DESKTOP-7O2N4A7-23148).
+[2023.06.09-13.08.11:839][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2023.06.09-13.08.11:842][  0]LogUdpMessaging: Display: Added local interface '25.30.191.126' to multicast group '230.0.0.1:6666'
+[2023.06.09-13.08.11:842][  0]LogUdpMessaging: Display: Added local interface '172.30.1.36' to multicast group '230.0.0.1:6666'
+[2023.06.09-13.08.11:869][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2023.06.09-13.08.12:559][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2023.06.09-13.08.12:580][  0]LogMetasoundEngine: MetaSound Engine Initialized
+[2023.06.09-13.08.12:952][  0]LogLinker: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\PlayerCharacter\Materials\MainCharacter_arms_Low_MainCharacter_arms_High_BaseColor.uasset: VerifyImport: Failed to find script package for import object 'Package /Script/InterchangeFactoryNodes'
+[2023.06.09-13.08.12:952][  0]LogLinker: Warning: [AssetLog] D:\Users\qkrdl\Documents\GitHub\Zolup-Button_Project_MF\Project_MF\Content\PlayerCharacter\Materials\MainCharacter_arms_Low_MainCharacter_arms_High_BaseColor.uasset: VerifyImport: Failed to find script package for import object 'Package /Script/InterchangePipelines'
+[2023.06.09-13.08.12:997][  0]LogEditorDomain: Display: Class /Script/InterchangeFactoryNodes.InterchangeTexture2DFactoryNode is imported by a package but does not exist in memory. EditorDomain keys for packages using it will be invalid if it still exists.
+	To clear this message, resave packages that use the deleted class, or load its module earlier than the packages that use it are referenced.
+[2023.06.09-13.08.12:997][  0]LogEditorDomain: Display: Class /Script/InterchangePipelines.InterchangeGenericTexturePipeline is imported by a package but does not exist in memory. EditorDomain keys for packages using it will be invalid if it still exists.
+	To clear this message, resave packages that use the deleted class, or load its module earlier than the packages that use it are referenced.
+[2023.06.09-13.08.16:381][  0]LogOpenImageDenoise: OIDN starting up
+[2023.06.09-13.08.17:002][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.06.09-13.08.17:035][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.06.09-13.08.17:125][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.06.09-13.08.17:173][  0]LogUProjectInfo: Found projects:
+[2023.06.09-13.08.18:837][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2023.06.09-13.08.18:990][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.06.09-13.08.18:990][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2023.06.09-13.08.19:391][  0]LogCollectionManager: Loaded 0 collections in 0.001207 seconds
+[2023.06.09-13.08.19:393][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Collections/' took 0.00s
+[2023.06.09-13.08.19:394][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Developers/qkrdl/Collections/' took 0.00s
+[2023.06.09-13.08.19:395][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Collections/' took 0.00s
+[2023.06.09-13.08.20:193][  0]LogClass: Error: ObjectProperty FPlayerMoveSoundInfo::WalkSound is not initialized properly. Module:Project_MF File:GamePlayerCharacter.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: ObjectProperty FPlayerMoveSoundInfo::DashSound is not initialized properly. Module:Project_MF File:GamePlayerCharacter.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: ObjectProperty FPlayerMoveSoundInfo::JumpEndSound is not initialized properly. Module:Project_MF File:GamePlayerCharacter.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: FloatProperty FVolumeMultiplySetting::VolumeMultiply is not initialized properly. Module:Project_MF File:MFAudioComponent.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: IntProperty FMFObjectData::ObjectState is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: IntProperty FMFObjectData::ObjectMovement is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: StructProperty FMFObjectData::ObjectLocation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: StructProperty FMFObjectData::ObjectRotation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: StructProperty FMFObjectData::ObjectScale is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: StructProperty FMFObjectData::ObjectVelocity is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Error: IntProperty FMFStageData::CurrentCheckPoint is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:193][  0]LogClass: Display: 11 Uninitialized script struct members found including 3 object properties
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: UObject.Class AttemptToFindUninitializedScriptStructMembers will be marked as failing due to errors being logged
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: ObjectProperty FPlayerMoveSoundInfo::WalkSound is not initialized properly. Module:Project_MF File:GamePlayerCharacter.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: ObjectProperty FPlayerMoveSoundInfo::DashSound is not initialized properly. Module:Project_MF File:GamePlayerCharacter.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: ObjectProperty FPlayerMoveSoundInfo::JumpEndSound is not initialized properly. Module:Project_MF File:GamePlayerCharacter.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: FloatProperty FVolumeMultiplySetting::VolumeMultiply is not initialized properly. Module:Project_MF File:MFAudioComponent.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: IntProperty FMFObjectData::ObjectState is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: IntProperty FMFObjectData::ObjectMovement is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: StructProperty FMFObjectData::ObjectLocation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: StructProperty FMFObjectData::ObjectRotation is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:229][  0]LogAutomationTest: Error: LogClass: StructProperty FMFObjectData::ObjectScale is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:230][  0]LogAutomationTest: Error: LogClass: StructProperty FMFObjectData::ObjectVelocity is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:230][  0]LogAutomationTest: Error: LogClass: IntProperty FMFStageData::CurrentCheckPoint is not initialized properly. Module:Project_MF File:MFSaveGame.h
+[2023.06.09-13.08.20:230][  0]LogEngine: Initializing Engine...
+[2023.06.09-13.08.20:239][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2023.06.09-13.08.20:247][  0]LogMaterial: Display: Missing cached shadermap for WireframeMaterial in PCD3D_SM6, Default, SM6 (DDC key hash: 304E98BFF9712445EBF9E1004941439AC2148EA4), compiling. Is special engine material.
+[2023.06.09-13.08.20:256][  0]LogMaterial: Display: Missing cached shadermap for LevelColorationLitMaterial in PCD3D_SM6, Default, SM6 (DDC key hash: 0BC3985364075AAA93E2962C06FFC5B0222B0529), compiling. Is special engine material.
+[2023.06.09-13.08.20:263][  0]LogMaterial: Display: Missing cached shadermap for LevelColorationUnlitMaterial in PCD3D_SM6, Default, SM6 (DDC key hash: 8A15491689A51D6C83F6763BD623A3CF38DFE425), compiling. Is special engine material.
+[2023.06.09-13.08.20:274][  0]LogMaterial: Display: Missing cached shadermap for MAT_LevelColorationLitLightmapUV in PCD3D_SM6, Default, SM6 (DDC key hash: 0372C9D24E65BE9D161641487E159A0F8E6A5132), compiling. Is special engine material.
+[2023.06.09-13.08.20:282][  0]LogMaterial: Display: Missing cached shadermap for ShadedLevelColorationLitMaterial in PCD3D_SM6, Default, SM6 (DDC key hash: D0DB65A7114F3F49E6ED0764833CE44F1CF06516), compiling. Is special engine material.
+[2023.06.09-13.08.20:289][  0]LogMaterial: Display: Missing cached shadermap for ShadedLevelColorationUnlitMateri in PCD3D_SM6, Default, SM6 (DDC key hash: 2D5BD9CEB660EB29AFAD96EF1986CAD3BC5C08DB), compiling. Is special engine material.
+[2023.06.09-13.08.20:576][  0]LogInit: Initializing FReadOnlyCVARCache
+[2023.06.09-13.08.20:620][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.06.09-13.08.20:668][  0]LogAIModule: Creating AISystem for world Untitled
+[2023.06.09-13.08.20:669][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2023.06.09-13.08.20:669][  0]LogInit: Texture streaming: Enabled
+[2023.06.09-13.08.20:748][  0]LogAnalytics: Display: [UEEditor.Rocket.Release] APIServer = https://datarouter.ol.epicgames.com/. AppVersion = 5.1.1-23901901+++UE5+Release-5.1
+[2023.06.09-13.08.20:776][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2023.06.09-13.08.20:831][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2023.06.09-13.08.20:835][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2023.06.09-13.08.20:838][  0]LogAudio: Display: AudioInfo: 'BINKA' Registered
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: AudioInfo: 'PCM' Registered
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: AudioInfo: 'ADPCM' Registered
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: AudioInfo: 'OGG' Registered
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: AudioInfo: 'OPUS' Registered
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: Audio Device Manager Initialized
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2023.06.09-13.08.20:840][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2023.06.09-13.08.20:840][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2023.06.09-13.08.20:841][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2023.06.09-13.08.20:841][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2023.06.09-13.08.20:841][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2023.06.09-13.08.20:847][  0]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2023.06.09-13.08.20:873][  0]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Logi USB Headset H340)
+[2023.06.09-13.08.20:874][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2023.06.09-13.08.20:895][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2023.06.09-13.08.20:895][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2023.06.09-13.08.20:897][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=1
+[2023.06.09-13.08.20:897][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=1
+[2023.06.09-13.08.20:899][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=1
+[2023.06.09-13.08.20:899][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=1
+[2023.06.09-13.08.20:899][  0]LogInit: FAudioDevice initialized.
+[2023.06.09-13.08.20:899][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2023.06.09-13.08.20:933][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2023.06.09-13.08.21:006][  0]LogInit: Transaction tracking system initialized
+[2023.06.09-13.08.21:132][  0]LogSourceControl: Display: Uncontrolled Changelist persistency file loaded ../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/SourceControl/UncontrolledChangelists.json
+[2023.06.09-13.08.21:132][  0]LogSourceControl: Uncontrolled asset enumeration started...
+[2023.06.09-13.08.21:136][  0]LogSourceControl: Uncontrolled asset enumeration finished in 0.003507 seconds (Found 187 uncontrolled assets)
+[2023.06.09-13.08.21:222][  0]BlueprintLog: New page: 에디터 로드
+[2023.06.09-13.08.21:730][  0]LocalizationService: 현지화 서비스가 비활성화되었습니다.
+[2023.06.09-13.08.21:813][  0]TimingProfiler: Initialize
+[2023.06.09-13.08.21:813][  0]TimingProfiler: OnSessionChanged
+[2023.06.09-13.08.21:813][  0]LoadingProfiler: Initialize
+[2023.06.09-13.08.21:813][  0]LoadingProfiler: OnSessionChanged
+[2023.06.09-13.08.21:813][  0]NetworkingProfiler: Initialize
+[2023.06.09-13.08.21:813][  0]NetworkingProfiler: OnSessionChanged
+[2023.06.09-13.08.21:813][  0]MemoryProfiler: Initialize
+[2023.06.09-13.08.21:813][  0]MemoryProfiler: OnSessionChanged
+[2023.06.09-13.08.22:609][  0]LogFileCache: Scanning file cache for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/' took 0.02s
+[2023.06.09-13.08.22:836][  0]LogEditorDomain: Display: Class /Script/AnimationData.AnimationSequencerDataModel is imported by a package but does not exist in memory. EditorDomain keys for packages using it will be invalid if it still exists.
+	To clear this message, resave packages that use the deleted class, or load its module earlier than the packages that use it are referenced.
+[2023.06.09-13.08.23:406][  0]LogLevelSequenceEditor: LevelSequenceEditor subsystem initialized.
+[2023.06.09-13.08.23:664][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2023.06.09-13.08.23:666][  0]SourceControl: 소스 컨트롤이 꺼졌습니다.
+[2023.06.09-13.08.23:666][  0]LogUnrealEdMisc: Loading editor; pre map load, took 33.806
+[2023.06.09-13.08.23:666][  0]Cmd: MAP LOAD FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Levels/UnUsedLevel/EditTestLevel.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=4
+[2023.06.09-13.08.23:666][  0]LightingResults: New page: 라이팅 빌드
+[2023.06.09-13.08.23:672][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2023.06.09-13.08.23:672][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2023.06.09-13.08.23:672][  0]MapCheck: New page: 맵 체크
+[2023.06.09-13.08.23:672][  0]LightingResults: New page: 라이팅 빌드
+[2023.06.09-13.08.23:679][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2023.06.09-13.08.23:683][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2023.06.09-13.08.23:850][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'EditTestLevel'.
+[2023.06.09-13.08.23:850][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.06.09-13.08.23:852][  0]LogAIModule: Creating AISystem for world EditTestLevel
+[2023.06.09-13.08.23:869][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2023.06.09-13.08.23:895][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.66ms
+[2023.06.09-13.08.23:895][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2023.06.09-13.08.23:895][  0]MapCheck: 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 0.114ms.
+[2023.06.09-13.08.23:895][  0]LogFileHelpers: Loading map 'EditTestLevel' took 0.229
+[2023.06.09-13.08.23:919][  0]LogUnrealEdMisc: Total Editor Startup Time, took 34.058
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: ================================================
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: RAM used: 0.00 MB (0.00 GB) of 1638.40 MB (1.60 GB) budget. Usage: 0.00%
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: Shaders Compiled: 0
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2023.06.09-13.08.23:919][  0]LogShaderCompilers: Display: ================================================
+[2023.06.09-13.08.24:042][  0]LogSlate: The tab "VerticalModeToolbar" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2023.06.09-13.08.24:042][  0]LogSlate: The tab "VerticalModeToolbar" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2023.06.09-13.08.24:042][  0]LogSlate: The tab "TopLeftModeTab" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2023.06.09-13.08.24:042][  0]LogSlate: The tab "TopLeftModeTab" attempted to spawn in layout 'LevelEditor_Layout_v1.8' but failed for some reason. It will not be displayed.
+[2023.06.09-13.08.24:145][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.06.09-13.08.24:154][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.06.09-13.08.24:161][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.06.09-13.08.24:166][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2023.06.09-13.08.24:202][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/StarterContent.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:210][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_FirstPerson.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:217][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_FirstPersonBP.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:223][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_HandheldARBP.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:230][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_ThirdPerson.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:236][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_ThirdPersonBP.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:241][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_TopDown.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:246][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_TopDownBP.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:253][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_VehicleAdvBP.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:259][  0]LogPakFile: Display: Mounted Pak file 'D:/Program Files/Epic Games/UE_5.1/FeaturePacks/TP_VirtualRealityBP.upack', mount point: 'root:/'
+[2023.06.09-13.08.24:703][  0]LogSlate: Took 0.004876 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2023.06.09-13.08.24:711][  0]LogSlate: Took 0.007558 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothic.ttf' (4243K)
+[2023.06.09-13.08.24:718][  0]LogSlate: Took 0.004535 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2023.06.09-13.08.24:724][  0]LogSlate: Took 0.003961 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2023.06.09-13.08.24:730][  0]LogSlate: Took 0.006162 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicBold.ttf' (4188K)
+[2023.06.09-13.08.24:736][  0]LogSlate: Took 0.004520 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2023.06.09-13.08.24:762][  0]LogSlate: Took 0.006857 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/NanumGothicExtraBold.ttf' (4074K)
+[2023.06.09-13.08.24:814][  0]LogViewport: Scene viewport resized to 1498x539, mode Windowed.
+[2023.06.09-13.08.24:973][  0]LogSlate: Took 0.004267 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.06.09-13.08.25:085][  0]LogStall: Startup...
+[2023.06.09-13.08.25:087][  0]LogStall: Startup complete.
+[2023.06.09-13.08.25:122][  0]LogLoad: (Engine Initialization) Total time: 35.26 seconds
+[2023.06.09-13.08.25:122][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2023.06.09-13.08.25:264][  0]LogAssetRegistry: Asset discovery search completed in 21.3286 seconds
+[2023.06.09-13.08.25:288][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000006 seconds (updated 0 objects)
+[2023.06.09-13.08.25:547][  0]LogNiagara: Compiling System NiagaraSystem /Game/Effect/HitScan/Hit_scan_effect.Hit_scan_effect took 11.441905 sec, no shader worker used.
+[2023.06.09-13.08.25:551][  0]LogNiagara: Compiling System NiagaraSystem /Game/Effect/Magnetic/Field/magnet_scope_grow_big_nia.magnet_scope_grow_big_nia took 10.905784 sec, no shader worker used.
+[2023.06.09-13.08.25:556][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2023.06.09-13.08.25:840][  1]LogFileCache: Retrieving MD5 hashes for directory 'D:/Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/' took 0.61s
+[2023.06.09-13.08.25:934][  1]LogSlate: Took 0.000235 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2023.06.09-13.10.25:422][843]LogDerivedDataCache: C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:28.231 and deleted 0 files with total size 0 MiB. Scanned 14696 files in 14377 folders with total size 474 MiB.
+[2023.06.09-13.16.03:404][723]LogWindowsTextInputMethodSystem: Activated input method: 한국어(대한민국) - Microsoft 입력기 (TSF IME).
+[2023.06.09-13.16.07:321][170]LogContentBrowser: Deferred new asset folder creation: 새 폴더
+[2023.06.09-13.16.07:333][170]LogContentBrowser: Creating deferred item: 새 폴더
+[2023.06.09-13.16.07:341][171]LogContentBrowser: Renaming the item being created (Deferred Item: 새 폴더).
+[2023.06.09-13.16.10:221][517]LogContentBrowser: Attempting asset rename: 새 폴더 -> Voice
+[2023.06.09-13.16.10:221][517]LogContentBrowser: End creating deferred item 새 폴더
+[2023.06.09-13.16.17:562][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_35(com).wav)
+[2023.06.09-13.16.17:571][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_35_com_ 빌드 중...
+[2023.06.09-13.16.17:606][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_35_com_.Sound_35_com_: 262144
+[2023.06.09-13.16.17:607][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_35_com_ 빌드 중...
+[2023.06.09-13.16.17:615][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_36(com).wav)
+[2023.06.09-13.16.17:618][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_36_com_ 빌드 중...
+[2023.06.09-13.16.17:652][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_36_com_.Sound_36_com_: 262144
+[2023.06.09-13.16.17:652][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_35_com_.Sound_35_com_: 262144
+[2023.06.09-13.16.17:653][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_36_com_ 빌드 중...
+[2023.06.09-13.16.17:654][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_23(com).wav)
+[2023.06.09-13.16.17:656][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_23_com_ 빌드 중...
+[2023.06.09-13.16.17:672][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_23_com_.Sound_23_com_: 262144
+[2023.06.09-13.16.17:673][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_23_com_ 빌드 중...
+[2023.06.09-13.16.17:675][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_24(com).wav)
+[2023.06.09-13.16.17:677][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_24_com_ 빌드 중...
+[2023.06.09-13.16.17:704][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_23_com_.Sound_23_com_: 262144
+[2023.06.09-13.16.17:704][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_24_com_.Sound_24_com_: 262144
+[2023.06.09-13.16.17:705][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_24_com_ 빌드 중...
+[2023.06.09-13.16.17:707][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_36_com_.Sound_36_com_: 262144
+[2023.06.09-13.16.17:707][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_25(com).wav)
+[2023.06.09-13.16.17:709][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_25_com_ 빌드 중...
+[2023.06.09-13.16.17:732][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_25_com_.Sound_25_com_: 262144
+[2023.06.09-13.16.17:733][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_25_com_ 빌드 중...
+[2023.06.09-13.16.17:741][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_26(com).wav)
+[2023.06.09-13.16.17:744][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_26_com_ 빌드 중...
+[2023.06.09-13.16.17:757][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_24_com_.Sound_24_com_: 262144
+[2023.06.09-13.16.17:779][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_25_com_.Sound_25_com_: 262144
+[2023.06.09-13.16.17:779][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_26_com_.Sound_26_com_: 262144
+[2023.06.09-13.16.17:781][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_26_com_ 빌드 중...
+[2023.06.09-13.16.17:787][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_27(com).wav)
+[2023.06.09-13.16.17:789][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_27_com_ 빌드 중...
+[2023.06.09-13.16.17:816][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_27_com_.Sound_27_com_: 262144
+[2023.06.09-13.16.17:817][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_27_com_ 빌드 중...
+[2023.06.09-13.16.17:819][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_28(com).wav)
+[2023.06.09-13.16.17:824][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_28_com_ 빌드 중...
+[2023.06.09-13.16.17:833][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_26_com_.Sound_26_com_: 262144
+[2023.06.09-13.16.17:865][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_27_com_.Sound_27_com_: 262144
+[2023.06.09-13.16.17:866][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_28_com_.Sound_28_com_: 262144
+[2023.06.09-13.16.17:867][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_28_com_ 빌드 중...
+[2023.06.09-13.16.17:875][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_29(com).wav)
+[2023.06.09-13.16.17:878][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_29_com_ 빌드 중...
+[2023.06.09-13.16.17:916][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_28_com_.Sound_28_com_: 262144
+[2023.06.09-13.16.17:916][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_29_com_.Sound_29_com_: 262144
+[2023.06.09-13.16.17:922][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_29_com_ 빌드 중...
+[2023.06.09-13.16.17:925][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_30(com).wav)
+[2023.06.09-13.16.17:927][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_30_com_ 빌드 중...
+[2023.06.09-13.16.17:944][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_30_com_.Sound_30_com_: 262144
+[2023.06.09-13.16.17:946][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_30_com_ 빌드 중...
+[2023.06.09-13.16.17:953][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_31(com).wav)
+[2023.06.09-13.16.17:955][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_31_com_ 빌드 중...
+[2023.06.09-13.16.17:978][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_30_com_.Sound_30_com_: 262144
+[2023.06.09-13.16.17:978][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_31_com_.Sound_31_com_: 262144
+[2023.06.09-13.16.17:979][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_31_com_ 빌드 중...
+[2023.06.09-13.16.17:979][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_29_com_.Sound_29_com_: 262144
+[2023.06.09-13.16.17:991][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_32(com).wav)
+[2023.06.09-13.16.17:995][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_32_com_ 빌드 중...
+[2023.06.09-13.16.18:051][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_32_com_.Sound_32_com_: 262144
+[2023.06.09-13.16.18:051][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_31_com_.Sound_31_com_: 262144
+[2023.06.09-13.16.18:052][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_32_com_ 빌드 중...
+[2023.06.09-13.16.18:060][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_33(com).wav)
+[2023.06.09-13.16.18:062][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_33_com_ 빌드 중...
+[2023.06.09-13.16.18:091][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_33_com_.Sound_33_com_: 262144
+[2023.06.09-13.16.18:092][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_33_com_ 빌드 중...
+[2023.06.09-13.16.18:095][  4]LogFactory: FactoryCreateFile: SoundWave with SoundFactory (0 0 C:\Users\qkrdl\Downloads\Sound_34(com).wav)
+[2023.06.09-13.16.18:099][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_34_com_ 빌드 중...
+[2023.06.09-13.16.18:126][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_32_com_.Sound_32_com_: 262144
+[2023.06.09-13.16.18:146][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_33_com_.Sound_33_com_: 262144
+[2023.06.09-13.16.18:146][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_34_com_.Sound_34_com_: 262144
+[2023.06.09-13.16.18:147][  4]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 Sound_34_com_ 빌드 중...
+[2023.06.09-13.16.18:200][  4]LogAudio: Display: Chunk size for SoundWave /Game/Sounds/Voice/Sound_34_com_.Sound_34_com_: 262144
+[2023.06.09-13.16.29:693][ 28]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2023.06.09-13.16.30:828][ 28]LogSlate: Window '콘텐츠 저장' being destroyed
+[2023.06.09-13.16.30:840][ 28]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-13.16.30:888][ 28]LogPackageLocalizationCache: Processed 40 localized package path(s) for 1 prioritized culture(s) in 0.005520 seconds
+[2023.06.09-13.16.30:890][ 28]LogSerialization: UsePackageTrailer: 'true'
+[2023.06.09-13.16.30:896][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com_
+[2023.06.09-13.16.30:896][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com_5FAAA4DF482E1DE8EBAA5690443162E3.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com_.uasset'
+[2023.06.09-13.16.30:910][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_24_com_
+[2023.06.09-13.16.30:910][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_24_com_79870E734DFBC5AC2A539789BEDD5880.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_24_com_.uasset'
+[2023.06.09-13.16.30:923][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_25_com_
+[2023.06.09-13.16.30:923][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_25_com_BEFA9F53410150E69D1A14B35F21469F.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_25_com_.uasset'
+[2023.06.09-13.16.30:936][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_26_com_
+[2023.06.09-13.16.30:936][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_26_com_09AE344048DAF33F1516C5ACD9A5111C.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_26_com_.uasset'
+[2023.06.09-13.16.30:947][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_27_com_
+[2023.06.09-13.16.30:947][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_27_com_76A0A78745504C2BDC32E2AFC42F27AF.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_27_com_.uasset'
+[2023.06.09-13.16.30:961][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_28_com_
+[2023.06.09-13.16.30:961][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_28_com_3F0FD6C1499470220650FABFFAC5C7B8.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_28_com_.uasset'
+[2023.06.09-13.16.30:975][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_29_com_
+[2023.06.09-13.16.30:975][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_29_com_FCFFEE544A64F5A844DB66B417410C65.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_29_com_.uasset'
+[2023.06.09-13.16.30:987][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_30_com_
+[2023.06.09-13.16.30:988][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_30_com_CC0164B748A1D2DEB8FFF28D3AFF9EDB.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_30_com_.uasset'
+[2023.06.09-13.16.30:998][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_31_com_
+[2023.06.09-13.16.30:998][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_31_com_BE9A1ABD44DE84FE580B56B70CEC1B5D.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_31_com_.uasset'
+[2023.06.09-13.16.31:011][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_32_com_
+[2023.06.09-13.16.31:011][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_32_com_2C2279EE41378EC397CAD983BC1E6247.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_32_com_.uasset'
+[2023.06.09-13.16.31:024][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_33_com_
+[2023.06.09-13.16.31:024][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_33_com_AED15C934136B5A86FB6F980AEF7ED7F.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_33_com_.uasset'
+[2023.06.09-13.16.31:038][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_34_com_
+[2023.06.09-13.16.31:038][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_34_com_EEAC8BCF4CEA837B4202EEABC6F456F6.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_34_com_.uasset'
+[2023.06.09-13.16.31:049][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_35_com_
+[2023.06.09-13.16.31:049][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_35_com_6F741E3E41CFE0C96AB22DAA482FE5C1.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_35_com_.uasset'
+[2023.06.09-13.16.31:060][ 28]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_36_com_
+[2023.06.09-13.16.31:060][ 28]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_36_com_273BF7FE4131397AB6BBB6BAAA218E0F.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_36_com_.uasset'
+[2023.06.09-13.16.31:071][ 28]LogFileHelpers: InternalPromptForCheckoutAndSave took 231 ms
+[2023.06.09-13.16.31:078][ 28]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_35_com_.Sound_35_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_36_com_.Sound_36_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_23_com_.Sound_23_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_24_com_.Sound_24_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_25_com_.Sound_25_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_26_com_.Sound_26_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_27_com_.Sound_27_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_28_com_.Sound_28_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_29_com_.Sound_29_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_30_com_.Sound_30_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_31_com_.Sound_31_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_32_com_.Sound_32_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_33_com_.Sound_33_com_ 유효성 검사 중
+[2023.06.09-13.16.31:078][ 28]LogContentValidation: Display: /Script/Engine.SoundWave /Game/Sounds/Voice/Sound_34_com_.Sound_34_com_ 유효성 검사 중
+[2023.06.09-13.16.55:841][761]LogAssetEditorSubsystem: Opening Asset editor for SoundWave /Game/Sounds/Voice/Sound_23_com_.Sound_23_com_
+[2023.06.09-13.16.57:629][958]LogSlate: Window 'Sound_23_com_' being destroyed
+[2023.06.09-13.16.57:635][958]LogSlate: Window 'Sound_23_com_' being destroyed
+[2023.06.09-13.17.00:164][218]LogContentBrowser: Deferred new asset file creation: Sound_23_com__Cue
+[2023.06.09-13.17.00:181][218]LogContentBrowser: Creating deferred item: Sound_23_com__Cue
+[2023.06.09-13.17.00:191][219]LogContentBrowser: Renaming the item being created (Deferred Item: Sound_23_com__Cue).
+[2023.06.09-13.17.05:728][883]LogContentBrowser: Attempting asset rename: Sound_23_com__Cue -> Sound_23_com__Cue
+[2023.06.09-13.17.05:730][883]LogContentBrowser: End creating deferred item Sound_23_com__Cue
+[2023.06.09-13.17.08:392][198]LogAssetEditorSubsystem: Opening Asset editor for SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue
+[2023.06.09-13.17.08:524][198]LogSlate: Took 0.004336 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2023.06.09-13.19.59:343][ 50]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2023.06.09-13.19.59:344][ 50]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.012
+[2023.06.09-13.19.59:345][ 50]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/Sound_23_com__Cue] ([1] browsable assets)...
+[2023.06.09-13.19.59:345][ 50]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/Sound_23_com__Cue]
+[2023.06.09-13.19.59:347][ 50]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto1
+[2023.06.09-13.19.59:347][ 50]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue_Auto162FABFB14551C4F297C95781221CA515.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto1.uasset'
+[2023.06.09-13.19.59:348][ 50]LogFileHelpers: Auto-saving content packages took 0.004
+[2023.06.09-13.21.21:974][738]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-13.21.22:026][738]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-13.21.22:026][738]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue0CF460D245FA287F375FBF8F670AE40B.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-13.21.22:035][738]LogFileHelpers: InternalPromptForCheckoutAndSave took 60 ms (total: 292 ms)
+[2023.06.09-13.21.22:039][738]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-13.21.22:039][738]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-13.23.51:950][725]LogEditorTransaction: Undo 노드 이동
+[2023.06.09-13.24.35:657][640]LogAudio: Display: Cached duration for Sound Cue SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue was zero and has changed. Consider manually Re-saving the asset
+[2023.06.09-13.25.17:767][465]LogEditorTransaction: Undo 사운드 큐 에디터: 새 사운드 노드
+[2023.06.09-13.25.29:451][752]LogAudio: Display: Cached duration for Sound Cue SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue was zero and has changed. Consider manually Re-saving the asset
+[2023.06.09-13.30.48:091][669]LogUObjectHash: Compacting FUObjectHashTables data took   0.69ms
+[2023.06.09-13.30.48:091][669]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.009
+[2023.06.09-13.30.48:092][669]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/Sound_23_com__Cue] ([1] browsable assets)...
+[2023.06.09-13.30.48:092][669]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/Sound_23_com__Cue]
+[2023.06.09-13.30.48:095][669]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto2
+[2023.06.09-13.30.48:095][669]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue_Auto2B2BC687840EBED19C9BB3B91F8E6F99E.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto2.uasset'
+[2023.06.09-13.30.48:096][669]LogFileHelpers: Auto-saving content packages took 0.004
+[2023.06.09-13.35.49:189][119]LogAssetEditorSubsystem: Opening Asset editor for SoundWave /Game/Sounds/Voice/Sound_23_com_.Sound_23_com_
+[2023.06.09-13.35.51:692][402]LogSlate: Window 'Sound_23_com_' being destroyed
+[2023.06.09-13.35.51:699][402]LogSlate: Window 'Sound_23_com_' being destroyed
+[2023.06.09-13.35.53:899][647]LogAssetEditorSubsystem: Opening Asset editor for SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue
+[2023.06.09-13.38.23:047][612]LogEditorTransaction: Undo 선택된 사운드 큐 노드 삭제
+[2023.06.09-13.40.08:337][114]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-13.40.08:393][114]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-13.40.08:393][114]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue9353A2B94690F0105D6A1AA2B4414A6C.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-13.40.08:402][114]LogFileHelpers: InternalPromptForCheckoutAndSave took 64 ms (total: 357 ms)
+[2023.06.09-13.40.08:408][114]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-13.40.08:408][114]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-13.40.52:516][789]LogSlate: Window 'Sound_23_com__Cue' being destroyed
+[2023.06.09-13.40.52:526][789]LogSlate: Window 'Sound_23_com__Cue' being destroyed
+[2023.06.09-13.41.45:896][218]LogAssetEditorSubsystem: Opening Asset editor for SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue
+[2023.06.09-13.42.21:720][120]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2023.06.09-13.42.21:720][120]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.011
+[2023.06.09-13.42.21:720][120]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/Sound_23_com__Cue] ([1] browsable assets)...
+[2023.06.09-13.42.21:720][120]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/Sound_23_com__Cue]
+[2023.06.09-13.42.21:724][120]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto3
+[2023.06.09-13.42.21:724][120]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue_Auto3FC2494124E86F053A411D1A71C0982ED.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto3.uasset'
+[2023.06.09-13.42.21:725][120]LogFileHelpers: Auto-saving content packages took 0.004
+[2023.06.09-13.49.26:517][974]LogAudio: Display: Cached duration for Sound Cue SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue was zero and has changed. Consider manually Re-saving the asset
+[2023.06.09-13.49.49:276][602]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-13.49.49:336][602]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-13.49.49:338][602]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue1EB7B347424D1D377A3962B875148172.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-13.49.49:347][602]LogFileHelpers: InternalPromptForCheckoutAndSave took 71 ms (total: 429 ms)
+[2023.06.09-13.49.49:353][602]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-13.49.49:353][602]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-13.51.28:019][798]LogSlate: Window 'Sound_23_com__Cue' being destroyed
+[2023.06.09-13.51.28:033][798]LogSlate: Window 'Sound_23_com__Cue' being destroyed
+[2023.06.09-13.51.38:312][883]LogContentBrowser: Deferred new asset file creation: NewMetaSoundSource
+[2023.06.09-13.51.38:317][883]LogContentBrowser: Creating deferred item: NewMetaSoundSource
+[2023.06.09-13.51.38:336][884]LogContentBrowser: Renaming the item being created (Deferred Item: NewMetaSoundSource).
+[2023.06.09-13.51.40:665][161]LogContentBrowser: Attempting asset rename: NewMetaSoundSource -> NewMetaSoundSource
+[2023.06.09-13.51.40:675][161]LogContentBrowser: End creating deferred item NewMetaSoundSource
+[2023.06.09-13.51.43:702][488]LogAssetEditorSubsystem: Opening Asset editor for MetaSoundSource /Game/Sounds/Voice/NewMetaSoundSource.NewMetaSoundSource
+[2023.06.09-13.53.28:187][647]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2023.06.09-13.53.28:188][647]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.012
+[2023.06.09-13.53.28:188][647]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/Sound_23_com__Cue] ([1] browsable assets)...
+[2023.06.09-13.53.28:188][647]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/Sound_23_com__Cue]
+[2023.06.09-13.53.28:192][647]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto4
+[2023.06.09-13.53.28:192][647]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue_Auto4C5E6233543E86600D31BC4A51A4C6CE1.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto4.uasset'
+[2023.06.09-13.53.28:193][647]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/NewMetaSoundSource] ([1] browsable assets)...
+[2023.06.09-13.53.28:193][647]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/NewMetaSoundSource]
+[2023.06.09-13.53.28:201][647]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto4
+[2023.06.09-13.53.28:201][647]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/NewMetaSoundSource_Auto4D313536A4BC15FB2D06ACDA314C1FF2B.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto4.uasset'
+[2023.06.09-13.53.28:202][647]LogFileHelpers: Auto-saving content packages took 0.014
+[2023.06.09-13.54.24:955][ 81]LogSlate: Took 0.000268 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.06.09-14.03.28:563][931]LogUObjectHash: Compacting FUObjectHashTables data took   0.66ms
+[2023.06.09-14.03.28:564][931]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.009
+[2023.06.09-14.03.28:565][931]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/NewMetaSoundSource] ([1] browsable assets)...
+[2023.06.09-14.03.28:565][931]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/NewMetaSoundSource]
+[2023.06.09-14.03.28:591][931]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto5
+[2023.06.09-14.03.28:591][931]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/NewMetaSoundSource_Auto55DBE06834643842B3583C7B0135C251C.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto5.uasset'
+[2023.06.09-14.03.28:592][931]LogFileHelpers: Auto-saving content packages took 0.027
+[2023.06.09-14.04.40:466][368]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.06.09-14.06.38:588][723]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.06.09-14.10.25:405][420]LogDerivedDataCache: C:/Users/qkrdl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:28.214 and deleted 0 files with total size 0 MiB. Scanned 14808 files in 14489 folders with total size 479 MiB.
+[2023.06.09-14.10.53:253][399]LogEditorTransaction: Undo 핀 링크 생성
+[2023.06.09-14.10.53:262][399]LogAudioDerivedData: Display: BINKA 압축 오디오 포맷 BINKA_1000_StreamCache_Ver5027_MEM_65536MaxChnkSize_00483224128 웨이브 NewMetaSoundSource 빌드 중...
+[2023.06.09-14.13.45:196][ 60]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2023.06.09-14.13.45:197][ 60]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.019
+[2023.06.09-14.13.45:198][ 60]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/NewMetaSoundSource] ([1] browsable assets)...
+[2023.06.09-14.13.45:198][ 60]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/NewMetaSoundSource]
+[2023.06.09-14.13.45:238][ 60]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto6
+[2023.06.09-14.13.45:238][ 60]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/NewMetaSoundSource_Auto6E4D07003412C58267BF049B8333F0EE1.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto6.uasset'
+[2023.06.09-14.13.45:239][ 60]LogFileHelpers: Auto-saving content packages took 0.042
+[2023.06.09-14.23.45:630][426]LogUObjectHash: Compacting FUObjectHashTables data took   0.34ms
+[2023.06.09-14.23.45:631][426]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.013
+[2023.06.09-14.23.45:632][426]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/NewMetaSoundSource] ([1] browsable assets)...
+[2023.06.09-14.23.45:632][426]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/NewMetaSoundSource]
+[2023.06.09-14.23.45:658][426]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto7
+[2023.06.09-14.23.45:658][426]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/NewMetaSoundSource_Auto71824C947460BB50C7029238401EBB779.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/NewMetaSoundSource_Auto7.uasset'
+[2023.06.09-14.23.45:659][426]LogFileHelpers: Auto-saving content packages took 0.028
+[2023.06.09-14.29.13:597][656]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.06.09-14.29.57:179][787]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.06.09-14.30.27:656][879]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.06.09-14.30.55:240][961]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected. InstanceID=1
+[2023.06.09-14.31.59:356][377]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.31.59:434][377]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/NewMetaSoundSource
+[2023.06.09-14.31.59:434][377]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/NewMetaSoundSourceBA6AF152432BCF31261FD6A049F2D541.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/NewMetaSoundSource.uasset'
+[2023.06.09-14.31.59:444][377]LogFileHelpers: InternalPromptForCheckoutAndSave took 86 ms (total: 515 ms)
+[2023.06.09-14.31.59:448][377]AssetCheck: New page: 에셋 저장:  NewMetaSoundSource
+[2023.06.09-14.31.59:448][377]LogContentValidation: Display: /Script/MetasoundEngine.MetaSoundSource /Game/Sounds/Voice/NewMetaSoundSource.NewMetaSoundSource 유효성 검사 중
+[2023.06.09-14.32.43:609][852]LogSlate: Window 'NewMetaSoundSource' being destroyed
+[2023.06.09-14.32.43:616][852]LogSlate: Window 'NewMetaSoundSource' being destroyed
+[2023.06.09-14.32.44:789][973]LogAssetEditorSubsystem: Opening Asset editor for SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue
+[2023.06.09-14.32.46:528][130]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.32.46:593][130]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.32.46:593][130]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue559BE8464432C6618B108790571D1759.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.32.46:603][130]LogFileHelpers: InternalPromptForCheckoutAndSave took 74 ms (total: 590 ms)
+[2023.06.09-14.32.46:609][130]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.32.46:610][130]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.36.02:180][776]LogUObjectHash: Compacting FUObjectHashTables data took   0.94ms
+[2023.06.09-14.36.02:181][776]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/UnUsedLevel/EditTestLevel' took 0.012
+[2023.06.09-14.36.02:181][776]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Sounds/Voice/Sound_23_com__Cue] ([1] browsable assets)...
+[2023.06.09-14.36.02:181][776]OBJ SavePackage: Finished generating thumbnails for package [/Game/Sounds/Voice/Sound_23_com__Cue]
+[2023.06.09-14.36.02:184][776]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto8
+[2023.06.09-14.36.02:184][776]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue_Auto883BE3A9D4737CC1D5556AFA83989243B.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Autosaves/Game/Sounds/Voice/Sound_23_com__Cue_Auto8.uasset'
+[2023.06.09-14.36.02:184][776]LogFileHelpers: Auto-saving content packages took 0.004
+[2023.06.09-14.37.06:952][179]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.37.07:010][179]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.37.07:011][179]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__CueB7C2C8A7490E8D0FA0F960AE8DE87C41.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.37.07:021][179]LogFileHelpers: InternalPromptForCheckoutAndSave took 68 ms (total: 658 ms)
+[2023.06.09-14.37.07:025][179]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.37.07:025][179]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.37.31:984][ 89]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.37.32:044][ 89]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.37.32:044][ 89]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue2161BF6A4D666A638929939D1DDE7D1E.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.37.32:054][ 89]LogFileHelpers: InternalPromptForCheckoutAndSave took 69 ms (total: 728 ms)
+[2023.06.09-14.37.32:058][ 89]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.37.32:058][ 89]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.38.04:550][694]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.38.04:611][694]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.38.04:611][694]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue308F3C834456FB4BF3A58AAE8BA992C7.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.38.04:621][694]LogFileHelpers: InternalPromptForCheckoutAndSave took 70 ms (total: 798 ms)
+[2023.06.09-14.38.04:626][694]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.38.04:627][694]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.39.08:491][  3]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.39.08:545][  3]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.39.08:545][  3]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue7CAB07C04C01CD95179B79A1004C1B86.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.39.08:555][  3]LogFileHelpers: InternalPromptForCheckoutAndSave took 63 ms (total: 862 ms)
+[2023.06.09-14.39.08:560][  3]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.39.08:561][  3]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.39.53:124][912]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.39.53:177][912]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.39.53:177][912]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__CueCA8E640248115E29F6525FAB0C7C732C.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.39.53:187][912]LogFileHelpers: InternalPromptForCheckoutAndSave took 62 ms (total: 924 ms)
+[2023.06.09-14.39.53:192][912]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.39.53:192][912]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.40.55:071][562]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.40.55:127][562]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.40.55:127][562]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue7CE5068C4DE4E5644E4707BECBA41B8F.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.40.55:137][562]LogFileHelpers: InternalPromptForCheckoutAndSave took 66 ms (total: 990 ms)
+[2023.06.09-14.40.55:144][562]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.40.55:144][562]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.40.55:207][569]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.40.55:243][569]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.40.55:243][569]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue0F38D3B143A0175C5DE4EF8064C694E4.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.40.55:253][569]LogFileHelpers: InternalPromptForCheckoutAndSave took 44 ms (total: 1.03 sec)
+[2023.06.09-14.40.55:258][569]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.40.55:258][569]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.41.34:536][589]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.41.34:595][589]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.41.34:595][589]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__CueB250561E40508BC38B00E8AFDC660E90.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.41.34:604][589]LogFileHelpers: InternalPromptForCheckoutAndSave took 67 ms (total: 1.10 sec)
+[2023.06.09-14.41.34:608][589]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.41.34:608][589]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.42.37:222][708]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.42.37:277][708]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.42.37:278][708]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue2DCA6E0344F0B900603A74A640BF2C5D.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.42.37:288][708]LogFileHelpers: InternalPromptForCheckoutAndSave took 65 ms (total: 1.16 sec)
+[2023.06.09-14.42.37:295][708]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.42.37:295][708]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.42.37:376][717]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.42.37:426][717]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.42.37:427][717]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__CueCD6499464FC94838AD6FCA81935FA2CB.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.42.37:435][717]LogFileHelpers: InternalPromptForCheckoutAndSave took 59 ms (total: 1.22 sec)
+[2023.06.09-14.42.37:439][717]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.42.37:439][717]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.42.37:552][730]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.42.37:595][730]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.42.37:595][730]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue55CB60D54B8E46F74CCCC7A55C74670E.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.42.37:603][730]LogFileHelpers: InternalPromptForCheckoutAndSave took 50 ms (total: 1.27 sec)
+[2023.06.09-14.42.37:607][730]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.42.37:607][730]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.43.29:273][249]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.43.29:327][249]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.43.29:327][249]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue18D068114DDB7B73F4820BBCD94EE03B.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.43.29:338][249]LogFileHelpers: InternalPromptForCheckoutAndSave took 64 ms (total: 1.34 sec)
+[2023.06.09-14.43.29:343][249]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.43.29:343][249]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.44.21:875][625]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.44.21:944][625]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.44.21:945][625]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__CueE5F90EBE4834C39D462D42A09E84D879.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.44.21:955][625]LogFileHelpers: InternalPromptForCheckoutAndSave took 80 ms (total: 1.42 sec)
+[2023.06.09-14.44.21:960][625]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.44.21:960][625]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.44.22:030][632]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.44.22:091][632]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Sound_23_com__Cue
+[2023.06.09-14.44.22:091][632]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Sound_23_com__Cue162623944250D1EE8F8C49B0AC9B622B.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Sound_23_com__Cue.uasset'
+[2023.06.09-14.44.22:099][632]LogFileHelpers: InternalPromptForCheckoutAndSave took 68 ms (total: 1.49 sec)
+[2023.06.09-14.44.22:104][632]AssetCheck: New page: 에셋 저장:  Sound_23_com__Cue
+[2023.06.09-14.44.22:104][632]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Sound_23_com__Cue.Sound_23_com__Cue 유효성 검사 중
+[2023.06.09-14.44.24:426][882]LogSlate: Window 'Sound_23_com__Cue' being destroyed
+[2023.06.09-14.44.24:433][882]LogSlate: Window 'Sound_23_com__Cue' being destroyed
+[2023.06.09-14.44.26:290][ 87]LogContentBrowser: Attempting asset rename: Sound_23_com__Cue -> Sound_23_com__Cue
+[2023.06.09-14.44.27:231][199]LogUObjectHash: Compacting FUObjectHashTables data took   0.61ms
+[2023.06.09-14.44.28:358][199]LogSlate: Window 'Delete Assets' being destroyed
+[2023.06.09-14.44.28:377][199]LogUObjectHash: Compacting FUObjectHashTables data took   0.64ms
+[2023.06.09-14.44.28:389][199]LogUObjectHash: Compacting FUObjectHashTables data took   0.65ms
+[2023.06.09-14.44.28:397][199]LogUObjectHash: Compacting FUObjectHashTables data took   0.34ms
+[2023.06.09-14.44.47:159][443]LogContentBrowser: Attempting asset rename: Sound_23_com__Cue -> Stage_1_1_Cue
+[2023.06.09-14.44.47:216][443]LogMetaData: Removing '/Game/Sounds/Voice/Stage_1_1_Cue.Stage_1_1_Cue:SoundCueGraph_0.SoundCueGraphNode_Root_0' ref from Metadata '/Game/Sounds/Voice/Sound_23_com__Cue.PackageMetaData'
+[2023.06.09-14.44.47:218][443]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.44.47:277][443]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Stage_1_1_Cue
+[2023.06.09-14.44.47:277][443]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_1_CueE264F5DB4FC15A14FFBBE2AF3578C7BA.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Stage_1_1_Cue.uasset'
+[2023.06.09-14.44.47:285][443]LogFileHelpers: InternalPromptForCheckoutAndSave took 68 ms (total: 1.56 sec)
+[2023.06.09-14.44.47:296][443]LogUObjectHash: Compacting FUObjectHashTables data took   0.59ms
+[2023.06.09-14.44.47:305][443]LogUObjectHash: Compacting FUObjectHashTables data took   0.65ms
+[2023.06.09-14.44.47:312][443]LogUObjectHash: Compacting FUObjectHashTables data took   0.30ms
+[2023.06.09-14.44.47:316][443]AssetCheck: New page: 에셋 저장:  Stage_1_1_Cue
+[2023.06.09-14.44.47:316][443]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Stage_1_1_Cue.Stage_1_1_Cue 유효성 검사 중
+[2023.06.09-14.45.11:886][491]LogContentBrowser: Attempting asset rename: Stage_1_1_Cue -> Stage_1_1_Entry_Cue
+[2023.06.09-14.45.11:907][491]LogMetaData: Removing '/Game/Sounds/Voice/Stage_1_1_Entry_Cue.Stage_1_1_Entry_Cue:SoundCueGraph_0.SoundCueGraphNode_Root_0' ref from Metadata '/Game/Sounds/Voice/Stage_1_1_Cue.PackageMetaData'
+[2023.06.09-14.45.11:907][491]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.45.11:959][491]LogSavePackage: Moving output files for package: /Game/Sounds/Voice/Stage_1_1_Entry_Cue
+[2023.06.09-14.45.11:959][491]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/Stage_1_1_Entry_Cue6D7837E3463B6FEDC822A8A0FC0066BC.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/Sounds/Voice/Stage_1_1_Entry_Cue.uasset'
+[2023.06.09-14.45.11:968][491]LogFileHelpers: InternalPromptForCheckoutAndSave took 61 ms (total: 1.62 sec)
+[2023.06.09-14.45.11:979][491]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2023.06.09-14.45.11:988][491]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2023.06.09-14.45.11:995][491]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2023.06.09-14.45.12:000][491]AssetCheck: New page: 에셋 저장:  Stage_1_1_Entry_Cue
+[2023.06.09-14.45.12:000][491]LogContentValidation: Display: /Script/Engine.SoundCue /Game/Sounds/Voice/Stage_1_1_Entry_Cue.Stage_1_1_Entry_Cue 유효성 검사 중
+[2023.06.09-14.46.40:986][507]LogContentBrowser: Deferred new asset folder creation: 새 폴더
+[2023.06.09-14.46.40:997][507]LogContentBrowser: Creating deferred item: 새 폴더
+[2023.06.09-14.46.41:003][508]LogContentBrowser: Renaming the item being created (Deferred Item: 새 폴더).
+[2023.06.09-14.47.00:545][852]LogContentBrowser: Attempting asset rename: 새 폴더 -> Stage_1_1
+[2023.06.09-14.47.00:546][852]LogContentBrowser: End creating deferred item 새 폴더
+[2023.06.09-14.47.40:549][363]LogUObjectHash: Compacting FUObjectHashTables data took   0.73ms
+[2023.06.09-14.48.07:052][494]LogContentBrowser: Attempting asset rename: ManualDisplayPanel_0 -> UBP_Menual
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.SKEL_UBP_Menual_C' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.UBP_Menual_C' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.SKEL_UBP_Menual_C:PreConstruct' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.SKEL_UBP_Menual_C:Construct' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.SKEL_UBP_Menual_C:Tick' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.SKEL_UBP_Menual_C:WhenKeyDown' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.UBP_Menual_C:Tick' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:073][494]LogMetaData: Removing '/Game/UI/Level/Stage_1_1/UBP_Menual.UBP_Menual_C:Construct' ref from Metadata '/Game/UI/Level/Stage_1_1/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.07:074][494]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.48.07:156][494]LogSavePackage: Moving output files for package: /Game/UI/Level/Stage_1_1/UBP_Menual
+[2023.06.09-14.48.07:156][494]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/UBP_MenualE33216C04FFEA94E114E5CB1F63D7EF4.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/UI/Level/Stage_1_1/UBP_Menual.uasset'
+[2023.06.09-14.48.07:165][494]LogFileHelpers: InternalPromptForCheckoutAndSave took 91 ms (total: 1.71 sec)
+[2023.06.09-14.48.07:176][494]LogUObjectHash: Compacting FUObjectHashTables data took   0.60ms
+[2023.06.09-14.48.07:184][494]LogUObjectHash: Compacting FUObjectHashTables data took   0.63ms
+[2023.06.09-14.48.07:192][494]LogUObjectHash: Compacting FUObjectHashTables data took   0.31ms
+[2023.06.09-14.48.07:196][494]AssetCheck: New page: 에셋 저장:  UBP_Menual
+[2023.06.09-14.48.07:196][494]LogContentValidation: Display: /Script/UMGEditor.WidgetBlueprint /Game/UI/Level/Stage_1_1/UBP_Menual.UBP_Menual 유효성 검사 중
+[2023.06.09-14.48.13:557][244]LogContentBrowser: Attempting asset rename: UBP_Menual -> UBP_Menual
+[2023.06.09-14.48.16:193][555]LogContentBrowser: Attempting asset rename: ManualDisplayPanel_0 -> UBP_Menual
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.UBP_Menual_C' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.UBP_Menual:EventGraph.K2Node_Event_0' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.UBP_Menual:EventGraph.K2Node_Event_1' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.UBP_Menual:EventGraph.K2Node_Event_2' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.SKEL_UBP_Menual_C:PreConstruct' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.SKEL_UBP_Menual_C:Construct' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.SKEL_UBP_Menual_C:Tick' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.SKEL_UBP_Menual_C:WhenKeyDown' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.SKEL_UBP_Menual_C' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.UBP_Menual_C:Tick' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:219][555]LogMetaData: Removing '/Game/UI/Level/UBP_Menual.UBP_Menual_C:Construct' ref from Metadata '/Game/UI/Level/ManualDisplayPanel_0.PackageMetaData'
+[2023.06.09-14.48.16:221][555]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.06.09-14.48.16:272][555]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/UI/Level/UBP_Menual" FILE="../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/UI/Level/UBP_Menual.uasset" SILENT=true
+[2023.06.09-14.48.16:283][555]LogSavePackage: Moving output files for package: /Game/UI/Level/UBP_Menual
+[2023.06.09-14.48.16:283][555]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/UBP_MenualDB3C98CC4F8AD00024D7EB8F5F0B3A74.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/UI/Level/UBP_Menual.uasset'
+[2023.06.09-14.48.16:286][555]LogSavePackage: Moving output files for package: /Game/UI/Level/ManualDisplayPanel_0
+[2023.06.09-14.48.16:286][555]LogSavePackage: Moving '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Saved/ManualDisplayPanel_0592F447A479C6258972983B6F00C3C0A.tmp' to '../../../../../../Users/qkrdl/Documents/GitHub/Zolup-Button_Project_MF/Project_MF/Content/UI/Level/ManualDisplayPanel_0.uasset'
+[2023.06.09-14.48.16:295][555]LogFileHelpers: InternalPromptForCheckoutAndSave took 74 ms (total: 1.78 sec)
+[2023.06.09-14.48.16:303][555]AssetCheck: New page: 에셋 저장:  다수의 에셋
+[2023.06.09-14.48.16:303][555]LogContentValidation: Display: /Script/UMGEditor.WidgetBlueprint /Game/UI/Level/UBP_Menual.UBP_Menual 유효성 검사 중
+[2023.06.09-14.48.16:303][555]LogContentValidation: Display: /Script/CoreUObject.ObjectRedirector /Game/UI/Level/ManualDisplayPanel_0.ManualDisplayPanel_0 유효성 검사 중
+[2023.06.09-14.48.16:303][555]LogContentValidation: Display: /Script/CoreUObject.ObjectRedirector /Game/UI/Level/ManualDisplayPanel_0.Default__ManualDisplayPanel_0_C 유효성 검사 중
+[2023.06.09-14.48.16:303][555]LogContentValidation: Display: /Script/CoreUObject.ObjectRedirector /Game/UI/Level/ManualDisplayPanel_0.ManualDisplayPanel_0_C 유효성 검사 중
+[2023.06.09-14.48.19:213][892]LogAssetEditorSubsystem: Opening Asset editor for WidgetBlueprint /Game/UI/Level/Stage_1_1/UBP_Menual.UBP_Menual
+[2023.06.09-14.48.19:214][892]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.06.09-14.48.19:229][892]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.06.09-14.48.19:248][892]LogSlate: Warning: The command 'UMGEditor.OpenAnimDrawer' has the same default chord as 'EditorViewport.Next' [Ctrl+Shift+스페이스 바]

@@ -17,11 +17,17 @@ void UPowerLightControlComponent::BeginPlay()
 
 	if (::IsValid(ObserveTargetExecutionComponent.Get()) == true)
 	{
-		LightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
-		OriginalColor = LightComponent->GetLightColor().ToFColor(false);
+		LightComponent = Cast<ULightComponent>(GetAttachParent());
+		if (::IsValid(LightComponent.Get()) == false)
+		{
+			LightComponent = GetOwner()->FindComponentByClass<ULightComponent>();
+		}
+
 
 		if (::IsValid(LightComponent.Get()) == true)
 		{
+			OriginalColor = LightComponent->GetLightColor().ToFColor(false);
+
 			if (UseDisableColor == false)
 			{
 				LightComponent->SetVisibility(ReversAction);

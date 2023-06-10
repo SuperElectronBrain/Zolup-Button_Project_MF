@@ -23,11 +23,12 @@ private:
 
 	//#endif
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true))
-	UPROPERTY() UBoxComponent* Trigger;
+	UPROPERTY() TWeakObjectPtr<UBoxComponent> Trigger;
 	//UPROPERTY() UBoxComponent* Collider;
 	UPROPERTY() TArray<AActor*> MovableTargets;
 	EMoveComponentFlags MoveComponentFlags;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool PhysicsMovement;
+	UPROPERTY() UMaterialInstanceDynamic* DynamicMaterial;
 
 	//UFUNCTION() void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 	UFUNCTION() void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
