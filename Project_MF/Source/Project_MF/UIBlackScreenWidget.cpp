@@ -45,6 +45,6 @@ void UUIBlackScreenWidget::NativeDestruct()
 	//현재 이 위젯으로 페이드 진행중일 경우, 뷰포트에서 제거되지 않도록 한다.
 	if (_UIManager->IsPlayingFadeByID(WIDGET_BLACKSCREEN_KEEP_ADDED_VIEWPORT_FADE_ID))
 	{
-		AddToViewport(5);
+		AddToViewport(10);
 	}
 }
