@@ -62,7 +62,7 @@ void UMFAudioComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 
 void UMFAudioComponent::OnCollisionEnter(AActor* Collision)
 {
-	if (GetOwner()->GetVelocity().Size() > 10.0f)
+	if (GetOwner()->GetVelocity().Size() > 0.1f)
 	{
 		//float OriginalVolume = VolumeMultiplier;
 		USoundBase* OriginalSound = Sound;

@@ -14,6 +14,7 @@ class PROJECT_MF_API UChangeLevelComponent : public UBoxComponent
 {
 	GENERATED_BODY()
 private:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) FString LevelName;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Meta = (AllowPrivateAccess = true)) bool OneTime;
 protected:
 	virtual void BeginPlay() override;

@@ -30,7 +30,7 @@ void UChangeLevelComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 		{
 			if (::IsValid(Cast<ACharacter>(OverlappingActors[i])) == true)
 			{
-				UGameplayStatics::OpenLevel(GetWorld(), TEXT("Stage_1"));
+				UGameplayStatics::OpenLevel(GetWorld(), *LevelName);
 
 				if (OneTime == true)
 				{
