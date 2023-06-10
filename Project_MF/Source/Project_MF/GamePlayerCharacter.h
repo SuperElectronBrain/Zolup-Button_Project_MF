@@ -213,6 +213,8 @@ private:
 	/////     Private methods   ///////
 	///////////////////////////////////
 
+	void FindOverlapSection();
+
 	/**********************************************************************************
 	* UI관련 함수들입니다.
 	* 
@@ -459,6 +461,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* GauntletEffect;
 
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraSystem* AbsorbEffect;
+
 	/**
 	* Player Default fields
 	*/
@@ -529,8 +534,9 @@ public:
 	float VignettingSeconds = 1.f;
 
 private:
-	/**
-	* Magnetic Components
+	/**************************************************
+	* Component( Magnetic / MagneticMovmenet )
+	* 자성 관련 컴포넌트들입니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	UMagneticComponent* Magnetic;
@@ -538,8 +544,10 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = Magnetic, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	UDefaultMagneticMovementComponent* MagMovement;
 
-	/**
-	* Camera Components
+
+	/*************************************************
+	* Component( Camera )
+	* 카메라 관련 컴포넌트들입니다.
 	*/
 	UPROPERTY(VisibleAnywhere, Category = Camera, Meta = (AllowPrivateAccess = true))
 	UCameraComponent* Camera;
@@ -547,7 +555,8 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = Camera, Meta = (AllowPrivateAccess = true))
 	USpringArmComponent* SpringArm;
 
-	/**
+
+	/**************************************************
 	* TimeStop_UI Components
 	*/
 	UPROPERTY()
@@ -570,6 +579,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* GauntletEffectComp;
+
+	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UNiagaraComponent* AbsorbEffectComp;
 
 	/**
 	*Sound Components

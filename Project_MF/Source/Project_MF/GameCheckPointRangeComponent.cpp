@@ -118,8 +118,14 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 			if (_Instance.IsValid())
 			{
 				_Instance->GetUIManager()->GetUIBlackScreenWidget(blackScreen);
+				if (_Instance->GetUIManager()->IsPlayingFadeByID(CHECKPOINT_FADE_ID)) return;
+
 				_moveTarget.Reset();
 				_moveTarget = OtherActor;
+
+				//뷰포트에 추가되지 않았다면 추가.
+				if (blackScreen->IsInViewport()==false)
+					blackScreen->AddToViewport();
 
 				//페이드 아웃 실행
 				if (blackScreen.IsValid())

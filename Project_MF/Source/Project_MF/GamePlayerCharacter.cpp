@@ -33,7 +33,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	* CDO( SkeletalMesh + AimInstance )
 	* 플레이어의 스켈레탈 메시 및 애니메이션 블루프린트 에셋을
 	* 가져옵니다.
-	*************************************************************/
+	*/
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>	PLAYER_MESH(
 		TEXT("/Game/PlayerCharacter/Meshs2/Main_Character_pose.Main_Character_pose")
 	);
@@ -44,7 +44,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/**************************************************************
 	* CDO( NiagaraSystem )
 	* 플레이어가 사용할 이펙트 에셋들을 가져옵니다.
-	***************************************************************/
+	*/
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Gun/Gun_effect_shoot_n_fix.Gun_effect_shoot_n_fix")
 	);
@@ -60,19 +60,29 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> GAUNTLET_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Magnetic/Gauntlet/Glove_effect_n_fix.Glove_effect_n_fix")
 	);
+	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> ABSORB_EFFECT_SYSTEM(
+		TEXT("/Game/Effect/Magnetic/Absorb/energy_absorption_beam_nia.energy_absorption_beam_nia")
+	);
+
+	if (SHOOT_EFFECT_SYSTEM.Succeeded()) ShootEffect = SHOOT_EFFECT_SYSTEM.Object;
+	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
+	if (SHOOT_WAVE_EFFECT_SYSTEM.Succeeded()) ShootWaveEffect = SHOOT_WAVE_EFFECT_SYSTEM.Object;
+	if (MAGNETIC_VIGNETTING_SYSTEM.Succeeded()) MagneticVignettingEffect = MAGNETIC_VIGNETTING_SYSTEM.Object;
+	if (GAUNTLET_EFFECT_SYSTEM.Succeeded()) GauntletEffect = GAUNTLET_EFFECT_SYSTEM.Object;
+	if (ABSORB_EFFECT_SYSTEM.Succeeded()) AbsorbEffect = ABSORB_EFFECT_SYSTEM.Object;
 
 	/****************************************************************
 	* CDO( UIWidget )
 	* 플레이어가 사용할 UI Widget 에셋을 가져옵니다.
-	*****************************************************************/
+	*/
 	static ConstructorHelpers::FClassFinder<UUserWidget> STOPTIMER_WIDGET(
 		TEXT("/Game/UI/Player/UIStopTimerWidget.UIStopTimerWidget_C")
 	);
 
 	/*****************************************************************
-	* CDO( AudioBase )
-	* 플레이어가 사용할 사운드 에셋들을 가져옵니다.
-	******************************************************************/
+	* CDO( AudioBase ) / Component( Audio )
+	* 플레이어가 사용할 사운드 에셋들을 가져오고, 사운드 컴포넌트를 초기화합니다.
+	*/
 	static ConstructorHelpers::FObjectFinder<USoundBase> GIVE_SOUND(
 		TEXT("/Game/Sounds/Magnetic/MagneticOn.MagneticOn")
 	);
@@ -110,10 +120,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/Sounds/Player/PlayerDamaged_3.PlayerDamaged_3")
 	);
 
-	/*****************************************************************
-	* Component(Audio)
-	* 사운드 관련 컴포넌트들을 초기화합니다.
-	******************************************************************/
 	MoveSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("MOVE_SE"));
 	MoveSoundEffectComp->SetupAttachment(RootComponent);
 
@@ -136,7 +142,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/*******************************************************************
 	* Component(SpringArm)
 	* 스프링 암 컴포넌트를 초기화합니다.
-	*********************************************************************/
+	*/
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SPRINGARM"));
 	SpringArm->SetupAttachment(GetCapsuleComponent());
 	SpringArm->bUsePawnControlRotation = true;
@@ -151,7 +157,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/***********************************************************************
 	* Component(Camera)
 	* 카메라 컴포넌트를 초기화합니다. 
-	************************************************************************/
+	*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
 	Camera->SetupAttachment(SpringArm);
 	Camera->SetRelativeLocationAndRotation(FVector(-8.f, 5.f, 105.0f), FRotator::ZeroRotator);
@@ -161,7 +167,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/*************************************************************************
 	* Component(Capsule)
 	* 플레이어의 캡슐 컴포넌트를 초기화합니다.
-	**************************************************************************/
+	*/
 	GetCapsuleComponent()->SetCapsuleRadius(20.f);
 	GetCapsuleComponent()->SetCapsuleHalfHeight(86.74337f);
 
@@ -169,7 +175,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/**************************************************************************
 	* Component(SkeletalMesh + AnimInstance) 
 	* 플레이어의 스켈레탈 메시 및 애니메이션 인스턴스를 초기화합니다.
-	****************************************************************************/
+	*/
 	USkeletalMeshComponent* PlayerMesh = GetMesh();
 	PlayerMesh->SetupAttachment(SpringArm);
 	if (PLAYER_MESH.Succeeded())
@@ -189,7 +195,11 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/**Component( CheckPoint ) - 체크포인트 컴포넌트를 초기화합니다.*/
 	CheckPointContainer = CreateDefaultSubobject<UGameCheckPointContainerComponent>(TEXT("CHECK_POINT_CONTAINER"));
 
-	/*CharacterMovement*/
+
+	/**********************************************************
+	* Component( CharacterMovementComponent )
+	* 플레이어 무브먼트 컴포넌트를 초기화합니다.
+	*/
 	UCharacterMovementComponent* movement = GetCharacterMovement();
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
@@ -202,7 +212,10 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	movement->MaxWalkSpeed = MoveSpeed;
 	movement->MaxAcceleration = 1000.f;
 
-	/*Magnetic*/
+	/**********************************************************
+	* Component( Magnetic / MagneticMovementC )
+	* 자성 컴포넌트를 초기화합니다.
+	*/
 	Magnetic = CreateDefaultSubobject<UMagneticComponent>(TEXT("MAGNETIC"));
 	MagMovement = CreateDefaultSubobject<UDefaultMagneticMovementComponent>(TEXT("DEFAULT_MAG_MOVEMENT"));
 	Magnetic->SetupAttachment(GetCapsuleComponent());
@@ -210,13 +223,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	Magnetic->SetMagneticFieldRadiusScale(300.f);
 	Magnetic->bShowMagneticField = false;
 	Magnetic->SetWeight(1.f, true);
-
-	/*Effect*/
-	if (SHOOT_EFFECT_SYSTEM.Succeeded()) ShootEffect = SHOOT_EFFECT_SYSTEM.Object;
-	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
-	if (SHOOT_WAVE_EFFECT_SYSTEM.Succeeded()) ShootWaveEffect = SHOOT_WAVE_EFFECT_SYSTEM.Object;
-	if (MAGNETIC_VIGNETTING_SYSTEM.Succeeded()) MagneticVignettingEffect = MAGNETIC_VIGNETTING_SYSTEM.Object;
-	if (GAUNTLET_EFFECT_SYSTEM.Succeeded()) GauntletEffect = GAUNTLET_EFFECT_SYSTEM.Object;
 	
 	/*StopTimer Widget*/
 	TimerWidgetA = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentA"));
@@ -471,8 +477,8 @@ void AGamePlayerCharacter::BeginPlay()
 	LandedDelegate.AddDynamic(this, &AGamePlayerCharacter::EnterGround);
 	BreathSoundEffectComp->OnAudioFinished.AddDynamic(this, &AGamePlayerCharacter::BreathFinish);
 
-	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerBeginOverlap);
-	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerEndOverlap);
+	//GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerBeginOverlap);
+	//GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerEndOverlap);
 
 	//게임 인스턴스 참조
 	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
@@ -590,6 +596,21 @@ void AGamePlayerCharacter::BeginPlay()
 		_vignettingCurrColor = FLinearColor(1.f, 1.f, 1.f, 0.f);
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), FLinearColor(1.f, 1.f, 1.f, 0.f));
 	}
+
+	/*자성 흡수 이펙트 추가*/
+	if (AbsorbEffect)
+	{
+		AbsorbEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
+			AbsorbEffect,
+			GetMesh(),
+			TEXT("GauntletSocket"),
+			FVector::ZeroVector,
+			FRotator::ZeroRotator,
+			EAttachLocation::SnapToTarget,
+			false,
+			false
+		);
+	}
 	#pragma endregion
 }
 
@@ -655,6 +676,15 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 		_vignettingcurrTime -= DeltaTime;
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), _vignettingCurrColor);
 	}
+
+	/**흡수 이펙트*/
+	//if (AbsorbEffectComp && IsGivenInvalid(0))
+	//{
+	//	FRotator start = AbsorbEffectComp->GetComponentRotation();
+	//	FRotator end = _GivenMagnets[0]->GetComponentRotation();
+
+	//	AbsorbEffectComp->SetComponentRotation(FMath::Lerp(start, end, DeltaTime));
+	//}
 
 	/*건틀렛 구체 이펙트 러프*/
 	_gauntletCurrScale += DeltaTime * 2.f * (_gauntletGoalScale - _gauntletCurrScale);
@@ -1193,7 +1223,9 @@ void AGamePlayerCharacter::JumpStart()
 
 			FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
 			FVector handTouchPos = result.Location + (FVector::DownVector * GetPlayerHeight() * 1.5f);
-			PlayerAnim->PlayClimbMontage();
+			FVector startLookDir = (FVector::UpVector - _stickNormal);
+
+			//PlayerAnim->PlayClimbMontage(startLookDir, handTouchPos, result.Normal);
 		}
 
 		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
@@ -1210,9 +1242,6 @@ void AGamePlayerCharacter::JumpStart()
 		_cPos1 = FVector( _startPos.X, _startPos.Y, _endPos.Z );
 		_currTime = 0.f;
 		_goalTimeDiv = 1.f / ClimbWallSeconds;
-
-		_bApplyCamLook = true;
-		_CamLookNormal = FVector::UpVector - _stickNormal;
 
 		return;
 	}
@@ -1232,8 +1261,8 @@ void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 		/*섹션 페이드 아웃*/
 		case(PLAYER_FADE_ID):
 		{
-			if (isDark == false || _CurrSection.IsValid()==false) break;
-			_CurrSection->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
+			if (isDark == false || _OverlapSection.IsValid()==false) break;
+			_OverlapSection->SetSection(ESectionSettingType::SECTION_RESET_BEGIN_PLAY);
 			break;
 		}
 
@@ -1259,10 +1288,37 @@ void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 	}
 }
 
+void AGamePlayerCharacter::FindOverlapSection()
+{
+	_OverlapSection.Reset();
+
+	TArray<AActor*> actors;
+	GetCapsuleComponent()->GetOverlappingActors(actors);
+
+	for (AActor* actor : actors)
+	{
+		TArray<USceneComponent*> components;
+		actor->GetRootComponent()->GetChildrenComponents(true, components);
+
+		for (USceneComponent* component : components) {
+
+			if (UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(component))
+			{
+				_OverlapSection = section;
+				return;
+			}
+		}
+	}
+
+}
+
 void AGamePlayerCharacter::StageRestart()
 {
 	#pragma region Omission
 	if (_stiffen != 0.f) return;
+
+	//섹션을 찾는다.
+	FindOverlapSection();
 
 	if (_OverlapSection.IsValid())
 	{
@@ -1271,6 +1327,9 @@ void AGamePlayerCharacter::StageRestart()
 
 		if (_BlackScreenWidget.IsValid())
 		{
+			if (_BlackScreenWidget->IsInViewport() == false)
+				_BlackScreenWidget->AddToViewport(5);
+
 			_Instance->GetUIManager()->PlayFadeInOut(
 				EFadeType::WHITE_TO_DARK_TO_WHITE,
 				_BlackScreenWidget.Get(),
@@ -1299,11 +1358,11 @@ void AGamePlayerCharacter::ClimbProgress(float DeltaTime)
 {
 	if (PlayerMode != EPlayerMode::STICK_JUMP) return;	
 
-	FVector neckPos  = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
-	neckPos += _stickNormal * 20.f;
-	Camera->SetWorldLocation(neckPos);
+	//FVector neckPos  = GetMesh()->GetSocketLocation(PLAYER_NECK_BONE);
+	//neckPos += _stickNormal * 20.f;
+	//Camera->SetWorldLocation(neckPos);
 
-	return;
+	//return;
 	float progressRatio = _currTime * _goalTimeDiv;
 
 	SetActorLocation(GetBezirCurve2(_startPos, _cPos1, _endPos, progressRatio));
@@ -1618,6 +1677,25 @@ void AGamePlayerCharacter::ShootStart()
 
 void AGamePlayerCharacter::ResetStart()
 {
+	/*흡수 이펙트 실행*/
+	if (AbsorbEffectComp)
+	{
+		AbsorbEffectComp->ResetSystem();
+
+		if (IsGivenInvalid(0))
+		{
+			FVector LHandLocation = GetMesh()->GetSocketLocation(PLAYER_LHAND_BONE);
+			FVector endPoint = _GivenMagnets[0]->GetComponentLocation();
+			EMagneticType type = _GivenMagnets[0]->GetCurrentMagnetic();
+
+			AbsorbEffectComp->SetVariableVec3(TEXT("beam_end"), endPoint);
+			AbsorbEffectComp->SetVariableVec3(TEXT("particle_end"), endPoint.GetSafeNormal() * 200.f);
+
+			AbsorbEffectComp->SetVariableLinearColor(TEXT("particle_color_01"), UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_EFFECT_LAZER));
+			AbsorbEffectComp->SetVariableLinearColor(TEXT("beam_color"), UMagneticComponent::GetMagneticEffectColor(type, EMagneticEffectColorType::GUN_EFFECT_LAZER));
+		}
+	}
+
 	//UI 갱신
 	UpdateUIRef();
 
@@ -2020,8 +2098,7 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 
 	if (changedMagType != EMagneticType::NONE)
 	{
-		if (PlayerAnim && PlayerAnim->GetGloveOnMontageIsPlaying()==false) 
-					PlayerAnim->PlayGloveOnMontage(.3f, .85f);
+		if (PlayerAnim) PlayerAnim->PlayGloveOnMontage(.3f, .85f);
 
 		/*자성 비네팅 이펙트 색깔 변경*/
 		if (MagneticVignettingEffectComp)

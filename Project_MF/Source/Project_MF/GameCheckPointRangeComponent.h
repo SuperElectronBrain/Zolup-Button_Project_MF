@@ -6,7 +6,7 @@
 #include "Components/BoxComponent.h"
 #include "GameCheckPointRangeComponent.generated.h"
 
-#define CHECKPOINT_FADE_ID 29
+constexpr const int CHECKPOINT_FADE_ID = 29;
 
 class UCustomGameInstance;
 

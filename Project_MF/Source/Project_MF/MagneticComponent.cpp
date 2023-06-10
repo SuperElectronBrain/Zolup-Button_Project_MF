@@ -348,9 +348,12 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 		}
 	}
 
+	bool notChanged = CurrMagnetic == EMagneticType::NONE && newType == EMagneticType::NONE;
 	bool sameMagnetic = CurrMagnetic == newType;
 	bool changeMagnetic = CurrMagnetic != newType;
 	bool addMagCount = true;
+
+	if (notChanged) return;
 
 	//자성이 초기화되었을 경우.
 	if (newType == EMagneticType::NONE)
@@ -415,7 +418,7 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 			_applyMovement = false;
 		}
 	}
-	else
+	else 
 	{
 		CurrHaveMagneticSeconds = MaxHaveMagneticSeconds;
 		if (changeMagnetic)

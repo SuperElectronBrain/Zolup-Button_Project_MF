@@ -73,7 +73,7 @@ void UGameMapSectionComponent::SetSection(ESectionSettingType type)
 						continue;
 					}
 
-					info.Magnetic->SetCurrentMagnetic(info.Type);
+					info.Magnetic->SetCurrentMagnetic(EMagneticType::NONE);
 					info.Magnetic->SetMagneticFieldRadiusScale(info.MagneticFieldRadiusScale);
 					info.Magnetic->SetMaxHaveMagneticSeconds(info.MaxHaveMagneticSeconds);
 				}
