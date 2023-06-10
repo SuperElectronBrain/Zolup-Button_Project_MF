@@ -88,7 +88,7 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
 	EHitCheckPointRangeApplyAfterType HitApplyAfterType;
 
-	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointApplyDetails, Meta = (AllowPrivateAccess = true))
 	FName OpenLevelName;
 };
 

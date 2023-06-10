@@ -120,6 +120,27 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/Sounds/Player/PlayerDamaged_3.PlayerDamaged_3")
 	);
 
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_WALK_IRON_SOUND(
+		TEXT("/Game/Sounds/Player/Walk_Iron.Walk_Iron")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_WALK_CONCRETE_SOUND(
+		TEXT("/Game/Sounds/Player/Walk_C_Roop.Walk_C_Roop")
+	);
+
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_RUN_IRON_SOUND(
+		TEXT("/Game/Sounds/Player/Run_Iron.Run_Iron")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_RUN_CONCRETE_SOUND(
+		TEXT("/Game/Sounds/Player/Run_C_Roop.Run_C_Roop")
+	);
+
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_JUMP_IRON_SOUND(
+		TEXT("/Game/Sounds/Player/Jump_Iron.Jump_Iron")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> PLAYER_JUMP_CONCRETE_SOUND(
+		TEXT("/Game/Sounds/Player/Jump_Concrete.Jump_Concrete")
+	);
+
 	MoveSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("MOVE_SE"));
 	MoveSoundEffectComp->SetupAttachment(RootComponent);
 
@@ -138,6 +159,14 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (PLAYER_DAMAGED_SOUND1.Succeeded()) DamagedSound1 = PLAYER_DAMAGED_SOUND1.Object;
 	if (PLAYER_DAMAGED_SOUND2.Succeeded()) DamagedSound2 = PLAYER_DAMAGED_SOUND2.Object;
 	if (PLAYER_DAMAGED_SOUND3.Succeeded()) DamagedSound3 = PLAYER_DAMAGED_SOUND3.Object;
+
+	if (PLAYER_WALK_CONCRETE_SOUND.Succeeded()) WalkConcreteSound = PLAYER_WALK_CONCRETE_SOUND.Object;
+	if (PLAYER_RUN_CONCRETE_SOUND.Succeeded()) RunConcreteSound = PLAYER_RUN_CONCRETE_SOUND.Object;
+	if (PLAYER_JUMP_CONCRETE_SOUND.Succeeded()) JumpConcreteSound = PLAYER_JUMP_CONCRETE_SOUND.Object;
+
+	if (PLAYER_WALK_IRON_SOUND.Succeeded()) WalkIronSound = PLAYER_WALK_IRON_SOUND.Object;
+	if (PLAYER_RUN_IRON_SOUND.Succeeded()) RunIronSound = PLAYER_RUN_IRON_SOUND.Object;
+	if (PLAYER_JUMP_IRON_SOUND.Succeeded()) JumpIronSound = PLAYER_JUMP_IRON_SOUND.Object;
 
 	/*******************************************************************
 	* Component(SpringArm)
@@ -497,6 +526,10 @@ void AGamePlayerCharacter::BeginPlay()
 		UpdateUIRef();
 
 		if (_PlayerUICanvasWidget.IsValid()) _PlayerUICanvasWidget->AddToViewport();
+		//if (_BlackScreenWidget.IsValid() && _BlackScreenWidget->IsInViewport()==false)
+		//{
+		//	_BlackScreenWidget->AddToViewport(10);
+		//}
 
 		//FadeChange 이벤트 추가.
 		_Instance->GetUIManager()->OnUIFadeChange.AddDynamic(this, &AGamePlayerCharacter::FadeChange);
@@ -509,6 +542,19 @@ void AGamePlayerCharacter::BeginPlay()
 		BreathSoundEffectComp->SetVolumeMultiplier(.5f);
 		BreathSoundEffectComp->Play();
 	}
+
+	FPlayerMoveSoundInfo IronSounds;
+	IronSounds.WalkSound = WalkIronSound;
+	IronSounds.DashSound = RunIronSound;
+	IronSounds.JumpEndSound = JumpIronSound;
+
+	FPlayerMoveSoundInfo ConcreteSounds;
+	ConcreteSounds.WalkSound = WalkConcreteSound;
+	ConcreteSounds.DashSound = RunConcreteSound;
+	ConcreteSounds.JumpEndSound = JumpConcreteSound;
+
+	PlayerWalkSound.Add(TEXT("IronGround"), IronSounds);
+	PlayerWalkSound.Add(TEXT("ConcreteGround"), ConcreteSounds);
 
 	/*시간정지 위젯 참조 구하기*/
 	if (TimerWidgetA) TimerWidgetInsA = Cast<UUIStopTimerWidget>(TimerWidgetA->GetWidget());
@@ -1228,8 +1274,6 @@ void AGamePlayerCharacter::JumpStart()
 			//PlayerAnim->PlayClimbMontage(startLookDir, handTouchPos, result.Normal);
 		}
 
-		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-
 		//UI갱신
 		if (_AimWidget.IsValid()) _AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], EMagneticType::NONE);
 
@@ -1238,11 +1282,12 @@ void AGamePlayerCharacter::JumpStart()
 		PlayerMode = EPlayerMode::STICK_JUMP;
 		_stiffen = -1.f;
 		_startPos = playerPos;
-		_endPos = result.Location;
+		_endPos = result.Location - (_stickNormal*40.f) + (FVector::UpVector * playerHeight);
 		_cPos1 = FVector( _startPos.X, _startPos.Y, _endPos.Z );
 		_currTime = 0.f;
 		_goalTimeDiv = 1.f / ClimbWallSeconds;
 
+		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 		return;
 	}
 	
@@ -1304,6 +1349,7 @@ void AGamePlayerCharacter::FindOverlapSection()
 
 			if (UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(component))
 			{
+				UE_LOG(LogTemp, Warning, TEXT("section: %s"), *actor->GetActorLabel())
 				_OverlapSection = section;
 				return;
 			}
@@ -1778,7 +1824,9 @@ void AGamePlayerCharacter::DetectFloorType(FString& outPhysMatName)
 	{
 		if (ret == false || result.PhysMaterial.IsValid() == false) continue;
 
-		outPhysMatName = result.PhysMaterial->GetName();
+		FString physName = result.PhysMaterial->GetName();
+		if (physName == "DefaultPhysicalMaterial") continue;
+		outPhysMatName = physName;
 		return;
 	}
 }

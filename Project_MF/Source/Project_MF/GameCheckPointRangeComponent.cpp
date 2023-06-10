@@ -139,6 +139,7 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 					blackScreen->AddToViewport();
 
 				bool removeViewport = (HitApplyType == EHitCheckPointRangeApplyType::OPEN_LEVEL);
+				int usedID = CHECKPOINT_FADE_ID;
 
 				//페이드 아웃 실행
 				if (blackScreen.IsValid())
@@ -152,7 +153,7 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 						0.f,
 						0.f,
 						1.f,
-						CHECKPOINT_FADE_ID,
+						usedID,
 						FLinearColor::Black,
 						FLinearColor::Black,
 						false,

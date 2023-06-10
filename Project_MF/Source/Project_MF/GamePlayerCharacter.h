@@ -438,6 +438,24 @@ private:
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
 	USoundBase* DamagedSound3;
 
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* WalkIronSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* RunIronSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* JumpIronSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* WalkConcreteSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* RunConcreteSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* JumpConcreteSound;
+
 	/**@UI fields*/
 	UPROPERTY()
 	UUIStopTimerWidget* TimerWidgetInsA;

@@ -21,12 +21,10 @@ public:
 	AGameMapCheckPoint();
 
 private:
-#if WITH_EDITORONLY_DATA
 	///////////////////////////////
 	/// Components And Fields /////
 	//////////////////////////////
 	UPROPERTY(VisibleAnywhere, Category=CheckPoint, Meta=(AllowPrivateAccess=true))
 	UGameMapCheckPointComponent* Point;
-#endif
 
 };

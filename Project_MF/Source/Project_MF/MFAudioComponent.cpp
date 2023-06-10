@@ -32,18 +32,22 @@ void UMFAudioComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	TArray<TWeakObjectPtr<AActor>> ExitActors;
-	for (int32 i = 0; i < HitActors.Num(); i = i + 1)
+	for (FCollisionData& actor : HitActors )
 	{
-		if (HitActors[i].TickCount == 1)
-		{
-			OnCollisionEnter(HitActors[i].HitActor.Get());
+		bool hitActorIsValid = actor.HitActor.IsValid();
+
+		/**Enter*/
+		if (actor.TickCount == 1 && hitActorIsValid) {
+
+			OnCollisionEnter(actor.HitActor.Get());
 		}
 
-		HitActors[i].TickCount = HitActors[i].TickCount + 1;
-		if (HitActors[i].HitCount != HitActors[i].TickCount)
-		{
-			OnCollisionExit(HitActors[i].HitActor.Get());
-			ExitActors.Add(HitActors[i].HitActor);
+		actor.TickCount++;
+
+		/**Exit*/
+		if (actor.HitCount != actor.TickCount && hitActorIsValid) {
+			OnCollisionExit(actor.HitActor.Get());
+			ExitActors.Add(actor.HitActor);
 		}
 	}
 	
