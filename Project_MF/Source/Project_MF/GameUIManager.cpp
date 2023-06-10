@@ -98,6 +98,12 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 			//종료처리
 			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A) || bHandlerIsValid ==false || info.pendingKill)
 			{
+				if (info.bRemoveFromParentAtLast)
+				{
+					UUserWidget* widget =  Cast<UUserWidget>(info.handler.GetObject());
+					if (widget) widget->RemoveFromParent();
+				}
+
 				_fadeInfos.RemoveAt(i);
 				i--;
 				count = _fadeInfos.Num();
@@ -127,7 +133,8 @@ void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
 									int id,
 									FLinearColor darkColor,
 									FLinearColor whiteColor,
-									bool bStartAlphaUsedOrigin)
+									bool bStartAlphaUsedOrigin,
+									bool bAutoRemoveFromParentAtLast)
 {
 	#pragma region Omission
 	//유효하지 않은 위젯이라면 스킵한다.
@@ -170,6 +177,7 @@ void UGameUIManager::PlayFadeInOut(	EFadeType fadeType,
 	info.id = id;
 	info.progress = 0;
 	info.progressTime = 0.f;
+	info.bRemoveFromParentAtLast = bAutoRemoveFromParentAtLast;
 
 	//시작 색깔을 적용한다.
 	info.handler->SetColor(info.start);
