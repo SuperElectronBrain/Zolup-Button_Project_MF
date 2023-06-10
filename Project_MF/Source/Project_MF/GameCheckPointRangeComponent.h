@@ -22,7 +22,8 @@ enum class EHitCheckPointRangeApplyType
 {
 	MOVE_TO_CHECKPOINT,
 	MOVE_TO_LAST_CHECKPOINT,
-	SAVE_CHECKPOINT
+	SAVE_CHECKPOINT,
+	OPEN_LEVEL
 };
 
 UENUM()
@@ -79,9 +80,6 @@ private:
 	AActor* CheckPoint;
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
-	TArray<AActor*> ApplyTarget;
-
-	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
 	EHitCheckPointRangeApplyTiming HitApplyTiming;
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
@@ -89,5 +87,8 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
 	EHitCheckPointRangeApplyAfterType HitApplyAfterType;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
+	FName OpenLevelName;
 };
 

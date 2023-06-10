@@ -2,6 +2,7 @@
 #include "GameMapSectionComponent.h"
 #include "GameCheckPointContainerComponent.h"
 #include "CustomGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "UIBlackScreenWidget.h"
 
 UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
@@ -15,7 +16,11 @@ UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 
 void UGameCheckPointRangeComponent::FadeChange(bool isDark, int id)
 {
-	if (isDark == false || id != CHECKPOINT_FADE_ID) return;
+	if (isDark == false) return;
+	if (!(id == 834 && HitApplyType == EHitCheckPointRangeApplyType::OPEN_LEVEL) && id!=CHECKPOINT_FADE_ID)
+	{
+		return;
+	}
 
 	ApplyRogic(_moveTarget.Get());
 	_moveTarget.Reset();
@@ -94,6 +99,12 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 				container->CheckPoint = CheckPoint;
 			}
 			break;
+
+		case(EHitCheckPointRangeApplyType::OPEN_LEVEL):
+			{
+				UGameplayStatics::OpenLevel(GetWorld(),OpenLevelName);
+			}
+			break;
 	}
 
 	//로직 적용 후의 로직을 적용한다.
@@ -127,6 +138,8 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 				if (blackScreen->IsInViewport()==false)
 					blackScreen->AddToViewport();
 
+				bool removeViewport = (HitApplyType == EHitCheckPointRangeApplyType::OPEN_LEVEL);
+
 				//페이드 아웃 실행
 				if (blackScreen.IsValid())
 				{
@@ -141,7 +154,9 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 						1.f,
 						CHECKPOINT_FADE_ID,
 						FLinearColor::Black,
-						FLinearColor::Black
+						FLinearColor::Black,
+						false,
+						removeViewport
 					);
 				}
 			}

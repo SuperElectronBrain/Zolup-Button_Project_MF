@@ -34,6 +34,7 @@ struct FUIFadeInfo
 	float goal1TimeDiv, goal2TimeDiv, startWaitTimeDiv, middleWaitTimeDiv;
 	int progress;
 	bool pendingKill;
+	bool bRemoveFromParentAtLast;
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUIFadeChangeDelegate, bool, isDark, int, id);
@@ -82,6 +83,7 @@ public:
 	* @param darkColor		페이드 효과로 어두워졌을 때의 색깔입니다.
 	* @param whiteColor		페이드 효과로 밝아졌을 때의 색깔입니다.
 	* @param bStartAlphaUsedOrigin	페이드를 적용할 때, 처음 알파값을 유지하는지에 대한 여부입니다.
+	* @param bAutoRemoveViewportAtLast	페이드 효과가 마무리될 때, 자동으로 추가되어있는 부모로부터 제거되는지에 대한 여부입니다.
 	*/
 	UFUNCTION(BlueprintCallable)
 	void PlayFadeInOut(	EFadeType fadeType,
@@ -95,7 +97,8 @@ public:
 						int id = -1,
 						FLinearColor darkColor=FLinearColor::White,
 						FLinearColor whiteColor=FLinearColor::White,
-						bool bStartAlphaUsedOrigin = false );
+						bool bStartAlphaUsedOrigin = false,
+						bool bAutoRemoveFromParentAtLast=false);
 
 	/**지정한 ID를 가진 페이드 프로그레스를 종료시킵니다.*/
 	UFUNCTION(BlueprintCallable, Category = UIManager)
