@@ -23,7 +23,8 @@ enum class EHitCheckPointRangeApplyType
 	MOVE_TO_CHECKPOINT,
 	MOVE_TO_LAST_CHECKPOINT,
 	SAVE_CHECKPOINT,
-	OPEN_LEVEL
+	OPEN_LEVEL,
+	SET_PLAYER_DMG_MODE
 };
 
 UENUM()
@@ -66,7 +67,7 @@ private:
 	UFUNCTION()
 	void FadeChange(bool isDark, int id);
 
-	void ApplyRogic(AActor* actor);
+	void ApplyRogic(AActor* actor, EHitCheckPointRangeApplyType applyType);
 
 	//////////////////////////////
 	/// Components and fields ////
@@ -86,9 +87,15 @@ private:
 	EHitCheckPointRangeApplyType HitApplyType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
+	TArray<EHitCheckPointRangeApplyType> HitApplyTypes;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
 	EHitCheckPointRangeApplyAfterType HitApplyAfterType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointApplyDetails, Meta = (AllowPrivateAccess = true))
 	FName OpenLevelName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointApplyDetails, Meta = (AllowPrivateAccess = true))
+	int	AddSectionDMG = 0;
 };
 

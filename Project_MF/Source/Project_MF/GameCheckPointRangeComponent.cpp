@@ -4,6 +4,7 @@
 #include "CustomGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "UIBlackScreenWidget.h"
+#include "GamePlayerCharacter.h"
 
 UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 {
@@ -16,13 +17,11 @@ UGameCheckPointRangeComponent::UGameCheckPointRangeComponent()
 
 void UGameCheckPointRangeComponent::FadeChange(bool isDark, int id)
 {
-	if (isDark == false) return;
-	if (!(id == 834 && HitApplyType == EHitCheckPointRangeApplyType::OPEN_LEVEL) && id!=CHECKPOINT_FADE_ID)
-	{
-		return;
-	}
+	if (isDark == false || id != CHECKPOINT_FADE_ID) return;
 
-	ApplyRogic(_moveTarget.Get());
+	ApplyRogic(_moveTarget.Get(), HitApplyType);
+	for (auto type : HitApplyTypes) ApplyRogic(_moveTarget.Get(), type);
+
 	_moveTarget.Reset();
 }
 
@@ -64,11 +63,13 @@ void UGameCheckPointRangeComponent::BeginPlay()
 
 	for (AActor* a : overlaps)
 	{
-		ApplyRogic(a);
+		ApplyRogic(a, HitApplyType);
+
+		for (auto type : HitApplyTypes) ApplyRogic(a, type);
 	}
 }
 
-void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
+void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor, EHitCheckPointRangeApplyType applyType)
 {
 	//유효하지 않은 엑터라면, 아니라면 탈출.
 	if (actor == nullptr || actor && !::IsValid(actor)) return;
@@ -77,8 +78,9 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 	if (container == nullptr || container && !::IsValid(container)) return;
 
 	//적용할 로직을 결정한다.
-	switch (HitApplyType) {
+	switch (applyType) {
 
+		/**지정한 위치로 엑터를 옮깁니다.*/
 		case(EHitCheckPointRangeApplyType::MOVE_TO_CHECKPOINT):
 			if (CheckPoint && ::IsValid(CheckPoint))
 			{
@@ -86,6 +88,7 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 			}
 			break;
 
+		/**이 엑터를 마지막 세이브 장소로 이동시킵니다.*/
 		case(EHitCheckPointRangeApplyType::MOVE_TO_LAST_CHECKPOINT):
 			if (container->CheckPoint && ::IsValid(container->CheckPoint))
 			{
@@ -93,18 +96,41 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor)
 			}
 			break;
 
+		/**이 체크포인트 범위가 가르키는 세이브 포인트를 엑터에 저장시킵니다.*/
 		case(EHitCheckPointRangeApplyType::SAVE_CHECKPOINT):
+		{
 			if (CheckPoint && ::IsValid(CheckPoint))
 			{
 				container->CheckPoint = CheckPoint;
 			}
 			break;
+		}
 
+		/**새로운 레벨을 엽니다.*/
 		case(EHitCheckPointRangeApplyType::OPEN_LEVEL):
-			{
-				UGameplayStatics::OpenLevel(GetWorld(),OpenLevelName);
-			}
+		{
+			UGameplayStatics::OpenLevel(GetWorld(),OpenLevelName);
 			break;
+		}
+
+		/**플레이어가 데미지 이벤트 모드에 들어가도록 합니다.*/
+		case(EHitCheckPointRangeApplyType::SET_PLAYER_DMG_MODE):
+		{
+			AGamePlayerCharacter* player = Cast<AGamePlayerCharacter>(actor);
+			if (::IsValid(player))
+			{
+				player->SetDMGMode();
+				if (CheckPoint && ::IsValid(CheckPoint))
+				{
+					UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(CheckPoint->GetRootComponent());
+					if (primitive) {
+						primitive->SetSimulatePhysics(true);
+					}
+
+				}
+			}
+
+		}
 	}
 
 	//로직 적용 후의 로직을 적용한다.
@@ -121,10 +147,14 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 	switch (HitApplyTiming) {
 
 		case(EHitCheckPointRangeApplyTiming::APPLY_IMMEDIATELY):
-			ApplyRogic(OtherActor);
+		{
+			ApplyRogic(OtherActor, HitApplyType);
+			for (auto type : HitApplyTypes) ApplyRogic(OtherActor, type);
 			break;
+		}
 
 		case(EHitCheckPointRangeApplyTiming::APPLY_AFTER_UI_FADEOUT):
+		{
 			TWeakObjectPtr<UUIBlackScreenWidget> blackScreen;
 			if (_Instance.IsValid())
 			{
@@ -135,7 +165,7 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 				_moveTarget = OtherActor;
 
 				//뷰포트에 추가되지 않았다면 추가.
-				if (blackScreen->IsInViewport()==false)
+				if (blackScreen->IsInViewport() == false)
 					blackScreen->AddToViewport();
 
 				bool removeViewport = (HitApplyType == EHitCheckPointRangeApplyType::OPEN_LEVEL);
@@ -162,6 +192,7 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 				}
 			}
 			break;
+		}
 
 	}
 }

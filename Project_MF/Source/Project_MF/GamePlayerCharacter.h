@@ -48,7 +48,8 @@ enum class EPlayerMode : uint8
 	STICK_JUMP_READY,
 	STICK_JUMP,
 	STICK_JUMP_STANDING,
-	GAMEOVER
+	GAMEOVER,
+	DMG_EVENT
 };
 
 /**
@@ -141,6 +142,7 @@ public:
 	/**플레이어의 동작모드를 결정하는 함수입니다.*/
 	void SetPlayerWalkMode();
 	void SetCreepyMode(APlayerAirVent* airvent=nullptr, bool enter = false);
+	void SetDMGMode();
 	void SetPlayerGameOverMode(EPlayerGameOverReason gameOverReason);
 	void SetLimitPlayerCamRotation(	FVector2D xAxisLimits = FVector2D::ZeroVector, bool applyXAxis = false,
 									FVector2D yAxisLimits = FVector2D::ZeroVector, bool applyYAxis = false,
@@ -330,6 +332,7 @@ private:
 	float _stiffen = 0.f;
 	float _gauntletScale = 1.f;
 	FVector _stickNormal;
+	float _leftTime = 0.f;
 
 	/**
 	* 플레이어의 카메라 회전 제한에 필요한 필드들입니다.
@@ -456,6 +459,12 @@ private:
 	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
 	USoundBase* JumpConcreteSound;
 
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* SirenSound;
+
+	UPROPERTY(EditAnywhere, Category = PlayerSound, Meta = (AllowPrivateAccess = true))
+	USoundBase* BGM3Sound;
+
 	/**@UI fields*/
 	UPROPERTY()
 	UUIStopTimerWidget* TimerWidgetInsA;
@@ -464,6 +473,9 @@ private:
 	UUIStopTimerWidget* TimerWidgetInsB;
 
 	/**@Effect fields*/
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	TSubclassOf<class UCameraShakeBase> CamShakeClass;
+
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* ShootEffect;
 
@@ -497,6 +509,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite, Meta = (ClampMin = 0, AllowPrivateAccess = true))
 	float PlayerCurrHP = 3.f;
+
+	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite, Meta = (ClampMin = 0, AllowPrivateAccess = true))
+	bool bCanDash = false;
 
 public:
 	/**플레이어의 최대 발사 거리입니다.*/

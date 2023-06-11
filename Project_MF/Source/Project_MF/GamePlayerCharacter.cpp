@@ -23,6 +23,7 @@
 #include "PlayerUIAimWidget.h"
 #include "PlayerUIMagneticInfoWidget.h"
 #include "DrawDebugHelpers.h"
+#include "Camera/CameraShakeBase.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -45,6 +46,10 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	* CDO( NiagaraSystem )
 	* 플레이어가 사용할 이펙트 에셋들을 가져옵니다.
 	*/
+	static ConstructorHelpers::FClassFinder<UCameraShakeBase> CAM_SHAKE_EFFECT(
+		TEXT("/Game/Blueprints/PlayerCharacter/BP_PlayerCameraShake.BP_PlayerCameraShake_C")
+	);
+
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> SHOOT_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Gun/Gun_effect_shoot_n_fix.Gun_effect_shoot_n_fix")
 	);
@@ -64,6 +69,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/Effect/Magnetic/Absorb/energy_absorption_beam_nia.energy_absorption_beam_nia")
 	);
 
+	if (CAM_SHAKE_EFFECT.Succeeded()) CamShakeClass = CAM_SHAKE_EFFECT.Class;
 	if (SHOOT_EFFECT_SYSTEM.Succeeded()) ShootEffect = SHOOT_EFFECT_SYSTEM.Object;
 	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
 	if (SHOOT_WAVE_EFFECT_SYSTEM.Succeeded()) ShootWaveEffect = SHOOT_WAVE_EFFECT_SYSTEM.Object;
@@ -141,6 +147,13 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TEXT("/Game/Sounds/Player/Jump_Concrete.Jump_Concrete")
 	);
 
+	static ConstructorHelpers::FObjectFinder<USoundBase> SIREN_SOUND(
+		TEXT("/Game/Sounds/Enviroment/Siren.Siren")
+	);
+	static ConstructorHelpers::FObjectFinder<USoundBase> BGM3_SOUND(
+		TEXT("/Game/Sounds/BackGround/3.3")
+	);
+
 	MoveSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("MOVE_SE"));
 	MoveSoundEffectComp->SetupAttachment(RootComponent);
 
@@ -167,6 +180,9 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (PLAYER_WALK_IRON_SOUND.Succeeded()) WalkIronSound = PLAYER_WALK_IRON_SOUND.Object;
 	if (PLAYER_RUN_IRON_SOUND.Succeeded()) RunIronSound = PLAYER_RUN_IRON_SOUND.Object;
 	if (PLAYER_JUMP_IRON_SOUND.Succeeded()) JumpIronSound = PLAYER_JUMP_IRON_SOUND.Object;
+
+	if (SIREN_SOUND.Succeeded()) SirenSound = SIREN_SOUND.Object;
+	if (BGM3_SOUND.Succeeded()) BGM3Sound = BGM3_SOUND.Object;
 
 	/*******************************************************************
 	* Component(SpringArm)
@@ -402,9 +418,9 @@ void AGamePlayerCharacter::PlayDamagedSound()
 			GetWorld(),
 			DamagedSound1,
 			GetActorLocation(),
-			3.f,
+			15.f,
 			1.f,
-			3.f
+			3.5f
 		);
 
 		return;
@@ -431,10 +447,23 @@ void AGamePlayerCharacter::PlayDamagedSound()
 			GetActorLocation(),
 			3.f,
 			1.f,
-			3.f
+			6.f
 		);
 
 		return;
+	}
+}
+
+void AGamePlayerCharacter::SetDMGMode()
+{
+	PlayerMode = EPlayerMode::DMG_EVENT;
+	_stiffen = -1.f;
+
+	//현재 섹션의 데미지카운터를 높인다.
+	FindOverlapSection();
+	if (_OverlapSection.IsValid())
+	{
+		_OverlapSection->SetCurrSectionDMGCount(1);
 	}
 }
 
@@ -449,9 +478,54 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 	//피격 소리
 	PlayDamagedSound();
 
+	/**카메라 쉐이킹*/
+	if (CamShakeClass)
+	{
+		GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(
+			CamShakeClass,
+			30.f
+		);
+	}
+
 	//자성 효과
 	if(_BloodWidget.IsValid())
 		_BloodWidget->ShowBloodEffect(PlayerCurrHP);
+
+	//데미지 이벤트일 경우
+	bool implIsValid = (_BlackScreenWidget.IsValid() && _Instance.IsValid());
+	if (PlayerMode==EPlayerMode::DMG_EVENT && implIsValid)
+	{
+		if (SirenSound && BGM3Sound)
+		{
+			UGameplayStatics::PlaySound2D(
+				GetWorld(),
+				SirenSound,
+				.7f
+			);
+
+			UGameplayStatics::PlaySound2D(
+				GetWorld(),
+				BGM3Sound,
+				.7f,
+				1.f,
+				5.f
+			);
+		}
+
+		_Instance->GetUIManager()->PlayFadeInOut(
+			EFadeType::WHITE_TO_DARK_TO_WHITE,
+			_BlackScreenWidget.Get(),
+			10.f,
+			2.f,
+			1.f,
+			0.f,
+			0.f,
+			3.f,
+			_BlackScreenWidget->GetKeepAddedViewPortFadeID(),
+			FLinearColor::Black,
+			FLinearColor::Black
+		);
+	}
 
 	//데미지를 입어서 체력이 0이 되었다면 게임오버 상태로 진입한다.
 	if (PlayerCurrHP<=0)
@@ -723,18 +797,24 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), _vignettingCurrColor);
 	}
 
-	/**흡수 이펙트*/
-	//if (AbsorbEffectComp && IsGivenInvalid(0))
-	//{
-	//	FRotator start = AbsorbEffectComp->GetComponentRotation();
-	//	FRotator end = _GivenMagnets[0]->GetComponentRotation();
-
-	//	AbsorbEffectComp->SetComponentRotation(FMath::Lerp(start, end, DeltaTime));
-	//}
-
 	/*건틀렛 구체 이펙트 러프*/
 	_gauntletCurrScale += DeltaTime * 2.f * (_gauntletGoalScale - _gauntletCurrScale);
 	SetGauntletEffectScale(_gauntletCurrScale);
+
+	/**데미지 이벤트일 경우*/
+	if (PlayerMode==EPlayerMode::DMG_EVENT)
+	{
+		if (_leftTime<=0.f && CamShakeClass)
+		{
+			_leftTime = .5f;
+			GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(
+				CamShakeClass,
+				1.5f
+			);
+		}
+
+		_leftTime -= DeltaTime;
+	}
 
 	//각종 움직임 적용
 	CamLookProgress(DeltaTime);
@@ -1330,6 +1410,19 @@ void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 			break;
 		}
 
+		/**1-1로 이동*/
+		case(WIDGET_BLACKSCREEN_KEEP_ADDED_VIEWPORT_FADE_ID):
+		{
+			if (PlayerMode != EPlayerMode::DMG_EVENT) return;
+
+			UGameplayStatics::OpenLevel(
+				GetWorld(),
+				TEXT("Stage_1_1_map")
+			);
+
+			break;
+		}
+
 	}
 }
 
@@ -1347,9 +1440,9 @@ void AGamePlayerCharacter::FindOverlapSection()
 
 		for (USceneComponent* component : components) {
 
-			if (UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(component))
+			UGameMapSectionComponent* section = Cast<UGameMapSectionComponent>(component);
+			if (::IsValid(section))
 			{
-				UE_LOG(LogTemp, Warning, TEXT("section: %s"), *actor->GetActorLabel())
 				_OverlapSection = section;
 				return;
 			}
@@ -1639,6 +1732,15 @@ void AGamePlayerCharacter::ShootStart()
 
 	EMagneticType type = _ShootTargetInfo.ApplyType;
 
+	/**카메라 쉐이킹*/
+	if (CamShakeClass)
+	{
+		GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(
+			CamShakeClass,
+			3.f
+		);
+	}
+
 	/*발사 이펙트 실행 및 색깔 변경*/
 	if (ShootEffectComp)
 	{
@@ -1767,7 +1869,8 @@ void AGamePlayerCharacter::ResetStart()
 
 void AGamePlayerCharacter::DashStart()
 {
-	GetCharacterMovement()->MaxWalkSpeed = MoveSpeed * PlayerDashScale;
+	float changeSpeed = (bCanDash ? MoveSpeed * PlayerDashScale : MoveSpeed);
+	GetCharacterMovement()->MaxWalkSpeed = changeSpeed;
 
 	if (PlayerDefaultBreathSound && BreathSoundEffectComp)
 	{
@@ -2269,6 +2372,15 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 				GauntletStickSound,
 				GetActorLocation() + (FVector::DownVector * _playerHeight * .5f),
 				1.2f
+			);
+		}
+
+		/**화면 흔들림*/
+		if (CamShakeClass)
+		{
+			GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(
+				CamShakeClass,
+				3.f
 			);
 		}
 
