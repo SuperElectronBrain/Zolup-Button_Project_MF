@@ -10,6 +10,7 @@
 class IGameUIHandler;
 class UPlayerUICanvasWidget;
 class UUIBlackScreenWidget;
+class UUIGameSettingsWidget;
 
 UENUM(BlueprintType)
 enum class EFadeType : uint8
@@ -129,6 +130,7 @@ public:
 	***************************************************************/
 	void GetPlayerUICanvasWidget(TWeakObjectPtr<UPlayerUICanvasWidget>& outPtr);
 	void GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>& outPtr);
+	void GetUIGameSettingsWidget(TWeakObjectPtr<UUIGameSettingsWidget>& outPtr);
 
 private:
 	/////////////////////////
@@ -154,6 +156,11 @@ private:
 	UUIBlackScreenWidget* GetUIBlackScreenWidget();
 
 
+	/**전역으로 쓰이는 게임세팅 위젯을 가져옵니다.*/
+	UFUNCTION(BlueprintCallable, Meta = (AllowPrivateAccess = true), Category = UIManager)
+	UUIGameSettingsWidget* GetUIGameSettingsWidget();
+
+
 	void FadeProgress(float DeltaTime);
 
 	/////////////////////////////
@@ -168,9 +175,15 @@ private:
 	UPROPERTY(EditInstanceOnly, Category = UI)
 	TSubclassOf<UUIBlackScreenWidget> BlackScreen_Class;
 
+	UPROPERTY(EditInstanceOnly, Category = UI)
+	TSubclassOf<UUIGameSettingsWidget> GameSettings_Class;
+
 	UPROPERTY()
 	UPlayerUICanvasWidget* _PlayerUICanvas;
 
 	UPROPERTY()
 	UUIBlackScreenWidget* _BlackScreen;
+
+	UPROPERTY()
+	UUIGameSettingsWidget* _GameSettings;
 };

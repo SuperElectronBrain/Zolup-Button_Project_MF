@@ -107,7 +107,7 @@ void UPlayerAnimInstance::PlayResetMontage(float startTime, float speed)
 
 	if (!Montage_IsPlaying(ResetMontage))
 	{
-		float startTime = (GetGloveOffMontageIsPlaying() ? .6f : .3f);
+		startTime = (GetGloveOffMontageIsPlaying() ? .6f : .3f);
 		Montage_Play(ResetMontage, .7f, EMontagePlayReturnType::MontageLength, startTime);
 	}
 }

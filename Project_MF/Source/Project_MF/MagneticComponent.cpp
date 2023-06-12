@@ -190,7 +190,7 @@ void UMagneticComponent::PostEditChangeProperty(FPropertyChangedEvent& PropertyC
 		if (_parentMesh)
 			_parentMesh->SetMaterial(0, nullptr);
 
-		_material->MarkPendingKill();
+		_material->MarkAsGarbage();
 		_material = nullptr;
 
 		InitParentAndMaterial();

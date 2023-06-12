@@ -1,6 +1,7 @@
 #include "GameUIManager.h"
 #include "PlayerUICanvasWidget.h"
 #include "UIBlackScreenWidget.h"
+#include "UIGameSettingsWidget.h"
 #include "Blueprint/WidgetLayoutLibrary.h"
 #include "GameUIHandler.h"
 
@@ -16,10 +17,14 @@ UGameUIManager::UGameUIManager()
 	static ConstructorHelpers::FClassFinder<UUIBlackScreenWidget> BLACK_SCREEN(
 		TEXT("/Game/UI/UI_BlackScreen.UI_BlackScreen_C")
 	);
+	static ConstructorHelpers::FClassFinder<UUIGameSettingsWidget> GAME_SETTINGS(
+		TEXT("/Game/UI/Menu/MainLevelUI_GameSettings.MainLevelUI_GameSettings_C")
+	);
 
 
 	if (PLAYER_UI_CANVAS.Succeeded()) PlayerUICanvas_Class = PLAYER_UI_CANVAS.Class;
 	if (BLACK_SCREEN.Succeeded()) BlackScreen_Class = BLACK_SCREEN.Class;
+	if (GAME_SETTINGS.Succeeded()) GameSettings_Class = GAME_SETTINGS.Class;
 }
 
 void UGameUIManager::FadeProgress(float DeltaTime)
@@ -260,6 +265,26 @@ UUIBlackScreenWidget* UGameUIManager::GetUIBlackScreenWidget()
 	GetUIBlackScreenWidget(temp);
 
 	return temp.Get();
+}
+
+UUIGameSettingsWidget* UGameUIManager::GetUIGameSettingsWidget()
+{
+	TWeakObjectPtr<UUIGameSettingsWidget> temp;
+	GetUIGameSettingsWidget(temp);
+
+	return temp.Get();
+}
+
+void UGameUIManager::GetUIGameSettingsWidget(TWeakObjectPtr<UUIGameSettingsWidget>& outPtr)
+{
+	if (::IsValid(_GameSettings) == false && GameSettings_Class)
+	{
+		UGameInstance* ins = GetWorld()->GetGameInstance();
+		_GameSettings = Cast<UUIGameSettingsWidget>(CreateWidget(ins, GameSettings_Class));
+	}
+
+	outPtr.Reset();
+	outPtr = _GameSettings;
 }
 
 void UGameUIManager::GetUIBlackScreenWidget(TWeakObjectPtr<UUIBlackScreenWidget>& outPtr)

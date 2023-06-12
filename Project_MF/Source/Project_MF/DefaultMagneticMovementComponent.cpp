@@ -49,7 +49,7 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 	if (ownerPhysics && ::IsValid(ownerPhysics) && 
 		operatorPhysics && ::IsValid(operatorPhysics) && 
 		ownerPhysics->IsSimulatingPhysics() && 
-		ownerRootPhysics && ::IsValid(ownerRootPhysics) && false)
+		ownerRootPhysics && ::IsValid(ownerRootPhysics))
 	{
 		//계산에 필요한 요소들을 구한다.
 		FVector ownerCenter = ownerPhysics->GetCenterOfMass();
@@ -66,9 +66,9 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 
 		//물리가 적용되고 있는 상황일 경우의 이동 적용.
 		float pow = 100.f + length * DeltaTime * penetrateRatio;
-		Velocity = dir * pow;
+		Velocity = dir * pow * ownerPhysics->GetMass();
 		ownerPhysics->SetEnableGravity(false);
-		ownerPhysics->AddForceAtLocation(Velocity * ownerPhysics->GetMass(), ownerCenter);
+		ownerPhysics->AddImpulseAtLocation(Velocity, ownerCenter);
 		return;
 	}
 

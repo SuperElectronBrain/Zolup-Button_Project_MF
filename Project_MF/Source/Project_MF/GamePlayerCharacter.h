@@ -151,6 +151,7 @@ public:
 	/**건틀렛 이펙트의 크기를 조절 및 얻는 함수들입니다.*/
 	float GetGauntletEffectScale() const;
 	void SetGauntletEffectScale(float newScale);
+	void SetGauntletEffectScaleAndDepth(float newScaleAndDepthValue);
 
 	/**플레이어의 체력 관련 함수들입니다.*/
 	void SetPlayerCurrHP(float newCurrHP);
@@ -214,7 +215,6 @@ private:
 	////////////////////////////////////
 	/////     Private methods   ///////
 	///////////////////////////////////
-
 	void FindOverlapSection();
 
 	/**********************************************************************************
@@ -222,7 +222,7 @@ private:
 	* 
 	* @Func UpdateUIRef		: 사용할 UI들의 참조를 최신화합니다.
 	* @Func UnApplyTimeStop : 현재 적용된 TimeStop UIWidget들에게 페이드 인을 적용시킵니다.
-	***********************************************************************************/
+	*/
 	void UpdateUIRef();
 	void UnApplyTimeStop();
 
@@ -231,7 +231,7 @@ private:
 	* 
 	* @Func DetectFloorType : 플레이어가 서있는 바닥을 조사하고, 바닥의 물리재질 이름을 얻습니다.
 	* @Func PlayMoveSound	: 플레이어가 이동할 때 나는 소리를 재생합니다.
-	**********************************************************************************/
+	*/
 	void DetectFloorType(FString& outPhysMatName);
 	void PlayMoveSound(bool playSound);
 	void PlayDamagedSound();
@@ -242,7 +242,7 @@ private:
 	* 
 	* @Func Shoot	 : 플레이어가 겨눈 방향으로 레이캐스트 검사를 하고, 그 대상에게 자성을 부여합니다.
 	* @Func ShootMine: 플레이어가 자기자신에게 총을 쐈을 때 적용하는 함수입니다.
-	**********************************************************************************/
+	*/
 	void Shoot(EMagneticType shootType);
 	void ShootMine(EMagneticType shootType);
 
@@ -261,20 +261,20 @@ private:
 	* @Func IsGivenInvalid	: 플레이어가 자성을 부여한 목록들중 인자로 건네준 자리에 유효한 객체가 있는지 확인합니다.
 	* @Func RemoveGiven		: 지정한 자석이 플레이어가 자성을 부여한 목록에 있다면 해당 목록에서 제거합니다.
 	* @Func ClearGivens		: 플레이어가 자성을 부여한 목록을 초기화시킵니다.
-	****************************************************************************/
+	*/
 	void GivenTestMagnet(UMagneticComponent* newMagnet, EMagneticType givenType);
 	bool IsAlreadyGiven(UMagneticComponent* element) const;
 	bool IsFulledGiven() const { return _givenIndex >= 2; }
 	bool IsGivenInvalid(int index) const;
 	void RemoveGiven(UMagneticComponent* remove);
-	void ClearGivens() { _GivenMagnets[0] = _GivenMagnets[1] = nullptr; _givenIndex = _oldGivenIndex = 0; }
+	void ClearGivens();
 
 
 	/****************************************************************************
 	* 플레이어가 구독한 델리게이트에서 수신될 함수들입니다.
 	* 
 	* @Func ShootStart	: 플레이어의 총쏘는 애니메이션에서 총구가 위로 올라갈 때 호출됩니다.
-	* @Func ChangeMagnetic: 플레이어의 자성이 바뀌었을 때 호출됩니다.
+	* @Func ChangeMagnetic: 플레이어가 자성을 부여한 자석의 자성이 바뀌었을 때 호출됩니다.
 	* @Func MagnetMoveStart: 플레이어가 주변 자기장에 영향을 받아서 움직임이 시작될 때 호출됩니다.
 	* @Func MagnetMoveEnd  : 플레이어가 주변 자기장에 영향을 받아 움직이다가 움직임이 끝났을 때 호출됩니다.
 	* @Func MagnetMoveHit  : 플레이어가 주변 자기장에 영향을 받아 움직이다가 자성을 끌려가는 대상과 충돌했을 때 호출됩니다.
@@ -283,7 +283,7 @@ private:
 	* @Func PlayerEndOverlap  : 플레이어의 캡슐 콜라이더가 주변 충돌체와 겹친 상태에서 벗어났을 때 호출됩니다.
 	* @Func EnterGround	: 플레이어가 공중에서 땅에 착지했을 때 호출됩니다.
 	* @Func ResetCamLookTarget: 플레이어의 주목상태가 해제되었을 때 호출됩니다.
-	*****************************************************************************/
+	*/
 	UFUNCTION()
 	void ShootStart();
 

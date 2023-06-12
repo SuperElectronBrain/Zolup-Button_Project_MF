@@ -19,6 +19,8 @@ void UGameCheckPointRangeComponent::FadeChange(bool isDark, int id)
 {
 	if (isDark == false || id != CHECKPOINT_FADE_ID) return;
 
+	if (_moveTarget.IsValid() == false) return;
+
 	ApplyRogic(_moveTarget.Get(), HitApplyType);
 	for (auto type : HitApplyTypes) ApplyRogic(_moveTarget.Get(), type);
 
@@ -63,19 +65,17 @@ void UGameCheckPointRangeComponent::BeginPlay()
 
 	for (AActor* a : overlaps)
 	{
-		ApplyRogic(a, HitApplyType);
+		UGameCheckPointContainerComponent* container = Cast<UGameCheckPointContainerComponent>(a->GetComponentByClass(UGameCheckPointContainerComponent::StaticClass()));
+		ApplyRogic(container, HitApplyType);
 
-		for (auto type : HitApplyTypes) ApplyRogic(a, type);
+		for (auto type : HitApplyTypes) ApplyRogic(container, type);
 	}
 }
 
-void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor, EHitCheckPointRangeApplyType applyType)
+void UGameCheckPointRangeComponent::ApplyRogic(UGameCheckPointContainerComponent* container, EHitCheckPointRangeApplyType applyType)
 {
 	//유효하지 않은 엑터라면, 아니라면 탈출.
-	if (actor == nullptr || actor && !::IsValid(actor)) return;
-	UGameCheckPointContainerComponent* container = Cast<UGameCheckPointContainerComponent>(actor->GetComponentByClass(UGameCheckPointContainerComponent::StaticClass()));
-
-	if (container == nullptr || container && !::IsValid(container)) return;
+	if (::IsValid(container)==false) return;
 
 	//적용할 로직을 결정한다.
 	switch (applyType) {
@@ -113,10 +113,24 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor, EHitCheckPointRang
 			break;
 		}
 
+		/**특정 사운드를 실행합니다.*/
+		case(EHitCheckPointRangeApplyType::PLAY_SOUND2D):
+		{
+			if (SoundSource)
+			{
+				UGameplayStatics::PlaySound2D(
+					GetWorld(),
+					SoundSource,
+					1.f
+				);
+			}
+			break;
+		}
+
 		/**플레이어가 데미지 이벤트 모드에 들어가도록 합니다.*/
 		case(EHitCheckPointRangeApplyType::SET_PLAYER_DMG_MODE):
 		{
-			AGamePlayerCharacter* player = Cast<AGamePlayerCharacter>(actor);
+			AGamePlayerCharacter* player = Cast<AGamePlayerCharacter>(container->GetOwner());
 			if (::IsValid(player))
 			{
 				player->SetDMGMode();
@@ -125,6 +139,17 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor, EHitCheckPointRang
 					UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(CheckPoint->GetRootComponent());
 					if (primitive) {
 						primitive->SetSimulatePhysics(true);
+
+						FVector playerPos = player->GetActorLocation();
+						FVector checkPos = CheckPoint->GetActorLocation();
+						
+						const FRotator rotation = player->GetController()->GetControlRotation();
+						const FRotator yawRotation(0, rotation.Yaw, 0);
+						const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::X);
+
+						FVector result = FVector(playerPos.X, playerPos.Y, checkPos.Z) + (dir * 15.f);
+
+						CheckPoint->SetActorLocation(result);
 					}
 
 				}
@@ -144,12 +169,15 @@ void UGameCheckPointRangeComponent::ApplyRogic(AActor* actor, EHitCheckPointRang
 
 void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	UGameCheckPointContainerComponent* container = Cast<UGameCheckPointContainerComponent>(OtherActor->GetComponentByClass(UGameCheckPointContainerComponent::StaticClass()));
+	if (::IsValid(container)==false) return;
+
 	switch (HitApplyTiming) {
 
 		case(EHitCheckPointRangeApplyTiming::APPLY_IMMEDIATELY):
 		{
-			ApplyRogic(OtherActor, HitApplyType);
-			for (auto type : HitApplyTypes) ApplyRogic(OtherActor, type);
+			ApplyRogic(container, HitApplyType);
+			for (auto type : HitApplyTypes) ApplyRogic(container, type);
 			break;
 		}
 
@@ -162,7 +190,7 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 				if (_Instance->GetUIManager()->IsPlayingFadeByID(CHECKPOINT_FADE_ID)) return;
 
 				_moveTarget.Reset();
-				_moveTarget = OtherActor;
+				_moveTarget = container;
 
 				//뷰포트에 추가되지 않았다면 추가.
 				if (blackScreen->IsInViewport() == false)

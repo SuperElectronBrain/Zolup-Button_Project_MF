@@ -32,24 +32,28 @@ class PROJECT_MF_API UCustomGameInstance : public UGameInstance
 	
 	//Fields And Components
 private:
-	UPROPERTY() bool bEditmode;
+	UPROPERTY() 
+	bool bEditmode;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<UGameUIManager> _UI;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) TObjectPtr<USoundManager> SoundManager;
-	UPROPERTY() TSubclassOf<USoundManager> SoundManagerClass;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) 
+	TObjectPtr<UGameUIManager> _UI;
 
-protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Meta = (AllowPrivateAccess = true)) 
+	TObjectPtr<USoundManager> SoundManager;
 
-public:
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound) TArray<FMaterialSoundData> MaterialTypes;
+	UPROPERTY() 
+	TSubclassOf<USoundManager> SoundManagerClass;
 
-	//Methods
+
 private:
 	virtual void Init() override;
 
 protected:
 
 public:
+	UPROPERTY(EditAnywhere, Category = GameSettings, Meta = (MinClamp = 0.f, MaxClamp = 1.f), BlueprintReadWrite)
+	float MouseSensitivity = 1.f;
+
 	UCustomGameInstance();
 	UGameUIManager* GetUIManager() const { return _UI; }
 	USoundManager* GetSoundManager() { return SoundManager; }

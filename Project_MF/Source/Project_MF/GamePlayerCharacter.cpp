@@ -1213,11 +1213,11 @@ void AGamePlayerCharacter::PostEditChangeProperty(FPropertyChangedEvent& Propert
 
 void AGamePlayerCharacter::LookUp(float value)
 {
-	if (_stiffen != 0.f) return;
+	if (_Instance.IsValid() == false && _stiffen != 0.f) return;
 
 	FRotator currRot = GetControlRotation();
 
-	currRot.Pitch -= CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
+	currRot.Pitch -= CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds() * _Instance->MouseSensitivity;;
 
 	/*회전 제한이 있을 경우*/
 	if (_bApplyXRotLimit)
@@ -1235,11 +1235,10 @@ void AGamePlayerCharacter::LookUp(float value)
 
 void AGamePlayerCharacter::Turn(float value)
 {
-	if (_stiffen != 0.f) return;
+	if (_Instance.IsValid() == false && _stiffen!=0.f) return;
 
 	FRotator currRot = GetControlRotation();
-
-	currRot.Yaw += CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds();
+	currRot.Yaw += CameraRotationSpeed * value * GetWorld()->GetDeltaSeconds() * _Instance->MouseSensitivity;
 
 	/*회전 제한이 있을 경우*/
 	if (_bApplyYRotLimit)
@@ -1319,10 +1318,26 @@ void AGamePlayerCharacter::JumpStart()
 			params
 		);
 
+		FColor capsuleColor = ret ? FColor::Red : FColor::Green;
+		FVector center = ret ? result.Location : end;
+
+		//DrawDebugCapsule(
+		//	GetWorld(),
+		//	center,
+		//	playerHeight * .5f,
+		//	playerRadius,
+		//	FQuat::Identity,
+		//	capsuleColor,
+		//	false,
+		//	30.f,
+		//	0U,
+		//	6.f
+		//);
+
 		if (ret && result.bBlockingHit) return;
 
-		start = playerPos + (_stickNormal * -20.f) + (FVector::UpVector * (ClimbableWallHeight + playerHeight));
-		end = playerPos + (_stickNormal * -20.f);
+		start = playerPos + (_stickNormal * -50.f) + (FVector::UpVector * (ClimbableWallHeight + playerHeight));
+		end = playerPos + (_stickNormal * -50.f) + (FVector::DownVector * 200.f);
 
 		//플레이어가 올라가려는 위치에 올라갈 땅이 있는지 확인.
 		ret = GetWorld()->SweepSingleByChannel(
@@ -1331,12 +1346,30 @@ void AGamePlayerCharacter::JumpStart()
 			end,
 			FQuat::Identity,
 			ECollisionChannel::ECC_Visibility,
-			FCollisionShape::MakeCapsule(playerRadius, playerHeight*.5f),
+			FCollisionShape::MakeSphere(playerRadius),
 			params
 		);
 
+		capsuleColor = ret ? FColor::Red : FColor::Green;
+		center = ret ? result.Location : end;
+
+		//DrawDebugSphere(
+		//	GetWorld(),
+		//	center,
+		//	playerRadius,
+		//	100,
+		//	capsuleColor,
+		//	false,
+		//	30.f,
+		//	0U,
+		//	6.f
+		//);
+
+		//UE_LOG(LogTemp, Warning, TEXT("climbaleHeight: %f(%f)"), ClimbableWallHeight, FMath::Abs(result.Location.Z-playerPos.Z))
+		
 		//충돌한 지점이 있고, 플레이어가 앞으로 갈 수 없는 상황이라면 철회.
 		if (!ret || ret && (result.Location-playerPos).Size() > ClimbableWallHeight) return;
+
 
 		//점프하면서 생기는 변화를 적용한다.
 		_StickTo.Reset();
@@ -1362,7 +1395,7 @@ void AGamePlayerCharacter::JumpStart()
 		PlayerMode = EPlayerMode::STICK_JUMP;
 		_stiffen = -1.f;
 		_startPos = playerPos;
-		_endPos = result.Location - (_stickNormal*40.f) + (FVector::UpVector * playerHeight);
+		_endPos = result.Location - (_stickNormal*40.f) + (FVector::UpVector * (playerHeight+30.f));
 		_cPos1 = FVector( _startPos.X, _startPos.Y, _endPos.Z );
 		_currTime = 0.f;
 		_goalTimeDiv = 1.f / ClimbWallSeconds;
@@ -2162,23 +2195,14 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	else if (alreadyGiven==false)
 	{
 		//리스트가 가득차 있다면 리스트를 초기화.
-		if (isFulledGiven) 
-		{
-			if (_GivenMagnets[0] && ::IsValid(_GivenMagnets[0]))
-					_GivenMagnets[0]->SetCurrentMagnetic(EMagneticType::NONE);
-
-			if (_GivenMagnets[1] && ::IsValid(_GivenMagnets[1]))
-					_GivenMagnets[1]->SetCurrentMagnetic(EMagneticType::NONE);
-
-			_GivenMagnets[0] = _GivenMagnets[1] = nullptr;
-			_givenIndex = 0;
-		}
+		if (isFulledGiven) ClearGivens();
 
 		//빈공간에 새로운 자석을 집어넣는다.
 		for (int i = 0; i < 2; i++)
 		{
 			if (_GivenMagnets[i] != nullptr || _GivenMagnets[i] && ::IsValid(_GivenMagnets[i])) continue;
 			_GivenMagnets[i] = newMagnet;
+			if(newMagnet!=Magnetic) newMagnet->OnComponentMagneticChanged.AddDynamic(this, &AGamePlayerCharacter::ChangeMagnetic);
 			_givenIndex++;
 			break;
 		}
@@ -2221,6 +2245,7 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 	if (_GivenMagnets[0] == remove)
 	{
 		_GivenMagnets[0]->SetCurrentMagnetic(EMagneticType::NONE);
+		_GivenMagnets[0]->OnComponentMagneticChanged.RemoveDynamic(this, &AGamePlayerCharacter::ChangeMagnetic);
 		_GivenMagnets[0] = nullptr;
 		_givenIndex--;
 		if (_GivenMagnets[1] != nullptr) _oldGivenIndex = 1;
@@ -2228,6 +2253,7 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 	else if (_GivenMagnets[1] == remove)
 	{
 		_GivenMagnets[1]->SetCurrentMagnetic(EMagneticType::NONE);
+		_GivenMagnets[1]->OnComponentMagneticChanged.RemoveDynamic(this, &AGamePlayerCharacter::ChangeMagnetic);
 		_GivenMagnets[1] = nullptr;
 		_givenIndex--;
 		if (_GivenMagnets[0] != nullptr) _oldGivenIndex = 0;
@@ -2245,13 +2271,22 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 
 void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneticComponent* changedMagComp)
 {
-	Magnetic->bAllowMagneticMovement = true;
+	bool AimWidgetIsValid = _AimWidget.IsValid();
 
-	if (changedMagType != EMagneticType::NONE)
+	/**에임 UI 갱신*/
+	if (AimWidgetIsValid)
 	{
+		_AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], Magnetic->GetCurrentMagnetic());
+	}
+
+	/**자성이 바뀐 것이 플레이어일 경우*/
+	if (changedMagComp==Magnetic && changedMagType != EMagneticType::NONE)
+	{
+		Magnetic->bAllowMagneticMovement = true;
+
 		if (PlayerAnim) PlayerAnim->PlayGloveOnMontage(.3f, .85f);
 
-		/*자성 비네팅 이펙트 색깔 변경*/
+		//자성 비네팅 이펙트 색깔 변경
 		if (MagneticVignettingEffectComp)
 		{
 			FLinearColor goal = UMagneticComponent::GetMagneticEffectColor(_ShootTargetInfo.ApplyType, EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT);
@@ -2262,7 +2297,7 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			_vignettingGoalDiv = 1.f / VignettingSeconds;
 		}
 
-		/*건틀렛 이펙트 크기 변경*/
+		//건틀렛 이펙트 크기 변경
 		GauntletEffectComp->SetColorParameter(
 			TEXT("CircleColor"),
 			UMagneticComponent::GetMagneticEffectColor(changedMagType, EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT)
@@ -2277,7 +2312,7 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 	}
 	else
 	{
-		/*자성 비네팅 이펙트 색깔 변경*/
+		//자성 비네팅 이펙트 색깔 변경
 		if (MagneticVignettingEffectComp)
 		{
 			FLinearColor goal = _vignettingCurrColor;
@@ -2298,15 +2333,36 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 			}
 		}
 
-		/*회전제한해제*/
+		//회전제한해제
 		_bApplyYRotLimit = false;
 
-		/*건틀렛 이펙트 크기 초기화*/
+		//건틀렛 이펙트 크기 초기화
 		_gauntletGoalScale = 0.f;
 
 		_CamLookTarget.Reset();
 		_bApplyCamLook = false;
 	}
+}
+
+void AGamePlayerCharacter::SetGauntletEffectScaleAndDepth(float newScaleAndDepthValue)
+{
+	if (::IsValid(GauntletEffectComp) == false) return;
+
+	const FNiagaraUserRedirectionParameterStore& parameters = GauntletEffectComp->GetOverrideParameters();
+
+	const FNiagaraVariable ThunderDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffectThunder"));
+	const FNiagaraVariable OneDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffect01"));
+	const FNiagaraVariable TwoDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffect02"));
+	const FNiagaraVariable ThreeDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffect03"));
+
+	const FNiagaraVariable	DisortionDesc  = FNiagaraVariable(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffectDisortion"));
+	UMaterialInterface*		DisortionMaterial = Cast<UMaterialInterface>(parameters.GetUObject(DisortionDesc));
+
+	UMaterialInterface* ThunderMaterial = Cast<UMaterialInterface>(parameters.GetUObject(ThunderDesc));
+	UMaterialInterface* OneMaterial = Cast<UMaterialInterface>(parameters.GetUObject(OneDesc));
+	UMaterialInterface* TwonMaterial = Cast<UMaterialInterface>(parameters.GetUObject(TwoDesc));
+	UMaterialInterface* ThreeMaterial = Cast<UMaterialInterface>(parameters.GetUObject(ThreeDesc));
+
 }
 
 void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* moveBeginMagComp, UMagneticComponent* operatorMagComp)
@@ -2334,6 +2390,26 @@ void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticCo
 	}
 
 	PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
+}
+
+void AGamePlayerCharacter::ClearGivens() 
+{ 
+	if (::IsValid(_GivenMagnets[0]))
+	{
+		_GivenMagnets[0]->SetCurrentMagnetic(EMagneticType::NONE);
+		if(_GivenMagnets[0]!=Magnetic)
+			_GivenMagnets[0]->OnComponentMagneticChanged.RemoveDynamic(this, &AGamePlayerCharacter::ChangeMagnetic);
+	}
+
+	if (::IsValid(_GivenMagnets[1]))
+	{
+		_GivenMagnets[1]->SetCurrentMagnetic(EMagneticType::NONE);
+		if(_GivenMagnets[1]!=Magnetic)
+			_GivenMagnets[1]->OnComponentMagneticChanged.RemoveDynamic(this, &AGamePlayerCharacter::ChangeMagnetic);
+	}
+
+	_GivenMagnets[0] = _GivenMagnets[1] = nullptr; 
+	_givenIndex = _oldGivenIndex = 0; 
 }
 
 void AGamePlayerCharacter::ResetCamLookTarget()

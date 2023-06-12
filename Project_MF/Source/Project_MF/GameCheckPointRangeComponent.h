@@ -24,7 +24,8 @@ enum class EHitCheckPointRangeApplyType
 	MOVE_TO_LAST_CHECKPOINT,
 	SAVE_CHECKPOINT,
 	OPEN_LEVEL,
-	SET_PLAYER_DMG_MODE
+	SET_PLAYER_DMG_MODE,
+	PLAY_SOUND2D
 };
 
 UENUM()
@@ -33,8 +34,6 @@ enum class EHitCheckPointRangeApplyAfterType
 	NONE,
 	DESTROY_THIS
 };
-
-class UGameMapSectionComponent;
 
 /**
  * 
@@ -67,15 +66,15 @@ private:
 	UFUNCTION()
 	void FadeChange(bool isDark, int id);
 
-	void ApplyRogic(AActor* actor, EHitCheckPointRangeApplyType applyType);
+	void ApplyRogic(UGameCheckPointContainerComponent* container, EHitCheckPointRangeApplyType applyType);
 
 	//////////////////////////////
 	/// Components and fields ////
 	//////////////////////////////
 	FDelegateHandle _handle;
-	TWeakObjectPtr<UCustomGameInstance> _Instance;
-	TWeakObjectPtr<AActor> _moveTarget;
-	TWeakObjectPtr<UGameMapSectionComponent> Section;
+	TWeakObjectPtr<class UCustomGameInstance> _Instance;
+	TWeakObjectPtr<class UGameCheckPointContainerComponent> _moveTarget;
+	TWeakObjectPtr<class UGameMapSectionComponent> Section;
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite,  Category = CheckPointRange, Meta = (AllowPrivateAccess = true))
 	AActor* CheckPoint;
@@ -97,5 +96,8 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointApplyDetails, Meta = (AllowPrivateAccess = true))
 	int	AddSectionDMG = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadwrite, Category = CheckPointApplyDetails, Meta = (AllowPrivateAccess = true))
+	USoundBase* SoundSource;
 };
 
