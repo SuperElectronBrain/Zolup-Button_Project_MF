@@ -139,6 +139,7 @@ void UGameCheckPointRangeComponent::ApplyRogic(UGameCheckPointContainerComponent
 					UPrimitiveComponent* primitive = Cast<UPrimitiveComponent>(CheckPoint->GetRootComponent());
 					if (primitive) {
 						primitive->SetSimulatePhysics(true);
+						primitive->SetVisibility(true);
 
 						FVector playerPos = player->GetActorLocation();
 						FVector checkPos = CheckPoint->GetActorLocation();
@@ -198,6 +199,8 @@ void UGameCheckPointRangeComponent::BeginOverlap(UPrimitiveComponent* Overlapped
 
 				bool removeViewport = (HitApplyType == EHitCheckPointRangeApplyType::OPEN_LEVEL);
 				int usedID = CHECKPOINT_FADE_ID;
+
+				_Instance->GetUIManager()->StopFadeInOutByHandler(blackScreen.Get());
 
 				//페이드 아웃 실행
 				if (blackScreen.IsValid())

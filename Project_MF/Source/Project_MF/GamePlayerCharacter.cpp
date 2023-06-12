@@ -1502,6 +1502,8 @@ void AGamePlayerCharacter::StageRestart()
 			if (_BlackScreenWidget->IsInViewport() == false)
 				_BlackScreenWidget->AddToViewport(5);
 
+			if (_Instance->GetUIManager()->IsPlayingFadeByID(PLAYER_FADE_ID)) return;
+
 			_Instance->GetUIManager()->PlayFadeInOut(
 				EFadeType::WHITE_TO_DARK_TO_WHITE,
 				_BlackScreenWidget.Get(),

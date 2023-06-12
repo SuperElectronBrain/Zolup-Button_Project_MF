@@ -120,13 +120,18 @@ void UMagneticComponent::SetParentMaterial(EMagneticType type)
 {
 	if (_material == nullptr) return;
 	bool isN			= type == EMagneticType::N;
-	FVector color		= (isN ? FVector(5.f, 0.f, 0.049996f) : FVector(0.014019f, 0.f, 70.f));
-	float surface_alpha = (isN ? 0.07f : 5.f);
+	FVector color		= (isN ? FVector(5.f, 0.f, 0.049996f) : FVector(0.f, 0.160625f, 10.f));
+	FVector4 color2		= (isN ? FVector4(25.f, 0.f, 0.083315f, 1.f) : FVector4(0.f, 0.160623f, 10.f, 1.f));
+	float surface_alpha = (isN ? 0.07f : 0.5f);
+	float aura_Alpha	= (isN ? 0.f   : 0.5f);
+	float fresnal_Alpha = (isN ? 0.2f : 0.5f);
 
 	if (_material != nullptr && ::IsValid(_material) && type!=EMagneticType::NONE)
 	{
-		_material->SetVectorParameterValue(TEXT("EmissiveColor"), color);
+		_material->SetVectorParameterValue(TEXT("EmissiveColor"), color2);
 		_material->SetScalarParameterValue(TEXT("surface_alpha"), surface_alpha);
+		_material->SetScalarParameterValue(TEXT("aura_alpha"), aura_Alpha);
+		_material->SetScalarParameterValue(TEXT("fresnal_alpha"), fresnal_Alpha);
 	}
 
 	_goalMagMaterialApplyRatio  =  type==EMagneticType::NONE ? 0.f : 1.f;
@@ -244,8 +249,11 @@ FLinearColor UMagneticComponent::GetMagneticEffectColor(EMagneticType type, EMag
 
 		/*자성이 부여되었을 때의 이펙트*/
 		case(EMagneticEffectColorType::GRANT_EFFECT):
-			return (isN ? FLinearColor(25.f, 0.f, 0.083315f, 1.f) : FLinearColor(0.f, 0.160623f, 10.f, 1.f));
-	
+		{
+			FLinearColor RGBA = (isN ? FLinearColor(25.f, 0.f, 0.083315f, 1.f) : FLinearColor(0.f, 0.160623f, 10.f, 1.f));
+			return RGBA.LinearRGBToHSV();
+		}
+
 		/*자성 비네팅 이펙트*/
 		case(EMagneticEffectColorType::ELECTRIC_VIGNETTING_EFFECT):
 			return (isN ? FLinearColor(0.984f, 0.135f, 0.161f, 0.3f) : FLinearColor(0.f, 0.690244f, 0.984375f, 0.3f));
