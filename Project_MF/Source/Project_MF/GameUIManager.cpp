@@ -41,6 +41,15 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 		//유효하지 않다면 삭제.
 		if (bHandlerIsValid==false || info.pendingKill)
 		{
+			if (info.bRemoveFromParentAtLast) {
+
+				UUserWidget* widget = Cast<UUserWidget>(info.handler.GetObject());
+				if (widget)
+				{
+					widget->RemoveFromViewport();
+				}
+			}
+
 			_fadeInfos.RemoveAt(i);
 			i--;
 			count = _fadeInfos.Num();
@@ -103,10 +112,15 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 			//종료처리
 			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A) || bHandlerIsValid ==false || info.pendingKill)
 			{
-				if (info.bRemoveFromParentAtLast)
-				{
+				UE_LOG(LogTemp, Warning, TEXT("페이드 아웃 마무리!!"))
+
+				if (info.bRemoveFromParentAtLast) {
+
 					UUserWidget* widget =  Cast<UUserWidget>(info.handler.GetObject());
-					if (widget) widget->RemoveFromParent();
+					if (widget)
+					{
+						widget->RemoveFromViewport();
+					}
 				}
 
 				_fadeInfos.RemoveAt(i);

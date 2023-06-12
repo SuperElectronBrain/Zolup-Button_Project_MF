@@ -1256,25 +1256,25 @@ void AGamePlayerCharacter::Turn(float value)
 
 void AGamePlayerCharacter::MoveUpDown(float value)
 {
+	//걷는소리 재생 및 중지
+	PlayMoveSound( (value != 0.f) && (_stiffen!=0.f) );
+
 	if (_stiffen != 0.f) return;
 	const FRotator rotation = Controller->GetControlRotation();
 	const FRotator yawRotation(0, rotation.Yaw, 0);
 	const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::X);
 
-	//걷는소리 재생 및 중지
-	PlayMoveSound(value != 0.f);
-
 	AddMovementInput(dir, value);
 }
 void AGamePlayerCharacter::MoveRightLeft(float value)
 {
+	//걷는소리 재생 및 중지
+	PlayMoveSound((value != 0.f) && (_stiffen != 0.f));
+
 	if (_stiffen != 0.f) return;
 	const FRotator rotation = Controller->GetControlRotation();
 	const FRotator yawRotation(0, rotation.Yaw, 0);
 	const FVector dir = FRotationMatrix(yawRotation).GetUnitAxis(EAxis::Y);
-
-	//걷는소리 재생 및 중지
-	PlayMoveSound(value > 0.f);
 
 	AddMovementInput(dir, value);
 }

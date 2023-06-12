@@ -113,7 +113,7 @@ struct FPlayerMoveSoundInfo
 /**
 *  게임의 플레이어 캐릭터의 모든 기능을 책임지는 클래스입니다.
 */
-UCLASS()
+UCLASS(Blueprintable, BlueprintType, ClassGroup = (GamePlayer), meta = (BlueprintSpawnableComponent))
 class PROJECT_MF_API AGamePlayerCharacter final : public ACharacter
 {
 	GENERATED_BODY()
@@ -329,7 +329,6 @@ private:
 	float _timeStopCurrTime = 0.f;
 	float _playerHeight = 0.f;
 	float _noHitTime = 0.f;
-	float _stiffen = 0.f;
 	float _gauntletScale = 1.f;
 	FVector _stickNormal;
 	float _leftTime = 0.f;
@@ -497,7 +496,6 @@ private:
 	/**
 	* Player Default fields
 	*/
-	/**플레이어에게 적용된 모드입니다. 기본적으로 Standing mode입니다.*/
 	UPROPERTY(VisibleAnywhere, Category = PlayerCharacter, BlueprintReadWrite, Meta=(AllowPrivateAccess=true))
 	EPlayerMode PlayerMode = EPlayerMode::STANDING;
 
@@ -514,6 +512,9 @@ private:
 	bool bCanDash = false;
 
 public:
+	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite)
+	float _stiffen = 0.f;
+
 	/**플레이어의 최대 발사 거리입니다.*/
 	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite, Meta = (ClampMin = 0.f))
 	float ShootLength = 10000.f;

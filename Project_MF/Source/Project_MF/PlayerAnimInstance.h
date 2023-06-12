@@ -6,9 +6,9 @@
 #include "PlayerAnimInstance.generated.h"
 
 UENUM()
-enum class EHandType
+enum class EHandType : uint8
 {
-	LEFT, RIGHT
+	NONE, LEFT, RIGHT
 };
 
 UENUM()
@@ -93,6 +93,9 @@ constexpr const float CLIMB_LOOKUP_TIME = 2.f;
 
 constexpr const float CLA2HAND_LEN = 70.f;
 
+
+class AGamePlayerCharacter;
+
 /**
 * GamePlayerCharacter의 모든 애니메이션들을 책임지는 클래스입니다.
 */
@@ -150,14 +153,11 @@ public:
 	void PlayGloveAtMotage(float startTime=0.f, float speed=1.f);
 
 	bool GetClimbMontage() const { return Montage_IsPlaying(ClimbMontage); }
-	void PlayClimbMontage(
-
-		FVector& StartLookDir,
-		FVector& ClimbLocation,
-		FVector& StickNormal,
-		float startTime = 0.f,
-		float speed = 1.f
-	);
+	void PlayClimbMontage(	FVector& StartLookDir,
+							FVector& ClimbLocation,
+							FVector& StickNormal,
+							float startTime = 0.f,
+							float speed = 1.f );
 
 
 	////////////////////////////////////////////////

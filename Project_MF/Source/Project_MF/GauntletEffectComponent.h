@@ -31,7 +31,7 @@ class PROJECT_MF_API UGauntletEffectComponent final : public UNiagaraComponent
 public:
 	/////////////////////////////////////////
 	/////								////
-	////		Constructor			    ////
+	////		*Constructor*			////
 	///									///
 	//////////////////////////////////////
 	UGauntletEffectComponent();

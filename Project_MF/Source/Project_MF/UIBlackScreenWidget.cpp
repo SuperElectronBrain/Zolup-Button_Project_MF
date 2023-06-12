@@ -3,7 +3,7 @@
 #include "Components/Image.h"
 #include "CustomGameInstance.h"
 
-float UUIBlackScreenWidget::GetAlpha() const { return ColorAndOpacity.A; }
+float UUIBlackScreenWidget::GetAlpha() const { return GetColor().A; }
 void UUIBlackScreenWidget::SetAlpha(float newAlpha)
 {
 	FLinearColor newColor = ColorAndOpacity;
