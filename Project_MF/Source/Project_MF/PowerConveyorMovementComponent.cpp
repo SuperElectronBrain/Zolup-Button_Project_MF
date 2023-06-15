@@ -136,8 +136,9 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 							UMagneticComponent* MagneticComponent = OverlapTarget->FindComponentByClass<UMagneticComponent>();
 							if (::IsValid(MagneticComponent) == true)
 							{
-								if (MagneticComponent->GetCurrentMagnetMovementType() == EMagnetMoveType::DRAWN_IN && MagneticComponent->GetCurrentMagnetMovementType() == EMagnetMoveType::PUSHED_OUT)
+								if (MagneticComponent->GetCurrentMagnetMovementType()!=EMagnetMoveType::NONE)
 								{
+									UE_LOG(LogTemp, Warning, TEXT("움직이는중~~~"))
 									isMoveable = false;
 								}
 							}
