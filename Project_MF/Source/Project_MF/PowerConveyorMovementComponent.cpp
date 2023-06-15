@@ -130,29 +130,41 @@ void UPowerConveyorMovementComponent::Action(float DeltaTime)
 								TargetRoot->SetPhysicsLinearVelocity((MoveDirection + GravitationDirection) * (ActingSpeed * DeltaTime), true);
 							}
 						}
-						else if (::IsValid(TargetRoot) == false || PhysicsMovement == false)
+						else
 						{
-							FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
-							UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
-							//if (TargetRoot->GetComponentRotation() != GetAttachParent()->GetComponentRotation())
-							//{
-								//TargetRoot->SetWorldRotation(FMath::RInterpTo(TargetRoot->GetComponentRotation(), GetAttachParent()->GetComponentRotation(), DeltaTime, 100.0f));
-							//}
-
-							if (::IsValid(TargetRoot) == true)
+							bool isMoveable = true;
+							UMagneticComponent* MagneticComponent = OverlapTarget->FindComponentByClass<UMagneticComponent>();
+							if (::IsValid(MagneticComponent) == true)
 							{
-								TargetRoot->SetWorldRotation(FRotator::ZeroRotator);
-								if (TargetRoot->IsSimulatingPhysics() == true)
+								if (MagneticComponent->GetCurrentMagnetMovementType() == EMagnetMoveType::DRAWN_IN && MagneticComponent->GetCurrentMagnetMovementType() == EMagnetMoveType::PUSHED_OUT)
 								{
-									if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::DownVector); }
+									isMoveable = false;
 								}
 							}
 
-							//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
-							//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
-							//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
-						}
+							if (isMoveable == true)
+							{
+								FVector Velocity = (MoveDirection + GravitationDirection) * ActingSpeed;
+								UpdateTargetMovement(OverlapTarget->GetRootComponent(), Velocity, DeltaTime);
+								//if (TargetRoot->GetComponentRotation() != GetAttachParent()->GetComponentRotation())
+								//{
+									//TargetRoot->SetWorldRotation(FMath::RInterpTo(TargetRoot->GetComponentRotation(), GetAttachParent()->GetComponentRotation(), DeltaTime, 100.0f));
+								//}
 
+								if (::IsValid(TargetRoot) == true)
+								{
+									TargetRoot->SetWorldRotation(FRotator::ZeroRotator);
+									if (TargetRoot->IsSimulatingPhysics() == true)
+									{
+										if (::IsValid(TargetRoot) == true) { TargetRoot->SetPhysicsLinearVelocity(FVector::DownVector); }
+									}
+								}
+
+								//OverlapTarget->AddActorWorldOffset(FVector(0.0f, 0.0f, -UPhysicsSettings::Get()->DefaultGravityZ / 16) * DeltaTime, true);
+								//OverlapTarget->AddActorWorldOffset(MoveDirection * (ActingSpeed * DeltaTime));
+								//OverlapTarget->AddActorWorldOffset((GravitationDirection - OverlapTarget->GetActorLocation()) * DeltaTime, true);
+							}
+						}
 					}
 				}
 			}

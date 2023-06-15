@@ -6,6 +6,8 @@
 #include "PowerMovementComponent.h"
 #include "Components/ArrowComponent.h"
 #include "GameFramework/MovementComponent.h"
+#include "MagneticMovementComponent.h"
+#include "MagneticComponent.h"
 #include "PowerConveyorMovementComponent.generated.h"
 
 /**
