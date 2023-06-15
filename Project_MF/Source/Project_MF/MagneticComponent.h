@@ -68,15 +68,19 @@ class PROJECT_MF_API UMagneticComponent final : public USceneComponent
 	GENERATED_BODY()
 
 public:
-	////////////////////////////
-	////     Constructor   /////
-    ////////////////////////////
+	//////////////////////////////////////
+	/////							  ////
+	////		Constructor			  ////
+	////							  ////
+	//////////////////////////////////////
 	UMagneticComponent();
 
 
-	/////////////////////////////
-	///   Public delegates    ///
-	////////////////////////////
+	//////////////////////////////////////
+	/////							  ////
+	////		Public delegate		  ////
+	////							  ////
+	//////////////////////////////////////
 
 	/**부여된 자성의 극이 바뀌었을 때 호출되는 델리게이트입니다.*/
 	UPROPERTY(BlueprintAssignable, Blueprintcallable, Category = "Magnetic")
@@ -95,9 +99,11 @@ public:
 	FComponentMagnetMoveHit OnComponentMagnetMoveHit;
 
 
-	/////////////////////////////////
-	////    Public methods       ////
-	////////////////////////////////
+	//////////////////////////////////////
+	/////							  ////
+	////		Public methods		  ////
+	////							  ////
+	//////////////////////////////////////
 
 	/**
 	* 해당 자석의 무게와 자기장 범위를 계산하고 갱신합니다.
@@ -135,6 +141,9 @@ public:
 
 	/*Get 해당 자석에게 부여되어 있는 자성의 극을 얻습니다.*/
 	EMagneticType GetCurrentMagnetic() const { return CurrMagnetic; }
+
+	UFUNCTION(BlueprintCallable, Category = Magnetic)
+	EMagnetMoveType GetCurrentMagnetMovementType() const;
 
 	/*Get 해당 자석이 자성을 띄고 있을 수 있는 최대 시간값을 얻습니다.*/
 	float GetMaxHaveMangeticSeconds() const { return MaxHaveMagneticSeconds; }

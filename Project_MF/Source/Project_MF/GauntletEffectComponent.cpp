@@ -53,21 +53,54 @@ void UGauntletEffectComponent::CreateMaterialInsAndInitParam(UMaterialInterface*
 	}
 }
 
+void UGauntletEffectComponent::SetGauntletEffectScaleAndDepth(float newScaleAndDepth)
+{
+	if (DisortionMaterialInstance)
+	{
+		DisortionMaterialInstance->SetScalarParameterValue(GAUNTLET_EFFECT_SCALE_AND_DEPTH_PARAM, newScaleAndDepth);
+	}
+
+	if (ThunderMaterialInstance)
+	{
+		ThunderMaterialInstance->SetScalarParameterValue(GAUNTLET_EFFECT_CIRCLE_SCALE_PARAM, newScaleAndDepth);
+	}
+
+	if (OneMaterialInstance)
+	{
+		OneMaterialInstance->SetScalarParameterValue(GAUNTLET_EFFECT_SCALE_AND_DEPTH_PARAM, newScaleAndDepth);
+	}
+
+	if (TwoMaterialInstance)
+	{
+		TwoMaterialInstance->SetScalarParameterValue(GAUNTLET_EFFECT_SCALE_AND_DEPTH_PARAM, newScaleAndDepth);
+	}
+
+	if (ThreeMaterialInstance)
+	{
+		ThreeMaterialInstance->SetScalarParameterValue(GAUNTLET_EFFECT_SCALE_AND_DEPTH_PARAM, newScaleAndDepth);
+	}
+}
+
 void UGauntletEffectComponent::SetGauntletEffectInfo(EMagneticType effectType, float effectScale)
 {
 	bool bChangedType = (effectType != _CurrMagType);
 
 	//색깔 적용
-	SetColorParameter(
-		GAUNTLET_EFFECT_CIRCLE_COLOR_PARAM,
-		UMagneticComponent::GetMagneticEffectColor(effectType, EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT)
-	);
+	if (effectType!=EMagneticType::NONE)
+	{
+		SetColorParameter(
+			GAUNTLET_EFFECT_CIRCLE_COLOR_PARAM,
+			UMagneticComponent::GetMagneticEffectColor(effectType, EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT)
+		);
 
-	SetColorParameter(
-		GAUNTLET_EFFECT_THUNDER_COLOR_PARAM,
-		UMagneticComponent::GetMagneticEffectColor(effectType, EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT)
-	);
+		SetColorParameter(
+			GAUNTLET_EFFECT_THUNDER_COLOR_PARAM,
+			UMagneticComponent::GetMagneticEffectColor(effectType, EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT)
+		);
+	}
+
 	_GoalScale = effectScale;
+	_CurrScale = 0.02f;
 	SetComponentTickEnabled(true);
 }
 
@@ -104,4 +137,5 @@ void UGauntletEffectComponent::BeginPlay()
 	CreateMaterialInsAndInitParam(ThreeMaterial, ThreeMaterialInstance, GAUNTLET_EFFECT_THREE_PARAM);
 
 	SetComponentTickEnabled(false);
+	SetGauntletEffectInfo(EMagneticType::NONE, 0.f);
 }

@@ -24,6 +24,8 @@
 #include "PlayerUIMagneticInfoWidget.h"
 #include "DrawDebugHelpers.h"
 #include "Camera/CameraShakeBase.h"
+#include "GauntletEffectComponent.h"
+#include "UIGameSettingsWidget.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -62,9 +64,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> MAGNETIC_VIGNETTING_SYSTEM(
 		TEXT("/Game/Effect/electricVignetting/vignetting_reflection_niagara.vignetting_reflection_niagara")
 	);
-	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> GAUNTLET_EFFECT_SYSTEM(
-		TEXT("/Game/Effect/Magnetic/Gauntlet/Glove_effect_n_fix.Glove_effect_n_fix")
-	);
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> ABSORB_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Magnetic/Absorb/energy_absorption_beam_nia.energy_absorption_beam_nia")
 	);
@@ -74,7 +73,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
 	if (SHOOT_WAVE_EFFECT_SYSTEM.Succeeded()) ShootWaveEffect = SHOOT_WAVE_EFFECT_SYSTEM.Object;
 	if (MAGNETIC_VIGNETTING_SYSTEM.Succeeded()) MagneticVignettingEffect = MAGNETIC_VIGNETTING_SYSTEM.Object;
-	if (GAUNTLET_EFFECT_SYSTEM.Succeeded()) GauntletEffect = GAUNTLET_EFFECT_SYSTEM.Object;
 	if (ABSORB_EFFECT_SYSTEM.Succeeded()) AbsorbEffect = ABSORB_EFFECT_SYSTEM.Object;
 
 	/****************************************************************
@@ -156,6 +154,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 	MoveSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("MOVE_SE"));
 	MoveSoundEffectComp->SetupAttachment(RootComponent);
+	MoveSoundEffectComp->VolumeMultiplier = 2.f;
 
 	BreathSoundEffectComp = CreateDefaultSubobject<UAudioComponent>(TEXT("BREATH_SE"));
 	BreathSoundEffectComp->SetupAttachment(RootComponent);
@@ -289,6 +288,9 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 		TimerWidgetB->SetVisibility(false);
 	}
 
+	/**Effect*/
+	GauntletEffectComp = CreateDefaultSubobject<UGauntletEffectComponent>(TEXT("GAUNTLET_EFFECT"));
+	GauntletEffectComp->SetupAttachment(GetMesh(), PLAYER_GAUNTLET_SOCKET);
 	#pragma endregion
 }
 
@@ -382,21 +384,6 @@ void AGamePlayerCharacter::EnterGround(const FHitResult& Hit)
 		1.f,
 		1.f
 	);
-}
-
-float AGamePlayerCharacter::GetGauntletEffectScale() const
-{
-	return _gauntletScale;
-}
-
-void AGamePlayerCharacter::SetGauntletEffectScale(float newScale)
-{
-	if (GauntletEffectComp)
-	{
-		GauntletEffectComp->SetNiagaraVariableVec2(TEXT("circlescale"), FVector2D(400.f, 400.f) * newScale);
-		GauntletEffectComp->SetNiagaraVariableVec2(TEXT("thunderScale"), FVector2D(200.f, 50.f) * newScale);
-		GauntletEffectComp->SetVectorParameter(TEXT("meshScale"), FVector(5.f, 5.f, 5.f) * newScale);
-	}
 }
 
 void AGamePlayerCharacter::SetPlayerCurrHP(float newCurrHP)
@@ -578,34 +565,20 @@ void AGamePlayerCharacter::BeginPlay()
 		Magnetic->OnComponentMagnetMoveHit.AddDynamic(this, &AGamePlayerCharacter::MagnetMoveHit);
 	}
 	LandedDelegate.AddDynamic(this, &AGamePlayerCharacter::EnterGround);
-	BreathSoundEffectComp->OnAudioFinished.AddDynamic(this, &AGamePlayerCharacter::BreathFinish);
-
-	//GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerBeginOverlap);
-	//GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AGamePlayerCharacter::PlayerEndOverlap);
 
 	//게임 인스턴스 참조
 	_Instance = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
 
 	/*애님 인스턴스 참조 및 델리게이트 등록*/
 	PlayerAnim = Cast<UPlayerAnimInstance>(GetMesh()->GetAnimInstance());
-	if (PlayerAnim)
-	{
-		PlayerAnim->OnShootStartEvent.AddUObject(this, &AGamePlayerCharacter::ShootStart);
-		PlayerAnim->OnResetStartEvent.AddUObject(this, &AGamePlayerCharacter::ResetStart);
-	}
+	if (PlayerAnim) PlayerAnim->OnPlayerAnimNotifyEvent.AddDynamic(this, &AGamePlayerCharacter::PlayerAnimNotify);
 
 	/*UI 관련*/
 	if (_Instance.IsValid())
 	{
-		UpdateUIRef();
-
+		UpdateUIWidgetReference();
 		if (_PlayerUICanvasWidget.IsValid()) _PlayerUICanvasWidget->AddToViewport();
-		//if (_BlackScreenWidget.IsValid() && _BlackScreenWidget->IsInViewport()==false)
-		//{
-		//	_BlackScreenWidget->AddToViewport(10);
-		//}
 
-		//FadeChange 이벤트 추가.
 		_Instance->GetUIManager()->OnUIFadeChange.AddDynamic(this, &AGamePlayerCharacter::FadeChange);
 	}
 
@@ -681,22 +654,6 @@ void AGamePlayerCharacter::BeginPlay()
 		);
 	}
 
-	/*건틀렛 이펙트 추가*/
-	if (GauntletEffect)
-	{
-		GauntletEffectComp = UNiagaraFunctionLibrary::SpawnSystemAttached(
-			GauntletEffect,
-			GetMesh(),
-			TEXT("GauntletSocket"),
-			FVector::ZeroVector,
-			FRotator::ZeroRotator,
-			EAttachLocation::SnapToTarget,
-			false,
-			true
-		);
-		SetGauntletEffectScale(0.f);
-	}
-
 	/*자성 비네팅 이펙트 추가.*/
 	if (MagneticVignettingEffect)
 	{
@@ -731,6 +688,7 @@ void AGamePlayerCharacter::BeginPlay()
 			false
 		);
 	}
+
 	#pragma endregion
 }
 
@@ -796,10 +754,6 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 		_vignettingcurrTime -= DeltaTime;
 		MagneticVignettingEffectComp->SetColorParameter(TEXT("EffectColor"), _vignettingCurrColor);
 	}
-
-	/*건틀렛 구체 이펙트 러프*/
-	_gauntletCurrScale += DeltaTime * 2.f * (_gauntletGoalScale - _gauntletCurrScale);
-	SetGauntletEffectScale(_gauntletCurrScale);
 
 	/**데미지 이벤트일 경우*/
 	if (PlayerMode==EPlayerMode::DMG_EVENT)
@@ -1124,6 +1078,22 @@ void AGamePlayerCharacter::CreepyProgress(float DeltaTime)
 	#pragma endregion
 }
 
+void AGamePlayerCharacter::ShowGameSettings()
+{
+	if (_GameSettingsWidget.IsValid() == false) return;
+
+	//뷰포트에 추가가 되어있지 않다면 추가한다.
+	if (_GameSettingsWidget->IsInViewport() == false)
+	{
+		_GameSettingsWidget->AddToViewport(4);
+		_GameSettingsWidget->SetRenderTransformPivot(FVector2D(0.5f, 0.5f));
+	}
+	else
+	{
+		_GameSettingsWidget->RemoveFromParent();
+	}
+}
+
 void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	#pragma region Omission
@@ -1158,6 +1128,10 @@ void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 
 	PlayerInputComponent->BindAction(
 		TEXT("Reset"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::ResetMagnetic
+	);
+
+	PlayerInputComponent->BindAction(
+		TEXT("ShowSettings"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::ShowGameSettings
 	);
 
 	//PlayerInputComponent->BindAction(
@@ -1388,8 +1362,11 @@ void AGamePlayerCharacter::JumpStart()
 		}
 
 		//UI갱신
-		if (_AimWidget.IsValid()) _AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], EMagneticType::NONE);
+		if (_AimWidget.IsValid())
+				_AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], EMagneticType::NONE);
 
+		if (_PlayerUICanvasWidget.IsValid())
+			_PlayerUICanvasWidget->SetClimbAbleImgVisibility(false);
 
 		//점프 적용.
 		PlayerMode = EPlayerMode::STICK_JUMP;
@@ -1484,6 +1461,55 @@ void AGamePlayerCharacter::FindOverlapSection()
 
 }
 
+bool AGamePlayerCharacter::PlayerCanClimbWall() const
+{
+	if (_StickTo.IsValid()==false) return false;
+
+	FHitResult result;
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+
+	float playerHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight() * 2.f;
+	float playerRadius = GetCapsuleComponent()->GetScaledCapsuleRadius();
+	FVector playerPos = GetActorLocation();
+	FVector playerforward = GetPlayerForwardVector();
+	FVector start = playerPos + (_stickNormal * 2.f);
+	FVector end = start + (FVector::UpVector * ClimbableWallHeight);
+
+	//플레이어의 머리위에 장애물이 있는지 확인
+	bool ret = GetWorld()->SweepSingleByChannel(
+		result,
+		start,
+		end,
+		FQuat::Identity,
+		ECollisionChannel::ECC_Visibility,
+		FCollisionShape::MakeSphere(playerRadius),
+		params
+	);
+
+	//장애물이 있으면 false
+	if (ret && result.bBlockingHit) return false;
+
+	start = playerPos + (_stickNormal * -50.f) + (FVector::UpVector * (ClimbableWallHeight + playerHeight));
+	end = playerPos + (_stickNormal * -50.f) + (FVector::DownVector * 200.f);
+
+	//플레이어가 올라가려는 위치에 올라갈 땅이 있는지 확인.
+	ret = GetWorld()->SweepSingleByChannel(
+		result,
+		start,
+		end,
+		FQuat::Identity,
+		ECollisionChannel::ECC_Visibility,
+		FCollisionShape::MakeSphere(playerRadius),
+		params
+	);
+
+	//충돌한 지점이 있고, 플레이어가 앞으로 갈 수 없다면 false
+	if (!ret || ret && (result.Location - playerPos).Size() > ClimbableWallHeight) return false;
+
+	return true;
+}
+
 void AGamePlayerCharacter::StageRestart()
 {
 	#pragma region Omission
@@ -1495,7 +1521,7 @@ void AGamePlayerCharacter::StageRestart()
 	if (_OverlapSection.IsValid())
 	{
 		//BlackScreen Widget 참조를 갱신 및 페이드 적용.
-		UpdateUIRef();
+		UpdateUIWidgetReference();
 
 		if (_BlackScreenWidget.IsValid())
 		{
@@ -1738,6 +1764,7 @@ void AGamePlayerCharacter::ResetMagnetic()
 {
 	if (_stiffen != 0.f || PlayerAnim==false) return;
 	
+	//붙어있는 상태일 때의 적용.
 	if (_StickTo.IsValid())
 	{
 		PlayerAnim->PlayResetMontage(0.f, 1.5f);
@@ -1759,6 +1786,43 @@ void AGamePlayerCharacter::ShootMagnetic_S()
 	if (_stiffen != 0.f) return;
 
 	Shoot(EMagneticType::S);
+}
+
+void AGamePlayerCharacter::PlayerAnimNotify(EPlayerAnimNotifyType NotifyType)
+{
+	switch (NotifyType)
+	{
+		///////////////////////////////////////
+		case(EPlayerAnimNotifyType::SHOOT_START): 
+			ShootStart();
+			break;
+
+
+		////////////////////////////////////////
+		case(EPlayerAnimNotifyType::RESET_START):
+			ResetStart();
+			break;
+
+
+		/////////////////////////////////////////////////
+		case(EPlayerAnimNotifyType::GAUNTLET_EFFECT_HIDE):
+			if (GauntletEffectComp)
+			{
+				UE_LOG(LogTemp,Warning, TEXT("(Player)HIDE"))
+				GauntletEffectComp->SetGauntletEffectScaleAndDepth(0.2f);
+			}
+			break;
+
+
+		////////////////////////////////////////////////////
+		case(EPlayerAnimNotifyType::GAUNTLET_EFFECT_VISIBLE):
+			if (GauntletEffectComp)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("(Player)VISIBLE"))
+				GauntletEffectComp->SetGauntletEffectScaleAndDepth(0.f);
+			}
+			break;
+	}
 }
 
 void AGamePlayerCharacter::ShootStart()
@@ -1880,14 +1944,16 @@ void AGamePlayerCharacter::ResetStart()
 	}
 
 	//UI 갱신
-	UpdateUIRef();
-
 	if (_MagInfoWidget.IsValid())
 		_MagInfoWidget->ClearInfo();
 
 	if (_AimWidget.IsValid())
 		_AimWidget->SetAimUIByMagneticType(EMagneticType::NONE, EMagneticType::NONE, EMagneticType::NONE);
 
+	if (_PlayerUICanvasWidget.IsValid())
+		_PlayerUICanvasWidget->SetClimbAbleImgVisibility(false);
+
+	//플레이어 움직임 활성화.
 	GetMovementComponent()->SetActive(true);
 
 	if (_StickTo != nullptr)
@@ -1896,9 +1962,7 @@ void AGamePlayerCharacter::ResetStart()
 		_StickTo = nullptr;
 	}
 
-	if (IsGivenInvalid(0)) _GivenMagnets[0]->SetCurrentMagnetic(EMagneticType::NONE);
-	if (IsGivenInvalid(1)) _GivenMagnets[1]->SetCurrentMagnetic(EMagneticType::NONE);
-
+	//자성 부여 목록 초기화.
 	ClearGivens();
 }
 
@@ -1923,17 +1987,6 @@ void AGamePlayerCharacter::DashEnd()
 		BreathSoundEffectComp->SetSound(PlayerDefaultBreathSound);
 		BreathSoundEffectComp->Play();
 	}
-}
-
-void AGamePlayerCharacter::BreathFinish()
-{
-	//if (_nextAudioInfo.Source.IsValid() == false) return;
-
-	//BreathSoundEffectComp->SetFadeInComplete();
-	//BreathSoundEffectComp->SetSound(_nextAudioInfo.Source.Get());
-	//BreathSoundEffectComp->Play(_nextAudioInfo.StartTime);
-
-	//_nextAudioInfo.Source.Reset();
 }
 
 void AGamePlayerCharacter::DetectFloorType(FString& outPhysMatName)
@@ -2117,28 +2170,38 @@ void AGamePlayerCharacter::ShootMine(EMagneticType shootType)
 	GivenTestMagnet(Magnetic, shootType);
 }
 
-void AGamePlayerCharacter::UpdateUIRef()
+void AGamePlayerCharacter::UpdateUIWidgetReference()
 {
 	if (_Instance.IsValid() == false) return;
 
-	/*각 UI들에 대한 참조를 갱신한다.*/
-	if (_BlackScreenWidget.IsValid() == false)
-		_Instance->GetUIManager()->GetUIBlackScreenWidget(_BlackScreenWidget);
+	TWeakObjectPtr<UGameUIManager> UIManager = _Instance->GetUIManager();
 
-	if (_PlayerUICanvasWidget.IsValid() == false) 
-		_Instance->GetUIManager()->GetPlayerUICanvasWidget(_PlayerUICanvasWidget);
-	
-	/*플레이어 UI들에 대한 참조를 갱신한다.*/
-	if(_PlayerUICanvasWidget.IsValid())
+	if (UIManager.IsValid())
 	{
-		if (_AimWidget.IsValid() == false)
-			_PlayerUICanvasWidget->GetAimWidget(_AimWidget);
+		/*각 UI들에 대한 참조를 갱신한다.*/
+		if (_BlackScreenWidget.IsValid() == false)
+			UIManager->GetUIBlackScreenWidget(_BlackScreenWidget);
 
-		if (_MagInfoWidget.IsValid() == false)
-			_PlayerUICanvasWidget->GetMagneticInfoWidget(_MagInfoWidget);
+		if (_PlayerUICanvasWidget.IsValid() == false)
+			UIManager->GetPlayerUICanvasWidget(_PlayerUICanvasWidget);
 
-		if (_BloodWidget.IsValid() == false)
-			_PlayerUICanvasWidget->GetBloodEffectWidget(_BloodWidget);
+		if (_GameSettingsWidget.IsValid() == false)
+			UIManager->GetUIGameSettingsWidget(_GameSettingsWidget);
+
+
+		/*플레이어 UI들에 대한 참조를 갱신한다.*/
+		if (_PlayerUICanvasWidget.IsValid())
+		{
+			if (_AimWidget.IsValid() == false)
+				_PlayerUICanvasWidget->GetAimWidget(_AimWidget);
+
+			if (_MagInfoWidget.IsValid() == false)
+				_PlayerUICanvasWidget->GetMagneticInfoWidget(_MagInfoWidget);
+
+			if (_BloodWidget.IsValid() == false)
+				_PlayerUICanvasWidget->GetBloodEffectWidget(_BloodWidget);
+		}
+
 	}
 }
 
@@ -2212,8 +2275,6 @@ void AGamePlayerCharacter::GivenTestMagnet(UMagneticComponent* newMagnet, EMagne
 	}
 
 	//플레이어의 UI를 갱신하고 마무리.
-	UpdateUIRef();
-
 	if (_MagInfoWidget.IsValid()) 
 		_MagInfoWidget->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 
@@ -2262,8 +2323,6 @@ void AGamePlayerCharacter::RemoveGiven(UMagneticComponent* remove)
 	}
 
 	//플레이어의 UI를 갱신하고 마무리.
-	UpdateUIRef();
-
 	if (_MagInfoWidget.IsValid())
 		_MagInfoWidget->SetInfo(_GivenMagnets[0], _GivenMagnets[1]);
 
@@ -2300,17 +2359,10 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 		}
 
 		//건틀렛 이펙트 크기 변경
-		GauntletEffectComp->SetColorParameter(
-			TEXT("CircleColor"),
-			UMagneticComponent::GetMagneticEffectColor(changedMagType, EMagneticEffectColorType::GAUNTLET_SPHERE_EFFECT)
-		);
-
-		GauntletEffectComp->SetColorParameter(
-			TEXT("thunterColor"),
-			UMagneticComponent::GetMagneticEffectColor(changedMagType, EMagneticEffectColorType::GAUNTLET_THUNDER_EFFECT)
-		);
-		_gauntletCurrScale = 0.f;
-		_gauntletGoalScale = 0.015f;
+		if (GauntletEffectComp)
+		{
+			GauntletEffectComp->SetGauntletEffectInfo(changedMagType, 0.015f);
+		}
 	}
 	else
 	{
@@ -2339,33 +2391,13 @@ void AGamePlayerCharacter::ChangeMagnetic(EMagneticType changedMagType, UMagneti
 		_bApplyYRotLimit = false;
 
 		//건틀렛 이펙트 크기 초기화
-		_gauntletGoalScale = 0.f;
+		if (GauntletEffectComp) GauntletEffectComp->SetGauntletEffectInfo(EMagneticType::NONE, 0.f);
 
 		_CamLookTarget.Reset();
 		_bApplyCamLook = false;
 	}
 }
 
-void AGamePlayerCharacter::SetGauntletEffectScaleAndDepth(float newScaleAndDepthValue)
-{
-	if (::IsValid(GauntletEffectComp) == false) return;
-
-	const FNiagaraUserRedirectionParameterStore& parameters = GauntletEffectComp->GetOverrideParameters();
-
-	const FNiagaraVariable ThunderDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffectThunder"));
-	const FNiagaraVariable OneDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffect01"));
-	const FNiagaraVariable TwoDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffect02"));
-	const FNiagaraVariable ThreeDesc(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffect03"));
-
-	const FNiagaraVariable	DisortionDesc  = FNiagaraVariable(FNiagaraTypeDefinition::GetUMaterialDef(), TEXT("GloveEffectDisortion"));
-	UMaterialInterface*		DisortionMaterial = Cast<UMaterialInterface>(parameters.GetUObject(DisortionDesc));
-
-	UMaterialInterface* ThunderMaterial = Cast<UMaterialInterface>(parameters.GetUObject(ThunderDesc));
-	UMaterialInterface* OneMaterial = Cast<UMaterialInterface>(parameters.GetUObject(OneDesc));
-	UMaterialInterface* TwonMaterial = Cast<UMaterialInterface>(parameters.GetUObject(TwoDesc));
-	UMaterialInterface* ThreeMaterial = Cast<UMaterialInterface>(parameters.GetUObject(ThreeDesc));
-
-}
 
 void AGamePlayerCharacter::MagnetMoveStart(EMagnetMoveType moveType, UMagneticComponent* moveBeginMagComp, UMagneticComponent* operatorMagComp)
 {
@@ -2474,6 +2506,10 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 		//	FVector2D(currRot.Yaw - 100.f, currRot.Yaw + 170.f),
 		//	true
 		//);
+
+		//올라타기 UI 갱신
+		if (_PlayerUICanvasWidget.IsValid())
+			_PlayerUICanvasWidget->SetClimbAbleImgVisibility(true);
 
 		_stickNormal = hitNormal;
 		_stiffen = 0.3f;

@@ -27,6 +27,17 @@ enum class EPlayerBoneType
 };
 
 UENUM()
+enum class EPlayerAnimNotifyType : uint8
+{
+	NONE,
+	SHOOT_START,
+	SHOOT_END,
+	GAUNTLET_EFFECT_HIDE,
+	GAUNTLET_EFFECT_VISIBLE,
+	RESET_START
+};
+
+UENUM()
 enum class EPlayerAnimProgressType : uint8
 {
 	NONE,
@@ -69,8 +80,7 @@ struct FGloveActionData
 	FTransform PoarmTransform;
 };
 
-DECLARE_MULTICAST_DELEGATE(FShootStartDelegate)
-DECLARE_MULTICAST_DELEGATE(FResetStartDelegate)
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerAnimEventDelegate, EPlayerAnimNotifyType, NotifyType);
 
 /**플레이어 메시의 본 이름들에 대한 문자열입니다.*/
 constexpr const TCHAR* const PLAYER_SPINE1_BONE	= TEXT("Bip001-Spine1");
@@ -118,8 +128,8 @@ public:
 	///			  *Public methods*				///
 	///											///
 	///////////////////////////////////////////////
-	FShootStartDelegate OnShootStartEvent;
-	FResetStartDelegate OnResetStartEvent;
+	UPROPERTY(BlueprintAssignable, Blueprintcallable, Category = PlayerAnimInstance)
+	FPlayerAnimEventDelegate OnPlayerAnimNotifyEvent;
 
 
 	////////////////////////////////////////////////
@@ -194,6 +204,12 @@ private:
 
 	UFUNCTION()
 	void AnimNotify_ResetStart();
+
+	UFUNCTION()
+	void AnimNotify_GauntletEffectForward();
+
+	UFUNCTION()
+	void AnimNotify_GauntletEffectBackward();
 
 	UFUNCTION()
 	void AnimNotify_StartLHandClimb();

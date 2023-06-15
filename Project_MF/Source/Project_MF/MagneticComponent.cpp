@@ -122,8 +122,8 @@ void UMagneticComponent::SetParentMaterial(EMagneticType type)
 	bool isN			= type == EMagneticType::N;
 	FVector color		= (isN ? FVector(5.f, 0.f, 0.049996f) : FVector(0.f, 0.160625f, 10.f));
 	FVector4 color2		= (isN ? FVector4(25.f, 0.f, 0.083315f, 1.f) : FVector4(0.f, 0.160623f, 10.f, 1.f));
-	float surface_alpha = (isN ? 0.07f : 0.5f);
-	float aura_Alpha	= (isN ? 0.f   : 0.5f);
+	float surface_alpha = (isN ? 0.5f : 0.5f);
+	float aura_Alpha	= (isN ? 0.15f: 0.5f);
 	float fresnal_Alpha = (isN ? 0.2f : 0.5f);
 
 	if (_material != nullptr && ::IsValid(_material) && type!=EMagneticType::NONE)
@@ -441,6 +441,11 @@ void UMagneticComponent::SetCurrentMagnetic(EMagneticType newType)
 	OnComponentMagneticChanged.Broadcast(CurrMagnetic, this);
 	SetParentMaterial(CurrMagnetic);
 	#pragma endregion
+}
+
+EMagnetMoveType UMagneticComponent::GetCurrentMagnetMovementType() const
+{
+	return _lastMoveType;
 }
 
 // Called every frame

@@ -49,8 +49,6 @@ void UPlayerAnimInstance::AnimNotify_StartLHandClimb()
 
 void UPlayerAnimInstance::AnimNotify_StartRHandClimb()
 {
-	UE_LOG(LogTemp, Warning, TEXT("위치 고정"))
-
 	if (TargetPlayer.IsValid() == false) return;
 
 	if (ClimbData.bApplyClimb && TargetPlayer.IsValid())
@@ -62,19 +60,31 @@ void UPlayerAnimInstance::AnimNotify_StartRHandClimb()
 	}
 }
 
+void UPlayerAnimInstance::AnimNotify_GauntletEffectForward()
+{
+	UE_LOG(LogTemp, Warning, TEXT("(Anim)VISIBLE"))
+	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::GAUNTLET_EFFECT_VISIBLE);
+}
+
+void UPlayerAnimInstance::AnimNotify_GauntletEffectBackward()
+{
+	UE_LOG(LogTemp, Warning, TEXT("(Anim)HIDE"))
+	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::GAUNTLET_EFFECT_HIDE);
+}
+
 void UPlayerAnimInstance::AnimNotify_ShootStart()
 {
-	OnShootStartEvent.Broadcast();
+	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::SHOOT_START);
 }
 
 void UPlayerAnimInstance::AnimNotify_ShootEnd()
 {
-	Montage_SetPlayRate(ShootMontage, .9f);
+	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::SHOOT_END);
 }
 
 void UPlayerAnimInstance::AnimNotify_ResetStart()
 {
-	OnResetStartEvent.Broadcast();
+	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::RESET_START);
 }
 
 void UPlayerAnimInstance::PlayGloveActonMontage(float startTime, float speed)
@@ -398,7 +408,7 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	/*유효한 플레이어의 상태를 갱신한다.*/
 	CurrentSpeed = TargetPlayer->GetVelocity().Size();
-	bIsJumping = TargetPlayer->GetMovementComponent()->Velocity.Z > 0.f;
+	bIsJumping = FMath::Abs(TargetPlayer->GetMovementComponent()->Velocity.Z) >= 0.05f;
 	bIsPulled = (Montage_IsPlaying(GloveAtMontage) || Montage_IsPlaying(GloveActonMontage));
 
 	/**각종 진행용 함수 실행.*/

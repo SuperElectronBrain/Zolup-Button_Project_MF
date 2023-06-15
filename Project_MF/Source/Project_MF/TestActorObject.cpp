@@ -4,7 +4,9 @@
 #include "TestActorObject.h"
 #include "Components/SphereComponent.h"
 #include "MagneticComponent.h"
+#include "GamePlayerCharacter.h"
 #include "MagneticFieldEffectComponent.h"
+#include "MagneticMovementComponent.h"
 
 // Sets default values
 ATestActorObject::ATestActorObject()
@@ -28,28 +30,23 @@ void ATestActorObject::TickActor(float DeltaTime, enum ELevelTick TickType, FAct
 {
 	Super::TickActor(DeltaTime, TickType, ThisTickFunction);
 
-	UE_LOG(LogTemp, Warning, TEXT("leftTime: %f"), leftTime)
-	if (leftTime<=0.f)
+	if (APawn* player = GetWorld()->GetFirstPlayerController()->GetPawn())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("적용됨."))
-		const EMagneticType currType = FieldEffect->GetFieldMagneticType();
+		TArray<USceneComponent*> components;
+		player->GetRootComponent()->GetChildrenComponents(true, components);
 
-		switch (type) {
-			case(0): 
-				FieldEffect->SetMagneticFieldInfo(EMagneticType::S, 200.f);
-				break;
+		for (USceneComponent* component : components)
+		{
+			UMagneticComponent* magnet = Cast<UMagneticComponent>(component);
+			if (magnet && magnet->GetCurrentMagnetMovementType()!=EMagnetMoveType::NONE) {
 
-			case(1):
-				FieldEffect->SetMagneticFieldInfo(EMagneticType::NONE, 300.f);
-				break;
+				UE_LOG(LogTemp, Warning, TEXT("움직이네!!: %f"), type++)
+				return;
+			}
+
 		}
 
-		leftTime = 10.f;
-		type++;
-		if (type > 1) type = 0;
 	}
-
-	leftTime -= DeltaTime;
 }
 
 

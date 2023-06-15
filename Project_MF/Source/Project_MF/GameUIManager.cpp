@@ -46,7 +46,7 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 				UUserWidget* widget = Cast<UUserWidget>(info.handler.GetObject());
 				if (widget)
 				{
-					widget->RemoveFromViewport();
+					widget->RemoveFromParent();
 				}
 			}
 

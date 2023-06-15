@@ -7,6 +7,7 @@
 #include "PlayerUIAimWidget.h"
 #include "PlayerUIBloodWidget.h"
 #include "CustomGameInstance.h"
+#include "HandlerImage.h"
 
 void UPlayerUICanvasWidget::NativeOnInitialized()
 {
@@ -15,6 +16,16 @@ void UPlayerUICanvasWidget::NativeOnInitialized()
 	_MagneticInfo = Cast<UPlayerUIMagneticInfoWidget>(GetWidgetFromName(TEXT("MagneticInfo")));
 	_Aim = Cast<UPlayerUIAimWidget>(GetWidgetFromName(TEXT("PlayerUI_Aim")));
 	_Blood = Cast<UPlayerUIBloodWidget>(GetWidgetFromName(TEXT("PlayerUI_Blood")));
+	_ClimbAble = Cast<UHandlerImage>(GetWidgetFromName(TEXT("ClimbAble")));
+	SetClimbAbleImgVisibility(false);
+}
+
+void UPlayerUICanvasWidget::SetClimbAbleImgVisibility(bool isVisible)
+{
+	if (::IsValid(_ClimbAble)==false) return;
+
+	ESlateVisibility apply = (isVisible ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
+	_ClimbAble->SetVisibility(apply);
 }
 
 void UPlayerUICanvasWidget::NativeConstruct()

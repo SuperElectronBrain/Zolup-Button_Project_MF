@@ -20,6 +20,7 @@ constexpr const TCHAR* GAUNTLET_EFFECT_MESH_SCALE_PARAM = TEXT("meshScale");
 
 constexpr const TCHAR* GAUNTLET_EFFECT_CIRCLE_COLOR_PARAM = TEXT("CircleColor");
 constexpr const TCHAR* GAUNTLET_EFFECT_THUNDER_COLOR_PARAM = TEXT("thunterColor");
+constexpr const TCHAR* GAUNTLET_EFFECT_SCALE_AND_DEPTH_PARAM = TEXT("ScaleInDepth");
 /**
  * 
  */
@@ -44,6 +45,8 @@ public:
 	//////////////////////////////////////
 	void SetGauntletEffectInfo(EMagneticType effectType, float effectScale);
 	EMagneticType GetGauntletEffectType() const { return _CurrMagType; }
+
+	void SetGauntletEffectScaleAndDepth(float newScaleAndDepth);
 
 
 	/////////////////////////////////////////

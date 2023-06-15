@@ -7,27 +7,23 @@
 constexpr const int PLAYER_FADE_ID = 83;
 constexpr const int STOPTIMER_FADE_ID = 84;
 
+constexpr const TCHAR* PLAYER_SHOOT_SOCKET = TEXT("ShootSocket");
+constexpr const TCHAR* PLAYER_GAUNTLET_SOCKET = TEXT("GauntletSocket");
+
+
+enum class EMagnetMoveType : uint8;
+enum class EPlayerAnimNotifyType : uint8;
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
 class UMagneticComponent;
 class UNiagaraComponent;
 class UNiagaraSystem;
-class UParticleSystemComponent;
-class UParticleSystem;
 class UDefaultMagneticMovementComponent;
-class UCustomGameInstance;
 class UGameMapSectionComponent;
 class UWidgetComponent;
-class UPlayerUICanvasWidget;
-class UUIStopTimerWidget;
-class UPlayerUIAimWidget;
-class UUIBlackScreenWidget;
-class UPlayerUIMagneticInfoWidget;
-class UPlayerUIBloodWidget;
 class APlayerAirVent;
 class UAudioComponent;
 class USoundCue;
-enum class EMagnetMoveType : uint8;
 
 /**
 * 플레이어의 적용모드를 나타내는 열거형입니다.
@@ -119,17 +115,29 @@ class PROJECT_MF_API AGamePlayerCharacter final : public ACharacter
 	GENERATED_BODY()
 
 public:
-	//////////////////////////////
-	/////	  Constructor	 ////
-	/////////////////////////////
+	//////////////////////////////////////
+	/////							  ////
+	////		Constructor			  ////
+	////							  ////
+	//////////////////////////////////////
 	AGamePlayerCharacter();
 
 
-	//////////////////////////////////
-	//////     Public methods   //////
-	//////////////////////////////////
+	//////////////////////////////////////
+	/////							  ////
+	////		Public methods		  ////
+	////							  ////
+	//////////////////////////////////////
 
-	/**플레이어의 방향벡터 및 회전값들을 얻어오는 함수들입니다.*/
+	/*******************************************************
+	* 현재 플레이어의 방향 및 정보를 얻을 수 있는 함수들입니다.
+	* 
+	* @Func GetPlayerCameraQuat	: 플레이어의 카메라가 바라보고 있는 회전값을 얻어옵니다.
+	* @Func GetPlayerForwardVector	: 플레이어가 현재 바라보고 있는 전방 방향 벡터를 얻어옵니다.
+	* @Func GetPlayerRightVector : 플레이어가 현재 바라보고 있는 방향을 기준으로 한 오른쪽 방향 벡터를 얻어옵니다.
+	* @Func GetPlayerDownVector  : 플레이어가 현재 바라보고 있는 방향을 기준으로 한 아래 방향 벡터를 얻어옵니다.
+	* TODO: 
+	***/
 	FRotator GetPlayerCameraQuat() const;
 	FVector GetPlayerForwardVector() const;
 	FVector GetPlayerRightVector() const;
@@ -148,19 +156,17 @@ public:
 									FVector2D yAxisLimits = FVector2D::ZeroVector, bool applyYAxis = false,
 									FVector2D zAxisLimits = FVector2D::ZeroVector, bool applyZAxis = false );
 
-	/**건틀렛 이펙트의 크기를 조절 및 얻는 함수들입니다.*/
-	float GetGauntletEffectScale() const;
-	void SetGauntletEffectScale(float newScale);
-	void SetGauntletEffectScaleAndDepth(float newScaleAndDepthValue);
-
-	/**플레이어의 체력 관련 함수들입니다.*/
 	void SetPlayerCurrHP(float newCurrHP);
 	void SetPlayerMaxHP(float newMaxHP);
 
+	bool PlayerCanClimbWall() const;
 
-	//////////////////////////////////
-	//////    Override methods  //////
-	//////////////////////////////////
+
+	//////////////////////////////////////
+	/////							  ////
+	////	    Override methods	  ////
+	////							  ////
+	//////////////////////////////////////
 private:
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
@@ -173,9 +179,12 @@ private:
 	#endif
 
 
-	/////////////////////////////////////
-	//////     Key input methods    /////
-	/////////////////////////////////////
+	//////////////////////////////////////
+	/////							  ////
+	////	   Private methods		  ////
+	////							  ////
+	//////////////////////////////////////
+	void FindOverlapSection();
 
 	/**********************************************************
 	* 시스템으로부터 키입력을 받았을 때 호출되는 함수들입니다.
@@ -194,6 +203,7 @@ private:
 	* @Func JumpEnd		: Space키 뗄 시 점프를 그만둡니다.
 	* @Func StageRestart: Tab키 입력시 주변의 섹션을 탐색하고, 해당 섹션을 초기값을 되돌립니다.
 	* @Func ApplyTimeStop: E키 입력시 현재 자성을 부여한 자석들의 시간을 일정시간동안 정지시킵니다.
+	* @Func ShowGameSettings : ESC키 입력시 게임설정을 보여줍니다.
 	***********************************************************/
 	void MoveUpDown(float value);
 	void MoveRightLeft(float value);
@@ -210,20 +220,16 @@ private:
 	void JumpEnd();
 	void StageRestart();
 	void ApplyTimeStop();
+	void ShowGameSettings();
 
-
-	////////////////////////////////////
-	/////     Private methods   ///////
-	///////////////////////////////////
-	void FindOverlapSection();
 
 	/**********************************************************************************
 	* UI관련 함수들입니다.
 	* 
 	* @Func UpdateUIRef		: 사용할 UI들의 참조를 최신화합니다.
 	* @Func UnApplyTimeStop : 현재 적용된 TimeStop UIWidget들에게 페이드 인을 적용시킵니다.
-	*/
-	void UpdateUIRef();
+	****/
+	void UpdateUIWidgetReference();
 	void UnApplyTimeStop();
 
 	/*********************************************************************************
@@ -231,7 +237,7 @@ private:
 	* 
 	* @Func DetectFloorType : 플레이어가 서있는 바닥을 조사하고, 바닥의 물리재질 이름을 얻습니다.
 	* @Func PlayMoveSound	: 플레이어가 이동할 때 나는 소리를 재생합니다.
-	*/
+	***/
 	void DetectFloorType(FString& outPhysMatName);
 	void PlayMoveSound(bool playSound);
 	void PlayDamagedSound();
@@ -242,12 +248,14 @@ private:
 	* 
 	* @Func Shoot	 : 플레이어가 겨눈 방향으로 레이캐스트 검사를 하고, 그 대상에게 자성을 부여합니다.
 	* @Func ShootMine: 플레이어가 자기자신에게 총을 쐈을 때 적용하는 함수입니다.
-	*/
+	****/
+	void ShootStart();
 	void Shoot(EMagneticType shootType);
 	void ShootMine(EMagneticType shootType);
 
-	void CamLookProgress(float DeltaTime);
+	void ResetStart();
 
+	void CamLookProgress(float DeltaTime);
 	void ClimbProgress(float DeltaTime);
 	void CreepyProgress(float DeltaTime);
 	FVector GetBezirCurve2(const FVector& startPos, const FVector& controlPos, const FVector& endPos, const float& timeRatio) const;
@@ -273,7 +281,7 @@ private:
 	/****************************************************************************
 	* 플레이어가 구독한 델리게이트에서 수신될 함수들입니다.
 	* 
-	* @Func ShootStart	: 플레이어의 총쏘는 애니메이션에서 총구가 위로 올라갈 때 호출됩니다.
+	* @Func PlayerAnimNotify : 플레이어 애니메이션에서 발생하는 Notify에 대한 콜백입니다.
 	* @Func ChangeMagnetic: 플레이어가 자성을 부여한 자석의 자성이 바뀌었을 때 호출됩니다.
 	* @Func MagnetMoveStart: 플레이어가 주변 자기장에 영향을 받아서 움직임이 시작될 때 호출됩니다.
 	* @Func MagnetMoveEnd  : 플레이어가 주변 자기장에 영향을 받아 움직이다가 움직임이 끝났을 때 호출됩니다.
@@ -282,13 +290,9 @@ private:
 	* @Func PlayerBeginOverlap: 플레이어의 캡슐 콜라이더가 주변 충돌체와 겹쳤을 때 호출됩니다.
 	* @Func PlayerEndOverlap  : 플레이어의 캡슐 콜라이더가 주변 충돌체와 겹친 상태에서 벗어났을 때 호출됩니다.
 	* @Func EnterGround	: 플레이어가 공중에서 땅에 착지했을 때 호출됩니다.
-	* @Func ResetCamLookTarget: 플레이어의 주목상태가 해제되었을 때 호출됩니다.
-	*/
+	***/
 	UFUNCTION()
-	void ShootStart();
-
-	UFUNCTION()
-	void ResetStart();
+	void PlayerAnimNotify(EPlayerAnimNotifyType NotifyType);
 
 	UFUNCTION()
 	void ChangeMagnetic(EMagneticType changedMagType, UMagneticComponent* changedMagComp);
@@ -306,9 +310,6 @@ private:
 	void FadeChange(bool isDark, int id);
 
 	UFUNCTION()
-	void BreathFinish();
-
-	UFUNCTION()
 	void PlayerBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UFUNCTION()
@@ -321,9 +322,34 @@ private:
 	void ResetCamLookTarget();
 
 
-	///////////////////////////////
-	//// Fields and Components ///
-	//////////////////////////////
+
+	//////////////////////////////////////
+	/////							  ////
+	////	 Fields and Components    ////
+	////							  ////
+	//////////////////////////////////////
+
+	/********************************************************
+	* 해당 클래스에서 사용하게되는 클래스 및 컴포넌트들의 참조값들입니다.
+	* 
+	* 게임 인스턴스, 자주 접근이 필요한 위젯, 현재 플레이어가 붙어있는
+	* 대상 또는 플레이어로부터 자성이 부여된 자석들에 대한 참조값들이 있습니다.
+	***/
+	TWeakObjectPtr<class UCustomGameInstance>			_Instance;
+	TWeakObjectPtr<class UUIGameSettingsWidget>			_GameSettingsWidget;
+	TWeakObjectPtr<class UUIBlackScreenWidget>			_BlackScreenWidget;
+
+	TWeakObjectPtr<class UPlayerUICanvasWidget>			_PlayerUICanvasWidget;
+	TWeakObjectPtr<class UPlayerUIAimWidget>			_AimWidget;
+	TWeakObjectPtr<class UPlayerUIBloodWidget>			_BloodWidget;
+	TWeakObjectPtr<class UPlayerUIMagneticInfoWidget>	_MagInfoWidget;
+
+	TWeakObjectPtr<class AActor>                   _StickTo;
+	TWeakObjectPtr<class APlayerAirVent>           _EnterAirVent;
+	TWeakObjectPtr<class UGameMapSectionComponent> _OverlapSection;
+	TStaticArray<class UMagneticComponent*, 2>     _GivenMagnets;
+	TStaticArray<struct FTimeStopMagnetInfo, 2>     _TimeStopMagnets;
+
 	bool _bCanJump = false;
 	bool _bShootMine = false;
 	float _timeStopCurrTime = 0.f;
@@ -350,10 +376,6 @@ private:
 	FLinearColor _vignettingDistanceColor;
 	float _vignettingcurrTime = 0.f;
 	float _vignettingGoalDiv = 0.f;
-
-	/**건틀렛 구체 이펙트를 위한 필드들입니다.*/
-	float _gauntletCurrScale = 0.f;
-	float _gauntletGoalScale = 0.f;
 	
 
 	/**플레이어가 자성을 부여하기위해 필요한 필드들입니다.*/
@@ -368,27 +390,12 @@ private:
 	EMagneticType _lastShootType = EMagneticType::NONE;
 
 	/**나중에 접근이 필요한 참조들의 필드입니다.*/
-	FShootTargetInfo                         _ShootTargetInfo;
-	TWeakObjectPtr<UCustomGameInstance>      _Instance;
-	TWeakObjectPtr<UGameMapSectionComponent> _CurrSection;
-	TWeakObjectPtr<AActor>                   _StickTo;
-	TWeakObjectPtr<APlayerAirVent>           _EnterAirVent;
-	TWeakObjectPtr<UGameMapSectionComponent> _OverlapSection;
-	TStaticArray<UMagneticComponent*, 2>     _GivenMagnets;
-	TStaticArray<FTimeStopMagnetInfo, 2>     _TimeStopMagnets;
+	FShootTargetInfo  _ShootTargetInfo;
 
 	/**플레이어가 특정 부분을 바라볼 때 사용되는 필드입니다.*/
 	TWeakObjectPtr<AActor> _CamLookTarget;
 	FVector _CamLookNormal;
 	bool _bApplyCamLook = false;
-
-	/**플레이어에서 사용할 UI Widget들의 참조 필드입니다.*/
-	TWeakObjectPtr<UUIBlackScreenWidget>		_BlackScreenWidget;
-	TWeakObjectPtr<UPlayerUICanvasWidget>		_PlayerUICanvasWidget;
-	TWeakObjectPtr<UPlayerUIAimWidget>			_AimWidget;
-	TWeakObjectPtr<UPlayerUIMagneticInfoWidget> _MagInfoWidget;
-	TWeakObjectPtr<UPlayerUIBloodWidget>		_BloodWidget;
-
 
 	UPROPERTY()
 	UPlayerAnimInstance* PlayerAnim;
@@ -466,10 +473,10 @@ private:
 
 	/**@UI fields*/
 	UPROPERTY()
-	UUIStopTimerWidget* TimerWidgetInsA;
+	class UUIStopTimerWidget* TimerWidgetInsA;
 
 	UPROPERTY()
-	UUIStopTimerWidget* TimerWidgetInsB;
+	class UUIStopTimerWidget* TimerWidgetInsB;
 
 	/**@Effect fields*/
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
@@ -486,9 +493,6 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* MagneticVignettingEffect;
-
-	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
-	UNiagaraSystem* GauntletEffect;
 
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* AbsorbEffect;
@@ -509,7 +513,7 @@ private:
 	float PlayerCurrHP = 3.f;
 
 	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite, Meta = (ClampMin = 0, AllowPrivateAccess = true))
-	bool bCanDash = false;
+	bool bCanDash = true;
 
 public:
 	UPROPERTY(EditAnywhere, Category = PlayerStat, BlueprintReadWrite)
@@ -612,7 +616,7 @@ private:
 	UNiagaraComponent* MagneticVignettingEffectComp;
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
-	UNiagaraComponent* GauntletEffectComp;
+	class UGauntletEffectComponent* GauntletEffectComp;
 
 	UPROPERTY(VisibleAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraComponent* AbsorbEffectComp;

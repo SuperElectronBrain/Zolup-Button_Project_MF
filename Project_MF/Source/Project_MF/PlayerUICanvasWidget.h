@@ -7,6 +7,7 @@
 #include "PlayerUICanvasWidget.generated.h"
 
 class UImage;
+class UHandlerImage;
 class UPlayerUIMagneticInfoWidget;
 class UPlayerUIAimWidget;
 class UPlayerUIBloodWidget;
@@ -19,17 +20,33 @@ class PROJECT_MF_API UPlayerUICanvasWidget final : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	/*Construct*/
+	/////////////////////////////////////
+	////						     ////
+	////	  Override methods		 ////
+	////						    ////
+	///////////////////////////////////
 	virtual void NativeOnInitialized() override;
 	virtual void NativeConstruct() override;
 	virtual void NativeDestruct() override;
 
+
+	/////////////////////////////////////
+	////						     ////
+	////	  Public methods		 ////
+	////						    ////
+	///////////////////////////////////
 	void GetMagneticInfoWidget(TWeakObjectPtr<UPlayerUIMagneticInfoWidget>& outPtr) const;
 	void GetAimWidget(TWeakObjectPtr<UPlayerUIAimWidget>& outPtr) const;
 	void GetBloodEffectWidget(TWeakObjectPtr<UPlayerUIBloodWidget>& outPtr) const;
 
+	void SetClimbAbleImgVisibility(bool isVisible);
+
 private:
-	/*fields and Components*/
+	/////////////////////////////////////
+	////						     ////
+	////     Fields and Components   ////
+	////						    ////
+	///////////////////////////////////
 	UPROPERTY()
 	UPlayerUIMagneticInfoWidget* _MagneticInfo;
 
@@ -38,5 +55,8 @@ private:
 
 	UPROPERTY()
 	UPlayerUIBloodWidget* _Blood;
+
+	UPROPERTY()
+	UHandlerImage* _ClimbAble;
 	
 };
