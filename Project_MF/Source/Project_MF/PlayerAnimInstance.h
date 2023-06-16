@@ -82,7 +82,6 @@ struct FGloveActionData
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayerAnimEventDelegate, EPlayerAnimNotifyType, NotifyType);
 
-/**플레이어 메시의 본 이름들에 대한 문자열입니다.*/
 constexpr const TCHAR* const PLAYER_SPINE1_BONE	= TEXT("Bip001-Spine1");
 constexpr const TCHAR* const PLAYER_NECK_BONE	= TEXT("Bip001-Neck");
 constexpr const TCHAR* const PLAYER_GUN_BONE	= TEXT("Bone001");
@@ -100,7 +99,6 @@ constexpr const TCHAR* const PLAYER_LHAND_BONE = TEXT("Bip001-L-Hand");
 constexpr const TCHAR* const PLAYER_RHAND_BONE = TEXT("Bip001-R-Hand");
 
 constexpr const float CLIMB_LOOKUP_TIME = 2.f;
-
 constexpr const float CLA2HAND_LEN = 70.f;
 
 
@@ -144,6 +142,9 @@ public:
 	/*************************************************************************
 	* 몽타주 애니메이션 재생 관련 함수들입니다.
 	*/
+	bool GetJumpMontageIsPlaying() const { return Montage_IsPlaying(JumpMontage); }
+	void PlayJumpMontage(float startTime = 0.f, float speed = 1.f);
+
 	bool GetShootMontageIsPlaying() const { return Montage_IsPlaying(ShootMontage); }
 	void PlayShootMontage(float startTime = 0.f, float speed = 1.f);
 
@@ -172,26 +173,26 @@ public:
 
 	////////////////////////////////////////////////
 	///											///
-	///			 *Override methods*				///
-	///											///
-	///////////////////////////////////////////////
-private:
-	virtual void NativeBeginPlay() override;
-	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
-
-
-	////////////////////////////////////////////////
-	///											///
 	///			  *Private methods*				///
 	///											///
 	///////////////////////////////////////////////
 
+private:
 	void FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player);
+
+
+	/**********************************************
+	* UAnimInstance의 가상함수에 대한 재정의입니다.
+	***/
+	virtual void NativeBeginPlay() override;
+	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
+
 
 	/**************************************************************
 	* 특정 몽타주 및 애니메이션 진행에서 쓰이는 함수들입니다.
 	*/
 	void ClimbMontageProgress(float DeltaTime);
+
 
 	/***************************************************************
 	* 애니메이션 실행중, 노티파이로 수신을 받게될 함수들입니다.
@@ -283,6 +284,9 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = PlayerAnimAsset, Meta = (AllowPrivateAccess = true))
 	UAnimMontage* ClimbMontage;
 
+	UPROPERTY()
+	UAnimMontage* JumpMontage;
+
 	/*********************************************************
 	* 각 팔들을 고정시키는데 사용되는 필드입니다.
 	*/
@@ -331,9 +335,6 @@ private:
 	* 애니메이션 FSM에서 쓰이는 상태값들입니다.
 	*/
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
-	bool bIsJumping = false;
-
-	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
 	float CurrentSpeed = 0.f;
 
 	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
@@ -348,5 +349,8 @@ private:
 public:
 	UPROPERTY(EditAnywhere, Category = Player, BlueprintReadOnly)
 	bool bPlayerCreep = false;
+
+	UPROPERTY(EditAnywhere, Category = Player, Meta = (AllowPrivateAccess = true), BlueprintReadOnly)
+	bool bIsJumping = false;
 
 };

@@ -49,7 +49,7 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 	if (ownerPhysics && ::IsValid(ownerPhysics) && 
 		operatorPhysics && ::IsValid(operatorPhysics) && 
 		ownerPhysics->IsSimulatingPhysics() && 
-		ownerRootPhysics && ::IsValid(ownerRootPhysics))
+		ownerRootPhysics && ::IsValid(ownerRootPhysics) && false)
 	{
 		//계산에 필요한 요소들을 구한다.
 		FVector ownerCenter = ownerPhysics->GetCenterOfMass();

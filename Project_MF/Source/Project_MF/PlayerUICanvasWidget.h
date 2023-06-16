@@ -39,6 +39,8 @@ public:
 	void GetAimWidget(TWeakObjectPtr<UPlayerUIAimWidget>& outPtr) const;
 	void GetBloodEffectWidget(TWeakObjectPtr<UPlayerUIBloodWidget>& outPtr) const;
 
+	void SetDebugText(const FString& txt);
+
 	void SetClimbAbleImgVisibility(bool isVisible);
 
 private:
@@ -58,5 +60,8 @@ private:
 
 	UPROPERTY()
 	UHandlerImage* _ClimbAble;
+
+	UPROPERTY()
+	class UTextBlock* _DebugText;
 	
 };

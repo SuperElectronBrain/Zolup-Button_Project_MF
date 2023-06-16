@@ -120,6 +120,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = UIManager)
 	bool IsPlayingFadeByHandler(TScriptInterface<IGameUIHandler> handler);
 
+	/**지정한 handler를 대상으로 하는 페이드 프로그래스들에서 종료 단계가 있는지 확인합니다.*/
+	UFUNCTION(BlueprintCallable, Category = UIManager)
+	bool IsCompleteFadeByHandler(TScriptInterface<IGameUIHandler> handler);
+
 	/**UIManager에서 페이드가 하나라도 실행중인지 확인합니다.*/
 	UFUNCTION(BlueprintCallable, Category = UIManager)
 	bool IsPlayingFade() const { return _fadeInfos.Num() > 0; }

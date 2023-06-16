@@ -31,6 +31,9 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	static ConstructorHelpers::FObjectFinder<UAnimMontage> PARKOUR_MONTAGE(
 		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_Parkour02.PlayerMontage_Parkour02")
 	);
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> JUMP_MONTAGE(
+		TEXT("/Game/PlayerCharacter/Animation2/PlayerMontage_Jump.PlayerMontage_Jump")
+	);
 
 	/*Montage initialize*/
 	if (SHOOT_MONTAGE.Succeeded()) ShootMontage = SHOOT_MONTAGE.Object;
@@ -40,6 +43,7 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	if (GLOVE_ACTON_MONTAGE.Succeeded()) GloveActonMontage = GLOVE_ACTON_MONTAGE.Object;
 	if (GLOVE_AT_MONTAGE.Succeeded()) GloveAtMontage = GLOVE_AT_MONTAGE.Object;
 	if (PARKOUR_MONTAGE.Succeeded()) ClimbMontage = PARKOUR_MONTAGE.Object;
+	if (JUMP_MONTAGE.Succeeded()) JumpMontage = JUMP_MONTAGE.Object;
 }
 
 void UPlayerAnimInstance::AnimNotify_StartLHandClimb()
@@ -60,15 +64,20 @@ void UPlayerAnimInstance::AnimNotify_StartRHandClimb()
 	}
 }
 
+void UPlayerAnimInstance::PlayJumpMontage(float startTime, float speed)
+{
+	if (::IsValid(JumpMontage) == false) return;
+
+	Montage_Play(JumpMontage, speed, EMontagePlayReturnType::MontageLength, startTime);
+}
+
 void UPlayerAnimInstance::AnimNotify_GauntletEffectForward()
 {
-	UE_LOG(LogTemp, Warning, TEXT("(Anim)VISIBLE"))
 	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::GAUNTLET_EFFECT_VISIBLE);
 }
 
 void UPlayerAnimInstance::AnimNotify_GauntletEffectBackward()
 {
-	UE_LOG(LogTemp, Warning, TEXT("(Anim)HIDE"))
 	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::GAUNTLET_EFFECT_HIDE);
 }
 
@@ -289,21 +298,18 @@ void UPlayerAnimInstance::SetFixedPlayerBoneTransform(EPlayerBoneType fixedTarge
 	*/
 	if ((params & (int)EPlayerBoneType::LEFT_HAND) >= 1)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("왼손 적용!!"))
 		bFixedLHand = apply;
 		LHand_FixedTransform = TargetPlayerMesh->GetSocketTransform(PLAYER_LHAND_BONE);
 	}
 
 	if ((params & (int)EPlayerBoneType::LEFT_POARM)>=1)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("왼포암 적용!!"))
 		bFixedLPoarm = apply;
 		LPoArm_FixedTransform = TargetPlayerMesh->GetSocketTransform(PLAYER_LPOARM_BONE);
 	}
 
 	if ((params & (int)EPlayerBoneType::LEFT_UPPERARM)>=1)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("왼업퍼암 적용!!"))
 		bFixedLUpperArm = apply;
 		LUpperArm_FixedTransform = TargetPlayerMesh->GetSocketTransform(PLAYER_LUPPERARM_BONE);
 	}
@@ -408,7 +414,7 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	/*유효한 플레이어의 상태를 갱신한다.*/
 	CurrentSpeed = TargetPlayer->GetVelocity().Size();
-	bIsJumping = FMath::Abs(TargetPlayer->GetMovementComponent()->Velocity.Z) >= 0.05f;
+	bIsJumping = TargetPlayer->GetMovementComponent()->Velocity.Z != 0.f;
 	bIsPulled = (Montage_IsPlaying(GloveAtMontage) || Montage_IsPlaying(GloveActonMontage));
 
 	/**각종 진행용 함수 실행.*/

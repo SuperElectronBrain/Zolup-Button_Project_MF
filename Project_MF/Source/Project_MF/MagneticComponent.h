@@ -193,10 +193,12 @@ public:
 	/*Get 이 컴포넌트가 부착되어 있는 PrimitiveComponent를 얻어옵니다.*/
 	UPrimitiveComponent* GetAttachmentPrimitive() const { return _parent; }
 
+	//////////////////////////////////////
+	/////							  ////
+	////		Private methods		  ////
+	////							  ////
+	//////////////////////////////////////
 private:
-	////////////////////////////////////
-	/////    Override methods     //////
-	///////////////////////////////////
 	virtual void OnAttachmentChanged() override;
 	virtual void BeginPlay() override;
 	virtual bool CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const override;
@@ -207,16 +209,16 @@ private:
 	#endif
 
 
-	///////////////////////////////////
-	//////   Private methods    ///////
-	///////////////////////////////////
 	void InitParentAndMaterial();
 	void SetParentMaterial(EMagneticType type);
 
 
-	///////////////////////////////
-	//// Fields and Components ////
-	///////////////////////////////
+
+	//////////////////////////////////////
+	/////							  ////
+	////	 Fields and Components	  ////
+	////							  ////
+	//////////////////////////////////////
 	float _currMagMaterialApplyRatio=0.f, _goalMagMaterialApplyRatio = 0.f;
 	bool _magActivate = false;
 	EMagnetMoveType _lastMoveType;

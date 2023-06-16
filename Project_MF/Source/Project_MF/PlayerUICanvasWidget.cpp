@@ -8,6 +8,7 @@
 #include "PlayerUIBloodWidget.h"
 #include "CustomGameInstance.h"
 #include "HandlerImage.h"
+#include "Components/TextBlock.h"
 
 void UPlayerUICanvasWidget::NativeOnInitialized()
 {
@@ -17,6 +18,7 @@ void UPlayerUICanvasWidget::NativeOnInitialized()
 	_Aim = Cast<UPlayerUIAimWidget>(GetWidgetFromName(TEXT("PlayerUI_Aim")));
 	_Blood = Cast<UPlayerUIBloodWidget>(GetWidgetFromName(TEXT("PlayerUI_Blood")));
 	_ClimbAble = Cast<UHandlerImage>(GetWidgetFromName(TEXT("ClimbAble")));
+	_DebugText = Cast<UTextBlock>(GetWidgetFromName(TEXT("DebugText")));
 	SetClimbAbleImgVisibility(false);
 }
 
@@ -26,6 +28,13 @@ void UPlayerUICanvasWidget::SetClimbAbleImgVisibility(bool isVisible)
 
 	ESlateVisibility apply = (isVisible ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
 	_ClimbAble->SetVisibility(apply);
+}
+
+void UPlayerUICanvasWidget::SetDebugText(const FString& txt)
+{
+	if (::IsValid(_DebugText) == false) return;
+
+	_DebugText->SetText(FText::FromString(txt));
 }
 
 void UPlayerUICanvasWidget::NativeConstruct()

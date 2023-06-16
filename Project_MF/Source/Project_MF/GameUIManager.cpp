@@ -112,14 +112,11 @@ void UGameUIManager::FadeProgress(float DeltaTime)
 			//종료처리
 			if (info.progress>=4 || (info.progress == 2 && info.goal1.A==info.goal3.A) || bHandlerIsValid ==false || info.pendingKill)
 			{
-				UE_LOG(LogTemp, Warning, TEXT("페이드 아웃 마무리!!"))
-
 				if (info.bRemoveFromParentAtLast) {
 
-					UUserWidget* widget =  Cast<UUserWidget>(info.handler.GetObject());
-					if (widget)
+					if (UWidget* widget = Cast<UWidget>(info.handler.GetObject()))
 					{
-						widget->RemoveFromViewport();
+						widget->RemoveFromParent();
 					}
 				}
 
@@ -268,6 +265,19 @@ bool UGameUIManager::IsPlayingFadeByHandler(TScriptInterface<IGameUIHandler> han
 
 		//실행중임이 확인됬을 경우
 		return true;
+	}
+
+	return false;
+}
+
+bool UGameUIManager::IsCompleteFadeByHandler(TScriptInterface<IGameUIHandler> handler)
+{
+	if (handler.GetInterface() == nullptr) return false;
+
+	for (FUIFadeInfo& info : _fadeInfos)
+	{
+		if (info.progress >= 4 || (info.progress == 2 && info.goal1.A == info.goal3.A) || info.pendingKill)
+			return true;
 	}
 
 	return false;

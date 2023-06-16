@@ -173,6 +173,7 @@ private:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
+	virtual void OnJumped_Implementation() override;
 
 	#if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
@@ -351,6 +352,7 @@ private:
 	TStaticArray<struct FTimeStopMagnetInfo, 2>     _TimeStopMagnets;
 
 	bool _bCanJump = false;
+	float _prevZVelocity = 0.f;
 	bool _bShootMine = false;
 	float _timeStopCurrTime = 0.f;
 	float _playerHeight = 0.f;

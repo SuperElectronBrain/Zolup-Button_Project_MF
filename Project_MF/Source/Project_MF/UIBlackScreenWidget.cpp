@@ -43,7 +43,10 @@ void UUIBlackScreenWidget::NativeDestruct()
 	if (_UIManager.IsValid() == false) return;
 
 	//현재 이 위젯으로 페이드 진행중일 경우, 뷰포트에서 제거되지 않도록 한다.
-	if (_UIManager->IsPlayingFadeByID(WIDGET_BLACKSCREEN_KEEP_ADDED_VIEWPORT_FADE_ID))
+	bool IsPlayingFade = _UIManager->IsPlayingFadeByID(WIDGET_BLACKSCREEN_KEEP_ADDED_VIEWPORT_FADE_ID);
+	bool IsCompleteFade = _UIManager->IsCompleteFadeByHandler(this);
+
+	if (IsPlayingFade && IsCompleteFade==false )
 	{
 		AddToViewport(10);
 	}

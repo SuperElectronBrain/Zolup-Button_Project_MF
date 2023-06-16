@@ -26,6 +26,7 @@
 #include "Camera/CameraShakeBase.h"
 #include "GauntletEffectComponent.h"
 #include "UIGameSettingsWidget.h"
+#include "GameFramework/PlayerController.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
@@ -370,6 +371,9 @@ void AGamePlayerCharacter::EnterGround(const FHitResult& Hit)
 	FString floorType;
 	DetectFloorType(floorType);
 
+	if (PlayerAnim && PlayerAnim->GetShootMontageIsPlaying() == false)
+		PlayerAnim->PlayJumpMontage(0.86f);
+
 	//체크한 바닥의 타입이 사운드풀에 존재하지 않다면 탈출
 	if (PlayerWalkSound.Contains(floorType)==false) return;
 
@@ -480,7 +484,9 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 
 	//데미지 이벤트일 경우
 	bool implIsValid = (_BlackScreenWidget.IsValid() && _Instance.IsValid());
-	if (PlayerMode==EPlayerMode::DMG_EVENT && implIsValid)
+	bool FadeIsPlaying = _Instance->GetUIManager()->IsPlayingFadeByHandler(_BlackScreenWidget.Get());
+
+	if (PlayerMode==EPlayerMode::DMG_EVENT && implIsValid && FadeIsPlaying==false)
 	{
 		if (SirenSound && BGM3Sound)
 		{
@@ -499,6 +505,9 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 			);
 		}
 
+		if (_BlackScreenWidget->IsInViewport() == false)
+			_BlackScreenWidget->AddToViewport(10);
+
 		_Instance->GetUIManager()->PlayFadeInOut(
 			EFadeType::WHITE_TO_DARK_TO_WHITE,
 			_BlackScreenWidget.Get(),
@@ -510,7 +519,9 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 			3.f,
 			_BlackScreenWidget->GetKeepAddedViewPortFadeID(),
 			FLinearColor::Black,
-			FLinearColor::Black
+			FLinearColor::Black,
+			false,
+			true
 		);
 	}
 
@@ -578,6 +589,29 @@ void AGamePlayerCharacter::BeginPlay()
 	{
 		UpdateUIWidgetReference();
 		if (_PlayerUICanvasWidget.IsValid()) _PlayerUICanvasWidget->AddToViewport();
+
+		if (_BlackScreenWidget.IsValid())
+		{
+			_Instance->GetUIManager()->StopFadeInOutByHandler(_BlackScreenWidget.Get());
+			_Instance->GetUIManager()->PlayFadeInOut(
+				EFadeType::DARK_TO_WHITE,
+				_BlackScreenWidget.Get(),
+				2.f,
+				2.f,
+				1.f,
+				0.f,
+				1.5f,
+				0.f,
+				-1,
+				FLinearColor::Black,
+				FLinearColor::Black,
+				false,
+				true
+			);
+
+			if(_BlackScreenWidget->IsInViewport())
+			_BlackScreenWidget->AddToViewport();
+		}
 
 		_Instance->GetUIManager()->OnUIFadeChange.AddDynamic(this, &AGamePlayerCharacter::FadeChange);
 	}
@@ -689,6 +723,12 @@ void AGamePlayerCharacter::BeginPlay()
 		);
 	}
 
+	//인풋 모드를 조작모드로 설정한다.
+	if (APlayerController* controller = GetWorld()->GetFirstPlayerController())
+	{
+		controller->SetInputMode(FInputModeGameOnly());
+	}
+
 	#pragma endregion
 }
 
@@ -700,6 +740,13 @@ void AGamePlayerCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	{
 		_Instance->GetUIManager()->OnUIFadeChange.RemoveDynamic(this, &AGamePlayerCharacter::FadeChange);
 	}
+}
+
+void AGamePlayerCharacter::OnJumped_Implementation()
+{
+	if (::IsValid(PlayerAnim)==false) return;
+
+	PlayerAnim->PlayJumpMontage();
 }
 
 void AGamePlayerCharacter::Tick(float DeltaTime)
@@ -741,6 +788,11 @@ void AGamePlayerCharacter::Tick(float DeltaTime)
 		Jump();
 		if(MoveSoundEffectComp) MoveSoundEffectComp->Stop();
 	}
+
+	//플레이어가 땅에서 떨어질 경우
+	bool isFalling = (_prevZVelocity==0.f) && (GetCharacterMovement()->Velocity.Z < 0.f);
+	if (isFalling) PlayerAnim->PlayJumpMontage();
+	_prevZVelocity = GetCharacterMovement()->Velocity.Z;
 
 	/*비네팅 러프*/
 	if (_vignettingcurrTime>0.f)
@@ -1082,15 +1134,22 @@ void AGamePlayerCharacter::ShowGameSettings()
 {
 	if (_GameSettingsWidget.IsValid() == false) return;
 
-	//뷰포트에 추가가 되어있지 않다면 추가한다.
-	if (_GameSettingsWidget->IsInViewport() == false)
+	if (APlayerController* controller = GetWorld()->GetFirstPlayerController())
 	{
-		_GameSettingsWidget->AddToViewport(4);
-		_GameSettingsWidget->SetRenderTransformPivot(FVector2D(0.5f, 0.5f));
-	}
-	else
-	{
-		_GameSettingsWidget->RemoveFromParent();
+		//게임 세팅을 보이도록 설정한다.
+		if (_GameSettingsWidget->IsInViewport() == false)
+		{
+			controller->SetShowMouseCursor(true);
+			controller->SetInputMode(FInputModeUIOnly());
+			_GameSettingsWidget->AddToViewport(4);
+		}
+		//게임 세팅이 보이지 않도록 설정한다.
+		else
+		{
+			controller->SetShowMouseCursor(false);
+			controller->SetInputMode(FInputModeGameOnly());
+			_GameSettingsWidget->RemoveFromParent();
+		}
 	}
 }
 
@@ -1308,9 +1367,11 @@ void AGamePlayerCharacter::JumpStart()
 		//	6.f
 		//);
 
-		if (ret && result.bBlockingHit) return;
+		float headHeight = FMath::Abs(result.Location.Z - playerPos.Z);
+		UE_LOG(LogTemp, Warning, TEXT("headHeight: %f / height: %f"), headHeight, playerHeight)
+		if (ret && result.bBlockingHit && headHeight<playerHeight ) return;
 
-		start = playerPos + (_stickNormal * -50.f) + (FVector::UpVector * (ClimbableWallHeight + playerHeight));
+		start = playerPos + (_stickNormal * -50.f) + (FVector::UpVector * ClimbableWallHeight);
 		end = playerPos + (_stickNormal * -50.f) + (FVector::DownVector * 200.f);
 
 		//플레이어가 올라가려는 위치에 올라갈 땅이 있는지 확인.
@@ -1341,8 +1402,26 @@ void AGamePlayerCharacter::JumpStart()
 
 		//UE_LOG(LogTemp, Warning, TEXT("climbaleHeight: %f(%f)"), ClimbableWallHeight, FMath::Abs(result.Location.Z-playerPos.Z))
 		
+		//천장에 부딫혀서 확인조차 못해봤을 때의 처리.
+		if (ret && result.Distance==0.f)
+		{
+			start = playerPos + (_stickNormal * -50.f) + (FVector::UpVector * playerHeight);
+
+			//플레이어가 올라가려는 위치에 올라갈 땅이 있는지 확인.
+			ret = GetWorld()->SweepSingleByChannel(
+				result,
+				start,
+				end,
+				FQuat::Identity,
+				ECollisionChannel::ECC_Visibility,
+				FCollisionShape::MakeSphere(playerRadius),
+				params
+			);
+		}
+
 		//충돌한 지점이 있고, 플레이어가 앞으로 갈 수 없는 상황이라면 철회.
-		if (!ret || ret && (result.Location-playerPos).Size() > ClimbableWallHeight) return;
+		float climbHeight = FMath::Abs(result.Location.Z - playerPos.Z);
+		if (!ret || ret && climbHeight > ClimbableWallHeight ) return;
 
 
 		//점프하면서 생기는 변화를 적용한다.
@@ -1808,7 +1887,6 @@ void AGamePlayerCharacter::PlayerAnimNotify(EPlayerAnimNotifyType NotifyType)
 		case(EPlayerAnimNotifyType::GAUNTLET_EFFECT_HIDE):
 			if (GauntletEffectComp)
 			{
-				UE_LOG(LogTemp,Warning, TEXT("(Player)HIDE"))
 				GauntletEffectComp->SetGauntletEffectScaleAndDepth(0.2f);
 			}
 			break;
@@ -1818,7 +1896,6 @@ void AGamePlayerCharacter::PlayerAnimNotify(EPlayerAnimNotifyType NotifyType)
 		case(EPlayerAnimNotifyType::GAUNTLET_EFFECT_VISIBLE):
 			if (GauntletEffectComp)
 			{
-				UE_LOG(LogTemp, Warning, TEXT("(Player)VISIBLE"))
 				GauntletEffectComp->SetGauntletEffectScaleAndDepth(0.f);
 			}
 			break;
@@ -2507,15 +2584,15 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 		//	true
 		//);
 
-		//올라타기 UI 갱신
-		if (_PlayerUICanvasWidget.IsValid())
-			_PlayerUICanvasWidget->SetClimbAbleImgVisibility(true);
-
 		_stickNormal = hitNormal;
 		_stiffen = 0.3f;
 		_StickTo.Reset();
 		_StickTo = HitActor;
 		AttachToActor(HitActor, FAttachmentTransformRules::KeepWorldTransform);
+
+		//올라타기 UI 갱신
+		if (_PlayerUICanvasWidget.IsValid() && PlayerCanClimbWall())
+			_PlayerUICanvasWidget->SetClimbAbleImgVisibility(true);
 		
 		if (PlayerAnim) PlayerAnim->PlayGloveAtMotage(0.f, 10.f);
 	}

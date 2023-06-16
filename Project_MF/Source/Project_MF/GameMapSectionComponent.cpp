@@ -2,6 +2,8 @@
 #include "MagneticComponent.h"
 #include "Components/MeshComponent.h"
 #include "GameCheckPointContainerComponent.h"
+#include "CustomGameInstance.h"
+#include "PlayerUICanvasWidget.h"
 
 // Sets default values for this component's properties
 UGameMapSectionComponent::UGameMapSectionComponent()
@@ -39,6 +41,17 @@ void UGameMapSectionComponent::SetSection(ESectionSettingType type)
 			case(ESectionSettingType::SECTION_RESET_BEGIN_PLAY):
 			{
 				if (bIsCompleteSection) return;
+
+				//디버그용 텍스트 출력
+				UCustomGameInstance* Ins = Cast<UCustomGameInstance>(GetWorld()->GetGameInstance());
+				TWeakObjectPtr<UPlayerUICanvasWidget> Canvas;
+				if(Ins) Ins->GetUIManager()->GetPlayerUICanvasWidget(Canvas);
+
+				if (Canvas.IsValid())
+				{
+					Canvas->SetDebugText(FString::Printf(TEXT("ActorInfo: %d / MagInfo: %d"), _infoList.Num(), _magInfoList.Num()));
+				}
+
 
 				//엑터 정보 리셋
 				int32 count = _infoList.Num();
