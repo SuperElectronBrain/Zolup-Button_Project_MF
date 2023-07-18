@@ -27,11 +27,16 @@
 #include "GauntletEffectComponent.h"
 #include "UIGameSettingsWidget.h"
 #include "GameFramework/PlayerController.h"
+#include "GameFramework/InputSettings.h"
 
 AGamePlayerCharacter::AGamePlayerCharacter()
 {
 	#pragma region Omission
 	PrimaryActorTick.bCanEverTick = true;
+
+	FActorSpawnParameters params;
+	FTransform transform;
+	GetWorld()->SpawnActor(AActor::StaticClass(), &transform, params);
 
 	/************************************************************
 	* CDO( SkeletalMesh + AimInstance )
@@ -68,7 +73,11 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	static ConstructorHelpers::FObjectFinder<UNiagaraSystem> ABSORB_EFFECT_SYSTEM(
 		TEXT("/Game/Effect/Magnetic/Absorb/energy_absorption_beam_nia.energy_absorption_beam_nia")
 	);
+	static ConstructorHelpers::FObjectFinder<UForceFeedbackEffect> FORCE_FEEDBACK_EFFECT(
+		TEXT("/Game/PlayerCharacter/PlayerSitckVirbration.PlayerSitckVirbration")
+	);
 
+	if (FORCE_FEEDBACK_EFFECT.Succeeded()) ForceFeedbackEffect = FORCE_FEEDBACK_EFFECT.Object;
 	if (CAM_SHAKE_EFFECT.Succeeded()) CamShakeClass = CAM_SHAKE_EFFECT.Class;
 	if (SHOOT_EFFECT_SYSTEM.Succeeded()) ShootEffect = SHOOT_EFFECT_SYSTEM.Object;
 	if (MAGNETIC_EFFECT_SYSTEM.Succeeded()) MagneticEffect = MAGNETIC_EFFECT_SYSTEM.Object;
@@ -87,6 +96,7 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	/*****************************************************************
 	* CDO( AudioBase ) / Component( Audio )
 	* 플레이어가 사용할 사운드 에셋들을 가져오고, 사운드 컴포넌트를 초기화합니다.
+	* TODO: 추후 SoundList를 이용한 블루프린트 클래스로 분리할 예정.
 	*/
 	static ConstructorHelpers::FObjectFinder<USoundBase> GIVE_SOUND(
 		TEXT("/Game/Sounds/Magnetic/MagneticOn.MagneticOn")
@@ -185,7 +195,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	if (BGM3_SOUND.Succeeded()) BGM3Sound = BGM3_SOUND.Object;
 
 	/*******************************************************************
-	* Component(SpringArm)
 	* 스프링 암 컴포넌트를 초기화합니다.
 	*/
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SPRINGARM"));
@@ -200,7 +209,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 
 	/***********************************************************************
-	* Component(Camera)
 	* 카메라 컴포넌트를 초기화합니다. 
 	*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
@@ -210,7 +218,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 
 	/*************************************************************************
-	* Component(Capsule)
 	* 플레이어의 캡슐 컴포넌트를 초기화합니다.
 	*/
 	GetCapsuleComponent()->SetCapsuleRadius(20.f);
@@ -218,7 +225,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 
 	/**************************************************************************
-	* Component(SkeletalMesh + AnimInstance) 
 	* 플레이어의 스켈레탈 메시 및 애니메이션 인스턴스를 초기화합니다.
 	*/
 	USkeletalMeshComponent* PlayerMesh = GetMesh();
@@ -242,7 +248,6 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 
 
 	/**********************************************************
-	* Component( CharacterMovementComponent )
 	* 플레이어 무브먼트 컴포넌트를 초기화합니다.
 	*/
 	UCharacterMovementComponent* movement = GetCharacterMovement();
@@ -258,18 +263,21 @@ AGamePlayerCharacter::AGamePlayerCharacter()
 	movement->MaxAcceleration = 1000.f;
 
 	/**********************************************************
-	* Component( Magnetic / MagneticMovementC )
 	* 자성 컴포넌트를 초기화합니다.
 	*/
 	Magnetic = CreateDefaultSubobject<UMagneticComponent>(TEXT("MAGNETIC"));
-	MagMovement = CreateDefaultSubobject<UDefaultMagneticMovementComponent>(TEXT("DEFAULT_MAG_MOVEMENT"));
 	Magnetic->SetupAttachment(GetCapsuleComponent());
 	Magnetic->SetRelativeLocation(FVector(0.f, 0.f, 70.f));
 	Magnetic->SetMagneticFieldRadiusScale(300.f);
 	Magnetic->bShowMagneticField = false;
 	Magnetic->SetWeight(1.f, true);
+
+	MagMovement = CreateDefaultSubobject<UDefaultMagneticMovementComponent>(TEXT("DEFAULT_MAG_MOVEMENT"));
+	MagMovement->bDrawnInUsedFixedSpeed = true;
 	
-	/*StopTimer Widget*/
+	/***************************************
+	* 시간정지용 위젯 컴포넌트를 초기화합니다.
+	*/
 	TimerWidgetA = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentA"));
 	TimerWidgetB = CreateDefaultSubobject<UWidgetComponent>(TEXT("WidgetComponentB"));
 	if (STOPTIMER_WIDGET.Succeeded())
@@ -478,6 +486,20 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 		);
 	}
 
+	if (CamShakeClass)
+	{
+		APlayerController* con = GetWorld()->GetFirstPlayerController();
+		con->PlayerCameraManager->StartCameraShake(
+			CamShakeClass,
+			30.f
+		);
+
+		FForceFeedbackParameters param;
+		param.bLooping = true;
+		if (ForceFeedbackEffect) con->ClientPlayForceFeedback(ForceFeedbackEffect);
+	}
+
+
 	//자성 효과
 	if(_BloodWidget.IsValid())
 		_BloodWidget->ShowBloodEffect(PlayerCurrHP);
@@ -535,6 +557,12 @@ float AGamePlayerCharacter::TakeDamage(float Damage, FDamageEvent const& DamageE
 	_noHitTime = PlayerNoDamageTime;
 
 	return finalDamage;
+}
+
+void AGamePlayerCharacter::OnConstruction(const FTransform& Transform)
+{
+	UE_LOG(LogTemp, Warning, TEXT("이건가?"))
+
 }
 
 void AGamePlayerCharacter::SetPlayerGameOverMode(EPlayerGameOverReason gameOverReason)
@@ -1157,6 +1185,7 @@ void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 {
 	#pragma region Omission
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
 	PlayerInputComponent->BindAxis(
 		TEXT("UpDown"), this, &AGamePlayerCharacter::MoveUpDown
 	);
@@ -1192,14 +1221,6 @@ void AGamePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	PlayerInputComponent->BindAction(
 		TEXT("ShowSettings"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::ShowGameSettings
 	);
-
-	//PlayerInputComponent->BindAction(
-	//	TEXT("ShootMine"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::OnShootMine
-	//);
-
-	//PlayerInputComponent->BindAction(
-	//	TEXT("ShootMine"), EInputEvent::IE_Released, this, &AGamePlayerCharacter::OffShootMine
-	//);
 
 	PlayerInputComponent->BindAction(
 		TEXT("Dash"), EInputEvent::IE_Pressed, this, &AGamePlayerCharacter::DashStart
@@ -1428,18 +1449,6 @@ void AGamePlayerCharacter::JumpStart()
 		_StickTo.Reset();
 		Magnetic->SetCurrentMagnetic(EMagneticType::NONE);
 
-		//파쿠르 애니메이션 실행
-		if (PlayerAnim)
-		{
-			if (PlayerAnim) PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
-
-			FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
-			FVector handTouchPos = result.Location + (FVector::DownVector * GetPlayerHeight() * 1.5f);
-			FVector startLookDir = (FVector::UpVector - _stickNormal);
-
-			//PlayerAnim->PlayClimbMontage(startLookDir, handTouchPos, result.Normal);
-		}
-
 		//UI갱신
 		if (_AimWidget.IsValid())
 				_AimWidget->SetAimUIByMagneticComp(_GivenMagnets[0], _GivenMagnets[1], EMagneticType::NONE);
@@ -1447,16 +1456,31 @@ void AGamePlayerCharacter::JumpStart()
 		if (_PlayerUICanvasWidget.IsValid())
 			_PlayerUICanvasWidget->SetClimbAbleImgVisibility(false);
 
-		//점프 적용.
-		PlayerMode = EPlayerMode::STICK_JUMP;
-		_stiffen = -1.f;
-		_startPos = playerPos;
-		_endPos = result.Location - (_stickNormal*40.f) + (FVector::UpVector * (playerHeight+30.f));
-		_cPos1 = FVector( _startPos.X, _startPos.Y, _endPos.Z );
-		_currTime = 0.f;
-		_goalTimeDiv = 1.f / ClimbWallSeconds;
-
 		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
+		//점프 적용.
+		bool bPlayClimbAnim = (PlayerAnim && climbHeight >= ClimbableWallHeight * .5f);
+
+		//if (bPlayClimbAnim)
+		//{
+		//	if (PlayerAnim) PlayerAnim->SetFixedPlayerBoneTransform(EPlayerBoneType::LEFT_ARM, false);
+
+		//	FVector rightCross = -FVector::CrossProduct(result.Normal, FVector::DownVector);
+		//	FVector handTouchPos = result.Location + (playerHeight*.5f);
+		//	FVector startLookDir = -_stickNormal;
+
+		//	PlayerAnim->PlayClimbMontage(startLookDir, handTouchPos, _stickNormal, 0.f, .2f);
+		//}
+		//else
+		{
+			PlayerMode = EPlayerMode::STICK_JUMP;
+			_stiffen = -1.f;
+			_startPos = playerPos;
+			_endPos = result.Location - (_stickNormal * 40.f) + (FVector::UpVector * (playerHeight + 30.f));
+			_cPos1 = FVector(_startPos.X, _startPos.Y, _endPos.Z);
+			_currTime = 0.f;
+			_goalTimeDiv = 1.f / ClimbWallSeconds;
+		}
 		return;
 	}
 	
@@ -1464,9 +1488,26 @@ void AGamePlayerCharacter::JumpStart()
 
 	#pragma endregion
 }
+
+void AGamePlayerCharacter::SetPlayerMaterialFov(bool apply)
+{
+	float value = (apply ? 1.f : 0.f);
+
+	GetMesh()->SetScalarParameterValueOnMaterials(TEXT("FOVApply"), value);
+}
+
 void AGamePlayerCharacter::JumpEnd()
 {
 	_bCanJump = false;
+}
+
+void AGamePlayerCharacter::PlayCameraShake()
+{
+	if (CamShakeClass)
+	{
+		APlayerController* con = GetWorld()->GetFirstPlayerController();
+		if (ForceFeedbackEffect) con->ClientStopForceFeedback(ForceFeedbackEffect, NAME_None);
+	}
 }
 
 void AGamePlayerCharacter::FadeChange(bool isDark, int id)
@@ -1503,6 +1544,12 @@ void AGamePlayerCharacter::FadeChange(bool isDark, int id)
 		case(WIDGET_BLACKSCREEN_KEEP_ADDED_VIEWPORT_FADE_ID):
 		{
 			if (PlayerMode != EPlayerMode::DMG_EVENT) return;
+
+			if (CamShakeClass)
+			{
+				APlayerController* con = GetWorld()->GetFirstPlayerController();
+				if (ForceFeedbackEffect) con->ClientStopForceFeedback(ForceFeedbackEffect, NAME_None);
+			}
 
 			UGameplayStatics::OpenLevel(
 				GetWorld(),
@@ -1950,7 +1997,7 @@ void AGamePlayerCharacter::ShootStart()
 			TEXT("Hit_Scan_Color"),
 			UMagneticComponent::GetMagneticEffectColor(
 				_ShootTargetInfo.ApplyType, 
-				EMagneticEffectColorType::GRANT_EFFECT
+				EMagneticEffectColorType::GUN_EFFECT_LAZER
 			)
 		);
 
@@ -2562,13 +2609,16 @@ void AGamePlayerCharacter::MagnetMoveHit(AActor* HitActor, UMagneticComponent* H
 			);
 		}
 
-		/**화면 흔들림*/
+		/**진동 효과*/
 		if (CamShakeClass)
 		{
-			GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(
+			APlayerController* con = GetWorld()->GetFirstPlayerController();
+			con->PlayerCameraManager->StartCameraShake(
 				CamShakeClass,
 				3.f
 			);
+
+			if(ForceFeedbackEffect) con->ClientPlayForceFeedback(ForceFeedbackEffect);
 		}
 
 		Magnetic->bAllowMagneticMovement = false;

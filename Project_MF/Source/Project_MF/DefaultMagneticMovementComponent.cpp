@@ -1,6 +1,7 @@
 #include "DefaultMagneticMovementComponent.h"
 #include "DrawDebugHelpers.h"
 #include "MagneticComponent.h"
+#include "GamePlayerCharacter.h"
 
 UDefaultMagneticMovementComponent::UDefaultMagneticMovementComponent()
 {
@@ -27,6 +28,8 @@ void UDefaultMagneticMovementComponent::StartMovement(EMagnetMoveType moveType, 
 		ownerPhysics->SetPhysicsLinearVelocity(FVector::ZeroVector);
 		ownerPhysics->SetPhysicsAngularVelocityInRadians(FMath::DegreesToRadians(FVector::ZeroVector));
 	}
+
+	_bArriveGoal = false;
 }
 
 void UDefaultMagneticMovementComponent::EndMovement(EMagnetMoveType endType, UMagneticComponent* owner)
@@ -45,32 +48,32 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 	UPrimitiveComponent* ownerRootPhysics = Cast<UPrimitiveComponent>(owner->GetAttachmentRoot());
 	UPrimitiveComponent* operatorPhysics = SafeMagOperator->GetAttachmentPrimitive();
 
-	//물리가 적용되어 있을 경우
-	if (ownerPhysics && ::IsValid(ownerPhysics) && 
-		operatorPhysics && ::IsValid(operatorPhysics) && 
-		ownerPhysics->IsSimulatingPhysics() && 
-		ownerRootPhysics && ::IsValid(ownerRootPhysics) && false)
-	{
-		//계산에 필요한 요소들을 구한다.
-		FVector ownerCenter = ownerPhysics->GetCenterOfMass();
-		FVector operatorCenter = operatorPhysics->GetCenterOfMass();
-		FVector distance = operatorCenter - ownerCenter;
-		FVector dir = distance.GetSafeNormal() * (type == EMagnetMoveType::PUSHED_OUT ? -1.f : 1.f);
-		float length = distance.Size();
-		float ownerRadius = owner->GetMagneticFieldRadius();
-		float operatorRadius = SafeMagOperator->GetMagneticFieldRadius();
-		float totalRadius = ownerRadius + operatorRadius;
-		float penetrate = FMath::Clamp(operatorRadius - length, 0.f, operatorRadius);
-		float penetrateRatio = penetrate / operatorRadius;
-		FRotator ownerRot = ownerPhysics->GetComponentRotation();
+	//움직임을 마친 후, 달라붙는 효과를 구현한다.
+	//if (ownerPhysics && ::IsValid(ownerPhysics) && 
+	//	operatorPhysics && ::IsValid(operatorPhysics) && 
+	//	ownerPhysics->IsSimulatingPhysics() && 
+	//	ownerRootPhysics && ::IsValid(ownerRootPhysics))
+	//{
+	//	//계산에 필요한 요소들을 구한다.
+	//	FVector ownerCenter = ownerPhysics->GetCenterOfMass();
+	//	FVector operatorCenter = operatorPhysics->GetCenterOfMass();
+	//	FVector distance = operatorCenter - ownerCenter;
+	//	FVector dir = distance.GetSafeNormal() * (type == EMagnetMoveType::PUSHED_OUT ? -1.f : 1.f);
+	//	float length = distance.Size();
+	//	float ownerRadius = owner->GetMagneticFieldRadius();
+	//	float operatorRadius = SafeMagOperator->GetMagneticFieldRadius();
+	//	float totalRadius = ownerRadius + operatorRadius;
+	//	float penetrate = FMath::Clamp(operatorRadius - length, 0.f, operatorRadius);
+	//	float penetrateRatio = penetrate / operatorRadius;
+	//	FRotator ownerRot = ownerPhysics->GetComponentRotation();
 
-		//물리가 적용되고 있는 상황일 경우의 이동 적용.
-		float pow = 100.f + length * DeltaTime * penetrateRatio;
-		Velocity = dir * pow * ownerPhysics->GetMass();
-		ownerPhysics->SetEnableGravity(false);
-		ownerPhysics->AddImpulseAtLocation(Velocity, ownerCenter);
-		return;
-	}
+	//	//물리가 적용되고 있는 상황일 경우의 이동 적용.
+	//	float pow = 100.f;
+	//	Velocity = dir * pow * ownerPhysics->GetMass();
+	//	ownerPhysics->SetEnableGravity(false);
+	//	ownerPhysics->AddImpulseAtLocation(Velocity, ownerCenter);
+	//	return;
+	//}
 
 
 	USceneComponent* updated = UpdatedComponent;
@@ -100,7 +103,7 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 	float power = 0.f;
 
 	//밀려날 경우
-	if (type == EMagnetMoveType::PUSHED_OUT)
+	//if (type == EMagnetMoveType::PUSHED_OUT)
 	{
 		power = (.2f + 20.f * (penetrate * _operatorRadiusHalfDiv));
 		if (penetrateRatio >= .65f) power += 10.f;
@@ -111,13 +114,12 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 			Velocity = Velocity.GetSafeNormal() * operatorRadius * .5f;
 		}
 	}
+
 	//끌어당겨질 경우
-	else if (type == EMagnetMoveType::DRAWN_IN)
+	if (bDrawnInUsedFixedSpeed && type == EMagnetMoveType::DRAWN_IN)
 	{
 		float distanceRatio = (ownerPos - _startPos).Size() * _distanceDiv;
-
 		power = (_distance * .5f + _distance * (distanceRatio + .3f * 2.f)) * DeltaTime;
-
 		Velocity = dir * power;
 	}
 
@@ -132,7 +134,14 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 	{
 		UPrimitiveComponent* physics = UpdatedPrimitive;
 		physics->SetEnableGravity(false);
-		physics->SetPhysicsLinearVelocity(FVector::ZeroVector);
+		//physics->SetPhysicsLinearVelocity(FVector::ZeroVector);
+
+		FVector ownerCenter = ownerPhysics->GetCenterOfMass();
+		FVector operatorCenter = operatorPhysics->GetCenterOfMass();
+		float mass = physics->GetMass();
+
+		ownerPhysics->AddImpulseAtLocation(Velocity * physics->GetMass(), ownerCenter);
+		return;
 	}
 
 	//최종 이동량 적용 및 부드러운 움직임 적용.
@@ -148,6 +157,15 @@ void UDefaultMagneticMovementComponent::ApplyMovement(EMagnetMoveType type, UMag
 	if (hit.IsValidBlockingHit() && FVector::DotProduct(dir, hit.Normal) < 0 && type == EMagnetMoveType::DRAWN_IN && hit.GetActor() != nullptr && ::IsValid(hit.GetActor()))
 	{
 		HitResult = hit;
+
+		//if (_bArriveGoal == false)
+		//{
+		//	_bArriveGoal = true;
+
+		//	AGamePlayerCharacter* character = Cast<AGamePlayerCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+		//	if (character) character->PlayCameraShake();
+
+		//}
 	}
 
 	return;

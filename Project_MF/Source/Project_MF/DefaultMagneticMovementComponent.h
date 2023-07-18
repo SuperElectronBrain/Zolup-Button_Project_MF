@@ -45,8 +45,12 @@ private:
 	bool _originUsedGravity, _registerHit;
 
 	FVector start, middle, end;
+	bool _bArriveGoal = false;
 
 public:
-	UPROPERTY(EditAnywhere, Category = Magnetic)
+	UPROPERTY(EditAnywhere, Category = MagneticMovment)
 	EMagnetMoveAxisType MoveType = EMagnetMoveAxisType::MOVE_XYZ;
+
+	UPROPERTY(EditAnywhere, Category = MagneticMovement)
+	bool bDrawnInUsedFixedSpeed = false;
 };

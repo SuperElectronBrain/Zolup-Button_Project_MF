@@ -21,7 +21,7 @@ enum class EMagneticType : uint8
 /**
 *자성 이펙트들이 가질 수 있는 색깔을 종류별로 가져오는데 필요한 열거형입니다.
 */
-UENUM()
+UENUM(BlueprintType)
 enum class EMagneticEffectColorType : uint8
 {
 	RING_EFFECT,
@@ -68,11 +68,6 @@ class PROJECT_MF_API UMagneticComponent final : public USceneComponent
 	GENERATED_BODY()
 
 public:
-	//////////////////////////////////////
-	/////							  ////
-	////		Constructor			  ////
-	////							  ////
-	//////////////////////////////////////
 	UMagneticComponent();
 
 
@@ -120,7 +115,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Magnetic)
 	int32 GetCurrEnchantableCount() const { return CurrEnchantCount; }
 
-	/**
+	/**********************************************
 	*  해당 자석의 인챈트 정보를 지정합니다.
 	* 
 	*  @param maxEnchantCount	이 자석이 강화될 수 있는 최대 횟수입니다.
@@ -130,7 +125,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Magnetic)
 	void SetEnchantInfo(int32 maxEnchantCount, float enchantWeight, float enchantRange);
 
-	/**
+	/***********************************************
 	*  해당 자석의 자성을 변경합니다.
 	*  변경된 자성에 알맞는 효과가 메시들에게 적용됩니다. - 이 컴포넌트가 UMeshComponent계열에 부착되어있을 때만 적용됨.
 	* 
@@ -139,13 +134,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Magnetic)
 	void SetCurrentMagnetic(EMagneticType newType);
 
-	/*Get 해당 자석에게 부여되어 있는 자성의 극을 얻습니다.*/
+	/***********************************************
+	* 해당 컴포넌트에 부여되어 있는 자성의 극을 얻습니다.
+	*/
 	EMagneticType GetCurrentMagnetic() const { return CurrMagnetic; }
 
 	UFUNCTION(BlueprintCallable, Category = Magnetic)
 	EMagnetMoveType GetCurrentMagnetMovementType() const;
 
-	/*Get 해당 자석이 자성을 띄고 있을 수 있는 최대 시간값을 얻습니다.*/
+	/**Get 해당 자석이 자성을 띄고 있을 수 있는 최대 시간값을 얻습니다.*/
 	float GetMaxHaveMangeticSeconds() const { return MaxHaveMagneticSeconds; }
 	
 	/**

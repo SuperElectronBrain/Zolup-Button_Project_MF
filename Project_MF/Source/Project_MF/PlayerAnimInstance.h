@@ -112,20 +112,19 @@ class PROJECT_MF_API UPlayerAnimInstance final: public UAnimInstance
 {
 	GENERATED_BODY()
 
+
 public:
-	////////////////////////////////////////////////
-	///											///
-	///			  *Constructor*					///
-	///											///
-	///////////////////////////////////////////////
 	UPlayerAnimInstance();
 
-
 	////////////////////////////////////////////////
 	///											///
-	///			  *Public methods*				///
+	///			  *Public delegates*			///
 	///											///
 	///////////////////////////////////////////////
+
+	/**************************************************
+	* 플레이어 애님 인스턴스에서의 노티파이 신호를 받을 수 있는 델리게이트입니다. 
+	*/
 	UPROPERTY(BlueprintAssignable, Blueprintcallable, Category = PlayerAnimInstance)
 	FPlayerAnimEventDelegate OnPlayerAnimNotifyEvent;
 
@@ -178,19 +177,14 @@ public:
 	///////////////////////////////////////////////
 
 private:
-	void FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player);
-
-
 	/**********************************************
 	* UAnimInstance의 가상함수에 대한 재정의입니다.
-	***/
+	*/
 	virtual void NativeBeginPlay() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 
-	/**************************************************************
-	* 특정 몽타주 및 애니메이션 진행에서 쓰이는 함수들입니다.
-	*/
+	void FoldArmTestByStandHand(EHandType type, const AGamePlayerCharacter* player);
 	void ClimbMontageProgress(float DeltaTime);
 
 
@@ -241,7 +235,7 @@ private:
 	///////////////////////////////////////////////
 
 	/*******************************************************************
-	* 해당 AnimInstance가 참조하는 플레이어 및 관련 컴포넌트들의 참조값들입니다.
+	* 해당 AnimInstance가 자주 참조하는 플레이어 및 관련 컴포넌트들의 참조값들입니다.
 	*/
 	TWeakObjectPtr<class AGamePlayerCharacter>		TargetPlayer;
 	TWeakObjectPtr<class UCameraComponent>			TargetPlayerCamera;

@@ -1,31 +1,47 @@
 #pragma once
 #include "EngineMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/WidgetComponent.h"
 #include "MagneticComponent.h"
 #include "GamePlayerCharacter.generated.h"
-
-constexpr const int PLAYER_FADE_ID = 83;
-constexpr const int STOPTIMER_FADE_ID = 84;
-
-constexpr const TCHAR* PLAYER_SHOOT_SOCKET = TEXT("ShootSocket");
-constexpr const TCHAR* PLAYER_GAUNTLET_SOCKET = TEXT("GauntletSocket");
-
 
 enum class EMagnetMoveType : uint8;
 enum class EPlayerAnimNotifyType : uint8;
 class UGameCheckPointContainerComponent;
 class UPlayerAnimInstance;
-class UMagneticComponent;
 class UNiagaraComponent;
 class UNiagaraSystem;
 class UDefaultMagneticMovementComponent;
 class UGameMapSectionComponent;
-class UWidgetComponent;
 class APlayerAirVent;
 class UAudioComponent;
 class USoundCue;
 
-/**
+UENUM(BlueprintType)
+enum class EPlayerModeType : uint8
+{
+	NONE,
+	DEFAULT,
+	AIRVENT_MOVEMENT,
+	CLIMB_MOVEMENT,
+	GAMEOVER,
+	STICK_TO
+};
+
+/*************************************************
+* 플레이어의 게임오버에 대한 이유를 나타내는 열거형입니다.
+*/
+UENUM()
+enum class EPlayerGameOverReason : uint8
+{
+	NONE,
+	FALLEN,
+	DROWNING,
+	FIRED,
+	HURT
+};
+
+/****************************************
 * 플레이어의 적용모드를 나타내는 열거형입니다.
 */
 UENUM()
@@ -48,20 +64,7 @@ enum class EPlayerMode : uint8
 	DMG_EVENT
 };
 
-/**
-* 플레이어의 게임오버에 대한 이유를 나타내는 열거형입니다.
-*/
-UENUM()
-enum class EPlayerGameOverReason : uint8
-{
-	NONE,
-	FALLEN,
-	DROWNING,
-	FIRED,
-	HURT
-};
-
-/**
+/*********************************************************
 * 플레이어가 시간정지로 멈춘 객체에 대한 정보를 담는 구조체입니다.
 */
 USTRUCT()
@@ -74,7 +77,7 @@ struct FTimeStopMagnetInfo
 	bool DefaultApplyPhysics = false;
 };
 
-/**
+/*****************************************************
 * 플레이어가 총으로 맞춘 대상에 대한 정보를 담는 구조체입니다.
 */
 USTRUCT()
@@ -88,7 +91,7 @@ struct FShootTargetInfo
 	bool isHit				= false;
 };
 
-/**
+/****************************************
 * 플레이어의 이동 사운드를 담아둘 구조체입니다.
 */
 USTRUCT(Blueprintable, BlueprintType)
@@ -106,7 +109,20 @@ struct FPlayerMoveSoundInfo
 	USoundBase* JumpEndSound;
 };
 
-/**
+constexpr const int PLAYER_FADE_ID = 83;
+constexpr const int STOPTIMER_FADE_ID = 84;
+
+constexpr const TCHAR* PLAYER_SHOOT_SOCKET = TEXT("ShootSocket");
+constexpr const TCHAR* PLAYER_GAUNTLET_SOCKET = TEXT("GauntletSocket");
+
+constexpr const TCHAR* PLAYER_SHOOT_SOUND = TEXT("ShootSound");
+constexpr const TCHAR* PLAYER_GIVEN_SOUND = TEXT("GivenSound");
+constexpr const TCHAR* PLAYER_UNGIVEN_SOUND = TEXT("UnGivenSound");
+constexpr const TCHAR* MAGNET_GIVEN_SOUND = TEXT("MagGivenSound");
+constexpr const TCHAR* MAGNET_UNGIVEN_SOUND = TEXT("MagUnGivenSound");
+
+
+/******************************************************
 *  게임의 플레이어 캐릭터의 모든 기능을 책임지는 클래스입니다.
 */
 UCLASS(Blueprintable, BlueprintType, ClassGroup = (GamePlayer), meta = (BlueprintSpawnableComponent))
@@ -115,11 +131,6 @@ class PROJECT_MF_API AGamePlayerCharacter final : public ACharacter
 	GENERATED_BODY()
 
 public:
-	//////////////////////////////////////
-	/////							  ////
-	////		Constructor			  ////
-	////							  ////
-	//////////////////////////////////////
 	AGamePlayerCharacter();
 
 
@@ -137,7 +148,7 @@ public:
 	* @Func GetPlayerRightVector : 플레이어가 현재 바라보고 있는 방향을 기준으로 한 오른쪽 방향 벡터를 얻어옵니다.
 	* @Func GetPlayerDownVector  : 플레이어가 현재 바라보고 있는 방향을 기준으로 한 아래 방향 벡터를 얻어옵니다.
 	* TODO: 
-	***/
+	*/
 	FRotator GetPlayerCameraQuat() const;
 	FVector GetPlayerForwardVector() const;
 	FVector GetPlayerRightVector() const;
@@ -160,6 +171,8 @@ public:
 	void SetPlayerMaxHP(float newMaxHP);
 
 	bool PlayerCanClimbWall() const;
+	void PlayCameraShake();
+	void SetPlayerMaterialFov(bool apply);
 
 
 	//////////////////////////////////////
@@ -174,6 +187,7 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 	virtual void OnJumped_Implementation() override;
+	virtual void OnConstruction(const FTransform& Transform) override;
 
 	#if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangeEvent) override;
@@ -205,7 +219,7 @@ private:
 	* @Func StageRestart: Tab키 입력시 주변의 섹션을 탐색하고, 해당 섹션을 초기값을 되돌립니다.
 	* @Func ApplyTimeStop: E키 입력시 현재 자성을 부여한 자석들의 시간을 일정시간동안 정지시킵니다.
 	* @Func ShowGameSettings : ESC키 입력시 게임설정을 보여줍니다.
-	***********************************************************/
+	*/
 	void MoveUpDown(float value);
 	void MoveRightLeft(float value);
 	void LookUp(float value);
@@ -331,11 +345,8 @@ private:
 	//////////////////////////////////////
 
 	/********************************************************
-	* 해당 클래스에서 사용하게되는 클래스 및 컴포넌트들의 참조값들입니다.
-	* 
-	* 게임 인스턴스, 자주 접근이 필요한 위젯, 현재 플레이어가 붙어있는
-	* 대상 또는 플레이어로부터 자성이 부여된 자석들에 대한 참조값들이 있습니다.
-	***/
+	* 해당 클래스에서 자주 사용하는 클래스 및 컴포넌트들의 참조값들입니다.
+	*/
 	TWeakObjectPtr<class UCustomGameInstance>			_Instance;
 	TWeakObjectPtr<class UUIGameSettingsWidget>			_GameSettingsWidget;
 	TWeakObjectPtr<class UUIBlackScreenWidget>			_BlackScreenWidget;
@@ -499,6 +510,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
 	UNiagaraSystem* AbsorbEffect;
 
+	UPROPERTY(EditAnywhere, Category = PlayerEffect, Meta = (AllowPrivateAccess = true))
+	UForceFeedbackEffect* ForceFeedbackEffect;
 	/**
 	* Player Default fields
 	*/

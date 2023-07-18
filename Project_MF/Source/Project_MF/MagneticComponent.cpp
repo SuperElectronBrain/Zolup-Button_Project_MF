@@ -51,6 +51,7 @@ UMagneticComponent::UMagneticComponent()
 	FieldEffectComp->SetUsingAbsoluteScale(true);
 	FieldEffectComp->SetupAttachment(FieldCollision);
 
+	
 	#pragma endregion
 }
 
@@ -92,6 +93,33 @@ void UMagneticComponent::InitParentAndMaterial()
 
 bool UMagneticComponent::CanAttachAsChild(const USceneComponent* ChildComponent, FName SocketName) const
 {
+	//if (const USphereComponent* Sphere=Cast<USphereComponent>(ChildComponent))
+	//{
+	//	UE_LOG(
+	//		LogTemp, 
+	//		Warning, 
+	//		TEXT("( %s-%s-%s )FieldCollision Is Sphere! : %p(%d) / ChildComponent: %p(%d)"), 
+	//		*GetOwner()->GetActorLabel(),
+	//		*GetName(),
+	//		*ChildComponent->GetName(),
+	//		FieldCollision, 
+	//		::IsValid(FieldCollision),
+	//		ChildComponent,
+	//		::IsValid(ChildComponent)
+	//	)
+	//}
+	//else
+	//{
+	//	UE_LOG(
+	//		LogTemp,
+	//		Warning,
+	//		TEXT("( %s-%s-%s ) Is not SphereComponent."),
+	//		*GetOwner()->GetActorLabel(),
+	//		*GetName(),
+	//		*ChildComponent->GetName()
+	//	)
+	//}
+
 	return true;
 	return (ChildComponent == FieldCollision || ChildComponent == FieldEffectComp);
 }
@@ -296,6 +324,14 @@ void UMagneticComponent::BeginPlay()
 		CurrMagnetic = EMagneticType::NONE;
 		SetCurrentMagnetic(type);
 	}
+
+	/*만약 자기장이 부착이 안되어있다면 다시 재부착.*/
+	//if (FieldCollision && FieldCollision->IsAttachedTo(this)==false)
+	//{
+	//	FieldCollision->AttachToComponent(this, FAttachmentTransformRules::KeepRelativeTransform);
+	//}
+
+	//UE_LOG(LogTemp, Warning, TEXT("( %s-%s )FieldCollision: (%d/%d)"), *GetOwner()->GetActorLabel(), *GetName(), ::IsValid(FieldCollision),FieldCollision->IsAttachedTo(this))
 }
 
 void UMagneticComponent::DestroyComponent(bool bPromoteChilderen)

@@ -55,13 +55,13 @@ void UPlayerAnimInstance::AnimNotify_StartRHandClimb()
 {
 	if (TargetPlayer.IsValid() == false) return;
 
-	if (ClimbData.bApplyClimb && TargetPlayer.IsValid())
-	{
-		float playerHeight = TargetPlayer->GetPlayerHeight() * .9f;
-		FVector finalLocation = TargetPlayer->GetActorLocation();
-		finalLocation.Z = ClimbData.ClimbGoalLocation.Z - playerHeight;
-		TargetPlayer->SetActorLocation(finalLocation);
-	}
+	//if (ClimbData.bApplyClimb && TargetPlayer.IsValid())
+	//{
+	//	float playerHeight = TargetPlayer->GetPlayerHeight() * .9f;
+	//	FVector finalLocation = TargetPlayer->GetActorLocation();
+	//	finalLocation.Z = ClimbData.ClimbGoalLocation.Z - playerHeight;
+	//	TargetPlayer->SetActorLocation(finalLocation);
+	//}
 }
 
 void UPlayerAnimInstance::PlayJumpMontage(float startTime, float speed)
@@ -74,6 +74,9 @@ void UPlayerAnimInstance::PlayJumpMontage(float startTime, float speed)
 void UPlayerAnimInstance::AnimNotify_GauntletEffectForward()
 {
 	OnPlayerAnimNotifyEvent.Broadcast(EPlayerAnimNotifyType::GAUNTLET_EFFECT_VISIBLE);
+
+	if (TargetPlayer.IsValid())
+		TargetPlayer->SetPlayerMaterialFov(false);
 }
 
 void UPlayerAnimInstance::AnimNotify_GauntletEffectBackward()
@@ -196,7 +199,7 @@ void UPlayerAnimInstance::PlayClimbMontage(	FVector& StartLookDir,
 	{
 		StopAllMontages(0.f);
 		ClimbData.bApplyClimb = true;
-		//ClimbData.bApplyLook = true;
+		ClimbData.bApplyLook = true;
 		ClimbData.LookDir = StartLookDir;
 		ClimbData.ClimbGoalLocation = ClimbLocation;
 		ClimbData.StickNormal = StickNormal;
@@ -233,7 +236,8 @@ void UPlayerAnimInstance::ClimbMontageProgress(float DeltaTime)
 	/**카메라의 위치를 조정한다.*/
 	FVector neckPos = TargetPlayerMesh->GetSocketLocation(PLAYER_NECK_BONE);
 	FVector camPos = TargetPlayerCamera->GetComponentLocation();
-	FVector goalPos = neckPos + FVector::UpVector * 7.f;
+	FVector goalPos = neckPos + (FVector::UpVector * 7.f) + (FVector::BackwardVector*.6f);
+
 	TargetPlayerCamera->SetWorldLocation(FMath::Lerp(camPos, goalPos, DeltaTime*10.f));
 
 	float progressRatio = ClimbData.progressTime * ClimbData.goalProgressTimeDiv;
@@ -243,18 +247,13 @@ void UPlayerAnimInstance::ClimbMontageProgress(float DeltaTime)
 		case(EPlayerAnimProgressType::CLIMB_LOOK_UP):
 		{
 			/**카메라가 오를 벽을 보도록 한다.*/
-			FVector playerLocation = TargetPlayer->GetActorLocation();
-			FRotator curr = TargetPlayerCamera->GetComponentRotation();
-			FRotator goal = (-ClimbData.StickNormal).Rotation();
 
-			FRotator result = FMath::Lerp(curr, goal, DeltaTime * 10.f);
-			result.Roll = 0.f;
-			TargetPlayerCamera->SetWorldRotation(result);
 
 			if (progressRatio>=1.f)
 			{
 				ProgressType = EPlayerAnimProgressType::CLIMB_START;
 				ClimbData.progressTime = 0.f;
+				ClimbData.LookDir = (FVector::UpVector -ClimbData.StickNormal);
 				ClimbData.bApplyLook = true;
 				if(ClimbMontage) Montage_Play(ClimbMontage);
 			}
